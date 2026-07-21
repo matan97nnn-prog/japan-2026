@@ -6,13 +6,13 @@ import { useT } from "../lib/dict";
 import NavigateLinks from "./NavigateLinks";
 
 const COLOR_BY_CATEGORY: Record<string, string> = {
-  stay: "#C45A3D",
+  stay: "#C64B3C",
   attraction: "#D9A441",
-  restaurant: "#6B7A4B",
+  restaurant: "#3E5F82",
   supermarket: "#3B6FB6",
   gas: "#B8862C",
   airport: "#7A4FB6",
-  hospital: "#A8472D"
+  hospital: "#A83A2E"
 };
 
 function shade(hex: string, percent: number): string {
@@ -44,7 +44,7 @@ function makePinIcon(color: string, n: number, isHero = false): L.DivIcon {
         </div>
       </div>
     `,
-    className: "tuscany-marker",
+    className: "trip-marker",
     iconSize: [size, size],
     iconAnchor: [size / 2, size - 2],
     popupAnchor: [0, -size + 4]
@@ -91,7 +91,7 @@ export default function MiniMap({ pois }: { pois: POI[] }) {
         <FitBounds pois={pois} />
 
         {pois.map((poi, i) => {
-          const color = COLOR_BY_CATEGORY[poi.category] ?? "#C45A3D";
+          const color = COLOR_BY_CATEGORY[poi.category] ?? "#C64B3C";
           return (
             <Marker
               key={poi.id}

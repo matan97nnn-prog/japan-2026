@@ -1,253 +1,198 @@
 import type { Dish } from "./types";
 
-/** Dishes worth chasing on this trip. Curated to the regions we actually
- *  travel through: north Tuscany (Larciano / Garfagnana / Lucca) and the
- *  southern Maremma + Pitigliano. "tuscany" = found everywhere we'll be. */
+/** Dishes worth chasing on this trip. "japan" = found everywhere we travel;
+ *  "north" = a Kanto/Tokyo-Hakone specialty; "south" = a Kansai specialty. */
 export const dishes: Dish[] = [
-  // ============== PASTA — the headline section ==============
   {
-    id: "pici-cacio-pepe",
-    name: "Pici",
-    italianName: "Pici cacio e pepe / al ragù di cinghiale",
-    region: "south",
+    id: "ramen",
+    name: "Ramen",
+    nativeName: "ラーメン",
+    region: "japan",
     category: "pasta",
     description:
-      "Hand-rolled fat spaghetti — the signature pasta of Siena and the Maremma. Made with just flour and water (no egg), so it's pleasantly chewy. Locally served either simple ('cacio e pepe' with pecorino & black pepper) or with a slow wild-boar ragù.",
-    tryIt: "Trattoria Verdi (Manciano) · Hostaria del Ceccottino (Pitigliano)",
-    image: "./images/food-pici.jpg",
+      "Wheat noodles in a rich broth — shoyu, miso, tonkotsu or shio depending on the shop. Tokyo has thousands of tiny ramen counters; look for a queue as the best sign.",
+    tryIt: "Any counter with a line outside — that's the tell",
+    image: "./images/food-ramen.jpg",
     imageCredit: {
       author: "Wikimedia Commons",
       license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Pici"
+      source: "https://en.wikipedia.org/wiki/Ramen"
     }
   },
   {
-    id: "pappardelle-cinghiale",
-    name: "Pappardelle with wild boar ragù",
-    italianName: "Pappardelle al ragù di cinghiale",
-    region: "tuscany",
-    category: "pasta",
-    description:
-      "Wide ribbon pasta tossed in a deep, slow-cooked ragù of wild boar — Tuscany's truly iconic pasta dish. Found on every serious menu from Lucca down to the Maremma. Ask if it's casalinga (made in-house); it shows.",
-    tryIt: "Trattoria del Castello (Larciano) · Taverna Etrusca (Sovana)",
-    image: "./images/food-pappardelle.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Pappardelle"
-    }
-  },
-  {
-    id: "tortelli-mugellani",
-    name: "Tortelli with potato",
-    italianName: "Tortelli mugellani / di patate",
-    region: "north",
-    category: "pasta",
-    description:
-      "A north-Tuscan stuffed pasta — large pillows filled with mashed potato, parsley and nutmeg, then dressed with butter & sage or a meat ragù. Hearty, mountain food, perfect after the Abetone gondola day.",
-    tryIt: "Circolo dei Forestieri (Bagni di Lucca)",
-    image: "./images/food-tortelli.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Tortelli"
-    }
-  },
-  {
-    id: "ribollita",
-    name: "Ribollita",
-    italianName: "Ribollita",
-    region: "tuscany",
-    category: "starter",
-    description:
-      "The most Tuscan of soups — twice-cooked stale bread, cannellini beans, cavolo nero (black kale) and vegetables. Served thick enough to stand a spoon in, with a generous drizzle of new-press olive oil. A starter, not a side.",
-    tryIt: "Osteria dei Cavalieri (Pisa)",
-    image: "./images/food-ribollita.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Ribollita"
-    }
-  },
-  {
-    id: "pappa-al-pomodoro",
-    name: "Pappa al pomodoro",
-    italianName: "Pappa al pomodoro",
-    region: "tuscany",
-    category: "starter",
-    description:
-      "A late-summer Tuscan classic and a crowd-pleaser for the kids — stale bread cooked into a thick, sweet tomato porridge with garlic, basil and lots of olive oil. Eaten warm or barely-warm, never hot.",
-    tryIt: "Almost any trattoria — order it as a starter",
-    image: "./images/food-pappa-pomodoro.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Pappa_al_pomodoro"
-    }
-  },
-
-  // ============== MAINS ==============
-  {
-    id: "bistecca-fiorentina",
-    name: "Bistecca alla Fiorentina",
-    italianName: "Bistecca alla Fiorentina",
-    region: "tuscany",
+    id: "sushi-sashimi",
+    name: "Sushi & Sashimi",
+    nativeName: "寿司・刺身",
+    region: "japan",
     category: "main",
     description:
-      "The legendary T-bone of Chianina beef — minimum 1 kg, charred outside, ruby rare inside, served with nothing but salt, pepper and lemon. Always priced per etto (100 g). This is a sharing dish — order one for the table.",
-    tryIt: "Trattoria del Castello (Larciano) · Taverna Etrusca (Sovana)",
-    image: "./images/food-bistecca.jpg",
+      "From a Tsukiji Outer Market breakfast counter to a Kyoto conveyor-belt chain, fresh fish over vinegared rice (or on its own as sashimi) is a constant on this trip.",
+    tryIt: "Tsukiji Outer Market (Tokyo) · any conveyor-belt sushi chain",
+    image: "./images/food-sushi.jpg",
     imageCredit: {
       author: "Wikimedia Commons",
       license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Bistecca_alla_fiorentina"
+      source: "https://en.wikipedia.org/wiki/Sushi"
     }
   },
   {
-    id: "buglione-agnello",
-    name: "Lamb stew, Maremma style",
-    italianName: "Buglione di agnello",
+    id: "tempura",
+    name: "Tempura",
+    nativeName: "天ぷら",
+    region: "japan",
+    category: "main",
+    description:
+      "Lightly battered, deep-fried seafood and vegetables — done right, the batter is nearly translucent and never greasy. Asakusa is famous for its old-school tempura specialists.",
+    tryIt: "Tempura Daikokuya (Asakusa)",
+    image: "./images/food-tempura.jpg",
+    imageCredit: {
+      author: "Wikimedia Commons",
+      license: "CC BY-SA",
+      source: "https://en.wikipedia.org/wiki/Tempura"
+    }
+  },
+  {
+    id: "yakitori",
+    name: "Yakitori",
+    nativeName: "焼き鳥",
+    region: "japan",
+    category: "starter",
+    description:
+      "Skewered, grilled chicken — different cuts each on their own skewer, seasoned with tare sauce or plain salt. The classic order at any of Omoide Yokocho's tiny alley counters.",
+    tryIt: "Omoide Yokocho (Shinjuku)",
+    image: "./images/food-yakitori.jpg",
+    imageCredit: {
+      author: "Wikimedia Commons",
+      license: "CC BY-SA",
+      source: "https://en.wikipedia.org/wiki/Yakitori"
+    }
+  },
+  {
+    id: "kaiseki",
+    name: "Kaiseki",
+    nativeName: "懐石料理",
+    region: "japan",
+    category: "main",
+    description:
+      "A traditional multi-course meal built around the season's best ingredients, served course by course. The centerpiece of a ryokan stay in Hakone, and available at Kyoto's finest restaurants too.",
+    tryIt: "Included with most Hakone ryokan stays · fine restaurants in Gion",
+    image: "./images/food-kaiseki.jpg",
+    imageCredit: {
+      author: "Wikimedia Commons",
+      license: "CC BY-SA",
+      source: "https://en.wikipedia.org/wiki/Kaiseki"
+    }
+  },
+  {
+    id: "yuba",
+    name: "Yuba (tofu skin)",
+    nativeName: "湯葉",
+    region: "north",
+    category: "starter",
+    description:
+      "The delicate skin that forms on simmering soy milk, skimmed off and served fresh or dried — Nikko's signature local specialty, sold near the Toshogu approach.",
+    tryIt: "Restaurants near Toshogu Shrine, Nikko",
+    image: "./images/food-yuba.jpg",
+    imageCredit: {
+      author: "Wikimedia Commons",
+      license: "CC BY-SA",
+      source: "https://en.wikipedia.org/wiki/Yuba_(food)"
+    }
+  },
+  {
+    id: "okonomiyaki",
+    name: "Okonomiyaki",
+    nativeName: "お好み焼き",
     region: "south",
     category: "main",
     description:
-      "A classic Maremma stew of lamb slow-braised with tomato, garlic, rosemary, vinegar and chilli, served over thick toasted bread that soaks up the sauce. Rich and rustic — order it once on the southern leg.",
-    tryIt: "I Due Cippi da Michele (Saturnia)",
-    image: "./images/food-buglione.jpg",
+      "A savory Osaka pancake of batter, cabbage and your choice of fillings, cooked on a griddle and finished with okonomiyaki sauce, mayo and bonito flakes that visibly 'dance' in the rising heat.",
+    tryIt: "Dotonbori (Osaka)",
+    image: "./images/food-okonomiyaki.jpg",
     imageCredit: {
       author: "Wikimedia Commons",
       license: "CC BY-SA",
-      source: "https://commons.wikimedia.org/"
+      source: "https://en.wikipedia.org/wiki/Okonomiyaki"
     }
   },
   {
-    id: "acquacotta-maremmana",
-    name: "Maremma vegetable soup",
-    italianName: "Acquacotta maremmana",
+    id: "takoyaki",
+    name: "Takoyaki",
+    nativeName: "たこ焼き",
     region: "south",
-    category: "starter",
-    description:
-      "Literally 'cooked water' — a poor-man's tomato & vegetable soup that the Maremma cowboys (butteri) ate in the saddle. Toasted bread at the bottom of the bowl, a poached egg cracked on top. Surprisingly elegant.",
-    tryIt: "Trattoria Verdi (Manciano)",
-    image: "./images/food-acquacotta.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Acquacotta"
-    }
-  },
-  {
-    id: "spaghetti-allo-scoglio",
-    name: "Spaghetti with seafood",
-    italianName: "Spaghetti allo scoglio",
-    region: "south",
-    category: "pasta",
-    description:
-      "Argentario's harbour-side classic: spaghetti tossed with whatever the morning catch brings — clams, mussels, small prawns, bits of squid — in a quick garlic, white-wine, parsley and chilli sauce. Eat it the day you do the boat.",
-    tryIt: "Dal Greco (Porto Santo Stefano)",
-    image: "./images/food-spaghetti-scoglio.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://commons.wikimedia.org/"
-    }
-  },
-
-  // ============== DESSERTS / SNACKS ==============
-  {
-    id: "sfratto-goym",
-    name: "Sfratto dei Goym",
-    italianName: "Sfratto dei Goym",
-    region: "south",
-    category: "dessert",
-    description:
-      "A long, log-shaped pastry from Pitigliano's Jewish quarter — a thin, brittle shell filled with honey, walnuts, orange zest and nutmeg. The name (from sfrattare, 'to evict') jokingly recalls the wooden bats used to summon the Jews to leave. Sweet, dense, unforgettable.",
-    tryIt: "Forno del Ghetto (Pitigliano)"
-    // No CC photo of this niche pastry; PoiImage shows a styled fallback.
-  },
-  {
-    id: "castagnaccio",
-    name: "Chestnut cake",
-    italianName: "Castagnaccio",
-    region: "north",
-    category: "dessert",
-    description:
-      "A dense, dark, gluten-free cake of chestnut flour, water, olive oil, pine nuts, raisins and rosemary — pure Garfagnana mountain food, perfect after a long day at altitude. Looks austere, tastes intriguingly nutty.",
-    tryIt: "Bakeries in Bagni di Lucca & the Garfagnana villages",
-    image: "./images/food-castagnaccio.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Castagnaccio"
-    }
-  },
-  {
-    id: "necci",
-    name: "Chestnut crêpes with ricotta",
-    italianName: "Necci con la ricotta",
-    region: "north",
-    category: "dessert",
-    description:
-      "Thin chestnut-flour pancakes traditionally cooked between hot stone discs, then folded around fresh sheep's-milk ricotta. A Garfagnana street snack that's been made for centuries. Sweet, smoky, impossible to share.",
-    tryIt: "Garfagnana sagre & farm stalls; cafés in Castelnuovo di Garfagnana",
-    image: "./images/food-necci.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Necci"
-    }
-  },
-  {
-    id: "cantucci-vinsanto",
-    name: "Cantucci & vin santo",
-    italianName: "Cantucci con vin santo",
-    region: "tuscany",
-    category: "dessert",
-    description:
-      "The end-of-meal Tuscan ritual: hard almond biscotti dipped into a small glass of sweet, amber-coloured 'holy wine'. Don't eat them dry — the dipping is the whole point.",
-    tryIt: "Any trattoria, ask for the 'fine pasto'",
-    image: "./images/food-cantucci.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Cantuccini"
-    }
-  },
-
-  // ============== EVERYDAY / STREET ==============
-  {
-    id: "schiacciata",
-    name: "Tuscan flatbread",
-    italianName: "Schiacciata",
-    region: "tuscany",
     category: "snack",
     description:
-      "Tuscany's answer to focaccia — crisp on the outside, fluffy inside, glossy with olive oil and big flakes of salt. The right picnic bread for the Lucca walls or the Abetone ridge. Buy it warm by the slice and eat it walking.",
-    tryIt: "Forno bakeries — every village has one",
-    image: "./images/food-schiacciata.jpg",
+      "Ball-shaped batter snacks with a piece of octopus inside, cooked in a special molded griddle and topped with sauce, mayo and bonito flakes. Osaka's street-food icon — eat carefully, the center stays molten hot.",
+    tryIt: "Dotonbori (Osaka)",
+    image: "./images/food-takoyaki.jpg",
     imageCredit: {
       author: "Wikimedia Commons",
       license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Schiacciata"
+      source: "https://en.wikipedia.org/wiki/Takoyaki"
     }
   },
   {
-    id: "lardo-colonnata",
-    name: "Lardo di Colonnata",
-    italianName: "Lardo di Colonnata IGP",
-    region: "north",
-    category: "starter",
+    id: "wagyu",
+    name: "Wagyu beef",
+    nativeName: "和牛",
+    region: "south",
+    category: "main",
     description:
-      "Cured pork back-fat from the marble quarries above Carrara, aged for months in marble basins with herbs. Served paper-thin on warm bread — it melts on the tongue. A tiny order goes a long way.",
-    tryIt: "Antipasto plate at Circolo dei Forestieri or Trattoria del Castello",
-    image: "./images/food-lardo.jpg",
+      "Intensely marbled Japanese beef — Kansai sits near some of the country's most famous wagyu regions (Kobe beef is graded and branded from right here in Hyogo). Try it as yakiniku (grilled tableside) or a quick teppanyaki lunch.",
+    tryIt: "Yakiniku restaurants in Osaka or Kyoto",
+    image: "./images/food-wagyu.jpg",
     imageCredit: {
       author: "Wikimedia Commons",
       license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Lardo_di_Colonnata"
+      source: "https://en.wikipedia.org/wiki/Wagyu"
+    }
+  },
+  {
+    id: "matcha-wagashi",
+    name: "Matcha & wagashi sweets",
+    nativeName: "抹茶と和菓子",
+    region: "south",
+    category: "dessert",
+    description:
+      "Kyoto is Japan's matcha capital — powdered green tea served whisked in a bowl, or worked into soft-serve, parfaits and traditional wagashi sweets shaped to match the season.",
+    tryIt: "Nishiki Market and the Higashiyama teahouses (Kyoto)",
+    image: "./images/food-matcha.jpg",
+    imageCredit: {
+      author: "Wikimedia Commons",
+      license: "CC BY-SA",
+      source: "https://en.wikipedia.org/wiki/Wagashi"
+    }
+  },
+  {
+    id: "onigiri",
+    name: "Onigiri",
+    nativeName: "おにぎり",
+    region: "japan",
+    category: "snack",
+    description:
+      "Hand-shaped rice balls, usually wrapped in nori with a filling (salted salmon, pickled plum, tuna mayo) tucked in the center. The single best konbini snack for a train platform or a jet-lagged first night.",
+    tryIt: "Any 7-Eleven, Lawson or FamilyMart",
+    image: "./images/food-onigiri.jpg",
+    imageCredit: {
+      author: "Wikimedia Commons",
+      license: "CC BY-SA",
+      source: "https://en.wikipedia.org/wiki/Onigiri"
+    }
+  },
+  {
+    id: "ekiben",
+    name: "Ekiben (station bento)",
+    nativeName: "駅弁",
+    region: "japan",
+    category: "snack",
+    description:
+      "Elaborate boxed meals sold specifically for train journeys, often region-specific — a Shinkansen ride isn't complete without picking one up on the platform before boarding.",
+    tryIt: "Any Shinkansen station platform kiosk",
+    image: "./images/food-ekiben.jpg",
+    imageCredit: {
+      author: "Wikimedia Commons",
+      license: "CC BY-SA",
+      source: "https://en.wikipedia.org/wiki/Ekiben"
     }
   }
 ];
-
-/** Convenience selectors used by the UI. */
-export const dishesByRegion = (r: "north" | "south" | "tuscany") =>
-  dishes.filter(d => d.region === r);

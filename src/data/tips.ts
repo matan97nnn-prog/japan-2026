@@ -2,66 +2,66 @@ import type { Tip } from "./types";
 
 export const tips: Tip[] = [
   {
-    id: "ztl",
-    title: "Beware of ZTL zones — €110 fine, six months later",
+    id: "ic-card",
+    title: "Get an IC card (Suica/Pasmo) on day one",
     body:
-      "In Pisa, Lucca, Pitigliano and most Tuscan old towns the historic centre is a Zona a Traffico Limitato (ZTL). The cameras are silent — you only learn you got a ticket when it shows up six months after the trip. Always park outside the walls and walk in. Lucca: Parking Carducci or Cittadella. Pisa: Pietrasantina (free shuttle to the Tower). Pitigliano: Piazzale Gen. Orsini.",
-    severity: "critical"
-  },
-  {
-    id: "saturnia-early",
-    title: "Saturnia hot springs — be there by 07:30",
-    body:
-      "The Cascate del Mulino are free and open 24/7. Show up at 10:00 in August and you'll meet the entire internet, no parking and serious heat on top of warm sulphur water. Show up at 07:30 and you'll have steam-rising-off-the-pools, near-empty terraces and easy parking — for about 30 minutes of pure magic.",
-    severity: "warning"
-  },
-  {
-    id: "car-return-night-before",
-    title: "Return the rental car the night before",
-    body:
-      "A 5 a.m. flight after a 3 a.m. car return is a recipe for panic — queues at the rental desk, damage inspection in the dark, the constant fear of missing the plane. Drop the car at FCO around 21:00 the night before, sleep close by, and roll up to check-in calmly at 03:30.",
-    severity: "warning"
-  },
-  {
-    id: "self-service-fuel",
-    title: "Self-service vs servito at gas stations",
-    body:
-      "At Italian gas stations look for 'fai da te' (self-service) — same fuel, lower price, accepts foreign cards. 'Servito' is staff-pumped and roughly 10–20 cents per litre more. After 19:30 most stations are unmanned anyway and only self-service works.",
+      "A single rechargeable card covers every train, subway and bus on this trip, plus konbini purchases and vending machines. Add one to Apple Wallet or Google Wallet before you land, or buy a physical card at the airport. Top up with cash at any station machine.",
     severity: "info"
   },
   {
-    id: "water-shoes",
-    title: "Closed-toe water shoes — non-negotiable",
+    id: "onsen-tattoos",
+    title: "Onsen & tattoos — check before you book",
     body:
-      "At Sentierelsa, Saturnia and the Serchio you'll be walking on slick algae-covered river stones. Sandals and flip-flops will hurt and slip. Bring proper closed-toe water shoes for everyone.",
-    severity: "info"
-  },
-  {
-    id: "ferragosto-closures",
-    title: "Ferragosto — many shops are still closed for ferie",
-    body:
-      "Italians take their summer holidays in August, especially the week around Ferragosto (15 Aug). Family-run trattorie, bakeries, butchers, even some petrol stations on smaller roads shut for one or two weeks with a hand-written 'Chiuso per ferie' sign on the door. Our trip starts 17 Aug — most places will be reopening, but check Google Maps the night before for current hours, especially in the smaller villages (Larciano, Pitigliano, Manciano).",
+      "Many traditional onsen and ryokan baths still refuse entry to visitors with visible tattoos, a legacy of tattoos' association with organized crime. Some are relaxing the rule or offer private baths as a workaround — ask directly when booking the Hakone ryokan if this applies to anyone in the group.",
     severity: "warning"
   },
   {
-    id: "august-crowds",
-    title: "Peak season — time-shift the famous spots",
+    id: "no-tipping",
+    title: "Tipping isn't done — and can cause confusion",
     body:
-      "August is the busiest month in Italy: locals on holiday plus everyone else. Pisa's Tower square, Saturnia, the Argentario beaches and Civita di Bagnoregio hit maximum density between 10:00 and 17:00. Trick: arrive just before opening or in the last 90 minutes of light. Saturnia by 07:30, Pisa at 08:00 or after 18:00, beaches before 10:00 or after 16:00 — crowds halve and the light turns honey-gold for the photos.",
+      "Japan has no tipping culture, in restaurants, taxis or ryokan. Excellent service is simply the standard; leaving cash on the table is likely to have staff chase after you to return it. Pay exactly what's on the bill.",
+    severity: "info"
+  },
+  {
+    id: "shoes-off",
+    title: "Shoes off indoors — watch for the genkan",
+    body:
+      "Ryokan, many restaurants, temples and any home all have a genkan (entryway) where shoes come off, often with slippers provided. Wear socks without holes and shoes that slip on and off easily — you'll be doing this often.",
+    severity: "info"
+  },
+  {
+    id: "quiet-trains",
+    title: "Trains are for quiet — phones on silent, calls in the vestibule only",
+    body:
+      "Phone calls on trains are considered rude; switch to 'manner mode' (silent) the moment you board. Talking is fine at a normal volume, but loud conversation and video calls draw stares. If a call is unavoidable, step into the area between cars.",
+    severity: "info"
+  },
+  {
+    id: "cash-still-needed",
+    title: "Carry cash — not everywhere takes card",
+    body:
+      "Cards and IC cards are widely accepted in cities now, but small izakaya, temple grounds, and rural spots (Nikko, Hakone side streets, market stalls) are still often cash-only. 7-Eleven ATMs reliably accept foreign cards for withdrawals.",
     severity: "warning"
   },
   {
-    id: "riposo",
-    title: "Riposo — shops and kitchens shut midday",
+    id: "escalator-side",
+    title: "Escalators: stand left in Tokyo, stand right in Osaka",
     body:
-      "Italians eat lunch at 13:00 sharp, then the country folds for a few hours. Smaller shops and family bakeries close 13:00–16:00 (some until 17:00). Restaurant kitchens close hard at 14:30 — turn up at 14:35 and the answer is 'la cucina è chiusa' even if other diners are still finishing. Dinner kitchens reopen at 19:30. Plan provisioning for 09:00–12:30 and meals for 12:30–14:00 or 19:30–22:00, and the day flows.",
+      "An odd but real regional quirk — Tokyo/Kanto etiquette is to stand on the left and walk on the right; Kansai (Kyoto, Osaka) flips it, stand right, walk left. Watch what locals are doing and match it.",
     severity: "info"
   },
   {
-    id: "tipping",
-    title: "Tipping isn't really a thing — coperto already covers it",
+    id: "no-public-bins",
+    title: "Public trash cans are rare — carry it until a konbini",
     body:
-      "Italian restaurants are not the US or Israel. Most charge a 'coperto' (€2–4 per person bread / cover) printed on the menu, and the bill often says 'servizio incluso'. You don't need to leave 15–20%. Round up to the next euro for a casual lunch; leave €5–10 in cash on the folder for a great dinner you really loved. Tip in cash, after the bill is paid — most card terminals don't even ask, and the staff would rather have the cash anyway.",
+      "Japan is spotless despite very few public trash bins, a legacy of a 1995 subway attack that led to their removal. Carry wrappers and empty bottles until you pass a convenience store, which almost always has a bin by the entrance.",
     severity: "info"
+  },
+  {
+    id: "reserve-shinkansen-seats",
+    title: "Reserve Shinkansen seats ahead in foliage season",
+    body:
+      "Early-to-mid November is peak koyo (autumn leaf) season and a busy domestic travel period. Reserve seats for the Odawara–Kyoto, Kyoto–Osaka and Osaka–Tokyo legs a few days ahead rather than relying on unreserved cars, which can fill standing-room-only.",
+    severity: "warning"
   }
 ];

@@ -1,8 +1,8 @@
 import { itinerary } from "../data/itinerary";
 import type { Day } from "../data/types";
 
-export const TRIP_START = new Date("2026-08-17T00:00:00+02:00");
-export const TRIP_END = new Date("2026-08-26T23:59:59+02:00");
+export const TRIP_START = new Date("2026-11-01T00:00:00+09:00");
+export const TRIP_END = new Date("2026-11-17T23:59:59+09:00");
 
 export interface CountdownParts {
   totalMs: number;

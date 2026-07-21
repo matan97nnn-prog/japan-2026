@@ -1,7 +1,7 @@
 import { useEffect, useImperativeHandle, useMemo, useRef, useState, forwardRef } from "react";
 import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from "react-leaflet";
 import L from "leaflet";
-import { Home, Star, Utensils, ShoppingCart, Fuel, Plane, ExternalLink, Maximize2, Route, Sparkles, Grape, Locate } from "lucide-react";
+import { Home, Star, Utensils, ShoppingCart, Fuel, Plane, ExternalLink, Maximize2, Route, Sparkles, Wine, Locate } from "lucide-react";
 import { attractions } from "../data/attractions";
 import { stays } from "../data/stays";
 import { services } from "../data/services";
@@ -23,7 +23,7 @@ interface CategoryConfig {
   Icon: typeof Home;
 }
 
-/* "Tuscan terra & sea" palette — earth tones throughout with one
+/* "Japan indigo & vermillion" palette — earth tones throughout with one
    calmed dusk-blue accent for the airport. Designed to sit on top of
    the Stamen Watercolor base without clashing. */
 const CATEGORY_CONFIG: Record<Category, CategoryConfig> = {
@@ -34,7 +34,7 @@ const CATEGORY_CONFIG: Record<Category, CategoryConfig> = {
   gas:         { id: "gas",         labelKey: "cat_gas",         color: "#8B6F4A", bg: "#8B6F4A", Icon: Fuel },         // caramel sienna
   airport:     { id: "airport",     labelKey: "cat_airport",     color: "#3D4F65", bg: "#3D4F65", Icon: Plane },        // twilight indigo
   hospital:    { id: "hospital",    labelKey: "cat_hospital",    color: "#8C2E25", bg: "#8C2E25", Icon: Plane },        // deep oxblood
-  winery:      { id: "winery",      labelKey: "cat_winery",      color: "#7A2E3F", bg: "#7A2E3F", Icon: Grape }         // deep burgundy
+  winery:      { id: "winery",      labelKey: "cat_winery",      color: "#7A2E3F", bg: "#7A2E3F", Icon: Wine }          // deep burgundy
 };
 
 function makeIcon(cat: Category, isHero = false): L.DivIcon {
@@ -58,11 +58,11 @@ function makeIcon(cat: Category, isHero = false): L.DivIcon {
           ${categoryGlyph(cat)}
         </div>
       </div>
-      ${isHero ? `<div style="position:absolute;top:-6px;right:-6px;width:14px;height:14px;border-radius:50%;background:#FBF7EC;border:2px solid #C45A3D;box-shadow:0 2px 4px rgba(0,0,0,0.2);"></div>` : ""}
+      ${isHero ? `<div style="position:absolute;top:-6px;right:-6px;width:14px;height:14px;border-radius:50%;background:#FBF7EC;border:2px solid #C64B3C;box-shadow:0 2px 4px rgba(0,0,0,0.2);"></div>` : ""}
     </div>`;
   return L.divIcon({
     html,
-    className: "tuscany-marker",
+    className: "trip-marker",
     iconSize: [size, size],
     iconAnchor: [size / 2, size - 2],
     popupAnchor: [0, -size + 4]
@@ -78,17 +78,17 @@ function shade(hex: string, percent: number): string {
   return "#" + (0x1000000 + (R << 16) + (G << 8) + B).toString(16).slice(1);
 }
 
-/* Generous bounding box for "is the device currently in Italy?".
-   Includes the islands (Sicily, Sardinia) and a safety margin so we
-   don't accidentally reject a user near the border. */
-const ITALY_BBOX = { south: 35.4, north: 47.5, west: 6.4, east: 19.0 };
+/* Generous bounding box for "is the device currently in Japan?".
+   Includes the full archipelago (Hokkaido to Okinawa) and a safety
+   margin so we don't accidentally reject a user near the border. */
+const JAPAN_BBOX = { south: 24.0, north: 46.0, west: 123.0, east: 146.0 };
 
-function isInItaly(lat: number, lon: number): boolean {
+function isInJapan(lat: number, lon: number): boolean {
   return (
-    lat >= ITALY_BBOX.south &&
-    lat <= ITALY_BBOX.north &&
-    lon >= ITALY_BBOX.west &&
-    lon <= ITALY_BBOX.east
+    lat >= JAPAN_BBOX.south &&
+    lat <= JAPAN_BBOX.north &&
+    lon >= JAPAN_BBOX.west &&
+    lon <= JAPAN_BBOX.east
   );
 }
 
@@ -117,7 +117,7 @@ function makeUserLocationIcon(): L.DivIcon {
     </div>`;
   return L.divIcon({
     html,
-    className: "tuscany-user-marker",
+    className: "trip-user-marker",
     iconSize: [18, 18],
     iconAnchor: [9, 9],
     popupAnchor: [0, -10]
@@ -138,19 +138,19 @@ function categoryGlyph(cat: Category): string {
 }
 
 const AIRPORT_POI: POI = {
-  id: "fco",
-  name: "Rome Fiumicino — FCO",
+  id: "hnd",
+  name: "Tokyo Haneda — HND",
   category: "airport",
   region: "transit",
-  description: "Leonardo da Vinci International Airport. Arrival 17 Aug, departure 26 Aug 05:00.",
+  description: "Haneda Airport, closest to central Tokyo. Arrival 1 Nov (evening), departure 17 Nov.",
   shortDescription: "Arrival & departure airport.",
-  coords: [41.8003, 12.2389]
+  coords: [35.5494, 139.7798]
 };
 
 const AIRPORT_POI_HE: POI = {
   ...AIRPORT_POI,
-  name: "רומא פיומיצ'ינו — FCO",
-  description: "נמל התעופה הבינלאומי על שם ליאונרדו דה וינצ'י. נחיתה ב־17.8, המראה ב־26.8 בשעה 05:00.",
+  name: "טוקיו הנדה — HND",
+  description: "שדה התעופה הנדה, הקרוב ביותר למרכז טוקיו. נחיתה ב־1.11 (ערב), המראה ב־17.11.",
   shortDescription: "שדה התעופה — נחיתה והמראה."
 };
 
@@ -171,9 +171,8 @@ const ROUTE_SEGMENTS: RouteSegment[] = [
     color: "#A23E2A", // brick — matches Stays
     coords: [
       AIRPORT_POI.coords,
-      [42.30, 12.10],
-      [43.20, 11.40],
-      [43.8267, 10.8978]
+      [35.6938, 139.7034], // Tokyo (Shinjuku)
+      [35.2323, 139.0508] // Hakone
     ]
   },
   {
@@ -182,9 +181,9 @@ const ROUTE_SEGMENTS: RouteSegment[] = [
     dayKey: "map_seg_transfer_short",
     color: "#C68A2A", // bronze — matches Attractions
     coords: [
-      [43.8267, 10.8978],
-      [43.4720, 11.1700],
-      [42.6919, 11.5378]
+      [35.2323, 139.0508], // Hakone
+      [34.9858, 135.7588], // Kyoto
+      [34.6627, 135.5006] // Osaka
     ]
   },
   {
@@ -193,9 +192,8 @@ const ROUTE_SEGMENTS: RouteSegment[] = [
     dayKey: "map_seg_departure_short",
     color: "#5C7244", // cypress — matches Restaurants
     coords: [
-      [42.6919, 11.5378],
-      [42.6275, 11.7989],
-      [42.4234, 12.1053],
+      [34.6627, 135.5006], // Osaka
+      [35.6938, 139.7034], // Tokyo (Shinjuku)
       AIRPORT_POI.coords
     ]
   }
@@ -299,10 +297,10 @@ export default function MapView({ registerFocus }: Props) {
   const [showSpokes, setShowSpokes] = useState(true);
 
   // Geolocation: live "you are here" dot. We use watchPosition so the
-  // marker stays current as we drive around during the trip; centering
+  // marker stays current as we move around during the trip; centering
   // the map on it only happens the first time we detect we're inside
-  // Italy (so the pre-trip view from Israel doesn't snap the map away
-  // from Tuscany).
+  // Japan (so the pre-trip view from Israel doesn't snap the map away
+  // from the itinerary).
   const [userLocation, setUserLocation] = useState<[number, number] | null>(
     null
   );
@@ -320,7 +318,7 @@ export default function MapView({ registerFocus }: Props) {
         ];
         setUserLocation(coords);
         setGeolocBlocked(false);
-        if (!hasAutoCentered.current && isInItaly(coords[0], coords[1])) {
+        if (!hasAutoCentered.current && isInJapan(coords[0], coords[1])) {
           hasAutoCentered.current = true;
           // Small delay so the map has finished its initial render and
           // isn't fighting our flyTo with its own center transition.
@@ -349,10 +347,10 @@ export default function MapView({ registerFocus }: Props) {
         ];
         setUserLocation(coords);
         setGeolocBlocked(false);
-        // Manual button still respects the "only auto-centre in Italy"
+        // Manual button still respects the "only auto-centre in Japan"
         // rule — clicking it from Tel Aviv would otherwise zoom out of
         // the trip area, which isn't useful pre-trip.
-        if (isInItaly(coords[0], coords[1])) {
+        if (isInJapan(coords[0], coords[1])) {
           flyRef.current?.flyToCoords(coords, 13);
         }
       },
@@ -505,13 +503,13 @@ export default function MapView({ registerFocus }: Props) {
 
       <div className="relative card-paper overflow-hidden -mx-4 sm:mx-0 rounded-none sm:rounded-2xl">
         <MapContainer
-          center={[42.95, 11.6]}
-          zoom={8}
+          center={[35.2, 137.6]}
+          zoom={7}
           scrollWheelZoom={true}
           className="h-[70svh] sm:h-[600px] w-full"
         >
           {/* CartoDB Voyager — warm, editorial off-cream tiles that pair
-              nicely with the Tuscan palette. Free for low-traffic personal
+              nicely with the trip's palette. Free for low-traffic personal
               use, no API key required (Stadia's Stamen Watercolor blocks
               non-localhost without an account, which is why we moved off it). */}
           <TileLayer

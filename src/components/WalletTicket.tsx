@@ -27,7 +27,7 @@ import { useT } from "../lib/dict";
 import PoiImage from "./PoiImage";
 
 /** All orders are under the trip owner's name — printed on each pass. */
-const CARDHOLDER = "Itay Kaplan";
+const CARDHOLDER = "Stein Family";
 
 /** A distinct colour identity per ticket (semi-transparent over the photo). */
 const THEMES: Record<string, string> = {

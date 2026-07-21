@@ -40,7 +40,7 @@ export function navigateHome(opts?: { scrollToTrip?: boolean }) {
   }
 }
 
-const REMEMBERED_KEY = "tuscany:lastChapter";
+const REMEMBERED_KEY = "japan:lastChapter";
 
 export function rememberChapter(day: number) {
   try {

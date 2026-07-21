@@ -1,179 +1,118 @@
 import type { Winery } from "./types";
 
-/** A short, opinionated list of wineries to visit on each leg.
- *  We deliberately keep it small — five north, five south — and pick
- *  estates that take walk-ins or quick email bookings, not formal
- *  cellar tours. Most are within 25 minutes of our base for the day. */
+/** Sake breweries, a beer brewery and a whisky distillery worth seeking
+ *  out on each leg — repurposing the "winery" slot for Japan's drinking
+ *  culture. Most take walk-in visitors or a same-week reservation. */
 export const wineries: Winery[] = [
-  // ============== NORTH — around Larciano ==============
-  // Carmignano DOCG is the local denomination here, ~15–25 min away.
+  // ============== NORTH — Tokyo ==============
   {
-    id: "win-n-capezzana",
-    name: "Tenuta di Capezzana",
+    id: "sake-ozawa-shuzo",
+    name: "Ozawa Shuzo (Sawanoi)",
     region: "north",
-    appellation: "Carmignano DOCG",
+    appellation: "Junmai / Honjozo sake",
     description:
-      "The flagship estate of the tiny Carmignano DOCG — historic Medici-era cellars, organic since 2009, makes Tuscany's most age-worthy Sangiovese-Cabernet blends. Tastings & guided tours in English by appointment; family-friendly and they do a beautiful Vin Santo.",
-    website: "https://www.capezzana.it/en/",
-    address: "Via di Capezzana 100, Carmignano (PO)",
-    coords: [43.8233, 11.0242],
-    bookingNote: "Email or book online a few days ahead — small group tastings.",
-    image: "./images/wine-capezzana.jpg",
+      "A working sake brewery in Ome, on Tokyo's western edge, using water from the Tama River — brewing here since 1702. Self-guided tastings and a riverside restaurant make it an easy half-day trip if the group wants one more day out of the city (not currently on the itinerary, but easy to slot in).",
+    website: "https://www.sawanoi-sake.com/",
+    address: "2 Sawai, Ome, Tokyo",
+    coords: [35.7909, 139.1892],
+    bookingNote: "Self-guided tastings; groups should call ahead.",
+    image: "./images/sake-ozawa.jpg",
     imageCredit: {
       author: "Wikimedia Commons",
       license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Carmignano_(wine)"
+      source: "https://en.wikipedia.org/wiki/Ōme,_Tokyo"
     }
   },
   {
-    id: "win-n-bacchereto",
-    name: "Fattoria di Bacchereto",
+    id: "beer-suntory-musashino",
+    name: "Suntory Musashino Brewery",
     region: "north",
-    appellation: "Carmignano DOCG",
+    appellation: "Premium Malt's lager",
     description:
-      "Tiny biodynamic family winery in Bacchereto, just up the road from Capezzana. Artisanal everything — wild yeasts, no filtration, very small production. A more intimate visit than Capezzana, with the family pouring.",
-    website: "https://www.fattoriadibacchereto.it/",
-    address: "Via Fontemorana 179, Carmignano (PO)",
-    coords: [43.8275, 11.0167],
-    bookingNote: "Call ahead — sometimes closed for harvest in late August.",
-    image: "./images/wine-bacchereto.jpg",
+      "Suntory's beer brewery in Fuchu, on Tokyo's western outskirts — a free, well-regarded factory tour ending in a tasting of their Premium Malt's lineup. Book online ahead; tours run in Japanese with an English pamphlet.",
+    website: "https://www.suntory.co.jp/factory/musashino/",
+    address: "3-1-1 Yaho, Fuchu, Tokyo",
+    coords: [35.6699, 139.4779],
+    bookingNote: "Free — reserve a tour slot online in advance.",
+    image: "./images/beer-musashino.jpg",
     imageCredit: {
       author: "Wikimedia Commons",
       license: "CC BY-SA",
-      source: "https://commons.wikimedia.org/"
-    }
-  },
-  {
-    id: "win-n-artimino",
-    name: "Tenuta di Artimino",
-    region: "north",
-    appellation: "Carmignano DOCG · Chianti Montalbano",
-    description:
-      "A vast historic estate around the Medici 'Villa La Ferdinanda' — one of the UNESCO Medici villas. You can combine a tasting with a visit to the villa and the archaeological museum. Big-estate energy, but a beautiful setting and easy to fit a family into.",
-    website: "https://www.artimino.com/en/",
-    address: "Via le Poggia 10, Artimino, Carmignano (PO)",
-    coords: [43.7978, 11.0489],
-    bookingNote: "Online booking; tasting rooms open most afternoons.",
-    image: "./images/wine-artimino.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Villa_di_Artimino"
-    }
-  },
-  {
-    id: "win-n-fattoria-petrognano",
-    name: "Fattoria Petrognano",
-    region: "north",
-    appellation: "Chianti Montalbano",
-    description:
-      "A small Chianti Montalbano estate above Pomino — fresh, easy-drinking Sangiovese and a celebrated extra-virgin olive oil. Lovely terrace looking over the Pistoian valley; perfect quick stop on the way back from Vinci.",
-    website: "https://www.fattoriapetrognano.it/",
-    address: "Via di Petrognano 3, Pomino (FI)",
-    coords: [43.8911, 11.4231],
-    bookingNote: "Walk-ins for tastings most afternoons; call ahead in August.",
-    image: "./images/wine-petrognano.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Chianti"
+      source: "https://en.wikipedia.org/wiki/Suntory"
     }
   },
 
-  // ============== SOUTH — around Cortevecchia ==============
-  // Morellino di Scansano DOCG is the headline red; Bianco di Pitigliano
-  // for whites; both are within 30 min of the villa.
+  // ============== SOUTH — Kyoto / Kobe ==============
   {
-    id: "win-s-le-pupille",
-    name: "Fattoria Le Pupille",
+    id: "sake-gekkeikan",
+    name: "Gekkeikan Okura Sake Museum",
     region: "south",
-    appellation: "Morellino di Scansano DOCG",
+    appellation: "Fushimi sake",
     description:
-      "Elisabetta Geppetti's legendary estate — the producer who turned Morellino di Scansano from a local curiosity into a DOCG taken seriously worldwide. Their flagship 'Saffredi' is a Tuscan Super-cult; the everyday Morellino is brilliant value. English tastings on the terrace.",
-    website: "https://www.elisabettageppetti.com/en/",
-    address: "Loc. Pereta, Magliano in Toscana (GR)",
-    coords: [42.5742, 11.3522],
-    bookingNote: "Book by email a week ahead — Elisabetta's team does a great visit.",
-    image: "./images/wine-le-pupille.jpg",
+      "One of Japan's oldest and biggest sake brands, founded in Fushimi in 1637. The museum walks through traditional brewing in the historic building, ending with a tasting — Fushimi's soft mineral water is the whole reason this became a brewing district in the first place.",
+    website: "https://www.gekkeikan.co.jp/english/",
+    address: "247 Minamihamacho, Fushimi Ward, Kyoto",
+    coords: [34.9264, 135.7605],
+    bookingNote: "Walk-ins welcome; small entry fee includes tastings.",
+    image: "./images/sake-gekkeikan.jpg",
     imageCredit: {
       author: "Wikimedia Commons",
       license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Morellino_di_Scansano"
+      source: "https://en.wikipedia.org/wiki/Gekkeikan"
     }
   },
   {
-    id: "win-s-roccapesta",
-    name: "Roccapesta",
+    id: "sake-kizakura",
+    name: "Kizakura Kappa Country",
     region: "south",
-    appellation: "Morellino di Scansano DOCG",
+    appellation: "Fushimi sake",
     description:
-      "A hands-on Scansano producer with a friendly tasting room right on the SR322. Family-run, organic, and very welcoming to drop-ins — a great low-stakes introduction to Morellino if you don't have time to make Le Pupille happen.",
-    website: "https://www.roccapesta.com/en/",
-    address: "Loc. Banditaccia, Scansano (GR)",
-    coords: [42.6864, 11.3389],
-    bookingNote: "Walk-ins welcome; call ahead in peak August.",
-    image: "./images/wine-roccapesta.jpg",
+      "A short walk from Gekkeikan — a working brewery with an on-site restaurant and a quirky kappa (water-spirit folklore) museum, plus a beer hall for anyone who wants a break from sake.",
+    website: "https://www.kizakura.co.jp/",
+    address: "228 Shioyacho, Fushimi Ward, Kyoto",
+    coords: [34.9280, 135.7615],
+    bookingNote: "Walk-ins welcome.",
+    image: "./images/sake-kizakura.jpg",
     imageCredit: {
       author: "Wikimedia Commons",
       license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Scansano"
+      source: "https://en.wikipedia.org/wiki/Fushimi-ku,_Kyoto"
     }
   },
   {
-    id: "win-s-tenuta-ammiraglia",
-    name: "Tenuta Ammiraglia (Frescobaldi)",
+    id: "whisky-yamazaki",
+    name: "Suntory Yamazaki Distillery",
     region: "south",
-    appellation: "Maremma Toscana DOC · Morellino di Scansano DOCG",
+    appellation: "Single malt whisky",
     description:
-      "Frescobaldi's striking modernist Maremma estate near Magliano — a ship-shaped winery half-buried in the hillside. Polished, multi-language tours, beautiful vineyard views and a serious tasting room. The opposite of the small-family vibe — go for the architecture and the polish.",
-    website: "https://www.frescobaldi.com/wineries/tenuta-ammiraglia/",
-    address: "Loc. Pian dei Bichi, Magliano in Toscana (GR)",
-    coords: [42.5878, 11.2942],
-    bookingNote: "Online bookings, English-speaking staff, easy with kids.",
-    image: "./images/wine-tenuta-ammiraglia.jpg",
+      "Japan's oldest whisky distillery, founded in 1923 in a valley prized for its water, roughly midway between Kyoto and Osaka. Tours and tastings book out weeks ahead in peak season — reserve online as early as possible if this is a priority.",
+    website: "https://www.suntory.com/factory/yamazaki/",
+    address: "5-2-1 Yamazaki, Shimamoto, Osaka",
+    coords: [34.8899, 135.6742],
+    bookingNote: "Reserve online well in advance — tours sell out.",
+    image: "./images/whisky-yamazaki.jpg",
     imageCredit: {
       author: "Wikimedia Commons",
       license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Magliano_in_Toscana"
+      source: "https://en.wikipedia.org/wiki/Yamazaki_distillery"
     }
   },
   {
-    id: "win-s-cantine-pitigliano",
-    name: "Cantina Cooperativa di Pitigliano",
+    id: "sake-hakutsuru",
+    name: "Hakutsuru Sake Brewery Museum",
     region: "south",
-    appellation: "Bianco di Pitigliano DOC · Sovana DOC",
+    appellation: "Nada sake",
     description:
-      "The local growers' cooperative just below Pitigliano old town — the easiest place to taste the area's signature crisp white (Bianco di Pitigliano) and the lesser-known Sovana red. Honest pricing, no pretension; an easy, walkable add-on to the day in Pitigliano.",
-    website: "https://www.cantinadipitigliano.it/",
-    address: "Via N. Ciacci 974, Pitigliano (GR)",
-    coords: [42.6303, 11.6736],
-    bookingNote: "Drop in during shop hours — no booking needed.",
-    image: "./images/wine-cantine-pitigliano.jpg",
+      "In Kobe's Nada district — Japan's single biggest sake-producing area, thanks to its ideal water and rice-growing conditions. A free museum in a preserved Edo-era brewery building, with a tasting at the end. An easy add-on if the Himeji day trip has spare time on the way through.",
+    website: "https://www.hakutsuru.co.jp/csr/shiryokan/",
+    address: "4-5-5 Sumiyoshiminamimachi, Higashinada Ward, Kobe",
+    coords: [34.7025, 135.2725],
+    bookingNote: "Free entry, walk-ins welcome.",
+    image: "./images/sake-hakutsuru.jpg",
     imageCredit: {
       author: "Wikimedia Commons",
       license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Bianco_di_Pitigliano"
-    }
-  },
-  {
-    id: "win-s-sassotondo",
-    name: "Sassotondo",
-    region: "south",
-    appellation: "Sovana DOC · Maremma Toscana DOC",
-    description:
-      "A small, beloved organic estate above Sovana — the family champions the local Ciliegiolo grape and makes a wonderful sparkling 'Pomonio'. Tasting on a stone terrace looking over the Etruscan country. Perfect pre-dinner stop before the Taverna Etrusca in Sovana.",
-    website: "https://www.sassotondo.it/en/",
-    address: "Loc. Pian di Conati 52, Sovana, Sorano (GR)",
-    coords: [42.6661, 11.6256],
-    bookingNote: "Email ahead — Edoardo & Carla pour personally.",
-    image: "./images/wine-sassotondo.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Sovana"
+      source: "https://en.wikipedia.org/wiki/Nada,_Kobe"
     }
   }
 ];
-
-export const wineriesByRegion = (r: "north" | "south") =>
-  wineries.filter(w => w.region === r);

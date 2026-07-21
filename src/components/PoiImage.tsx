@@ -12,9 +12,9 @@ interface Props {
 }
 
 const palette: Record<Region, [string, string]> = {
-  north: ["#6B7A4B", "#8A9A6B"],
-  south: ["#C45A3D", "#D87154"],
-  transit: ["#8B4513", "#B8862C"]
+  north: ["#3E5F82", "#5D7FA3"],
+  south: ["#C64B3C", "#E0685A"],
+  transit: ["#B8923F", "#D4A94A"]
 };
 
 function pickIcon(category?: Category, tags?: AttractionTag[]) {

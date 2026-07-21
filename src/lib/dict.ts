@@ -10,55 +10,55 @@ import type { Lang } from "./lang";
  */
 export const DICT = {
   /* ---------- Brand / hero ---------- */
-  brand: { en: "Tuscany 2026", he: "טוסקנה 2026" },
-  brand_short: { en: "Tuscany", he: "טוסקנה" },
+  brand: { en: "Japan 2026", he: "יפן 2026" },
+  brand_short: { en: "Japan", he: "יפן" },
   brand_year: { en: "'26", he: "'26" },
   family_edition: {
     en: "Family edition · Issue 01",
     he: "מהדורת המשפחה · גליון 01"
   },
   families_byline: {
-    en: "The Horowitz × Racz × Kaplan families · August 2026",
-    he: "משפחות הורוביץ × רץ × קפלן · אוגוסט 2026"
+    en: "Eti, Ronen, Matan & Amit Stein · November 2026",
+    he: "עתי, רונן, מתן ועמית שטיין · נובמבר 2026"
   },
   hero_before_lead: {
-    en: "Counting down to summer in the Tuscan hills",
-    he: "סופרים לאחור לקיץ בגבעות טוסקנה"
+    en: "Counting down to autumn in Japan",
+    he: "סופרים לאחור לסתיו ביפן"
   },
-  hero_today_lead: { en: "Today in Tuscany", he: "היום בטוסקנה" },
-  hero_tomorrow_lead: { en: "Tomorrow in Tuscany", he: "מחר בטוסקנה" },
-  hero_after_lead: { en: "That summer in Tuscany", he: "אותו קיץ בטוסקנה" },
-  hero_after_title: { en: "Buon ritorno", he: "ברוכים השבים" },
+  hero_today_lead: { en: "Today in Japan", he: "היום ביפן" },
+  hero_tomorrow_lead: { en: "Tomorrow in Japan", he: "מחר ביפן" },
+  hero_after_lead: { en: "That autumn in Japan", he: "אותו סתיו ביפן" },
+  hero_after_title: { en: "Okaeri — welcome back", he: "ברוכים השבים" },
   hero_after_sub: {
-    en: "17 — 26 August 2026 · the family edition",
-    he: "17 — 26 באוגוסט 2026 · מהדורת המשפחה"
+    en: "1 — 17 November 2026 · the family edition",
+    he: "1—17 בנובמבר 2026 · מהדורת המשפחה"
   },
   hero_close_almost: {
-    en: "Buon viaggio — almost there",
-    he: "בון ויאג'ו — כמעט שם"
+    en: "Itterasshai — almost there",
+    he: "יוצאים לדרך — כמעט שם"
   },
   hero_one_week: {
-    en: "One week to go · time to pack the dry bag",
-    he: "שבוע נותר · הגיע הזמן לארוז את התיק האטום"
+    en: "One week to go · time to sort the pocket wifi",
+    he: "שבוע נותר · הגיע הזמן לסדר אינטרנט נייד"
   },
   hero_one_month: {
-    en: "Less than a month · confirm the chef and the boat",
-    he: "פחות מחודש · לאשר את השף ואת הסירה"
+    en: "Less than a month · confirm the ryokan and the tickets",
+    he: "פחות מחודש · לאשר את הריוקאן ואת הכרטיסים"
   },
   hero_far: {
-    en: "An Italian summer, on the horizon",
-    he: "קיץ איטלקי, באופק"
+    en: "A Japanese autumn, on the horizon",
+    he: "סתיו יפני, באופק"
   },
   hero_today_day: { en: "Day", he: "יום" },
   hero_tomorrow_day: { en: "Tomorrow", he: "מחר" },
-  hero_of_ten: { en: "of ten", he: "מתוך עשרה" },
+  hero_of_ten: { en: "of seventeen", he: "מתוך שבעה עשר" },
   scroll_to_plan: { en: "the plan", he: "התוכנית" },
   hero_photo_day: { en: "Day {n}", he: "יום {n}" },
 
   /* ---------- Navbar ---------- */
   nav_plan: { en: "Plan", he: "תוכנית" },
   nav_map: { en: "Map", he: "מפה" },
-  // The two stays — Larciano & Cortevecchia — are the trip's two
+  // The trip's stays (Tokyo, Hakone, Kyoto, Osaka) are the trip's
   // "neighborhoods", which is what we surface in the nav.
   nav_stays: { en: "Stays", he: "לינות" },
   nav_attractions: { en: "Places", he: "מקומות" },
@@ -78,8 +78,8 @@ export const DICT = {
   /* ---------- Itinerary section ---------- */
   plan_eyebrow: { en: "The plan · day by day", he: "התוכנית · יום אחר יום" },
   plan_kicker: {
-    en: "Swipe through ten chapters · click Read more for the full chapter",
-    he: "החליקו בין עשרה פרקים · לחצו על 'קרא עוד' לפרק המלא"
+    en: "Swipe through seventeen chapters · click Read more for the full chapter",
+    he: "החליקו בין שבעה עשר פרקים · לחצו על 'קרא עוד' לפרק המלא"
   },
   plan_chapter_x_of_y: {
     en: "Chapter {x} / {y}",
@@ -124,8 +124,8 @@ export const DICT = {
   today: { en: "Today", he: "היום" },
 
   /* ---------- Region / chapter labels ---------- */
-  region_north_long: { en: "North Tuscany", he: "צפון טוסקנה" },
-  region_south_long: { en: "South Tuscany", he: "דרום טוסקנה" },
+  region_north_long: { en: "Kanto (Tokyo)", he: "קאנטו (טוקיו)" },
+  region_south_long: { en: "Kansai (Kyoto/Osaka)", he: "קנסיי (קיוטו/אוסקה)" },
   region_transit_long: { en: "Transit", he: "מעבר" },
   region_north_short: { en: "North", he: "צפון" },
   region_south_short: { en: "South", he: "דרום" },
@@ -153,30 +153,30 @@ export const DICT = {
     he: "הקישו על סיכה · עקבו אחר המסלול · סננו את השאר"
   },
   map_intro: {
-    en: "Every stay, attraction, restaurant, supermarket and gas station — color-coded by category. The dashed line is our actual journey: Rome to Larciano, Larciano to Cortevecchia, Cortevecchia back to Rome.",
-    he: "כל מקום לינה, אטרקציה, מסעדה, סופרמרקט ותחנת דלק — בקוד צבעים לפי קטגוריה. הקו המקווקו הוא המסלול שלנו: מרומא ללרצ'יאנו, מלרצ'יאנו לקורטווקיה, ובחזרה לרומא."
+    en: "Every stay, attraction, restaurant, convenience store and station — color-coded by category. The dashed line is our actual journey: Tokyo to Hakone, Hakone to Kyoto and Osaka, back to Tokyo.",
+    he: "כל מקום לינה, אטרקציה, מסעדה, מינימרקט ותחנה — בקוד צבעים לפי קטגוריה. הקו המקווקו הוא המסלול שלנו: מטוקיו להקונה, מהקונה לקיוטו ואוסקה, ובחזרה לטוקיו."
   },
   map_route_on: { en: "Route on", he: "מסלול מוצג" },
   map_route_off: { en: "Route off", he: "מסלול מוסתר" },
   map_spokes_on: { en: "Day trips on", he: "טיולי יום מוצגים" },
   map_spokes_off: { en: "Day trips off", he: "טיולי יום מוסתרים" },
   map_seg_arrival: {
-    en: "Day 1 · Land in Rome, drive north",
-    he: "יום 1 · נחיתה ברומא, נסיעה צפונה"
+    en: "Day 1–7 · Tokyo to Hakone",
+    he: "ימים 1–7 · מטוקיו להקונה"
   },
-  map_seg_arrival_short: { en: "Mon · 17 Aug", he: "ב' · 17 באוגוסט" },
+  map_seg_arrival_short: { en: "Sun · 1 Nov", he: "א' · 1 בנובמבר" },
   map_seg_transfer: {
-    en: "Day 5 · Transfer to the south, via Sentierelsa",
-    he: "יום 5 · מעבר לדרום, דרך סנטיירלסה"
+    en: "Day 9 · Hakone to Kyoto and Osaka",
+    he: "יום 9 · מהקונה לקיוטו ואוסקה"
   },
-  map_seg_transfer_short: { en: "Fri · 21 Aug", he: "ו' · 21 באוגוסט" },
+  map_seg_transfer_short: { en: "Mon · 9 Nov", he: "ב' · 9 בנובמבר" },
   map_seg_departure: {
-    en: "Day 9–10 · Final loop to Fiumicino",
-    he: "ימים 9–10 · הלולאה האחרונה לפיומיצ'ינו"
+    en: "Day 16–17 · Back to Tokyo and home",
+    he: "ימים 16–17 · חזרה לטוקיו והביתה"
   },
   map_seg_departure_short: {
-    en: "Tue/Wed · 25–26 Aug",
-    he: "ג'/ד' · 25–26 באוגוסט"
+    en: "Mon/Tue · 16–17 Nov",
+    he: "ב'/ג' · 16–17 בנובמבר"
   },
   map_zoom_fit: { en: "Zoom to fit all locations", he: "התאם תצוגה לכל המיקומים" },
   map_locate_me: { en: "Show my location", he: "הצג את המיקום שלי" },
@@ -186,11 +186,11 @@ export const DICT = {
   cat_stay: { en: "Stays", he: "לינה" },
   cat_attraction: { en: "Attractions", he: "אטרקציות" },
   cat_restaurant: { en: "Restaurants", he: "מסעדות" },
-  cat_supermarket: { en: "Supermarkets", he: "סופרמרקטים" },
+  cat_supermarket: { en: "Konbini", he: "מינימרקטים" },
   cat_gas: { en: "Gas", he: "דלק" },
   cat_airport: { en: "Airport", he: "שדה תעופה" },
   cat_hospital: { en: "Hospital", he: "בית חולים" },
-  cat_winery: { en: "Wineries", he: "יקבים" },
+  cat_winery: { en: "Sake & Spirits", he: "סאקה ומשקאות" },
 
   /* Map popup */
   navigate: { en: "Navigate", he: "ניווט" },
@@ -213,18 +213,18 @@ export const DICT = {
   listen_pause: { en: "Pause", he: "השהה" },
   listen_unavailable: { en: "Audio unavailable", he: "האודיו לא זמין" },
 
-  /* ---------- Gemininio (the AI tour guide) ---------- */
-  gem_open: { en: "Chat with Gemininio", he: "שוחחו עם ג׳מיניניו" },
+  /* ---------- Sora (the AI tour guide) ---------- */
+  gem_open: { en: "Chat with Sora", he: "שוחחו עם סורה" },
   gem_close: { en: "Close", he: "סגור" },
-  gem_title: { en: "Gemininio", he: "ג׳מיניניו" },
+  gem_title: { en: "Sora", he: "סורה" },
   gem_tagline: {
-    en: "Your Italian friend in Tuscany",
-    he: "החבר האיטלקי שלכם בטוסקנה"
+    en: "Your friend who knows Japan",
+    he: "החברה שלכם שמכירה את יפן"
   },
-  gem_setup_title: { en: "Set up Gemininio", he: "הגדרת ג׳מיניניו" },
+  gem_setup_title: { en: "Set up Sora", he: "הגדרת סורה" },
   gem_setup_blurb: {
-    en: "Gemininio uses Google's Gemini Live API to talk with you. Paste a free Gemini API key — it's saved on this device only and never shared.",
-    he: "ג׳מיניניו משתמש ב־Gemini Live API של גוגל כדי לדבר אתכם. הדביקו מפתח Gemini API חינמי — הוא נשמר במכשיר הזה בלבד ולא נשלח לשום מקום אחר."
+    en: "Sora uses Google's Gemini Live API to talk with you. Paste a free Gemini API key — it's saved on this device only and never shared.",
+    he: "סורה משתמשת ב־Gemini Live API של גוגל כדי לדבר אתכם. הדביקו מפתח Gemini API חינמי — הוא נשמר במכשיר הזה בלבד ולא נשלח לשום מקום אחר."
   },
   gem_setup_link: {
     en: "Get a free key (aistudio.google.com/apikey)",
@@ -288,14 +288,14 @@ export const DICT = {
   },
   /* ---------- Stays section ---------- */
   stays_eyebrow: { en: "Where we sleep", he: "איפה נישן" },
-  stays_title: { en: "Two homes, two halves", he: "שני בתים, שני חצאים" },
+  stays_title: { en: "Four bases, one journey", he: "ארבעה בסיסים, מסע אחד" },
   stays_kicker: {
-    en: "Five nights up north, five nights down south",
-    he: "חמישה לילות בצפון, חמישה לילות בדרום"
+    en: "Tokyo and Hakone first, then Kyoto and Osaka",
+    he: "טוקיו והקונה קודם, אחר כך קיוטו ואוסקה"
   },
   stays_intro: {
-    en: "We split the trip between a private home in northern Tuscany and a restored estate in the southern Maremma — each chosen as the perfect base for the days around it.",
-    he: "אנחנו מחלקים את הטיול בין בית פרטי בצפון טוסקנה לאחוזה משוחזרת במרמה הדרומית — כל אחד נבחר כבסיס מושלם לימים שסביבו."
+    en: "We split the trip across Tokyo, a Hakone onsen night, Kyoto and Osaka — each chosen as the perfect base for the days around it.",
+    he: "אנחנו מחלקים את הטיול בין טוקיו, לילה באונסן בהקונה, קיוטו ואוסקה — כל בסיס נבחר בשביל הימים שסביבו."
   },
   stay_check_in: { en: "Check in", he: "צ'ק־אין" },
   stay_check_out: { en: "Check out", he: "צ'ק־אאוט" },
@@ -429,9 +429,9 @@ export const DICT = {
   },
 
   /* ---------- Weather ---------- */
-  weather_eyebrow: { en: "Right now in Tuscany", he: "עכשיו בטוסקנה" },
-  weather_north: { en: "North · Larciano", he: "צפון · לרצ'יאנו" },
-  weather_south: { en: "South · Maremma", he: "דרום · מרמה" },
+  weather_eyebrow: { en: "Right now in Japan", he: "עכשיו ביפן" },
+  weather_north: { en: "Kanto · Tokyo", he: "קאנטו · טוקיו" },
+  weather_south: { en: "Kansai · Kyoto", he: "קנסיי · קיוטו" },
   weather_loading: { en: "Loading…", he: "טוען…" },
   weather_error: { en: "Weather unavailable", he: "מזג אוויר לא זמין" },
   weather_high_low: { en: "H {high}° / L {low}°", he: "מקס׳ {high}° / מינ׳ {low}°" },
@@ -456,7 +456,7 @@ export const DICT = {
   gear_for_label: { en: "for", he: "ל־" },
   gear_for_general: { en: "general", he: "כללי" },
 
-  word_eyebrow: { en: "Italian word of the day", he: "המילה האיטלקית של היום" },
+  word_eyebrow: { en: "Japanese word of the day", he: "מילה יפנית של היום" },
   word_pronounce_label: { en: "Pronounce it", he: "איך אומרים" },
   word_meaning_label: { en: "Meaning", he: "פירוש" },
   word_use_label: { en: "Try it", he: "נסו לומר" },
@@ -472,8 +472,8 @@ export const DICT = {
     he: "השמעת הגייה"
   },
   word_example_chip_listen: {
-    en: "Play example (Italian, then English, then Hebrew)",
-    he: "השמעת המשפט (איטלקית, אחר כך אנגלית, ואז עברית)"
+    en: "Play example (Japanese, then English, then Hebrew)",
+    he: "השמעת המשפט (יפנית, אחר כך אנגלית, ואז עברית)"
   },
   daytips_eyebrow: { en: "Notes for the day", he: "הערות להיום" },
   daytips_title: { en: "Good to know", he: "טוב לדעת" },
@@ -482,20 +482,20 @@ export const DICT = {
     he: "כסף, תזמון, אווירה — הדברים שלוחשים ליד ארוחת הבוקר"
   },
 
-  /* ---------- Food & Wine ---------- */
+  /* ---------- Food & Drink ---------- */
   food_eyebrow: { en: "At the table", he: "ליד השולחן" },
-  food_title: { en: "What Tuscany tastes like", he: "הטעם של טוסקנה" },
+  food_title: { en: "What Japan tastes like", he: "הטעם של יפן" },
   food_kicker: {
-    en: "Signature dishes, local pasta and the wineries to visit",
-    he: "מנות דגל, פסטות מקומיות והיקבים שחובה לבקר"
+    en: "Signature dishes, regional specialties and sake to try",
+    he: "מנות דגל, מאכלים אזוריים וסאקה שכדאי לנסות"
   },
   food_dishes_label: { en: "Signature dishes", he: "מנות דגל" },
-  food_wineries_label: { en: "Wineries to visit", he: "יקבים לבקר" },
-  food_filter_north: { en: "North · Larciano", he: "צפון · לרצ'יאנו" },
-  food_filter_south: { en: "South · Maremma", he: "דרום · מרמה" },
-  food_filter_tuscany: { en: "Across Tuscany", he: "כל טוסקנה" },
+  food_wineries_label: { en: "Sake & spirits to try", he: "סאקה ומשקאות לנסות" },
+  food_filter_north: { en: "Kanto · Tokyo", he: "קאנטו · טוקיו" },
+  food_filter_south: { en: "Kansai · Kyoto/Osaka", he: "קנסיי · קיוטו/אוסקה" },
+  food_filter_japan: { en: "Across Japan", he: "בכל יפן" },
   food_try_it: { en: "Try it at", he: "לטעום ב" },
-  food_appellation: { en: "Appellation", he: "ייעוד יין" },
+  food_appellation: { en: "Grade", he: "דירוג" },
   food_book_visit: { en: "Book the visit", he: "הזמן ביקור" },
   food_dish_pasta: { en: "Pasta", he: "פסטה" },
   food_dish_starter: { en: "Starter", he: "מנה ראשונה" },
@@ -536,8 +536,8 @@ export const DICT = {
   drink_eyebrow: { en: "After dinner", he: "אחרי ארוחת הערב" },
   drink_title: { en: "A glass to close the day", he: "כוסית לסיום היום" },
   drink_kicker: {
-    en: "Adults only — Tuscany pours generously",
-    he: "למבוגרים בלבד — טוסקנה מוזגת ברוחב יד"
+    en: "Adults only — sake, highballs & more",
+    he: "למבוגרים בלבד — סאקה, היבולים ועוד"
   },
   drink_pairing_label: { en: "Why tonight", he: "למה הערב" },
   drink_serving_label: { en: "Serving", he: "הגשה" },
@@ -615,8 +615,8 @@ export const DICT = {
     he: "הקישו על \u05F4הוסף\u05F4 בפינה העליונה"
   },
   install_step_confirm_hint: {
-    en: "The Tuscany icon lands on your home screen",
-    he: "הסמל של טוסקנה מופיע במסך הבית"
+    en: "The Japan icon lands on your home screen",
+    he: "הסמל של יפן מופיע במסך הבית"
   },
 
   /* iOS – not Safari (Chrome / Firefox / Edge on iOS) */

@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = resolve(__dirname, "..", "public", "images");
 
 const UA =
-  "Mozilla/5.0 (compatible; tuscany-2026/1.0; +https://github.com/tikel1)";
+  "Mozilla/5.0 (compatible; japan-2026/1.0)";
 const FALLBACK_UA =
   "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)";
 

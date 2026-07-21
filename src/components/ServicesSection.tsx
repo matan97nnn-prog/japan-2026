@@ -23,12 +23,12 @@ const BASES: {
   {
     id: "north",
     key: "services_filter_north",
-    sub: { en: "Aug 17–21 · Larciano", he: "17–21 באוגוסט · לרצ'יאנו" }
+    sub: { en: "Nov 1–9 · Tokyo/Hakone", he: "1–9 בנובמבר · טוקיו/הקונה" }
   },
   {
     id: "south",
     key: "services_filter_south",
-    sub: { en: "Aug 21–26 · Cortevecchia", he: "21–26 באוגוסט · קורטווקיה" }
+    sub: { en: "Nov 9–16 · Kyoto/Osaka", he: "9–16 בנובמבר · קיוטו/אוסקה" }
   }
 ];
 

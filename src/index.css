@@ -11,23 +11,23 @@
 }
 
 @theme {
-  --color-cream-50: #FBF7EC;
-  --color-cream-100: #F5EFE0;
-  --color-cream-200: #EDE3CB;
-  --color-cream-300: #DFD2B0;
-  --color-terracotta-400: #D87154;
-  --color-terracotta-500: #C45A3D;
-  --color-terracotta-600: #A8472D;
-  --color-terracotta-700: #8B3622;
-  --color-olive-400: #8A9A6B;
-  --color-olive-500: #6B7A4B;
-  --color-olive-600: #525E39;
-  --color-olive-700: #3D4729;
-  --color-sienna-500: #8B4513;
-  --color-sienna-600: #6F3710;
-  --color-ink-700: #4A3A30;
-  --color-ink-800: #2A1F1A;
-  --color-ink-900: #1A120E;
+  --color-cream-50: #FBF8F1;
+  --color-cream-100: #F4EFDF;
+  --color-cream-200: #EAE1C4;
+  --color-cream-300: #DBCC9E;
+  --color-terracotta-400: #E0685A;
+  --color-terracotta-500: #C64B3C;
+  --color-terracotta-600: #A83A2E;
+  --color-terracotta-700: #832C22;
+  --color-olive-400: #5D7FA3;
+  --color-olive-500: #3E5F82;
+  --color-olive-600: #2A4166;
+  --color-olive-700: #1D2E48;
+  --color-sienna-500: #B8923F;
+  --color-sienna-600: #957530;
+  --color-ink-700: #46423C;
+  --color-ink-800: #262420;
+  --color-ink-900: #181613;
   --color-gold-400: #D9A441;
   --color-gold-500: #B8862C;
 
@@ -246,7 +246,7 @@ html[dir="rtl"] .leaflet-control-attribution {
   100% { transform: scale(2.6); opacity: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .tuscany-user-marker [style*="user-location-pulse"] {
+  .trip-user-marker [style*="user-location-pulse"] {
     animation: none !important;
     transform: scale(1.6) !important;
     opacity: 0.25 !important;

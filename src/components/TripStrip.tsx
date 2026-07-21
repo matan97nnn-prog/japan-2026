@@ -9,7 +9,10 @@ import { useLang } from "../lib/i18n";
 import { useLocalizeDay } from "../data/i18n";
 import PoiImage from "./PoiImage";
 
-const ROMAN = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
+const ROMAN = [
+  "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
+  "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII"
+];
 
 interface Props {
   /** Compact = the slim sticky bar; default = the big intro ribbon */

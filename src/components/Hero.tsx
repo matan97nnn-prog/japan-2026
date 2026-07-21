@@ -26,95 +26,91 @@ interface HeroPhoto {
   dayNumber?: number;
 }
 
-// All photos are CC-licensed beauty shots of places we'll actually visit
-// (or the iconic Tuscan landscapes that surround them). Hosted locally
-// at public/images/hero/ — fetched once via scripts/fetch-hero-images.mjs.
+// All photos are CC-licensed beauty shots of places we'll actually visit.
+// Hosted locally at public/images/hero/ — fetched once via
+// scripts/fetch-hero-images.mjs.
 const HERO_PHOTOS: HeroPhoto[] = [
   {
-    src: "./images/hero/cypresses-sunset.jpg",
-    place: "Cipressi di San Quirico d'Orcia",
-    credit: "Wikimedia Commons · CC BY-SA",
-    source:
-      "https://commons.wikimedia.org/wiki/File:Cipressi_di_S.Quirico_d'Orcia_al_tramonto.jpg"
-  },
-  {
-    src: "./images/hero/saturnia-falls.jpg",
-    place: "Saturnia · Cascate del Mulino",
-    credit: "Raimond Spekking · CC BY-SA",
-    source:
-      "https://commons.wikimedia.org/wiki/File:Terme_di_Saturnia_-_Cascate_del_Mulino-0518.jpg",
+    src: "./images/hero/hakone-fuji-lake.jpg",
+    place: "Lake Ashi · Mt Fuji, Hakone",
+    credit: "Kentagon · CC BY-SA",
+    source: "https://commons.wikimedia.org/wiki/File:LakeAshi_and_MtFuji_Hakone.JPG",
     dayNumber: 8
   },
   {
-    src: "./images/hero/pitigliano-panorama.jpg",
-    place: "Pitigliano · viewpoint at golden hour",
-    credit: "Wikimedia · Featured Picture · CC BY-SA",
+    src: "./images/hero/fushimi-inari-torii.jpg",
+    place: "Fushimi Inari Taisha · the torii tunnels",
+    credit: "Basile Morin · CC BY-SA",
     source:
-      "https://commons.wikimedia.org/wiki/File:01665_ITA_Tuscany_Pitigliano_S_from_viewpoint_V-P.jpg",
-    dayNumber: 9
+      "https://commons.wikimedia.org/wiki/File:Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine,_Kyoto,_Japan.jpg",
+    dayNumber: 10
   },
   {
-    src: "./images/hero/val-dorcia-hills.jpg",
-    place: "Endless hills of Pienza · Val d'Orcia",
-    credit: "Wikimedia · Featured Picture · CC BY-SA",
+    src: "./images/hero/arashiyama-bamboo-hero.jpg",
+    place: "Arashiyama Bamboo Grove, Kyoto",
+    credit: "Naokijp · CC BY-SA",
     source:
-      "https://commons.wikimedia.org/wiki/File:Endless_hills_of_Pienza1.jpg"
+      "https://commons.wikimedia.org/wiki/File:2021_Sagano_Bamboo_forest_in_Arashiyama,_Kyoto,_Japan.jpg",
+    dayNumber: 11
   },
   {
-    src: "./images/hero/maremma-aerial.jpg",
-    place: "Parco della Maremma · Torre di Collelungo",
-    credit: "Wikimedia Commons · CC BY-SA",
+    src: "./images/hero/kinkaku-ji-reflection.jpg",
+    place: "Kinkaku-ji · the Golden Pavilion, Kyoto",
+    credit: "Basile Morin · CC BY-SA",
     source:
-      "https://commons.wikimedia.org/wiki/File:Toscana_-_Maremma_Regional_Park_-_aerial_photo_with_Torre_di_Collelungo.jpg",
-    dayNumber: 9
+      "https://commons.wikimedia.org/wiki/File:Water_reflection_of_Kinkaku-ji_Temple_with_a_tree_on_a_rock_in_the_pond,_Kyoto,_Japan.jpg",
+    dayNumber: 11
   },
   {
-    src: "./images/cala-del-gesso.jpg",
-    place: "Cala del Gesso · Argentario",
-    credit: "Cristina Gottardi (Unsplash) · CC0",
-    source: "https://unsplash.com/photos/7_APbY7Afsg",
-    dayNumber: 7
+    src: "./images/hero/nikko-toshogu-gate.jpg",
+    place: "Yomeimon Gate, Toshogu Shrine, Nikko",
+    credit: "Koichi Sato · CC BY-SA",
+    source: "https://commons.wikimedia.org/wiki/File:Nikko_toshogu_yomeimon_gate_ver1.jpg",
+    dayNumber: 5
   },
   {
-    src: "./images/hero/sorano-blue-hour.jpg",
-    place: "Sorano · blue hour",
-    credit: "Wikimedia · Featured Picture · CC BY-SA",
+    src: "./images/hero/shibuya-crossing-night.jpg",
+    place: "Shibuya Crossing at night, Tokyo",
+    credit: "Syced · Public domain",
+    source: "https://commons.wikimedia.org/wiki/File:Shibuya_crossing_at_night.jpg",
+    dayNumber: 3
+  },
+  {
+    src: "./images/hero/himeji-castle-exterior.jpg",
+    place: "Himeji Castle · the White Heron Castle",
+    credit: "Bernard Gagnon · CC BY-SA",
+    source: "https://commons.wikimedia.org/wiki/File:Château_de_Himeji02.jpg",
+    dayNumber: 15
+  },
+  {
+    src: "./images/hero/nara-deer-park-hero.jpg",
+    place: "Nara Park · the bowing deer",
+    credit: "MASA · CC BY-SA",
+    source: "https://commons.wikimedia.org/wiki/File:Nara-Park_Deer.jpg",
+    dayNumber: 12
+  },
+  {
+    src: "./images/hero/osaka-dotonbori-night.jpg",
+    place: "Dotonbori canal at night, Osaka",
+    credit: "Martin Falbisoner · CC BY-SA",
     source:
-      "https://commons.wikimedia.org/wiki/File:01844b_ITA_Tuscany_Sorano_blue_hour_3_to_1_V-P.jpg"
+      "https://commons.wikimedia.org/wiki/File:Dotonbori,_Osaka,_at_night,_November_2016.jpg",
+    dayNumber: 14
   },
   {
-    src: "./images/hero/val-dorcia-lonely-tree.jpg",
-    place: "Tuscan landscape · the lonely tree",
-    credit: "Wikimedia · Featured Picture · CC BY-SA",
+    src: "./images/hero/senso-ji-kaminarimon.jpg",
+    place: "Kaminarimon Gate, Senso-ji, Asakusa",
+    credit: "Daderot · Public domain",
     source:
-      "https://commons.wikimedia.org/wiki/File:Tuscan_landscape_with_lonely_tree.jpg"
+      "https://commons.wikimedia.org/wiki/File:Kaminarimon_(outer_gate),_Sensoji_Temple,_Akakusa,_Tokyo.jpg",
+    dayNumber: 2
   },
   {
-    src: "./images/hero/crete-orcia-sunrise.jpg",
-    place: "Sunrise on the Crete dell'Orcia",
-    credit: "Wikimedia Commons · CC BY-SA",
-    source:
-      "https://commons.wikimedia.org/wiki/File:Sunrise_in_Crete_dell'Orcia.jpg"
-  },
-  {
-    src: "./images/civita.jpg",
-    place: "Civita di Bagnoregio · the dying city",
-    credit: "Wikimedia Commons · CC BY-SA",
-    source: "https://en.wikipedia.org/wiki/Civita_di_Bagnoregio",
+    src: "./images/hero/owakudani-ropeway.jpg",
+    place: "Owakudani volcanic valley, Hakone",
+    credit: "TLV and more · CC BY",
+    source: "https://commons.wikimedia.org/wiki/File:Owakudani%27s_cable_car,_Japan;_October_2017.jpg",
     dayNumber: 8
-  },
-  {
-    src: "./images/hero/coast-sunset.jpg",
-    place: "Tramonto al Castello del Boccale · Tyrrhenian coast",
-    credit: "Wikimedia Commons · CC BY-SA",
-    source:
-      "https://commons.wikimedia.org/wiki/File:Tramonto_al_Castello_del_Boccale.jpg"
-  },
-  {
-    src: "./images/hero/tuscan-landscape-pano.jpg",
-    place: "Tuscan countryside · the long view",
-    credit: "Wikimedia · Featured Picture · CC BY-SA",
-    source: "https://commons.wikimedia.org/wiki/File:Tuscan_Landscape_6.JPG"
   }
 ];
 

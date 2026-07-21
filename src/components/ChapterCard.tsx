@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowLeft, MapPin, Sun, Car, Ticket } from "lucide-react";
 import type { Day, POI } from "../data/types";
+import { itinerary } from "../data/itinerary";
 import { getAttraction } from "../data/attractions";
 import { BOOKED_DAY_NUMBERS } from "../lib/bookingsStore";
 import { getTripState } from "../lib/tripState";
@@ -11,7 +12,10 @@ import { useLang } from "../lib/i18n";
 import { useLocalizeDay, useLocalizePoi } from "../data/i18n";
 import PoiImage from "./PoiImage";
 
-const ROMAN = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
+const ROMAN = [
+  "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
+  "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII"
+];
 
 const TAG_KEY: Record<string, DictKey> = {
   water: "tag_water",
@@ -123,7 +127,7 @@ export default function ChapterCard({ day }: { day: Day }) {
             </div>
             <div className="hidden sm:block h-px w-10 bg-cream-50/40 mb-1.5" />
             <div className={`text-[9px] uppercase tracking-[0.24em] font-medium ${accentText}`}>
-              {t("plan_chapter_x_of_y", { x: String(day.dayNumber).padStart(2, "0"), y: "10" })}
+              {t("plan_chapter_x_of_y", { x: String(day.dayNumber).padStart(2, "0"), y: String(itinerary.length).padStart(2, "0") })}
             </div>
           </div>
           {isToday && (

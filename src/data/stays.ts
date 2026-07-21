@@ -1,71 +1,110 @@
 import type { Stay } from "./types";
 
+// None of these are booked yet — each entry is a recommended AREA to book
+// in (real neighborhoods, real train-line logic), not a specific hotel.
+// Swap in the real property name, address and booking link once you've
+// actually booked, and update coords to the exact property.
 export const stays: Stay[] = [
   {
-    id: "stay-larciano",
-    name: "Home in Larciano",
+    id: "stay-tokyo-shinjuku",
+    name: "Shinjuku, Tokyo — recommended base",
     category: "stay",
     region: "north",
-    shortDescription: "Private Tuscan home, base for the northern half of the trip",
+    shortDescription: "Not yet booked — recommended area for the Tokyo stint",
     description:
-      "Your base for the active northern week. Larciano sits between Pistoia and Lucca, putting you within an easy drive of Bagni di Lucca, Pisa, Abetone and the Sentierelsa river walk.",
-    image: "./images/stay-larciano-sunflowers.png",
-    gallery: [
-      "./images/stay-larciano-vineyard.png",
-      "./images/stay-larciano-pool.png",
-      "./images/stay-larciano-pool-dusk.png"
-    ],
-    imageCredit: {
-      author: "Host photo",
-      license: "Airbnb listing",
-      source: "https://www.airbnb.com/rooms/1554711",
-      licenseUrl: "https://www.airbnb.com/help/article/2855"
-    },
-    website: "https://www.airbnb.com/rooms/1554711",
-    bookingLink: "https://www.airbnb.com/rooms/1554711",
-    address: "Larciano (PT), Tuscany",
-    coords: [43.8267, 10.8978],
-    checkIn: "2026-08-17",
-    checkOut: "2026-08-21",
-    nights: 4,
+      "Shinjuku is Tokyo's best-connected base — every JR and subway line, direct trains to Nikko, Kamakura and Hakone, and Omoide Yokocho's yakitori alleys on your doorstep. Book a hotel near Shinjuku Station (south or west exit) for the shortest walk with luggage.",
+    image: "./images/stay-tokyo-shinjuku.jpg",
+    address: "Shinjuku, Tokyo (exact hotel TBD)",
+    coords: [35.6938, 139.7034],
+    checkIn: "2026-11-01",
+    checkOut: "2026-11-07",
+    nights: 6,
     highlights: [
-      "Private home with kitchen — easy with kids",
-      "Central for the northern itinerary (Canyon Park, Pisa, Abetone)",
-      "Drive to Bagni di Lucca ~1 h, Pisa ~45 min, Abetone ~1 h"
+      "Direct trains to Nikko, Kamakura and Hakone from Shinjuku Station",
+      "Omoide Yokocho and Golden Gai a short walk away",
+      "Central for Asakusa, Shibuya, Harajuku and Ginza"
     ]
   },
   {
-    id: "stay-cortevecchia",
-    name: "Tenuta Cortevecchia",
+    id: "stay-hakone-ryokan",
+    name: "Gora / Hakone-Yumoto — recommended ryokan",
+    category: "stay",
+    region: "north",
+    shortDescription: "Not yet booked — a traditional onsen ryokan",
+    description:
+      "A traditional ryokan with an in-room or private hot-spring bath and a kaiseki dinner plan (look for 'ichi-shoku' or 'nihaku' plans that include both dinner and breakfast). Gora and Hakone-Yumoto both sit on the Hakone Tozan line, close to the ropeway and Lake Ashi.",
+    image: "./images/stay-hakone-ryokan.jpg",
+    address: "Gora or Hakone-Yumoto, Hakone, Kanagawa (exact ryokan TBD)",
+    coords: [35.2323, 139.0508],
+    checkIn: "2026-11-07",
+    checkOut: "2026-11-09",
+    nights: 2,
+    highlights: [
+      "In-room or private onsen bath — check tattoo policy in advance if relevant",
+      "Kaiseki dinner + breakfast plan turns the stay into the trip's food highlight",
+      "Walking distance or a short bus ride to the Hakone Ropeway"
+    ],
+    warnings: [
+      "Many traditional onsens restrict visible tattoos — confirm the ryokan's policy before booking if this applies to anyone in the group"
+    ]
+  },
+  {
+    id: "stay-kyoto",
+    name: "Kyoto Station / Shimogyo — recommended base",
     category: "stay",
     region: "south",
-    shortDescription: "Restored farm estate near Saturnia — your southern base",
+    shortDescription: "Not yet booked — recommended area for the Kyoto stint",
     description:
-      "A 2,000-hectare organic estate in the rolling Maremma hills, just 17 km from the Saturnia hot springs. Apartment-style stays with private pool, perfect for an evening with a private chef. Remote setting — bring everything you need from Manciano.",
-    image: "./images/stay-cortevecchia-poolview.png",
-    gallery: [
-      "./images/stay-cortevecchia-villa.png",
-      "./images/stay-cortevecchia-pool-deck.png",
-      "./images/stay-cortevecchia-aerial.png"
-    ],
-    imageCredit: {
-      author: "Tenuta Cortevecchia",
-      license: "Property photo",
-      source: "https://tenutacortevecchia.it/en/photo-gallery/",
-      licenseUrl: "https://tenutacortevecchia.it/en/"
-    },
-    website: "https://tenutacortevecchia.it/en/",
-    bookingLink: "https://tenutacortevecchia.it/en/",
-    address: "Località Cortevecchia, 58055 Semproniano (GR)",
-    coords: [42.6919, 11.5378],
-    checkIn: "2026-08-21",
-    checkOut: "2026-08-26",
+      "Kyoto Station puts you on the JR Nara Line (for Nara), the JR Special Rapid (for Osaka), and within a short bus or taxi ride of Fushimi Inari, Gion and Higashiyama. A wider, easier choice than staying deep in a quiet residential machiya district for a first visit.",
+    image: "./images/stay-kyoto.jpg",
+    address: "Kyoto Station area, Shimogyo Ward, Kyoto (exact hotel TBD)",
+    coords: [34.9858, 135.7588],
+    checkIn: "2026-11-09",
+    checkOut: "2026-11-14",
     nights: 5,
     highlights: [
-      "~25 min from Saturnia hot springs (early morning win)",
-      "~30 min from Pitigliano and the Vie Cave",
-      "Big private pool, kitchen built for a chef-at-home night",
-      "Total privacy — historic restored buildings"
+      "One JR ride from Nara and Osaka",
+      "Short bus/taxi to Fushimi Inari, Gion and Higashiyama",
+      "Coin lockers and luggage forwarding services right at the station"
+    ]
+  },
+  {
+    id: "stay-osaka",
+    name: "Namba / Umeda, Osaka — recommended base",
+    category: "stay",
+    region: "south",
+    shortDescription: "Not yet booked — recommended area for the Osaka stint",
+    description:
+      "Namba sits a short walk from Dotonbori and has a direct subway line to Universal Studios Japan; Umeda is the other solid option with easier Shin-Osaka Shinkansen access for the Himeji day trip. Either works — pick based on which sights matter more.",
+    image: "./images/stay-osaka.jpg",
+    address: "Namba or Umeda, Osaka (exact hotel TBD)",
+    coords: [34.6627, 135.5006],
+    checkIn: "2026-11-14",
+    checkOut: "2026-11-16",
+    nights: 2,
+    highlights: [
+      "Direct subway to Universal Studios Japan",
+      "Walking distance to Dotonbori and Kuromon Market",
+      "Easy Shinkansen access to Himeji via Shin-Osaka"
+    ]
+  },
+  {
+    id: "stay-tokyo-return",
+    name: "Shinjuku, Tokyo — last-night base",
+    category: "stay",
+    region: "north",
+    shortDescription: "Not yet booked — one last night before the flight home",
+    description:
+      "Same logic as the first Tokyo stay — Shinjuku's transport links make the last night easiest, with a straightforward morning transfer to Haneda.",
+    image: "./images/stay-tokyo-shinjuku.jpg",
+    address: "Shinjuku, Tokyo (exact hotel TBD)",
+    coords: [35.6938, 139.7034],
+    checkIn: "2026-11-16",
+    checkOut: "2026-11-17",
+    nights: 1,
+    highlights: [
+      "Straightforward morning transfer to Haneda for the flight home",
+      "One last Omoide Yokocho or conveyor-belt sushi dinner"
     ]
   }
 ];

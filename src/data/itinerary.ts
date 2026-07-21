@@ -3,967 +3,978 @@ import type { Day } from "./types";
 export const itinerary: Day[] = [
   {
     dayNumber: 1,
-    date: "2026-08-17",
-    weekday: "Monday",
+    date: "2026-11-01",
+    weekday: "Sunday",
     region: "north",
-    base: "Larciano",
-    title: "Land in Rome, drive north",
-    subtitle: "Arrive FCO 14:00, pick up the rental car, head to Tuscany",
-    leadImage: "./images/stay-larciano-sunflowers.png",
-    leadImageCredit: {
-      author: "Host photo",
-      license: "Airbnb listing",
-      source: "https://www.airbnb.com/rooms/1554711",
-      licenseUrl: "https://www.airbnb.com/help/article/2855"
-    },
+    base: "Tokyo (Shinjuku)",
+    title: "Landing in Tokyo",
+    subtitle: "Arrive via Dubai, transfer in, first taste of the city",
+    leadImage: "./images/hero/tokyo-skyline-dusk.jpg",
     activities: [
       {
-        time: "14:00",
-        title: "Land at Rome Fiumicino (FCO)",
-        description: "Pick up the rental car. International driving permit required. Confirm a credit card on the driver's name.",
-        rideToNext: { duration: "3 h 30", note: "via A1 + A11 · ≈ 280 km", departAt: "15:30" }
+        time: "Evening",
+        title: "Land at Haneda (HND), transfer to Shinjuku",
+        description:
+          "Connecting through Dubai on flydubai. Haneda is the closer airport to central Tokyo — Tokyo Monorail + JR Yamanote, or the Airport Limousine Bus direct to the hotel, is the easiest first move after a long flight.",
+        rideToNext: { duration: "45 min", note: "Haneda → Shinjuku, monorail + Yamanote line" }
       },
       {
-        time: "Evening",
-        title: "Arrive in Larciano, settle in",
-        description: "Around 3.5 h drive. Late swim in the pool, light dinner, early to bed."
+        time: "Night",
+        title: "Settle in, konbini run, early to bed",
+        description:
+          "Don't fight the jet lag on night one. A 7-Eleven or Lawson run for onigiri, a hot bath, and an early sleep sets up tomorrow properly."
       }
     ],
-    driveNotes: "FCO → Larciano ≈ 3 h 30 min via A1 + A11",
-    restaurants: ["rest-n-pizzeria-da-paolo"],
-    drinkOfTheDay: {
-      name: "Aperol Spritz",
-      type: "aperitif",
-      pairing: "The official 'you made it' drink of Italy. Bittersweet, low-strength, fizzy — exactly what tired travellers need on a poolside lounger before a light dinner.",
-      servingNote: "Tall glass packed with ice · 3 parts Prosecco · 2 parts Aperol · 1 splash of soda · orange wheel"
-    },
+    driveNotes: "Haneda → Shinjuku ≈ 45 min by train",
     gear: [
-      { item: "Comfortable travel layers (FCO is air-conditioned, the car will be hot)" },
-      { item: "Slip-on shoes for security" },
-      { item: "Refillable water bottles (empty for security, fill at FCO)" },
-      { item: "Sunglasses & a hat — late August sun is brutal at the rest stops" },
-      { item: "Swimwear in the carry-on, not the hold (in case bags arrive late)" }
+      { item: "Comfortable layers — Tokyo in November is mild by day, cool at night (10–17°C)" },
+      { item: "A portable phone charger for the long travel day" },
+      { item: "IC card ready to top up (Suica/Pasmo) — or use the phone wallet version" }
     ],
     dayTips: [
-      "Keep €40–50 cash for autostrada tolls (A1 + A11)",
-      "Confirm with the rental whether the tank policy is full-to-full or full-to-empty",
-      "Italian rentals require an International Driving Permit — keep it with the licence",
-      "Aim to clear the FCO area before 16:00 to dodge Friday rush southbound"
+      "Buy a Suica/Pasmo IC card (or add one to Apple/Google Wallet) the moment you land — it covers every train, bus and konbini purchase for the whole trip",
+      "Pocket wifi or an eSIM should be activated before you leave the airport",
+      "Don't schedule anything demanding for day one — let the group sleep off the flight"
     ],
     italianWords: [
       {
-        word: "Andiamo!",
-        pronounce: "ahn-DYAH-moh",
-        meaning: "Let's go!",
-        example: "Andiamo in Toscana!",
-        exampleMeaning: "Let's go to Tuscany!"
+        word: "Konnichiwa",
+        pronounce: "kohn-nee-chee-wah",
+        meaning: "Hello / good afternoon",
+        example: "Konnichiwa, hajimemashite!",
+        exampleMeaning: "Hello, nice to meet you!"
       },
       {
-        word: "Autostrada",
-        pronounce: "ow-toh-STRAH-dah",
-        meaning: "Motorway",
-        example: "Sull'autostrada verso Firenze.",
-        exampleMeaning: "On the motorway toward Florence."
-      },
-      {
-        word: "Bagaglio",
-        pronounce: "bah-GAH-lyoh",
-        meaning: "Luggage",
-        example: "Il bagaglio è nel bagagliaio.",
-        exampleMeaning: "The luggage is in the boot."
-      },
-      {
-        word: "Dai!",
-        pronounce: "dye",
-        meaning: "Come on! (sounds like 'dye', not 'day')",
-        example: "Dai, facciamo le valigie!",
-        exampleMeaning: "Come on, let's pack the bags!"
-      },
-      {
-        word: "Forza!",
-        pronounce: "FOR-tzah",
-        meaning: "You can do it! (literally 'strength')",
-        example: "Forza, siamo quasi arrivati!",
-        exampleMeaning: "Hang in there — we're almost there!"
-      },
-      {
-        word: "Riposo",
-        pronounce: "ree-POH-zoh",
-        meaning: "A rest (not the English word 'repose')",
-        example: "Un piccolo riposo in macchina.",
-        exampleMeaning: "A little rest in the car."
+        word: "Arigatou gozaimasu",
+        pronounce: "ah-ree-GAH-toh go-zai-mahs",
+        meaning: "Thank you very much",
+        example: "Hontou ni arigatou gozaimasu.",
+        exampleMeaning: "Thank you so much."
       }
     ]
   },
   {
     dayNumber: 2,
-    date: "2026-08-18",
-    weekday: "Tuesday",
-    departureTime: "09:30",
-    rideToFirst: { duration: "1 h", note: "Larciano → Bagni di Lucca" },
+    date: "2026-11-02",
+    weekday: "Monday",
+    departureTime: "09:00",
     region: "north",
-    base: "Larciano",
-    title: "Turquoise canyon, Devil's Bridge & forest ropes",
+    base: "Tokyo (Shinjuku)",
+    title: "Old Tokyo — Asakusa & the Skytree",
     activities: [
       {
-        time: "10:45",
-        title: "Canyon Park — SUP inside the canyon (booked)",
+        time: "09:30",
+        title: "Senso-ji & Nakamise-dori",
         description:
-          "Booked: 6 stand-up paddleboards for the 10:45 slot, gliding the emerald Lima through the gorge. Get there by 10:30 to sort boards and life vests — payment is cash on site (€168). Aerial canyon routes are a separate ticket and usually need a taller child.",
-        attractionId: "canyon-park",
-        tag: "water",
-        rideToNext: { duration: "10 min", note: "Bagni di Lucca → Borgo a Mozzano", departAt: "13:00" }
-      },
-      {
-        time: "Lunch",
-        title: "Ponte del Diavolo photo stop",
-        description: "Climb the medieval humpback bridge, tell the kids the devil legend. Grab a quick, early lunch in Borgo a Mozzano with the 3 families.",
-        attractionId: "ponte-del-diavolo",
+          "Tokyo's oldest temple, through the Kaminarimon 'Thunder Gate'. Walk Nakamise-dori's stalls for senbei and old-fashioned souvenirs before the temple gets busy.",
+        attractionId: "senso-ji",
         tag: "culture",
-        rideToNext: { duration: "30 min", note: "winding climb to 850 m", departAt: "14:30" }
+        rideToNext: { duration: "15 min", note: "Asakusa → Skytree, on foot or one train stop" }
       },
       {
-        time: "Afternoon",
-        title: "Selva del Buffardello ropes course",
-        description: "Shaded forest adventure park with kid-height routes (from 100 cm) — the kids get the real ropes experience.",
-        attractionId: "selva-buffardello",
-        tag: "extreme",
-        // Day 2's title literally calls out "forest ropes" — the ropes
-        // course is the headline finale, not a "skip if tired" extra.
-        // Opt out of the auto-rule that would mark the 3rd attraction optional.
-        optional: false
+        time: "Midday",
+        title: "Tokyo Skytree",
+        description:
+          "Tallest tower in Japan — the Tembo Deck at 350 m gives a clear-day view stretching to Mt Fuji. Book timed-entry tickets online to skip the queue.",
+        attractionId: "tokyo-skytree",
+        tag: "view",
+        optional: true
+      },
+      {
+        time: "Evening",
+        title: "Dinner in Asakusa",
+        description: "Tempura or a casual izakaya near the temple — an early, easy night after a long travel day yesterday."
       }
     ],
-    driveNotes: "Larciano ↔ Bagni di Lucca ≈ 1 h",
-    restaurants: ["rest-n-bagni-lucca", "rest-n-osteria-larciano"],
+    restaurants: ["rest-n-asakusa-tempura"],
     drinkOfTheDay: {
-      name: "Vermentino di Toscana IGT",
-      type: "wine",
-      pairing: "After a wet morning in the canyon and a forest afternoon, this crisp white from the Tuscan coast is the perfect cool-down — citrus, sea-breeze and a flinty edge.",
-      servingNote: "Served well-chilled (8–10 °C), in a tall white-wine glass"
+      name: "Asahi Super Dry (draft)",
+      type: "beer",
+      pairing: "Japan's everyday beer, ice cold, alongside tempura or yakitori — the simplest way to toast landing in Tokyo.",
+      servingNote: "Draft, in a frosted glass"
     },
     gear: [
-      { item: "Quick-dry swimwear under clothes — skips a cramped changing hut", for: "canyon-park" },
-      { item: "Closed-toe water shoes for SUP and slippery rocks", for: "canyon-park" },
-      { item: "Dry bag for phone, keys & wallet", for: "canyon-park" },
-      { item: "Closed-toe trainers for the ropes course (no sandals!)", for: "selva-buffardello" },
-      { item: "A change of dry clothes for the drive home" },
-      { item: "Reef-safe sunscreen & a wide-brim hat" }
+      { item: "Comfortable walking shoes — a lot of it is on foot" },
+      { item: "Coins/small change for shrine offerings and vending machines" }
     ],
     dayTips: [
-      "Eat early-ish lunch in Borgo a Mozzano: most kitchens close at 14:30",
-      "Selva del Buffardello is in chestnut forest at 850 m — bring a long sleeve",
-      "Cash for the small adventure-park snack bar"
+      "Senso-ji is busiest 10:00–14:00 — arrive at opening (06:00 grounds, shops open ~09:00) for a quieter Nakamise-dori",
+      "The Skytree's cheaper Tembo Deck (350 m) is plenty; skip the upsell to the 450 m Tembo Galleria unless it's a perfectly clear day"
     ],
     italianWords: [
       {
-        word: "Acqua",
-        pronounce: "AH-kwah",
-        meaning: "Water",
-        example: "L'acqua è fresca!",
-        exampleMeaning: "The water is cool!"
+        word: "Sumimasen",
+        pronounce: "soo-mee-mah-sen",
+        meaning: "Excuse me / sorry",
+        example: "Sumimasen, toire wa doko desu ka?",
+        exampleMeaning: "Excuse me, where is the bathroom?"
       },
       {
-        word: "Coraggio",
-        pronounce: "kor-AH-joh",
-        meaning: "Courage",
-        example: "Hai coraggio sul ponte!",
-        exampleMeaning: "You've got courage on the bridge!"
-      },
-      {
-        word: "Sole",
-        pronounce: "SOH-leh",
-        meaning: "Sun",
-        example: "Che sole oggi!",
-        exampleMeaning: "What sun today!"
-      },
-      {
-        word: "Spruzzo",
-        pronounce: "SPROOT-tzoh",
-        meaning: "Splash, spray",
-        example: "Che bello lo spruzzo dell'acqua!",
-        exampleMeaning: "How fun the water splash is!"
-      },
-      {
-        word: "Freddo",
-        pronounce: "FREHD-doh",
-        meaning: "Cold (double 'd' in the middle)",
-        example: "L'acqua non è freddissima.",
-        exampleMeaning: "The water isn't freezing cold."
-      },
-      {
-        word: "Attento!",
-        pronounce: "ah-TEN-toh",
-        meaning: "Watch out! Careful!",
-        example: "Attento, è scivoloso!",
-        exampleMeaning: "Careful, it's slippery!"
+        word: "Oishii",
+        pronounce: "oh-EE-shee",
+        meaning: "Delicious",
+        example: "Kore, oishii desu ne!",
+        exampleMeaning: "This is delicious, isn't it!"
       }
     ]
   },
   {
     dayNumber: 3,
-    date: "2026-08-19",
-    weekday: "Wednesday",
-    departureTime: "08:00",
-    rideToFirst: { duration: "1 h", note: "Larciano → Chifenti (Lucca Rafting)" },
+    date: "2026-11-03",
+    weekday: "Tuesday",
+    departureTime: "09:30",
     region: "north",
-    base: "Larciano",
-    title: "Soft rafting + a quick wave at Pisa",
+    base: "Tokyo (Shinjuku)",
+    title: "Meiji Jingu, Harajuku & Shibuya",
+    subtitle: "Culture Day (Bunka no Hi) — a national holiday, so expect it lively",
     activities: [
       {
-        time: "09:30 (check-in 09:25)",
-        title: "Soft Rafting with Lucca Rafting (booked)",
-        description: "Booked: family soft-rafting float on the Serchio, ~1.5 h, for the whole group (6 adults + 6 kids). Check in at Lucca Rafting in Chifenti. Guide, gear and wetsuits are provided, plus free souvenir photos — with dives, slides and a group photo under the Devil's Bridge. Just wear swimwear under your clothes.",
-        attractionId: "soft-rafting-serchio",
-        tag: "water",
-        rideToNext: { duration: "45 min", note: "Chifenti → Pisa", departAt: "13:00" }
+        time: "09:30",
+        title: "Meiji Jingu",
+        description:
+          "A forested shrine in the middle of the city — 100,000 trees donated from across Japan, planted for Emperor Meiji in the 1920s. Calm and green, a total contrast to what's next.",
+        attractionId: "meiji-jingu",
+        tag: "culture",
+        rideToNext: { duration: "10 min", note: "Meiji Jingu → Takeshita-dori, on foot" }
+      },
+      {
+        time: "Midday",
+        title: "Takeshita-dori & Harajuku",
+        description: "Crepe stands, pop fashion, teenage Tokyo at full volume. Lunch here is part of the show.",
+        tag: "culture",
+        rideToNext: { duration: "15 min", note: "Harajuku → Shibuya, one train stop or a walk" }
       },
       {
         time: "Afternoon",
-        title: "Pisa — Leaning Tower & gelato",
-        description: "Park outside the walls (ZTL!), walk into Piazza dei Miracoli, take the silly photos.",
-        attractionId: "pisa",
-        tag: "culture",
-        rideToNext: { duration: "30 min", note: "Pisa → Lucca, mostly motorway", departAt: "16:00" }
-      },
-      {
-        time: "Late afternoon",
-        title: "Lucca city walls bike loop",
-        description: "On the way back, rent bikes near Porta San Pietro or Piazzale Verdi and ride the 4 km tree-lined ring on top of Lucca's Renaissance walls. Flat, traffic-free, glorious in the late-afternoon light. Drop the bikes and disappear into the old town for gelato.",
-        attractionId: "lucca-walls",
-        tag: "family"
+        title: "Shibuya Crossing & Shibuya Sky",
+        description:
+          "The world's busiest pedestrian crossing, best watched first from the Starbucks above it, then walked. Shibuya Sky's rooftop deck (book ahead) is the money shot at sunset.",
+        attractionId: "shibuya-crossing",
+        tag: "view"
       }
     ],
-    driveNotes: "Larciano → Chifenti ≈ 1 h · Chifenti → Pisa ≈ 45 min · Pisa → Lucca ≈ 30 min · Lucca → Larciano ≈ 35 min",
-    restaurants: ["rest-n-pisa", "rest-n-osteria-larciano"],
-    drinkOfTheDay: {
-      name: "Chianti Classico DOCG",
-      type: "wine",
-      pairing: "After a day that ends in Pisa and Lucca, you owe yourself the most iconic Tuscan red — black cherry, dried herbs and that signature Sangiovese acidity that loves a wood-fired pizza.",
-      servingNote: "Served at cellar temperature (16–18 °C), opened 30 minutes before pouring"
-    },
-    gear: [
-      { item: "Swimwear under your clothes for the rafting", for: "soft-rafting-serchio" },
-      { item: "Water shoes; dry change of clothes & towels in a sealed bag", for: "soft-rafting-serchio" },
-      { item: "Light cycling-friendly shoes for the Lucca walls", for: "lucca-walls" },
-      { item: "Sun hats (zero shade in Piazza dei Miracoli at midday)", for: "pisa" },
-      { item: "Cash for parking, bike rental & gelato" }
-    ],
     dayTips: [
-      "Rafting is booked for 09:30 — leave Larciano by 08:00 to check in at Lucca Rafting (Chifenti) by 09:25",
-      "Park Pisa at 'Via Pietrasantina' (€2/hr) — free shuttle to the square",
-      "Lucca walls bike rentals from €4/hr; bring an ID for the deposit",
-      "Tower climb at Pisa is timed — only book if you actually want the climb",
-      "Late-afternoon light on the walls is the postcard moment — aim for 17:00"
+      "November 3 is Culture Day (文化の日), a Japanese public holiday — museums often have free admission but Harajuku/Shibuya are busier than a normal Tuesday",
+      "Shibuya Sky tickets sell out at sunset slots — book the specific time slot in advance"
     ],
+    drinkOfTheDay: {
+      name: "Yuzu highball",
+      type: "cocktail",
+      pairing: "Whisky, soda and yuzu citrus — bright and easy, a good match for a long day of walking neighborhoods.",
+      servingNote: "Tall glass, plenty of ice"
+    },
     italianWords: [
       {
-        word: "Pendente",
-        pronounce: "pen-DEN-teh",
-        meaning: "Leaning, slanted",
-        example: "La torre pendente di Pisa.",
-        exampleMeaning: "The leaning tower of Pisa."
+        word: "Kawaii",
+        pronounce: "kah-WAH-ee",
+        meaning: "Cute",
+        example: "Kono kaban, kawaii!",
+        exampleMeaning: "This bag is so cute!"
       },
       {
-        word: "Gelato",
-        pronounce: "jeh-LAH-toh",
-        meaning: "Ice cream",
-        example: "Un gelato in piazza.",
-        exampleMeaning: "An ice cream in the square."
-      },
-      {
-        word: "Bicicletta",
-        pronounce: "bee-chee-keh-TEH-tah",
-        meaning: "Bicycle",
-        example: "In bicicletta sulle mura.",
-        exampleMeaning: "By bike on the walls."
-      },
-      {
-        word: "Campanile",
-        pronounce: "kahm-pah-NEE-leh",
-        meaning: "Bell tower (not 'campanile' in English)",
-        example: "Il campanile suona a mezzogiorno.",
-        exampleMeaning: "The bell tower rings at noon."
-      },
-      {
-        word: "Squisito",
-        pronounce: "skwee-ZEE-toh",
-        meaning: "Delicious (nothing like 'squirrel')",
-        example: "Questo gelato è squisito!",
-        exampleMeaning: "This gelato is delicious!"
-      },
-      {
-        word: "Torcia",
-        pronounce: "TOR-chah",
-        meaning: "Torch / flashlight (UK 'torch')",
-        example: "Metti la torcia nello zaino.",
-        exampleMeaning: "Put the torch in the backpack."
+        word: "Sugoi",
+        pronounce: "soo-GOH-ee",
+        meaning: "Amazing / wow",
+        example: "Sugoi! Hito ga ippai!",
+        exampleMeaning: "Wow! So many people!"
       }
     ]
   },
   {
     dayNumber: 4,
-    date: "2026-08-20",
-    weekday: "Thursday",
-    departureTime: "09:30",
-    rideToFirst: { duration: "1 h", note: "Larciano → Abetone" },
+    date: "2026-11-04",
+    weekday: "Wednesday",
+    departureTime: "07:30",
     region: "north",
-    base: "Larciano",
-    title: "Above the clouds — Abetone gondola",
+    base: "Tokyo (Shinjuku)",
+    title: "Tsukiji breakfast, Ginza & teamLab",
     activities: [
       {
-        time: "Morning",
-        title: "Drive to Abetone, ride to Monte Gomito",
-        description: "Modern gondola to nearly 1,900 m — cool air, wide views.",
-        attractionId: "abetone-monte-gomito",
-        tag: "view"
+        time: "08:00",
+        title: "Tsukiji Outer Market breakfast",
+        description:
+          "The wholesale fish auction moved to Toyosu, but the outer market's food stalls remain — the best breakfast in Tokyo. Fresh uni, tamagoyaki skewers, tuna over rice.",
+        attractionId: "tsukiji-outer-market",
+        tag: "food",
+        rideToNext: { duration: "20 min", note: "Tsukiji → Ginza, on foot" }
       },
       {
         time: "Midday",
-        title: "Family ridge walk",
-        description: "Easy, breezy walk along the open ridgeline. Picnic with a view."
+        title: "Ginza",
+        description: "Tokyo's flagship shopping district — mostly a walk-and-window-shop stop, with a stray department-store basement food hall (depachika) worth a detour.",
+        tag: "culture",
+        optional: true,
+        rideToNext: { duration: "30 min", note: "Ginza → Toyosu, train" }
       },
       {
         time: "Afternoon",
-        title: "Pine forest picnic, then home to pack",
-        description: "Descend, stretch out in the woods at the bottom, head back to Larciano to pack for the south.",
-        rideToNext: { duration: "1 h", note: "Abetone → Larciano, the long descent", departAt: "16:00" }
+        title: "teamLab Planets TOKYO",
+        description:
+          "A barefoot, wade-through-water digital art museum — genuinely for all ages. Book a specific entry slot online well ahead; it regularly sells out.",
+        attractionId: "teamlab-planets",
+        tag: "family"
       }
     ],
-    driveNotes: "Larciano ↔ Abetone ≈ 1 h",
-    restaurants: ["rest-n-pizzeria-da-paolo", "rest-n-vinci"],
-    drinkOfTheDay: {
-      name: "Negroni",
-      type: "cocktail",
-      pairing: "Tuscany invented the Negroni in Florence — equal parts gin, Campari and sweet vermouth, bracing and bitter. The right drink after a long day at altitude and a packing-night to come.",
-      servingNote: "Old-fashioned glass · big ice cube · half-orange peel, pinched over the surface"
-    },
-    gear: [
-      { item: "Long sleeves & a light jacket — 12–15 °C cooler at 1,900 m", for: "abetone-monte-gomito" },
-      { item: "Long trousers for the ridge walk (sunburn at altitude is real)", for: "abetone-monte-gomito" },
-      { item: "Hiking-grade trail shoes, not sandals", for: "abetone-monte-gomito" },
-      { item: "A proper picnic kit: bread, cheese, fruit, water, a knife" },
-      { item: "Sunscreen, sunglasses & a windbreaker for the gondola ride", for: "abetone-monte-gomito" }
-    ],
     dayTips: [
-      "First gondola ~09:30, last descent ~17:00 — set a phone alarm",
-      "Mountain restaurants close mid-afternoon; pack the picnic instead",
-      "Cash for the gondola — card sometimes flaky at the booth",
-      "Use the cool half of the day for the ridge walk; descend by 15:00 to start packing"
+      "teamLab Planets involves walking through ankle-deep water — wear clothes you can roll up and bring a small towel",
+      "Tsukiji Outer Market stalls start closing by early afternoon — go for breakfast, not lunch"
     ],
+    drinkOfTheDay: {
+      name: "Junmai sake (chilled)",
+      type: "other",
+      pairing: "A clean, rice-forward sake after a fish-and-rice breakfast crawl — the natural pairing tonight.",
+      servingNote: "Chilled, small ceramic cup (choko)"
+    },
     italianWords: [
       {
-        word: "Montagna",
-        pronounce: "mon-TAH-nyah",
-        meaning: "Mountain",
-        example: "Andiamo in montagna.",
-        exampleMeaning: "We're heading to the mountains."
+        word: "Itadakimasu",
+        pronounce: "ee-tah-dah-kee-mahs",
+        meaning: "Said before eating (\"I gratefully receive\")",
+        example: "Itadakimasu! Tabemashou.",
+        exampleMeaning: "Itadakimasu! Let's eat."
       },
       {
-        word: "Nuvola",
-        pronounce: "NOO-voh-lah",
-        meaning: "Cloud",
-        example: "Sopra le nuvole.",
-        exampleMeaning: "Above the clouds."
-      },
-      {
-        word: "Fresco",
-        pronounce: "FREH-skoh",
-        meaning: "Cool, fresh",
-        example: "Che aria fresca!",
-        exampleMeaning: "What cool air!"
-      },
-      {
-        word: "Berretto",
-        pronounce: "behr-REHT-toh",
-        meaning: "Beanie / woolly hat",
-        example: "Metti il berretto, c'è vento!",
-        exampleMeaning: "Put your hat on — it's windy!"
-      },
-      {
-        word: "Stella",
-        pronounce: "STEHL-lah",
-        meaning: "Star (say STEH-lla, not 'stella' like English Stella)",
-        example: "Contiamo le stelle stasera.",
-        exampleMeaning: "Let's count the stars tonight."
-      },
-      {
-        word: "Eco",
-        pronounce: "EH-koh",
-        meaning: "Echo (two short snaps)",
-        example: "Senti l'eco tra gli alberi!",
-        exampleMeaning: "Listen to the echo among the trees!"
+        word: "Gochisousama deshita",
+        pronounce: "go-chee-SOH-sah-mah desh-ta",
+        meaning: "Said after eating, thanking for the meal",
+        example: "Oishikatta desu, gochisousama deshita.",
+        exampleMeaning: "It was delicious, thank you for the meal."
       }
     ]
   },
   {
     dayNumber: 5,
-    date: "2026-08-21",
-    weekday: "Friday",
-    departureTime: "10:00",
-    rideToFirst: { duration: "1 h 15 min", note: "Larciano → Sentierelsa" },
-    region: "transit",
-    base: "Larciano → Cortevecchia",
-    title: "River walk south, settle into the villa",
-    subtitle: "Transfer day — the Sentierelsa river walk on the way",
+    date: "2026-11-05",
+    weekday: "Thursday",
+    departureTime: "07:00",
+    region: "north",
+    base: "Tokyo (Shinjuku)",
+    title: "Day trip — Nikko",
+    subtitle: "Peak autumn colors in the mountains",
     activities: [
       {
-        time: "Morning",
-        title: "Drive south, stop at Sentierelsa",
-        description: "Wade the turquoise Elsa river to the Diborrato waterfall — closed-toe water shoes mandatory.",
-        attractionId: "sentierelsa",
-        tag: "water",
-        rideToNext: { duration: "30 min", note: "Sentierelsa → Siena", departAt: "13:30" }
+        time: "07:00",
+        title: "Train to Nikko",
+        description: "Tobu Limited Express direct from Asakusa (~2 h) is the easiest option — reserve seats ahead, this train fills up in leaf-peeping season.",
+        rideToNext: { duration: "2 h", note: "Asakusa → Tobu-Nikko" }
       },
       {
-        time: "Late Lunch",
-        title: "Late lunch & wandering in Siena",
-        description: "Drive 30 minutes to Siena. Have a late lunch, stretch the kids' legs around Piazza del Campo, and stock up at a supermarket for the villa's first morning.",
-        attractionId: "siena",
-        tag: "culture",
-        rideToNext: { duration: "2 h", note: "Siena → Cortevecchia", departAt: "16:30" }
+        time: "10:30",
+        title: "Toshogu Shrine",
+        description:
+          "The elaborate, gilded mausoleum of shogun Tokugawa Ieyasu, UNESCO-listed and dripping in carvings — including the original 'see no evil, hear no evil, speak no evil' monkeys. Early November is peak koyo (autumn foliage) around Nikko.",
+        attractionId: "nikko-toshogu",
+        tag: "culture"
       },
       {
-        time: "Late afternoon",
-        title: "Arrive at Tenuta Cortevecchia",
-        description: "Settle into the villa, unpack, swim in the private pool, decompress."
+        time: "Afternoon",
+        title: "Kanmangafuchi Abyss walk",
+        description: "A short, easy riverside trail lined with rows of moss-covered Jizo statues, especially pretty against the fall colors.",
+        tag: "nature",
+        optional: true
       }
     ],
-    driveNotes: "Larciano → Sentierelsa ≈ 1 h 15 min · Sentierelsa → Siena ≈ 30 min · Siena → Cortevecchia ≈ 2 h",
-    restaurants: ["rest-s-trattoria-verdi"],
-    drinkOfTheDay: {
-      name: "Vernaccia di San Gimignano DOCG",
-      type: "wine",
-      pairing: "You drove past its hills today. A crisp, mineral white with notes of green apple and almond — Tuscany's first DOC, and the perfect 'we made it south' pour after the long transfer.",
-      servingNote: "Well-chilled · the slim white-wine glass keeps the aromatics tight"
-    },
-    gear: [
-      { item: "Closed-toe water shoes — mandatory at Sentierelsa", for: "sentierelsa" },
-      { item: "Swimwear under your clothes; quick-change towel", for: "sentierelsa" },
-      { item: "Dry bag for phones (the river is the trail)", for: "sentierelsa" },
-      { item: "Light hiking shoes for the trail back from the river", for: "sentierelsa" },
-      { item: "Snacks & water for the long drive south" }
-    ],
+    driveNotes: "Asakusa ↔ Nikko ≈ 2 h each way by direct limited express",
     dayTips: [
-      "Fuel up before the A1 entry — autostrada gas is +20–30 c/L",
-      "Confirm Cortevecchia check-in window with the host before you leave",
-      "No public toilets at Sentierelsa trailhead — go in Colle di Val d'Elsa first",
-      "Plan an early-evening arrival; you don't want to discover the gravel road in the dark"
+      "This is a long day — leave by 07:00 and expect to be back in Tokyo by 20:00",
+      "Reserve the Tobu Limited Express seats in advance during autumn foliage season",
+      "Layer up — Nikko sits in the mountains and runs several degrees cooler than Tokyo"
     ],
+    drinkOfTheDay: {
+      name: "Umeshu (plum wine)",
+      type: "other",
+      pairing: "Sweet and easy after a long day of walking — a good one to unwind with back in Tokyo.",
+      servingNote: "On the rocks, or with soda"
+    },
     italianWords: [
       {
-        word: "Sentiero",
-        pronounce: "sen-TYAIR-oh",
-        meaning: "Trail, path",
-        example: "Il sentiero passa nel fiume.",
-        exampleMeaning: "The trail runs through the river."
-      },
-      {
-        word: "Valigia",
-        pronounce: "vah-LEE-jah",
-        meaning: "Suitcase",
-        example: "Chiudi la valigia.",
-        exampleMeaning: "Close the suitcase."
-      },
-      {
-        word: "Sud",
-        pronounce: "sood",
-        meaning: "South",
-        example: "Andiamo verso sud.",
-        exampleMeaning: "We're heading south."
-      },
-      {
-        word: "Saltellare",
-        pronounce: "sahl-tehl-LAH-reh",
-        meaning: "To hop, skip (fun bouncy verb)",
-        example: "Saltelliamo sui sassi!",
-        exampleMeaning: "Let's hop on the stones!"
-      },
-      {
-        word: "Fango",
-        pronounce: "FAHN-goh",
-        meaning: "Mud (hard 'g', not 'fang')",
-        example: "Attenti al fango vicino al fiume.",
-        exampleMeaning: "Watch the mud near the river."
-      },
-      {
-        word: "Onda",
-        pronounce: "OHN-dah",
-        meaning: "Wave (in water — not 'under')",
-        example: "Piccola onda, grande divertimento!",
-        exampleMeaning: "Small wave, big fun!"
+        word: "Momiji",
+        pronounce: "moh-MEE-jee",
+        meaning: "Autumn leaves / maple",
+        example: "Momiji ga kirei desu ne.",
+        exampleMeaning: "The autumn leaves are beautiful, aren't they."
       }
     ]
   },
   {
     dayNumber: 6,
-    date: "2026-08-22",
-    weekday: "Saturday",
-    departureTime: "09:30",
-    rideToFirst: { duration: "1 h 20 min", note: "Cortevecchia → Follonica" },
-    region: "south",
-    base: "Cortevecchia",
-    title: "Pure adrenaline — Acqua Village Follonica",
+    date: "2026-11-06",
+    weekday: "Friday",
+    departureTime: "08:30",
+    region: "north",
+    base: "Tokyo (Shinjuku)",
+    title: "Day trip — Kamakura",
+    subtitle: "The coastal Great Buddha, last Tokyo-base day",
     activities: [
       {
-        time: "Morning to evening",
-        title: "Acqua Village Follonica",
-        description: "Full day of slides, wave pool, lazy river, Polynesian shows.",
-        attractionId: "acqua-village-follonica",
-        tag: "extreme"
+        time: "08:30",
+        title: "Train to Kamakura",
+        description: "JR from Tokyo Station direct to Kamakura, about an hour.",
+        rideToNext: { duration: "1 h", note: "Tokyo → Kamakura, JR" }
+      },
+      {
+        time: "10:00",
+        title: "Kotoku-in — the Great Buddha",
+        description:
+          "An 11.4 m bronze Amida Buddha cast in 1252, sitting in the open air since a 15th-century tsunami swept its housing away. You can step inside the hollow statue for a small extra fee.",
+        attractionId: "kamakura-daibutsu",
+        tag: "culture",
+        rideToNext: { duration: "20 min", note: "Kotoku-in → Komachi-dori, on foot / local bus" }
+      },
+      {
+        time: "Afternoon",
+        title: "Komachi-dori & Tsurugaoka Hachimangu",
+        description: "A lively shopping street for lunch and snacks, leading to Kamakura's main shrine.",
+        tag: "food"
       }
     ],
-    driveNotes: "Cortevecchia ↔ Follonica ≈ 1 h 20 min",
-    restaurants: ["rest-s-trattoria-verdi", "rest-s-i-due-cippi"],
-    drinkOfTheDay: {
-      name: "Spritz al Limone",
-      type: "aperitif",
-      pairing: "Same Spritz family as the Aperol, but built on Limoncello — sharper, brighter, exactly the recovery drink after a long day of slides and chlorine.",
-      servingNote: "Tall glass · ice · 3 parts Prosecco · 2 parts Limoncello · soda · lemon wheel"
-    },
-    gear: [
-      { item: "Two sets of swimwear per person (one dry for the drive)", for: "acqua-village-follonica" },
-      { item: "Waterproof phone case", for: "acqua-village-follonica" },
-      { item: "Swim shirts / rash guards for kids — sun is harsh on the slides", for: "acqua-village-follonica" },
-      { item: "Water shoes — pavement around the wave pool gets very hot", for: "acqua-village-follonica" },
-      { item: "Beach towels (rentals are paid)", for: "acqua-village-follonica" },
-      { item: "A €1 coin for the locker", for: "acqua-village-follonica" }
-    ],
+    driveNotes: "Tokyo ↔ Kamakura ≈ 1 h each way by JR",
     dayTips: [
-      "Online tickets meaningfully cheaper — buy them the night before",
-      "Outside food allowed in the picnic zone; cooler bag = saves €€€",
-      "Arrive at opening (10:00) — slide queues triple after 13:00",
-      "Polynesian show times are posted at the gate; don't miss the evening one"
+      "Last night at the Tokyo base — repack tonight, tomorrow moves to Hakone",
+      "Kamakura gets busy on weekends; a Friday visit like this one is the easier day"
     ],
+    drinkOfTheDay: {
+      name: "Kamakura craft beer",
+      type: "beer",
+      pairing: "A local IPA or lager from one of Kamakura's small coastal breweries — a relaxed way to close the Tokyo stint.",
+      servingNote: "Bottled or draft, whatever the izakaya has on tap"
+    },
     italianWords: [
       {
-        word: "Scivolo",
-        pronounce: "SHEE-voh-loh",
-        meaning: "Slide",
-        example: "Lo scivolo più alto, per favore!",
-        exampleMeaning: "The tallest slide, please!"
+        word: "Umi",
+        pronounce: "oo-mee",
+        meaning: "Sea / ocean",
+        example: "Kamakura no umi wa kirei desu.",
+        exampleMeaning: "Kamakura's sea is beautiful."
       },
       {
-        word: "Divertimento",
-        pronounce: "dee-vehr-tee-MEN-toh",
-        meaning: "Fun",
-        example: "Che divertimento!",
-        exampleMeaning: "What fun!"
-      },
-      {
-        word: "Piscina",
-        pronounce: "pee-SHEE-nah",
-        meaning: "Swimming pool",
-        example: "Andiamo in piscina.",
-        exampleMeaning: "Let's go to the pool."
-      },
-      {
-        word: "Schizzo",
-        pronounce: "SKEET-tzoh",
-        meaning: "Splash, squirt, splotch",
-        example: "Che schizzo dalla piscina!",
-        exampleMeaning: "What a splash from the pool!"
-      },
-      {
-        word: "Tubo",
-        pronounce: "TOO-boh",
-        meaning: "Tube (slide tube — not 'tube-oh')",
-        example: "Scendo nel tubo blu!",
-        exampleMeaning: "I'm going down the blue tube!"
-      },
-      {
-        word: "Gridare",
-        pronounce: "gree-DAH-reh",
-        meaning: "To shout (not 'grid')",
-        example: "Non serve gridare, ti sento!",
-        exampleMeaning: "No need to shout — I can hear you!"
+        word: "Ganbatte",
+        pronounce: "gahn-BAH-teh",
+        meaning: "Good luck / do your best",
+        example: "Ashita mo ganbatte!",
+        exampleMeaning: "Do your best tomorrow too!"
       }
     ]
   },
   {
     dayNumber: 7,
-    date: "2026-08-23",
-    weekday: "Sunday",
-    departureTime: "07:00",
-    rideToFirst: { duration: "1 h 15 min", note: "Cortevecchia → Porto Santo Stefano (pier)" },
-    region: "south",
-    base: "Cortevecchia",
-    title: "Argentario catamaran cruise — snorkel & lunch (booked)",
+    date: "2026-11-07",
+    weekday: "Saturday",
+    departureTime: "10:00",
+    region: "north",
+    base: "Hakone",
+    title: "On to Hakone — open-air art & onsen",
+    subtitle: "Move base from Tokyo to a Hakone ryokan",
+    leadImage: "./images/hero/hakone-fuji-lake.jpg",
     activities: [
       {
-        time: "08:30",
-        title: "Check in at the Porto Santo Stefano pier",
-        description: "Meeting point at the Porto Santo Stefano pier — be there by 08:30, 30 minutes before the 09:00 departure, to check in with DONNINI. Bring the confirmation from your GetYourGuide app. No pets on board."
+        time: "10:00",
+        title: "Train to Hakone-Yumoto",
+        description: "Odakyu Romancecar direct from Shinjuku (~85 min) — reserved seats, scenic and easy with luggage.",
+        rideToNext: { duration: "1 h 25", note: "Shinjuku → Hakone-Yumoto, Romancecar" }
       },
       {
-        time: "09:00–17:30 (8.5 h)",
-        title: "Catamaran along Monte Argentario",
-        description: "Booked catamaran cruise: sail the Argentario coastline, dropping anchor in quiet coves to swim and snorkel — snorkel gear is provided on board. Lunch is served on deck (captain's bruschetta, seafood risotto, a fish main and a sweet snack), with an open bar of water, soft drinks and wine.",
-        attractionId: "porto-santo-stefano",
-        tag: "water"
+        time: "Midday",
+        title: "Hakone Open-Air Museum",
+        description:
+          "Sculpture park with a permanent Picasso pavilion, set against the hills — a rare museum kids genuinely enjoy since half of it is outdoors to climb and explore.",
+        attractionId: "hakone-open-air-museum",
+        tag: "culture"
+      },
+      {
+        time: "Evening",
+        title: "Check in, ryokan kaiseki dinner, onsen",
+        description:
+          "A multi-course kaiseki dinner served in-room or in a private dining room, then the hot-spring baths — this is the trip's slow-down night."
       }
     ],
-    driveNotes: "Cortevecchia ↔ Porto Santo Stefano ≈ 1 h 15 min",
-    restaurants: ["rest-s-porto-santo-stefano", "rest-s-trattoria-verdi"],
-    drinkOfTheDay: {
-      name: "Limoncello",
-      type: "digestif",
-      pairing: "After a salty day on the boat, the coastal classic — chilled, citrusy and just sweet enough. Dal Greco's harbour-side terrace is the natural finish line for this one.",
-      servingNote: "Served straight from the freezer in tiny chilled glasses · sip, never shoot"
-    },
+    driveNotes: "Shinjuku → Hakone-Yumoto ≈ 1 h 25 by Romancecar",
+    restaurants: ["rest-n-hakone-ryokan-kaiseki"],
     gear: [
-      { item: "Swimwear under your clothes + a dry set for the drive home", for: "porto-santo-stefano" },
-      { item: "A towel per person", for: "porto-santo-stefano" },
-      { item: "Reef-safe sunscreen, rash guards & sun-shirts (little shade on deck)", for: "porto-santo-stefano" },
-      { item: "Flip-flops + closed-toe water shoes for the swim stops", for: "porto-santo-stefano" },
-      { item: "Floating phone case + waterproof dry bag", for: "porto-santo-stefano" },
-      { item: "A light layer — mornings on the water can be breezy", for: "porto-santo-stefano" }
+      { item: "A small overnight bag — full luggage can stay at the ryokan while you day-trip Hakone tomorrow" },
+      { item: "No swimwear needed for a traditional onsen — modesty towels are provided" }
     ],
     dayTips: [
-      "Leave Cortevecchia by 07:00 — pier check-in is 08:30, 30 min before the 09:00 sail",
-      "Snorkel gear and lunch are included on board — no need to pack either",
-      "Not recommended if pregnant; no pets allowed on board",
-      "Free cancellation up to 09:00 on Aug 22 if the forecast turns rough"
+      "Traditional onsen etiquette: wash and rinse thoroughly at the stall before entering the shared bath, and know that most traditional onsens still restrict visible tattoos — ask the ryokan in advance if this applies to anyone in the group",
+      "Book the ryokan's dinner-included plan (ichi-shoku plan) — kaiseki is half the reason to stay in Hakone"
     ],
+    drinkOfTheDay: {
+      name: "Sake pairing with kaiseki",
+      type: "other",
+      pairing: "The ryokan will usually offer a small regional sake flight matched to the courses — worth saying yes to.",
+      servingNote: "Served warm or chilled depending on the grade, in small ceramic cups"
+    },
     italianWords: [
       {
-        word: "Mare",
-        pronounce: "MAH-reh",
-        meaning: "Sea",
-        example: "Una giornata in mare.",
-        exampleMeaning: "A day at sea."
+        word: "Onsen",
+        pronounce: "OHN-sen",
+        meaning: "Hot spring (bath)",
+        example: "Onsen ni hairimashou.",
+        exampleMeaning: "Let's get into the hot spring."
       },
       {
-        word: "Barca",
-        pronounce: "BAR-kah",
-        meaning: "Boat",
-        example: "Saliamo in barca.",
-        exampleMeaning: "We're getting on the boat."
-      },
-      {
-        word: "Ancora",
-        pronounce: "AHN-kor-ah",
-        meaning: "Anchor; also 'still'",
-        example: "Gettiamo l'ancora.",
-        exampleMeaning: "We drop the anchor."
-      },
-      {
-        word: "Timone",
-        pronounce: "tee-MOH-neh",
-        meaning: "Ship's wheel / rudder (captain word)",
-        example: "Chi vuole tenere il timone?",
-        exampleMeaning: "Who wants to hold the wheel?"
-      },
-      {
-        word: "Rete",
-        pronounce: "REH-teh",
-        meaning: "Net (fishing net — not 'reet')",
-        example: "La rete per pescare i pesci.",
-        exampleMeaning: "The net for catching fish."
-      },
-      {
-        word: "Conchiglia",
-        pronounce: "kohn-KEE-lyah",
-        meaning: "Seashell (long musical word)",
-        example: "Ho trovato una conchiglia enorme!",
-        exampleMeaning: "I found a huge seashell!"
+        word: "Yukkuri",
+        pronounce: "yook-KOO-ree",
+        meaning: "Slowly / take it easy",
+        example: "Kyou wa yukkuri shimasu.",
+        exampleMeaning: "Today we'll take it easy."
       }
     ]
   },
   {
     dayNumber: 8,
-    date: "2026-08-24",
-    weekday: "Monday",
-    departureTime: "06:45",
-    rideToFirst: { duration: "25 min", note: "Cortevecchia → Saturnia" },
-    region: "south",
-    base: "Cortevecchia",
-    title: "Hot springs at dawn, lake swim, the floating city",
-    subtitle: "A full circuit of the southern Maremma",
+    date: "2026-11-08",
+    weekday: "Sunday",
+    departureTime: "09:00",
+    region: "north",
+    base: "Hakone",
+    title: "Owakudani, Lake Ashi & Mt Fuji views",
     activities: [
       {
-        time: "07:30 (critical)",
-        title: "Saturnia — Cascate del Mulino",
-        description: "Arrive by 07:30 for a near-empty turquoise pool. By 10:00 it's packed and parking is gone.",
-        attractionId: "saturnia",
-        tag: "water",
-        rideToNext: { duration: "1 h 20", note: "Saturnia → Bolsena, hills and lakes", departAt: "11:00" }
+        time: "09:00",
+        title: "Hakone Ropeway to Owakudani",
+        description:
+          "A volcanic valley of sulphur vents and bubbling ground — the ropeway glides right over it, with a clear-day Mt Fuji view from the station. Try the local kuro-tamago (black eggs, boiled in the sulphur springs — said to add years to your life).",
+        attractionId: "hakone-owakudani",
+        tag: "nature",
+        rideToNext: { duration: "30 min", note: "Owakudani → Togendai, ropeway" }
       },
       {
         time: "Midday",
-        title: "Swim in Lago di Bolsena",
-        description: "Cool, clean volcanic lake — gentler than the August coast.",
-        attractionId: "lago-di-bolsena",
-        tag: "water",
-        rideToNext: { duration: "30 min", note: "Bolsena → Civita di Bagnoregio", departAt: "15:00" }
+        title: "Lake Ashi pirate ship cruise",
+        description: "A theatrical 'pirate ship' ferry across the lake, Mt Fuji behind it on a clear day, ending near the Hakone Shrine floating torii gate.",
+        attractionId: "hakone-lake-ashi",
+        tag: "view"
       },
       {
-        time: "Afternoon",
-        title: "Civita di Bagnoregio",
-        description: "Walk the long footbridge into the 'dying city' on its tufa pedestal.",
-        attractionId: "civita-di-bagnoregio",
-        tag: "culture",
-        // Day 8's title literally calls out "the floating city" — Civita is
-        // the headline finale, not a "skip if tired" extra. Opt it out of
-        // the auto-rule that would otherwise mark the 3rd attraction optional.
-        optional: false
+        time: "Evening",
+        title: "Second onsen night",
+        description: "Back to the ryokan for another kaiseki dinner and bath before tomorrow's move to Kyoto."
       }
-    ],
-    gear: [
-      { item: "Swimwear under your clothes for Saturnia (skip the queue)", for: "saturnia" },
-      { item: "Microfibre towel — quick to dry between stops" },
-      { item: "Sandals you don't mind smelling sulphury for a day", for: "saturnia" },
-      { item: "Beach mat for Bolsena's pebble shore", for: "lago-di-bolsena" },
-      { item: "Comfortable walking shoes for the steep Civita climb", for: "civita-di-bagnoregio" },
-      { item: "Sun hats, sunscreen, refilled water bottles" }
     ],
     dayTips: [
-      "Saturnia: be in the pools by 07:30 — it's a different place after 10:00",
-      "Rinse swimwear thoroughly at Bolsena — sulphur stains light fabrics",
-      "Civita footbridge ticket ~€5/adult, cash only",
-      "Eat lunch by 13:30 — village kitchens close hard at 14:30"
+      "Mt Fuji is shy — it hides behind cloud more mornings than not. Go early for the best odds",
+      "The Hakone Free Pass covers the ropeway, cruise and local buses in one ticket — buy it in Odawara or Shinjuku before heading up"
     ],
+    drinkOfTheDay: {
+      name: "Whisky highball",
+      type: "cocktail",
+      pairing: "Japanese whisky, soda, plenty of ice — a crisp way to close a mountain-air day.",
+      servingNote: "Tall glass, built at the table"
+    },
     italianWords: [
       {
-        word: "Terme",
-        pronounce: "TAIR-meh",
-        meaning: "Thermal baths, hot springs",
-        example: "Le terme di Saturnia all'alba.",
-        exampleMeaning: "The Saturnia hot springs at dawn."
+        word: "Fuji-san",
+        pronounce: "foo-jee-sahn",
+        meaning: "Mount Fuji",
+        example: "Kyou wa Fuji-san ga miemasu!",
+        exampleMeaning: "Today we can see Mt Fuji!"
       },
       {
-        word: "Lago",
-        pronounce: "LAH-goh",
-        meaning: "Lake",
-        example: "Un tuffo nel lago.",
-        exampleMeaning: "A dip in the lake."
-      },
-      {
-        word: "Panorama",
-        pronounce: "pah-noh-RAH-mah",
-        meaning: "View, panorama",
-        example: "Che panorama!",
-        exampleMeaning: "What a view!"
-      },
-      {
-        word: "Vapore",
-        pronounce: "vah-POH-reh",
-        meaning: "Steam (hot-springs mist)",
-        example: "Si vede il vapore sull'acqua calda.",
-        exampleMeaning: "You can see the steam on the hot water."
-      },
-      {
-        word: "Cannuccia",
-        pronounce: "kahn-NOOT-chah",
-        meaning: "Drinking straw (not 'can-ooch')",
-        example: "Una cannuccia per la granita.",
-        exampleMeaning: "A straw for the slush ice."
-      },
-      {
-        word: "Tuffo",
-        pronounce: "TOOF-foh",
-        meaning: "Dive, splash jump",
-        example: "Faccio un tuffo nel lago!",
-        exampleMeaning: "I'm doing a cannonball into the lake!"
+        word: "Kirei",
+        pronounce: "kee-REH-ee",
+        meaning: "Beautiful / pretty",
+        example: "Kono keshiki, kirei da ne.",
+        exampleMeaning: "This view is beautiful, isn't it."
       }
-    ],
-    restaurants: ["rest-s-i-due-cippi", "rest-s-trattoria-verdi"],
-    drinkOfTheDay: {
-      name: "Bianco di Pitigliano DOC",
-      type: "wine",
-      pairing: "A local southern white from the tufa hills you've been driving through. Light, mineral, faintly almond — the right last-night pour after a sunrise in sulphur springs and an afternoon in a floating city.",
-      servingNote: "Served well-chilled (8 °C), in the everyday white-wine glass"
-    }
+    ]
   },
   {
     dayNumber: 9,
-    date: "2026-08-25",
-    weekday: "Tuesday",
-    departureTime: "09:30",
-    rideToFirst: { duration: "40 min", note: "Cortevecchia → Marina di Alberese" },
-    region: "south",
-    base: "Cortevecchia",
-    title: "Maremma horses & the Etruscan rock maze",
+    date: "2026-11-09",
+    weekday: "Monday",
+    departureTime: "10:00",
+    region: "transit",
+    base: "Hakone → Kyoto",
+    title: "Onward to Kyoto",
+    subtitle: "Shinkansen day — Kanto to Kansai",
     activities: [
       {
-        time: "Morning",
-        title: "Horseback ride in the Maremma",
-        description: "1-hour family pony / horse trail through pine forest and dunes.",
-        attractionId: "maremma-horseback",
-        tag: "nature",
-        rideToNext: { duration: "1 h", note: "Maremma coast → Pitigliano hills", departAt: "11:30" }
+        time: "10:00",
+        title: "Odawara → Kyoto by Shinkansen",
+        description:
+          "Hakone-Yumoto to Odawara by local train, then the Tokaido Shinkansen direct to Kyoto (~2 h 20). No need to backtrack through Tokyo — Odawara has its own Shinkansen platform.",
+        rideToNext: { duration: "2 h 40", note: "Hakone-Yumoto → Odawara → Kyoto, incl. connection" }
       },
       {
-        time: "Lunch",
-        title: "Pitigliano + Via Cava di San Giuseppe",
-        description: "Photograph Pitigliano from the viewpoint, walk the old Jewish quarter. Then dive into the cool Etruscan rock corridors.",
-        attractionId: "pitigliano",
-        tag: "culture",
-        rideToNext: { duration: "20 min", note: "Pitigliano → Vitozza, scenic tufa road", departAt: "16:00" }
-      },
-      {
-        time: "Late afternoon",
-        title: "Vitozza cave city (wilder option)",
-        description: "Swap the Vie Cave for the abandoned cave dwellings of Vitozza — bring headlamps.",
-        attractionId: "vitozza",
-        tag: "cave"
+        time: "Evening",
+        title: "Check in, evening walk through Gion",
+        description:
+          "Kyoto's historic geisha district — lantern-lit lanes, machiya wooden townhouses, a chance of spotting a geiko or maiko heading to an appointment (be respectful — no blocking their path for photos).",
+        attractionId: "gion-district",
+        tag: "culture"
       }
     ],
-    gear: [
-      { item: "Long pants (jeans) for the horseback ride", for: "maremma-horseback" },
-      { item: "Closed-toe shoes for everything today — riding, caves, cobbles" },
-      { item: "Sun hats & long-sleeve light shirts for the open ride", for: "maremma-horseback" },
-      { item: "Headlamps if doing Vitozza (one per person)", for: "vitozza" },
-      { item: "A light layer for the cool tufa corridors", for: "via-cava-san-giuseppe" },
-      { item: "Water bottles and snacks — gaps between food stops" }
-    ],
+    driveNotes: "Hakone-Yumoto → Kyoto ≈ 2 h 40 total (local train + Tokaido Shinkansen)",
     dayTips: [
-      "Riding helmets are provided; minimum age usually 6",
-      "Pitigliano synagogue closes early on Friday — go before lunch if it's a Friday",
-      "Buy the 'sfratto dei Goym' from the kosher bakery in Pitigliano"
+      "Reserve Shinkansen seats ahead in autumn foliage season — unreserved cars can be standing-room only",
+      "Kyoto Station has coin lockers if you want to explore Gion before checking in"
     ],
+    drinkOfTheDay: {
+      name: "Sake tasting flight",
+      type: "other",
+      pairing: "Kyoto's Fushimi district is one of Japan's great sake-brewing regions — a good night to start sampling before visiting a brewery later this week.",
+      servingNote: "Small tasting flight, three grades side by side"
+    },
     italianWords: [
       {
-        word: "Cavallo",
-        pronounce: "kah-VAH-loh",
-        meaning: "Horse",
-        example: "Un cavallo della Maremma.",
-        exampleMeaning: "A Maremma horse."
+        word: "Shinkansen",
+        pronounce: "sheen-KAHN-sen",
+        meaning: "Bullet train",
+        example: "Shinkansen wa hayai desu.",
+        exampleMeaning: "The bullet train is fast."
       },
       {
-        word: "Grotta",
-        pronounce: "GROHT-tah",
-        meaning: "Cave, grotto",
-        example: "Entriamo nella grotta.",
-        exampleMeaning: "We're going into the cave."
-      },
-      {
-        word: "Storia",
-        pronounce: "STOH-ryah",
-        meaning: "History, story",
-        example: "Che storia affascinante!",
-        exampleMeaning: "What a fascinating history!"
-      },
-      {
-        word: "Stallo",
-        pronounce: "STAHL-loh",
-        meaning: "Stable stall (horses — not English 'stall')",
-        example: "Il cavallo torna allo stallo.",
-        exampleMeaning: "The horse goes back to the stall."
-      },
-      {
-        word: "Oscuro",
-        pronounce: "oh-SKOO-roh",
-        meaning: "Dark, shadowy",
-        example: "È un po' oscuro nella grotta.",
-        exampleMeaning: "It's a bit dark in the cave."
-      },
-      {
-        word: "Passo",
-        pronounce: "PAHS-soh",
-        meaning: "Step, pace (double 's')",
-        example: "Un passo alla volta, piano piano.",
-        exampleMeaning: "One step at a time, slowly slowly."
+        word: "Machiya",
+        pronounce: "mah-CHEE-yah",
+        meaning: "Traditional wooden townhouse",
+        example: "Kono machiya wa furui desu.",
+        exampleMeaning: "This machiya is old."
       }
-    ],
-    restaurants: ["rest-s-hostaria-ceccottino", "rest-s-trattoria-sovana"],
-    drinkOfTheDay: {
-      name: "Morellino di Scansano DOCG",
-      type: "wine",
-      pairing: "The flagship red of the southern Maremma, made just up the road. Plush dark fruit, soft tannins — the right glass to finish a day of horses, tufa villages and rock-cut corridors.",
-      servingNote: "Served at 16–18 °C, in a wide Burgundy-style bowl"
-    }
+    ]
   },
   {
     dayNumber: 10,
-    date: "2026-08-26",
-    weekday: "Wednesday",
-    departureTime: "03:30",
-    rideToFirst: { duration: "1 h 40 min", note: "Cortevecchia → Fiumicino" },
-    region: "transit",
-    base: "Fiumicino",
-    title: "Fly home",
-    leadImage: "./images/tel-aviv-skyline.jpg",
-    leadImageCredit: {
-      author: "Unsplash",
-      license: "Unsplash License",
-      source: "https://unsplash.com/photos/lpQwaLWhw9Q",
-      licenseUrl: "https://unsplash.com/license"
-    },
+    date: "2026-11-10",
+    weekday: "Tuesday",
+    departureTime: "07:00",
+    region: "south",
+    base: "Kyoto",
+    title: "Fushimi Inari & eastern Kyoto",
     activities: [
       {
-        time: "03:30",
-        title: "At FCO check-in",
-        description: "Bag-drop opens 2 hours before departure. Aim to be in line by 03:30 — even at 5am, FCO has queues. Grab a coffee and pastries near the gate."
+        time: "07:00",
+        title: "Fushimi Inari Taisha — the torii tunnels",
+        description:
+          "Thousands of vermillion torii gates climbing the mountain, dedicated to Inari, the god of rice and prosperity. Go at opening — the lower gates are a crowd crush by mid-morning, near-empty at dawn.",
+        attractionId: "fushimi-inari",
+        tag: "culture",
+        rideToNext: { duration: "25 min", note: "Fushimi Inari → Kiyomizu-dera, train + walk" }
       },
       {
-        time: "05:00",
-        title: "Take-off",
-        description: "Arrivederci, Tuscany. Buon viaggio!"
+        time: "Midday",
+        title: "Kiyomizu-dera & Higashiyama",
+        description:
+          "A wooden temple built without a single nail, on a hillside stage overlooking the city, followed by the sloped lanes of Higashiyama — Sannenzaka and Ninenzaka — lined with old shops.",
+        attractionId: "kiyomizu-dera",
+        tag: "culture"
       }
     ],
-    gear: [
-      { item: "Light layers — FCO is air-conditioned & the flight is cold" },
-      { item: "Passports + International Driving Permit easily reachable" },
-      { item: "Empty refillable bottle (fill after security)" },
-      { item: "Snacks for the kids — early flights, sleepy mood" },
-      { item: "All gels & liquids re-decanted to ≤ 100 ml" }
+    dayTips: [
+      "You don't need to walk the entire Fushimi Inari trail (it's a 2–3 h round trip up the mountain) — the first 30–40 minutes past the main gates capture the iconic tunnel views",
+      "Sannenzaka and Ninenzaka's stone steps are uneven — good shoes over anything with a heel"
+    ],
+    drinkOfTheDay: {
+      name: "Junmai Daiginjo sake",
+      type: "other",
+      pairing: "The premium grade, from a Fushimi brewery down the hill from this morning's shrine — a fitting toast to the day.",
+      servingNote: "Chilled, in a small glass to appreciate the aroma"
+    },
+    italianWords: [
+      {
+        word: "Torii",
+        pronounce: "toh-REE",
+        meaning: "Shrine gate",
+        example: "Takusan no torii ga arimasu.",
+        exampleMeaning: "There are so many torii gates."
+      },
+      {
+        word: "Jinja",
+        pronounce: "JEEN-jah",
+        meaning: "Shinto shrine",
+        example: "Kono jinja wa yuumei desu.",
+        exampleMeaning: "This shrine is famous."
+      }
+    ]
+  },
+  {
+    dayNumber: 11,
+    date: "2026-11-11",
+    weekday: "Wednesday",
+    departureTime: "08:00",
+    region: "south",
+    base: "Kyoto",
+    title: "Arashiyama bamboo & the Golden Pavilion",
+    activities: [
+      {
+        time: "08:00",
+        title: "Arashiyama Bamboo Grove & Tenryu-ji",
+        description:
+          "A towering bamboo corridor, best walked at opening before the tour groups arrive. Tenryu-ji's landscaped garden next door is a UNESCO World Heritage site and rarely crowded.",
+        attractionId: "arashiyama-bamboo",
+        tag: "nature",
+        rideToNext: { duration: "35 min", note: "Arashiyama → Kinkaku-ji, bus/taxi" }
+      },
+      {
+        time: "Midday",
+        title: "Kinkaku-ji — the Golden Pavilion",
+        description:
+          "A gold-leaf-covered pavilion reflected in its own pond — one of Kyoto's unmissable postcard sights, especially framed by peak autumn foliage in mid-November.",
+        attractionId: "kinkaku-ji",
+        tag: "view"
+      }
     ],
     dayTips: [
-      "Bag drop opens exactly 2 h before departure — be there at 03:30",
-      "Return the rental with a full tank — closest 24/7 pump is on Via Portuense",
-      "Allow 10–15 min for the rental shuttle from car return to terminal",
-      "Pre-pay airport tolls online to skip the boom-gate queue at exit"
+      "Arashiyama's bamboo grove is free and open 24/7 but genuinely magical only in the first hour after sunrise, before the crowds",
+      "Rent a bike near Arashiyama station if the group wants to cover the Sagano area faster"
+    ],
+    drinkOfTheDay: {
+      name: "Matcha liqueur",
+      type: "digestif",
+      pairing: "A Kyoto specialty — matcha blended into a liqueur, sweet and slightly bitter, a nice nightcap after a day of temples.",
+      servingNote: "On the rocks, or with milk over ice"
+    },
+    italianWords: [
+      {
+        word: "Take",
+        pronounce: "tah-keh",
+        meaning: "Bamboo",
+        example: "Take no mori wa suzushii desu.",
+        exampleMeaning: "The bamboo forest is cool (refreshing)."
+      },
+      {
+        word: "Kin'iro",
+        pronounce: "keen-EE-roh",
+        meaning: "Golden colour",
+        example: "Kin'iro no o-tera desu ne.",
+        exampleMeaning: "It's a golden-colored temple, isn't it."
+      }
+    ]
+  },
+  {
+    dayNumber: 12,
+    date: "2026-11-12",
+    weekday: "Thursday",
+    departureTime: "08:00",
+    region: "south",
+    base: "Kyoto",
+    title: "Day trip — Nara",
+    subtitle: "Bowing deer, the great Buddha hall",
+    activities: [
+      {
+        time: "08:00",
+        title: "Train to Nara",
+        description: "JR Nara Line rapid service direct from Kyoto Station, ~45 min.",
+        rideToNext: { duration: "45 min", note: "Kyoto → Nara, JR rapid" }
+      },
+      {
+        time: "09:30",
+        title: "Nara Park's bowing deer",
+        description:
+          "Over 1,000 wild sika deer roam freely and will bow for a 'shika senbei' cracker — buy a stack from a park vendor and expect to be mobbed politely.",
+        attractionId: "nara-deer-park",
+        tag: "family",
+        rideToNext: { duration: "10 min", note: "Deer park → Todai-ji, on foot" }
+      },
+      {
+        time: "Midday",
+        title: "Todai-ji's Great Buddha Hall",
+        description:
+          "The world's largest wooden building, housing a 15 m bronze Buddha. One pillar has a hole the exact size of the statue's nostril — legend says squeezing through it as a kid brings enlightenment.",
+        attractionId: "nara-todaiji",
+        tag: "culture"
+      }
+    ],
+    driveNotes: "Kyoto ↔ Nara ≈ 45 min each way by JR rapid",
+    dayTips: [
+      "Deer crackers (shika senbei) are for the deer only — they will go looking in bags and pockets if you're holding food",
+      "Some deer bow for a cracker; a few nip at clothing if kept waiting — stay relaxed and hold the cracker out flat"
+    ],
+    drinkOfTheDay: {
+      name: "Nara sake",
+      type: "other",
+      pairing: "Nara is considered the birthplace of sake brewing in Japan — a fitting place to try a local label back in Kyoto tonight.",
+      servingNote: "Warmed lightly, in a small flask (tokkuri)"
+    },
+    italianWords: [
+      {
+        word: "Shika",
+        pronounce: "SHEE-kah",
+        meaning: "Deer",
+        example: "Shika ga ojigi shimashita!",
+        exampleMeaning: "The deer bowed!"
+      },
+      {
+        word: "Daijoubu",
+        pronounce: "dai-JOH-boo",
+        meaning: "It's okay / are you okay?",
+        example: "Daijoubu desu ka?",
+        exampleMeaning: "Are you okay?"
+      }
+    ]
+  },
+  {
+    dayNumber: 13,
+    date: "2026-11-13",
+    weekday: "Friday",
+    departureTime: "09:00",
+    region: "south",
+    base: "Kyoto",
+    title: "Day trip — Osaka on the side",
+    subtitle: "Last Kyoto-base day, a first taste of Osaka",
+    activities: [
+      {
+        time: "09:00",
+        title: "Train to Osaka",
+        description: "JR Special Rapid from Kyoto Station, ~30 min to Osaka Station.",
+        rideToNext: { duration: "30 min", note: "Kyoto → Osaka, JR Special Rapid" }
+      },
+      {
+        time: "10:00",
+        title: "Osaka Castle",
+        description:
+          "A rebuilt 16th-century castle keep in a vast park — the museum inside covers Toyotomi Hideyoshi's unification of Japan, and the top floor gives a full skyline view.",
+        attractionId: "osaka-castle",
+        tag: "culture",
+        rideToNext: { duration: "20 min", note: "Osaka Castle → Dotonbori, subway" }
+      },
+      {
+        time: "Afternoon",
+        title: "Dotonbori & Kuromon Market",
+        description:
+          "Neon canal-side street food chaos — takoyaki, okonomiyaki, the giant Glico running man sign — then Kuromon Ichiba Market for a quieter grazing lunch.",
+        attractionId: "dotonbori",
+        tag: "food"
+      }
+    ],
+    driveNotes: "Kyoto ↔ Osaka ≈ 30 min each way by JR",
+    dayTips: [
+      "This is a preview — the full Osaka base starts tomorrow, so keep today lighter and don't try to see everything at once",
+      "Kuromon Market stalls are cash-and-eat-standing; bring small bills"
+    ],
+    drinkOfTheDay: {
+      name: "Umeshu highball",
+      type: "cocktail",
+      pairing: "Plum wine topped with soda — a popular Osaka izakaya order, light enough after a heavy street-food lunch.",
+      servingNote: "Tall glass, ice, a plum garnish"
+    },
+    italianWords: [
+      {
+        word: "Takoyaki",
+        pronounce: "tah-koh-YAH-kee",
+        meaning: "Octopus batter balls",
+        example: "Takoyaki wa atsui desu, ki o tsukete.",
+        exampleMeaning: "Takoyaki is hot, be careful."
+      },
+      {
+        word: "Ki o tsukete",
+        pronounce: "kee oh tsoo-KEH-teh",
+        meaning: "Take care / be careful",
+        example: "Ki o tsukete ne!",
+        exampleMeaning: "Take care, okay!"
+      }
+    ]
+  },
+  {
+    dayNumber: 14,
+    date: "2026-11-14",
+    weekday: "Saturday",
+    departureTime: "10:00",
+    region: "south",
+    base: "Osaka",
+    title: "Move to Osaka — Universal Studios Japan",
+    subtitle: "Full theme-park day",
+    leadImage: "./images/hero/osaka-dotonbori-night.jpg",
+    activities: [
+      {
+        time: "10:00",
+        title: "Check into Osaka base",
+        description: "A short hop from Kyoto — bags dropped, straight to the park.",
+        rideToNext: { duration: "20 min", note: "Osaka hotel → USJ, local train" }
+      },
+      {
+        time: "Midday",
+        title: "Universal Studios Japan",
+        description:
+          "The Super Nintendo World and Wizarding World of Harry Potter areas are the headline draws — book the park's timed-entry app slots for both the moment the gates open.",
+        attractionId: "universal-studios-japan",
+        tag: "family"
+      }
+    ],
+    driveNotes: "Kyoto → Osaka ≈ 30 min by JR; Osaka base → USJ ≈ 20 min",
+    gear: [
+      { item: "Comfortable shoes for a full day on your feet" },
+      { item: "A portable charger — the USJ app drains battery fast" }
+    ],
+    dayTips: [
+      "Buy Express Pass tickets in advance if the group wants to hit more than 3–4 headline rides — regular lines run 60–90+ minutes on weekends",
+      "November evenings cool down fast — bring a layer for after dark"
+    ],
+    drinkOfTheDay: {
+      name: "Japanese highball",
+      type: "cocktail",
+      pairing: "A classic whisky highball at a Dotonbori bar after a full theme-park day — simple, crisp, exactly what tired feet want.",
+      servingNote: "Tall glass, built tableside with plenty of ice"
+    },
+    italianWords: [
+      {
+        word: "Tanoshii",
+        pronounce: "tah-NOH-shee",
+        meaning: "Fun / enjoyable",
+        example: "Kyou wa tanoshikatta!",
+        exampleMeaning: "Today was fun!"
+      },
+      {
+        word: "Retsu",
+        pronounce: "reh-tsoo",
+        meaning: "Queue / line",
+        example: "Retsu ga nagai desu ne.",
+        exampleMeaning: "The line is long, isn't it."
+      }
+    ]
+  },
+  {
+    dayNumber: 15,
+    date: "2026-11-15",
+    weekday: "Sunday",
+    departureTime: "08:00",
+    region: "south",
+    base: "Osaka",
+    title: "Day trip — Himeji Castle",
+    subtitle: "Japan's most beautiful surviving castle",
+    activities: [
+      {
+        time: "08:00",
+        title: "Train to Himeji",
+        description: "Shinkansen from Shin-Osaka, ~30 min — a short, easy day-trip hop.",
+        rideToNext: { duration: "30 min", note: "Shin-Osaka → Himeji, Shinkansen" }
+      },
+      {
+        time: "09:30",
+        title: "Himeji Castle",
+        description:
+          "Nicknamed 'White Heron Castle' for its brilliant white plaster walls, and the best-preserved original castle keep in Japan — it survived WWII bombing and centuries of earthquakes untouched. UNESCO World Heritage.",
+        attractionId: "himeji-castle",
+        tag: "culture"
+      },
+      {
+        time: "Afternoon",
+        title: "Koko-en Garden",
+        description: "Nine connected Edo-style garden spaces right beside the castle — a calm, pretty wind-down before the train back.",
+        tag: "nature",
+        optional: true
+      }
+    ],
+    driveNotes: "Shin-Osaka ↔ Himeji ≈ 30 min each way by Shinkansen",
+    dayTips: [
+      "The castle keep involves steep traditional wooden stairs across six floors — manageable for most, but pace it for younger kids or anyone with knee trouble",
+      "Combo tickets covering both the castle and Koko-en Garden are cheaper than buying separately"
+    ],
+    drinkOfTheDay: {
+      name: "Nada sake (Hyogo)",
+      type: "other",
+      pairing: "Hyogo prefecture's Nada district, near Kobe, produces more sake than anywhere else in Japan — a fitting local pour after visiting its castle.",
+      servingNote: "Chilled or warm, taste both and compare"
+    },
+    italianWords: [
+      {
+        word: "Shiro",
+        pronounce: "SHEE-roh",
+        meaning: "Castle",
+        example: "Kono shiro wa shiroi desu.",
+        exampleMeaning: "This castle is white."
+      },
+      {
+        word: "Utsukushii",
+        pronounce: "oo-tsoo-KOO-shee",
+        meaning: "Beautiful",
+        example: "Utsukushii niwa desu ne.",
+        exampleMeaning: "It's a beautiful garden, isn't it."
+      }
+    ]
+  },
+  {
+    dayNumber: 16,
+    date: "2026-11-16",
+    weekday: "Monday",
+    departureTime: "11:00",
+    region: "transit",
+    base: "Osaka → Tokyo",
+    title: "Back to Tokyo",
+    subtitle: "Last Shinkansen leg, last evening",
+    activities: [
+      {
+        time: "11:00",
+        title: "Shin-Osaka → Tokyo by Shinkansen",
+        description: "The Tokaido Shinkansen direct, ~2 h 30. Grab an ekiben (station bento) for the ride — half the fun.",
+        rideToNext: { duration: "2 h 30", note: "Shin-Osaka → Tokyo" }
+      },
+      {
+        time: "Evening",
+        title: "Last Tokyo evening — Shinjuku",
+        description:
+          "Omoide Yokocho's tiny alleyway yakitori stalls, or a last conveyor-belt sushi run, then a last look at Shinjuku's neon before packing for the flight home."
+      }
+    ],
+    driveNotes: "Shin-Osaka → Tokyo ≈ 2 h 30 by Shinkansen",
+    dayTips: [
+      "Pack tonight, not tomorrow morning — the flight home leaves early",
+      "Confirm the exact departure airport/terminal and pre-book an airport-bound train or limousine bus seat"
+    ],
+    drinkOfTheDay: {
+      name: "Sparkling sake",
+      type: "other",
+      pairing: "A light, bubbly sake to toast the last night of the trip — festive without being heavy before an early flight.",
+      servingNote: "Chilled, in a champagne flute or small glass"
+    },
+    italianWords: [
+      {
+        word: "Ekiben",
+        pronounce: "eh-kee-BEN",
+        meaning: "Train station bento box",
+        example: "Shinkansen de ekiben o tabemashou.",
+        exampleMeaning: "Let's eat an ekiben on the bullet train."
+      },
+      {
+        word: "Saigo no yoru",
+        pronounce: "sai-GOH noh YOH-roo",
+        meaning: "The last night",
+        example: "Kyou wa Nihon de no saigo no yoru desu.",
+        exampleMeaning: "Tonight is the last night in Japan."
+      }
+    ]
+  },
+  {
+    dayNumber: 17,
+    date: "2026-11-17",
+    weekday: "Tuesday",
+    region: "transit",
+    base: "Tokyo",
+    title: "Sayonara, Japan",
+    subtitle: "Departure day",
+    activities: [
+      {
+        time: "Morning",
+        title: "Transfer to Haneda (HND)",
+        description: "Leave a comfortable buffer for check-in and security — international counters can queue up on a morning with several long-haul departures.",
+        rideToNext: { duration: "45 min", note: "Shinjuku → Haneda, monorail + Yamanote line" }
+      },
+      {
+        time: "Flight",
+        title: "Fly home via Dubai",
+        description: "Connecting back through Dubai on flydubai. Safe travels — mata ne, Japan."
+      }
+    ],
+    driveNotes: "Shinjuku → Haneda ≈ 45 min by train",
+    dayTips: [
+      "Double check every suitcase for anything sharp bought along the way (a good knife from Kappabashi, for instance) — it needs to go in checked luggage",
+      "Use the last konbini stop for snacks for the flight"
     ],
     italianWords: [
       {
-        word: "Arrivederci",
-        pronounce: "ah-ree-veh-DAIR-chee",
-        meaning: "Goodbye (until we meet again)",
-        example: "Arrivederci, Toscana!",
-        exampleMeaning: "Goodbye, Tuscany!"
+        word: "Sayonara",
+        pronounce: "sah-yoh-NAH-rah",
+        meaning: "Goodbye",
+        example: "Nihon, sayonara. Mata kimasu.",
+        exampleMeaning: "Goodbye, Japan. We'll come again."
       },
       {
-        word: "Volo",
-        pronounce: "VOH-loh",
-        meaning: "Flight",
-        example: "Il volo è in orario.",
-        exampleMeaning: "The flight is on time."
-      },
-      {
-        word: "A presto",
-        pronounce: "ah PRES-toh",
-        meaning: "See you soon",
-        example: "A presto, Italia!",
-        exampleMeaning: "See you soon, Italy!"
-      },
-      {
-        word: "Grazie",
-        pronounce: "GRAHT-tsyeh",
-        meaning: "Thank you (the 'zie' buzzes)",
-        example: "Grazie mille, è stato bellissimo!",
-        exampleMeaning: "Thanks a million — it was wonderful!"
-      },
-      {
-        word: "Subito",
-        pronounce: "SOO-bee-toh",
-        meaning: "Right away (airport hurry word)",
-        example: "Subito al gate, siamo in ritardo!",
-        exampleMeaning: "Straight to the gate — we're late!"
-      },
-      {
-        word: "Bacio",
-        pronounce: "BAH-choh",
-        meaning: "Kiss goodbye",
-        example: "Un bacio all'Italia!",
-        exampleMeaning: "A kiss for Italy!"
+        word: "Mata ne",
+        pronounce: "MAH-tah neh",
+        meaning: "See you again",
+        example: "Mata ne, Nihon!",
+        exampleMeaning: "See you again, Japan!"
       }
-    ],
-    drinkOfTheDay: {
-      name: "Espresso al banco",
-      type: "coffee",
-      pairing: "The proper Italian send-off — a single shot, standing at the airport bar, downed in three sips. The only nightcap that makes sense at 04:00 before a flight home.",
-      servingNote: "Tiny porcelain cup · drink it standing · pay €1.20 · don't ask for it 'to go'"
-    }
+    ]
   }
 ];

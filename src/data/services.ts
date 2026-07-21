@@ -1,254 +1,153 @@
 import type { Service } from "./types";
 
 export const services: Service[] = [
-  // ==================== NORTH BASE — Larciano area ====================
+  // ==================== NORTH — Tokyo / Hakone ====================
 
   // Restaurants
   {
-    id: "rest-n-pizzeria-da-paolo",
-    name: "Pizzeria Ristorante Da Paolo",
+    id: "rest-n-asakusa-tempura",
+    name: "Tempura Daikokuya — Asakusa",
     category: "restaurant",
     region: "north",
     base: "north",
-    shortDescription: "Local family pizzeria, classic wood-fired pies",
+    shortDescription: "Old-school tempura, a short walk from Senso-ji",
     description:
-      "An everyday neighbourhood spot in Larciano village — wood-fired pizza, simple pasta, friendly service, kids welcome. The easy go-to on a tired evening.",
-    address: "Larciano (PT)",
-    coords: [43.8265, 10.8985],
-    hours: "Dinner; closed Mon"
-  },
-  {
-    id: "rest-n-osteria-larciano",
-    name: "Trattoria del Castello",
-    category: "restaurant",
-    region: "north",
-    base: "north",
-    shortDescription: "Tuscan trattoria up in Larciano Castello with a view",
-    description:
-      "Up in the medieval upper village, classic Tuscan plates — pappardelle al cinghiale, bistecca, local Chianti — on a small terrace looking over the valley.",
-    address: "Larciano Castello (PT)",
-    coords: [43.8400, 10.8956],
+      "A century-old tempura specialist near Senso-ji, serving crisp, classic Edo-style tempura over rice. Expect a queue at peak times — worth it.",
+    address: "Asakusa, Taito City, Tokyo",
+    coords: [35.7115, 139.7960],
     hours: "Lunch & dinner"
   },
   {
-    id: "rest-n-vinci",
-    name: "Ristorante La Torre — Vinci",
+    id: "rest-n-omoide-yokocho",
+    name: "Omoide Yokocho — Shinjuku",
     category: "restaurant",
     region: "north",
     base: "north",
-    shortDescription: "Tuscan classics in Leonardo's hometown",
+    shortDescription: "Tiny yakitori alleys, elbow-to-elbow",
     description:
-      "Just across the valley in Vinci (Leonardo's birthplace), a reliable Tuscan kitchen — handmade pasta, grilled meats, good wine list. Pair with a quick walk to the Leonardo museum.",
-    address: "Via della Torre 19, Vinci (FI)",
-    coords: [43.7861, 10.9261],
-    hours: "Lunch & dinner; check Mon"
+      "A cluster of narrow alleys packed with tiny yakitori and izakaya counters, a few seats each, right by Shinjuku Station. Loud, smoky, and one of the most atmospheric places to eat in Tokyo.",
+    address: "1 Chome Nishishinjuku, Shinjuku City, Tokyo",
+    coords: [35.6938, 139.6997],
+    hours: "Evenings"
   },
   {
-    id: "rest-n-bagni-lucca",
-    name: "Circolo dei Forestieri — Bagni di Lucca",
+    id: "rest-n-hakone-ryokan-kaiseki",
+    name: "Ryokan kaiseki dinner — Hakone",
     category: "restaurant",
     region: "north",
     base: "north",
-    shortDescription: "Belle-époque dining hall on the river",
+    shortDescription: "Multi-course kaiseki, included with the ryokan stay",
     description:
-      "A historic former gentlemen's club turned restaurant, right on the Lima river in Bagni di Lucca. Big shaded terrace — perfect lunch after Canyon Park or rafting.",
-    address: "Piazza Jean Varraud 10, Bagni di Lucca (LU)",
-    coords: [44.0103, 10.5969],
-    hours: "Lunch & dinner"
+      "Most Hakone ryokan offer a dinner-included plan — a seasonal multi-course kaiseki meal, served in-room or in a private dining room. Book the plan when reserving the stay, not separately.",
+    address: "Gora / Hakone-Yumoto, Hakone, Kanagawa",
+    coords: [35.2323, 139.0508],
+    hours: "Dinner, by ryokan reservation"
   },
   {
-    id: "rest-n-pisa",
-    name: "Osteria dei Cavalieri — Pisa",
+    id: "rest-n-nikko-yuba",
+    name: "Yuba (tofu skin) lunch — Nikko",
     category: "restaurant",
     region: "north",
     base: "north",
-    shortDescription: "Long-standing Pisan osteria, walking distance from the Tower",
+    shortDescription: "Nikko's local specialty, near Toshogu",
     description:
-      "A solid Pisa stop a short walk from Piazza dei Miracoli — Tuscan classics, bean soups, fresh pasta, fair prices. Reserve for lunch.",
-    address: "Via San Frediano 16, Pisa (PI)",
-    coords: [43.7180, 10.4011],
-    hours: "Lunch & dinner; closed Sun"
+      "Nikko's signature dish — delicate tofu-skin (yuba) prepared several ways, served at small local restaurants near the Toshogu approach. A light, easy lunch between temple visits.",
+    address: "Near Toshogu Shrine, Nikko, Tochigi",
+    coords: [36.7550, 139.5985],
+    hours: "Lunch"
   },
-
-  // Supermarkets
   {
-    id: "sup-n-conad-larciano",
-    name: "Conad — Larciano",
+    id: "konbini-shinjuku",
+    name: "7-Eleven / Lawson — Shinjuku",
     category: "supermarket",
     region: "north",
     base: "north",
-    shortDescription: "Full-size local supermarket",
+    shortDescription: "Konbini for onigiri, snacks and IC card top-ups",
     description:
-      "Closest large supermarket to the Larciano stay — water, fresh produce, breakfast supplies, baby/sun gear. Open every day.",
-    address: "Via Marx, Larciano (PT)",
-    coords: [43.8181, 10.9072],
-    hours: "Mon–Sat 08:00–20:00, Sun 08:30–13:00"
-  },
-  {
-    id: "sup-n-coop-monsummano",
-    name: "Coop — Monsummano Terme",
-    category: "supermarket",
-    region: "north",
-    base: "north",
-    shortDescription: "Larger Coop hypermarket nearby",
-    description:
-      "If Conad is missing something, the Coop in Monsummano (10 min drive) is bigger — full deli, bakery, household, kids' stuff.",
-    address: "Via Empolese, Monsummano Terme (PT)",
-    coords: [43.8625, 10.8164],
-    hours: "Mon–Sat 08:00–21:00, Sun 09:00–20:00"
+      "Convenience stores are everywhere near Shinjuku Station — the easiest spot for a quick breakfast, IC card top-up, or ATM withdrawal (7-Eleven ATMs reliably accept foreign cards).",
+    address: "Around Shinjuku Station, Tokyo",
+    coords: [35.6905, 139.7005],
+    hours: "24 hours"
   },
 
-  // Gas stations
-  {
-    id: "gas-n-eni-larciano",
-    name: "Eni Station — Larciano",
-    category: "gas",
-    region: "north",
-    base: "north",
-    shortDescription: "Closest fuel stop to the Larciano house",
-    description:
-      "Standard Eni station on the main road through Larciano — 24/7 self-service via card. Tip: in Italy, 'servito' is staff-served and costs more; use 'fai da te' / self-service.",
-    address: "Via Marx, Larciano (PT)",
-    coords: [43.8198, 10.9051],
-    hours: "Self-service 24/7"
-  },
-  {
-    id: "gas-n-q8-monsummano",
-    name: "Q8 — Monsummano Terme",
-    category: "gas",
-    region: "north",
-    base: "north",
-    shortDescription: "Backup station on the SS-436 road",
-    description:
-      "Backup option en route to/from the A11 motorway — accepts foreign cards reliably.",
-    address: "Via Empolese, Monsummano Terme (PT)",
-    coords: [43.8639, 10.8189],
-    hours: "Self-service 24/7"
-  },
+  // ==================== SOUTH — Kyoto / Nara / Osaka / Himeji ====================
 
-  // ==================== SOUTH BASE — Manciano / Semproniano area ====================
-
-  // Restaurants
   {
-    id: "rest-s-trattoria-verdi",
-    name: "Trattoria Verdi — Manciano",
+    id: "rest-s-nishiki-market",
+    name: "Nishiki Market food stalls — Kyoto",
     category: "restaurant",
     region: "south",
     base: "south",
-    shortDescription: "Down-to-earth Maremma cooking in town",
+    shortDescription: "Kyoto's 'kitchen', a covered grazing street",
     description:
-      "A long-running family trattoria in Manciano — handmade pici, wild boar ragù, grilled lamb, good house wine. Closest 'real meal' option to Tenuta Cortevecchia.",
-    address: "Via Cavour, 58014 Manciano (GR)",
-    coords: [42.5886, 11.5158],
-    hours: "Lunch & dinner; check closure day"
+      "A five-block covered shopping street of small food stalls — pickles, skewered mochi, fresh yuba, matcha sweets. A good grazing lunch between Higashiyama and Kyoto Station.",
+    address: "Nishikikoji-dori, Nakagyo Ward, Kyoto",
+    coords: [35.0050, 135.7649],
+    hours: "Daytime, most stalls close by early evening"
   },
   {
-    id: "rest-s-i-due-cippi",
-    name: "I Due Cippi da Michele — Saturnia",
+    id: "rest-s-gion-kaiseki",
+    name: "Kaiseki dinner — Gion",
     category: "restaurant",
     region: "south",
     base: "south",
-    shortDescription: "Saturnia village classic — meats and pici",
+    shortDescription: "Traditional multi-course Kyoto cuisine",
     description:
-      "On the main square of Saturnia village (the hilltop town above the hot springs). Strong on grilled meats and traditional Maremma pasta. Nice shaded terrace.",
-    address: "Piazza Vittorio Veneto 26/A, Saturnia (GR)",
-    coords: [42.6644, 11.5081],
-    hours: "Lunch & dinner"
+      "Gion has some of Kyoto's finest kaiseki restaurants, seasonal multi-course meals in a traditional setting. Reserve ahead — the well-regarded ones book out days in advance.",
+    address: "Gion, Higashiyama Ward, Kyoto",
+    coords: [35.0037, 135.7788],
+    hours: "Dinner, reservation recommended"
   },
   {
-    id: "rest-s-hostaria-ceccottino",
-    name: "Hostaria del Ceccottino — Pitigliano",
+    id: "rest-s-dotonbori-takoyaki",
+    name: "Takoyaki & okonomiyaki stalls — Dotonbori",
     category: "restaurant",
     region: "south",
     base: "south",
-    shortDescription: "Refined Pitigliano cooking with kosher tradition",
+    shortDescription: "Osaka's street food headline acts",
     description:
-      "In the heart of Pitigliano's old town — modern takes on Maremma and local Jewish-Italian dishes (sfratto dessert), good wine list, lovely small dining room.",
-    address: "Piazza San Gregorio VII, 58017 Pitigliano (GR)",
-    coords: [42.6358, 11.6694],
-    hours: "Lunch & dinner; closed Tue"
+      "Dotonbori's canal-side stalls are the place for Osaka's two signature street foods — takoyaki (octopus batter balls) and okonomiyaki (savory pancake). Casual, cash-friendly, standing-room.",
+    address: "Dotonbori, Chuo Ward, Osaka",
+    coords: [34.6687, 135.5013],
+    hours: "Lunch & dinner, late"
   },
   {
-    id: "rest-s-trattoria-sovana",
-    name: "Taverna Etrusca — Sovana",
+    id: "rest-s-kuromon-market",
+    name: "Kuromon Ichiba Market — Osaka",
     category: "restaurant",
     region: "south",
     base: "south",
-    shortDescription: "Atmospheric stone-vaulted tavern in tiny Sovana",
+    shortDescription: "A calmer, mostly-indoor grazing market",
     description:
-      "Sovana is a postcard-perfect single-street Etruscan village near Pitigliano — Taverna Etrusca's vaulted dining room is the dinner stop after a day at the Vie Cave.",
-    address: "Piazza del Pretorio 16, Sovana, Sorano (GR)",
-    coords: [42.6561, 11.6322],
-    hours: "Lunch & dinner; closed Wed"
+      "A covered market street with fresh seafood, wagyu skewers and fruit stalls — a quieter alternative to Dotonbori for the same style of grazing lunch.",
+    address: "Nihonbashi, Chuo Ward, Osaka",
+    coords: [34.6653, 135.5061],
+    hours: "Daytime"
   },
   {
-    id: "rest-s-porto-santo-stefano",
-    name: "Dal Greco — Porto Santo Stefano",
-    category: "restaurant",
-    region: "south",
-    base: "south",
-    shortDescription: "Fresh fish in the harbour where the catamaran departs",
-    description:
-      "Right on the harbour at Porto Santo Stefano — daily catch, classic spaghetti allo scoglio, sea-view terrace. Perfect end to the boat day before driving back.",
-    address: "Via del Molo 1, Porto Santo Stefano (GR)",
-    coords: [42.4344, 11.1183],
-    hours: "Lunch & dinner; high season daily"
-  },
-
-  // Supermarkets
-  {
-    id: "sup-s-conad-manciano",
-    name: "Conad — Manciano",
+    id: "konbini-kyoto-station",
+    name: "7-Eleven / FamilyMart — Kyoto Station",
     category: "supermarket",
     region: "south",
     base: "south",
-    shortDescription: "Main supermarket for the southern base",
+    shortDescription: "Konbini for onigiri, snacks and IC card top-ups",
     description:
-      "The main grocery for the Manciano / Semproniano area — stock up here on the way in to Tenuta Cortevecchia. Water, breakfast, fresh produce, pool snacks.",
-    address: "Via Roma, 58014 Manciano (GR)",
-    coords: [42.5897, 11.5142],
-    hours: "Mon–Sat 08:00–20:00, Sun 08:30–13:00"
+      "Multiple convenience stores inside and around Kyoto Station — good for breakfast before an early Fushimi Inari start, or an ekiben for the train to Nara or Osaka.",
+    address: "Kyoto Station, Shimogyo Ward, Kyoto",
+    coords: [34.9858, 135.7588],
+    hours: "24 hours"
   },
   {
-    id: "sup-s-coop-pitigliano",
-    name: "Coop — Pitigliano",
+    id: "konbini-osaka-namba",
+    name: "7-Eleven / Lawson — Namba",
     category: "supermarket",
     region: "south",
     base: "south",
-    shortDescription: "Backup supermarket near Pitigliano",
-    description:
-      "Convenient if you're already in Pitigliano for the Vie Cave — solid full-size supermarket on the way out of town.",
-    address: "Via Generale Orsini, 58017 Pitigliano (GR)",
-    coords: [42.6361, 11.6753],
-    hours: "Mon–Sat 08:00–20:00, Sun 09:00–13:00"
-  },
-
-  // Gas stations
-  {
-    id: "gas-s-eni-manciano",
-    name: "Eni Station — Manciano",
-    category: "gas",
-    region: "south",
-    base: "south",
-    shortDescription: "Closest fuel stop to the southern base",
-    description:
-      "Eni station on the SR74 through Manciano — easy stop on every drive in/out of Cortevecchia. Self-service 24/7 with card.",
-    address: "SR74 — Manciano (GR)",
-    coords: [42.5872, 11.5125],
-    hours: "Self-service 24/7"
-  },
-  {
-    id: "gas-s-q8-albinia",
-    name: "Q8 — Albinia (Aurelia)",
-    category: "gas",
-    region: "south",
-    base: "south",
-    shortDescription: "On the SS-1 Aurelia — fill up before/after Argentario",
-    description:
-      "On the Aurelia coastal highway near Albinia — natural fuel stop on the way to/from the Porto Santo Stefano boat day or the Argentario lagoon.",
-    address: "SS-1 Aurelia, Albinia (GR)",
-    coords: [42.5044, 11.2122],
-    hours: "Self-service 24/7"
+    shortDescription: "Konbini near the Osaka base",
+    description: "Convenience stores throughout Namba for snacks, drinks and IC card top-ups before a day at Universal Studios Japan.",
+    address: "Namba, Chuo Ward, Osaka",
+    coords: [34.6627, 135.5006],
+    hours: "24 hours"
   }
 ];
 

@@ -2,98 +2,93 @@ import type { EmergencyGroup } from "./types";
 
 export const emergencyGroups: EmergencyGroup[] = [
   {
-    title: "Italy — emergency numbers",
+    title: "Japan — emergency numbers",
     items: [
-      { label: "Single emergency number (EU)", value: "112", type: "phone", detail: "Police, ambulance, fire — English available" },
-      { label: "Carabinieri (police)", value: "113", type: "phone" },
-      { label: "Fire brigade", value: "115", type: "phone" },
-      { label: "Medical emergency / ambulance", value: "118", type: "phone" },
-      { label: "Coast guard", value: "1530", type: "phone", detail: "Boat day at Argentario" },
-      { label: "Roadside assistance (ACI)", value: "803.116", type: "phone", detail: "From Italian mobile or landline" }
-    ]
-  },
-  {
-    title: "Hospitals & clinics — North base (Larciano)",
-    items: [
+      { label: "Police", value: "110", type: "phone", detail: "Limited English — speak slowly, or say 'English please'" },
+      { label: "Fire & ambulance", value: "119", type: "phone", detail: "Limited English available" },
       {
-        label: "Ospedale San Jacopo — Pistoia",
-        value: "Via Ciliegiole 97, 51100 Pistoia",
-        detail: "Main hospital, full ER. ≈ 25 min from Larciano",
-        type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=43.9285,10.9203"
+        label: "Japan Visitor Hotline (English, 24/7)",
+        value: "050-3816-2787",
+        type: "phone",
+        detail: "Tourist hotline for emergencies, disasters and general help in English"
       },
       {
-        label: "Ospedale San Luca — Lucca",
-        value: "Via Lippi-Francesconi, 55100 Lucca",
-        detail: "Major hospital with pediatric ER. ≈ 45 min west",
-        type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=43.8456,10.5394"
-      },
-      {
-        label: "Pronto Soccorso Pediatrico — Meyer (Florence)",
-        value: "Viale Pieraccini 24, 50139 Firenze",
-        detail: "Top pediatric hospital in central Italy. ≈ 1 h",
-        type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=43.8016,11.2486"
+        label: "Japan Helpline (English, 24/7)",
+        value: "0570-000-911",
+        type: "phone",
+        detail: "Non-profit English-language emergency assistance line for visitors"
       }
     ]
   },
   {
-    title: "Hospitals & clinics — South base (Manciano / Pitigliano)",
+    title: "Hospitals — Tokyo",
     items: [
       {
-        label: "Ospedale di Pitigliano — Petruccioli",
-        value: "Via Nicola Ciacci 340, 58017 Pitigliano (GR)",
-        detail: "Closest hospital to Cortevecchia. Has ER. ≈ 35 min",
+        label: "St. Luke's International Hospital",
+        value: "9-1 Akashi-cho, Chuo City, Tokyo",
+        detail: "Major hospital with an international patient department and English-speaking staff",
         type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=42.6383,11.6664"
+        link: "https://www.google.com/maps/dir/?api=1&destination=35.6683,139.7808"
       },
       {
-        label: "Ospedale Misericordia — Grosseto",
-        value: "Via Senese 161, 58100 Grosseto",
-        detail: "Main hospital of the province, full services. ≈ 1 h",
+        label: "Tokyo Medical and Surgical Clinic",
+        value: "32 Mori Bldg, 3-4-30 Shiba-koen, Minato City, Tokyo",
+        detail: "English-speaking private clinic, popular with foreign residents and travellers",
         type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=42.7747,11.1086"
-      },
-      {
-        label: "Guardia Medica Turistica",
-        value: "118 (ask)",
-        detail: "Tourist medical service in summer — call 118 to be redirected",
-        type: "phone"
+        link: "https://www.google.com/maps/dir/?api=1&destination=35.6564,139.7454"
       }
     ]
   },
   {
-    title: "Pharmacies (24h-rotation)",
+    title: "Hospitals — Kyoto / Nara",
     items: [
       {
-        label: "Farmacia Comunale — Manciano",
-        value: "Via Marsala, 58014 Manciano (GR)",
-        detail: "Closest pharmacy to Cortevecchia. Night-shift rotation posted on door.",
+        label: "Japanese Red Cross Kyoto Daiichi Hospital",
+        value: "15-749 Honmachi, Higashiyama Ward, Kyoto",
+        detail: "Major hospital with an ER, close to central Kyoto",
         type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=42.5897,11.5161"
+        link: "https://www.google.com/maps/dir/?api=1&destination=34.9889,135.7770"
       },
       {
-        label: "Farmacia di Larciano",
-        value: "Via Marx, Larciano (PT)",
-        detail: "Closest to the northern base. Night-shift rotation posted on door.",
+        label: "Nara Medical University Hospital",
+        value: "840 Shijo-cho, Kashihara, Nara",
+        detail: "Main teaching hospital serving the Nara area",
         type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=43.8200,10.9050"
+        link: "https://www.google.com/maps/dir/?api=1&destination=34.5219,135.7994"
       }
     ]
   },
   {
-    title: "Israeli embassy & consular help (Rome)",
+    title: "Hospitals — Osaka / Himeji",
     items: [
       {
-        label: "Embassy of Israel in Rome",
-        value: "Via Michele Mercati 14, 00197 Roma",
+        label: "Osaka General Medical Center",
+        value: "3-1-56 Bandai-Higashi, Sumiyoshi Ward, Osaka",
+        detail: "Large public hospital with a full emergency department",
         type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=41.9241,12.4856"
+        link: "https://www.google.com/maps/dir/?api=1&destination=34.6106,135.5106"
+      },
+      {
+        label: "Himeji Red Cross Hospital",
+        value: "399 Funakoshi-cho, Himeji, Hyogo",
+        detail: "Main hospital serving Himeji, has an ER",
+        type: "address",
+        link: "https://www.google.com/maps/dir/?api=1&destination=34.8283,134.6931"
+      }
+    ]
+  },
+  {
+    title: "Israeli embassy & consular help",
+    items: [
+      {
+        label: "Embassy of Israel in Tokyo",
+        value: "3 Chome-13-8 Mita, Meguro City, Tokyo",
+        type: "address",
+        link: "https://www.google.com/maps/dir/?api=1&destination=35.6363,139.7157"
       },
       {
         label: "Embassy phone",
-        value: "+39 06 3619 8500",
+        value: "+81 3-3264-0911",
         type: "phone"
       },
       {
@@ -104,9 +99,9 @@ export const emergencyGroups: EmergencyGroup[] = [
       },
       {
         label: "Embassy website",
-        value: "embassies.gov.il/rome",
+        value: "embassies.gov.il/tokyo",
         type: "website",
-        link: "https://embassies.gov.il/rome"
+        link: "https://embassies.gov.il/tokyo"
       }
     ]
   }

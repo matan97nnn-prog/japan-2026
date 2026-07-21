@@ -1,4 +1,4 @@
-const PREFIX = "tuscany26:italian-words-heard:";
+const PREFIX = "japan26:italian-words-heard:";
 
 function key(dayNumber: number) {
   return `${PREFIX}${dayNumber}`;

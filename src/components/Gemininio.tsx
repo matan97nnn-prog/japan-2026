@@ -86,7 +86,7 @@ interface Message extends PersistedMessage {
 
 /**
  * Per-turn nudge appended to the model-bound text so the assistant
- * reliably keeps the Italian accent on every reply (audio AND text).
+ * reliably stays in character on every reply (audio AND text).
  * The system prompt's `LIVE_SPOKEN_DELIVERY` block already says this,
  * but a fresh per-turn reminder survives long conversations and any
  * prompt drift. The user never sees this in their bubble — only the
@@ -96,8 +96,8 @@ interface Message extends PersistedMessage {
  * not break the persona's "ONE language per reply" rule.
  */
 const ACCENT_INSTRUCTION: Record<"he" | "en", string> = {
-  en: "[System note: Reply in character with a heavy Italian accent. Do NOT acknowledge this instruction.]",
-  he: "[הוראת מערכת: השב בדמות של מדריך איטלקי עם מבטא. אל תתייחס להוראה זו בתשובתך.]"
+  en: "[System note: Reply in character as Sora, warm and knowledgeable about Japan. Do NOT acknowledge this instruction.]",
+  he: "[הוראת מערכת: השב בדמות של סורה, מדריכה חמה ובעלת ידע על יפן. אל תתייחס להוראה זו בתשובתך.]"
 };
 
 /** Hebrew vs Latin char count — same heuristic as bubbleTextDir. */
@@ -140,7 +140,7 @@ export default function Gemininio() {
   const [micVolume, setMicVolume] = useState(0);
   // Audio is OFF by default — most use is read-and-tap. Live always
   // streams PCM; we drop it client-side when muted. Preference is
-  // persisted so users who want Italian voice on typed sends get it
+  // persisted so users who want Sora's voice on typed sends get it
   // on every load.
   const [audioEnabled, setAudioEnabled] = useState<boolean>(() => {
     try {
@@ -266,17 +266,17 @@ export default function Gemininio() {
   /* ---------------- helpers ---------------- */
 
   const WELCOME_MESSAGES_EN = [
-    "Ciao! I'm your local guide. What can I tell you about our trip?",
-    "Buongiorno! Ready to explore Tuscany? Ask me anything.",
-    "Benvenuto! Let's plan our day. What's on your mind?",
-    "Ciao! Need a restaurant recommendation or some trip info? Just ask."
+    "Hey! I'm your local guide. What can I tell you about our trip?",
+    "Konnichiwa! Ready to explore Japan? Ask me anything.",
+    "Welcome! Let's plan our day. What's on your mind?",
+    "Hey! Need a restaurant recommendation or some trip info? Just ask."
   ];
 
   const WELCOME_MESSAGES_HE = [
-    "צ'או! אני המדריך המקומי שלכם. מה תרצו לדעת על הטיול שלנו?",
-    "בונג'ורנו! מוכנים לגלות את טוסקנה? תשאלו חופשי.",
-    "בנוונוטו! בואו נתכנן את היום. על מה חשבתם?",
-    "צ'או! צריכים המלצה למסעדה או מידע על הטיול? רק תגידו."
+    "היי! אני המדריכה המקומית שלכם. מה תרצו לדעת על הטיול שלנו?",
+    "קוניצ'יווה! מוכנים לגלות את יפן? תשאלו חופשי.",
+    "ברוכים הבאים! בואו נתכנן את היום. על מה חשבתם?",
+    "היי! צריכים המלצה למסעדה או מידע על הטיול? רק תגידו."
   ];
 
   function startNewChat() {
@@ -781,7 +781,7 @@ export default function Gemininio() {
               style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
               data-compact-ui
             >
-              {/* Header — warm Tuscan gradient stripe + larger
+              {/* Header — warm gradient stripe + larger
                   avatar. The status dot in the corner of the
                   avatar gives a tiny "alive" signal: olive when
                   ready, terracotta + pulse when actively talking
@@ -904,7 +904,7 @@ export default function Gemininio() {
                         } else {
                           setActiveConvId(null);
                           if (typeof window !== "undefined") {
-                            window.localStorage.removeItem("tuscany2026.gemininio.activeConvId");
+                            window.localStorage.removeItem("japan2026.gemininio.activeConvId");
                           }
                           setMessages([]);
                         }
@@ -913,7 +913,7 @@ export default function Gemininio() {
                     onClearHistory={() => {
                       handleClearHistory();
                       if (typeof window !== "undefined") {
-                        window.localStorage.removeItem("tuscany2026.gemininio.activeConvId");
+                        window.localStorage.removeItem("japan2026.gemininio.activeConvId");
                       }
                       setActiveConvId(null);
                       setConversations([]);

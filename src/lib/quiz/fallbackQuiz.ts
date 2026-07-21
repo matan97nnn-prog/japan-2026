@@ -8,7 +8,7 @@
  *
  * **Question philosophy** — every template is about one of three
  * things: a real *place* the family is visiting, a real *attraction*
- * (its description, its town, its tag), or a real *Italian word /
+ * (its description, its town, its tag), or a real *Japanese word /
  * phrase* the day teaches. Meta-trip filler ("how many stops does
  * this day have?", "what day of the week is day 2?") is intentionally
  * absent — kids tune out instantly on questions about the data
@@ -21,7 +21,7 @@
  *     selector skips it),
  *   - sources its distractors from OTHER attractions / words / towns
  *     in the trip so wrong answers stay plausibly trip-flavored
- *     (the kid is choosing between four real Italian places, not
+ *     (the kid is choosing between four real Japanese places, not
  *     between Saturnia and Madagascar).
  *
  * The selector then runs all templates, drops the nulls, deduplicates
@@ -180,332 +180,242 @@ function buildQ(opts: {
 
 
 /* ------------------------------------------------------------------ */
-/* Italian-culture wildcard bank                                       */
+/* Japan-culture wildcard bank                                       */
 /* ------------------------------------------------------------------ */
 
-/** A small bilingual bank of kid-friendly "general Italy" facts —
- *  flag, food, cars, scooters, geography. Used by `tplItalianCulture`
+/** A small bilingual bank of kid-friendly "general Japan" facts —
+ *  flag, food, geography, pop culture. Used by `tplJapanCulture`
  *  as a controlled wildcard sprinkled into the offline pack so the
  *  deck doesn't feel repetitive on attraction-thin days. The pack is
  *  still primarily about today's attractions; the selector caps how
  *  many of these can fire (see `CULTURE_BUDGET` in `buildFallbackQuiz`).
  *  Keep facts at 8-year-old reading level — no politics, no booze,
  *  no scary detail. */
-const ITALIAN_CULTURE_FACTS: Record<Lang, AttractionQuizFact[]> = {
+const JAPAN_CULTURE_FACTS: Record<Lang, AttractionQuizFact[]> = {
   en: [
     {
-      question: "What three colours are on the Italian flag, from left to right?",
-      correctAnswer: "Green, white, and red",
+      question: "What does Japan's flag show?",
+      correctAnswer: "A red circle (the sun) on a white background",
       distractors: [
-        "Red, white, and blue",
-        "Yellow, black, and white",
-        "Blue, white, and red"
+        "A red maple leaf on white",
+        "Three horizontal stripes",
+        "A gold star on blue"
       ]
     },
     {
-      question: "Pizza Margherita is named after a real Italian queen and shows off the Italian flag colours. What are the three classic toppings?",
-      correctAnswer: "Tomato (red), mozzarella (white) and basil (green)",
+      question: "Sushi is famous around the world. What's the one thing every real sushi actually has?",
+      correctAnswer: "Vinegared rice",
       distractors: [
-        "Pineapple, ham and corn",
-        "Mushrooms, olives and pepperoni",
-        "Sweetcorn, egg and broccoli"
+        "Raw fish (some sushi has none at all!)",
+        "Chopsticks built in",
+        "Seaweed on the outside, always"
       ]
     },
     {
-      question: "Which of these famous foods is NOT actually from Italy?",
-      correctAnswer: "Spaghetti with meatballs (it's American!)",
-      distractors: [
-        "Pizza Margherita",
-        "Gelato (ice cream)",
-        "Lasagna"
-      ]
+      question: "Japan is a country made up of thousands of islands. How many main islands does it have?",
+      correctAnswer: "Four",
+      distractors: ["One", "Twelve", "One hundred"]
     },
     {
-      question: "Italy shares its northern border with a few other countries. Which of these countries does NOT border Italy?",
-      correctAnswer: "Spain",
-      distractors: [
-        "France",
-        "Switzerland",
-        "Austria"
-      ]
+      question: "What is the name of Japan's tallest mountain, a near-perfect snow-capped cone?",
+      correctAnswer: "Mount Fuji",
+      distractors: ["Mount Etna", "Mount Everest", "Mount Kilimanjaro"]
     },
     {
-      question: "About 2000 years ago, a powerful empire ruled Italy and much of the world. What were the people of this empire called?",
-      correctAnswer: "The Romans",
-      distractors: [
-        "The Greeks",
-        "The Egyptians",
-        "The Vikings"
-      ]
+      question: "Japan's bullet trains are some of the fastest in the world. What are they called?",
+      correctAnswer: "Shinkansen",
+      distractors: ["Vaporetto", "Autobahn", "TGV"]
     },
     {
-      question: "The Teenage Mutant Ninja Turtles are named after four famous Italian Renaissance artists. Who are they?",
-      correctAnswer: "Leonardo, Michelangelo, Donatello, and Raphael",
-      distractors: [
-        "Mario, Luigi, Toad, and Bowser",
-        "Romeo, Juliet, Hamlet, and Othello",
-        "Vivaldi, Puccini, Verdi, and Rossini"
-      ]
+      question: "What is the capital city of Japan?",
+      correctAnswer: "Tokyo",
+      distractors: ["Kyoto", "Osaka", "Nagoya"]
     },
     {
-      question: "Who painted the world's most famous painting, the Mona Lisa?",
-      correctAnswer: "Leonardo da Vinci, an Italian artist",
-      distractors: [
-        "Pablo Picasso",
-        "Vincent van Gogh",
-        "Michelangelo"
-      ]
+      question: "Nintendo, the company behind Mario and Zelda, comes from which country?",
+      correctAnswer: "Japan",
+      distractors: ["South Korea", "the United States", "Sweden"]
     },
     {
-      question: "The main international airport in Rome is named after which famous Italian inventor and artist?",
-      correctAnswer: "Leonardo da Vinci",
-      distractors: [
-        "Julius Caesar",
-        "Marco Polo",
-        "Christopher Columbus"
-      ]
+      question: "Pokémon — Pikachu and friends — was created in which country?",
+      correctAnswer: "Japan",
+      distractors: ["Italy", "the United Kingdom", "Australia"]
     },
     {
-      question: "Italy is shaped a bit like which everyday object?",
-      correctAnswer: "A boot",
-      distractors: ["A hat", "A spoon", "A football"]
+      question: "What is Japan's traditional national sport, involving two very large wrestlers?",
+      correctAnswer: "Sumo",
+      distractors: ["Judo (that's popular too, but not the ancient national sport)", "Boxing", "Wrestling (Olympic-style)"]
     },
     {
-      question: "What is the capital city of Italy?",
-      correctAnswer: "Rome",
-      distractors: ["Milan", "Florence", "Venice"]
+      question: "Japan is famous for cherry blossom season in spring. What is the Japanese word for cherry blossoms?",
+      correctAnswer: "Sakura",
+      distractors: ["Momiji (that's autumn leaves!)", "Wasabi", "Origami"]
     },
     {
-      question: "What is the name of the famous little Italian scooter, designed in the 1940s?",
-      correctAnswer: "The Vespa (Italian for 'wasp')",
-      distractors: ["The Avocado", "The Tarantula", "The Spaghetti"]
+      question: "Japan sits on the 'Ring of Fire'. What does that mean it has a lot of?",
+      correctAnswer: "Earthquakes and volcanoes",
+      distractors: ["Wildfires", "Hurricanes", "Icebergs"]
     },
     {
-      question: "Ferrari and Lamborghini are both world-famous Italian makers of what?",
-      correctAnswer: "Fast sports cars",
-      distractors: ["Fizzy lemonade", "Wooden toys", "Pencils and pens"]
+      question: "What is the Japanese art of folding paper into shapes like cranes and boxes called?",
+      correctAnswer: "Origami",
+      distractors: ["Ikebana (that's flower arranging)", "Bonsai (that's tiny trees)", "Calligraphy"]
     },
     {
-      question: "What does the Italian word 'gelato' mean in English?",
-      correctAnswer: "Ice cream",
-      distractors: ["A small boat", "A song", "A train"]
+      question: "Godzilla, the giant movie monster, first stomped onto screens in which country?",
+      correctAnswer: "Japan",
+      distractors: ["the United States", "China", "Russia"]
     },
     {
-      question: "In 2014, the Israeli basketball team Maccabi Tel Aviv won the European Championship. In which Italian city did they play the final?",
-      correctAnswer: "Milan",
-      distractors: ["Rome", "Venice", "Florence"]
+      question: "Japanese convenience stores (konbini) like 7-Eleven and Lawson are famous for being open how long?",
+      correctAnswer: "24 hours a day",
+      distractors: ["Only in the morning", "Only on weekends", "9am to 5pm"]
     },
     {
-      question: "Italy has the most active volcano in Europe. What is its name?",
-      correctAnswer: "Mount Etna (in Sicily)",
-      distractors: ["Mount Everest", "Mount Fuji", "Mount Kilimanjaro"]
+      question: "What kind of gate, usually painted red, marks the entrance to a Shinto shrine?",
+      correctAnswer: "A torii gate",
+      distractors: ["A pagoda", "A dojo", "A tatami"]
     },
     {
-      question: "Which of these is a famous big city in Tuscany?",
-      correctAnswer: "Florence",
-      distractors: ["Rome", "Venice", "Naples"]
+      question: "Who were the skilled warriors of old Japan, known for their swords and strict code of honour?",
+      correctAnswer: "Samurai",
+      distractors: ["Vikings", "Knights", "Ninjas (close, but that's a different role!)"]
     },
     {
-      question: "Tuscany is famous for its beautiful countryside. What does it look like?",
-      correctAnswer: "Rolling green hills with vineyards and cypress trees",
-      distractors: [
-        "Flat sandy deserts with cactus",
-        "Snowy mountains with pine trees",
-        "Deep jungles with monkeys"
-      ]
+      question: "What long wheat noodles in hot broth are one of Japan's most popular comfort foods?",
+      correctAnswer: "Ramen",
+      distractors: ["Spaghetti", "Udon (also Japanese, but a different thicker noodle!)", "Pho"]
     },
     {
-      question: "In the Maremma area of Tuscany, you can find 'Butteri'. What are they?",
-      correctAnswer: "Italian cowboys who ride horses",
-      distractors: [
-        "A type of creamy butter",
-        "People who make pizza",
-        "Little green frogs"
-      ]
+      question: "Totoro and Spirited Away are two beloved animated films from which famous Japanese studio?",
+      correctAnswer: "Studio Ghibli",
+      distractors: ["Pixar", "DreamWorks", "Disney"]
     },
     {
-      question: "What type of thick, hand-rolled pasta is super famous in Tuscany?",
-      correctAnswer: "Pici",
-      distractors: ["Spaghetti", "Macaroni", "Ravioli"]
+      question: "Japanese is written using three different writing systems. Can you name one of them?",
+      correctAnswer: "Hiragana, katakana, or kanji (any one is correct)",
+      distractors: ["The Latin alphabet only", "Morse code", "Braille"]
     },
     {
-      question: "Tuscan bread is famous for missing one important ingredient. What is it?",
-      correctAnswer: "Salt (it's completely unsalted!)",
-      distractors: ["Flour", "Water", "Yeast"]
-    },
-    {
-      question: "For which famous Italian soccer team did Cristiano Ronaldo play?",
-      correctAnswer: "Juventus",
-      distractors: ["AC Milan", "Inter Milan", "AS Roma"]
-    },
-    {
-      question: "Which Italian rock band won the Eurovision Song Contest in 2021?",
-      correctAnswer: "Måneskin",
-      distractors: ["ABBA", "The Beatles", "Coldplay"]
-    },
-    {
-      question: "Italy has won the World Cup four times! Which of these is a famous Italian soccer team?",
-      correctAnswer: "Juventus",
-      distractors: ["Real Madrid", "Manchester United", "Bayern Munich"]
+      question: "Which side of the road do cars drive on in Japan?",
+      correctAnswer: "The left side",
+      distractors: ["The right side", "Whichever side is empty", "The middle"]
     }
   ],
   he: [
     {
-      question: "אילו שלושה צבעים יש בדגל האיטלקי, משמאל לימין?",
-      correctAnswer: "ירוק, לבן ואדום",
-      distractors: ["אדום, לבן וכחול", "צהוב, שחור ולבן", "כחול, לבן ואדום"]
-    },
-    {
-      question: "פיצה מרגריטה נקראת על שם מלכה איטלקית אמיתית, ומציגה את צבעי הדגל האיטלקי. מה שלוש התוספות הקלאסיות?",
-      correctAnswer: "עגבנייה (אדום), מוצרלה (לבן) ובזיליקום (ירוק)",
+      question: "מה מופיע על דגל יפן?",
+      correctAnswer: "עיגול אדום (השמש) על רקע לבן",
       distractors: [
-        "אננס, אגוזים ותירס",
-        "פטריות, זיתים ופפרוני",
-        "תירס מתוק, ביצה וברוקולי"
+        "עלה מייפל אדום על לבן",
+        "שלושה פסים אופקיים",
+        "כוכב זהב על כחול"
       ]
     },
     {
-      question: "איזה מהמאכלים המפורסמים האלה לא באמת הומצא באיטליה?",
-      correctAnswer: "ספגטי עם כדורי בשר (זה אמריקאי!)",
+      question: "סושי מפורסם בכל העולם. מה הדבר האחד שבאמת יש בכל סושי?",
+      correctAnswer: "אורז בחומץ",
       distractors: [
-        "פיצה מרגריטה",
-        "גלידה (ג'לאטו)",
-        "לזניה"
+        "דג נא (יש סושי בלי דג בכלל!)",
+        "צ'ופסטיקס מובנים",
+        "אצה מבחוץ, תמיד"
       ]
     },
     {
-      question: "איטליה חולקת את הגבול הצפוני שלה עם כמה מדינות. איזו מהמדינות האלה לא גובלת באיטליה?",
-      correctAnswer: "ספרד",
-      distractors: [
-        "צרפת",
-        "שווייץ",
-        "אוסטריה"
-      ]
+      question: "יפן היא מדינה שמורכבת מאלפי איים. כמה איים ראשיים יש לה?",
+      correctAnswer: "ארבעה",
+      distractors: ["אחד", "שנים עשר", "מאה"]
     },
     {
-      question: "לפני כ-2000 שנה, אימפריה חזקה שלטה באיטליה ובחלק גדול מהעולם. איך קראו לאנשי האימפריה הזו?",
-      correctAnswer: "הרומאים",
-      distractors: [
-        "היוונים",
-        "המצרים",
-        "הוויקינגים"
-      ]
+      question: "מה שמו של ההר הגבוה ביותר ביפן, חרוט מושלג כמעט מושלם?",
+      correctAnswer: "פוג'י",
+      distractors: ["אטנה", "האוורסט", "קילימנג'רו"]
     },
     {
-      question: "צבי הנינג׳ה נקראים על שם ארבעה אמנים איטלקים מפורסמים מתקופת הרנסנס. מי הם?",
-      correctAnswer: "לאונרדו, מיכלאנג׳לו, דונטלו ורפאל",
-      distractors: [
-        "מריו, לואיג׳י, טואד ובאוזר",
-        "רומיאו, יוליה, המלט ואותלו",
-        "ויוואלדי, פוצ׳יני, ורדי ורוסיני"
-      ]
+      question: "רכבות הקליע של יפן הן מהמהירות בעולם. איך קוראים להן?",
+      correctAnswer: "שינקנסן",
+      distractors: ["ואפורטו", "אוטובאן", "TGV"]
     },
     {
-      question: "מי צייר את הציור המפורסם בעולם, המונה ליזה?",
-      correctAnswer: "לאונרדו דה וינצ׳י, אמן איטלקי",
-      distractors: [
-        "פבלו פיקאסו",
-        "וינסנט ואן גוך",
-        "מיכלאנג׳לו"
-      ]
+      question: "מהי בירת יפן?",
+      correctAnswer: "טוקיו",
+      distractors: ["קיוטו", "אוסקה", "נגויה"]
     },
     {
-      question: "נמל התעופה הבינלאומי המרכזי של רומא נקרא על שם איזה ממציא ואמן איטלקי מפורסם?",
-      correctAnswer: "לאונרדו דה וינצ׳י",
-      distractors: [
-        "יוליוס קיסר",
-        "מרקו פולו",
-        "כריסטופר קולומבוס"
-      ]
+      question: "נינטנדו, החברה שמאחורי מריו וזלדה, מגיעה מאיזו מדינה?",
+      correctAnswer: "יפן",
+      distractors: ["דרום קוריאה", "ארצות הברית", "שוודיה"]
     },
     {
-      question: "צורת איטליה דומה קצת לאיזה חפץ יומיומי?",
-      correctAnswer: "מגף",
-      distractors: ["כובע", "כף", "כדורגל"]
+      question: "פוקימון — פיקאצ'ו וחבריו — נוצר באיזו מדינה?",
+      correctAnswer: "יפן",
+      distractors: ["איטליה", "בריטניה", "אוסטרליה"]
     },
     {
-      question: "מהי בירת איטליה?",
-      correctAnswer: "רומא",
-      distractors: ["מילאנו", "פירנצה", "ונציה"]
+      question: "מהו הספורט הלאומי המסורתי של יפן, עם שני מתאבקים גדולים מאוד?",
+      correctAnswer: "סומו",
+      distractors: ["ג'ודו (גם פופולרי, אבל לא הספורט הלאומי העתיק)", "אגרוף", "היאבקות אולימפית"]
     },
     {
-      question: "מה השם של הקטנוע הקטן והמפורסם של איטליה, שעוצב בשנות הארבעים?",
-      correctAnswer: "ה־וֶספַּה (׳צרעה׳ באיטלקית)",
-      distractors: ["ה־אבוקדו", "ה־טרנטולה", "ה־ספגטי"]
+      question: "יפן מפורסמת בעונת פריחת הדובדבן באביב. איך קוראים בעברית לפריחה הזו ביפנית?",
+      correctAnswer: "סאקורה",
+      distractors: ["מומיג'י (זה עלי הסתיו!)", "וואסאבי", "אוריגמי"]
     },
     {
-      question: "פרארי ולמבורגיני הם שני יצרנים איטלקיים מפורסמים בעולם של מה?",
-      correctAnswer: "מכוניות ספורט מהירות",
-      distractors: ["לימונדה תוססת", "צעצועי עץ", "עפרונות ועטים"]
+      question: "יפן יושבת על 'טבעת האש'. מה זה אומר שיש לה הרבה?",
+      correctAnswer: "רעידות אדמה והרי געש",
+      distractors: ["שריפות בר", "הוריקנים", "קרחונים"]
     },
     {
-      question: "מה משמעות המילה האיטלקית ׳ג׳לאטו׳ בעברית?",
-      correctAnswer: "גלידה",
-      distractors: ["סירה קטנה", "שיר", "רכבת"]
+      question: "איך קוראים לאמנות היפנית של קיפול נייר לצורות כמו עגורים וקופסאות?",
+      correctAnswer: "אוריגמי",
+      distractors: ["איקבנה (זה סידור פרחים)", "בונסאי (אלה עצים זעירים)", "קליגרפיה"]
     },
     {
-      question: "בשנת 2014, מכבי תל אביב בכדורסל זכתה באליפות אירופה. באיזו עיר איטלקית נערך משחק הגמר?",
-      correctAnswer: "מילאנו",
-      distractors: ["רומא", "ונציה", "פירנצה"]
+      question: "גוג'ירה, המפלצת הענקית מהסרטים, צעדה לראשונה על המסך באיזו מדינה?",
+      correctAnswer: "יפן",
+      distractors: ["ארצות הברית", "סין", "רוסיה"]
     },
     {
-      question: "באיטליה נמצא הוולקן הפעיל ביותר באירופה. מה שמו?",
-      correctAnswer: "הר האטנה (בסיציליה)",
-      distractors: ["הר אוורסט", "הר פוג׳י", "הר קילימנג׳רו"]
+      question: "חנויות הנוחות היפניות (קונביני) כמו 7-Eleven ולוסון מפורסמות בזה שהן פתוחות כמה זמן?",
+      correctAnswer: "24 שעות ביממה",
+      distractors: ["רק בבוקר", "רק בסופי שבוע", "מ-9 בבוקר עד 5 אחר הצהריים"]
     },
     {
-      question: "איזו מבין אלו היא עיר גדולה ומפורסמת בטוסקנה?",
-      correctAnswer: "פירנצה",
-      distractors: ["רומא", "ונציה", "נאפולי"]
+      question: "איזה שער, שצבוע בדרך כלל באדום, מסמן את הכניסה למקדש שינטו?",
+      correctAnswer: "שער טוריי",
+      distractors: ["פגודה", "דוג'ו", "טאטאמי"]
     },
     {
-      question: "טוסקנה מפורסמת באזורי הכפר היפים שלה. איך הם נראים?",
-      correctAnswer: "גבעות ירוקות מתגלגלות עם כרמים ועצי ברוש",
-      distractors: [
-        "מדבריות חול שטוחים עם קקטוסים",
-        "הרים מושלגים עם עצי אורן",
-        "ג'ונגלים עמוקים עם קופים"
-      ]
+      question: "מי היו הלוחמים המיומנים של יפן הישנה, שהתפרסמו בחרבות ובקוד כבוד מחמיר?",
+      correctAnswer: "סמוראים",
+      distractors: ["ויקינגים", "אבירים", "נינג'ות (קרוב, אבל זה תפקיד אחר!)"]
     },
     {
-      question: "באזור המארמה בטוסקנה, אפשר למצוא 'בוּטֶרִי'. מה הם?",
-      correctAnswer: "קאובויס איטלקים שרוכבים על סוסים",
-      distractors: [
-        "סוג של חמאה רכה",
-        "אנשים שמכינים פיצה",
-        "צפרדעים ירוקות קטנות"
-      ]
+      question: "אילו אטריות חיטה ארוכות במרק חם הן אחד ממאכלי הנחמה הפופולריים ביותר ביפן?",
+      correctAnswer: "ראמן",
+      distractors: ["ספגטי", "אודון (גם יפני, אבל אטריה עבה יותר ושונה!)", "פו"]
     },
     {
-      question: "איזה סוג של פסטה עבה המגולגלת ביד מפורסמת מאוד בטוסקנה?",
-      correctAnswer: "פיצ'י",
-      distractors: ["ספגטי", "מקרוני", "רביולי"]
+      question: "טוטורו ו'המסע המופלא' הם שני סרטי אנימציה אהובים מאולפן יפני מפורסם. איך קוראים לאולפן?",
+      correctAnswer: "סטודיו ג'יבלי",
+      distractors: ["פיקסאר", "דרימוורקס", "דיסני"]
     },
     {
-      question: "הלחם הטוסקני מפורסם בגלל שחסר בו מרכיב אחד חשוב. מהו?",
-      correctAnswer: "מלח (הוא לגמרי ללא מלח!)",
-      distractors: ["קמח", "מים", "שמרים"]
+      question: "יפנית נכתבת בשלוש שיטות כתיבה שונות. תוכלו לשם אחת מהן?",
+      correctAnswer: "היראגנה, קטקנה או קאנג'י (כל תשובה נכונה)",
+      distractors: ["האלף-בית הלטיני בלבד", "מורס", "ברייל"]
     },
     {
-      question: "באיזו קבוצת כדורגל איטלקית מפורסמת שיחק כריסטיאנו רונאלדו?",
-      correctAnswer: "יובנטוס",
-      distractors: ["מילאן", "אינטר", "רומא"]
-    },
-    {
-      question: "איזו להקת רוק איטלקית זכתה באירוויזיון בשנת 2021?",
-      correctAnswer: "מונסקין",
-      distractors: ["אבבא", "הביטלס", "קולדפליי"]
-    },
-    {
-      question: "איטליה זכתה במונדיאל ארבע פעמים! איזו מבין אלו היא קבוצת כדורגל איטלקית מפורסמת?",
-      correctAnswer: "יובנטוס",
-      distractors: ["ריאל מדריד", "מנצ'סטר יונייטד", "באיירן מינכן"]
+      question: "באיזה צד של הכביש נוסעות מכוניות ביפן?",
+      correctAnswer: "בצד שמאל",
+      distractors: ["בצד ימין", "בכל צד שפנוי", "באמצע"]
     }
   ]
 };
 
 /* ------------------------------------------------------------------ */
-/* Templates — ALL substantive (places / attractions / Italian)        */
+/* Templates — ALL substantive (places / attractions / Japanese)        */
 /* ------------------------------------------------------------------ */
 
 interface TemplateContext {
@@ -523,7 +433,7 @@ interface TemplateContext {
   todaysAttractions: POI[];
 }
 
-/** Q: what does the Italian word X mean? */
+/** Q: what does the Japanese word X mean? */
 function tplWordMeaning(ctx: TemplateContext): QuizQuestion | null {
   const { day, otherDays, lang, rng } = ctx;
   const words: ItalianWord[] = day.italianWords ?? [];
@@ -543,15 +453,15 @@ function tplWordMeaning(ctx: TemplateContext): QuizQuestion | null {
     lang,
     question:
       lang === "he"
-        ? `מה המשמעות של המילה האיטלקית "${w.word}"?`
-        : `What does the Italian word "${w.word}" mean?`,
+        ? `מה המשמעות של המילה היפנית "${w.word}"?`
+        : `What does the Japanese word "${w.word}" mean?`,
     correct: w.meaning,
     distractors,
     rng
   });
 }
 
-/** Q: how do you say [meaning] in Italian? — reverse of tplWordMeaning. */
+/** Q: how do you say [meaning] in Japanese? — reverse of tplWordMeaning. */
 function tplWordReverse(ctx: TemplateContext): QuizQuestion | null {
   const { day, otherDays, lang, rng } = ctx;
   const words: ItalianWord[] = day.italianWords ?? [];
@@ -571,15 +481,15 @@ function tplWordReverse(ctx: TemplateContext): QuizQuestion | null {
     lang,
     question:
       lang === "he"
-        ? `איך אומרים "${w.meaning}" באיטלקית?`
-        : `How do you say "${w.meaning}" in Italian?`,
+        ? `איך אומרים "${w.meaning}" ביפנית?`
+        : `How do you say "${w.meaning}" in Japanese?`,
     correct: w.word,
     distractors,
     rng
   });
 }
 
-/** Q: which Italian phrase means "[example translation]"? */
+/** Q: which Japanese phrase means "[example translation]"? */
 function tplPhraseExample(ctx: TemplateContext): QuizQuestion | null {
   const { day, otherDays, lang, rng } = ctx;
   const phrases = (day.italianWords ?? []).filter(
@@ -601,24 +511,23 @@ function tplPhraseExample(ctx: TemplateContext): QuizQuestion | null {
     lang,
     question:
       lang === "he"
-        ? `איזה משפט באיטלקית אומר "${w.exampleMeaning}"?`
-        : `Which Italian phrase means "${w.exampleMeaning}"?`,
+        ? `איזה משפט ביפנית אומר "${w.exampleMeaning}"?`
+        : `Which Japanese phrase means "${w.exampleMeaning}"?`,
     correct: w.example,
     distractors,
     rng
   });
 }
 
-/** Q: a kid-friendly general "Italy" fact pulled from the
- *  `ITALIAN_CULTURE_FACTS` bank above (flag colours, pizza
- *  Margherita, Vespa, Ferrari, gelato, Italy-shaped-like-a-boot,
- *  …). The selector caps how many of these are allowed per pack
- *  (see `CULTURE_BUDGET`) — the deck stays primarily about the
- *  day's actual attractions, with one or two of these sprinkled
- *  in for variety on attraction-thin days. */
-function tplItalianCulture(ctx: TemplateContext): QuizQuestion | null {
+/** Q: a kid-friendly general "Japan" fact pulled from the
+ *  `JAPAN_CULTURE_FACTS` bank above (flag, sushi, Mt Fuji, bullet
+ *  trains, Nintendo, sumo, …). The selector caps how many of these
+ *  are allowed per pack (see `CULTURE_BUDGET`) — the deck stays
+ *  primarily about the day's actual attractions, with one or two of
+ *  these sprinkled in for variety on attraction-thin days. */
+function tplJapanCulture(ctx: TemplateContext): QuizQuestion | null {
   const { lang, rng } = ctx;
-  const bank = ITALIAN_CULTURE_FACTS[lang];
+  const bank = JAPAN_CULTURE_FACTS[lang];
   if (!bank || bank.length === 0) return null;
   const fact = bank[Math.floor(rng() * bank.length)];
   return buildQ({
@@ -764,7 +673,7 @@ export function buildFallbackQuiz(
   };
 
   // PASS 1 — Words (Target 2 questions). The user explicitly requested
-  // 1-2 questions about Italian words learned today.
+  // 1-2 questions about Japanese words learned today.
   const MAX_WORDS = todaysAttractions.length < 2 ? 1 : 2;
   let wordsAdded = 0;
   for (let pass = 0; pass < 3 && wordsAdded < MAX_WORDS && collected.length < count; pass++) {
@@ -777,8 +686,8 @@ export function buildFallbackQuiz(
     }
   }
 
-  // PASS 2 — Italian-culture wildcards (Target 4 questions, or more if few attractions).
-  // The user explicitly requested 3-5 questions about general Italy
+  // PASS 2 — Japan-culture wildcards (Target 4 questions, or more if few attractions).
+  // The user explicitly requested 3-5 questions about general Japan
   // (flag, pizza Margherita, artists, geography). If there are very few
   // attractions today, fill the rest of the quiz with culture questions.
   const MAX_CULTURE = todaysAttractions.length < 2 ? (count - wordsAdded) : 4;
@@ -789,7 +698,7 @@ export function buildFallbackQuiz(
     i++
   ) {
     const before = collected.length;
-    tryAdd(tplItalianCulture(ctx));
+    tryAdd(tplJapanCulture(ctx));
     if (collected.length > before) cultureAdded++;
   }
 

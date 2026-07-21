@@ -21,7 +21,10 @@ import { useLang } from "../lib/i18n";
 import PoiImage from "./PoiImage";
 import PhotoCredit from "./PhotoCredit";
 
-const ROMAN = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
+const ROMAN = [
+  "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
+  "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII"
+];
 
 const tagLabel: Record<string, string> = {
   water: "Water",
@@ -36,8 +39,8 @@ const tagLabel: Record<string, string> = {
 };
 
 const regionLabel: Record<string, string> = {
-  north: "North Tuscany",
-  south: "South Tuscany",
+  north: "Kanto (Tokyo)",
+  south: "Kansai (Kyoto/Osaka)",
   transit: "Transit"
 };
 

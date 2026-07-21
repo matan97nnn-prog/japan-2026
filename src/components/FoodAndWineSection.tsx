@@ -20,12 +20,12 @@ import { useLocalizeDish, useLocalizeWinery } from "../data/i18n";
 import NavigateLinks from "./NavigateLinks";
 import type { DishCategory } from "../data/types";
 
-type RegionFilter = "north" | "south" | "tuscany";
+type RegionFilter = "north" | "south" | "japan";
 
 const REGION_TABS: { id: RegionFilter; key: DictKey }[] = [
   { id: "north", key: "food_filter_north" },
   { id: "south", key: "food_filter_south" },
-  { id: "tuscany", key: "food_filter_tuscany" }
+  { id: "japan", key: "food_filter_japan" }
 ];
 
 const CATEGORY_META: Record<
@@ -48,14 +48,14 @@ export default function FoodAndWineSection() {
 
   const visibleDishes = useMemo(() => {
     // For "north" / "south" we surface dishes flagged for that region
-    // *plus* the "tuscany" all-rounders, since they're served everywhere.
-    // For "tuscany", show only the all-rounders.
-    if (region === "tuscany") return dishes.filter(d => d.region === "tuscany");
-    return dishes.filter(d => d.region === region || d.region === "tuscany");
+    // *plus* the "japan" all-rounders, since they're served everywhere.
+    // For "japan", show only the all-rounders.
+    if (region === "japan") return dishes.filter(d => d.region === "japan");
+    return dishes.filter(d => d.region === region || d.region === "japan");
   }, [region]);
 
   const visibleWineries = useMemo(
-    () => wineries.filter(w => region === "tuscany" || w.region === region),
+    () => wineries.filter(w => region === "japan" || w.region === region),
     [region]
   );
 
@@ -118,7 +118,7 @@ export default function FoodAndWineSection() {
                       <PoiImage
                         src={dish.image}
                         alt={dish.name}
-                        region={dish.region === "tuscany" ? "north" : dish.region}
+                        region={dish.region === "japan" ? "north" : dish.region}
                       />
                       {/* tiny gradient so the category chip stays legible */}
                       <div
@@ -147,9 +147,9 @@ export default function FoodAndWineSection() {
                       <h4 className="font-serif text-[20px] sm:text-[22px] text-ink-900 leading-tight">
                         {dish.name}
                       </h4>
-                      {dish.italianName && (
+                      {dish.nativeName && (
                         <div className="mt-0.5 font-serif italic text-terracotta-700/85 text-[13.5px]">
-                          {dish.italianName}
+                          {dish.nativeName}
                         </div>
                       )}
                       <p className="mt-2.5 text-[13.5px] sm:text-[14.5px] text-ink-700/85 leading-relaxed">

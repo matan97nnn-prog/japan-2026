@@ -5,8 +5,8 @@ import { useLang } from "../lib/i18n";
 import type { Lang } from "../lib/lang";
 
 const SPOT_LABEL: Record<"north" | "south", { en: string; he: string }> = {
-  north: { en: "Larciano", he: "לרצ'יאנו" },
-  south: { en: "Saturnia", he: "סאטורניה" }
+  north: { en: "Tokyo", he: "טוקיו" },
+  south: { en: "Kyoto", he: "קיוטו" }
 };
 
 interface DayForecast {
@@ -22,13 +22,13 @@ interface RegionWeather {
 }
 
 const SPOTS = [
-  { key: "north", label: "Larciano", lat: 43.8267, lon: 10.8978 },
-  { key: "south", label: "Saturnia", lat: 42.6483, lon: 11.5089 }
+  { key: "north", label: "Tokyo", lat: 35.6938, lon: 139.7034 },
+  { key: "south", label: "Kyoto", lat: 34.9858, lon: 135.7588 }
 ] as const;
 
 type SpotKey = (typeof SPOTS)[number]["key"];
 
-const CACHE_KEY = "tuscany-weather-v3";
+const CACHE_KEY = "japan-weather-v1";
 const CACHE_TTL_MS = 60 * 60 * 1000;
 
 function iconFor(code: number, size = 14) {

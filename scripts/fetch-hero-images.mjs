@@ -12,82 +12,79 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = resolve(__dirname, "..", "public", "images", "hero");
 
 const UA =
-  "Mozilla/5.0 (compatible; tuscany-2026/1.0; +https://github.com/tikel1)";
+  "Mozilla/5.0 (compatible; japan-2026/1.0)";
 
 // Each entry: [filename, { commons: "File:Xyz.jpg" } or { url: "..." }]
-// All Commons targets are pulled at 2400 px wide (ample for a hero background)
+// All Commons targets are pulled at 2400 px wide (ample for a hero background).
+// Every target below was verified to exist (live Commons page fetch, CC/PD
+// license confirmed) before being added here — see src/components/Hero.tsx
+// for the matching attribution shown in the UI.
 const TARGETS = [
-  // Iconic Val d'Orcia / Crete Senesi landscapes — the screensaver Tuscany
+  // Mt Fuji + Lake Ashi + torii — Hakone (Day 7-8)
   [
-    "val-dorcia-hills.jpg",
-    { commons: "File:Endless_hills_of_Pienza1.jpg" }
+    "hakone-fuji-lake.jpg",
+    { commons: "File:LakeAshi and MtFuji Hakone.JPG" }
   ],
+  // Fushimi Inari torii gate tunnel — Kyoto (Day 10)
   [
-    "val-dorcia-lonely-tree.jpg",
-    { commons: "File:Tuscan_landscape_with_lonely_tree.jpg" }
-  ],
-  [
-    "crete-orcia-sunrise.jpg",
-    { commons: "File:Sunrise_in_Crete_dell'Orcia.jpg" }
-  ],
-  [
-    "tuscan-landscape-pano.jpg",
-    { commons: "File:Tuscan_Landscape_6.JPG" }
-  ],
-
-  // Pitigliano & Sorano — the cliff cities we'll visit on Day 8
-  [
-    "pitigliano-panorama.jpg",
+    "fushimi-inari-torii.jpg",
     {
       commons:
-        "File:01665_ITA_Tuscany_Pitigliano_S_from_viewpoint_V-P.jpg"
+        "File:Torii path with lantern at Fushimi Inari Taisha Shrine, Kyoto, Japan.jpg"
     }
   ],
+  // Arashiyama bamboo grove — Kyoto (Day 11)
   [
-    "sorano-blue-hour.jpg",
+    "arashiyama-bamboo-hero.jpg",
+    { commons: "File:2021 Sagano Bamboo forest in Arashiyama, Kyoto, Japan.jpg" }
+  ],
+  // Kinkaku-ji reflected in its pond — Kyoto (Day 11)
+  [
+    "kinkaku-ji-reflection.jpg",
     {
       commons:
-        "File:01844b_ITA_Tuscany_Sorano_blue_hour_3_to_1_V-P.jpg"
+        "File:Water reflection of Kinkaku-ji Temple with a tree on a rock in the pond, Kyoto, Japan.jpg"
     }
   ],
-
-  // Saturnia — the dawn pools (Day 9)
+  // Nikko Toshogu's Yomeimon gate (Day 5)
   [
-    "saturnia-falls.jpg",
-    {
-      commons: "File:Terme_di_Saturnia_-_Cascate_del_Mulino-0518.jpg"
-    }
+    "nikko-toshogu-gate.jpg",
+    { commons: "File:Nikko toshogu yomeimon gate ver1.jpg" }
   ],
-
-  // Lake Bolsena — sunset over the volcanic lake (Day 9)
+  // Shibuya Crossing at night (Day 3)
   [
-    "bolsena-sunset.jpg",
-    {
-      commons: "File:Tramonto_sulle_sponde_del_lago_di_Bolsena.jpg"
-    }
+    "shibuya-crossing-night.jpg",
+    { commons: "File:Shibuya crossing at night.jpg" }
   ],
-
-  // The signature cypress row at sunset — pure Tuscany
+  // Himeji Castle exterior (Day 15)
   [
-    "cypresses-sunset.jpg",
-    {
-      commons: "File:Cipressi_di_S.Quirico_d'Orcia_al_tramonto.jpg"
-    }
+    "himeji-castle-exterior.jpg",
+    { commons: "File:Château de Himeji02.jpg" }
   ],
-
-  // Maremma Regional Park aerial — the wild south coast we'll ride through
+  // Nara Park deer (Day 12)
   [
-    "maremma-aerial.jpg",
-    {
-      commons:
-        "File:Toscana_-_Maremma_Regional_Park_-_aerial_photo_with_Torre_di_Collelungo.jpg"
-    }
+    "nara-deer-park-hero.jpg",
+    { commons: "File:Nara-Park Deer.jpg" }
   ],
-
-  // Tuscan coast at sunset — Castello del Boccale on the Livorno coast
+  // Dotonbori canal at night — Osaka (Day 14)
   [
-    "coast-sunset.jpg",
-    { commons: "File:Tramonto_al_Castello_del_Boccale.jpg" }
+    "osaka-dotonbori-night.jpg",
+    { commons: "File:Dotonbori, Osaka, at night, November 2016.jpg" }
+  ],
+  // Senso-ji's Kaminarimon gate — Asakusa, Tokyo (Day 2)
+  [
+    "senso-ji-kaminarimon.jpg",
+    { commons: "File:Kaminarimon (outer gate), Sensoji Temple, Akakusa, Tokyo.jpg" }
+  ],
+  // Autumn leaves (momiji), Kyoto — general seasonal beauty shot
+  [
+    "momiji-closeup.jpg",
+    { commons: "File:Kyoto Japan0431.JPG" }
+  ],
+  // Owakudani volcanic valley + ropeway — Hakone (Day 8)
+  [
+    "owakudani-ropeway.jpg",
+    { commons: "File:Owakudani's cable car, Japan; October 2017.jpg" }
   ]
 ];
 

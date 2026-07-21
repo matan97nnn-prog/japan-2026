@@ -3,16 +3,15 @@
  *
  *   1. LiveQuizVoice — opens a Gemini Live session with a "narrator"
  *      persona (just speak the line you receive, in Quizzo's playful
- *      Italian-flavored cartoon voice). Reuses the WebSocket plumbing
- *      and PCM player that Gemininio already battle-tested. Best
+ *      cartoon-host voice). Reuses the WebSocket plumbing
+ *      and PCM player that Sora already battle-tested. Best
  *      sounding option, costs ~5 cents per quiz on free-tier-equivalent
  *      accounts. Fails closed: any setup error rejects within ~3 s and
  *      the caller drops to the TTS fallback.
  *
  *   2. BrowserTtsQuizVoice — `window.speechSynthesis`. Works offline,
- *      no API key required, sounds robotic. Picks an Italian voice if
- *      one is installed (steers a tiny bit closer to the Quizzo vibe);
- *      otherwise uses the language default.
+ *      no API key required, sounds robotic. Uses the language default
+ *      voice.
  *
  * Both backends expose the same `QuizVoice` shape so the UI doesn't
  * care which one it got — it just calls `speak()` and awaits the
@@ -61,11 +60,10 @@ ABSOLUTE RULES:
   outro phrases.
 - One line per turn. After speaking, stop. Do not ask follow-up
   questions.
-- Voice: warm, playful, slightly silly cartoon-host energy with a
-  thick Italian-flavored accent — sing-song intonation, rolled R, big
-  open vowels. Cheerful upward lifts at phrase ends.
+- Voice: warm, playful, slightly silly cartoon-host energy — sing-song
+  intonation, big open vowels, cheerful upward lifts at phrase ends.
 - This applies even when the line you receive is in Hebrew or another
-  language: keep the Italian *accent and prosody*, but the *words*
+  language: keep the same playful *tone and prosody*, but the *words*
   you say are the language of the line you received.
 - Never narrate your own behavior ("I will now read…"). Never break
   character. Just speak the line.`;
@@ -79,9 +77,8 @@ Hebrew):
   EXACTLY as written, word for word. Do NOT add words, do NOT
   paraphrase, do NOT comment, do NOT translate.
 - One line per turn. After speaking, stop.
-- Voice: warm, playful, cartoon-host energy with a thick
-  Italian-flavored accent on top of Hebrew speech — rolled R, sing-
-  song intonation, big open vowels, cheerful upward lifts.
+- Voice: warm, playful, cartoon-host energy — sing-song intonation,
+  big open vowels, cheerful upward lifts.
 - Never narrate your own behavior. Never break character. Just speak
   the line.`;
 
@@ -246,9 +243,8 @@ class BrowserTtsQuizVoice implements QuizVoice {
     this.pickVoice();
   }
 
-  /** Pick a voice that sounds the most "Quizzo-like" for the active
-   *  language. Italian voices add a hint of accent flavor for English
-   *  output; for Hebrew we just use the best he-IL voice available. */
+  /** Pick the best available voice for the active language — he-IL
+   *  for Hebrew, any en-* voice for English. */
   private pickVoice(): void {
     if (typeof window === "undefined" || !window.speechSynthesis) return;
     const voices = window.speechSynthesis.getVoices();
@@ -267,13 +263,8 @@ class BrowserTtsQuizVoice implements QuizVoice {
         voices.find(v => /hebrew/i.test(v.name)) ??
         null;
     } else {
-      // Prefer an Italian-accented English voice if one is installed,
-      // else any en-* voice, else the default.
-      this.chosenVoice =
-        voices.find(v => /italian|italiano/i.test(v.name) && /^en/i.test(v.lang)) ??
-        voices.find(v => /^it/i.test(v.lang)) ??
-        voices.find(v => /^en/i.test(v.lang)) ??
-        null;
+      // Any en-* voice, else the default.
+      this.chosenVoice = voices.find(v => /^en/i.test(v.lang)) ?? null;
     }
   }
 

@@ -7,7 +7,7 @@ import type { ChecklistItem } from "../data/types";
 import { useT } from "../lib/dict";
 import { useLocalizeChecklistItem } from "../data/i18n";
 
-const STORAGE_KEY = "tuscany-checklist-v1";
+const STORAGE_KEY = "japan-checklist-v1";
 
 /** Items marked done in the data (e.g. already-booked reservations) start
  *  checked. A user toggle is remembered and overrides this default. */

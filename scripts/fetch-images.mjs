@@ -14,90 +14,45 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = resolve(__dirname, "..", "public", "images");
 
 const UA =
-  "Mozilla/5.0 (compatible; tuscany-2026/1.0; +https://github.com/tikel1)";
-
-async function sleep(ms) {
-  return new Promise(r => setTimeout(r, ms));
-}
-
-async function fetchWithRetry(url, opts = {}, tries = 4) {
-  let lastErr;
-  for (let i = 0; i < tries; i++) {
-    try {
-      const res = await fetch(url, opts);
-      if (res.status === 429 || res.status >= 500) {
-        const wait = 1500 * Math.pow(2, i);
-        console.log(`  retry ${i + 1}/${tries} after ${wait}ms (HTTP ${res.status})`);
-        await sleep(wait);
-        continue;
-      }
-      return res;
-    } catch (e) {
-      lastErr = e;
-      const wait = 1500 * Math.pow(2, i);
-      await sleep(wait);
-    }
-  }
-  if (lastErr) throw lastErr;
-  throw new Error(`gave up after ${tries} attempts: ${url}`);
-}
+  "Mozilla/5.0 (compatible; japan-2026/1.0)";
 
 /**
  * For each filename:
  *   { wiki: "Article_Title" }                    -> use Wikipedia REST summary lead image
  *   { commons: "File:Some_File.jpg" }            -> direct Wikimedia Commons file
  *   { url: "https://..." }                       -> direct URL (already CC/PD)
+ *
+ * Every commons: target below was verified to exist (live Commons page
+ * fetch, CC/PD license confirmed) before being added — see
+ * src/data/i18n/attractions.he.ts / attractions.ts for the matching
+ * attribution shown in the UI.
  */
-/* Helper to build a sensibly-sized Unsplash JPG URL from a "photo-…" id. */
-const unsplash = (photoId, w = 1600) =>
-  `https://images.unsplash.com/${photoId}?fm=jpg&q=85&w=${w}&auto=format&fit=crop`;
-
 const TARGETS = [
-  // ---------- North attractions ----------
-  // Canyon Park Lima gorge — turquoise water between rock walls (Takachiho-style
-  // gorge ref; Luo Jin Hong on Unsplash). Visually suggests the Lima canyon.
-  ["canyon-park.jpg",        { url: unsplash("photo-1773933609524-000b6e72a101") }],
-  ["ponte-del-diavolo.jpg",  { wiki: "Ponte_della_Maddalena" }],
-  // Forest ropes course — rope bridges between tall trees (Unsplash, free)
-  ["selva-buffardello.jpg",  { url: unsplash("photo-1775647423221-ac87d3ec338b") }],
-  // Soft rafting — group on a raft going down a river (Unsplash, free)
-  ["serchio-rafting.jpg",    { url: unsplash("photo-1599443380179-33737c17ca81") }],
-  // Use the actual Leaning Tower (Wikipedia Featured Picture by Saffron Blaze)
-  // instead of a generic Piazza dei Miracoli wide shot.
-  ["pisa.jpg",               { commons: "File:The_Leaning_Tower_of_Pisa_SB.jpeg", width: 2000 }],
-  // Abetone forest scenery (the chestnut forest the village is named for) —
-  // far more evocative than the village street the Wikipedia summary returns.
-  ["abetone.jpg",            { commons: "File:Foresta_piazzale_Abetone.jpg", width: 2000 }],
-  ["sentierelsa.jpg",        { wiki: "Elsa_(river)" }],
-  // Lucca walls — the Wikipedia summary lead is the iconic aerial of the
-  // tree-lined ramparts wrapping the old town.
-  ["lucca-walls.jpg",        { wiki: "Walls_of_Lucca" }],
+  // ---------- North (Kanto: Tokyo / Hakone) ----------
+  ["senso-ji.jpg",              { commons: "File:Kaminarimon (outer gate), Sensoji Temple, Akakusa, Tokyo.jpg", width: 2000 }],
+  ["tokyo-skytree.jpg",         { commons: "File:Tokyo Skytree view.JPG", width: 2000 }],
+  ["meiji-jingu.jpg",           { commons: "File:Meiji-jingu torii.JPG", width: 2000 }],
+  ["shibuya-crossing.jpg",      { commons: "File:World's busiest pedestrian crossing - Large panorama of the Shibuya Crossing (43828061665).jpg", width: 2000 }],
+  ["teamlab-planets.jpg",       { commons: "File:TEAM LAB univers k.jpg", width: 2000 }],
+  ["tsukiji-outer-market.jpg",  { commons: "File:Tsukiji Outer Market -01.jpg", width: 2000 }],
+  ["nikko-toshogu.jpg",         { commons: "File:Three Wise Monkeys,Tosho-gu Shrine.JPG", width: 2000 }],
+  ["kamakura-daibutsu.jpg",     { commons: "File:The Great Buddha of Kōtoku-in (Kamakura Daibutsu).jpg", width: 2000 }],
+  ["hakone-open-air-museum.jpg",{ commons: "File:220622 Hakone Open-air Museum Japan01s3.jpg", width: 2000 }],
+  ["hakone-owakudani.jpg",      { commons: "File:Owakudani's cable car, Japan; October 2017.jpg", width: 2000 }],
+  ["hakone-lake-ashi.jpg",      { commons: "File:Hakone-jinja torii - Hakone, Japan - DSC05478.jpg", width: 2000 }],
 
-  // ---------- South attractions ----------
-  ["porto-santo-stefano.jpg",{ wiki: "Porto_Santo_Stefano" }],
-  ["cala-del-gesso.jpg",     { wiki: "Monte_Argentario" }],
-  // Acqua Village — sweeping aerial view of a colourful water park slide (Unsplash, free)
-  ["acqua-village.jpg",      { url: unsplash("photo-1725758575869-969b8e5783bc") }],
-  ["maremma-horse.jpg",      { wiki: "Maremmano" }],
-  ["pitigliano.jpg",         { wiki: "Pitigliano" }],
-  ["via-cava.jpg",           { wiki: "Vie_Cave" }],
-  ["vitozza.jpg",            { wiki: "Sorano" }],
-  ["saturnia.jpg",           { wiki: "Saturnia" }],
-  ["bolsena.jpg",            { wiki: "Lake_Bolsena" }],
-  ["civita.jpg",             { wiki: "Civita_di_Bagnoregio" }],
-
-  // ---------- Stays ----------
-  // Both stays use host-supplied photos that live in public/images/ and are
-  // committed directly to the repo (the property CDNs aren't a great fit
-  // for an automated fetcher and the user has higher-resolution originals):
-  //   Larciano:     stay-larciano-sunflowers.png, -vineyard.png,
-  //                 -pool.png, -pool-dusk.png
-  //   Cortevecchia: stay-cortevecchia-poolview.png, -villa.png,
-  //                 -pool-deck.png, -aerial.png
-
-  // ---------- Itinerary lead images ----------
-  // Tel Aviv aerial — used as the "fly home" hero on day 10.
-  ["tel-aviv-skyline.jpg",   { url: unsplash("photo-1547483036-24bc77c79804") }]
+  // ---------- South (Kansai: Kyoto / Nara / Osaka / Himeji) ----------
+  ["gion.jpg",                  { commons: "File:Wooden and bamboo facades of dwellings with sudare in a cobbled street of Gion, perspective effect with vanishing point, Kyoto, Japan.jpg", width: 2000 }],
+  ["fushimi-inari.jpg",         { commons: "File:Torii path with lantern at Fushimi Inari Taisha Shrine, Kyoto, Japan.jpg", width: 2000 }],
+  ["kiyomizu-dera.jpg",         { commons: "File:Kiyomizutera(Kyomizu no Butai) - panoramio.jpg", width: 2000 }],
+  ["arashiyama-bamboo.jpg",     { commons: "File:2021 Sagano Bamboo forest in Arashiyama, Kyoto, Japan.jpg", width: 2000 }],
+  ["kinkaku-ji.jpg",            { commons: "File:Water reflection of Kinkaku-ji Temple with a tree on a rock in the pond, Kyoto, Japan.jpg", width: 2000 }],
+  ["nara-deer-park.jpg",        { commons: "File:Nara-Park Deer.jpg", width: 2000 }],
+  ["nara-todaiji.jpg",          { commons: "File:Todai-ji Daibutsuden front view in 2011.jpg", width: 2000 }],
+  ["osaka-castle.jpg",          { commons: "File:Osaka Castle 2 Osaka Japan by Don Ramey Logan.jpg", width: 2000 }],
+  ["dotonbori.jpg",             { commons: "File:Dotonbori, Osaka, at night, November 2016.jpg", width: 2000 }],
+  ["universal-studios-japan.jpg",{ commons: "File:USJ Super Nintendo World overview.jpg", width: 2000 }],
+  ["himeji-castle.jpg",         { commons: "File:Château de Himeji02.jpg", width: 2000 }]
 ];
 
 async function fileExists(p) {
@@ -107,6 +62,34 @@ async function fileExists(p) {
   } catch {
     return false;
   }
+}
+
+async function sleep(ms) {
+  return new Promise(r => setTimeout(r, ms));
+}
+
+/** Retry with exponential backoff on 429/5xx — Wikimedia rate-limits hard
+ *  when this script fires ~20 requests back to back. */
+async function fetchWithRetry(url, opts = {}, tries = 5) {
+  let lastErr;
+  for (let i = 0; i < tries; i++) {
+    try {
+      const res = await fetch(url, opts);
+      if (res.status === 429 || res.status >= 500) {
+        const wait = 2000 * Math.pow(2, i);
+        console.log(`  retry ${i + 1}/${tries} after ${wait}ms (HTTP ${res.status})`);
+        await sleep(wait);
+        continue;
+      }
+      return res;
+    } catch (e) {
+      lastErr = e;
+      const wait = 2000 * Math.pow(2, i);
+      await sleep(wait);
+    }
+  }
+  if (lastErr) throw lastErr;
+  throw new Error(`gave up after ${tries} attempts: ${url}`);
 }
 
 /** Bump a Wikimedia thumbnail URL to a wider width (when possible). */
@@ -119,7 +102,7 @@ function widenThumb(url, target = 1200) {
 
 async function getWikiLeadImage(title) {
   const api = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title)}`;
-  const res = await fetch(api, { headers: { "User-Agent": UA, "Accept": "application/json" } });
+  const res = await fetchWithRetry(api, { headers: { "User-Agent": UA, "Accept": "application/json" } });
   if (!res.ok) throw new Error(`Wiki summary ${title} HTTP ${res.status}`);
   const data = await res.json();
   const original = data.originalimage?.source;
@@ -138,7 +121,7 @@ async function getCommonsFile(fileTitle, width) {
   const api =
     `https://commons.wikimedia.org/w/api.php?action=query&prop=imageinfo&iiprop=url${widthParam}&format=json&origin=*&titles=` +
     encodeURIComponent(fileTitle);
-  const res = await fetch(api, { headers: { "User-Agent": UA } });
+  const res = await fetchWithRetry(api, { headers: { "User-Agent": UA } });
   if (!res.ok) throw new Error(`Commons ${fileTitle} HTTP ${res.status}`);
   const data = await res.json();
   const pages = data?.query?.pages ?? {};
@@ -155,11 +138,11 @@ const FALLBACK_UA =
   "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)";
 
 async function downloadTo(url, dest) {
-  let res = await fetch(url, {
+  let res = await fetchWithRetry(url, {
     headers: { "User-Agent": UA, "Accept": "image/*" }
   });
   if (res.status === 403 || res.status === 406) {
-    res = await fetch(url, {
+    res = await fetchWithRetry(url, {
       headers: { "User-Agent": FALLBACK_UA, "Accept": "image/*,*/*;q=0.8" }
     });
   }
@@ -201,7 +184,7 @@ async function main() {
       console.log(`+ saved ${name}  ${(bytes / 1024).toFixed(0)} KB  <- ${url}`);
       ok++;
       // Be polite to Wikimedia
-      await new Promise(r => setTimeout(r, 250));
+      await sleep(1200);
     } catch (e) {
       console.log(`! fail  ${name}  ${e.message}`);
       fail++;

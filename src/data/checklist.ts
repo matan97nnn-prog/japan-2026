@@ -2,112 +2,134 @@ import type { ChecklistItem } from "./types";
 
 export const bookingChecklist: ChecklistItem[] = [
   {
-    id: "book-canyon-park",
-    text: "Canyon Park SUP (18 Aug, 10:45)",
-    detail:
-      "6 boards reserved for the 10:45 slot. Payment is cash on site (€168). Confirmation is in Itay's email.",
-    done: true
+    id: "book-flights",
+    text: "Confirm flydubai flights (Tel Aviv ↔ Dubai ↔ Tokyo)",
+    detail: "Check the connection time in Dubai both ways is comfortable, and that all four names match passports exactly."
   },
   {
-    id: "book-argentario-boat",
-    text: "Argentario catamaran cruise (23 Aug)",
-    detail: "GetYourGuide / DONNINI, 5 adults + 5 kids. Snorkel gear & lunch included on board. Check in at the Porto Santo Stefano pier by 08:30. Confirmation is in Itay's email.",
-    done: true
+    id: "book-hakone-ryokan",
+    text: "Book the Hakone ryokan (2 nights, 7–9 Nov)",
+    detail: "Look for a dinner-and-breakfast (ichi-shoku / nihaku) plan with kaiseki included. Confirm the tattoo policy if relevant."
   },
   {
-    id: "book-rafting",
-    text: "Soft rafting, Serchio (19 Aug, 09:30)",
-    detail: "GetYourGuide / Lucca Rafting, whole group. Guide, gear & wetsuits included. Check in at Chifenti by 09:25. Confirmation is in Itay's email.",
-    done: true
+    id: "book-tokyo-hotel",
+    text: "Book the Tokyo hotel — two stays (1–7 Nov and 16–17 Nov)",
+    detail: "Shinjuku area recommended for transport links. Can be the same hotel both times, or two different ones."
   },
   {
-    id: "book-waterpark",
-    text: "Acqua Village waterpark tickets (22 Aug)",
-    detail: "Follonica. Buy online the night before — meaningfully cheaper than at the gate.",
-    link: "https://www.acquavillage.it/"
+    id: "book-kyoto-hotel",
+    text: "Book the Kyoto hotel (5 nights, 9–14 Nov)",
+    detail: "Near Kyoto Station for the easiest Nara/Osaka day trips."
   },
   {
-    id: "book-gondola",
-    text: "Abetone gondola tickets (20 Aug)",
-    detail: "Monte Gomito cable car in the mountains — check the day's opening hours before you drive up."
+    id: "book-osaka-hotel",
+    text: "Book the Osaka hotel (2 nights, 14–16 Nov)",
+    detail: "Namba (near Dotonbori, subway to USJ) or Umeda (easier Shin-Osaka Shinkansen access)."
   },
   {
-    id: "book-private-chef",
-    text: "Private chef dinner at the villa (optional)",
-    detail: "Chef-at-Home Tuscany / Eatwith / Airbnb Experiences. Pici workshop + dinner. Pick a settled villa evening (22–25 Aug) — not the 21st, that's the hotel-switch day.",
-    link: "https://www.eatwith.com/"
+    id: "book-teamlab",
+    text: "teamLab Planets TOKYO tickets (4 Nov)",
+    detail: "Book online well ahead — regularly sells out, especially afternoon slots.",
+    link: "https://www.teamlab.art/e/planets/"
   },
   {
-    id: "book-horses",
-    text: "Reserve a Maremma horseback hour",
-    detail: "Beginner-friendly ranch near Alberese / Albinia. Early-morning slot is best."
+    id: "book-shibuya-sky",
+    text: "Shibuya Sky tickets (3 Nov, sunset slot)",
+    detail: "Book the specific time slot online in advance.",
+    link: "https://www.shibuya-scramble-square.com/sky/"
   },
   {
-    id: "credit-card-on-driver-name",
-    text: "Make sure the rental driver has a credit card in their own name",
-    detail: "Debit cards usually rejected. The deposit hold can be €1,500+."
+    id: "book-nikko-train",
+    text: "Reserve Tobu Limited Express seats to Nikko (5 Nov)",
+    detail: "Direct from Asakusa. Reserve ahead during peak autumn foliage season."
+  },
+  {
+    id: "book-shinkansen-seats",
+    text: "Reserve Shinkansen seats for the three long-haul legs",
+    detail: "Hakone (Odawara) → Kyoto (9 Nov), Osaka → Tokyo (16 Nov), plus the Himeji day trip (15 Nov)."
+  },
+  {
+    id: "book-usj-express",
+    text: "Universal Studios Japan tickets + Express Pass (14 Nov)",
+    detail: "Book park admission and the timed-entry app passes for Super Nintendo World and the Harry Potter area.",
+    link: "https://www.usj.co.jp/e/"
   },
   {
     id: "esim",
-    text: "Sort out an Italian eSIM",
-    detail: "Airalo / Holafly / Nomad — 10 GB Italy plan is plenty. Activate at the airport."
+    text: "Sort out a Japan eSIM or pocket wifi",
+    detail: "Airalo / Ubigi / a rental pocket wifi from the airport — activate before or right at arrival."
+  },
+  {
+    id: "ic-card-setup",
+    text: "Set up Suica/Pasmo (physical card or phone wallet)",
+    detail: "Covers all trains, subways, buses and konbini purchases for the whole trip."
+  },
+  {
+    id: "travel-insurance",
+    text: "Buy travel insurance for all four travellers",
+    detail: "Confirm it covers activities like the Hakone ropeway and any planned hiking."
+  },
+  {
+    id: "notify-bank",
+    text: "Notify the bank/credit card company of the travel dates",
+    detail: "Avoid a card freeze on first use in Japan."
   }
 ];
 
 export const packingChecklist: ChecklistItem[] = [
   {
-    id: "water-shoes",
-    text: "Closed-toe water shoes — for everyone",
-    detail: "Sentierelsa, Saturnia, the Serchio. No sandals, no flip-flops."
+    id: "layers",
+    text: "Layered clothing for 8–18°C days",
+    detail: "Tokyo and Kansai are mild in November; Nikko and Hakone's mountains run noticeably cooler."
   },
   {
-    id: "dry-bag",
-    text: "Dry bag (10–20 L)",
-    detail: "Phones, wallets, car keys on the SUP and on the boat at Argentario."
+    id: "comfortable-shoes",
+    text: "Very comfortable walking shoes — for everyone",
+    detail: "This trip is 15,000+ steps most days. Break new shoes in before you leave."
   },
   {
-    id: "swim-goggles",
-    text: "Swim goggles — per person",
-    detail: "For the waterpark pools and any hotel/villa pool. (Snorkel gear is provided on the Argentario catamaran, so no need to pack that.)"
+    id: "slip-on-shoes",
+    text: "Shoes that slip on and off easily",
+    detail: "For ryokan, temples, and any restaurant with a genkan entryway."
   },
   {
-    id: "uv-shirts",
-    text: "UV / lycra rashguards",
-    detail: "Hours on an open boat in August — sunscreen alone won't do it."
+    id: "portable-charger",
+    text: "Portable phone charger + cable",
+    detail: "For train navigation apps, the USJ app, and long travel days."
   },
   {
-    id: "headlamps",
-    text: "Headlamps (small, per person)",
-    detail: "For Vitozza cave dwellings and the Vie Cave at dusk."
+    id: "power-adapter",
+    text: "Japan uses Type A plugs, 100V",
+    detail: "Same plug shape as the US — bring a Type A adapter if traveling from Israel or elsewhere with a different plug."
   },
   {
-    id: "reef-sunscreen",
-    text: "High-SPF reef-safe sunscreen + after-sun",
-    detail: "The Italian sun in August is brutal."
+    id: "cash-pouch",
+    text: "Small cash pouch with yen",
+    detail: "For temple offerings, small izakaya, market stalls and rural spots that don't take card."
+  },
+  {
+    id: "translation-app",
+    text: "Offline translation app (Google Translate, Japanese pack downloaded)",
+    detail: "The camera-translate feature is invaluable for menus and signs."
+  },
+  {
+    id: "small-daypack",
+    text: "A small daypack per person",
+    detail: "For the long touring days — water, snacks, a layer, the day's tickets."
   },
   {
     id: "first-aid",
     text: "Mini first-aid kit",
-    detail: "Plasters, antiseptic, kids' paracetamol, antihistamine, anti-diarrheal."
+    detail: "Plasters, antiseptic, pain relievers, any regular medication — pharmacies are plentiful but not always English-friendly."
   },
   {
-    id: "swim-towels",
-    text: "Quick-dry microfibre towels",
-    detail: "One per person — for river walks and beach stops."
+    id: "reusable-bottle",
+    text: "Reusable water bottle",
+    detail: "Japan has excellent tap water and vending machines everywhere for refills."
   },
   {
-    id: "reusable-bottles",
-    text: "Reusable water bottles",
-    detail: "Tap water is fine almost everywhere; refill at fountains."
-  },
-  {
-    id: "power-adapter",
-    text: "EU power adapters + multi-port USB charger",
-    detail: "Italian sockets are mostly type F/L."
-  },
-  {
-    id: "kids-snacks",
-    text: "Kids' snack stash",
-    detail: "First night arrival is late; no time for proper shopping."
+    id: "modest-onsen-cover",
+    text: "Waterproof tattoo covers, if needed",
+    detail: "A practical workaround for some onsens with a tattoo policy — check with the ryokan first, as policy varies."
   }
 ];

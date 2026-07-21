@@ -1,739 +1,591 @@
-import type { POI, ImageCredit } from "./types";
-
-const wmCredit = (article: string): ImageCredit => ({
-  author: `Wikipedia/Wikimedia Commons contributors`,
-  license: "CC BY-SA",
-  source: `https://en.wikipedia.org/wiki/${article}`,
-  licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/"
-});
+import type { POI } from "./types";
 
 export const attractions: POI[] = [
-  // ---------- NORTH ----------
+  // ---------- NORTH (Kanto: Tokyo / Hakone) ----------
   {
-    id: "canyon-park",
-    name: "Canyon Park",
+    id: "senso-ji",
+    name: "Senso-ji",
     category: "attraction",
     region: "north",
-    shortDescription: "SUP and gorge-side adventure on the Lima",
+    shortDescription: "Tokyo's oldest temple, through the Thunder Gate",
     description:
-      "An adventure park built into a gorge on the river Lima outside Bagni di Lucca. Between the wooded cliffs are mellow options (paddleboard hire through turquoise narrows, a pebble beach, soft rafting) and full-throttle canyon routes with aerial bridges and zip lines. Your plan is the easy family stand-up paddle through the gorge. Separate canyon / zip routes usually enforce a minimum age and height (about ten years old, roughly 140 cm).",
-    image: "./images/canyon-park.jpg",
+      "Founded in 645 AD, Tokyo's oldest and most visited temple. Enter through the giant red Kaminarimon 'Thunder Gate' lantern and walk Nakamise-dori's souvenir stalls to the main hall. Rebuilt after WWII bombing, it remains the spiritual heart of old Asakusa.",
+    image: "./images/senso-ji.jpg",
     imageCredit: {
-      author: "Luo Jin Hong (Unsplash)",
-      license: "Unsplash License",
-      source: "https://unsplash.com/photos/1qJ_l5O4OXo",
-      licenseUrl: "https://unsplash.com/license"
+      author: "Daderot",
+      license: "Public Domain",
+      source: "https://commons.wikimedia.org/wiki/File:Kaminarimon_(outer_gate),_Sensoji_Temple,_Akakusa,_Tokyo.jpg"
     },
-    website: "https://www.canyonpark.it/en/",
-    address: "Località il Pianello, Bagni di Lucca (LU)",
-    coords: [44.0167, 10.5833],
-    tags: ["water", "extreme", "family"],
-    bookingNote:
-      "Booked — SUP on 18 Aug, 10:45, 6 boards (€168 cash on site).",
+    website: "https://www.senso-ji.jp/",
+    address: "2 Chome-3-1 Asakusa, Taito City, Tokyo",
+    coords: [35.7148, 139.7967],
+    tags: ["culture", "family"],
     difficulty: "easy",
     tips: [
-      "Life jackets are provided; ask the crew to snug them up for smaller kids",
-      "Keep phone and cash in a dry bag — most water lines are splash zones",
-      "Quick-dry layers and closed-toe water shoes; expect to get properly wet"
+      "Arrive before 09:00 for a quiet Nakamise-dori — by midday it's shoulder to shoulder",
+      "The temple grounds themselves are free; the five-story pagoda and gate are the main photo stops"
     ],
     quizFacts: [
       {
-        question: "What kind of place is Canyon Park built into?",
-        correctAnswer: "A deep river canyon",
-        distractors: ["A volcano crater", "An old castle", "A giant cave"]
-      },
-      {
-        question: "How does lunch sometimes reach the pebble beach at Canyon Park?",
-        correctAnswer: "Down a zip-line!",
-        distractors: ["By helicopter", "On a trained dog", "On a boat"]
-      },
-      {
-        question: "What do most visitors stand on to paddle the Lima through the gorge?",
-        correctAnswer: "Stand-up paddleboards (SUP)",
-        distractors: ["Wooden gondolas", "Inflatable unicorns", "Motorboats only"]
+        question: "What is the giant red lantern at Senso-ji's outer gate called?",
+        correctAnswer: "Kaminarimon (Thunder Gate)",
+        distractors: ["Toshogu Gate", "Sakura Gate", "Fuji Gate"]
       }
     ]
   },
   {
-    id: "ponte-del-diavolo",
-    name: "Ponte del Diavolo (Devil's Bridge)",
+    id: "tokyo-skytree",
+    name: "Tokyo Skytree",
     category: "attraction",
     region: "north",
-    shortDescription: "A medieval humpback bridge wrapped in legend",
+    shortDescription: "634 m tower with a clear-day Mt Fuji view",
     description:
-      "A dramatic 11th-century bridge arching impossibly over the Serchio river just outside Borgo a Mozzano. Local legend says the devil himself finished it overnight in exchange for the first soul to cross — outsmarted by the villagers, who sent a dog. A short photo stop with great folklore for the kids.",
-    image: "./images/ponte-del-diavolo.jpg",
-    imageCredit: wmCredit("Ponte_della_Maddalena"),
-    website: "https://www.visittuscany.com/en/attractions/ponte-della-maddalena-devils-bridge/",
-    address: "Borgo a Mozzano (LU)",
-    coords: [43.9869, 10.5475],
-    tags: ["culture", "view", "family"],
-    difficulty: "easy",
-    tips: [
-      "Free, open 24/7 — a 10-minute photo stop is plenty",
-      "Tiny lay-by just north of the bridge; arrive early or late",
-      "Best photo from the river bank, not the bridge itself"
-    ],
-    quizFacts: [
-      {
-        question: "What animal did the villagers use to trick the devil at the bridge?",
-        correctAnswer: "A dog",
-        distractors: ["A goat", "A chicken", "A cat"]
-      },
-      {
-        question: "Why does the Devil's Bridge look so wonky?",
-        correctAnswer: "The devil built it in one night!",
-        distractors: ["An earthquake bent it", "Blindfolded builders made it", "A giant sat on it"]
-      },
-      {
-        question: "What kind of ghost might you see at the bridge in October?",
-        correctAnswer: "A glowing white dog",
-        distractors: ["A headless knight", "A grumpy troll", "A flying pizza"]
-      }
-    ]
-  },
-  {
-    id: "selva-buffardello",
-    name: "Parco Avventura Selva del Buffardello",
-    category: "attraction",
-    region: "north",
-    shortDescription: "Shaded forest ropes course with kid-friendly heights",
-    description:
-      "A professional adventure park in a cool chestnut forest above the Garfagnana. Multiple ropes courses and zip lines are graded by height — including dedicated routes from 100 cm so younger kids can do the real thing safely. A welcome shaded escape on a hot August day.",
-    image: "./images/selva-buffardello.jpg",
+      "The tallest structure in Japan at 634 m, with two observation decks — the Tembo Deck at 350 m and the pricier Tembo Galleria at 450 m. On a clear day the view stretches to Mt Fuji.",
+    image: "./images/tokyo-skytree.jpg",
     imageCredit: {
-      author: "Unsplash",
-      license: "Unsplash License",
-      source: "https://unsplash.com/photos/jKVfhe-z8U4",
-      licenseUrl: "https://unsplash.com/license"
-    },
-    website: "https://www.selvadelbuffardello.it/",
-    address: "Loc. Buffardello, Villa Collemandina (LU)",
-    coords: [44.1644, 10.4339],
-    tags: ["extreme", "family", "nature"],
-    difficulty: "moderate",
-    tips: [
-      "100 cm minimum for the dedicated kid course; 140 cm for the high routes",
-      "Closed-toe shoes are mandatory — no sandals",
-      "Helmet, harness and safety briefing included in the ticket",
-      "Shaded chestnut forest — bring a long-sleeve top, can be cool"
-    ],
-    quizFacts: [
-      {
-        question: "What is the Buffardello elf's favourite night prank?",
-        correctAnswer: "Tangling people's hair",
-        distractors: ["Stealing left shoes", "Eating all the cheese", "Painting doors blue"]
-      },
-      {
-        question: "What did people leave by the door to stop the Buffardello elf?",
-        correctAnswer: "Juniper berries",
-        distractors: ["Spicy soup", "A scary mirror", "A mousetrap"]
-      },
-      {
-        question: "What two things must you wear for the tree-climbing courses?",
-        correctAnswer: "A harness and a helmet",
-        distractors: ["A cape and a sword", "Goggles and flippers", "Heavy snow boots"]
-      }
-    ]
-  },
-  {
-    id: "soft-rafting-serchio",
-    name: "Soft Rafting — Serchio River",
-    category: "attraction",
-    region: "north",
-    shortDescription: "Gentle white-water rafting suited for families",
-    description:
-      "A relaxed, splashy float down the Serchio with calm stretches, a few playful rapids, and chances to jump in and swim. Your booked family trip runs about 1.5 hours with Lucca Rafting in Chifenti — wet, cool, and a perfect contrast to the August heat.",
-    image: "./images/serchio-rafting.jpg",
-    imageCredit: {
-      author: "Unsplash",
-      license: "Unsplash License",
-      source: "https://unsplash.com/photos/ayhiuTdcUEk",
-      licenseUrl: "https://unsplash.com/license"
-    },
-    website: "https://www.getyourguide.com/bagni-di-lucca-l160058/lucca-family-friendly-rafting-soft-t513269/",
-    address: "Chifenti, Bagni di Lucca (LU)",
-    coords: [44.0742, 10.4853],
-    tags: ["water", "family", "nature"],
-    difficulty: "easy",
-    tips: [
-      "About 1.5 hours including swim breaks",
-      "Min age usually 6; under-12s wear life vests the whole way",
-      "Wear swimwear, bring a dry change of clothes for the drive home",
-      "August water levels are gentle — splashy, not scary"
-    ]
-  },
-  {
-    id: "pisa",
-    name: "Pisa — Piazza dei Miracoli",
-    category: "attraction",
-    region: "north",
-    shortDescription: "The leaning tower and the cathedral square — a quick wow stop",
-    description:
-      "Skip the city centre and aim straight for Piazza dei Miracoli. The Leaning Tower, the cathedral, and the baptistery sit together on bright green lawn — one of the most photogenic 30-minute stops in Italy. Park outside the walls (the area is full ZTL) and walk in. Excellent gelato just off the square.",
-    image: "./images/pisa.jpg",
-    imageCredit: {
-      author: "Saffron Blaze",
+      author: "Danny15",
       license: "CC BY-SA 3.0",
-      source:
-        "https://commons.wikimedia.org/wiki/File:The_Leaning_Tower_of_Pisa_SB.jpeg",
-      licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/"
+      source: "https://commons.wikimedia.org/wiki/File:Tokyo_Skytree_view.JPG"
     },
-    website: "https://www.opapisa.it/en/",
-    address: "Piazza del Duomo, 56126 Pisa (PI)",
-    coords: [43.7229, 10.3966],
-    tags: ["culture", "view", "family"],
-    openingNote: "ZTL all around the square — park outside the walls and walk.",
+    website: "https://www.tokyo-skytree.jp/en/",
+    address: "1 Chome-1-2 Oshiage, Sumida City, Tokyo",
+    coords: [35.7101, 139.8107],
+    tags: ["view", "family"],
     difficulty: "easy",
     tips: [
-      "Park at 'Via Pietrasantina' (€2/hr) — free shuttle bus to the square",
-      "30–45 min is enough for the photo + gelato",
-      "Tower climb is timed-ticket only — book online before you go",
-      "Best 'leaning hand' photo from the lawn opposite the cathedral"
-    ],
-    quizFacts: [
-      {
-        question: "What did the scientist Galileo drop from the Leaning Tower?",
-        correctAnswer: "Two heavy cannonballs",
-        distractors: ["Two watermelons", "A feather and a hammer", "Two giant pizzas"]
-      },
-      {
-        question: "Why does the Leaning Tower of Pisa lean?",
-        correctAnswer: "The soft ground sank",
-        distractors: ["An earthquake tilted it", "It was a joke", "A strong wind blew it"]
-      },
-      {
-        question: "How many bells are at the top of the Leaning Tower?",
-        correctAnswer: "Seven",
-        distractors: ["Just one massive bell", "Fifty tiny bells", "None at all"]
-      }
+      "Book timed-entry tickets online in advance to skip the ground-floor queue",
+      "The 350 m deck is enough on all but the clearest days"
     ]
   },
   {
-    id: "abetone-monte-gomito",
-    name: "Abetone — Monte Gomito Cable Car",
+    id: "meiji-jingu",
+    name: "Meiji Jingu",
     category: "attraction",
     region: "north",
-    shortDescription: "Modern cable car to a cool ridge near 2,000 m",
+    shortDescription: "A forested shrine in the middle of the city",
     description:
-      "Abetone is the Apennine ski village that turns into a high-altitude playground in summer. Ride the new gondola to Monte Gomito (about 1,892 m) for cool air, panoramic ridge walks, and easy family trails through pine forest. A perfect midday escape from the heat below.",
-    image: "./images/abetone.jpg",
+      "A Shinto shrine dedicated to Emperor Meiji and Empress Shoken, set inside a forest of 100,000 trees donated from across Japan when it was built in 1920. A calm, green contrast right next to Harajuku's crowds.",
+    image: "./images/meiji-jingu.jpg",
     imageCredit: {
-      author: "Wikimedia Commons contributors",
-      license: "CC BY-SA 4.0",
-      source:
-        "https://commons.wikimedia.org/wiki/File:Foresta_piazzale_Abetone.jpg",
-      licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/"
+      author: "Teddy Yoshida",
+      license: "Public Domain",
+      source: "https://commons.wikimedia.org/wiki/File:Meiji-jingu_torii.JPG"
     },
-    website: "https://www.abetonefuniviaombrellino.it/",
-    address: "Abetone Cutigliano (PT)",
-    coords: [44.1344, 10.6717],
-    tags: ["nature", "view", "family"],
+    website: "https://www.meijijingu.or.jp/en/",
+    address: "1-1 Yoyogikamizonocho, Shibuya City, Tokyo",
+    coords: [35.6764, 139.6993],
+    tags: ["culture", "nature"],
     difficulty: "easy",
     tips: [
-      "Bring a light jacket — 12–15 °C cooler at the top, even in August",
-      "First gondola ~09:30, last descent ~17:00 — don't miss it",
-      "Round-trip ticket ~€18 adult / cheaper for kids; cash works",
-      "Pack a picnic — mountain restaurants close mid-afternoon"
+      "Look for sake barrels donated by breweries nationwide, displayed along the path to the shrine",
+      "Weekends sometimes catch a traditional Shinto wedding procession — a nice surprise, keep a respectful distance"
+    ]
+  },
+  {
+    id: "shibuya-crossing",
+    name: "Shibuya Crossing & Shibuya Sky",
+    category: "attraction",
+    region: "north",
+    shortDescription: "The world's busiest pedestrian crossing",
+    description:
+      "Up to 3,000 people cross at once when the lights change. Watch first from the Starbucks overlooking the scramble, then walk it yourself. Shibuya Sky's open-air rooftop deck, a few minutes' walk away, gives the best bird's-eye view — especially at sunset.",
+    image: "./images/shibuya-crossing.jpg",
+    imageCredit: {
+      author: "Jorge Láscar",
+      license: "CC BY 2.0",
+      source: "https://commons.wikimedia.org/wiki/File:World%27s_busiest_pedestrian_crossing_-_Large_panorama_of_the_Shibuya_Crossing_(43828061665).jpg"
+    },
+    website: "https://www.shibuya-scramble-square.com/sky/",
+    address: "Shibuya City, Tokyo",
+    coords: [35.6595, 139.7005],
+    tags: ["view", "culture"],
+    difficulty: "easy",
+    tips: [
+      "Shibuya Sky sunset slots sell out — book the specific time online ahead of the day",
+      "The Hachiko statue, just outside the station, is the classic meeting point if the group splits up"
     ],
     quizFacts: [
       {
-        question: "At the top of Monte Gomito, what happens to the temperature?",
-        correctAnswer: "It gets much colder",
-        distractors: ["It gets boiling hot", "It stays exactly the same", "It changes every five minutes"]
-      },
-      {
-        question: "What do the twin stone pyramids at Abetone mark?",
-        correctAnswer: "An old kingdom border",
-        distractors: ["A buried treasure", "The highest point in Italy", "An alien landing spot"]
+        question: "About how many people can cross Shibuya Crossing at once when the lights change?",
+        correctAnswer: "Up to 3,000",
+        distractors: ["About 50", "About 300", "About 10,000"]
       }
     ]
   },
   {
-    id: "lucca-walls",
-    name: "Lucca City Walls — Bike Loop",
+    id: "teamlab-planets",
+    name: "teamLab Planets TOKYO",
     category: "attraction",
     region: "north",
-    shortDescription: "Cycle the 4 km tree-lined Renaissance wall ring around old Lucca",
+    shortDescription: "A barefoot, wade-through-water digital art museum",
     description:
-      "Lucca's massive 16th-century walls were never tested in battle and were turned into a leafy public promenade in the 19th century. Today the 4.2 km grass-and-tree-shaded ring on top of the walls is one of Tuscany's signature family bike rides — completely flat, completely traffic-free, with rampart views into the old city on one side and the Tuscan plain on the other. Rental shops cluster around Porta San Pietro and Piazzale Verdi (Tourist Center Lucca, Cicli Bizzarri, Poli Antonio Bici); kids' bikes, child seats and trailers are all standard. Loop the walls in 30–45 min, then drop the bikes and disappear into the old town for gelato.",
-    image: "./images/lucca-walls.jpg",
-    imageCredit: wmCredit("Walls_of_Lucca"),
-    website: "https://en.wikipedia.org/wiki/Walls_of_Lucca",
-    address: "Mura Urbane di Lucca, Piazzale Verdi (LU)",
-    coords: [43.8443, 10.5050],
-    tags: ["family", "culture", "nature", "view"],
+      "A digital art museum you experience barefoot — walking through ankle-deep water lit with projected koi, and other immersive rooms of light and mirrors. Genuinely enjoyable for every age, from toddlers to grandparents.",
+    image: "./images/teamlab-planets.jpg",
+    imageCredit: {
+      author: "Hyppolyte de Saint-Rambert",
+      license: "CC BY-SA 4.0",
+      source: "https://commons.wikimedia.org/wiki/File:TEAM_LAB_univers_k.jpg"
+    },
+    website: "https://www.teamlab.art/e/planets/",
+    address: "6 Chome-1-16 Toyosu, Koto City, Tokyo",
+    coords: [35.6449, 139.7930],
+    tags: ["family", "culture"],
     difficulty: "easy",
     tips: [
-      "Rentals from ~€4/hr near Porta San Pietro & Piazzale Verdi",
-      "Whole 4.2 km loop ~30–45 min easy pedalling, totally flat",
-      "Child seats, tagalongs and trailers are standard at every shop",
-      "Park outside the walls — the historic centre is full ZTL"
-    ],
-    quizFacts: [
-      {
-        question: "Lucca's walls were never attacked, but they saved the city from what in 1812?",
-        correctAnswer: "A massive river flood",
-        distractors: ["Angry elephants", "A terrible fire", "Giant bees"]
-      },
-      {
-        question: "How long did it take to build the walls of Lucca?",
-        correctAnswer: "About 140 years!",
-        distractors: ["Just 3 weeks", "About 5 years", "Over 1000 years"]
-      },
-      {
-        question: "What covers the top of the Lucca city wall today?",
-        correctAnswer: "Green grass and big trees",
-        distractors: ["Sharp spikes", "Shiny gold coins", "A fast rollercoaster"]
-      }
+      "Wear clothes you can roll up past the knee, and bring a small towel to dry your feet after",
+      "Book a specific entry slot online — it regularly sells out days ahead"
     ]
   },
   {
-    id: "sentierelsa",
-    name: "Sentierelsa — Diborrato Waterfall",
+    id: "tsukiji-outer-market",
+    name: "Tsukiji Outer Market",
     category: "attraction",
     region: "north",
-    shortDescription: "Walk a turquoise river to a hidden waterfall",
+    shortDescription: "The best breakfast in Tokyo",
     description:
-      "A short, magical river walk along the Elsa near Colle di Val d'Elsa. The path crosses small wooden bridges and lets you wade through pools of impossibly turquoise water on the way to the Diborrato waterfall — a cliff-rimmed swimming hole where the brave cliff-jump from above. Closed-toe water shoes are essential.",
-    image: "./images/sentierelsa.jpg",
-    imageCredit: wmCredit("Elsa_(river)"),
-    website: "https://www.sentierelsa.it/",
-    address: "Colle di Val d'Elsa (SI)",
-    coords: [43.4197, 11.1289],
-    tags: ["water", "nature", "family"],
+      "The wholesale fish auction moved to Toyosu in 2018, but Tsukiji's outer market of food stalls and small restaurants remains, and remains the best breakfast crawl in the city — fresh uni, tamagoyaki skewers, and tuna served over rice.",
+    image: "./images/tsukiji-outer-market.jpg",
+    imageCredit: {
+      author: "Aimaimyi",
+      license: "CC BY-SA",
+      source: "https://commons.wikimedia.org/wiki/File:Tsukiji_Outer_Market_-01.jpg"
+    },
+    address: "4 Chome Tsukiji, Chuo City, Tokyo",
+    coords: [35.6654, 139.7707],
+    tags: ["food"],
+    difficulty: "easy",
+    tips: [
+      "Go for breakfast — most stalls wind down by early afternoon",
+      "Cash is still king at many of the smaller stalls"
+    ]
+  },
+  {
+    id: "nikko-toshogu",
+    name: "Toshogu Shrine, Nikko",
+    category: "attraction",
+    region: "north",
+    shortDescription: "A gilded mausoleum in the autumn mountains",
+    description:
+      "The elaborately carved, UNESCO-listed mausoleum of shogun Tokugawa Ieyasu, founder of the Tokugawa dynasty that ruled Japan for over 250 years. Home to the original carving of the 'see no evil, hear no evil, speak no evil' three wise monkeys. Nikko sits in the mountains north of Tokyo and is one of the country's best-known autumn foliage spots.",
+    image: "./images/nikko-toshogu.jpg",
+    imageCredit: {
+      author: "MichaelMaggs",
+      license: "CC BY-SA 2.5",
+      source: "https://commons.wikimedia.org/wiki/File:Three_Wise_Monkeys,Tosho-gu_Shrine.JPG"
+    },
+    website: "https://www.toshogu.jp/en/",
+    address: "2301 Sannai, Nikko, Tochigi",
+    coords: [36.7581, 139.5989],
+    tags: ["culture", "nature", "view"],
     difficulty: "moderate",
     tips: [
-      "Closed-toe water shoes are mandatory — barefoot is dangerous on the rocks",
-      "Free entry; no toilets at the trailhead — go in town first",
-      "Cliff-jumping at Diborrato is for strong swimmers only",
-      "Bring a dry bag for phones — there's no totally dry stretch"
+      "Reserve the Tobu Limited Express from Asakusa ahead of time during foliage season",
+      "Layer up — Nikko runs several degrees cooler than Tokyo"
     ],
     quizFacts: [
       {
-        question: "What happens if a branch stays in the Elsa river for a long time?",
-        correctAnswer: "It slowly turns to stone!",
-        distractors: ["It turns bright pink", "It melts into jelly", "It catches on fire"]
-      },
-      {
-        question: "How deep is the pool under the Diborrato waterfall?",
-        correctAnswer: "About 15 metres deep!",
-        distractors: ["Only up to your knees", "About 2 metres", "Over 1000 metres deep"]
-      },
-      {
-        question: "Why is the Elsa river so bright turquoise?",
-        correctAnswer: "Tiny bits of white calcium",
-        distractors: ["Someone pours blue dye in", "It reflects the green trees", "Glow-in-the-dark fish"]
+        question: "What are the three famous carved monkeys at Toshogu Shrine known for?",
+        correctAnswer: "\"See no evil, hear no evil, speak no evil\"",
+        distractors: ["Guarding a hidden treasure", "Ringing a bell at sunrise", "Predicting the weather"]
       }
+    ]
+  },
+  {
+    id: "kamakura-daibutsu",
+    name: "Kotoku-in — the Great Buddha of Kamakura",
+    category: "attraction",
+    region: "north",
+    shortDescription: "An 11.4 m bronze Buddha, in the open air since the 1400s",
+    description:
+      "A monumental bronze Amida Buddha cast in 1252. Its wooden hall was destroyed by a tsunami in the 15th century and never rebuilt, so the statue has sat in the open air ever since. Visitors can step inside the hollow bronze for a small fee.",
+    image: "./images/kamakura-daibutsu.jpg",
+    imageCredit: {
+      author: "Dandy1022",
+      license: "CC BY-SA 3.0",
+      source: "https://commons.wikimedia.org/wiki/File:The_Great_Buddha_of_K%C5%8Dtoku-in_(Kamakura_Daibutsu).jpg"
+    },
+    website: "https://www.kotoku-in.jp/en/",
+    address: "4 Chome-2-28 Hase, Kamakura, Kanagawa",
+    coords: [35.3167, 139.5361],
+    tags: ["culture", "family"],
+    difficulty: "easy",
+    tips: [
+      "Combine with Hase-dera temple, a short walk away, if time allows",
+      "Komachi-dori shopping street near the station is a good lunch stop"
+    ],
+    quizFacts: [
+      {
+        question: "Why does the Great Buddha of Kamakura sit outdoors instead of inside a hall?",
+        correctAnswer: "A tsunami destroyed the hall centuries ago and it was never rebuilt",
+        distractors: ["It was always meant to be outdoors", "The hall burned down last year", "It's too big for any building"]
+      }
+    ]
+  },
+  {
+    id: "hakone-open-air-museum",
+    name: "Hakone Open-Air Museum",
+    category: "attraction",
+    region: "north",
+    shortDescription: "A sculpture park kids can actually climb on",
+    description:
+      "Japan's first open-air museum — over 100 sculptures scattered across landscaped hillside grounds, plus a dedicated Picasso pavilion. Several installations are designed to be climbed and played on, making it one of the rare museums that's genuinely fun for kids.",
+    image: "./images/hakone-open-air-museum.jpg",
+    imageCredit: {
+      author: "663highland",
+      license: "CC BY-SA 4.0",
+      source: "https://commons.wikimedia.org/wiki/File:220622_Hakone_Open-air_Museum_Japan01s3.jpg"
+    },
+    website: "https://www.hakone-oam.or.jp/en/",
+    address: "1121 Ninotaira, Hakone, Kanagawa",
+    coords: [35.2436, 139.0483],
+    tags: ["culture", "family"],
+    difficulty: "easy",
+    tips: [
+      "Budget at least 2 hours — the grounds are larger than they look on the map",
+      "There's a foot bath (ashiyu) on site — bring a small towel"
+    ]
+  },
+  {
+    id: "hakone-owakudani",
+    name: "Owakudani",
+    category: "attraction",
+    region: "north",
+    shortDescription: "A volcanic valley of sulphur vents",
+    description:
+      "A volcanic valley created by Mt Hakone's last eruption around 3,000 years ago — bubbling hot springs, sulphur vents and steaming ground, reached by ropeway with a clear-day Mt Fuji view from the station. Try a kuro-tamago, an egg boiled in the sulphur springs until its shell turns black — local legend says each one adds seven years to your life.",
+    image: "./images/hakone-owakudani.jpg",
+    imageCredit: {
+      author: "TLV and more",
+      license: "CC BY 2.0",
+      source: "https://commons.wikimedia.org/wiki/File:Owakudani%27s_cable_car,_Japan;_October_2017.jpg"
+    },
+    address: "Owakudani, Hakone, Kanagawa",
+    coords: [35.2333, 139.0167],
+    tags: ["nature", "view"],
+    difficulty: "easy",
+    tips: [
+      "The ropeway occasionally suspends service in high wind or volcanic activity alerts — check status before heading up",
+      "The sulphur smell is strong near the vents; it fades quickly once you're back on the ropeway"
+    ],
+    quizFacts: [
+      {
+        question: "What does local legend say happens if you eat a kuro-tamago (black egg) at Owakudani?",
+        correctAnswer: "It adds seven years to your life",
+        distractors: ["It brings good luck in love", "It cures a cold", "Nothing — it's just a snack"]
+      }
+    ]
+  },
+  {
+    id: "hakone-lake-ashi",
+    name: "Lake Ashi pirate ship cruise",
+    category: "attraction",
+    region: "north",
+    shortDescription: "A theatrical ferry across a caldera lake",
+    description:
+      "A crater lake formed by the same eruption that shaped Owakudani, crossed by a fleet of theatrical 'pirate ship' sightseeing ferries. On a clear day Mt Fuji rises directly behind the water. The Moto-Hakone side has the lake's famous floating torii gate, part of Hakone Shrine.",
+    image: "./images/hakone-lake-ashi.jpg",
+    imageCredit: {
+      author: "Daderot",
+      license: "CC0",
+      source: "https://commons.wikimedia.org/wiki/File:Hakone-jinja_torii_-_Hakone,_Japan_-_DSC05478.jpg"
+    },
+    address: "Lake Ashi, Hakone, Kanagawa",
+    coords: [35.2038, 139.0281],
+    tags: ["view", "family"],
+    difficulty: "easy",
+    tips: [
+      "The Hakone Free Pass covers the ropeway, this cruise, and local buses on one ticket",
+      "Sit on the upper deck for the best Fuji photos when visibility is good"
     ]
   },
 
-  // ---------- SOUTH ----------
+  // ---------- SOUTH (Kansai: Kyoto / Nara / Osaka / Himeji) ----------
   {
-    id: "porto-santo-stefano",
-    name: "Porto Santo Stefano — Catamaran Cruise",
+    id: "gion-district",
+    name: "Gion",
     category: "attraction",
     region: "south",
-    shortDescription: "Guided catamaran cruise around Monte Argentario, with snorkelling & lunch",
+    shortDescription: "Kyoto's historic geisha district at dusk",
     description:
-      "The harbour town on Monte Argentario, and the departure pier for the booked catamaran cruise. Sail the peninsula with the crew, drop anchor in glassy coves to swim and snorkel right off the boat (gear provided), and enjoy a full lunch served on deck as you go.",
-    image: "./images/porto-santo-stefano.jpg",
-    imageCredit: wmCredit("Porto_Santo_Stefano"),
-    website: "https://www.getyourguide.com/porto-santo-stefano-l169819/argentario-catamaran-cruise-with-snorkeling-lunch-t1229195/",
-    address: "Porto Santo Stefano, Monte Argentario (GR)",
-    coords: [42.4361, 11.1167],
-    tags: ["water", "family", "view"],
-    bookingNote: "Booked via GetYourGuide (operator DONNINI) for 23 Aug — check in at the pier by 08:30.",
-    difficulty: "easy",
-    tips: [
-      "Meeting point is the Porto Santo Stefano pier — arrive 08:30, 30 min before the 09:00 departure",
-      "Snorkel gear, lunch and an open bar (water, soft drinks, wine) are all included on board",
-      "No pets on board; not recommended if pregnant",
-      "Free cancellation up to 09:00 on 22 Aug — worth a forecast check the night before"
-    ],
-    quizFacts: [
-      {
-        question: "Who built the big stone fortress above the harbour?",
-        correctAnswer: "The Spanish",
-        distractors: ["The Vikings", "The Egyptians", "The British"]
-      },
-      {
-        question: "Every August, the town has a big race. What do they race in?",
-        correctAnswer: "Wooden rowing boats",
-        distractors: ["Speedboats", "Bathtubs", "Swimming with flippers"]
-      }
-    ]
-  },
-  {
-    id: "cala-del-gesso",
-    name: "Cala del Gesso",
-    category: "attraction",
-    region: "south",
-    shortDescription: "A turquoise pocket cove on the wild side of Argentario",
-    description:
-      "Often called the most beautiful cove on Monte Argentario — a small white-pebble beach below sheer cliffs, a tiny Spanish watchtower, and water so clear it looks fake. Reachable on foot via a steep path, or from the water on a boat day.",
-    image: "./images/cala-del-gesso.jpg",
+      "Kyoto's most famous geisha (geiko) district — lantern-lit lanes, preserved machiya wooden townhouses, and traditional teahouses. Early evening is the best time to walk it, when the lanterns are lit and, occasionally, a geiko or maiko passes on the way to an appointment.",
+    image: "./images/gion.jpg",
     imageCredit: {
-      author: "Cristina Gottardi (Unsplash)",
-      license: "CC0 / Public Domain",
-      source: "https://unsplash.com/photos/7_APbY7Afsg",
-      licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/"
+      author: "Basile Morin",
+      license: "CC BY-SA 4.0",
+      source: "https://commons.wikimedia.org/wiki/File:Wooden_and_bamboo_facades_of_dwellings_with_sudare_in_a_cobbled_street_of_Gion,_perspective_effect_with_vanishing_point,_Kyoto,_Japan.jpg"
     },
-    address: "Monte Argentario (GR)",
-    coords: [42.3642, 11.1233],
-    tags: ["water", "nature", "view"],
-    difficulty: "moderate",
+    address: "Gion, Higashiyama Ward, Kyoto",
+    coords: [35.0037, 135.7788],
+    tags: ["culture", "view"],
+    difficulty: "easy",
     tips: [
-      "Reachable from the water, or on foot",
-      "Land path is steep, ~30 min down and a sweaty 40 min back up",
-      "White pebbles, no sand — water shoes save your feet",
-      "No facilities of any kind: bring your own water and snacks"
-    ],
-    quizFacts: [
-      {
-        question: "Why is this beach called 'Cala del Gesso' (Chalk Cove)?",
-        correctAnswer: "Chalky rocks were mined there",
-        distractors: ["Artists painted there with chalk", "The water tastes like chalk", "Kids use it as a chalkboard"]
-      },
-      {
-        question: "What is the beach at Cala del Gesso made of?",
-        correctAnswer: "Small white pebbles",
-        distractors: ["Black volcanic sand", "Soft yellow mud", "Wooden planks"]
-      }
+      "If you see a geiko or maiko, keep a respectful distance and never block their path for a photo — some streets have signs and fines for harassment",
+      "Hanami-koji street is the most photogenic stretch, especially around dusk"
     ]
   },
   {
-    id: "acqua-village-follonica",
-    name: "Acqua Village Follonica",
+    id: "fushimi-inari",
+    name: "Fushimi Inari Taisha",
     category: "attraction",
     region: "south",
-    shortDescription: "Hawaiian-themed water park with serious slides",
+    shortDescription: "Thousands of vermillion torii gates up the mountain",
     description:
-      "The biggest, most polished water park in southern Tuscany — Polynesian theming, multi-lane slides, a wave pool, and a lazy river. A full-day, all-ages adrenaline reset between cultural and outdoor days.",
-    image: "./images/acqua-village.jpg",
+      "The head shrine of Inari, the Shinto god of rice, sake and prosperity — dating back to 711 AD. Thousands of vermillion torii gates, each donated by a business or individual, form tunnels climbing Mt Inari. Free and open 24 hours; the full loop is a 2–3 hour hike, but the first 30–40 minutes covers the iconic gate tunnels.",
+    image: "./images/fushimi-inari.jpg",
     imageCredit: {
-      author: "Unsplash",
-      license: "Unsplash License",
-      source: "https://unsplash.com/photos/1-P3CP8Z1Qg",
-      licenseUrl: "https://unsplash.com/license"
+      author: "Basile Morin",
+      license: "CC BY-SA 4.0",
+      source: "https://commons.wikimedia.org/wiki/File:Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine,_Kyoto,_Japan.jpg"
     },
-    website: "https://www.acquavillage.it/follonica/",
-    address: "Via Sanzio, 58022 Follonica (GR)",
-    coords: [42.9183, 10.7717],
-    tags: ["water", "extreme", "family"],
-    difficulty: "easy",
-    tips: [
-      "Buy tickets online — meaningfully cheaper than at the gate",
-      "Lockers ~€5 with key deposit; bring a €1 coin",
-      "Outside food is allowed in the picnic area — pack a cooler",
-      "Arrive at opening (10:00) — slide queues triple after lunch"
-    ]
-  },
-  {
-    id: "maremma-horseback",
-    name: "Maremma Horseback Riding",
-    category: "attraction",
-    region: "south",
-    shortDescription: "Ride with the butteri (Maremma cowboys) through dunes and pine forest",
-    description:
-      "The Maremma is Italy's old cowboy country, and several family-run agriturismi offer guided beginner rides through umbrella-pine forests and back-country dunes. Cool early-morning slot is the best — book a 1-hour family pony / horse experience at a ranch near Alberese or Albinia.",
-    image: "./images/maremma-horse.jpg",
-    imageCredit: wmCredit("Maremmano"),
-    website: "https://www.parco-maremma.it/en/",
-    address: "Parco della Maremma, Alberese (GR)",
-    coords: [42.6647, 11.0883],
-    tags: ["nature", "family"],
-    difficulty: "easy",
-    tips: [
-      "Long pants (jeans) and closed-toe shoes are non-negotiable",
-      "Min age usually 6 for trail rides; younger kids get a led pony",
-      "Book the 09:00 slot — by 11 it's brutally hot in the open",
-      "Helmets always provided; bring a wide-brim hat for after"
-    ],
-    quizFacts: [
-      {
-        question: "Which famous American cowboy did the Italian cowboys beat in 1890?",
-        correctAnswer: "Buffalo Bill",
-        distractors: ["John Wayne", "Wild Bill Hickok", "Indiana Jones"]
-      },
-      {
-        question: "What are the Maremma cowboys called?",
-        correctAnswer: "Butteri",
-        distractors: ["Vaqueros", "Gauchos", "Banditos"]
-      }
-    ]
-  },
-  {
-    id: "pitigliano",
-    name: "Pitigliano",
-    category: "attraction",
-    region: "south",
-    shortDescription: "The 'Little Jerusalem' carved out of a tufa cliff",
-    description:
-      "An Etruscan-Jewish hill town that grows straight out of the volcanic tufa rock — best photographed from the viewpoint on the road in. Wander the old Jewish quarter, ducking into the synagogue, kosher bakery and rock-cut wine cellars. Plenty of cool, shaded alleys for an afternoon walk.",
-    image: "./images/pitigliano.jpg",
-    imageCredit: wmCredit("Pitigliano"),
-    website: "https://visit.pitigliano.org/en/",
-    address: "Pitigliano (GR)",
-    coords: [42.6353, 11.6700],
-    tags: ["culture", "village", "view"],
-    difficulty: "easy",
-    tips: [
-      "Park at the big lot opposite the panorama viewpoint",
-      "Synagogue + Jewish quarter combo ticket ~€6 — closes early Friday",
-      "Don't leave without a slice of 'sfratto dei Goym' (local Jewish-Italian dessert)",
-      "Cool, shaded alleys make this the ideal late-afternoon walk"
-    ],
-    quizFacts: [
-      {
-        question: "What is Pitigliano's famous nickname?",
-        correctAnswer: "Little Jerusalem",
-        distractors: ["Little Athens", "The Roman Ruin", "The Pearl of the Sea"]
-      },
-      {
-        question: "What kind of rock is Pitigliano carved out of?",
-        correctAnswer: "Tufa, a soft volcanic rock",
-        distractors: ["Solid white marble", "Clear ice", "Shiny black coal"]
-      },
-      {
-        question: "What is the famous stick-shaped pastry from Pitigliano called?",
-        correctAnswer: "Sfratto",
-        distractors: ["Cannolo", "Tiramisu", "Panettone"]
-      }
-    ]
-  },
-  {
-    id: "via-cava-san-giuseppe",
-    name: "Via Cava di San Giuseppe",
-    category: "attraction",
-    region: "south",
-    shortDescription: "Etruscan rock corridors carved up to 20 m deep",
-    description:
-      "The Vie Cave are mysterious Etruscan trenches sliced into the soft tufa, in places more than 20 m deep, threading the woods between Pitigliano, Sovana and Sorano. The San Giuseppe path is the most accessible — cool, shaded, dramatic, and feels like walking through a natural maze.",
-    image: "./images/via-cava.jpg",
-    imageCredit: wmCredit("Vie_Cave"),
-    website: "https://www.parcodeglietruschi.it/en/",
-    address: "Pitigliano (GR)",
-    coords: [42.6313, 11.6722],
-    tags: ["culture", "cave", "nature"],
+    website: "https://inari.jp/en/",
+    address: "68 Fukakusa Yabunouchicho, Fushimi Ward, Kyoto",
+    coords: [34.9671, 135.7727],
+    tags: ["culture", "nature"],
     difficulty: "moderate",
     tips: [
-      "Free, no ticket — trailhead just below the old town",
-      "Wear grippy shoes — the tufa is shaded but slick when damp",
-      "1-hour comfortable loop; longer if you take the Sovana extension",
-      "Surprisingly cool down inside — bring a light layer"
+      "Go at opening (the gates are open 24/7, but arrive by 07:30) — it's a crowd crush by mid-morning",
+      "You don't need to summit — the first stretch of gates is the photogenic part"
     ],
     quizFacts: [
       {
-        question: "Who carved the deep 'Via Cava' rock roads?",
-        correctAnswer: "The Etruscans",
-        distractors: ["The Romans", "The Vikings", "Aliens"]
-      },
-      {
-        question: "Why were these roads carved so deep into the rock?",
-        correctAnswer: "It's an ancient mystery!",
-        distractors: ["To hide from dinosaurs", "To find gold", "As swimming pools"]
+        question: "Who donates the thousands of torii gates at Fushimi Inari?",
+        correctAnswer: "Businesses and individuals, as offerings",
+        distractors: ["The Emperor of Japan", "Foreign governments", "They were all built at once by monks"]
       }
     ]
   },
   {
-    id: "vitozza",
-    name: "Vitozza Cave City",
+    id: "kiyomizu-dera",
+    name: "Kiyomizu-dera",
     category: "attraction",
     region: "south",
-    shortDescription: "Abandoned medieval cave dwellings in the woods",
+    shortDescription: "A wooden temple stage built without a single nail",
     description:
-      "Over 200 cave dwellings hollowed into the tufa cliffs of a forested ravine near San Quirico di Sorano — a wild, atmospheric site you mostly explore alone. Great backup or alternative to the Vie Cave, especially if the kids love crawling into rock-cut rooms with a headlamp.",
-    image: "./images/vitozza.jpg",
-    imageCredit: wmCredit("Sorano"),
-    website: "https://visit.pitigliano.org/en/",
-    address: "San Quirico, Sorano (GR)",
-    coords: [42.6864, 11.7464],
-    tags: ["cave", "nature", "culture"],
-    difficulty: "challenging",
-    tips: [
-      "Bring a head-lamp per person — the chambers are properly dark",
-      "1.5–2 hr round trip on uneven, sometimes overgrown ground",
-      "Wild, atmospheric, almost no signage — keep close to the trail",
-      "Wear long pants & closed shoes; brambles & rough stone"
-    ],
-    quizFacts: [
-      {
-        question: "Roughly how many cave dwellings are there at Vitozza?",
-        correctAnswer: "Over 200",
-        distractors: ["Just 5", "Exactly 10", "More than 5,000"]
-      },
-      {
-        question: "Until roughly when did people actually still live inside the caves of Vitozza?",
-        correctAnswer: "Until the late 1700s",
-        distractors: [
-          "Only during the Stone Age",
-          "Only in ancient Roman times",
-          "All the way until last year"
-        ]
-      },
-      {
-        question: "Many of the caves at Vitozza have shapes carved into the rock walls inside. What were they used as?",
-        correctAnswer: "As wardrobes and shelves for everyday things",
-        distractors: [
-          "As secret slides for kids",
-          "As fish tanks for goldfish",
-          "As frozen-food drawers"
-        ]
-      }
-    ]
-  },
-  {
-    id: "saturnia",
-    name: "Cascate del Mulino — Saturnia Hot Springs",
-    category: "attraction",
-    region: "south",
-    shortDescription: "Free, 24/7 turquoise hot waterfalls — best at sunrise",
-    description:
-      "A natural staircase of warm sulphur pools and the iconic milky-blue waterfall. Free and open 24/7. The trick is timing: arrive by 07:30 to enjoy steam rising off cool morning water in near-empty pools. By 10 am it's packed and parking disappears.",
-    image: "./images/saturnia.jpg",
-    imageCredit: wmCredit("Saturnia"),
-    website: "https://www.termedisaturnia.it/en/",
-    address: "Cascate del Mulino, Saturnia, Manciano (GR)",
-    coords: [42.6483, 11.5089],
-    tags: ["water", "nature", "view"],
-    openingNote: "Free, open 24/7. Arrive by 07:30 to beat crowds and heat.",
-    difficulty: "easy",
-    tips: [
-      "100 % free, 24/7, no facilities, no lockers — leave valuables in the car",
-      "Sulphur stains light fabrics — wear darker swimwear and rinse after",
-      "Bring sandals you don't mind smelling of eggs for a few days",
-      "Arrive by 07:30; by 10 it's elbow-to-elbow and parking is gone"
-    ],
-    quizFacts: [
-      {
-        question: "In Roman legend, how were the Saturnia hot springs created?",
-        correctAnswer: "Jupiter threw a lightning bolt",
-        distractors: ["A dragon sneezed fire", "A giant dropped hot soup", "The sun got too close"]
-      },
-      {
-        question: "Why does the warm water at Saturnia smell like rotten eggs?",
-        correctAnswer: "It has a mineral called sulphur",
-        distractors: ["People drop old eggs in it", "Frogs live at the bottom", "A magic spell"]
-      },
-      {
-        question: "How warm is the water at Saturnia?",
-        correctAnswer: "37 degrees, like a warm bath!",
-        distractors: ["10 degrees, freezing!", "100 degrees, boiling!", "It changes every day"]
-      }
-    ]
-  },
-  {
-    id: "lago-di-bolsena",
-    name: "Lago di Bolsena",
-    category: "attraction",
-    region: "south",
-    shortDescription: "Europe's largest volcanic lake — calm, clean, swimmable",
-    description:
-      "A vast volcanic crater lake with cool, clean fresh water — a far easier swim than the crowded Tuscan coast in August. The little towns of Bolsena and Capodimonte have shaded grassy beaches, gelato and pedalos. A perfect midday cool-down on the way back from the south.",
-    image: "./images/bolsena.jpg",
-    imageCredit: wmCredit("Lake_Bolsena"),
-    website: "https://www.comune.bolsena.vt.it/",
-    address: "Bolsena (VT)",
-    coords: [42.6447, 11.9847],
-    tags: ["water", "family", "nature"],
-    difficulty: "easy",
-    tips: [
-      "Free public beaches at Bolsena & Capodimonte; pay loungers also available",
-      "Lake water is cooler than the August coast — refreshing, not freezing",
-      "Pedalo & SUP rental at the marina; ice-cream & snack bars right there",
-      "Lake-fish 'coregone' is the local specialty — try at a marina trattoria"
-    ],
-    quizFacts: [
-      {
-        question: "What kind of crater formed Lake Bolsena a long time ago?",
-        correctAnswer: "An old volcano collapsing into itself",
-        distractors: [
-          "A meteor that landed yesterday",
-          "A giant whale's footprint",
-          "An abandoned diamond mine"
-        ]
-      },
-      {
-        question: "Lake Bolsena is the largest lake in Europe of which kind?",
-        correctAnswer: "The largest volcanic lake",
-        distractors: [
-          "The largest salt lake",
-          "The largest underground lake",
-          "The largest pink lake"
-        ]
-      },
-      {
-        question: "Which fish is the local specialty of Lake Bolsena?",
-        correctAnswer: "Coregone",
-        distractors: ["Salmon", "Tuna", "Shark"]
-      },
-      {
-        question: "How many islands sit in the southern part of Lake Bolsena?",
-        correctAnswer: "Two — Bisentina and Martana",
-        distractors: ["None at all", "About a dozen", "More than a hundred"]
-      }
-    ]
-  },
-  {
-    id: "civita-di-bagnoregio",
-    name: "Civita di Bagnoregio",
-    category: "attraction",
-    region: "south",
-    shortDescription: "The 'dying city' on a tufa pedestal, reached by footbridge",
-    description:
-      "An impossibly photogenic medieval village perched on a crumbling tufa column, accessible only by a long pedestrian bridge over a canyon of badlands. Tiny ticket fee, then a short steep walk into a tiny stone village frozen in time. Best in late afternoon light.",
-    image: "./images/civita.jpg",
-    imageCredit: wmCredit("Civita_di_Bagnoregio"),
-    website: "https://www.civitadibagnoregio.cloud/en/",
-    address: "Civita di Bagnoregio, Bagnoregio (VT)",
-    coords: [42.6275, 12.1131],
-    tags: ["culture", "village", "view"],
+      "A UNESCO World Heritage temple founded in 780 AD, famous for its wooden veranda jutting out over the hillside — built using an interlocking joinery technique with no nails at all. Leads directly into Higashiyama's historic sloped lanes, Sannenzaka and Ninenzaka.",
+    image: "./images/kiyomizu-dera.jpg",
+    imageCredit: {
+      author: "柳田亮 (Ryo Yanagita)",
+      license: "CC BY-SA 3.0",
+      source: "https://commons.wikimedia.org/wiki/File:Kiyomizutera(Kyomizu_no_Butai)_-_panoramio.jpg"
+    },
+    website: "https://www.kiyomizudera.or.jp/en/",
+    address: "1 Chome-294 Kiyomizu, Higashiyama Ward, Kyoto",
+    coords: [34.9949, 135.7850],
+    tags: ["culture", "view"],
     difficulty: "moderate",
     tips: [
-      "Footbridge ticket ~€5/adult, cash only — kids under 6 free",
-      "The walk back is properly steep — strollers will struggle",
-      "Best light & cooler temps in late afternoon; village glows at golden hour",
-      "Tiny grocery on the bridge side — BYO water for the climb"
+      "Sannenzaka and Ninenzaka's stone steps are uneven and can be slippery when wet — avoid heeled shoes",
+      "The temple's main hall stage view is best in the soft morning or late-afternoon light"
     ],
     quizFacts: [
       {
-        question: "What is Civita di Bagnoregio's famous nickname?",
-        correctAnswer: "The Dying City",
-        distractors: ["The Singing City", "The Sleeping Castle", "The Twin City"]
-      },
+        question: "What is unusual about how Kiyomizu-dera's famous wooden stage was built?",
+        correctAnswer: "It was built with no nails at all",
+        distractors: ["It was built in a single day", "It floats on the pond below", "It's made entirely of stone"]
+      }
+    ]
+  },
+  {
+    id: "arashiyama-bamboo",
+    name: "Arashiyama Bamboo Grove",
+    category: "attraction",
+    region: "south",
+    shortDescription: "A towering green corridor, best at sunrise",
+    description:
+      "A dense, soaring bamboo corridor on Kyoto's western edge — free, open 24/7, and genuinely magical in the first hour after sunrise before tour groups arrive. Tenryu-ji temple next door, a UNESCO World Heritage site with a landscaped strolling garden, is usually far quieter than the grove itself.",
+    image: "./images/arashiyama-bamboo.jpg",
+    imageCredit: {
+      author: "Naokijp",
+      license: "CC BY-SA 4.0",
+      source: "https://commons.wikimedia.org/wiki/File:2021_Sagano_Bamboo_forest_in_Arashiyama,_Kyoto,_Japan.jpg"
+    },
+    address: "Sagaogurayama Tabuchiyamacho, Ukyo Ward, Kyoto",
+    coords: [35.0094, 135.6704],
+    tags: ["nature"],
+    difficulty: "easy",
+    tips: [
+      "Go before 08:00 — by mid-morning it's a slow-moving crowd of tour groups",
+      "Rent a bicycle near the station to cover the wider Sagano area faster"
+    ]
+  },
+  {
+    id: "kinkaku-ji",
+    name: "Kinkaku-ji — the Golden Pavilion",
+    category: "attraction",
+    region: "south",
+    shortDescription: "A gold-leaf pavilion reflected in its pond",
+    description:
+      "A Zen Buddhist temple whose top two floors are entirely covered in gold leaf, built originally as a shogun's retirement villa in 1397 and rebuilt after a 1950 fire. Its reflection in the surrounding pond is one of Kyoto's most photographed sights — especially framed by autumn foliage in mid-November.",
+    image: "./images/kinkaku-ji.jpg",
+    imageCredit: {
+      author: "Basile Morin",
+      license: "CC BY-SA 4.0",
+      source: "https://commons.wikimedia.org/wiki/File:Water_reflection_of_Kinkaku-ji_Temple_with_a_tree_on_a_rock_in_the_pond,_Kyoto,_Japan.jpg"
+    },
+    website: "https://www.shokoku-ji.jp/en/kinkakuji/",
+    address: "1 Kinkakujicho, Kita Ward, Kyoto",
+    coords: [35.0394, 135.7292],
+    tags: ["culture", "view"],
+    difficulty: "easy",
+    tips: [
+      "The walking route is one-way and doesn't allow lingering right at the best photo spot — take your shot and keep moving, you'll get another angle further along",
+      "Weekday mornings are noticeably calmer than weekends"
+    ]
+  },
+  {
+    id: "nara-deer-park",
+    name: "Nara Park — the bowing deer",
+    category: "attraction",
+    region: "south",
+    shortDescription: "Over 1,000 wild deer, considered sacred messengers",
+    description:
+      "A large park with over 1,000 wild sika deer roaming freely, considered messengers of the gods in local Shinto belief and protected as a national treasure. Vendors sell 'shika senbei' crackers, and many deer will bow their heads for one.",
+    image: "./images/nara-deer-park.jpg",
+    imageCredit: {
+      author: "MASA",
+      license: "CC BY-SA 3.0",
+      source: "https://commons.wikimedia.org/wiki/File:Nara-Park_Deer.jpg"
+    },
+    address: "Nara Park, Nara",
+    coords: [34.6851, 135.8430],
+    tags: ["family", "nature"],
+    difficulty: "easy",
+    tips: [
+      "Hold the cracker out flat and away from pockets or bags — deer will look for more if kept waiting",
+      "Most deer are gentle, but a few can nip at clothing — stay relaxed, don't tease them with a cracker"
+    ],
+    quizFacts: [
       {
-        question: "How do visitors reach the village of Civita di Bagnoregio?",
-        correctAnswer: "Across a long pedestrian footbridge over a canyon",
-        distractors: [
-          "By cable car",
-          "By small submarine",
-          "Through a long underground tunnel"
-        ]
-      },
+        question: "What are Nara's deer traditionally considered to be, in local Shinto belief?",
+        correctAnswer: "Sacred messengers of the gods",
+        distractors: ["Escaped farm animals", "A modern tourist attraction with no history", "Guardians of the castle"]
+      }
+    ]
+  },
+  {
+    id: "nara-todaiji",
+    name: "Todai-ji",
+    category: "attraction",
+    region: "south",
+    shortDescription: "The world's largest wooden building",
+    description:
+      "A UNESCO World Heritage temple whose Great Buddha Hall (Daibutsuden) is the largest wooden building in the world, housing a 15 m bronze seated Buddha cast in 752 AD. One supporting pillar has a hole the exact size of the Buddha statue's nostril — local legend says children who squeeze through it are guaranteed enlightenment.",
+    image: "./images/nara-todaiji.jpg",
+    imageCredit: {
+      author: "ONO Masanobu",
+      license: "CC0",
+      source: "https://commons.wikimedia.org/wiki/File:Todai-ji_Daibutsuden_front_view_in_2011.jpg"
+    },
+    website: "https://www.todaiji.or.jp/en/",
+    address: "406-1 Zoshicho, Nara",
+    coords: [34.6889, 135.8398],
+    tags: ["culture", "family"],
+    difficulty: "easy",
+    tips: [
+      "The nostril-sized pillar hole is a fun, safe challenge for smaller kids — adults generally don't fit",
+      "Combine with the adjacent deer park in one visit"
+    ]
+  },
+  {
+    id: "osaka-castle",
+    name: "Osaka Castle",
+    category: "attraction",
+    region: "south",
+    shortDescription: "A rebuilt 16th-century keep in a vast park",
+    description:
+      "Originally built in 1583 by Toyotomi Hideyoshi, the general who unified Japan, and rebuilt in concrete in 1931 after fire and war destroyed the original. The museum inside covers Hideyoshi's story, and the top-floor observation deck gives a full skyline view over the surrounding park.",
+    image: "./images/osaka-castle.jpg",
+    imageCredit: {
+      author: "Don Ramey Logan",
+      license: "CC BY 4.0",
+      source: "https://commons.wikimedia.org/wiki/File:Osaka_Castle_2_Osaka_Japan_by_Don_Ramey_Logan.jpg"
+    },
+    website: "https://www.osakacastle.net/",
+    address: "1-1 Osakajo, Chuo Ward, Osaka",
+    coords: [34.6873, 135.5262],
+    tags: ["culture", "view", "family"],
+    difficulty: "easy",
+    tips: [
+      "The park around the castle is huge and pleasant for a slow walk — allow extra time in autumn foliage season",
+      "There's an elevator to the upper floors, useful with strollers or tired legs"
+    ]
+  },
+  {
+    id: "dotonbori",
+    name: "Dotonbori & Kuromon Market",
+    category: "attraction",
+    region: "south",
+    shortDescription: "Neon canal-side street food chaos",
+    description:
+      "Osaka's most famous entertainment strip, lined with oversized illuminated signs (the running Glico man is the icon) and street food stalls selling takoyaki and okonomiyaki along the canal. Kuromon Ichiba Market, a short walk away, is a calmer, mostly-indoor version of the same grazing experience.",
+    image: "./images/dotonbori.jpg",
+    imageCredit: {
+      author: "Martin Falbisoner",
+      license: "CC BY-SA 4.0",
+      source: "https://commons.wikimedia.org/wiki/File:Dotonbori,_Osaka,_at_night,_November_2016.jpg"
+    },
+    address: "Dotonbori, Chuo Ward, Osaka",
+    coords: [34.6687, 135.5013],
+    tags: ["food", "culture"],
+    difficulty: "easy",
+    tips: [
+      "Kuromon Market stalls are cash, stand-and-eat — bring small bills",
+      "Dotonbori is loud and crowded most evenings — go earlier in the day for a calmer visit"
+    ]
+  },
+  {
+    id: "universal-studios-japan",
+    name: "Universal Studios Japan",
+    category: "attraction",
+    region: "south",
+    shortDescription: "Super Nintendo World and the Wizarding World of Harry Potter",
+    description:
+      "A full-day theme park whose headline draws are the immersive Super Nintendo World area (Mario Kart ride included) and the Wizarding World of Harry Potter. Both areas require timed-entry passes booked through the official app, separate from park admission.",
+    image: "./images/universal-studios-japan.jpg",
+    imageCredit: {
+      author: "Jpatokal",
+      license: "CC BY-SA 4.0",
+      source: "https://commons.wikimedia.org/wiki/File:USJ_Super_Nintendo_World_overview.jpg"
+    },
+    website: "https://www.usj.co.jp/e/",
+    address: "2 Chome-1-33 Sakurajima, Konohana Ward, Osaka",
+    coords: [34.6658, 135.4323],
+    tags: ["family", "extreme"],
+    difficulty: "moderate",
+    bookingNote: "Book Express Pass tickets in advance for the headline rides on weekends.",
+    tips: [
+      "Grab the app's timed-entry passes for Super Nintendo World and the Harry Potter area the moment the park opens",
+      "A portable phone charger is essential — the app is used constantly for wait times and passes"
+    ]
+  },
+  {
+    id: "himeji-castle",
+    name: "Himeji Castle",
+    category: "attraction",
+    region: "south",
+    shortDescription: "The best-preserved original castle keep in Japan",
+    description:
+      "Nicknamed 'White Heron Castle' for its brilliant white plastered walls, and Japan's best-preserved original castle keep — it survived WWII bombing and centuries of earthquakes essentially untouched. A UNESCO World Heritage Site and widely considered Japan's most beautiful surviving castle.",
+    image: "./images/himeji-castle.jpg",
+    imageCredit: {
+      author: "Bernard Gagnon",
+      license: "CC BY-SA 3.0",
+      source: "https://commons.wikimedia.org/wiki/File:Château_de_Himeji02.jpg"
+    },
+    website: "https://www.himejicastle.jp/en/",
+    address: "68 Honmachi, Himeji, Hyogo",
+    coords: [34.8394, 134.6939],
+    tags: ["culture", "view"],
+    difficulty: "moderate",
+    tips: [
+      "The keep's interior has steep, traditional wooden stairs across six floors — pace it for younger kids or anyone with knee trouble",
+      "Combo tickets covering the castle and the adjacent Koko-en Garden cost less than buying separately"
+    ],
+    quizFacts: [
       {
-        question: "Why is Civita called the 'Dying City'?",
-        correctAnswer: "The tufa pedestal it sits on is slowly crumbling away",
-        distractors: [
-          "All of its people are very, very old",
-          "It is haunted by a friendly ghost",
-          "The mayor wants a new, snappier name"
-        ]
-      },
-      {
-        question: "How many people actually live in Civita di Bagnoregio today?",
-        correctAnswer: "Only about a dozen",
-        distractors: ["Over a thousand", "About 50,000", "Half the country"]
-      },
-      {
-        question: "Civita di Bagnoregio also has a famous animal population. Roughly how many of these live in the village?",
-        correctAnswer: "About 20 cats",
-        distractors: ["Around 200 elephants", "About 1,000 pigeons", "Exactly 10 sharks"]
-      },
-      {
-        question: "Civita di Bagnoregio was first founded by which ancient Italian people, more than 2,500 years ago?",
-        correctAnswer: "The Etruscans",
-        distractors: ["The Vikings", "The Egyptians", "The Aztecs"]
+        question: "Why is Himeji Castle nicknamed 'White Heron Castle'?",
+        correctAnswer: "Its brilliant white plastered walls",
+        distractors: ["A flock of herons lives in its moat", "It was designed by a man named Heron", "It's shaped like a bird from above"]
       }
     ]
   }

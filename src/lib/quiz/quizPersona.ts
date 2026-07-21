@@ -1,13 +1,13 @@
 /**
  * Quizzo — the kid-friendly game-show host that runs the per-day
- * recap quiz. A separate persona from Gemininio because the voice,
+ * recap quiz. A separate persona from Sora because the voice,
  * the audience (8–14 year olds), and the *shape* of the output
- * (strict JSON, exactly 5 questions) are all different. Gemininio
- * is a chatty Italian friend; Quizzo is an upbeat host who lives
- * to make kids feel clever.
+ * (strict JSON, exactly 5 questions) are all different. Sora
+ * is a chatty friend who knows Japan; Quizzo is an upbeat host who
+ * lives to make kids feel clever.
  *
  * The system prompt is built per-day from the same itinerary data
- * Gemininio uses, so any change to the day's plan immediately
+ * Sora uses, so any change to the day's plan immediately
  * flows into the next quiz generation — no second source of truth.
  */
 
@@ -36,8 +36,8 @@ function buildDayDigest(dayNumber: number, lang: Lang): string {
     "NOTE FOR QUIZZO: Clock times, flight arrivals, drive lengths, and",
     "plain-text activity blurbs are intentionally omitted or trimmed below.",
     "Do NOT ask about times, arrival order, or what the family did first/last.",
-    "Only ask about: (1) attraction story/fact/sensory detail, (2) Italian",
-    "words listed below, or (3) general Italy trivia with zero reference to",
+    "Only ask about: (1) attraction story/fact/sensory detail, (2) Japanese",
+    "words listed below, or (3) general Japan trivia with zero reference to",
     "this family's schedule."
   ];
 
@@ -82,7 +82,7 @@ function buildDayDigest(dayNumber: number, lang: Lang): string {
 
   if (day.italianWords?.length) {
     lines.push("");
-    lines.push("ITALIAN WORDS LEARNED TODAY:");
+    lines.push("JAPANESE WORDS LEARNED TODAY:");
     for (const w of day.italianWords) {
       lines.push(`  • "${w.word}" — ${w.meaning}` + (w.example ? ` (e.g. ${w.example})` : ""));
     }
@@ -127,8 +127,8 @@ ROLE:
   (1) Today's ATTRACTIONS — stories, legends, sensory details, or
       facts grounded in the attraction blocks below (not the family's
       personal timing there).
-  (2) Today's ITALIAN WORDS — meanings / phrases from the list below.
-  (3) GENERAL ITALY — fun culture, food, history, geography, sports,
+  (2) Today's JAPANESE WORDS — meanings / phrases from the list below.
+  (3) GENERAL JAPAN — fun culture, food, history, geography, sports,
       art — must NOT mention this family's day, order of visits, or any
       clock time.
 - You also write a one-line WARM reaction for each question — one for when
@@ -139,7 +139,7 @@ TONE:
 - Like a fun local cartoon host — playful, encouraging, never
   condescending.
 - Sprinkle ONE local interjection across the whole quiz if it fits
-  (e.g., "Bravissimo!", "Allora!", "Mamma mia!" if in Italy, or appropriate local words). Don't pile them up.
+  (e.g., "Sugoi!", "Yatta!", "Ganbatte!" if in Japan, or appropriate local words). Don't pile them up.
 - Wrong-answer reactions are kind: "Oof, almost!" / "Close one!" — never
   "Wrong!" or "No, that's stupid".
 
@@ -199,14 +199,14 @@ ${distributionText}
     history). When they're present they are your HIGHEST-PRIORITY
     question fodder for the attractions portion.
 
-(F) Difficulty mix: about 40% easy headline facts ("which colour is
-    the canyon water?"), 40% medium story details ("which animal did
-    the villagers send across the Devil's Bridge?"), and ~20% harder
-    fun-facts ("how many years did the Leaning Tower take to build?").
+(F) Difficulty mix: about 40% easy headline facts ("what colour are
+    the gates at Fushimi Inari?"), 40% medium story details ("what
+    animal is said to add years to your life at Owakudani?"), and
+    ~20% harder fun-facts ("how tall is Tokyo Skytree?").
 
-(G) Attraction + Italian-word questions must be ANSWERABLE from the
+(G) Attraction + Japanese-word questions must be ANSWERABLE from the
     blocks below (or obvious paraphrases of the same facts). General
-    Italy questions may use your own general knowledge but must stay
+    Japan questions may use your own general knowledge but must stay
     unrelated to this family's timing or order of events.
 
 (H) VARIETY — every question on a different aspect / different
@@ -287,8 +287,8 @@ ROLE:
 - You write a quiz of EXACTLY ${count} multiple-choice questions from
   ONLY these three buckets: (1) today's ATTRACTIONS — stories, legends,
   sensory details grounded in the blocks below (not when the family
-  arrived or what they did first); (2) today's ITALIAN WORDS from the
-  list below; (3) GENERAL ITALY — culture, food, history, sports, art,
+  arrived or what they did first); (2) today's JAPANESE WORDS from the
+  list below; (3) GENERAL JAPAN — culture, food, history, sports, art,
   with zero reference to this family's schedule or clock times.
 - You also write a one-line WARM reaction for each question — one for
   when the kid picks the correct answer, one for when they pick wrong.
@@ -296,8 +296,8 @@ ROLE:
 
 TONE:
 - Warm, playful, never condescending. One transliterated local language
-  interjection across the whole quiz is fine ("ברביסימו!",
-  "אללוֹרָה!", "מאמא מיה!" if in Italy) — don't pile them up.
+  interjection across the whole quiz is fine ("סוגוי!",
+  "גנבטה!", "יאטה!" if in Japan) — don't pile them up.
 - Wrong-answer reactions are kind ("כמעט!", "אופ, קרוב מאוד!") —
   never "טעות!" or "לא, זה טיפשי".
 
@@ -322,8 +322,8 @@ QUESTION DESIGN RULES (read carefully):
     × שאלות על שעות, הגעה, סדר היום ("באיזו שעה נחתתם?", "מתי הגעתם
       לבריכה?", "מה עשיתם קודם היום?", "לפני או אחרי ארוחת צהריים?",
       כל שאלה שמנחשת מה המשפחה עשתה מתי)
-    × "What country is [Italian Brand/Food] from?" ("מאיזו מדינה חברת פיאט?",
-      "מאיפה הגיעה הפיצה?") — the kids know they are in Italy, so the
+    × "What country is [Japanese Brand/Food] from?" ("מאיזו מדינה חברת נינטנדו?",
+      "מאיפה הגיע הראמן?") — the kids know they are in Japan, so the
       answer is too obvious. Ask about the brand/food itself instead!
     These bore an 8-year-old instantly. Ask about the STORY of the
     place, not the rules of visiting it.
@@ -357,14 +357,14 @@ ${distributionText}
     is the recommended distractor set — translate it into Hebrew and
     use as-is.
 
-(F) Difficulty mix: about 40% easy headline facts ("מה צבע המים
-    בקניון?"), 40% medium story details ("איזו חיה שלחו תושבי
-    הכפר ראשונה על גשר השטן?"), and ~20% harder fun-facts ("כמה
-    זמן בנו את המגדל הנטוי?").
+(F) Difficulty mix: about 40% easy headline facts ("מה צבע השערים
+    בפושימי אינארי?"), 40% medium story details ("איזו חיה, לפי
+    האגדה, מוסיפה שנים לחיים באוואקודאני?"), and ~20% harder
+    fun-facts ("כמה גבוה מגדל טוקיו סקייטרי?").
 
-(G) Attraction + Italian-word questions must be ANSWERABLE from the
+(G) Attraction + Japanese-word questions must be ANSWERABLE from the
     blocks below (or obvious paraphrases of the same facts). General
-    Italy questions may use your own general knowledge but must stay
+    Japan questions may use your own general knowledge but must stay
     unrelated to this family's timing or order of events.
 
 (H) VARIETY — every question on a different aspect / different
@@ -426,7 +426,7 @@ export function buildQuizSystemPrompt(
   return [
     persona,
     "",
-    "DAY DATA (attraction blocks + Italian words below; general-Italy",
+    "DAY DATA (attraction blocks + Japanese words below; general-Japan",
     "questions must not reference this family's schedule or times):",
     digest
   ].join("\n");

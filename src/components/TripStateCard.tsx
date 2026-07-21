@@ -30,7 +30,7 @@ export default function TripStateCard() {
           className="relative px-5 sm:px-8 py-7 sm:py-10 text-cream-50 overflow-hidden"
           style={{
             background:
-              "linear-gradient(135deg, #C45A3D 0%, #A8472D 55%, #8B3622 100%)"
+              "linear-gradient(135deg, #C64B3C 0%, #A83A2E 55%, #832C22 100%)"
           }}
         >
           <div
@@ -55,18 +55,18 @@ export default function TripStateCard() {
           <div className="relative">
             <div className="flex items-center justify-center gap-2 text-[10px] sm:text-xs uppercase tracking-[0.28em] font-medium opacity-90 mb-4 sm:mb-6">
               <Sparkles size={11} />
-              <span>Tuscany 2026 begins</span>
+              <span>Japan 2026 begins</span>
               <span className="opacity-60">·</span>
-              <span>{formatDate("2026-08-17")}</span>
+              <span>{formatDate("2026-11-01")}</span>
             </div>
 
             <LiveCountdown target={TRIP_START} mode="down" size="lg" />
 
             <div className="mt-5 sm:mt-7 text-center font-serif italic text-lg sm:text-2xl leading-snug opacity-95">
               {state.daysUntil <= 1
-                ? "Buon viaggio — almost there."
+                ? "Itterasshai — almost there."
                 : state.daysUntil <= 7
-                ? "One week to Tuscany. Time to pack."
+                ? "One week to Japan. Time to pack."
                 : state.daysUntil <= 30
                 ? "Less than a month to go."
                 : `${state.daysUntil} days of waiting…`}
@@ -80,7 +80,7 @@ export default function TripStateCard() {
           <div
             className="relative px-6 py-6 sm:px-10 sm:py-8 text-cream-50 flex sm:flex-col items-center justify-center gap-4 sm:gap-2 overflow-hidden"
             style={{
-              background: "linear-gradient(135deg, #C45A3D 0%, #A8472D 100%)"
+              background: "linear-gradient(135deg, #C64B3C 0%, #A83A2E 100%)"
             }}
           >
             <div className="flex flex-col items-center">
@@ -88,7 +88,7 @@ export default function TripStateCard() {
                 {state.today.dayNumber}
               </div>
               <div className="text-[10px] uppercase tracking-[0.22em] font-medium opacity-90 mt-1">
-                of 10
+                of 17
               </div>
             </div>
             <div className="hidden sm:block w-12 h-px bg-cream-50/40 my-2" />
@@ -129,17 +129,17 @@ export default function TripStateCard() {
       {state.phase === "after" && (
         <div
           className="px-6 py-8 sm:px-10 sm:py-10 text-cream-50 text-center"
-          style={{ background: "linear-gradient(135deg, #8B4513 0%, #6F3710 100%)" }}
+          style={{ background: "linear-gradient(135deg, #B8923F 0%, #957530 100%)" }}
         >
           <Plane size={32} className="mx-auto mb-2 opacity-90" />
           <div className="text-[10px] uppercase tracking-[0.28em] opacity-90">
             Trip complete
           </div>
           <div className="font-serif text-3xl sm:text-4xl mt-2">
-            That was Tuscany 2026
+            That was Japan 2026
           </div>
           <p className="font-serif italic text-base sm:text-lg opacity-90 mt-1">
-            Until next time. Buon ritorno.
+            Until next time. Okaeri.
           </p>
         </div>
       )}

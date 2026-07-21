@@ -58,7 +58,10 @@ import ListenButton from "./ListenButton";
 import ItalianWordCarousel from "./ItalianWordCarousel";
 import { useCarouselSwipe } from "../lib/useCarouselSwipe";
 
-const ROMAN = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
+const ROMAN = [
+  "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
+  "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII"
+];
 
 const TAG_KEY: Record<string, DictKey> = {
   water: "tag_water",
