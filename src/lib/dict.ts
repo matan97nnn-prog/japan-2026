@@ -69,6 +69,7 @@ export const DICT = {
   nav_food: { en: "Food", he: "אוכל" },
   nav_tips: { en: "Tips", he: "טיפים" },
   nav_checklist: { en: "Lists", he: "רשימות" },
+  nav_family_updates: { en: "Updates", he: "עדכונים" },
   nav_emergency: { en: "Emergency", he: "חירום" },
 
   badge_done: { en: "Done", he: "סיום" },
@@ -349,6 +350,31 @@ export const DICT = {
     en: "What we learned the hard way, so you don't have to",
     he: "מה שלמדנו בדרך הקשה — כדי שלא תצטרכו"
   },
+
+  /* ---------- Family updates (live, family-editable Google Sheet) ---------- */
+  family_updates_eyebrow: { en: "Fresh from the family", he: "עדכונים מהמשפחה" },
+  family_updates_title: { en: "Live trip updates", he: "עדכוני טיול חיים" },
+  family_updates_kicker: {
+    en: "Real bookings and recommendations, added as the family plans",
+    he: "הזמנות והמלצות אמיתיות, מתעדכנות תוך כדי התכנון"
+  },
+  family_updates_intro: {
+    en: "Anyone in the family can add to this list — hotels booked, tickets bought, local recommendations. Updates here reflect exactly what's been typed into our shared planning sheet.",
+    he: "כל אחד מהמשפחה יכול להוסיף לרשימה הזו — מלונות שהוזמנו, כרטיסים שנקנו, המלצות מקומיות. העדכונים כאן משקפים בדיוק את מה שהוקלד בגיליון התכנון המשותף שלנו."
+  },
+  family_updates_empty: {
+    en: "No updates yet — once the family adds bookings or recommendations to the shared sheet, they'll show up here automatically.",
+    he: "עדיין אין עדכונים — ברגע שהמשפחה תוסיף הזמנות או המלצות לגיליון המשותף, הם יופיעו כאן אוטומטית."
+  },
+  family_updates_filter_all: { en: "All", he: "הכול" },
+  family_updates_cat_hotel: { en: "Hotel", he: "מלון" },
+  family_updates_cat_car: { en: "Transport", he: "תחבורה" },
+  family_updates_cat_ticket: { en: "Ticket", he: "כרטיס" },
+  family_updates_cat_recommendation: { en: "Recommendation", he: "המלצה" },
+  family_updates_cat_market: { en: "Food & Market", he: "אוכל ושוק" },
+  family_updates_cat_note: { en: "Note", he: "הערה" },
+  family_updates_link: { en: "Open link", he: "פתיחת קישור" },
+  family_updates_day_callout: { en: "Family update for this day", he: "עדכון משפחתי ליום הזה" },
 
   /* ---------- Checklist ---------- */
   checklist_eyebrow: { en: "Before we fly", he: "לפני הטיסה" },

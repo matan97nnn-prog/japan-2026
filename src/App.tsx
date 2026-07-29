@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import TripStats from "./components/TripStats";
 import ItinerarySection from "./components/ItinerarySection";
+import FamilyUpdatesSection from "./components/FamilyUpdatesSection";
 // Tickets & Logistics is disabled until real bookings are encrypted in —
 // see src/data/bookings.enc.ts and scripts/encrypt-bookings.mjs. Re-add
 // <BookingsSection /> below (and its <SectionOrnament />) once ready.
@@ -55,6 +56,9 @@ export default function App() {
 
       {/* The Plan — the magazine's main feature, leads everything else */}
       <ItinerarySection />
+
+      <SectionOrnament />
+      <FamilyUpdatesSection />
 
       <SectionOrnament />
       <MapView registerFocus={registerFocus} />

@@ -6,15 +6,15 @@ import LanguageSwitcher from "./LanguageSwitcher";
 // Stays → Tips → Lists → Emergency. Services (local gas /
 // supermarket) intentionally lives on the page but not in the nav.
 const links: { id: string; key: DictKey }[] = [
-  { id: "trip",        key: "nav_plan" },
-  { id: "bookings",    key: "nav_bookings" },
-  { id: "attractions", key: "nav_attractions" },
-  { id: "food",        key: "nav_food" },
-  { id: "map",         key: "nav_map" },
-  { id: "stays",       key: "nav_stays" },
-  { id: "tips",        key: "nav_tips" },
-  { id: "checklist",   key: "nav_checklist" },
-  { id: "emergency",   key: "nav_emergency" }
+  { id: "trip",            key: "nav_plan" },
+  { id: "family-updates",  key: "nav_family_updates" },
+  { id: "attractions",     key: "nav_attractions" },
+  { id: "food",            key: "nav_food" },
+  { id: "map",             key: "nav_map" },
+  { id: "stays",           key: "nav_stays" },
+  { id: "tips",            key: "nav_tips" },
+  { id: "checklist",       key: "nav_checklist" },
+  { id: "emergency",       key: "nav_emergency" }
 ];
 
 export default function Navbar() {
