@@ -101,10 +101,24 @@ function normalizeCategory(raw: string): UpdateCategory {
  *  no column-formatting control available to stop this at the source,
  *  so we detect and convert it back here. Plain "YYYY-MM-DD" text
  *  (e.g. if a cell is formatted as Plain text) passes through as-is. */
+/** The trip's own year — used to fill in a year when someone types a
+ *  shorthand day-month date like "20-11" instead of the full
+ *  "2026-11-20". Every date on this trip falls in this year, so it's
+ *  a safe assumption rather than a guess. */
+const TRIP_YEAR = 2026;
+
 function parseSheetDate(raw: string): string {
   const v = raw.trim();
   if (!v) return "";
   if (/^\d{4}-\d{2}-\d{2}$/.test(v)) return v;
+  // Shorthand "D-M" or "DD-MM" (day first, matching how it's typically
+  // typed in Israel) with no year — assume the trip year.
+  const shorthand = v.match(/^(\d{1,2})-(\d{1,2})$/);
+  if (shorthand) {
+    const day = shorthand[1].padStart(2, "0");
+    const month = shorthand[2].padStart(2, "0");
+    return `${TRIP_YEAR}-${month}-${day}`;
+  }
   if (/^\d+$/.test(v)) {
     const serial = parseInt(v, 10);
     const ms = Date.UTC(1899, 11, 30) + serial * 86400000;
