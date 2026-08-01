@@ -94,16 +94,45 @@ function normalizeCategory(raw: string): UpdateCategory {
   return "note";
 }
 
+/** Google Sheets auto-detects anything that looks like a date typed
+ *  into a cell and silently converts it to its own date type — the
+ *  CSV export then returns a serial day-count (epoch 1899-12-30)
+ *  instead of the "YYYY-MM-DD" text that was actually typed. There's
+ *  no column-formatting control available to stop this at the source,
+ *  so we detect and convert it back here. Plain "YYYY-MM-DD" text
+ *  (e.g. if a cell is formatted as Plain text) passes through as-is. */
+function parseSheetDate(raw: string): string {
+  const v = raw.trim();
+  if (!v) return "";
+  if (/^\d{4}-\d{2}-\d{2}$/.test(v)) return v;
+  if (/^\d+$/.test(v)) {
+    const serial = parseInt(v, 10);
+    const ms = Date.UTC(1899, 11, 30) + serial * 86400000;
+    const d = new Date(ms);
+    if (!Number.isNaN(d.getTime())) {
+      return d.toISOString().slice(0, 10);
+    }
+  }
+  // Last resort — let the browser try (handles things like "11/16/2026").
+  const parsed = new Date(v);
+  if (!Number.isNaN(parsed.getTime())) {
+    return parsed.toISOString().slice(0, 10);
+  }
+  return "";
+}
+
 function rowsToUpdates(rows: string[][]): FamilyUpdate[] {
   // First row is the header (date_start, date_end, city, category, ...).
   const [, ...dataRows] = rows;
   const updates: FamilyUpdate[] = [];
   for (const r of dataRows) {
-    const [dateStart, dateEnd, city, category, title, details, link] = r;
+    const [dateStartRaw, dateEndRaw, city, category, title, details, link] = r;
+    const dateStart = parseSheetDate(dateStartRaw || "");
+    const dateEnd = parseSheetDate(dateEndRaw || "") || dateStart;
     if (!title?.trim()) continue;
     updates.push({
-      dateStart: (dateStart || "").trim(),
-      dateEnd: (dateEnd || dateStart || "").trim(),
+      dateStart,
+      dateEnd,
       city: (city || "").trim(),
       category: normalizeCategory(category || ""),
       title: title.trim(),
