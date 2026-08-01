@@ -86,11 +86,30 @@ function parseCsv(text: string): string[][] {
   return rows.filter(r => r.some(cell => cell.trim() !== ""));
 }
 
+/** Hebrew labels map onto the same categories, since a dropdown built
+ *  by hand in Sheets (or someone just typing) may use either language. */
+const HEBREW_CATEGORY_ALIASES: Record<string, UpdateCategory> = {
+  "מלון": "hotel",
+  "תחבורה": "car",
+  "רכב": "car",
+  "כרטיס": "ticket",
+  "כרטיסים": "ticket",
+  "המלצה": "recommendation",
+  "המלצות": "recommendation",
+  "אוכל ושוק": "market",
+  "אוכל": "market",
+  "שוק": "market",
+  "הערה": "note",
+  "הערות": "note"
+};
+
 function normalizeCategory(raw: string): UpdateCategory {
   const v = raw.trim().toLowerCase();
   if (v === "hotel" || v === "car" || v === "ticket" || v === "recommendation" || v === "market") {
     return v;
   }
+  const heMatch = HEBREW_CATEGORY_ALIASES[raw.trim()];
+  if (heMatch) return heMatch;
   return "note";
 }
 
