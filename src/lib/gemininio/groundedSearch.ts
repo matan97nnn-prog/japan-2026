@@ -9,11 +9,12 @@
 
 import type { ChatTurn } from "./chatHistory";
 
-// gemini-2.0-flash first — confirmed working for free-tier keys; the
-// 2.5 models 404 for some keys/regions, so they're kept only as a
-// fallback in case that changes rather than burning a request on them
-// first every time.
-const MODELS_TO_TRY = ["gemini-2.0-flash", "gemini-2.5-flash", "gemini-2.5-flash-lite"] as const;
+// gemini-2.5-flash-lite returns a hard 404 for newer API keys
+// ("no longer available to new users" — confirmed via a live error
+// from a real key, not a guess). gemini-2.5-flash isn't restricted
+// that way, so it goes first; gemini-2.0-flash still resolves (just
+// quota-limited on free tier) so it's a reasonable second attempt.
+const MODELS_TO_TRY = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-2.5-flash-lite"] as const;
 
 const MAX_REST_HISTORY_TURNS = 40;
 
