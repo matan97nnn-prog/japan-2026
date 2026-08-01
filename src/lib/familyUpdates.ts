@@ -111,6 +111,14 @@ function parseSheetDate(raw: string): string {
   const v = raw.trim();
   if (!v) return "";
   if (/^\d{4}-\d{2}-\d{2}$/.test(v)) return v;
+  // "D-M-YYYY" / "DD-MM-YYYY" — day-month-year, the usual Israeli
+  // written order, with an explicit year.
+  const withYear = v.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/);
+  if (withYear) {
+    const day = withYear[1].padStart(2, "0");
+    const month = withYear[2].padStart(2, "0");
+    return `${withYear[3]}-${month}-${day}`;
+  }
   // Shorthand "D-M" or "DD-MM" (day first, matching how it's typically
   // typed in Israel) with no year — assume the trip year.
   const shorthand = v.match(/^(\d{1,2})-(\d{1,2})$/);
