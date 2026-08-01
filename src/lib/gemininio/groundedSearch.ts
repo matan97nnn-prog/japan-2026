@@ -85,12 +85,14 @@ export async function generateGroundedReply(params: GroundedReplyParams): Promis
       });
     } catch (e) {
       lastErr = e instanceof Error ? e.message : String(e);
+      console.warn(`[Gemininio] ${model} network error:`, lastErr);
       continue;
     }
 
     const raw = await res.text();
     if (!res.ok) {
       lastErr = raw.slice(0, 400) || `HTTP ${res.status}`;
+      console.warn(`[Gemininio] ${model} HTTP ${res.status}:`, lastErr);
       continue;
     }
 
@@ -99,6 +101,7 @@ export async function generateGroundedReply(params: GroundedReplyParams): Promis
       json = JSON.parse(raw);
     } catch {
       lastErr = "Invalid JSON from Gemini.";
+      console.warn(`[Gemininio] ${model} bad JSON:`, raw.slice(0, 400));
       continue;
     }
 
@@ -108,6 +111,7 @@ export async function generateGroundedReply(params: GroundedReplyParams): Promis
     };
     if (root.error?.message) {
       lastErr = root.error.message;
+      console.warn(`[Gemininio] ${model} API error:`, lastErr);
       continue;
     }
 
@@ -119,6 +123,7 @@ export async function generateGroundedReply(params: GroundedReplyParams): Promis
     lastErr = block?.finishReason
       ? `Model stopped (${block.finishReason}). Try rephrasing.`
       : "Empty reply from model.";
+    console.warn(`[Gemininio] ${model} gave no usable text:`, lastErr);
   }
 
   throw new Error(lastErr);
