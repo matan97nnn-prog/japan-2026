@@ -23,7 +23,9 @@
  * Firefox).
  */
 
-const TRANSCRIBE_MODELS = ["gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-2.0-flash"] as const;
+// gemini-2.0-flash first — confirmed working for free-tier keys; see
+// groundedSearch.ts for why the 2.5 models are kept only as fallback.
+const TRANSCRIBE_MODELS = ["gemini-2.0-flash", "gemini-2.5-flash", "gemini-2.5-flash-lite"] as const;
 
 const TRANSCRIBE_PROMPT_EN =
   "Transcribe the spoken words in this audio clip verbatim. " +

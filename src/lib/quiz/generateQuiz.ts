@@ -23,7 +23,9 @@ import type { Quiz, QuizQuestion } from "../../data/types";
 import { buildQuizSystemPrompt, buildQuizUserMessage } from "./quizPersona";
 import { questionViolatesScheduleOrTripGuessing } from "./quizContentFilters";
 
-const MODELS_TO_TRY = ["gemini-2.5-flash-lite", "gemini-2.5-flash", "gemini-2.0-flash"] as const;
+// gemini-2.0-flash first — confirmed working for free-tier keys; see
+// groundedSearch.ts for why the 2.5 models are kept only as fallback.
+const MODELS_TO_TRY = ["gemini-2.0-flash", "gemini-2.5-flash", "gemini-2.5-flash-lite"] as const;
 
 const OPTIONS_PER_QUESTION = 4;
 

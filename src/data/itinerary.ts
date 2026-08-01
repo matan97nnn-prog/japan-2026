@@ -9,7 +9,7 @@ export const itinerary: Day[] = [
     base: "Tokyo (Shinjuku)",
     title: "Landing in Tokyo",
     subtitle: "Arrive via Dubai, transfer in, first taste of the city",
-    leadImage: "./images/hero/tokyo-skyline-dusk.jpg",
+    leadImage: "./images/hero/shibuya-crossing-night.jpg",
     activities: [
       {
         time: "Evening",
