@@ -130,7 +130,12 @@ export const dishes: Dish[] = [
     description:
       "Richly marbled, locally raised beef from the Hida region around Takayama — grilled tableside on a hoba leaf, as skewers at the morning market, or as part of a ryokan's kaiseki course.",
     tryIt: "Takayama",
-    image: "./images/food-hidabeef.jpg"
+    image: "./images/food-hidabeef.jpg",
+    imageCredit: {
+      author: "Ankur P",
+      license: "CC BY 2.0",
+      source: "https://commons.wikimedia.org/wiki/File:Grilling_Hida_Beef_(Takayama_Street_Food)_(35910429046).jpg"
+    }
   },
   {
     id: "kanazawa-seafood",
@@ -141,7 +146,12 @@ export const dishes: Dish[] = [
     description:
       "Snow crab, sweet shrimp (amaebi) and glossy sushi-grade cuts from the Sea of Japan, sold and eaten fresh at Omicho Market's stalls, or course by course at a kappou-style dinner.",
     tryIt: "Omicho Market, Kanazawa",
-    image: "./images/food-kanazawa-seafood.jpg"
+    image: "./images/food-kanazawa-seafood.jpg",
+    imageCredit: {
+      author: "Daderot",
+      license: "CC0",
+      source: "https://commons.wikimedia.org/wiki/File:Fish_-_Omicho_Ichiba_-_Kanazawa,_Japan_-_DSC09644.jpg"
+    }
   },
   {
     id: "kakinoha-zushi",

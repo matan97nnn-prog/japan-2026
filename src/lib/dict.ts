@@ -19,7 +19,7 @@ export const DICT = {
   },
   families_byline: {
     en: "Eti, Ronen, Matan & Amit Stein · November 2026",
-    he: "עתי, רונן, מתן ועמית שטיין · נובמבר 2026"
+    he: "אתי, רונן, מתן ועמית שטיין · נובמבר 2026"
   },
   hero_before_lead: {
     en: "Counting down to autumn in Japan",
