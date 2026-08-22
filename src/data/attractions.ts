@@ -42,6 +42,11 @@ export const attractions: POI[] = [
     description:
       "One of Tokyo's oldest and largest public parks, opened in 1873. Ueno Park holds several museums, Ueno Zoo, the Kiyomizu Kannon-do temple, and Shinobazu Pond, where turtles and cormorants share the water with rowboats — a calm counterpoint to the crowds of nearby Asakusa.",
     image: "./images/ueno-park.jpg",
+    imageCredit: {
+      author: "DXR / Daniel Vorndran",
+      license: "CC BY-SA 3.0",
+      source: "https://commons.wikimedia.org/wiki/File:Ueno_Park,_Tokyo_20130810_1.jpg"
+    },
     address: "Uenokoen, Taito City, Tokyo",
     coords: [35.7156, 139.7745],
     tags: ["nature", "family"],
@@ -221,6 +226,11 @@ export const attractions: POI[] = [
     description:
       "The largest and highest of the Fuji Five Lakes, and the closest to Mt Fuji itself — on a clear morning the mountain fills the whole far shore. Quieter than Lake Kawaguchi, with a long, easy lakeside promenade.",
     image: "./images/lake-yamanaka.jpg",
+    imageCredit: {
+      author: "Alpsdake",
+      license: "CC BY-SA 4.0",
+      source: "https://commons.wikimedia.org/wiki/File:Mount_Fuji_and_Lake_Yamanaka.JPG"
+    },
     address: "Yamanakako, Yamanashi",
     coords: [35.3325, 138.8663],
     tags: ["nature", "view"],
@@ -239,6 +249,11 @@ export const attractions: POI[] = [
     description:
       "A small, traditional village built around eight crystal-clear ponds, fed by snowmelt that filters down through Mt Fuji's lava rock before resurfacing here. Thatched-roof buildings and water wheels line the ponds, alongside stalls selling local pickles and grilled rice cakes.",
     image: "./images/oshino-hakkai.jpg",
+    imageCredit: {
+      author: "663highland",
+      license: "CC BY-SA 4.0",
+      source: "https://commons.wikimedia.org/wiki/File:231028_Sokonashi-ike_Oshino_Hakkai_springs_Oshino_Yamanashi_pref_Japan03s3.jpg"
+    },
     address: "Oshino, Yamanashi",
     coords: [35.4525, 138.8385],
     tags: ["nature", "village", "water"],
@@ -264,6 +279,11 @@ export const attractions: POI[] = [
     description:
       "A park on the quiet northern shore of Lake Kawaguchi, popular for its wide, unobstructed view of Mt Fuji across the water — one of the most photographed angles of the mountain. In warmer months its lavender fields add color to the foreground; in November the view is all about crisp mountain air and clear autumn light.",
     image: "./images/oishi-park.jpg",
+    imageCredit: {
+      author: "Alpsdake",
+      license: "CC BY-SA 4.0",
+      source: "https://commons.wikimedia.org/wiki/File:Mount_Fuji_from_Oishi_Park.jpg"
+    },
     address: "Oishi, Fujikawaguchiko, Yamanashi",
     coords: [35.5219, 138.7286],
     tags: ["view", "nature"],
@@ -282,6 +302,11 @@ export const attractions: POI[] = [
     description:
       "A five-story red pagoda on a hillside above Fujiyoshida, reached by a climb of roughly 400 steps through Arakura Sengen Shrine's grounds. The reward at the top is one of the most photographed views in Japan — the pagoda in the foreground, Mt Fuji rising directly behind it.",
     image: "./images/chureito-pagoda.jpg",
+    imageCredit: {
+      author: "Olivier Bruchez",
+      license: "CC BY-SA 2.0",
+      source: "https://commons.wikimedia.org/wiki/File:Chureito_Pagoda,_Fujiyoshida_(33872654900).jpg"
+    },
     address: "Arakura, Fujiyoshida, Yamanashi",
     coords: [35.4903, 138.8006],
     tags: ["view", "culture"],
@@ -307,6 +332,11 @@ export const attractions: POI[] = [
     description:
       "The three smallest and least-visited of the Fuji Five Lakes, strung along the road between Kawaguchiko and Matsumoto. Lake Saiko sits deepest in the forest; Lake Shoji is the smallest of the five and has a particularly still, intimate feel; Lake Motosu's classic view — Fuji reflected over the water — is the exact image printed on the Japanese 1,000-yen banknote.",
     image: "./images/fuji-five-lakes.jpg",
+    imageCredit: {
+      author: "Alpsdake",
+      license: "CC BY-SA 4.0",
+      source: "https://commons.wikimedia.org/wiki/File:Kengamine_of_Mount_Fuji_from_Lake_Motosu.jpg"
+    },
     address: "Motosu, Yamanashi",
     coords: [35.4756, 138.6142],
     tags: ["nature", "view"],
@@ -332,6 +362,11 @@ export const attractions: POI[] = [
     description:
       "Nicknamed 'Crow Castle' for its black-lacquered wooden walls, Matsumoto Castle is one of only twelve Japanese castles with an original wooden keep still standing — most others are 20th-century concrete reconstructions. Built in the 1590s, it survives with its steep original staircases intact, climbing to a top floor with views over the city to the Japanese Alps.",
     image: "./images/matsumoto-castle.jpg",
+    imageCredit: {
+      author: "663highland",
+      license: "CC BY-SA 3.0",
+      source: "https://commons.wikimedia.org/wiki/File:Matsumoto_Castle_far_0504.jpg"
+    },
     address: "4-1 Marunouchi, Matsumoto, Nagano",
     coords: [36.2384, 137.9683],
     tags: ["culture", "view"],
@@ -357,6 +392,11 @@ export const attractions: POI[] = [
     description:
       "A pristine highland valley inside the Japanese Alps National Park, closed to private cars to preserve it — everyone arrives by shuttle bus or taxi from the Sawando parking area. A flat, well-marked trail follows the clear Azusa River past Taisho Pond and Tashiro Pond to the Kappa Bridge, with the Hotaka mountain range towering directly overhead.",
     image: "./images/kamikochi.jpg",
+    imageCredit: {
+      author: "Gorgo",
+      license: "Public Domain",
+      source: "https://commons.wikimedia.org/wiki/File:Taisho_Pond_%E5%A4%A7%E6%AD%A3%E6%B1%A0_(227783081).jpeg"
+    },
     address: "Kamikochi, Matsumoto, Nagano",
     coords: [36.2517, 137.6417],
     tags: ["nature", "view", "extreme"],
@@ -382,6 +422,11 @@ export const attractions: POI[] = [
     description:
       "A cluster of narrow streets in old Takayama lined with dark-wood merchant houses dating back to the Edo period, many still working as sake breweries, cafés and craft shops. A sake brewery is easy to spot by the ball of cedar fronds (sugidama) hanging outside its door.",
     image: "./images/sanmachi-suji.jpg",
+    imageCredit: {
+      author: "Ankur P",
+      license: "CC BY 2.0",
+      source: "https://commons.wikimedia.org/wiki/File:Takayama_Old_Town_(Sanmachi_Suji)_(35819349621).jpg"
+    },
     address: "Kamisannomachi, Takayama, Gifu",
     coords: [36.1422, 137.2531],
     tags: ["culture", "village"],
@@ -400,6 +445,11 @@ export const attractions: POI[] = [
     description:
       "An open-air museum on a hillside above Takayama, where more than 30 traditional gassho-zukuri thatched-roof farmhouses were relocated from around the Hida region to save them from being lost to dam projects and modernization. Inside several, you can see the tools and hearths of everyday mountain life.",
     image: "./images/hida-folk-village.jpg",
+    imageCredit: {
+      author: "Ryan Cragun",
+      license: "Public Domain",
+      source: "https://commons.wikimedia.org/wiki/File:Hida_Folk_Village.jpg"
+    },
     address: "1-590 Kamiokamotocho, Takayama, Gifu",
     coords: [36.1364, 137.2358],
     tags: ["culture", "family", "village"],
@@ -418,6 +468,11 @@ export const attractions: POI[] = [
     description:
       "A UNESCO World Heritage village of gassho-zukuri farmhouses, named for their steep thatched roofs shaped like two hands pressed together in prayer (gassho) — built steep specifically to shed the region's heavy winter snowfall. The Shiroyama Observatory viewpoint above the village gives the classic postcard overview; Wada House, one of the largest and oldest houses, is open to walk through inside.",
     image: "./images/shirakawa-go.jpg",
+    imageCredit: {
+      author: "DimiTalen",
+      license: "CC0",
+      source: "https://commons.wikimedia.org/wiki/File:Farmhouse_on_the_edge_of_town,_Ogimachi,_Shirakawa.jpg"
+    },
     address: "Ogimachi, Shirakawa, Gifu",
     coords: [36.2578, 136.9066],
     tags: ["culture", "village"],
@@ -443,6 +498,11 @@ export const attractions: POI[] = [
     description:
       "A strolling garden dating back to the 1620s, considered one of Japan's three great gardens alongside Okayama's Korakuen and Mito's Kairakuen. In winter its old pine trees are protected from heavy snow by yukitsuri — rope frames strung from a central pole in a distinctive conical shape, put up each November.",
     image: "./images/kenrokuen.jpg",
+    imageCredit: {
+      author: "そらみみ (Soramimi)",
+      license: "CC BY-SA 4.0",
+      source: "https://commons.wikimedia.org/wiki/File:Hisagoike_Pond,_Midoritaki_Waterfall_and_Kaisekito_Tower_in_Kenroku_Garden.JPG"
+    },
     address: "1-1 Kenrokumachi, Kanazawa, Ishikawa",
     coords: [36.5620, 136.6625],
     tags: ["nature", "culture", "view"],
@@ -468,6 +528,11 @@ export const attractions: POI[] = [
     description:
       "The former seat of the Maeda, the second-wealthiest clan in Edo-period Japan after the ruling Tokugawa. Most of the original castle burned down over the centuries; several structures have been carefully reconstructed using traditional joinery techniques and are open to walk through, right across the moat from Kenrokuen.",
     image: "./images/kanazawa-castle.jpg",
+    imageCredit: {
+      author: "Daderot",
+      license: "CC BY-SA 3.0",
+      source: "https://commons.wikimedia.org/wiki/File:Kanazawa_Castle_with_moat_-_Kanazawa,_Japan.JPG"
+    },
     address: "1-1 Marunouchi, Kanazawa, Ishikawa",
     coords: [36.5654, 136.6586],
     tags: ["culture", "view"],
@@ -486,6 +551,11 @@ export const attractions: POI[] = [
     description:
       "Kanazawa's main market, trading fish and produce from the Sea of Japan for close to 280 years. Snow crab, sweet shrimp (amaebi) and glossy sushi-grade cuts are laid out at stall after stall — many with a small counter to eat what you just bought standing up.",
     image: "./images/omicho-market.jpg",
+    imageCredit: {
+      author: "DimiTalen",
+      license: "CC0",
+      source: "https://commons.wikimedia.org/wiki/File:Omicho_covered_market_western_entrance,_Kanazawa,_2016.jpg"
+    },
     address: "50 Kamiomicho, Kanazawa, Ishikawa",
     coords: [36.5730, 136.6547],
     tags: ["food"],
@@ -504,6 +574,11 @@ export const attractions: POI[] = [
     description:
       "The largest and best-preserved of Kanazawa's three historic geisha districts, dating to 1820. Lattice-fronted wooden teahouses (chaya) line the main street, several now converted into gold-leaf craft shops and cafés — Kanazawa produces almost all of Japan's gold leaf, and gold-flecked soft-serve ice cream is the local novelty souvenir food.",
     image: "./images/higashi-chaya.jpg",
+    imageCredit: {
+      author: "Andrea Schaffer",
+      license: "CC BY 2.0",
+      source: "https://commons.wikimedia.org/wiki/File:Higashi_Chaya_district,_Kanazawa_(3810720612).jpg"
+    },
     address: "Higashiyama, Kanazawa, Ishikawa",
     coords: [36.5701, 136.6667],
     tags: ["culture", "view"],
@@ -547,6 +622,11 @@ export const attractions: POI[] = [
     description:
       "A narrow, roofed shopping street running five blocks through central Kyoto, trading fresh and prepared food for over 400 years — earning it the nickname 'Kyoto's Kitchen'. Pickles, skewered mochi, fresh yuba, and Kyoto-style sweets are sold stall after stall, most sized for eating on your feet.",
     image: "./images/nishiki-market.jpg",
+    imageCredit: {
+      author: "Kok Leng Yeo",
+      license: "CC BY 2.0",
+      source: "https://commons.wikimedia.org/wiki/File:Flickr_-_yeowatzup_-_Nishiki_Shotengai,_Kyoto,_Japan.jpg"
+    },
     address: "Nishikikoji-dori, Nakagyo Ward, Kyoto",
     coords: [35.0049, 135.7649],
     tags: ["food", "culture"],
@@ -596,6 +676,11 @@ export const attractions: POI[] = [
     description:
       "A Zen temple built in 1482 as a shogun's retirement villa, deliberately understated in dark wood rather than the silver leaf its name promises — the silver covering was planned but never applied. Its raked white-sand garden, shaped into a cone said to represent Mt Fuji, sits beside a moss garden and pond walk.",
     image: "./images/ginkaku-ji.jpg",
+    imageCredit: {
+      author: "Oilstreet",
+      license: "CC BY-SA 3.0",
+      source: "https://commons.wikimedia.org/wiki/File:Ginkakuji_Kyoto03-r.jpg"
+    },
     address: "2 Ginkakujicho, Sakyo Ward, Kyoto",
     coords: [35.0270, 135.7982],
     tags: ["culture", "nature"],
@@ -621,6 +706,11 @@ export const attractions: POI[] = [
     description:
       "A roughly two-kilometer stone path following a cherry-tree-lined canal between Ginkaku-ji and Nanzen-ji, named for a 20th-century Kyoto University philosophy professor who reportedly walked it daily lost in thought. Quiet, flat, and shaded — a gentle way to link the two temples on foot.",
     image: "./images/philosophers-path.jpg",
+    imageCredit: {
+      author: "Gzzz",
+      license: "CC BY 4.0",
+      source: "https://commons.wikimedia.org/wiki/File:Tetsugaku-no-michi_-_Philosopher%27s_Walk_-_Kyoto.jpg"
+    },
     address: "Philosopher's Path, Sakyo Ward, Kyoto",
     coords: [35.0180, 135.7950],
     tags: ["nature", "view"],
@@ -639,6 +729,11 @@ export const attractions: POI[] = [
     description:
       "One of Kyoto's largest and most important Zen temple complexes, its grounds crossed by an unexpected red-brick Meiji-era aqueduct (the Suirokaku) still carrying water from Lake Biwa — a striking piece of 19th-century engineering dropped into a centuries-old temple setting.",
     image: "./images/nanzen-ji.jpg",
+    imageCredit: {
+      author: "Suicasmo",
+      license: "CC BY-SA 4.0",
+      source: "https://commons.wikimedia.org/wiki/File:Nanzenji_aqueduct_20211123.jpg"
+    },
     address: "86 Nanzenji Fukuchicho, Sakyo Ward, Kyoto",
     coords: [35.0117, 135.7947],
     tags: ["culture"],
@@ -734,6 +829,11 @@ export const attractions: POI[] = [
     description:
       "Nara's most important Shinto shrine, founded in 768 AD, approached along a forested path lined with thousands of stone lanterns donated by worshippers over the centuries, and hung inside with thousands more in bronze. Twice a year, at the Lantern Festivals, every one of them is lit at once.",
     image: "./images/kasuga-taisha.jpg",
+    imageCredit: {
+      author: "Wicki",
+      license: "Public Domain",
+      source: "https://commons.wikimedia.org/wiki/File:Lanterns_at_Kasuga_Taisha.JPG"
+    },
     address: "160 Kasugano-cho, Nara",
     coords: [34.6813, 135.8482],
     tags: ["culture", "nature"],

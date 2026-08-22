@@ -56,8 +56,8 @@ const HERO_PHOTOS: HeroPhoto[] = [
   {
     src: "./images/hero/shirakawa-go-hero.jpg",
     place: "Shirakawa-go · gassho-zukuri village",
-    credit: "Wikimedia Commons · CC",
-    source: "https://commons.wikimedia.org/wiki/Category:Shirakawa,_Gifu",
+    credit: "DimiTalen · CC0",
+    source: "https://commons.wikimedia.org/wiki/File:Overview_of_Ogimachi,_Shirakawa,_from_the_Ogimachi_Castle_observation_point.jpg",
     dayNumber: 9
   },
   {
@@ -77,8 +77,8 @@ const HERO_PHOTOS: HeroPhoto[] = [
   {
     src: "./images/hero/matsumoto-castle-hero.jpg",
     place: "Matsumoto Castle · the Crow Castle",
-    credit: "Wikimedia Commons · CC",
-    source: "https://commons.wikimedia.org/wiki/Category:Matsumoto_Castle",
+    credit: "663highland · CC BY-SA",
+    source: "https://commons.wikimedia.org/wiki/File:Matsumoto_Castle05s5s4592.jpg",
     dayNumber: 6
   },
   {
@@ -91,8 +91,8 @@ const HERO_PHOTOS: HeroPhoto[] = [
   {
     src: "./images/hero/kamikochi-kappa-bridge-hero.jpg",
     place: "Kappa Bridge, Kamikochi",
-    credit: "Wikimedia Commons · CC",
-    source: "https://commons.wikimedia.org/wiki/Category:Kamikōchi",
+    credit: "名古屋太郎 · CC BY",
+    source: "https://commons.wikimedia.org/wiki/File:251023_Hotaka_mountain_range_as_seen_from_Kappa_Bridge.jpg",
     dayNumber: 7
   },
   {
@@ -113,15 +113,15 @@ const HERO_PHOTOS: HeroPhoto[] = [
   {
     src: "./images/hero/fuji-chureito-pagoda-hero.jpg",
     place: "Chureito Pagoda · Mt Fuji, Fujiyoshida",
-    credit: "Wikimedia Commons · CC",
-    source: "https://commons.wikimedia.org/wiki/Category:Chureito_Pagoda",
+    credit: "Manishprabhune · CC BY-SA",
+    source: "https://commons.wikimedia.org/wiki/File:Chureito_Pagoda_and_Mount_Fuji.jpg",
     dayNumber: 5
   },
   {
     src: "./images/hero/kanazawa-kenrokuen-hero.jpg",
     place: "Kenrokuen Garden, Kanazawa",
-    credit: "Wikimedia Commons · CC",
-    source: "https://commons.wikimedia.org/wiki/Category:Kenrokuen",
+    credit: "そらみみ · CC BY-SA",
+    source: "https://commons.wikimedia.org/wiki/File:Fountain_and_Yukizuri_of_Kenroku_Garden.JPG",
     dayNumber: 10
   }
 ];
