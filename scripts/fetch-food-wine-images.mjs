@@ -77,7 +77,20 @@ const TARGETS = [
   // No image on the Bianco di Pitigliano article — fall back to the
   // village it's named after; the visual is unmistakable.
   ["wine-cantine-pitigliano.jpg",{ wiki: "Pitigliano" }],
-  ["wine-sassotondo.jpg",       { wiki: "Sovana" }]
+  ["wine-sassotondo.jpg",       { wiki: "Sovana" }],
+
+  // ---------- JAPAN DISHES (japan-2026 itinerary) ----------
+  ["food-houtou.jpg",           { wiki: "Hōtō" }],
+  ["food-soba.jpg",             { wiki: "Soba" }],
+  // No English Wikipedia article for Hida beef — use a verified Commons
+  // photo of the dish actually being grilled as street food in Takayama.
+  ["food-hidabeef.jpg",         { commons: "File:Grilling Hida Beef (Takayama Street Food) (35910429046).jpg" }],
+  // No dedicated wiki article for "Omicho Market seafood" — use a verified
+  // Commons photo of fresh fish at Omicho Ichiba, Kanazawa.
+  ["food-kanazawa-seafood.jpg", { commons: "File:Fish - Omicho Ichiba - Kanazawa, Japan - DSC09644.jpg" }],
+  // No English Wikipedia article for Kakinoha-zushi — use a verified
+  // Commons photo of the dish in Nara.
+  ["food-kakinohazushi.jpg",    { commons: "File:Kakinoha (persimmon leaf) sushi in Nara.jpg" }]
 ];
 
 async function fileExists(p) {

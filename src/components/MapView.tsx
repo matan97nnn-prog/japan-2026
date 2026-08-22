@@ -182,8 +182,13 @@ const ROUTE_SEGMENTS: RouteSegment[] = [
     color: "#C68A2A", // bronze — matches Attractions
     coords: [
       [35.2323, 139.0508], // Hakone
-      [34.9858, 135.7588], // Kyoto
-      [34.6627, 135.5006] // Osaka
+      [35.5060, 138.7715], // Fuji Five Lakes (Kawaguchiko)
+      [36.2400, 137.9715], // Matsumoto
+      [36.2517, 137.6417], // Kamikochi
+      [36.1435, 137.2540], // Takayama
+      [36.2578, 136.9066], // Shirakawa-go
+      [36.5775, 136.6485], // Kanazawa
+      [34.9858, 135.7588] // Kyoto
     ]
   },
   {
@@ -192,8 +197,8 @@ const ROUTE_SEGMENTS: RouteSegment[] = [
     dayKey: "map_seg_departure_short",
     color: "#5C7244", // cypress — matches Restaurants
     coords: [
-      [34.6627, 135.5006], // Osaka
-      [35.6938, 139.7034], // Tokyo (Shinjuku)
+      [34.9858, 135.7588], // Kyoto
+      [35.7107, 139.7960], // Tokyo (Asakusa)
       AIRPORT_POI.coords
     ]
   }
@@ -366,15 +371,29 @@ export default function MapView({ registerFocus }: Props) {
      half of the trip. We compute them once from the raw (unlocalized) data
      since the geometry doesn't depend on language. */
   const spokes = useMemo(() => {
-    const northBase = stays.find(s => s.region === "north");
-    const southBase = stays.find(s => s.region === "south");
+    // With eight bases spread across a long road trip, "first stay in the
+    // region" is no longer a meaningful hub — pick whichever booked stay is
+    // geographically closest to each attraction instead.
+    const distSq = (a: [number, number], b: [number, number]) => {
+      const dLat = a[0] - b[0];
+      const dLon = a[1] - b[1];
+      return dLat * dLat + dLon * dLon;
+    };
     const lines: { id: string; from: [number, number]; to: [number, number]; color: string }[] = [];
     for (const a of attractions) {
-      const base = a.region === "south" ? southBase : northBase;
-      if (!base) continue;
+      let nearest: (typeof stays)[number] | null = null;
+      let best = Infinity;
+      for (const s of stays) {
+        const d = distSq(s.coords, a.coords);
+        if (d < best) {
+          best = d;
+          nearest = s;
+        }
+      }
+      if (!nearest) continue;
       lines.push({
         id: `spoke-${a.id}`,
-        from: base.coords,
+        from: nearest.coords,
         to: a.coords,
         color: a.region === "south" ? "#C68A2A" : "#5C7244"
       });

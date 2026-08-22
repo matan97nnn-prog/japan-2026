@@ -52,7 +52,41 @@ const TARGETS = [
   ["osaka-castle.jpg",          { commons: "File:Osaka Castle 2 Osaka Japan by Don Ramey Logan.jpg", width: 2000 }],
   ["dotonbori.jpg",             { commons: "File:Dotonbori, Osaka, at night, November 2016.jpg", width: 2000 }],
   ["universal-studios-japan.jpg",{ commons: "File:USJ Super Nintendo World overview.jpg", width: 2000 }],
-  ["himeji-castle.jpg",         { commons: "File:Château de Himeji02.jpg", width: 2000 }]
+  ["himeji-castle.jpg",         { commons: "File:Château de Himeji02.jpg", width: 2000 }],
+
+  // ---------- Tokyo (Ueno) ----------
+  ["ueno-park.jpg",             { commons: "File:Ueno Park, Tokyo 20130810 1.jpg", width: 2000 }],
+
+  // ---------- Fuji Five Lakes (Kawaguchiko / Yamanaka / Fujiyoshida) ----------
+  ["lake-yamanaka.jpg",         { commons: "File:Mount Fuji and Lake Yamanaka.JPG", width: 2000 }],
+  ["oshino-hakkai.jpg",         { commons: "File:231028 Sokonashi-ike Oshino Hakkai springs Oshino Yamanashi pref Japan03s3.jpg", width: 2000 }],
+  ["oishi-park.jpg",            { commons: "File:Mount Fuji from Oishi Park.jpg", width: 2000 }],
+  ["chureito-pagoda.jpg",       { commons: "File:Chureito Pagoda, Fujiyoshida (33872654900).jpg", width: 2000 }],
+  ["fuji-five-lakes.jpg",       { commons: "File:Kengamine of Mount Fuji from Lake Motosu.jpg", width: 2000 }],
+
+  // ---------- Matsumoto / Kamikochi ----------
+  ["matsumoto-castle.jpg",      { commons: "File:Matsumoto Castle far 0504.jpg", width: 2000 }],
+  ["kamikochi.jpg",             { commons: "File:Taisho Pond 大正池 (227783081).jpeg", width: 2000 }],
+
+  // ---------- Takayama / Shirakawa-go ----------
+  ["sanmachi-suji.jpg",         { commons: "File:Takayama Old Town (Sanmachi Suji) (35819349621).jpg", width: 2000 }],
+  ["hida-folk-village.jpg",     { commons: "File:Hida Folk Village.jpg", width: 2000 }],
+  ["shirakawa-go.jpg",          { commons: "File:Farmhouse on the edge of town, Ogimachi, Shirakawa.jpg", width: 2000 }],
+
+  // ---------- Kanazawa ----------
+  ["kenrokuen.jpg",             { commons: "File:Hisagoike Pond, Midoritaki Waterfall and Kaisekito Tower in Kenroku Garden.JPG", width: 2000 }],
+  ["kanazawa-castle.jpg",       { commons: "File:Kanazawa Castle with moat - Kanazawa, Japan.JPG", width: 2000 }],
+  ["omicho-market.jpg",         { commons: "File:Omicho covered market western entrance, Kanazawa, 2016.jpg", width: 2000 }],
+  ["higashi-chaya.jpg",         { commons: "File:Higashi Chaya district, Kanazawa (3810720612).jpg", width: 2000 }],
+
+  // ---------- Kyoto (additional) ----------
+  ["nishiki-market.jpg",        { commons: "File:Flickr - yeowatzup - Nishiki Shotengai, Kyoto, Japan.jpg", width: 2000 }],
+  ["ginkaku-ji.jpg",            { commons: "File:Ginkakuji Kyoto03-r.jpg", width: 2000 }],
+  ["philosophers-path.jpg",     { commons: "File:Tetsugaku-no-michi - Philosopher's Walk - Kyoto.jpg", width: 2000 }],
+  ["nanzen-ji.jpg",             { commons: "File:Nanzenji aqueduct 20211123.jpg", width: 2000 }],
+
+  // ---------- Nara (additional) ----------
+  ["kasuga-taisha.jpg",         { commons: "File:Lanterns at Kasuga Taisha.JPG", width: 2000 }]
 ];
 
 async function fileExists(p) {

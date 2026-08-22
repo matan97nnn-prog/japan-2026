@@ -100,36 +100,59 @@ export const dishes: Dish[] = [
     }
   },
   {
-    id: "okonomiyaki",
-    name: "Okonomiyaki",
-    nativeName: "お好み焼き",
+    id: "houtou",
+    name: "Houtou",
+    nativeName: "ほうとう",
+    region: "north",
+    category: "main",
+    description:
+      "Thick, flat, hand-cut wheat noodles simmered in a miso broth with pumpkin and root vegetables — the Fuji Five Lakes region's signature dish, warming after a day of lake-hopping.",
+    tryIt: "Kawaguchiko / Fujiyoshida area",
+    image: "./images/food-houtou.jpg"
+  },
+  {
+    id: "matsumoto-soba",
+    name: "Matsumoto soba",
+    nativeName: "信州そば",
+    region: "north",
+    category: "main",
+    description:
+      "Buckwheat noodles grown and made in the Nagano highlands — Matsumoto is proud of its soba, and Nakamachi Street's old kura warehouse buildings hold several well-regarded restaurants for it.",
+    tryIt: "Nakamachi Street, Matsumoto",
+    image: "./images/food-soba.jpg"
+  },
+  {
+    id: "hida-beef",
+    name: "Hida beef",
+    nativeName: "飛騨牛",
+    region: "north",
+    category: "main",
+    description:
+      "Richly marbled, locally raised beef from the Hida region around Takayama — grilled tableside on a hoba leaf, as skewers at the morning market, or as part of a ryokan's kaiseki course.",
+    tryIt: "Takayama",
+    image: "./images/food-hidabeef.jpg"
+  },
+  {
+    id: "kanazawa-seafood",
+    name: "Kanazawa seafood",
+    nativeName: "金沢の海鮮",
+    region: "north",
+    category: "main",
+    description:
+      "Snow crab, sweet shrimp (amaebi) and glossy sushi-grade cuts from the Sea of Japan, sold and eaten fresh at Omicho Market's stalls, or course by course at a kappou-style dinner.",
+    tryIt: "Omicho Market, Kanazawa",
+    image: "./images/food-kanazawa-seafood.jpg"
+  },
+  {
+    id: "kakinoha-zushi",
+    name: "Kakinoha-zushi",
+    nativeName: "柿の葉寿司",
     region: "south",
     category: "main",
     description:
-      "A savory Osaka pancake of batter, cabbage and your choice of fillings, cooked on a griddle and finished with okonomiyaki sauce, mayo and bonito flakes that visibly 'dance' in the rising heat.",
-    tryIt: "Dotonbori (Osaka)",
-    image: "./images/food-okonomiyaki.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Okonomiyaki"
-    }
-  },
-  {
-    id: "takoyaki",
-    name: "Takoyaki",
-    nativeName: "たこ焼き",
-    region: "south",
-    category: "snack",
-    description:
-      "Ball-shaped batter snacks with a piece of octopus inside, cooked in a special molded griddle and topped with sauce, mayo and bonito flakes. Osaka's street-food icon — eat carefully, the center stays molten hot.",
-    tryIt: "Dotonbori (Osaka)",
-    image: "./images/food-takoyaki.jpg",
-    imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Takoyaki"
-    }
+      "Pressed sushi wrapped in persimmon leaves — a preservation technique from long before refrigeration that turned into Nara's signature local dish.",
+    tryIt: "Nara",
+    image: "./images/food-kakinohazushi.jpg"
   },
   {
     id: "wagyu",
@@ -138,8 +161,8 @@ export const dishes: Dish[] = [
     region: "south",
     category: "main",
     description:
-      "Intensely marbled Japanese beef — Kansai sits near some of the country's most famous wagyu regions (Kobe beef is graded and branded from right here in Hyogo). Try it as yakiniku (grilled tableside) or a quick teppanyaki lunch.",
-    tryIt: "Yakiniku restaurants in Osaka or Kyoto",
+      "Intensely marbled Japanese beef, available at Kyoto's better yakiniku (grilled tableside) restaurants and teppanyaki counters — a treat-yourself dinner on one of the trip's four Kyoto nights.",
+    tryIt: "Yakiniku restaurants in Kyoto",
     image: "./images/food-wagyu.jpg",
     imageCredit: {
       author: "Wikimedia Commons",

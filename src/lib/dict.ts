@@ -58,8 +58,9 @@ export const DICT = {
   /* ---------- Navbar ---------- */
   nav_plan: { en: "Plan", he: "תוכנית" },
   nav_map: { en: "Map", he: "מפה" },
-  // The trip's stays (Tokyo, Hakone, Kyoto, Osaka) are the trip's
-  // "neighborhoods", which is what we surface in the nav.
+  // The trip's stays (Tokyo, Hakone, the Fuji lakes, Matsumoto,
+  // Takayama, Kanazawa, Kyoto) are the trip's "neighborhoods", which
+  // is what we surface in the nav.
   nav_stays: { en: "Stays", he: "לינות" },
   nav_attractions: { en: "Places", he: "מקומות" },
   // Services (gas / supermarket / nearby restaurants) is no longer in
@@ -125,8 +126,8 @@ export const DICT = {
   today: { en: "Today", he: "היום" },
 
   /* ---------- Region / chapter labels ---------- */
-  region_north_long: { en: "Kanto (Tokyo)", he: "קאנטו (טוקיו)" },
-  region_south_long: { en: "Kansai (Kyoto/Osaka)", he: "קנסיי (קיוטו/אוסקה)" },
+  region_north_long: { en: "Tokyo to Kanazawa", he: "מטוקיו לקנזאווה" },
+  region_south_long: { en: "Kyoto & Nara", he: "קיוטו ונארה" },
   region_transit_long: { en: "Transit", he: "מעבר" },
   region_north_short: { en: "North", he: "צפון" },
   region_south_short: { en: "South", he: "דרום" },
@@ -154,30 +155,30 @@ export const DICT = {
     he: "הקישו על סיכה · עקבו אחר המסלול · סננו את השאר"
   },
   map_intro: {
-    en: "Every stay, attraction, restaurant, convenience store and station — color-coded by category. The dashed line is our actual journey: Tokyo to Hakone, Hakone to Kyoto and Osaka, back to Tokyo.",
-    he: "כל מקום לינה, אטרקציה, מסעדה, מינימרקט ותחנה — בקוד צבעים לפי קטגוריה. הקו המקווקו הוא המסלול שלנו: מטוקיו להקונה, מהקונה לקיוטו ואוסקה, ובחזרה לטוקיו."
+    en: "Every stay, attraction, restaurant, convenience store and station — color-coded by category. The dashed line is our actual journey: Tokyo to Hakone, on through the Fuji lakes, Matsumoto, the Japanese Alps, Shirakawa-go and Kanazawa, then Kyoto, and back to Tokyo.",
+    he: "כל מקום לינה, אטרקציה, מסעדה, מינימרקט ותחנה — בקוד צבעים לפי קטגוריה. הקו המקווקו הוא המסלול שלנו: מטוקיו להקונה, משם לאגמי פוג'י, מטסומוטו, האלפים היפניים, שירקאוו-גו וקנזאווה, אחר כך קיוטו, ובחזרה לטוקיו."
   },
   map_route_on: { en: "Route on", he: "מסלול מוצג" },
   map_route_off: { en: "Route off", he: "מסלול מוסתר" },
   map_spokes_on: { en: "Day trips on", he: "טיולי יום מוצגים" },
   map_spokes_off: { en: "Day trips off", he: "טיולי יום מוסתרים" },
   map_seg_arrival: {
-    en: "Day 1–7 · Tokyo to Hakone",
-    he: "ימים 1–7 · מטוקיו להקונה"
+    en: "Day 1–4 · Tokyo to Hakone",
+    he: "ימים 1–4 · מטוקיו להקונה"
   },
   map_seg_arrival_short: { en: "Sun · 1 Nov", he: "א' · 1 בנובמבר" },
   map_seg_transfer: {
-    en: "Day 9 · Hakone to Kyoto and Osaka",
-    he: "יום 9 · מהקונה לקיוטו ואוסקה"
+    en: "Day 4–11 · Hakone to Kanazawa & Kyoto",
+    he: "ימים 4–11 · מהקונה לקנזאווה וקיוטו"
   },
-  map_seg_transfer_short: { en: "Mon · 9 Nov", he: "ב' · 9 בנובמבר" },
+  map_seg_transfer_short: { en: "Wed · 4 Nov", he: "ד' · 4 בנובמבר" },
   map_seg_departure: {
-    en: "Day 16–17 · Back to Tokyo and home",
-    he: "ימים 16–17 · חזרה לטוקיו והביתה"
+    en: "Day 15–17 · Back to Tokyo and home",
+    he: "ימים 15–17 · חזרה לטוקיו והביתה"
   },
   map_seg_departure_short: {
-    en: "Mon/Tue · 16–17 Nov",
-    he: "ב'/ג' · 16–17 בנובמבר"
+    en: "Sun–Tue · 15–17 Nov",
+    he: "א'–ג' · 15–17 בנובמבר"
   },
   map_zoom_fit: { en: "Zoom to fit all locations", he: "התאם תצוגה לכל המיקומים" },
   map_locate_me: { en: "Show my location", he: "הצג את המיקום שלי" },
@@ -289,14 +290,14 @@ export const DICT = {
   },
   /* ---------- Stays section ---------- */
   stays_eyebrow: { en: "Where we sleep", he: "איפה נישן" },
-  stays_title: { en: "Four bases, one journey", he: "ארבעה בסיסים, מסע אחד" },
+  stays_title: { en: "Eight bases, one journey", he: "שמונה בסיסים, מסע אחד" },
   stays_kicker: {
-    en: "Tokyo and Hakone first, then Kyoto and Osaka",
-    he: "טוקיו והקונה קודם, אחר כך קיוטו ואוסקה"
+    en: "Tokyo, Hakone and the Alps first, then Kanazawa and Kyoto",
+    he: "טוקיו, הקונה והאלפים קודם, אחר כך קנזאווה וקיוטו"
   },
   stays_intro: {
-    en: "We split the trip across Tokyo, a Hakone onsen night, Kyoto and Osaka — each chosen as the perfect base for the days around it.",
-    he: "אנחנו מחלקים את הטיול בין טוקיו, לילה באונסן בהקונה, קיוטו ואוסקה — כל בסיס נבחר בשביל הימים שסביבו."
+    en: "We split the trip across Tokyo, a Hakone onsen night, the Fuji lakes, Matsumoto, a Takayama ryokan, Kanazawa and Kyoto — each chosen as the perfect base for the days around it.",
+    he: "אנחנו מחלקים את הטיול בין טוקיו, לילה באונסן בהקונה, אגמי פוג'י, מטסומוטו, ריוקאן בטקיאמה, קנזאווה וקיוטו — כל בסיס נבחר בשביל הימים שסביבו."
   },
   stay_check_in: { en: "Check in", he: "צ'ק־אין" },
   stay_check_out: { en: "Check out", he: "צ'ק־אאוט" },
@@ -517,8 +518,8 @@ export const DICT = {
   },
   food_dishes_label: { en: "Signature dishes", he: "מנות דגל" },
   food_wineries_label: { en: "Sake & spirits to try", he: "סאקה ומשקאות לנסות" },
-  food_filter_north: { en: "Kanto · Tokyo", he: "קאנטו · טוקיו" },
-  food_filter_south: { en: "Kansai · Kyoto/Osaka", he: "קנסיי · קיוטו/אוסקה" },
+  food_filter_north: { en: "Tokyo to Kanazawa", he: "מטוקיו לקנזאווה" },
+  food_filter_south: { en: "Kyoto / Nara", he: "קיוטו / נארה" },
   food_filter_japan: { en: "Across Japan", he: "בכל יפן" },
   food_try_it: { en: "Try it at", he: "לטעום ב" },
   food_appellation: { en: "Grade", he: "דירוג" },

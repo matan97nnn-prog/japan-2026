@@ -24,8 +24,16 @@ const TRIP_FACTS = {
   startDate: "2026-11-01",
   endDate: "2026-11-17",
   travellers: "The Stein family: Eti, Ronen, Matan and Amit",
-  cars: "No rental car — the whole trip runs on trains (Shinkansen + local lines)",
-  bases: ["Tokyo / Hakone (Kanto)", "Kyoto / Osaka (Kansai)"],
+  cars: "A rental car (Toyota Noah Hybrid) from Odawara (Nov 4) to Kanazawa (returned Nov 9, by 20:00) covers Hakone through the Alps; everything before and after that is trains and on foot",
+  bases: [
+    "Tokyo — Shinjuku then Asakusa",
+    "Hakone",
+    "Fuji Five Lakes (Kawaguchiko)",
+    "Matsumoto",
+    "Takayama",
+    "Kanazawa",
+    "Kyoto"
+  ],
   // Per-person plan facts that AREN'T derivable from the itinerary data —
   // keep them here and update when the plan changes.
   planNotes: [] as string[]
@@ -120,7 +128,7 @@ EXAMPLES OF GOOD REPLIES:
   early, you'll have the gates almost to yourselves."
 - "Owakudani's ropeway skips the hike entirely, and the view's
   better anyway. Go for it."
-- "Kuromon Market. Calmer than Dotonbori, same great food."
+- "Hida Folk Village. Gentler than Shirakawa-go, same gassho-zukuri houses."
 
 EXAMPLES OF BAD REPLIES (don't do these):
 - "Great question! Let me think about whether Fushimi Inari…"

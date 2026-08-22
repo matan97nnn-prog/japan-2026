@@ -103,7 +103,7 @@ export const wineries: Winery[] = [
     region: "south",
     appellation: "Nada sake",
     description:
-      "In Kobe's Nada district — Japan's single biggest sake-producing area, thanks to its ideal water and rice-growing conditions. A free museum in a preserved Edo-era brewery building, with a tasting at the end. An easy add-on if the Himeji day trip has spare time on the way through.",
+      "In Kobe's Nada district — Japan's single biggest sake-producing area, thanks to its ideal water and rice-growing conditions. A free museum in a preserved Edo-era brewery building, with a tasting at the end. Not currently on the itinerary, but an easy half-day add-on from Kyoto by train if the group wants one more stop.",
     website: "https://www.hakutsuru.co.jp/csr/shiryokan/",
     address: "4-5-5 Sumiyoshiminamimachi, Higashinada Ward, Kobe",
     coords: [34.7025, 135.2725],

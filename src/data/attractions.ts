@@ -1,7 +1,7 @@
 import type { POI } from "./types";
 
 export const attractions: POI[] = [
-  // ---------- NORTH (Kanto: Tokyo / Hakone) ----------
+  // ---------- NORTH (Tokyo / Nikko / Hakone / Fuji / Alps / Kanazawa) ----------
   {
     id: "senso-ji",
     name: "Senso-ji",
@@ -34,106 +34,21 @@ export const attractions: POI[] = [
     ]
   },
   {
-    id: "tokyo-skytree",
-    name: "Tokyo Skytree",
+    id: "ueno-park",
+    name: "Ueno Park",
     category: "attraction",
     region: "north",
-    shortDescription: "634 m tower with a clear-day Mt Fuji view",
+    shortDescription: "Tokyo's biggest park, temples, a pond and a zoo",
     description:
-      "The tallest structure in Japan at 634 m, with two observation decks — the Tembo Deck at 350 m and the pricier Tembo Galleria at 450 m. On a clear day the view stretches to Mt Fuji.",
-    image: "./images/tokyo-skytree.jpg",
-    imageCredit: {
-      author: "Danny15",
-      license: "CC BY-SA 3.0",
-      source: "https://commons.wikimedia.org/wiki/File:Tokyo_Skytree_view.JPG"
-    },
-    website: "https://www.tokyo-skytree.jp/en/",
-    address: "1 Chome-1-2 Oshiage, Sumida City, Tokyo",
-    coords: [35.7101, 139.8107],
-    tags: ["view", "family"],
+      "One of Tokyo's oldest and largest public parks, opened in 1873. Ueno Park holds several museums, Ueno Zoo, the Kiyomizu Kannon-do temple, and Shinobazu Pond, where turtles and cormorants share the water with rowboats — a calm counterpoint to the crowds of nearby Asakusa.",
+    image: "./images/ueno-park.jpg",
+    address: "Uenokoen, Taito City, Tokyo",
+    coords: [35.7156, 139.7745],
+    tags: ["nature", "family"],
     difficulty: "easy",
     tips: [
-      "Book timed-entry tickets online in advance to skip the ground-floor queue",
-      "The 350 m deck is enough on all but the clearest days"
-    ]
-  },
-  {
-    id: "meiji-jingu",
-    name: "Meiji Jingu",
-    category: "attraction",
-    region: "north",
-    shortDescription: "A forested shrine in the middle of the city",
-    description:
-      "A Shinto shrine dedicated to Emperor Meiji and Empress Shoken, set inside a forest of 100,000 trees donated from across Japan when it was built in 1920. A calm, green contrast right next to Harajuku's crowds.",
-    image: "./images/meiji-jingu.jpg",
-    imageCredit: {
-      author: "Teddy Yoshida",
-      license: "Public Domain",
-      source: "https://commons.wikimedia.org/wiki/File:Meiji-jingu_torii.JPG"
-    },
-    website: "https://www.meijijingu.or.jp/en/",
-    address: "1-1 Yoyogikamizonocho, Shibuya City, Tokyo",
-    coords: [35.6764, 139.6993],
-    tags: ["culture", "nature"],
-    difficulty: "easy",
-    tips: [
-      "Look for sake barrels donated by breweries nationwide, displayed along the path to the shrine",
-      "Weekends sometimes catch a traditional Shinto wedding procession — a nice surprise, keep a respectful distance"
-    ]
-  },
-  {
-    id: "shibuya-crossing",
-    name: "Shibuya Crossing & Shibuya Sky",
-    category: "attraction",
-    region: "north",
-    shortDescription: "The world's busiest pedestrian crossing",
-    description:
-      "Up to 3,000 people cross at once when the lights change. Watch first from the Starbucks overlooking the scramble, then walk it yourself. Shibuya Sky's open-air rooftop deck, a few minutes' walk away, gives the best bird's-eye view — especially at sunset.",
-    image: "./images/shibuya-crossing.jpg",
-    imageCredit: {
-      author: "Jorge Láscar",
-      license: "CC BY 2.0",
-      source: "https://commons.wikimedia.org/wiki/File:World%27s_busiest_pedestrian_crossing_-_Large_panorama_of_the_Shibuya_Crossing_(43828061665).jpg"
-    },
-    website: "https://www.shibuya-scramble-square.com/sky/",
-    address: "Shibuya City, Tokyo",
-    coords: [35.6595, 139.7005],
-    tags: ["view", "culture"],
-    difficulty: "easy",
-    tips: [
-      "Shibuya Sky sunset slots sell out — book the specific time online ahead of the day",
-      "The Hachiko statue, just outside the station, is the classic meeting point if the group splits up"
-    ],
-    quizFacts: [
-      {
-        question: "About how many people can cross Shibuya Crossing at once when the lights change?",
-        correctAnswer: "Up to 3,000",
-        distractors: ["About 50", "About 300", "About 10,000"]
-      }
-    ]
-  },
-  {
-    id: "teamlab-planets",
-    name: "teamLab Planets TOKYO",
-    category: "attraction",
-    region: "north",
-    shortDescription: "A barefoot, wade-through-water digital art museum",
-    description:
-      "A digital art museum you experience barefoot — walking through ankle-deep water lit with projected koi, and other immersive rooms of light and mirrors. Genuinely enjoyable for every age, from toddlers to grandparents.",
-    image: "./images/teamlab-planets.jpg",
-    imageCredit: {
-      author: "Hyppolyte de Saint-Rambert",
-      license: "CC BY-SA 4.0",
-      source: "https://commons.wikimedia.org/wiki/File:TEAM_LAB_univers_k.jpg"
-    },
-    website: "https://www.teamlab.art/e/planets/",
-    address: "6 Chome-1-16 Toyosu, Koto City, Tokyo",
-    coords: [35.6449, 139.7930],
-    tags: ["family", "culture"],
-    difficulty: "easy",
-    tips: [
-      "Wear clothes you can roll up past the knee, and bring a small towel to dry your feet after",
-      "Book a specific entry slot online — it regularly sells out days ahead"
+      "The pond's boathouse rents rowboats and swan boats if the group wants a slow half-hour",
+      "Tokyo National Museum sits inside the park for anyone wanting an indoor detour"
     ]
   },
   {
@@ -155,8 +70,38 @@ export const attractions: POI[] = [
     tags: ["food"],
     difficulty: "easy",
     tips: [
-      "Go for breakfast — most stalls wind down by early afternoon",
+      "Go for breakfast or lunch — most stalls wind down by mid-afternoon",
       "Cash is still king at many of the smaller stalls"
+    ]
+  },
+  {
+    id: "shibuya-crossing",
+    name: "Shibuya Crossing & Harajuku",
+    category: "attraction",
+    region: "north",
+    shortDescription: "The world's busiest pedestrian crossing",
+    description:
+      "Up to 3,000 people cross at once when the lights change. Watch first from the Starbucks overlooking the scramble, then walk it yourself. Harajuku's Takeshita-dori, a short walk away, adds crepe stands and youth fashion at full volume — a good optional add for anyone in the group who wants a dose of modern pop-culture Tokyo.",
+    image: "./images/shibuya-crossing.jpg",
+    imageCredit: {
+      author: "Jorge Láscar",
+      license: "CC BY 2.0",
+      source: "https://commons.wikimedia.org/wiki/File:World%27s_busiest_pedestrian_crossing_-_Large_panorama_of_the_Shibuya_Crossing_(43828061665).jpg"
+    },
+    address: "Shibuya City, Tokyo",
+    coords: [35.6595, 139.7005],
+    tags: ["view", "culture"],
+    difficulty: "easy",
+    tips: [
+      "The Hachiko statue, just outside the station, is the classic meeting point if the group splits up",
+      "Optional add-on for the Tokyo free day — easy to skip if energy is running low"
+    ],
+    quizFacts: [
+      {
+        question: "About how many people can cross Shibuya Crossing at once when the lights change?",
+        correctAnswer: "Up to 3,000",
+        distractors: ["About 50", "About 300", "About 10,000"]
+      }
     ]
   },
   {
@@ -179,7 +124,7 @@ export const attractions: POI[] = [
     tags: ["culture", "nature", "view"],
     difficulty: "moderate",
     tips: [
-      "Reserve the Tobu Limited Express from Asakusa ahead of time during foliage season",
+      "November 3rd is Culture Day, a national holiday — reserve the Tobu train seats ahead, this day gets very crowded",
       "Layer up — Nikko runs several degrees cooler than Tokyo"
     ],
     quizFacts: [
@@ -187,37 +132,6 @@ export const attractions: POI[] = [
         question: "What are the three famous carved monkeys at Toshogu Shrine known for?",
         correctAnswer: "\"See no evil, hear no evil, speak no evil\"",
         distractors: ["Guarding a hidden treasure", "Ringing a bell at sunrise", "Predicting the weather"]
-      }
-    ]
-  },
-  {
-    id: "kamakura-daibutsu",
-    name: "Kotoku-in — the Great Buddha of Kamakura",
-    category: "attraction",
-    region: "north",
-    shortDescription: "An 11.4 m bronze Buddha, in the open air since the 1400s",
-    description:
-      "A monumental bronze Amida Buddha cast in 1252. Its wooden hall was destroyed by a tsunami in the 15th century and never rebuilt, so the statue has sat in the open air ever since. Visitors can step inside the hollow bronze for a small fee.",
-    image: "./images/kamakura-daibutsu.jpg",
-    imageCredit: {
-      author: "Dandy1022",
-      license: "CC BY-SA 3.0",
-      source: "https://commons.wikimedia.org/wiki/File:The_Great_Buddha_of_K%C5%8Dtoku-in_(Kamakura_Daibutsu).jpg"
-    },
-    website: "https://www.kotoku-in.jp/en/",
-    address: "4 Chome-2-28 Hase, Kamakura, Kanagawa",
-    coords: [35.3167, 139.5361],
-    tags: ["culture", "family"],
-    difficulty: "easy",
-    tips: [
-      "Combine with Hase-dera temple, a short walk away, if time allows",
-      "Komachi-dori shopping street near the station is a good lunch stop"
-    ],
-    quizFacts: [
-      {
-        question: "Why does the Great Buddha of Kamakura sit outdoors instead of inside a hall?",
-        correctAnswer: "A tsunami destroyed the hall centuries ago and it was never rebuilt",
-        distractors: ["It was always meant to be outdoors", "The hall burned down last year", "It's too big for any building"]
       }
     ]
   },
@@ -277,12 +191,12 @@ export const attractions: POI[] = [
   },
   {
     id: "hakone-lake-ashi",
-    name: "Lake Ashi pirate ship cruise",
+    name: "Hakone Ropeway & Lake Ashi",
     category: "attraction",
     region: "north",
-    shortDescription: "A theatrical ferry across a caldera lake",
+    shortDescription: "A ropeway and a caldera lake, Fuji behind it",
     description:
-      "A crater lake formed by the same eruption that shaped Owakudani, crossed by a fleet of theatrical 'pirate ship' sightseeing ferries. On a clear day Mt Fuji rises directly behind the water. The Moto-Hakone side has the lake's famous floating torii gate, part of Hakone Shrine.",
+      "A crater lake formed by the same eruption that shaped Owakudani. On a clear day Mt Fuji rises directly behind the water, best seen from the Hakone Ropeway gliding down from Owakudani. The Moto-Hakone side has the lake's famous floating torii gate, part of Hakone Shrine.",
     image: "./images/hakone-lake-ashi.jpg",
     imageCredit: {
       author: "Daderot",
@@ -294,12 +208,313 @@ export const attractions: POI[] = [
     tags: ["view", "family"],
     difficulty: "easy",
     tips: [
-      "The Hakone Free Pass covers the ropeway, this cruise, and local buses on one ticket",
-      "Sit on the upper deck for the best Fuji photos when visibility is good"
+      "Mt Fuji is shy — it hides behind cloud more mornings than not, so go early for the best odds",
+      "The floating torii gate at Hakone Shrine, on the far shore, is a popular photo stop if time allows"
+    ]
+  },
+  {
+    id: "lake-yamanaka",
+    name: "Lake Yamanaka",
+    category: "attraction",
+    region: "north",
+    shortDescription: "The closest of the Fuji Five Lakes to the mountain",
+    description:
+      "The largest and highest of the Fuji Five Lakes, and the closest to Mt Fuji itself — on a clear morning the mountain fills the whole far shore. Quieter than Lake Kawaguchi, with a long, easy lakeside promenade.",
+    image: "./images/lake-yamanaka.jpg",
+    address: "Yamanakako, Yamanashi",
+    coords: [35.3325, 138.8663],
+    tags: ["nature", "view"],
+    difficulty: "easy",
+    tips: [
+      "Morning light gives the best odds of a cloud-free Fuji — a good reason to make this the day's first stop",
+      "A short lakeside walk is enough; no need to circle the whole lake"
+    ]
+  },
+  {
+    id: "oshino-hakkai",
+    name: "Oshino Hakkai",
+    category: "attraction",
+    region: "north",
+    shortDescription: "Eight spring-fed ponds fed by Mt Fuji's snowmelt",
+    description:
+      "A small, traditional village built around eight crystal-clear ponds, fed by snowmelt that filters down through Mt Fuji's lava rock before resurfacing here. Thatched-roof buildings and water wheels line the ponds, alongside stalls selling local pickles and grilled rice cakes.",
+    image: "./images/oshino-hakkai.jpg",
+    address: "Oshino, Yamanashi",
+    coords: [35.4525, 138.8385],
+    tags: ["nature", "village", "water"],
+    difficulty: "easy",
+    tips: [
+      "Budget about an hour to an hour and a half to walk between all eight ponds",
+      "Some of the clearest water is at Wakuike, the smallest of the eight"
+    ],
+    quizFacts: [
+      {
+        question: "Where does the water in Oshino Hakkai's eight ponds come from?",
+        correctAnswer: "Snowmelt that filtered down through Mt Fuji over many years",
+        distractors: ["A nearby river, diverted by canal", "Rainwater collected in tanks", "It's pumped in from Lake Kawaguchi"]
+      }
+    ]
+  },
+  {
+    id: "oishi-park",
+    name: "Oishi Park",
+    category: "attraction",
+    region: "north",
+    shortDescription: "A lakeside park with a postcard Fuji view",
+    description:
+      "A park on the quiet northern shore of Lake Kawaguchi, popular for its wide, unobstructed view of Mt Fuji across the water — one of the most photographed angles of the mountain. In warmer months its lavender fields add color to the foreground; in November the view is all about crisp mountain air and clear autumn light.",
+    image: "./images/oishi-park.jpg",
+    address: "Oishi, Fujikawaguchiko, Yamanashi",
+    coords: [35.5219, 138.7286],
+    tags: ["view", "nature"],
+    difficulty: "easy",
+    tips: [
+      "There's a small café in the park with a Fuji view from its terrace, good for a coffee stop",
+      "Arrive by mid-afternoon before the light flattens"
+    ]
+  },
+  {
+    id: "chureito-pagoda",
+    name: "Chureito Pagoda",
+    category: "attraction",
+    region: "north",
+    shortDescription: "A red pagoda framed against Mt Fuji, up ~400 steps",
+    description:
+      "A five-story red pagoda on a hillside above Fujiyoshida, reached by a climb of roughly 400 steps through Arakura Sengen Shrine's grounds. The reward at the top is one of the most photographed views in Japan — the pagoda in the foreground, Mt Fuji rising directly behind it.",
+    image: "./images/chureito-pagoda.jpg",
+    address: "Arakura, Fujiyoshida, Yamanashi",
+    coords: [35.4903, 138.8006],
+    tags: ["view", "culture"],
+    difficulty: "moderate",
+    tips: [
+      "The climb is a steady staircase, not technical, but pace it for anyone with knee trouble",
+      "An optional add for the Hakone→Kawaguchiko day if the morning is ahead of schedule — the timed plan doesn't strictly leave room for it, so treat it as a bonus rather than a must"
+    ],
+    quizFacts: [
+      {
+        question: "About how many steps does the climb to Chureito Pagoda's viewpoint take?",
+        correctAnswer: "About 400",
+        distractors: ["About 50", "About 1,000", "About 4,000"]
+      }
+    ]
+  },
+  {
+    id: "fuji-five-lakes",
+    name: "Lake Saiko, Shoji & Motosu",
+    category: "attraction",
+    region: "north",
+    shortDescription: "The three quiet, less-visited Fuji lakes",
+    description:
+      "The three smallest and least-visited of the Fuji Five Lakes, strung along the road between Kawaguchiko and Matsumoto. Lake Saiko sits deepest in the forest; Lake Shoji is the smallest of the five and has a particularly still, intimate feel; Lake Motosu's classic view — Fuji reflected over the water — is the exact image printed on the Japanese 1,000-yen banknote.",
+    image: "./images/fuji-five-lakes.jpg",
+    address: "Motosu, Yamanashi",
+    coords: [35.4756, 138.6142],
+    tags: ["nature", "view"],
+    difficulty: "easy",
+    tips: [
+      "Motosu's banknote view is from the lake's northern shore, near the campground",
+      "Treat these as unhurried drive-by stops rather than long visits — 15–20 minutes each is plenty"
+    ],
+    quizFacts: [
+      {
+        question: "What is special about the view from Lake Motosu?",
+        correctAnswer: "It's the exact view printed on the Japanese 1,000-yen banknote",
+        distractors: ["It's the only one of the five with no fish", "It never freezes in winter", "It was man-made in the 1980s"]
+      }
+    ]
+  },
+  {
+    id: "matsumoto-castle",
+    name: "Matsumoto Castle",
+    category: "attraction",
+    region: "north",
+    shortDescription: "'The Crow Castle' — one of Japan's original wooden keeps",
+    description:
+      "Nicknamed 'Crow Castle' for its black-lacquered wooden walls, Matsumoto Castle is one of only twelve Japanese castles with an original wooden keep still standing — most others are 20th-century concrete reconstructions. Built in the 1590s, it survives with its steep original staircases intact, climbing to a top floor with views over the city to the Japanese Alps.",
+    image: "./images/matsumoto-castle.jpg",
+    address: "4-1 Marunouchi, Matsumoto, Nagano",
+    coords: [36.2384, 137.9683],
+    tags: ["culture", "view"],
+    difficulty: "moderate",
+    tips: [
+      "The original wooden stairs inside are steep and narrow — take them slowly",
+      "Nakamachi Street's old kura warehouse buildings are a five-minute walk away, a good spot for a soba lunch"
+    ],
+    quizFacts: [
+      {
+        question: "Why is Matsumoto Castle unusual compared to most other Japanese castles?",
+        correctAnswer: "It's one of only twelve with an original (not rebuilt) wooden keep",
+        distractors: ["It's the tallest castle in Japan", "It was built entirely underground", "It has no moat"]
+      }
+    ]
+  },
+  {
+    id: "kamikochi",
+    name: "Kamikochi",
+    category: "attraction",
+    region: "north",
+    shortDescription: "A car-free alpine valley on the Azusa River",
+    description:
+      "A pristine highland valley inside the Japanese Alps National Park, closed to private cars to preserve it — everyone arrives by shuttle bus or taxi from the Sawando parking area. A flat, well-marked trail follows the clear Azusa River past Taisho Pond and Tashiro Pond to the Kappa Bridge, with the Hotaka mountain range towering directly overhead.",
+    image: "./images/kamikochi.jpg",
+    address: "Kamikochi, Matsumoto, Nagano",
+    coords: [36.2517, 137.6417],
+    tags: ["nature", "view", "extreme"],
+    difficulty: "easy",
+    tips: [
+      "Private cars are banned in the valley — park at Sawando and take the shuttle bus or taxi in, and reserve a spot ahead of the trip",
+      "The riverside trail is flat and easy, but November mornings can be near freezing — layer up"
+    ],
+    quizFacts: [
+      {
+        question: "Why can't visitors drive their own car into Kamikochi?",
+        correctAnswer: "Private cars are banned to protect the valley — everyone takes a shuttle or taxi from Sawando",
+        distractors: ["The road is too narrow for any car", "It's only accessible by helicopter", "There's no road at all"]
+      }
+    ]
+  },
+  {
+    id: "sanmachi-suji",
+    name: "Sanmachi Suji, Takayama",
+    category: "attraction",
+    region: "north",
+    shortDescription: "Takayama's beautifully preserved Edo-era merchant street",
+    description:
+      "A cluster of narrow streets in old Takayama lined with dark-wood merchant houses dating back to the Edo period, many still working as sake breweries, cafés and craft shops. A sake brewery is easy to spot by the ball of cedar fronds (sugidama) hanging outside its door.",
+    image: "./images/sanmachi-suji.jpg",
+    address: "Kamisannomachi, Takayama, Gifu",
+    coords: [36.1422, 137.2531],
+    tags: ["culture", "village"],
+    difficulty: "easy",
+    tips: [
+      "Look for the round cedar-frond ball (sugidama) outside a shopfront — it marks a sake brewery open for tastings",
+      "Takayama's morning market is a short walk away and closes around midday — visit it first"
+    ]
+  },
+  {
+    id: "hida-folk-village",
+    name: "Hida Folk Village (Hida no Sato)",
+    category: "attraction",
+    region: "north",
+    shortDescription: "An open-air museum of relocated thatched farmhouses",
+    description:
+      "An open-air museum on a hillside above Takayama, where more than 30 traditional gassho-zukuri thatched-roof farmhouses were relocated from around the Hida region to save them from being lost to dam projects and modernization. Inside several, you can see the tools and hearths of everyday mountain life.",
+    image: "./images/hida-folk-village.jpg",
+    address: "1-590 Kamiokamotocho, Takayama, Gifu",
+    coords: [36.1364, 137.2358],
+    tags: ["culture", "family", "village"],
+    difficulty: "easy",
+    tips: [
+      "A gentler, flatter alternative to a full Shirakawa-go visit if the group wants the same gassho-zukuri architecture in a smaller dose",
+      "Some houses have a lit irori (sunken hearth) inside — a nice detail for kids"
+    ]
+  },
+  {
+    id: "shirakawa-go",
+    name: "Shirakawa-go",
+    category: "attraction",
+    region: "north",
+    shortDescription: "A UNESCO village of steep thatched gassho-zukuri farmhouses",
+    description:
+      "A UNESCO World Heritage village of gassho-zukuri farmhouses, named for their steep thatched roofs shaped like two hands pressed together in prayer (gassho) — built steep specifically to shed the region's heavy winter snowfall. The Shiroyama Observatory viewpoint above the village gives the classic postcard overview; Wada House, one of the largest and oldest houses, is open to walk through inside.",
+    image: "./images/shirakawa-go.jpg",
+    address: "Ogimachi, Shirakawa, Gifu",
+    coords: [36.2578, 136.9066],
+    tags: ["culture", "village"],
+    difficulty: "easy",
+    tips: [
+      "Do the Shiroyama Observatory viewpoint first, a short uphill walk from the village, then descend into the village itself",
+      "This is one of the most photographed spots in Japan — expect company, even on a November weekday"
+    ],
+    quizFacts: [
+      {
+        question: "Why are Shirakawa-go's farmhouse roofs built so steep?",
+        correctAnswer: "To shed the region's heavy winter snowfall",
+        distractors: ["To keep out evil spirits", "For better airflow in summer", "It's just a decorative style"]
+      }
+    ]
+  },
+  {
+    id: "kenrokuen",
+    name: "Kenrokuen Garden",
+    category: "attraction",
+    region: "north",
+    shortDescription: "One of Japan's three great gardens",
+    description:
+      "A strolling garden dating back to the 1620s, considered one of Japan's three great gardens alongside Okayama's Korakuen and Mito's Kairakuen. In winter its old pine trees are protected from heavy snow by yukitsuri — rope frames strung from a central pole in a distinctive conical shape, put up each November.",
+    image: "./images/kenrokuen.jpg",
+    address: "1-1 Kenrokumachi, Kanazawa, Ishikawa",
+    coords: [36.5620, 136.6625],
+    tags: ["nature", "culture", "view"],
+    difficulty: "easy",
+    tips: [
+      "Yukitsuri rope frames usually go up in early November — worth asking if they're already in place",
+      "Go early — Kenrokuen is calm at opening and busy with tour groups by mid-morning"
+    ],
+    quizFacts: [
+      {
+        question: "What are the rope frames called that protect Kenrokuen's pine trees from snow each winter?",
+        correctAnswer: "Yukitsuri",
+        distractors: ["Ikebana", "Bonsai wires", "Torii ropes"]
+      }
+    ]
+  },
+  {
+    id: "kanazawa-castle",
+    name: "Kanazawa Castle Park",
+    category: "attraction",
+    region: "north",
+    shortDescription: "The reconstructed castle of the powerful Maeda clan",
+    description:
+      "The former seat of the Maeda, the second-wealthiest clan in Edo-period Japan after the ruling Tokugawa. Most of the original castle burned down over the centuries; several structures have been carefully reconstructed using traditional joinery techniques and are open to walk through, right across the moat from Kenrokuen.",
+    image: "./images/kanazawa-castle.jpg",
+    address: "1-1 Marunouchi, Kanazawa, Ishikawa",
+    coords: [36.5654, 136.6586],
+    tags: ["culture", "view"],
+    difficulty: "easy",
+    tips: [
+      "Combine with Kenrokuen in one visit — they sit directly across from each other",
+      "The reconstructed turret and storehouse interiors show the traditional building techniques used to rebuild them"
+    ]
+  },
+  {
+    id: "omicho-market",
+    name: "Omicho Market",
+    category: "attraction",
+    region: "north",
+    shortDescription: "Kanazawa's 'kitchen' — close to 280 years of fish stalls",
+    description:
+      "Kanazawa's main market, trading fish and produce from the Sea of Japan for close to 280 years. Snow crab, sweet shrimp (amaebi) and glossy sushi-grade cuts are laid out at stall after stall — many with a small counter to eat what you just bought standing up.",
+    image: "./images/omicho-market.jpg",
+    address: "50 Kamiomicho, Kanazawa, Ishikawa",
+    coords: [36.5730, 136.6547],
+    tags: ["food"],
+    difficulty: "easy",
+    tips: [
+      "Go hungry — the best plan is grazing several stalls rather than one sit-down meal",
+      "It's busiest and most alive around lunchtime; a few stalls start closing by mid-afternoon"
+    ]
+  },
+  {
+    id: "higashi-chaya",
+    name: "Higashi Chaya District",
+    category: "attraction",
+    region: "north",
+    shortDescription: "Kanazawa's historic geisha teahouse quarter",
+    description:
+      "The largest and best-preserved of Kanazawa's three historic geisha districts, dating to 1820. Lattice-fronted wooden teahouses (chaya) line the main street, several now converted into gold-leaf craft shops and cafés — Kanazawa produces almost all of Japan's gold leaf, and gold-flecked soft-serve ice cream is the local novelty souvenir food.",
+    image: "./images/higashi-chaya.jpg",
+    address: "Higashiyama, Kanazawa, Ishikawa",
+    coords: [36.5701, 136.6667],
+    tags: ["culture", "view"],
+    difficulty: "easy",
+    tips: [
+      "Kanazawa produces almost all of Japan's gold leaf — look for gold-leaf ice cream and cosmetics shops along the main street",
+      "Early evening light on the lattice facades is the best time for photos"
     ]
   },
 
-  // ---------- SOUTH (Kansai: Kyoto / Nara / Osaka / Himeji) ----------
+  // ---------- SOUTH (Kyoto / Nara) ----------
   {
     id: "gion-district",
     name: "Gion",
@@ -324,13 +539,31 @@ export const attractions: POI[] = [
     ]
   },
   {
+    id: "nishiki-market",
+    name: "Nishiki Market",
+    category: "attraction",
+    region: "south",
+    shortDescription: "'Kyoto's Kitchen' — a five-block covered food street",
+    description:
+      "A narrow, roofed shopping street running five blocks through central Kyoto, trading fresh and prepared food for over 400 years — earning it the nickname 'Kyoto's Kitchen'. Pickles, skewered mochi, fresh yuba, and Kyoto-style sweets are sold stall after stall, most sized for eating on your feet.",
+    image: "./images/nishiki-market.jpg",
+    address: "Nishikikoji-dori, Nakagyo Ward, Kyoto",
+    coords: [35.0049, 135.7649],
+    tags: ["food", "culture"],
+    difficulty: "easy",
+    tips: [
+      "Eating while walking is generally frowned on elsewhere in Japan but is exactly the point here — most stalls expect it",
+      "It gets narrow and crowded midday — an early-afternoon visit is more comfortable"
+    ]
+  },
+  {
     id: "fushimi-inari",
     name: "Fushimi Inari Taisha",
     category: "attraction",
     region: "south",
     shortDescription: "Thousands of vermillion torii gates up the mountain",
     description:
-      "The head shrine of Inari, the Shinto god of rice, sake and prosperity — dating back to 711 AD. Thousands of vermillion torii gates, each donated by a business or individual, form tunnels climbing Mt Inari. Free and open 24 hours; the full loop is a 2–3 hour hike, but the first 30–40 minutes covers the iconic gate tunnels.",
+      "The head shrine of Inari, the Shinto god of rice, sake and prosperity — dating back to 711 AD. Thousands of vermillion torii gates, each donated by a business or individual, form tunnels climbing Mt Inari. Free and open 24 hours; the full loop is a 2–3 hour hike, but the first 30–45 minutes covers the iconic gate tunnels.",
     image: "./images/fushimi-inari.jpg",
     imageCredit: {
       author: "Basile Morin",
@@ -343,7 +576,7 @@ export const attractions: POI[] = [
     tags: ["culture", "nature"],
     difficulty: "moderate",
     tips: [
-      "Go at opening (the gates are open 24/7, but arrive by 07:30) — it's a crowd crush by mid-morning",
+      "Open 24/7 and far less crowded toward late afternoon than at midday",
       "You don't need to summit — the first stretch of gates is the photogenic part"
     ],
     quizFacts: [
@@ -355,44 +588,74 @@ export const attractions: POI[] = [
     ]
   },
   {
-    id: "kiyomizu-dera",
-    name: "Kiyomizu-dera",
+    id: "ginkaku-ji",
+    name: "Ginkaku-ji — the Silver Pavilion",
     category: "attraction",
     region: "south",
-    shortDescription: "A wooden temple stage built without a single nail",
+    shortDescription: "Despite the name, never actually covered in silver",
     description:
-      "A UNESCO World Heritage temple founded in 780 AD, famous for its wooden veranda jutting out over the hillside — built using an interlocking joinery technique with no nails at all. Leads directly into Higashiyama's historic sloped lanes, Sannenzaka and Ninenzaka.",
-    image: "./images/kiyomizu-dera.jpg",
-    imageCredit: {
-      author: "柳田亮 (Ryo Yanagita)",
-      license: "CC BY-SA 3.0",
-      source: "https://commons.wikimedia.org/wiki/File:Kiyomizutera(Kyomizu_no_Butai)_-_panoramio.jpg"
-    },
-    website: "https://www.kiyomizudera.or.jp/en/",
-    address: "1 Chome-294 Kiyomizu, Higashiyama Ward, Kyoto",
-    coords: [34.9949, 135.7850],
-    tags: ["culture", "view"],
-    difficulty: "moderate",
+      "A Zen temple built in 1482 as a shogun's retirement villa, deliberately understated in dark wood rather than the silver leaf its name promises — the silver covering was planned but never applied. Its raked white-sand garden, shaped into a cone said to represent Mt Fuji, sits beside a moss garden and pond walk.",
+    image: "./images/ginkaku-ji.jpg",
+    address: "2 Ginkakujicho, Sakyo Ward, Kyoto",
+    coords: [35.0270, 135.7982],
+    tags: ["culture", "nature"],
+    difficulty: "easy",
     tips: [
-      "Sannenzaka and Ninenzaka's stone steps are uneven and can be slippery when wet — avoid heeled shoes",
-      "The temple's main hall stage view is best in the soft morning or late-afternoon light"
+      "The Philosopher's Path starts right outside the temple gate — a natural next stop heading south",
+      "Despite the name, there's no actual silver here — don't expect a golden-pavilion-style shine"
     ],
     quizFacts: [
       {
-        question: "What is unusual about how Kiyomizu-dera's famous wooden stage was built?",
-        correctAnswer: "It was built with no nails at all",
-        distractors: ["It was built in a single day", "It floats on the pond below", "It's made entirely of stone"]
+        question: "Why is the Silver Pavilion (Ginkaku-ji) not actually silver?",
+        correctAnswer: "The planned silver-leaf covering was never applied",
+        distractors: ["It was stolen during a war", "It's silver but only visible at night", "It was originally silver but faded over centuries"]
       }
     ]
   },
   {
+    id: "philosophers-path",
+    name: "Philosopher's Path",
+    category: "attraction",
+    region: "south",
+    shortDescription: "A canal-side walk named for a wandering professor",
+    description:
+      "A roughly two-kilometer stone path following a cherry-tree-lined canal between Ginkaku-ji and Nanzen-ji, named for a 20th-century Kyoto University philosophy professor who reportedly walked it daily lost in thought. Quiet, flat, and shaded — a gentle way to link the two temples on foot.",
+    image: "./images/philosophers-path.jpg",
+    address: "Philosopher's Path, Sakyo Ward, Kyoto",
+    coords: [35.0180, 135.7950],
+    tags: ["nature", "view"],
+    difficulty: "easy",
+    tips: [
+      "The path is flat and shaded — an easy, unhurried 30–40 minute walk end to end",
+      "Small cafés and craft shops line parts of the route if anyone wants to break up the walk"
+    ]
+  },
+  {
+    id: "nanzen-ji",
+    name: "Nanzen-ji",
+    category: "attraction",
+    region: "south",
+    shortDescription: "A vast temple complex with a red-brick aqueduct",
+    description:
+      "One of Kyoto's largest and most important Zen temple complexes, its grounds crossed by an unexpected red-brick Meiji-era aqueduct (the Suirokaku) still carrying water from Lake Biwa — a striking piece of 19th-century engineering dropped into a centuries-old temple setting.",
+    image: "./images/nanzen-ji.jpg",
+    address: "86 Nanzenji Fukuchicho, Sakyo Ward, Kyoto",
+    coords: [35.0117, 135.7947],
+    tags: ["culture"],
+    difficulty: "easy",
+    tips: [
+      "The red-brick aqueduct arches are a favorite, slightly unexpected photo spot inside an otherwise classical temple complex",
+      "The grounds are large — budget at least 30–45 minutes to see the main areas without rushing"
+    ]
+  },
+  {
     id: "arashiyama-bamboo",
-    name: "Arashiyama Bamboo Grove",
+    name: "Arashiyama Bamboo Grove & Tenryu-ji",
     category: "attraction",
     region: "south",
     shortDescription: "A towering green corridor, best at sunrise",
     description:
-      "A dense, soaring bamboo corridor on Kyoto's western edge — free, open 24/7, and genuinely magical in the first hour after sunrise before tour groups arrive. Tenryu-ji temple next door, a UNESCO World Heritage site with a landscaped strolling garden, is usually far quieter than the grove itself.",
+      "A dense, soaring bamboo corridor on Kyoto's western edge — free, open 24/7, and genuinely magical in the first hour after sunrise before tour groups arrive. Tenryu-ji temple next door, a UNESCO World Heritage site with a landscaped strolling garden, is usually far quieter than the grove itself. The Togetsukyo Bridge over the Katsura River, a few minutes further, is Arashiyama's classic postcard view, and the calm Hozugawa river boat ride departs from nearby.",
     image: "./images/arashiyama-bamboo.jpg",
     imageCredit: {
       author: "Naokijp",
@@ -405,31 +668,7 @@ export const attractions: POI[] = [
     difficulty: "easy",
     tips: [
       "Go before 08:00 — by mid-morning it's a slow-moving crowd of tour groups",
-      "Rent a bicycle near the station to cover the wider Sagano area faster"
-    ]
-  },
-  {
-    id: "kinkaku-ji",
-    name: "Kinkaku-ji — the Golden Pavilion",
-    category: "attraction",
-    region: "south",
-    shortDescription: "A gold-leaf pavilion reflected in its pond",
-    description:
-      "A Zen Buddhist temple whose top two floors are entirely covered in gold leaf, built originally as a shogun's retirement villa in 1397 and rebuilt after a 1950 fire. Its reflection in the surrounding pond is one of Kyoto's most photographed sights — especially framed by autumn foliage in mid-November.",
-    image: "./images/kinkaku-ji.jpg",
-    imageCredit: {
-      author: "Basile Morin",
-      license: "CC BY-SA 4.0",
-      source: "https://commons.wikimedia.org/wiki/File:Water_reflection_of_Kinkaku-ji_Temple_with_a_tree_on_a_rock_in_the_pond,_Kyoto,_Japan.jpg"
-    },
-    website: "https://www.shokoku-ji.jp/en/kinkakuji/",
-    address: "1 Kinkakujicho, Kita Ward, Kyoto",
-    coords: [35.0394, 135.7292],
-    tags: ["culture", "view"],
-    difficulty: "easy",
-    tips: [
-      "The walking route is one-way and doesn't allow lingering right at the best photo spot — take your shot and keep moving, you'll get another angle further along",
-      "Weekday mornings are noticeably calmer than weekends"
+      "The Hozugawa river boat ride runs weather-dependent — check availability the same morning"
     ]
   },
   {
@@ -487,105 +726,27 @@ export const attractions: POI[] = [
     ]
   },
   {
-    id: "osaka-castle",
-    name: "Osaka Castle",
+    id: "kasuga-taisha",
+    name: "Kasuga Taisha",
     category: "attraction",
     region: "south",
-    shortDescription: "A rebuilt 16th-century keep in a vast park",
+    shortDescription: "A shrine lined with thousands of stone and bronze lanterns",
     description:
-      "Originally built in 1583 by Toyotomi Hideyoshi, the general who unified Japan, and rebuilt in concrete in 1931 after fire and war destroyed the original. The museum inside covers Hideyoshi's story, and the top-floor observation deck gives a full skyline view over the surrounding park.",
-    image: "./images/osaka-castle.jpg",
-    imageCredit: {
-      author: "Don Ramey Logan",
-      license: "CC BY 4.0",
-      source: "https://commons.wikimedia.org/wiki/File:Osaka_Castle_2_Osaka_Japan_by_Don_Ramey_Logan.jpg"
-    },
-    website: "https://www.osakacastle.net/",
-    address: "1-1 Osakajo, Chuo Ward, Osaka",
-    coords: [34.6873, 135.5262],
-    tags: ["culture", "view", "family"],
+      "Nara's most important Shinto shrine, founded in 768 AD, approached along a forested path lined with thousands of stone lanterns donated by worshippers over the centuries, and hung inside with thousands more in bronze. Twice a year, at the Lantern Festivals, every one of them is lit at once.",
+    image: "./images/kasuga-taisha.jpg",
+    address: "160 Kasugano-cho, Nara",
+    coords: [34.6813, 135.8482],
+    tags: ["culture", "nature"],
     difficulty: "easy",
     tips: [
-      "The park around the castle is huge and pleasant for a slow walk — allow extra time in autumn foliage season",
-      "There's an elevator to the upper floors, useful with strollers or tired legs"
-    ]
-  },
-  {
-    id: "dotonbori",
-    name: "Dotonbori & Kuromon Market",
-    category: "attraction",
-    region: "south",
-    shortDescription: "Neon canal-side street food chaos",
-    description:
-      "Osaka's most famous entertainment strip, lined with oversized illuminated signs (the running Glico man is the icon) and street food stalls selling takoyaki and okonomiyaki along the canal. Kuromon Ichiba Market, a short walk away, is a calmer, mostly-indoor version of the same grazing experience.",
-    image: "./images/dotonbori.jpg",
-    imageCredit: {
-      author: "Martin Falbisoner",
-      license: "CC BY-SA 4.0",
-      source: "https://commons.wikimedia.org/wiki/File:Dotonbori,_Osaka,_at_night,_November_2016.jpg"
-    },
-    address: "Dotonbori, Chuo Ward, Osaka",
-    coords: [34.6687, 135.5013],
-    tags: ["food", "culture"],
-    difficulty: "easy",
-    tips: [
-      "Kuromon Market stalls are cash, stand-and-eat — bring small bills",
-      "Dotonbori is loud and crowded most evenings — go earlier in the day for a calmer visit"
-    ]
-  },
-  {
-    id: "universal-studios-japan",
-    name: "Universal Studios Japan",
-    category: "attraction",
-    region: "south",
-    shortDescription: "Super Nintendo World and the Wizarding World of Harry Potter",
-    description:
-      "A full-day theme park whose headline draws are the immersive Super Nintendo World area (Mario Kart ride included) and the Wizarding World of Harry Potter. Both areas require timed-entry passes booked through the official app, separate from park admission.",
-    image: "./images/universal-studios-japan.jpg",
-    imageCredit: {
-      author: "Jpatokal",
-      license: "CC BY-SA 4.0",
-      source: "https://commons.wikimedia.org/wiki/File:USJ_Super_Nintendo_World_overview.jpg"
-    },
-    website: "https://www.usj.co.jp/e/",
-    address: "2 Chome-1-33 Sakurajima, Konohana Ward, Osaka",
-    coords: [34.6658, 135.4323],
-    tags: ["family", "extreme"],
-    difficulty: "moderate",
-    bookingNote: "Book Express Pass tickets in advance for the headline rides on weekends.",
-    tips: [
-      "Grab the app's timed-entry passes for Super Nintendo World and the Harry Potter area the moment the park opens",
-      "A portable phone charger is essential — the app is used constantly for wait times and passes"
-    ]
-  },
-  {
-    id: "himeji-castle",
-    name: "Himeji Castle",
-    category: "attraction",
-    region: "south",
-    shortDescription: "The best-preserved original castle keep in Japan",
-    description:
-      "Nicknamed 'White Heron Castle' for its brilliant white plastered walls, and Japan's best-preserved original castle keep — it survived WWII bombing and centuries of earthquakes essentially untouched. A UNESCO World Heritage Site and widely considered Japan's most beautiful surviving castle.",
-    image: "./images/himeji-castle.jpg",
-    imageCredit: {
-      author: "Bernard Gagnon",
-      license: "CC BY-SA 3.0",
-      source: "https://commons.wikimedia.org/wiki/File:Château_de_Himeji02.jpg"
-    },
-    website: "https://www.himejicastle.jp/en/",
-    address: "68 Honmachi, Himeji, Hyogo",
-    coords: [34.8394, 134.6939],
-    tags: ["culture", "view"],
-    difficulty: "moderate",
-    tips: [
-      "The keep's interior has steep, traditional wooden stairs across six floors — pace it for younger kids or anyone with knee trouble",
-      "Combo tickets covering the castle and the adjacent Koko-en Garden cost less than buying separately"
+      "The approach path through the forest is as much a highlight as the shrine buildings themselves",
+      "Deer roam here too, just as freely as in the main park"
     ],
     quizFacts: [
       {
-        question: "Why is Himeji Castle nicknamed 'White Heron Castle'?",
-        correctAnswer: "Its brilliant white plastered walls",
-        distractors: ["A flock of herons lives in its moat", "It was designed by a man named Heron", "It's shaped like a bird from above"]
+        question: "About how many stone lanterns line the forest path up to Kasuga Taisha?",
+        correctAnswer: "About 3,000",
+        distractors: ["About 30", "About 300", "About 30,000"]
       }
     ]
   }

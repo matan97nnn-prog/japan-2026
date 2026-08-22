@@ -85,6 +85,34 @@ const TARGETS = [
   [
     "owakudani-ropeway.jpg",
     { commons: "File:Owakudani's cable car, Japan; October 2017.jpg" }
+  ],
+  // Chureito Pagoda with Mt Fuji behind it — Fujiyoshida
+  [
+    "fuji-chureito-pagoda-hero.jpg",
+    { commons: "File:Chureito Pagoda and Mount Fuji.jpg" }
+  ],
+  // Matsumoto Castle ("Crow Castle") — black wooden keep with moat
+  [
+    "matsumoto-castle-hero.jpg",
+    { commons: "File:Matsumoto Castle05s5s4592.jpg" }
+  ],
+  // Kappa Bridge over the Azusa River, Hotaka mountains behind — Kamikochi
+  [
+    "kamikochi-kappa-bridge-hero.jpg",
+    { commons: "File:251023 Hotaka mountain range as seen from Kappa Bridge.jpg" }
+  ],
+  // Classic Ogimachi overview — Shirakawa-go gassho-zukuri village
+  [
+    "shirakawa-go-hero.jpg",
+    {
+      commons:
+        "File:Overview of Ogimachi, Shirakawa, from the Ogimachi Castle observation point.jpg"
+    }
+  ],
+  // Kenrokuen Garden, Kanazawa, with yukitsuri (rope-supported pine trees)
+  [
+    "kanazawa-kenrokuen-hero.jpg",
+    { commons: "File:Fountain and Yukizuri of Kenroku Garden.JPG" }
   ]
 ];
 

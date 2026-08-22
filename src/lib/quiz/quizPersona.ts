@@ -202,7 +202,8 @@ ${distributionText}
 (F) Difficulty mix: about 40% easy headline facts ("what colour are
     the gates at Fushimi Inari?"), 40% medium story details ("what
     animal is said to add years to your life at Owakudani?"), and
-    ~20% harder fun-facts ("how tall is Tokyo Skytree?").
+    ~20% harder fun-facts ("about how many steps climb to Chureito
+    Pagoda's viewpoint?").
 
 (G) Attraction + Japanese-word questions must be ANSWERABLE from the
     blocks below (or obvious paraphrases of the same facts). General

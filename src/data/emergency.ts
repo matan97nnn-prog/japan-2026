@@ -59,21 +59,54 @@ export const emergencyGroups: EmergencyGroup[] = [
     ]
   },
   {
-    title: "Hospitals — Osaka / Himeji",
+    title: "Hospitals — Hakone / Fuji / Matsumoto / Takayama",
     items: [
       {
-        label: "Osaka General Medical Center",
-        value: "3-1-56 Bandai-Higashi, Sumiyoshi Ward, Osaka",
-        detail: "Large public hospital with a full emergency department",
+        label: "Hakone Hospital",
+        value: "160 Miyanoshita, Hakone, Kanagawa",
+        detail: "Small local hospital serving the Hakone area",
         type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=34.6106,135.5106"
+        link: "https://www.google.com/maps/dir/?api=1&destination=35.2431,139.0472"
       },
       {
-        label: "Himeji Red Cross Hospital",
-        value: "399 Funakoshi-cho, Himeji, Hyogo",
-        detail: "Main hospital serving Himeji, has an ER",
+        label: "Fuji-Yoshida Municipal Medical Center",
+        value: "2-11-1 Kamiyoshida, Fujiyoshida, Yamanashi",
+        detail: "Main hospital serving the Fuji Five Lakes area",
         type: "address",
-        link: "https://www.google.com/maps/dir/?api=1&destination=34.8283,134.6931"
+        link: "https://www.google.com/maps/dir/?api=1&destination=35.4867,138.8064"
+      },
+      {
+        label: "Shinshu University Hospital, Matsumoto",
+        value: "3-1-1 Asahi, Matsumoto, Nagano",
+        detail: "Major teaching hospital with a full emergency department",
+        type: "address",
+        link: "https://www.google.com/maps/dir/?api=1&destination=36.2274,137.9506"
+      },
+      {
+        label: "Takayama Red Cross Hospital",
+        value: "3-11 Tenmancho, Takayama, Gifu",
+        detail: "Main hospital serving Takayama and the surrounding area, has an ER",
+        type: "address",
+        link: "https://www.google.com/maps/dir/?api=1&destination=36.1425,137.2542"
+      }
+    ]
+  },
+  {
+    title: "Hospitals — Kanazawa",
+    items: [
+      {
+        label: "Kanazawa University Hospital",
+        value: "13-1 Takaramachi, Kanazawa, Ishikawa",
+        detail: "Major teaching hospital with a full emergency department",
+        type: "address",
+        link: "https://www.google.com/maps/dir/?api=1&destination=36.5507,136.6497"
+      },
+      {
+        label: "Kanazawa Municipal Hospital",
+        value: "3-7-3 Heiwamachi, Kanazawa, Ishikawa",
+        detail: "Public hospital with an ER, close to central Kanazawa",
+        type: "address",
+        link: "https://www.google.com/maps/dir/?api=1&destination=36.5544,136.6486"
       }
     ]
   },
