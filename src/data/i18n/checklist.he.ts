@@ -3,8 +3,8 @@ import type { ChecklistItem } from "../types";
 export const checklistHE: Record<string, Partial<Pick<ChecklistItem, "text" | "detail">>> = {
   // Booking
   "book-flights": {
-    text: "אישור טיסות flydubai (תל אביב ↔ דובאי ↔ טוקיו)",
-    detail: "בדקו שזמן ההחלפה בדובאי בשני הכיוונים נוח, ושכל ארבעת השמות תואמים בדיוק לדרכונים."
+    text: "טיסות Emirates (תל אביב ↔ דובאי ↔ טוקיו) — קודי הזמנה HG8ZCN ו-I5JSFN",
+    detail: "קודי ההזמנה של Emirates: HG8ZCN ו-I5JSFN. בדקו שזמן ההחלפה בדובאי בשני הכיוונים נוח, ושכל ארבעת השמות תואמים בדיוק לדרכונים."
   },
   "idp-driving-license": {
     text: "רישיון נהיגה בינלאומי (IDP) למי שנוהג",

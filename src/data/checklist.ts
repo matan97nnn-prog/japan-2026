@@ -3,8 +3,9 @@ import type { ChecklistItem } from "./types";
 export const bookingChecklist: ChecklistItem[] = [
   {
     id: "book-flights",
-    text: "Confirm flydubai flights (Tel Aviv ↔ Dubai ↔ Tokyo)",
-    detail: "Check the connection time in Dubai both ways is comfortable, and that all four names match passports exactly."
+    text: "Emirates flights (Tel Aviv ↔ Dubai ↔ Tokyo) — booking refs HG8ZCN and I5JSFN",
+    detail: "Emirates booking references: HG8ZCN and I5JSFN. Check the connection time in Dubai both ways is comfortable, and that all four names match passports exactly.",
+    done: true
   },
   {
     id: "idp-driving-license",
