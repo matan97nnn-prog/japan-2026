@@ -154,17 +154,6 @@ export const dishes: Dish[] = [
     }
   },
   {
-    id: "kakinoha-zushi",
-    name: "Kakinoha-zushi",
-    nativeName: "柿の葉寿司",
-    region: "south",
-    category: "main",
-    description:
-      "Pressed sushi wrapped in persimmon leaves — a preservation technique from long before refrigeration that turned into Nara's signature local dish.",
-    tryIt: "Nara",
-    image: "./images/food-kakinohazushi.jpg"
-  },
-  {
     id: "wagyu",
     name: "Wagyu beef",
     nativeName: "和牛",

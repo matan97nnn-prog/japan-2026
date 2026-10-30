@@ -21,12 +21,13 @@ import { formatRecentChatBlock, type ChatTurn } from "./chatHistory";
 /* ------------------------------------------------------------------ */
 
 const TRIP_FACTS = {
-  startDate: "2026-11-01",
+  startDate: "2026-10-30",
   endDate: "2026-11-17",
   travellers: "The Stein family: Eti, Ronen, Matan and Amit",
   cars: "A rental car (Toyota Noah Hybrid) from Odawara (Nov 4) to Kanazawa (returned Nov 9, by 20:00) covers Hakone through the Alps; everything before and after that is trains and on foot",
   bases: [
-    "Tokyo — Shinjuku then Asakusa",
+    "Larnaca (one night, 30.10)",
+    "Tokyo — Ginza/Tsukiji (Keihan Tsukiji Ginza Grande), and again at the end (hotel TBD)",
     "Hakone",
     "Fuji Five Lakes (Kawaguchiko)",
     "Matsumoto",
@@ -36,7 +37,7 @@ const TRIP_FACTS = {
   ],
   // Per-person plan facts that AREN'T derivable from the itinerary data —
   // keep them here and update when the plan changes.
-  planNotes: [] as string[]
+  planNotes: ["Dad (Ronen) turns 60 on 6 Nov — birthday dinner in Matsumoto", "Return flight date (17 or 18 Nov) and the Kanazawa, Kyoto and final Tokyo hotels are still undecided", "Adults only: parents about 60, kids 30 and 23 — no child-oriented suggestions"] as string[]
 } as const;
 
 /* ------------------------------------------------------------------ */
@@ -331,7 +332,7 @@ export function buildSystemPrompt(lang: Lang): string {
     FAMILY_PROFILES,
     "",
     trip,
-    `  - Dates: ${TRIP_FACTS.startDate} to ${TRIP_FACTS.endDate} (17 days, 16 nights)`,
+    `  - Dates: ${TRIP_FACTS.startDate} to ${TRIP_FACTS.endDate} (arriving Japan 1 Nov; return date still open)`,
     `  - Travellers: ${TRIP_FACTS.travellers}`,
     `  - Getting around: ${TRIP_FACTS.cars}`,
     `  - Bases: ${TRIP_FACTS.bases.join(" + ")}`,

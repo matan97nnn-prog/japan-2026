@@ -24,37 +24,37 @@ export const tips: Tip[] = [
   },
   {
     id: "kamikochi-no-private-cars",
-    title: "Kamikochi bans private cars — park at Sawando",
+    title: "Kamikochi bans private cars — park at Hirayu",
     body:
-      "The Kamikochi valley itself is closed to private vehicles to protect it. Park at Sawando and take the shuttle bus or taxi in — reserve a spot ahead of the day if possible, since it's the only way in or out.",
+      "The valley is closed to private cars. Since we continue to Takayama, park at Hirayu (Akandana) and take the bus up (~25 min). Last bus down is around 17:30 — check the timetable. Kamikochi closes for the season on 15 Nov.",
     severity: "warning"
   },
   {
     id: "takkyubin-shipping-plan",
-    title: "Takkyubin: three planned luggage shipments",
+    title: "Takkyubin: send the big suitcases ahead",
     body:
-      "Big suitcases travel by Takkyubin door-to-door service instead of being carried on every train and drive: (1) da Haus Shinjuku → Ryokan Warabino (Takayama), sent the morning of Nov 4, arriving in 3–4 days; (2) Matsumoto Hotel Kagetsu → Richmond Hotel Premier Kyoto Shijo, sent Nov 6; (3) Richmond Hotel Kyoto → The Gate Hotel Kaminarimon (Tokyo), sent Nov 13 or 14. Keep medications, chargers, a change of clothes and any documents in the bag that travels with you instead.",
+      "Suitcases go door to door so we travel light: (1) Keihan Ginza → fav Hida Takayama, sent the morning of 4.11 (arrives in 2–3 days); (2) from Takayama or Kanazawa → the Kyoto hotel, once chosen; (3) Kyoto → the last Tokyo hotel. Keep medicine, chargers, documents and a change of clothes with you.",
     severity: "info"
   },
   {
     id: "jr-pass-nozomi",
-    title: "JR Pass covers Hikari and Kodama — never Nozomi",
+    title: "Shinkansen: Hikari yes, Nozomi no (with a JR Pass)",
     body:
-      "A 14-day JR Pass is the right call for this trip's long legs — Kanazawa↔Kyoto and Kyoto↔Tokyo, plus some local JR lines. It does not cover the Nozomi Shinkansen class; boarding one with the pass isn't valid. On the Kyoto→Tokyo leg specifically, choose Hikari.",
+      "If we buy a JR Pass, it covers Hikari and Kodama but not Nozomi — take Hikari from Kyoto to Tokyo. Kanazawa → Kyoto now needs a change at Tsuruga (Shinkansen, then Thunderbird). Compare the pass with single tickets before buying.",
     severity: "warning"
   },
   {
     id: "nov3-holiday-crowds",
-    title: "Nov 3 is Culture Day — a national holiday",
+    title: "3.11 is Culture Day — a national holiday",
     body:
-      "The Nikko day trip lands on Bunka no Hi (Culture Day), a Japanese public holiday. Nikko and the trains to it get significantly busier than a normal weekday — an early departure and reserved seats aren't optional today.",
+      "Bunka no Hi celebrates culture and the arts. Meiji Jingu closes its autumn festival with yabusame (horseback archery), usually around 13:00, free. Expect crowds at shrines and Shibuya; Tsukiji market is likely closed. Book Shibuya Sky ahead.",
     severity: "warning"
   },
   {
     id: "onsen-tattoos",
     title: "Onsen & tattoos — check before you go",
     body:
-      "Many traditional onsen and ryokan baths still refuse entry to visitors with visible tattoos, a legacy of tattoos' association with organized crime. Some are relaxing the rule or offer private baths as a workaround — ask directly with the Hakone or Takayama ryokan if this applies to anyone in the group.",
+      "Many onsen still refuse visible tattoos. Private (kashikiri) baths are the easy workaround — Hirayu no Mori and several Hakone baths offer them.",
     severity: "warning"
   },
   {
@@ -68,7 +68,7 @@ export const tips: Tip[] = [
     id: "shoes-off",
     title: "Shoes off indoors — watch for the genkan",
     body:
-      "Ryokan, many restaurants, temples and any home all have a genkan (entryway) where shoes come off, often with slippers provided. Wear socks without holes and shoes that slip on and off easily — with three ryokan stays on this trip, you'll be doing this often.",
+      "Onsen, many restaurants and temples have a genkan where shoes come off. Socks without holes and shoes that slip on and off easily.",
     severity: "info"
   },
   {
@@ -82,7 +82,7 @@ export const tips: Tip[] = [
     id: "cash-still-needed",
     title: "Carry cash — not everywhere takes card",
     body:
-      "Cards and IC cards are widely accepted in cities now, but small izakaya, temple grounds, morning markets and rural spots (Nikko, the Fuji lakes, Takayama, gas stations along the drive) are still often cash-only. 7-Eleven and Japan Post Bank ATMs reliably accept foreign cards for withdrawals.",
+      "Cards and IC cards are widely accepted in cities now, but small izakaya, temple grounds, morning markets and rural spots (the Fuji lakes, Takayama, Kurama, gas stations along the drive) are still often cash-only. 7-Eleven and Japan Post Bank ATMs reliably accept foreign cards for withdrawals.",
     severity: "warning"
   },
   {
@@ -94,9 +94,9 @@ export const tips: Tip[] = [
   },
   {
     id: "reserve-seats-foliage-season",
-    title: "Reserve seats ahead — this is peak autumn foliage season",
+    title: "Reserve seats — it's autumn foliage season",
     body:
-      "Early-to-mid November is peak koyo (autumn leaf) season and a busy domestic travel period. Reserve seats a few days ahead for the Tobu train to Nikko, the Thunderbird from Kanazawa to Kyoto, and the Hikari Shinkansen from Kyoto to Tokyo, rather than relying on unreserved cars, which can fill standing-room-only.",
+      "Early-to-mid November is busy. Reserve the Kanazawa → Kyoto and Kyoto → Tokyo trains a few days ahead, with luggage space.",
     severity: "warning"
   }
 ];

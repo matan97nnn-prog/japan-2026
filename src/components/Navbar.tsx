@@ -7,11 +7,11 @@ import LanguageSwitcher from "./LanguageSwitcher";
 // supermarket) intentionally lives on the page but not in the nav.
 const links: { id: string; key: DictKey }[] = [
   { id: "trip",            key: "nav_plan" },
-  { id: "family-updates",  key: "nav_family_updates" },
   { id: "attractions",     key: "nav_attractions" },
   { id: "food",            key: "nav_food" },
   { id: "map",             key: "nav_map" },
   { id: "stays",           key: "nav_stays" },
+  { id: "notes",           key: "nav_notes" },
   { id: "tips",            key: "nav_tips" },
   { id: "checklist",       key: "nav_checklist" },
   { id: "emergency",       key: "nav_emergency" }

@@ -122,6 +122,14 @@ export interface Service extends POI {
   base: "north" | "south";
 }
 
+/** A Google Maps directions link for one leg — origin/destination are
+ *  place names Google can resolve ("Odawara Station", "Hakone Yutowa"). */
+export interface Directions {
+  from: string;
+  to: string;
+  mode: "transit" | "driving" | "walking";
+}
+
 export interface DayActivity {
   time?: string;
   title: string;
@@ -133,7 +141,10 @@ export interface DayActivity {
    *  meaningful drive between stops — skip for sub-5-minute hops or when
    *  the next activity is at the same place. Examples: "45 min", "1 h 15".
    *  `note` is a short hint like "via A1" or "winding mountain road". */
-   rideToNext?: { duration: string; note?: string; departAt?: string };
+   rideToNext?: { duration: string; note?: string; departAt?: string; dir?: Directions };
+  /** An extra link shown under the activity — a booking, a meeting point,
+   *  a Google Maps list. */
+  link?: { label: string; url: string };
   /** When true, render this activity with an "Optional" badge and slightly
    *  muted styling — signal to the family that the day's plan still works
    *  if they skip this one. When undefined, the chapter page applies a
@@ -207,7 +218,7 @@ export interface Day {
   /** Recommended time to leave the base/hotel in the morning (e.g. "08:30", "09:00"). */
   departureTime?: string;
   /** The first drive of the day from the base to the first activity. */
-  rideToFirst?: { duration: string; note?: string };
+  rideToFirst?: { duration: string; note?: string; dir?: Directions };
   region: Region;
   title: string;
   subtitle?: string;

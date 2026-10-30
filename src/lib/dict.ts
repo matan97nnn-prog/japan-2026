@@ -71,6 +71,7 @@ export const DICT = {
   nav_tips: { en: "Tips", he: "טיפים" },
   nav_checklist: { en: "Lists", he: "רשימות" },
   nav_family_updates: { en: "Updates", he: "עדכונים" },
+  nav_notes: { en: "Notes", he: "הערות" },
   nav_emergency: { en: "Emergency", he: "חירום" },
 
   badge_done: { en: "Done", he: "סיום" },
@@ -127,7 +128,7 @@ export const DICT = {
 
   /* ---------- Region / chapter labels ---------- */
   region_north_long: { en: "Tokyo to Kanazawa", he: "מטוקיו לקנזאווה" },
-  region_south_long: { en: "Kyoto & Nara", he: "קיוטו ונארה" },
+  region_south_long: { en: "Kyoto", he: "קיוטו" },
   region_transit_long: { en: "Transit", he: "מעבר" },
   region_north_short: { en: "North", he: "צפון" },
   region_south_short: { en: "South", he: "דרום" },
@@ -177,22 +178,22 @@ export const DICT = {
   map_spokes_on: { en: "Day trips on", he: "טיולי יום מוצגים" },
   map_spokes_off: { en: "Day trips off", he: "טיולי יום מוסתרים" },
   map_seg_arrival: {
-    en: "Day 1–4 · Tokyo to Hakone",
-    he: "ימים 1–4 · מטוקיו להקונה"
+    en: "1–4 Nov · Narita, Tokyo, Odawara, Hakone",
+    he: "1–4.11 · נריטה, טוקיו, אודווארה, האקונה"
   },
   map_seg_arrival_short: { en: "Sun · 1 Nov", he: "א' · 1 בנובמבר" },
   map_seg_transfer: {
-    en: "Day 4–11 · Hakone to Kanazawa & Kyoto",
-    he: "ימים 4–11 · מהקונה לקנזאווה וקיוטו"
+    en: "4–11 Nov · Road trip: Fuji, Alps, Kanazawa, then train to Kyoto",
+    he: "4–11.11 · רואד טריפ: פוג׳י, האלפים, קנאזאווה, ורכבת לקיוטו"
   },
   map_seg_transfer_short: { en: "Wed · 4 Nov", he: "ד' · 4 בנובמבר" },
   map_seg_departure: {
-    en: "Day 15–17 · Back to Tokyo and home",
-    he: "ימים 15–17 · חזרה לטוקיו והביתה"
+    en: "15 Nov → · Back to Tokyo and home",
+    he: "15.11 ← · חזרה לטוקיו והביתה"
   },
   map_seg_departure_short: {
-    en: "Sun–Tue · 15–17 Nov",
-    he: "א'–ג' · 15–17 בנובמבר"
+    en: "From Sun · 15 Nov",
+    he: "מיום א' · 15 בנובמבר"
   },
   map_zoom_fit: { en: "Zoom to fit all locations", he: "התאם תצוגה לכל המיקומים" },
   map_locate_me: { en: "Show my location", he: "הצג את המיקום שלי" },
@@ -533,7 +534,7 @@ export const DICT = {
   food_dishes_label: { en: "Signature dishes", he: "מנות דגל" },
   food_wineries_label: { en: "Sake & spirits to try", he: "סאקה ומשקאות לנסות" },
   food_filter_north: { en: "Tokyo to Kanazawa", he: "מטוקיו לקנזאווה" },
-  food_filter_south: { en: "Kyoto / Nara", he: "קיוטו / נארה" },
+  food_filter_south: { en: "Kyoto", he: "קיוטו" },
   food_filter_japan: { en: "Across Japan", he: "בכל יפן" },
   food_try_it: { en: "Try it at", he: "לטעום ב" },
   food_appellation: { en: "Grade", he: "דירוג" },
@@ -562,7 +563,8 @@ export const DICT = {
   open_external: { en: "Open", he: "פתח" },
 
   /* ---------- Ride times (inline connector between activities) ---------- */
-  ride_to_next: { en: "Drive", he: "נסיעה" },
+  ride_to_next: { en: "Getting there", he: "הדרך" },
+  directions_link: { en: "Route in Google Maps", he: "מסלול בגוגל מפות" },
   depart_at: { en: "Departure", he: "יציאה" },
 
   /* ---------- Restaurants for the day ---------- */

@@ -767,88 +767,82 @@ export const attractions: POI[] = [
     ]
   },
   {
-    id: "nara-deer-park",
-    name: "Nara Park — the bowing deer",
+    id: "meiji-jingu",
+    name: "Meiji Jingu",
     category: "attraction",
-    region: "south",
-    shortDescription: "Over 1,000 wild deer, considered sacred messengers",
+    region: "north",
+    shortDescription: "Tokyo's great forest shrine",
     description:
-      "A large park with over 1,000 wild sika deer roaming freely, considered messengers of the gods in local Shinto belief and protected as a national treasure. Vendors sell 'shika senbei' crackers, and many deer will bow their heads for one.",
-    image: "./images/nara-deer-park.jpg",
-    imageCredit: {
-      author: "MASA",
-      license: "CC BY-SA 3.0",
-      source: "https://commons.wikimedia.org/wiki/File:Nara-Park_Deer.jpg"
-    },
-    address: "Nara Park, Nara",
-    coords: [34.6851, 135.8430],
-    tags: ["family", "nature"],
-    difficulty: "easy",
-    tips: [
-      "Hold the cracker out flat and away from pockets or bags — deer will look for more if kept waiting",
-      "Most deer are gentle, but a few can nip at clothing — stay relaxed, don't tease them with a cracker"
-    ],
-    quizFacts: [
-      {
-        question: "What are Nara's deer traditionally considered to be, in local Shinto belief?",
-        correctAnswer: "Sacred messengers of the gods",
-        distractors: ["Escaped farm animals", "A modern tourist attraction with no history", "Guardians of the castle"]
-      }
-    ]
-  },
-  {
-    id: "nara-todaiji",
-    name: "Todai-ji",
-    category: "attraction",
-    region: "south",
-    shortDescription: "The world's largest wooden building",
-    description:
-      "A UNESCO World Heritage temple whose Great Buddha Hall (Daibutsuden) is the largest wooden building in the world, housing a 15 m bronze seated Buddha cast in 752 AD. One supporting pillar has a hole the exact size of the Buddha statue's nostril — local legend says children who squeeze through it are guaranteed enlightenment.",
-    image: "./images/nara-todaiji.jpg",
-    imageCredit: {
-      author: "ONO Masanobu",
-      license: "CC0",
-      source: "https://commons.wikimedia.org/wiki/File:Todai-ji_Daibutsuden_front_view_in_2011.jpg"
-    },
-    website: "https://www.todaiji.or.jp/en/",
-    address: "406-1 Zoshicho, Nara",
-    coords: [34.6889, 135.8398],
-    tags: ["culture", "family"],
-    difficulty: "easy",
-    tips: [
-      "The nostril-sized pillar hole is a fun, safe challenge for smaller kids — adults generally don't fit",
-      "Combine with the adjacent deer park in one visit"
-    ]
-  },
-  {
-    id: "kasuga-taisha",
-    name: "Kasuga Taisha",
-    category: "attraction",
-    region: "south",
-    shortDescription: "A shrine lined with thousands of stone and bronze lanterns",
-    description:
-      "Nara's most important Shinto shrine, founded in 768 AD, approached along a forested path lined with thousands of stone lanterns donated by worshippers over the centuries, and hung inside with thousands more in bronze. Twice a year, at the Lantern Festivals, every one of them is lit at once.",
-    image: "./images/kasuga-taisha.jpg",
-    imageCredit: {
-      author: "Wicki",
-      license: "Public Domain",
-      source: "https://commons.wikimedia.org/wiki/File:Lanterns_at_Kasuga_Taisha.JPG"
-    },
-    address: "160 Kasugano-cho, Nara",
-    coords: [34.6813, 135.8482],
+      "Shinto shrine to Emperor Meiji, set in a 70-hectare forest planted by volunteers a century ago. Huge wooden torii, barrels of sake donated by brewers, and a calm that's hard to believe next to Harajuku. On 3 November the autumn festival ends with yabusame — mounted archery.",
+    address: "1-1 Yoyogikamizonocho, Shibuya, Tokyo",
+    coords: [35.6764, 139.6993],
     tags: ["culture", "nature"],
     difficulty: "easy",
+    tips: ["Free; gates open at sunrise and close around sunset", "Enter from Harajuku station, leave toward Shibuya on foot"]
+  },
+  {
+    id: "kiyomizu-dera",
+    name: "Kiyomizu-dera",
+    category: "attraction",
+    region: "south",
+    shortDescription: "The wooden stage above the maples",
+    description:
+      "Hillside temple founded in 778, famous for its huge wooden veranda built without a single nail, jutting out over a valley of maples. The Otowa spring below gives the temple its name, 'pure water'.",
+    website: "https://www.kiyomizudera.or.jp/en/",
+    address: "1-294 Kiyomizu, Higashiyama, Kyoto",
+    coords: [34.9949, 135.785],
+    tags: ["culture", "view"],
+    difficulty: "easy",
+    tips: ["Walk down via Sannenzaka and Ninenzaka afterwards", "The autumn night viewing starts 21.11 — after we leave"]
+  },
+  {
+    id: "kodai-ji",
+    name: "Kodai-ji",
+    category: "attraction",
+    region: "south",
+    shortDescription: "Zen temple with a bamboo grove, lit up at night",
+    description:
+      "Built in 1606 by the widow of Toyotomi Hideyoshi. Raked gravel, a pond garden, gold-lacquer interiors and a short bamboo grove path. In autumn the gardens and bamboo are lit after dark — one of Kyoto's best night visits.",
+    website: "https://www.kodaiji.com/e/",
+    address: "526 Shimogawaracho, Higashiyama, Kyoto",
+    coords: [35.0007, 135.781],
+    tags: ["culture", "nature"],
+    difficulty: "easy",
+    openingNote: "Autumn night illumination 23 Oct – 13 Dec 2026, last entry 21:30, about ¥800"
+  },
+  {
+    id: "kurama-kibune",
+    name: "Kurama → Kibune hike",
+    category: "attraction",
+    region: "south",
+    shortDescription: "4 km forest trail between two mountain villages",
+    description:
+      "Classic half-day walk north of Kyoto. From Kurama station up past Yuki Shrine's 800-year-old cedar to the mountain temple Kurama-dera, over the ridge on the Kinone-michi path of exposed cedar roots, then down stone steps to Kibune — a riverside village and Kifune Shrine with its lantern-lined stairway.",
+    address: "Kurama, Sakyo Ward, Kyoto",
+    coords: [35.1167, 135.7708],
+    tags: ["nature", "culture", "village"],
+    difficulty: "moderate",
+    openingNote: "Kurama-dera gate ~9:00–16:00, entry ¥500 (cash). Eizan Railway from Demachiyanagi, ~30 min.",
     tips: [
-      "The approach path through the forest is as much a highlight as the shrine buildings themselves",
-      "Deer roam here too, just as freely as in the main park"
-    ],
-    quizFacts: [
-      {
-        question: "About how many stone lanterns line the forest path up to Kasuga Taisha?",
-        correctAnswer: "About 3,000",
-        distractors: ["About 30", "About 300", "About 30,000"]
-      }
+      "Start in Kurama — the descent into Kibune is gentler that way",
+      "≈ 4 km, 2–3 h with stops; ~300 m of climbing",
+      "From Kibune it's a 20-min walk (or short bus) to Kibuneguchi station"
     ]
+  },
+  {
+    id: "nijo-castle",
+    name: "Nijo Castle",
+    category: "attraction",
+    region: "south",
+    shortDescription: "Shogun's palace — with an autumn night show",
+    description:
+      "Built in 1603 for the first Tokugawa shogun. The Ninomaru Palace has 'nightingale floors' that chirp underfoot to warn of intruders. In autumn 2026 the 'NAKED meets Nijo Castle' event projects light art on the Karamon gate and palace after dark.",
+    website: "https://nijo-jocastle.city.kyoto.lg.jp/?lang=en",
+    address: "541 Nijojocho, Nakagyo Ward, Kyoto",
+    coords: [35.0142, 135.7481],
+    tags: ["culture"],
+    difficulty: "easy",
+    openingNote: "Night event 23 Oct – 5 Dec 2026, 18:00–22:00 (last entry 21:00), ¥2,000 Mon–Thu / ¥2,400 Fri–Sun. Book online."
   }
 ];
 

@@ -14,7 +14,7 @@ import PoiImage from "./PoiImage";
 
 const ROMAN = [
   "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
-  "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII"
+  "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX"
 ];
 
 const TAG_KEY: Record<string, DictKey> = {

@@ -24,8 +24,12 @@ import {
   Martini,
   Coffee,
   GlassWater,
-  Clock
+  Clock,
+  TrainFront,
+  Footprints,
+  Navigation
 } from "lucide-react";
+import { googleMapsDirUrl } from "../lib/nav";
 import { itinerary } from "../data/itinerary";
 import { getAttraction } from "../data/attractions";
 import { getService } from "../data/services";
@@ -37,6 +41,7 @@ import type {
   DayActivity,
   DayDrink,
   Difficulty,
+  Directions,
   ImageCredit,
   POI,
   Service,
@@ -60,7 +65,7 @@ import { useCarouselSwipe } from "../lib/useCarouselSwipe";
 
 const ROMAN = [
   "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
-  "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII"
+  "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX"
 ];
 
 const TAG_KEY: Record<string, DictKey> = {
@@ -642,6 +647,7 @@ function ChapterDetailContent({ day }: { day: Day }) {
                       departAt={localDay.departureTime}
                       duration={localDay.rideToFirst.duration}
                       note={localDay.rideToFirst.note}
+                      dir={localDay.rideToFirst.dir}
                     />
                   )}
                   <ActivityRow
@@ -658,6 +664,7 @@ function ChapterDetailContent({ day }: { day: Day }) {
                       duration={a.rideToNext.duration ?? ""}
                       note={a.rideToNext.note}
                       departAt={a.rideToNext.departAt}
+                      dir={a.rideToNext.dir}
                     />
                   )}
                 </Fragment>
@@ -998,6 +1005,16 @@ function ActivityRow({
             {activity.description}
           </p>
         )}
+        {activity.link && (
+          <a
+            href={activity.link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 inline-flex items-center gap-1.5 text-[12px] font-medium text-terracotta-600 hover:text-terracotta-700"
+          >
+            <ExternalLink size={12} /> {activity.link.label}
+          </a>
+        )}
 
         {hasMoreInfo && (
           <button
@@ -1114,16 +1131,19 @@ function ActivityRow({
  * activity rows. Visually it sits in the timeline column (left, where
  * the activity icons live) and threads a soft dashed line into the next
  * row, so the eye reads it as a connector rather than a separate item. */
-function RideConnector({ 
-  duration, 
-  note, 
-  departAt 
-}: { 
-  duration?: string; 
-  note?: string; 
+function RideConnector({
+  duration,
+  note,
+  departAt,
+  dir
+}: {
+  duration?: string;
+  note?: string;
   departAt?: string;
+  dir?: Directions;
 }) {
   const t = useT();
+  const ModeIcon = dir?.mode === "transit" ? TrainFront : dir?.mode === "walking" ? Footprints : Car;
   return (
     <li
       className="grid grid-cols-[40px_1fr] sm:grid-cols-[64px_1fr] gap-3 sm:gap-6 -mt-1 sm:-mt-2"
@@ -1134,7 +1154,7 @@ function RideConnector({
       <div className="relative flex justify-center">
         <span className="absolute inset-x-0 top-0 bottom-0 mx-auto w-px border-l border-dashed border-cream-300/90" />
         <span className="relative z-10 mt-1 inline-flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-cream-100 ring-1 ring-cream-300/80 text-olive-700">
-          <Car size={11} strokeWidth={1.9} />
+          <ModeIcon size={11} strokeWidth={1.9} />
         </span>
       </div>
       <div className="min-w-0 ps-1 pt-0.5">
@@ -1142,6 +1162,16 @@ function RideConnector({
           <span className="text-[10px] uppercase tracking-[0.22em] text-olive-700/85 font-medium">
             {departAt ? `${t("depart_at")} ${departAt} ${duration ? "· " + t("ride_to_next") : ""}` : t("ride_to_next")}
           </span>
+          {dir && (
+            <a
+              href={googleMapsDirUrl(dir.from, dir.to, dir.mode)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-[11px] font-medium text-terracotta-600 hover:text-terracotta-700"
+            >
+              <Navigation size={11} /> {t("directions_link")}
+            </a>
+          )}
           {duration && (
             <span className="font-serif text-[14px] sm:text-[15px] text-ink-900">
               {duration}

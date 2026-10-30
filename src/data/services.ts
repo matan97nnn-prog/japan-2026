@@ -176,19 +176,6 @@ export const services: Service[] = [
     hours: "Lunch"
   },
   {
-    id: "rest-s-nara-kakinoha",
-    name: "Kakinoha-zushi lunch — Nara",
-    category: "restaurant",
-    region: "south",
-    base: "south",
-    shortDescription: "Persimmon-leaf-wrapped sushi, a Nara tradition",
-    description:
-      "Kakinoha-zushi wraps pressed sushi in persimmon leaves, a preservation technique from long before refrigeration that turned into Nara's signature dish. Sold at small shops around the park and station.",
-    address: "Nara",
-    coords: [34.6836, 135.8310],
-    hours: "Lunch"
-  },
-  {
     id: "konbini-kyoto-station",
     name: "7-Eleven / FamilyMart — Kyoto Station",
     category: "supermarket",

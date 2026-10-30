@@ -119,7 +119,8 @@ export function localizeDay(d: Day, lang: "en" | "he"): Day {
       time: aHe?.time,
       title: aHe?.title,
       description: aHe?.description,
-      rideToNext: localizedRide
+      rideToNext: localizedRide,
+      link: a.link && aHe?.linkLabel ? { ...a.link, label: aHe.linkLabel } : a.link
     });
   });
   return { ...baseMerged, activities };

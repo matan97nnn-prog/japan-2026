@@ -29,7 +29,13 @@ export interface NavTarget {
 function buildSearchQuery(target: NavTarget): string {
   const trimmedName = target.name.trim();
   const addr = target.address?.trim();
-  return addr ? `${trimmedName}, ${addr}` : `${trimmedName}, Italy`;
+  return addr ? `${trimmedName}, ${addr}` : `${trimmedName}, Japan`;
+}
+
+/** Google Maps directions between two named places, in the given mode. */
+export function googleMapsDirUrl(from: string, to: string, mode: "transit" | "driving" | "walking"): string {
+  const q = (s: string) => encodeURIComponent(/japan/i.test(s) ? s : `${s}, Japan`);
+  return `https://www.google.com/maps/dir/?api=1&origin=${q(from)}&destination=${q(to)}&travelmode=${mode}`;
 }
 
 /**

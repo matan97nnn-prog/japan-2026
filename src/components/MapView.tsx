@@ -138,19 +138,19 @@ function categoryGlyph(cat: Category): string {
 }
 
 const AIRPORT_POI: POI = {
-  id: "hnd",
-  name: "Tokyo Haneda — HND",
+  id: "nrt",
+  name: "Tokyo Narita — NRT",
   category: "airport",
   region: "transit",
-  description: "Haneda Airport, closest to central Tokyo. Arrival 1 Nov (evening), departure 17 Nov.",
+  description: "Narita Airport. Arrival 1 Nov at 17:20 on EK318 from Dubai. Return flight still to be set.",
   shortDescription: "Arrival & departure airport.",
-  coords: [35.5494, 139.7798]
+  coords: [35.772, 140.3929]
 };
 
 const AIRPORT_POI_HE: POI = {
   ...AIRPORT_POI,
-  name: "טוקיו הנדה — HND",
-  description: "שדה התעופה הנדה, הקרוב ביותר למרכז טוקיו. נחיתה ב־1.11 (ערב), המראה ב־17.11.",
+  name: "טוקיו נריטה — NRT",
+  description: "שדה התעופה נריטה. נחיתה ב־1.11 בשעה 17:20 בטיסה EK318 מדובאי. טיסת החזור עוד לא נקבעה.",
   shortDescription: "שדה התעופה — נחיתה והמראה."
 };
 
@@ -171,7 +171,8 @@ const ROUTE_SEGMENTS: RouteSegment[] = [
     color: "#A23E2A", // brick — matches Stays
     coords: [
       AIRPORT_POI.coords,
-      [35.6938, 139.7034], // Tokyo (Shinjuku)
+      [35.6676, 139.7709], // Tokyo (Ginza / Tsukiji)
+      [35.2564, 139.1553], // Odawara (car pick-up)
       [35.2323, 139.0508] // Hakone
     ]
   },
@@ -185,7 +186,8 @@ const ROUTE_SEGMENTS: RouteSegment[] = [
       [35.5060, 138.7715], // Fuji Five Lakes (Kawaguchiko)
       [36.2400, 137.9715], // Matsumoto
       [36.2517, 137.6417], // Kamikochi
-      [36.1435, 137.2540], // Takayama
+      [36.2475, 137.5636], // Hirayu
+      [36.1408, 137.2514], // Takayama
       [36.2578, 136.9066], // Shirakawa-go
       [36.5775, 136.6485], // Kanazawa
       [34.9858, 135.7588] // Kyoto

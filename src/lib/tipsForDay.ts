@@ -2,20 +2,17 @@ import { tips } from "../data/tips";
 import type { Tip } from "../data/types";
 
 /**
- * Map each chapter (1-10) to the tip ids that are most relevant on that day.
+ * Map each chapter to the tip ids that are most relevant on that day.
  * Tips not mapped to a day still show in the global "Tips" section of the home page.
  */
 const TIP_IDS_PER_DAY: Record<number, string[]> = {
-  1: ["self-service-fuel"],
-  2: [],
-  3: [],
-  4: [],
-  5: [],
-  6: [],
-  7: [],
-  8: ["ztl"],
-  9: ["car-return-night-before"],
-  10: ["car-return-night-before"]
+  3: ["cash-still-needed"],
+  5: ["nov3-holiday-crowds"],
+  6: ["car-pickup-documents", "driving-on-the-left", "takkyubin-shipping-plan"],
+  9: ["kamikochi-no-private-cars", "onsen-tattoos"],
+  11: ["car-return-kanazawa"],
+  13: ["jr-pass-nozomi", "reserve-seats-foliage-season"],
+  17: ["jr-pass-nozomi"]
 };
 
 export function tipsForDay(dayNumber: number): Tip[] {

@@ -2,73 +2,117 @@ import type { ChecklistItem } from "./types";
 
 export const bookingChecklist: ChecklistItem[] = [
   {
+    id: "decide-return",
+    text: "Decide the return flight date (17 or 18.11)",
+    detail: "Everything at the end depends on it: the last Tokyo hotel, the free day, the airport transfer.",
+    urgent: true
+  },
+  {
+    id: "decide-hotels",
+    text: "Decide the open hotels: Kanazawa, Kyoto, end of Tokyo",
+    detail: "Kanazawa: SOKI vs the square hotel. Kyoto: Richmond Premier Shijo vs GLANZ KEI. Tokyo 15.11+: The Gate Kaminarimon (booked 15–17) or another. Cancel duplicates only after checking the cancellation terms.",
+    urgent: true
+  },
+  {
     id: "book-flights",
-    text: "Emirates flights (Tel Aviv ↔ Dubai ↔ Tokyo) — booking refs HG8ZCN and I5JSFN",
-    detail: "Emirates booking references: HG8ZCN and I5JSFN. Check the connection time in Dubai both ways is comfortable, and that all four names match passports exactly.",
+    text: "Emirates flights — booking refs HG8ZCN and I5JSFN",
+    detail: "EK110 Larnaca → Dubai 31.10 16:25; EK318 Dubai → Narita 1.11 02:55 → 17:20. Check that bags go through to Narita and that all four names match the passports.",
     done: true
+  },
+  {
+    id: "larnaca-hotel",
+    text: "Larnaca hotel for 30–31.10",
+    detail: "Add the hotel name to the site once known."
   },
   {
     id: "idp-driving-license",
     text: "International Driving Permit (IDP) for whoever drives",
-    detail: "Issued in Israel before departure (via the Ministry of Transport / motoring association), carried alongside the original Israeli license. Required, with the passport's Japan entry stamp, to collect the rental car in Odawara on Nov 4 — no IDP means no car.",
+    detail: "Carried with the original Israeli licence and passport. Without it — no car in Odawara on 4.11.",
     urgent: true
   },
   {
     id: "rental-car-confirmed",
-    text: "Rental car — Toyota Rent a Car, confirmation #99910376400",
-    detail: "Toyota Noah Hybrid, booked under RONEN STEIN. Pickup: Odawara Sta. Shinkansen Exit Shop, Nov 4, 10:00 (the day's schedule has the group arriving closer to 11:30 — worth a quick call to confirm). Return: Kanazawa Station, Shinkansen East Exit, by Nov 9, 20:00. Full insurance incl. NOC + ETC card included. Total paid: ¥150,040.",
+    text: "Rental car — Toyota Rent a Car #99910376400",
+    detail: "Noah Hybrid, under RONEN STEIN. Pick-up Odawara Sta. Shinkansen Exit, 4.11 10:00 (tel 0465-32-0100). Return Kanazawa Station East Exit by 9.11 20:00. NOC insurance + ETC card included.",
     done: true
   },
   {
     id: "hotels-booked",
-    text: "All 8 hotel/ryokan stays are booked",
-    detail: "da Haus Shinjuku (1–4 Nov) → Hakone Yutowa (4–5) → Kawaguchiko Urban Resort Villa (5–6) → Matsumoto Hotel Kagetsu (6–7) → Ryokan Warabino, Takayama (7–9) → SOKI Kanazawa (9–11) → Richmond Hotel Premier Kyoto Shijo (11–15) → The Gate Hotel Kaminarimon, Asakusa (15–17).",
+    text: "Booked: Keihan Ginza (1–4) · Hakone Yutowa (4–5) · Kawaguchiko Villa (5–6) · Matsumoto Kagetsu (6–7) · fav Hida Takayama (7–9)",
+    detail: "Keihan Tsukiji Ginza Grande booking 1788608896. Confirm every room has two real beds for four adults.",
+    done: true
+  },
+  {
+    id: "evening-tour",
+    text: "Tokyo evening tour 2.11 20:00 — booking 9022",
+    detail: "Hebrew Tour Guide Japan, meet at Gap Store Shinjuku Flagship. WhatsApp +81 80-4373-7268.",
     done: true
   },
   {
     id: "takkyubin-plan",
-    text: "Plan the 3 Takkyubin luggage shipments",
-    detail: "(1) da Haus Shinjuku → Ryokan Warabino, sent Nov 4 morning. (2) Matsumoto Hotel Kagetsu → Richmond Hotel Kyoto, sent Nov 6. (3) Richmond Hotel Kyoto → The Gate Hotel Kaminarimon, sent Nov 13 or 14. Ask each hotel's front desk to arrange it — most handle the paperwork directly."
+    text: "Plan the Takkyubin luggage shipments",
+    detail: "(1) Keihan Ginza → fav Hida Takayama, sent 4.11 morning. (2) Takayama/Kanazawa → the Kyoto hotel, once chosen. (3) Kyoto → the final Tokyo hotel. Front desks arrange it.",
   },
   {
-    id: "book-nikko-train",
-    text: "Reserve Tobu Limited Express seats to Nikko (3 Nov)",
-    detail: "Direct from Asakusa/Shinjuku. Nov 3 is Culture Day, a national holiday — reserve ahead, this route fills up."
+    id: "book-shibuya-sky",
+    text: "Shibuya Sky sunset tickets (3.11)",
+    detail: "Holiday + sunset slot sells out — book online."
+  },
+  {
+    id: "book-ide-sake",
+    text: "Ide Sake Brewery tour, Kawaguchiko (5.11, 15:00)",
+    detail: "¥500 incl. tasting. Book by 16:00 the day before."
+  },
+  {
+    id: "book-birthday-dinner",
+    text: "Dad's 60th birthday dinner in Matsumoto (6.11)",
+    detail: "Hikariya Higashi or Hikariya Nishi — kaiseki. Mention the birthday when booking.",
+    urgent: true
   },
   {
     id: "book-kamikochi-shuttle",
-    text: "Reserve the Sawando ↔ Kamikochi shuttle/taxi (7 Nov)",
-    detail: "Private cars are banned inside the valley — confirm the shuttle schedule and, if possible, book a seat ahead of the day."
+    text: "Kamikochi shuttle bus from Hirayu (7.11)",
+    detail: "No private cars in the valley. Check the Alpico/Nohi timetable and whether seats need booking."
   },
   {
     id: "book-shinkansen-seats",
-    text: "Reserve seats for the Thunderbird and Shinkansen legs",
-    detail: "Kanazawa → Kyoto (11 Nov, Thunderbird) and Kyoto → Tokyo (15 Nov, Hikari — not Nozomi, which the JR Pass doesn't cover)."
+    text: "Reserve seats: Kanazawa → Kyoto (11.11) and Kyoto → Tokyo (15.11)",
+    detail: "Kanazawa → Tsuruga by Hokuriku Shinkansen, then Thunderbird to Kyoto. Kyoto → Tokyo on Hikari (the JR Pass doesn't cover Nozomi)."
+  },
+  {
+    id: "book-nijo-night",
+    text: "Nijo Castle night event tickets (14.11)",
+    detail: "'NAKED meets Nijo Castle', 18:00–22:00, ¥2,400 on Saturday. Book online."
+  },
+  {
+    id: "book-drum-tao",
+    text: "Optional: DRUM TAO taiko show, Kyoto",
+    detail: "Kyoto Station, daily 19:00 and 21:00, from ¥10,000."
   },
   {
     id: "jr-pass",
-    text: "Buy a 14-day JR Pass exchange order before departure",
-    detail: "Must be purchased outside Japan, then exchanged for the physical pass at a JR Exchange Office (e.g. Kyoto or Tokyo Station). Covers Kanazawa↔Kyoto, Kyoto↔Tokyo and various local JR lines — plan when to activate it to make the most of the 14 consecutive days."
+    text: "JR Pass — decide if it pays off",
+    detail: "Long JR legs: Tokyo → Odawara, Kanazawa → Kyoto, Kyoto → Tokyo. Compare against single tickets before buying."
   },
   {
     id: "esim",
-    text: "Sort out a Japan eSIM or pocket wifi — for all four phones",
-    detail: "Airalo / Ubigi / a rental pocket wifi from the airport — activate before or right at arrival."
+    text: "Japan eSIM or pocket wifi — all four phones",
+    detail: "Activate before landing."
   },
   {
     id: "ic-card-setup",
-    text: "Set up Suica/Pasmo/ICOCA — one per person",
-    detail: "Covers all trains, subways, buses and konbini purchases for the whole trip."
+    text: "Suica/Pasmo — one per person",
+    detail: "Trains, buses and konbini for the whole trip; the phone-wallet version works too."
   },
   {
     id: "travel-insurance",
-    text: "Buy travel insurance for all four travellers",
-    detail: "Confirm it covers the rental car (or that the rental's own NOC coverage is sufficient), the Hakone ropeway, and the Kamikochi/Kamikochi-adjacent walking."
+    text: "Travel insurance for all four",
+    detail: "Including driving and mountain walking."
   },
   {
     id: "notify-bank",
-    text: "Notify the bank/credit card company of the travel dates",
-    detail: "Avoid a card freeze on first use in Japan — the ¥150,040 rental-car charge already went through, so at least one card is confirmed working."
+    text: "Tell the bank/card company about the trip",
+    detail: "Avoid a frozen card on first use abroad."
   }
 ];
 
@@ -92,7 +136,7 @@ export const packingChecklist: ChecklistItem[] = [
   {
     id: "slip-on-shoes",
     text: "Shoes that slip on and off easily",
-    detail: "For all three ryokan stays (Hakone, Takayama) and any restaurant or temple with a genkan entryway."
+    detail: "For onsen, temples and any restaurant with a genkan entryway."
   },
   {
     id: "portable-charger",
@@ -132,6 +176,6 @@ export const packingChecklist: ChecklistItem[] = [
   {
     id: "modest-onsen-cover",
     text: "Waterproof tattoo covers, if needed",
-    detail: "A practical workaround for some onsens with a tattoo policy — check with the Hakone and Takayama ryokan first, as policy varies."
+    detail: "A practical workaround for some onsens with a tattoo policy — check with each onsen first, as policy varies."
   }
 ];
