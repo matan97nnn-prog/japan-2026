@@ -4,6 +4,8 @@ import Hero from "./components/Hero";
 import QuickBookings from "./components/QuickBookings";
 import RouteWeather from "./components/RouteWeather";
 import PlanOverview from "./components/PlanOverview";
+import TodayCard from "./components/TodayCard";
+import YenConverter from "./components/YenConverter";
 import { HotelsStrip, MapsLists, HomeTiles } from "./components/HomeExtras";
 import NotesSection from "./components/NotesSection";
 import MapView from "./components/MapView";
@@ -108,9 +110,11 @@ export default function App() {
       {route.kind === "home" ? (
         <>
           <Hero />
+          <TodayCard />
           <RouteWeather />
           <PlanOverview />
           <QuickBookings />
+          <YenConverter />
           <HotelsStrip />
           <MapsLists />
           <HomeTiles />

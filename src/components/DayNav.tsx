@@ -5,6 +5,8 @@ import { navigateChapter } from "../lib/route";
 import type { Day } from "../data/types";
 import { BedDouble, Route } from "lucide-react";
 import { dayRouteUrl, morningStay, nightStay } from "../lib/dayRoute";
+import { STAY_JA } from "../data/japanese";
+import { TaxiButton } from "./TaxiCard";
 
 /* Sticky row of day chips (יום 1 … יום 19) on the day page, so moving
  * between days is one tap — the current day stays scrolled into view. */
@@ -48,20 +50,21 @@ export function DayAgenda({ day, raw }: { day: Day; raw: Day }) {
   const from = morningStay(raw.date);
   const to = nightStay(raw.date);
   const routeUrl = dayRouteUrl(raw);
-  const HotelRow = ({ label, name }: { label: string; name: string }) => (
+  const HotelRow = ({ label, name, id }: { label: string; name: string; id: string }) => (
     <li className="flex items-center gap-3">
       <span className="shrink-0 w-7 h-7 rounded-full bg-ink-900 text-cream-50 flex items-center justify-center">
         <BedDouble size={14} />
       </span>
       <span className="w-14 shrink-0 text-[12.5px] font-semibold text-ink-700/70">{label}</span>
       <span className="flex-1 text-[14px] font-semibold text-ink-900" dir="ltr" style={{ textAlign: "start" }}>{name}</span>
+      {STAY_JA[id] && <TaxiButton compact name={STAY_JA[id].name} address={STAY_JA[id].address} />}
     </li>
   );
   return (
     <section className="rounded-2xl bg-cream-50 ring-1 ring-cream-300/70 p-4 sm:p-5">
       <h3 className="text-xl font-bold text-ink-900">{he ? "היום בקצרה" : "Today at a glance"}</h3>
       <ol className="mt-3 space-y-2">
-        {from && <HotelRow label={he ? "יציאה" : "Start"} name={from.name} />}
+        {from && <HotelRow label={he ? "יציאה" : "Start"} name={from.name} id={from.id} />}
         {day.activities.map((a, i) => (
           <li key={i}>
             <button
@@ -87,7 +90,7 @@ export function DayAgenda({ day, raw }: { day: Day; raw: Day }) {
             </button>
           </li>
         ))}
-        {to && <HotelRow label={he ? "לינה" : "Sleep"} name={to.name} />}
+        {to && <HotelRow label={he ? "לינה" : "Sleep"} name={to.name} id={to.id} />}
       </ol>
       {routeUrl && (
         <a

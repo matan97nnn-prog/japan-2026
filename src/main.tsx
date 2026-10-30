@@ -9,8 +9,8 @@ import { BookingsProvider } from './lib/bookingsStore'
 // Capture Chromium's one-shot install event before React hydrates (`install.ts`).
 bootstrapInstallPromptCapture()
 
-// Minimal SW — required by Chrome installability checklist; enables reliable
-// `beforeinstallprompt`. See `public/sw.js` (network-only passes through).
+// Service worker: installability for Chrome and offline use (see public/sw.js).
+// Caches the app after the first visit so the plan opens with no signal.
 function registerMinimalServiceWorker(): void {
   if (!('serviceWorker' in navigator)) return
   const swUrl = `${import.meta.env.BASE_URL}sw.js`

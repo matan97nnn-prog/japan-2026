@@ -7,6 +7,8 @@ import Section from "./Section";
 import { useMapFocus } from "../lib/mapContext";
 import { useT, localizeShortDate } from "../lib/dict";
 import NavigateLinks from "./NavigateLinks";
+import { TaxiButton } from "./TaxiCard";
+import { STAY_JA } from "../data/japanese";
 import { useLang } from "../lib/i18n";
 import { useLocalizeStay } from "../data/i18n";
 import PoiImage from "./PoiImage";
@@ -223,6 +225,7 @@ export default function StaysSection() {
                   </a>
                 )}
                 <NavigateLinks name={s.name} coords={s.coords} address={s.address} size={13} />
+                {STAY_JA[s.id] && <TaxiButton compact name={STAY_JA[s.id].name} address={STAY_JA[s.id].address} />}
                 <button onClick={() => focusOn(s.id)} className="icon-link">
                   <MapPin size={13} /> {t("show_on_map")}
                 </button>

@@ -58,6 +58,9 @@ import PoiImage from "./PoiImage";
 import PhotoCredit from "./PhotoCredit";
 import MiniMap from "./MiniMap";
 import DayExtras from "./DayExtras";
+import NearbySaved from "./NearbySaved";
+import { TaxiButton } from "./TaxiCard";
+import { PLACE_JA, taxiTarget } from "../data/japanese";
 import { morningStay, nightStay } from "../lib/dayRoute";
 import { DayChips, DayAgenda } from "./DayNav";
 import ItalianWordCarousel from "./ItalianWordCarousel";
@@ -689,6 +692,8 @@ function ChapterDetailContent({ day }: { day: Day }) {
             </section>
           )}
 
+          <NearbySaved day={day} />
+
           {/* Day pack — what to bring, sitting between the plan and the
               day-notes. Items can reference a specific stop with a small
               chip the reader can tap to scroll back up to that activity. */}
@@ -933,13 +938,17 @@ function ActivityRow({
           {activity.place && (
             <div className="mt-0.5 text-[13px] text-ink-700/60" dir="ltr" style={{ textAlign: "start" }}>
               {activity.place}
+              {PLACE_JA[activity.place] && (
+                <span className="block text-[13px] text-ink-700/50" lang="ja">{PLACE_JA[activity.place]}</span>
+              )}
             </div>
           )}
           {activity.description && (
             <p className="mt-2 text-[15px] sm:text-[16px] text-ink-700/90 leading-relaxed">{activity.description}</p>
           )}
-          {(activity.link || hasMoreInfo) && (
+          {(activity.link || hasMoreInfo || (activity.place && taxiTarget(activity.place))) && (
             <div className="mt-3 flex flex-wrap gap-2">
+              {activity.place && taxiTarget(activity.place) && <TaxiButton name={taxiTarget(activity.place)!} />}
               {hasMoreInfo && (
                 <button
                   onClick={() => setOpen(o => !o)}
