@@ -72,7 +72,7 @@ export function MapsLists() {
             {he ? "המפות שלנו בגוגל" : "Our Google Maps lists"}
           </div>
           <div className="text-[14px] text-cream-50/75">
-            {he ? "כל ההמלצות — מסעדות, בתי קפה ואטרקציות, עם ביקורות" : "Every recommendation — restaurants, cafés, sights, with reviews"}
+            {he ? "כל ההמלצות, מסעדות, בתי קפה ואטרקציות, עם ביקורות" : "Every recommendation, restaurants, cafés, sights, with reviews"}
           </div>
           <div className="mt-3 grid gap-2 sm:grid-cols-3">
             {LISTS.map((l) => (

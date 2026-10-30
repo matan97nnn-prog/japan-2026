@@ -141,7 +141,7 @@ function categoryGlyph(cat: Category): string {
 
 const AIRPORT_POI: POI = {
   id: "nrt",
-  name: "Tokyo Narita — NRT",
+  name: "Tokyo Narita: NRT",
   category: "airport",
   region: "transit",
   description: "Narita Airport. Arrival 1 Nov at 17:20 on EK318 from Dubai. Return flight still to be set.",
@@ -151,9 +151,9 @@ const AIRPORT_POI: POI = {
 
 const AIRPORT_POI_HE: POI = {
   ...AIRPORT_POI,
-  name: "טוקיו נריטה — NRT",
+  name: "טוקיו נריטה: NRT",
   description: "שדה התעופה נריטה. נחיתה ב־1.11 בשעה 17:20 בטיסה EK318 מדובאי. טיסת החזור עוד לא נקבעה.",
-  shortDescription: "שדה התעופה — נחיתה והמראה."
+  shortDescription: "שדה התעופה: נחיתה והמראה."
 };
 
 // The trip's big movements between bases (lat, lon)

@@ -2,9 +2,9 @@ import type { EmergencyGroup } from "./types";
 
 export const emergencyGroups: EmergencyGroup[] = [
   {
-    title: "Japan — emergency numbers",
+    title: "Japan: emergency numbers",
     items: [
-      { label: "Police", value: "110", type: "phone", detail: "Limited English — speak slowly, or say 'English please'" },
+      { label: "Police", value: "110", type: "phone", detail: "Limited English, speak slowly, or say 'English please'" },
       { label: "Fire & ambulance", value: "119", type: "phone", detail: "Limited English available" },
       {
         label: "Japan Visitor Hotline (English, 24/7)",
@@ -21,7 +21,7 @@ export const emergencyGroups: EmergencyGroup[] = [
     ]
   },
   {
-    title: "Hospitals — Tokyo",
+    title: "Hospitals: Tokyo",
     items: [
       {
         label: "St. Luke's International Hospital",
@@ -40,7 +40,7 @@ export const emergencyGroups: EmergencyGroup[] = [
     ]
   },
   {
-    title: "Hospitals — Kyoto / Nara",
+    title: "Hospitals: Kyoto / Nara",
     items: [
       {
         label: "Japanese Red Cross Kyoto Daiichi Hospital",
@@ -59,7 +59,7 @@ export const emergencyGroups: EmergencyGroup[] = [
     ]
   },
   {
-    title: "Hospitals — Hakone / Fuji / Matsumoto / Takayama",
+    title: "Hospitals: Hakone / Fuji / Matsumoto / Takayama",
     items: [
       {
         label: "Hakone Hospital",
@@ -92,7 +92,7 @@ export const emergencyGroups: EmergencyGroup[] = [
     ]
   },
   {
-    title: "Hospitals — Kanazawa",
+    title: "Hospitals: Kanazawa",
     items: [
       {
         label: "Kanazawa University Hospital",
@@ -128,7 +128,7 @@ export const emergencyGroups: EmergencyGroup[] = [
         label: "After-hours emergency (Israelis abroad)",
         value: "+972 3 6953 0123",
         type: "phone",
-        detail: "MFA Situation Room — 24/7"
+        detail: "MFA Situation Room, 24/7"
       },
       {
         label: "Embassy website",

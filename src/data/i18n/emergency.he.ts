@@ -9,9 +9,9 @@ interface EmergencyHEGroup extends Partial<Pick<EmergencyGroup, "title">> {
 /** Indexed by group order (0..n) — items in same order as the English data. */
 export const emergencyHE: EmergencyHEGroup[] = [
   {
-    title: "יפן — מספרי חירום",
+    title: "יפן: מספרי חירום",
     items: [
-      { label: "משטרה", detail: "אנגלית מוגבלת — דברו לאט, או אמרו 'English please'" },
+      { label: "משטרה", detail: "אנגלית מוגבלת, דברו לאט, או אמרו 'English please'" },
       { label: "כיבוי אש ואמבולנס", detail: "אנגלית מוגבלת זמינה" },
       {
         label: "מוקד תיירים של יפן (אנגלית, 24/7)",
@@ -24,7 +24,7 @@ export const emergencyHE: EmergencyHEGroup[] = [
     ]
   },
   {
-    title: "בתי חולים — טוקיו",
+    title: "בתי חולים: טוקיו",
     items: [
       {
         label: "בית החולים הבינלאומי סנט לוקס",
@@ -37,10 +37,10 @@ export const emergencyHE: EmergencyHEGroup[] = [
     ]
   },
   {
-    title: "בתי חולים — קיוטו / נארה",
+    title: "בתי חולים: קיוטו / נארה",
     items: [
       {
-        label: "בית החולים היפני של הצלב האדום — קיוטו דאיצ'י",
+        label: "בית החולים היפני של הצלב האדום: קיוטו דאיצ'י",
         detail: "בית חולים גדול עם מיון, קרוב למרכז קיוטו"
       },
       {
@@ -50,7 +50,7 @@ export const emergencyHE: EmergencyHEGroup[] = [
     ]
   },
   {
-    title: "בתי חולים — הקונה / פוג'י / מטסומוטו / טקאיאמה",
+    title: "בתי חולים: הקונה / פוג'י / מטסומוטו / טקאיאמה",
     items: [
       {
         label: "בית החולים של הקונה",
@@ -65,13 +65,13 @@ export const emergencyHE: EmergencyHEGroup[] = [
         detail: "בית חולים אוניברסיטאי גדול עם מחלקת מיון מלאה"
       },
       {
-        label: "בית החולים של הצלב האדום — טקאיאמה",
+        label: "בית החולים של הצלב האדום: טקאיאמה",
         detail: "בית החולים הראשי המשרת את טקאיאמה והסביבה, כולל מיון"
       }
     ]
   },
   {
-    title: "בתי חולים — קנזאווה",
+    title: "בתי חולים: קנזאווה",
     items: [
       {
         label: "בית החולים של אוניברסיטת קנזאווה",
@@ -94,7 +94,7 @@ export const emergencyHE: EmergencyHEGroup[] = [
       },
       {
         label: "מוקד חירום מחוץ לשעות (ישראלים בחו״ל)",
-        detail: "חמ״ל משרד החוץ — 24/7"
+        detail: "חמ״ל משרד החוץ, 24/7"
       },
       {
         label: "אתר השגרירות"

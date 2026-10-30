@@ -7,11 +7,11 @@ export const checklistHE: Record<string, Partial<Pick<ChecklistItem, "text" | "d
     detail: "כל הסוף תלוי בזה: המלון האחרון בטוקיו, היום החופשי וההגעה לשדה."
   },
   "decide-hotels": {
-    text: "קיוטו (Honyado Nono) והמלון האחרון בטוקיו (Dai-ichi) — כרגע",
+    text: "קיוטו (Honyado Nono) והמלון האחרון בטוקיו (Dai-ichi): כרגע",
     detail: "לאשר או להחליף כשתאריך החזרה ייקבע. לבטל כפילויות רק אחרי בדיקת תנאי הביטול."
   },
   "book-flights": {
-    text: "טיסות Emirates — קודי הזמנה HG8ZCN ו-I5JSFN",
+    text: "טיסות Emirates: קודי הזמנה HG8ZCN ו-I5JSFN",
     detail: "EK110 לרנקה ← דובאי 31.10 16:25; EK318 דובאי ← נריטה 1.11 02:55 ← 17:20. לוודא שהמזוודות נשלחות עד נריטה ושכל ארבעת השמות תואמים לדרכונים."
   },
   "larnaca-hotel": {
@@ -20,10 +20,10 @@ export const checklistHE: Record<string, Partial<Pick<ChecklistItem, "text" | "d
   },
   "idp-driving-license": {
     text: "רישיון נהיגה בינלאומי (IDP) לנהג",
-    detail: "יחד עם הרישיון הישראלי המקורי והדרכון. בלי זה — אין רכב באודווארה ב-4.11."
+    detail: "יחד עם הרישיון הישראלי המקורי והדרכון. בלי זה, אין רכב באודווארה ב-4.11."
   },
   "rental-car-confirmed": {
-    text: "רכב — Toyota Rent a Car, הזמנה 99910376400",
+    text: "רכב: Toyota Rent a Car, הזמנה 99910376400",
     detail: "Noah Hybrid על שם RONEN STEIN. איסוף בתחנת אודווארה, יציאת שינקנסן, 4.11 בשעה 10:00 (טלפון 0465-32-0100). החזרה בתחנת קנאזאווה, יציאה מזרחית, עד 9.11 בשעה 20:00. ביטוח NOC וכרטיס ETC כלולים."
   },
   "hotels-booked": {
@@ -31,7 +31,7 @@ export const checklistHE: Record<string, Partial<Pick<ChecklistItem, "text" | "d
     detail: "2 חדרים בכל מקום חוץ מהווילה בקאוואגוצ'יקו (וילה אחת לארבעה). Keihan הוזמן באגודה, 1788608896. האקונה: 2 יחידות Condominium A, ‏49 מ\"ר כל אחת."
   },
   "evening-tour": {
-    text: "סיור ערב בטוקיו 2.11 בשעה 20:00 — הזמנה 9022",
+    text: "סיור ערב בטוקיו 2.11 בשעה 20:00: הזמנה 9022",
     detail: "היברו טור גייד ג'פאן, מפגש ב-Gap Store Shinjuku Flagship. וואטסאפ ‎+81 80-4373-7268."
   },
   "takkyubin-plan": {
@@ -48,7 +48,7 @@ export const checklistHE: Record<string, Partial<Pick<ChecklistItem, "text" | "d
   },
   "book-birthday-dinner": {
     text: "ארוחת יום ההולדת ה-60 של אבא במטסומוטו (6.11)",
-    detail: "Hikariya Higashi או Hikariya Nishi — קאיסקי. לציין שזה יום הולדת בהזמנה."
+    detail: "Hikariya Higashi או Hikariya Nishi, קאיסקי. לציין שזה יום הולדת בהזמנה."
   },
   "book-kamikochi-shuttle": {
     text: "אוטובוס לקמיקוצ'י מהירויו (7.11)",
@@ -67,15 +67,15 @@ export const checklistHE: Record<string, Partial<Pick<ChecklistItem, "text" | "d
     detail: "בתחנת קיוטו, כל ערב ב-19:00 וב-21:00, מ-10,000 ין."
   },
   "jr-pass": {
-    text: "JR Pass — לבדוק אם משתלם",
+    text: "JR Pass: לבדוק אם משתלם",
     detail: "הקטעים הארוכים: טוקיו ← אודווארה, קנאזאווה ← קיוטו, קיוטו ← טוקיו. להשוות לכרטיסים בודדים לפני קנייה."
   },
   esim: {
-    text: "eSIM יפני או ראוטר — לארבעת הטלפונים",
+    text: "eSIM יפני או ראוטר: לארבעת הטלפונים",
     detail: "להפעיל לפני הנחיתה."
   },
   "ic-card-setup": {
-    text: "Suica/Pasmo — אחד לכל אחד",
+    text: "Suica/Pasmo: אחד לכל אחד",
     detail: "רכבות, אוטובוסים וקונביני לכל הטיול; גם הגרסה בארנק הטלפון עובדת."
   },
   "travel-insurance": {
@@ -90,15 +90,15 @@ export const checklistHE: Record<string, Partial<Pick<ChecklistItem, "text" | "d
   // Packing
   "idp-and-license": {
     text: "IDP + רישיון נהיגה ישראלי מקורי + דרכון",
-    detail: "שלושתם, פיזית, אצל הנהג — לאיסוף הרכב באודווארה ב-4.11. בתיק היד, לא במזוודה."
+    detail: "שלושתם, פיזית, אצל הנהג, לאיסוף הרכב באודווארה ב-4.11. בתיק היד, לא במזוודה."
   },
   layers: {
     text: "בגדי שכבות",
-    detail: "טוקיו וקיוטו נעימות (10–18°), אבל האקונה, פוג'י, קמיקוצ'י וטקאיאמה קרות — בקרים קרובים לאפס."
+    detail: "טוקיו וקיוטו נעימות (10–18°), אבל האקונה, פוג'י, קמיקוצ'י וטקאיאמה קרות, בקרים קרובים לאפס."
   },
   "comfortable-shoes": {
     text: "נעלי הליכה נוחות לכולם",
-    detail: "15,000+ צעדים ברוב הימים, קמיקוצ'י ומסלול קוראמה–קיבונה. נעליים חדשות — לרכך לפני."
+    detail: "15,000+ צעדים ברוב הימים, קמיקוצ'י ומסלול קוראמה–קיבונה. נעליים חדשות, לרכך לפני."
   },
   "slip-on-shoes": {
     text: "נעליים שקל לחלוץ",
@@ -110,7 +110,7 @@ export const checklistHE: Record<string, Partial<Pick<ChecklistItem, "text" | "d
   },
   "power-adapter": {
     text: "שקע יפני Type A, ‏100V",
-    detail: "כמו בארה\"ב — לקחת מתאם."
+    detail: "כמו בארה\"ב, לקחת מתאם."
   },
   "cash-pouch": {
     text: "ארנק קטן למזומן ביין",
@@ -134,6 +134,6 @@ export const checklistHE: Record<string, Partial<Pick<ChecklistItem, "text" | "d
   },
   "modest-onsen-cover": {
     text: "מדבקות לכיסוי קעקועים, אם צריך",
-    detail: "לאונסנים עם מדיניות קעקועים — לבדוק מראש בכל מקום."
+    detail: "לאונסנים עם מדיניות קעקועים, לבדוק מראש בכל מקום."
   }
 };

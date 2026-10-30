@@ -47,7 +47,7 @@ export const stays: Stay[] = [
     website: "https://www.en.hakoneyutowa-hotel.jp/rooms/condominium-a/",
     highlights: [
       "Private hot-spring bath in each unit, plus the public bath and two free private baths in the main building",
-      "Dinner plans are all-inclusive (buffet + beer, sake, wine) — check whether ours includes meals",
+      "Dinner plans are all-inclusive (buffet + beer, sake, wine), check whether ours includes meals",
       "Check-in 15:00 · check-out 10:00"
     ]
   },
@@ -58,7 +58,7 @@ export const stays: Stay[] = [
     region: "north",
     shortDescription: "5–6.11 · 1 night · one villa for 4",
     description:
-      "A whole villa on the north shore, 3 min walk from Oishi Park — the birthday sunrise spot. Fuji and lake views from the terrace on a clear day.",
+      "A whole villa on the north shore, 3 min walk from Oishi Park, the birthday sunrise spot. Fuji and lake views from the terrace on a clear day.",
     image: "./images/stay-kawaguchiko.jpg",
     address: "2585-122 Oishi, Fujikawaguchiko, Yamanashi",
     coords: [35.522, 138.739],
@@ -69,7 +69,7 @@ export const stays: Stay[] = [
     rating: 9.2,
     bookingLink: "https://www.booking.com/hotel/jp/kawaguchiko-urban-resort-villa.html",
     highlights: [
-      "Oishi Park a 3-minute walk — sunrise over Fuji on Dad's birthday",
+      "Oishi Park a 3-minute walk, sunrise over Fuji on Dad's birthday",
       "Kitchen, terrace, free parking",
       "Check-in 15:00 · check-out 10:00"
     ]
@@ -160,13 +160,13 @@ export const stays: Stay[] = [
     checkIn: "2026-11-11",
     checkOut: "2026-11-15",
     nights: 4,
-    rooms: "Honyado Nono — 4 nights for now",
+    rooms: "Honyado Nono, 4 nights for now",
     rating: 9.4,
     bookingLink: "https://www.booking.com/hotel/jp/onyado-nono-kyoto-shichijo.html",
     highlights: [
-      "Hot-spring baths with an open-air bath and sauna — perfect after walking days",
+      "Hot-spring baths with an open-air bath and sauna, perfect after walking days",
       "Free late-night ramen (yonaki soba) in the evening",
-      "Kyoto Station 7 min — JR to Fushimi Inari and Arashiyama · check-in 15:00 · check-out 11:00"
+      "Kyoto Station 7 min, JR to Fushimi Inari and Arashiyama · check-in 15:00 · check-out 11:00"
     ]
   },
   {
@@ -183,7 +183,7 @@ export const stays: Stay[] = [
     checkIn: "2026-11-15",
     checkOut: "2026-11-17",
     nights: 2,
-    rooms: "For now — return date still open",
+    rooms: "For now, return date still open",
     rating: 8.8,
     bookingLink: "https://www.booking.com/hotel/jp/daiichi-tokyo.html",
     website: "https://www.hankyu-hotel.com/hotel/dh/dhtokyo",

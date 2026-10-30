@@ -28,14 +28,14 @@ export const DICT = {
   hero_today_lead: { en: "Today in Japan", he: "היום ביפן" },
   hero_tomorrow_lead: { en: "Tomorrow in Japan", he: "מחר ביפן" },
   hero_after_lead: { en: "That autumn in Japan", he: "אותו סתיו ביפן" },
-  hero_after_title: { en: "Okaeri — welcome back", he: "ברוכים השבים" },
+  hero_after_title: { en: "Okaeri: welcome back", he: "ברוכים השבים" },
   hero_after_sub: {
-    en: "1 — 17 November 2026 · the family edition",
+    en: "1, 17 November 2026 · the family edition",
     he: "1—17 בנובמבר 2026 · מהדורת המשפחה"
   },
   hero_close_almost: {
-    en: "Itterasshai — almost there",
-    he: "יוצאים לדרך — כמעט שם"
+    en: "Itterasshai, almost there",
+    he: "יוצאים לדרך, כמעט שם"
   },
   hero_one_week: {
     en: "One week to go · time to sort the pocket wifi",
@@ -153,11 +153,11 @@ export const DICT = {
     he: "הקישו על סיכה · עקבו אחר המסלול · סננו את השאר"
   },
   map_intro: {
-    en: "Every stay, attraction, restaurant, convenience store and station — color-coded by category. The dashed line is our actual journey: Tokyo to Hakone, on through the Fuji lakes, Matsumoto, the Japanese Alps, Shirakawa-go and Kanazawa, then Kyoto, and back to Tokyo.",
-    he: "כל מקום לינה, אטרקציה, מסעדה, מינימרקט ותחנה — בקוד צבעים לפי קטגוריה. הקו המקווקו הוא המסלול שלנו: מטוקיו להקונה, משם לאגמי פוג'י, מטסומוטו, האלפים היפניים, שירקאוו-גו וקנזאווה, אחר כך קיוטו, ובחזרה לטוקיו."
+    en: "Every stay, attraction, restaurant, convenience store and station, color-coded by category. The dashed line is our actual journey: Tokyo to Hakone, on through the Fuji lakes, Matsumoto, the Japanese Alps, Shirakawa-go and Kanazawa, then Kyoto, and back to Tokyo.",
+    he: "כל מקום לינה, אטרקציה, מסעדה, מינימרקט ותחנה, בקוד צבעים לפי קטגוריה. הקו המקווקו הוא המסלול שלנו: מטוקיו להקונה, משם לאגמי פוג'י, מטסומוטו, האלפים היפניים, שירקאוו-גו וקנזאווה, אחר כך קיוטו, ובחזרה לטוקיו."
   },
   saved_eyebrow: { en: "Google Maps", he: "גוגל מפות" },
-  saved_title: { en: "Every recommended place, with reviews", he: "כל המקומות המומלצים בגוגל מפות — עם ביקורות" },
+  saved_title: { en: "Every recommended place, with reviews", he: "כל המקומות המומלצים בגוגל מפות: עם ביקורות" },
   saved_intro: {
     en: "Three Google Maps lists friends and family shared, merged into one map with duplicates removed. Tap a place for photos and reviews on Google Maps.",
     he: "שלוש רשימות גוגל מפות ששיתפו איתנו, מאוחדות למפה אחת בלי כפילויות. הקישו על מקום כדי לראות תמונות וביקורות בגוגל מפות."
@@ -237,8 +237,8 @@ export const DICT = {
   },
   gem_setup_title: { en: "Set up Sora", he: "הגדרת סורה" },
   gem_setup_blurb: {
-    en: "Sora uses Google's Gemini Live API to talk with you. Paste a free Gemini API key — it's saved on this device only and never shared.",
-    he: "סורה משתמשת ב־Gemini Live API של גוגל כדי לדבר אתכם. הדביקו מפתח Gemini API חינמי — הוא נשמר במכשיר הזה בלבד ולא נשלח לשום מקום אחר."
+    en: "Sora uses Google's Gemini Live API to talk with you. Paste a free Gemini API key, it's saved on this device only and never shared.",
+    he: "סורה משתמשת ב־Gemini Live API של גוגל כדי לדבר אתכם. הדביקו מפתח Gemini API חינמי, הוא נשמר במכשיר הזה בלבד ולא נשלח לשום מקום אחר."
   },
   gem_setup_link: {
     en: "Get a free key (aistudio.google.com/apikey)",
@@ -249,15 +249,15 @@ export const DICT = {
   gem_clear_key: { en: "Forget my key", he: "שכח את המפתח שלי" },
   gem_reset_history: { en: "Clear chat", he: "נקה היסטוריית שיחה" },
   gem_input_placeholder: {
-    en: "Type a question — or tap the mic to talk",
-    he: "כתבו שאלה — או הקישו על המיקרופון כדי לדבר"
+    en: "Type a question, or tap the mic to talk",
+    he: "כתבו שאלה, או הקישו על המיקרופון כדי לדבר"
   },
   gem_send: { en: "Send", he: "שלח" },
   gem_mic_hold: { en: "Hold to talk", he: "החזיקו כדי לדבר" },
   gem_mic_release: { en: "Release to send", he: "שחררו כדי לשלוח" },
   gem_mic_start: { en: "Tap to record", he: "הקישו להקלטה" },
   gem_mic_stop: { en: "Tap to stop now", he: "הקישו לעצירה" },
-  gem_recording: { en: "Recording — pauses to send…", he: "מקליט — עוצר לשליחה אוטומטית…" },
+  gem_recording: { en: "Recording, pauses to send…", he: "מקליט, עוצר לשליחה אוטומטית…" },
   gem_transcribing: { en: "Transcribing…", he: "מתמלל…" },
   gem_transcribe_failed: {
     en: "Could not understand the recording. Please try again.",
@@ -308,8 +308,8 @@ export const DICT = {
     he: "טוקיו, הקונה והאלפים קודם, אחר כך קנזאווה וקיוטו"
   },
   stays_intro: {
-    en: "We split the trip across Tokyo, a Hakone onsen night, the Fuji lakes, Matsumoto, a Takayama ryokan, Kanazawa and Kyoto — each chosen as the perfect base for the days around it.",
-    he: "אנחנו מחלקים את הטיול בין טוקיו, לילה באונסן בהקונה, אגמי פוג'י, מטסומוטו, ריוקאן בטקיאמה, קנזאווה וקיוטו — כל בסיס נבחר בשביל הימים שסביבו."
+    en: "We split the trip across Tokyo, a Hakone onsen night, the Fuji lakes, Matsumoto, a Takayama ryokan, Kanazawa and Kyoto, each chosen as the perfect base for the days around it.",
+    he: "אנחנו מחלקים את הטיול בין טוקיו, לילה באונסן בהקונה, אגמי פוג'י, מטסומוטו, ריוקאן בטקיאמה, קנזאווה וקיוטו, כל בסיס נבחר בשביל הימים שסביבו."
   },
   stay_check_in: { en: "Check in", he: "צ'ק־אין" },
   stay_check_out: { en: "Check out", he: "צ'ק־אאוט" },
@@ -330,8 +330,8 @@ export const DICT = {
   attr_eyebrow: { en: "Where we'll go", he: "לאן נלך" },
   attr_title: { en: "Places you'll visit", he: "מקומות שתבקרו בהם" },
   attr_kicker: {
-    en: "Sixteen stops — water, walls, cliffs, caves, and a few good meals",
-    he: "שש־עשרה תחנות — מים, חומות, צוקים, מערות וכמה ארוחות טובות"
+    en: "Sixteen stops, water, walls, cliffs, caves, and a few good meals",
+    he: "שש־עשרה תחנות, מים, חומות, צוקים, מערות וכמה ארוחות טובות"
   },
   attr_filter_all: { en: "All", he: "הכול" },
   attr_filter_north: { en: "North", he: "צפון" },
@@ -345,8 +345,8 @@ export const DICT = {
   services_eyebrow: { en: "Around you", he: "סביבכם" },
   services_title: { en: "Recommended restaurants & stops", he: "מסעדות ועצירות מומלצות" },
   services_kicker: {
-    en: "Hand-picked spots near both bases — saves you the panic-Google",
-    he: "מקומות שנבחרו בקפידה ליד שני הבסיסים — חוסכים חיפושי גוגל בלחץ"
+    en: "Hand-picked spots near both bases, saves you the panic-Google",
+    he: "מקומות שנבחרו בקפידה ליד שני הבסיסים, חוסכים חיפושי גוגל בלחץ"
   },
   services_filter_north: { en: "Tokyo → Kanazawa", he: "טוקיו ← קנאזאווה" },
   services_filter_south: { en: "Kyoto", he: "קיוטו" },
@@ -361,7 +361,7 @@ export const DICT = {
   tips_title: { en: "Tips & quiet warnings", he: "טיפים ואזהרות שקטות" },
   tips_kicker: {
     en: "What we learned the hard way, so you don't have to",
-    he: "מה שלמדנו בדרך הקשה — כדי שלא תצטרכו"
+    he: "מה שלמדנו בדרך הקשה, כדי שלא תצטרכו"
   },
 
   /* ---------- Family updates (live, family-editable Google Sheet) ---------- */
@@ -372,12 +372,12 @@ export const DICT = {
     he: "הזמנות והמלצות אמיתיות, מתעדכנות תוך כדי התכנון"
   },
   family_updates_intro: {
-    en: "Anyone in the family can add to this list — hotels booked, tickets bought, local recommendations. Updates here reflect exactly what's been typed into our shared planning sheet.",
-    he: "כל אחד מהמשפחה יכול להוסיף לרשימה הזו — מלונות שהוזמנו, כרטיסים שנקנו, המלצות מקומיות. העדכונים כאן משקפים בדיוק את מה שהוקלד בגיליון התכנון המשותף שלנו."
+    en: "Anyone in the family can add to this list, hotels booked, tickets bought, local recommendations. Updates here reflect exactly what's been typed into our shared planning sheet.",
+    he: "כל אחד מהמשפחה יכול להוסיף לרשימה הזו, מלונות שהוזמנו, כרטיסים שנקנו, המלצות מקומיות. העדכונים כאן משקפים בדיוק את מה שהוקלד בגיליון התכנון המשותף שלנו."
   },
   family_updates_empty: {
-    en: "No updates yet — once the family adds bookings or recommendations to the shared sheet, they'll show up here automatically.",
-    he: "עדיין אין עדכונים — ברגע שהמשפחה תוסיף הזמנות או המלצות לגיליון המשותף, הם יופיעו כאן אוטומטית."
+    en: "No updates yet, once the family adds bookings or recommendations to the shared sheet, they'll show up here automatically.",
+    he: "עדיין אין עדכונים, ברגע שהמשפחה תוסיף הזמנות או המלצות לגיליון המשותף, הם יופיעו כאן אוטומטית."
   },
   family_updates_filter_all: { en: "All", he: "הכול" },
   family_updates_cat_hotel: { en: "Hotel", he: "מלון" },
@@ -412,7 +412,7 @@ export const DICT = {
   lock_placeholder: { en: "PIN", he: "קוד" },
   lock_button: { en: "Unlock", he: "פתחו" },
   lock_working: { en: "Checking…", he: "בודק…" },
-  lock_error: { en: "Wrong PIN — try again", he: "קוד שגוי — נסו שוב" },
+  lock_error: { en: "Wrong PIN, try again", he: "קוד שגוי, נסו שוב" },
   lock_hint: {
     en: "Shared with the group · ask Itay for the PIN",
     he: "משותף עם הקבוצה · בקשו את הקוד מאיתי"
@@ -463,8 +463,8 @@ export const DICT = {
   },
   emergency_call_112: { en: "Call 112", he: "חייגו 112" },
   emergency_112_lead: {
-    en: "Single emergency number across the EU — works from any phone, English available",
-    he: "מספר חירום אחיד בכל האיחוד האירופי — עובד מכל טלפון, נותן שירות גם באנגלית"
+    en: "Single emergency number across the EU, works from any phone, English available",
+    he: "מספר חירום אחיד בכל האיחוד האירופי, עובד מכל טלפון, נותן שירות גם באנגלית"
   },
 
   /* ---------- Weather ---------- */
@@ -517,8 +517,8 @@ export const DICT = {
   daytips_eyebrow: { en: "Notes for the day", he: "הערות להיום" },
   daytips_title: { en: "Good to know", he: "טוב לדעת" },
   daytips_kicker: {
-    en: "Money, timing, mood — the things you'd whisper at breakfast",
-    he: "כסף, תזמון, אווירה — הדברים שלוחשים ליד ארוחת הבוקר"
+    en: "Money, timing, mood, the things you'd whisper at breakfast",
+    he: "כסף, תזמון, אווירה, הדברים שלוחשים ליד ארוחת הבוקר"
   },
 
   /* ---------- Food & Drink ---------- */
@@ -549,8 +549,8 @@ export const DICT = {
     he: "נבנה למשפחה · אוגוסט 2026"
   },
   footer_attribution: {
-    en: "Photos credited to their respective authors. Map © OpenStreetMap & CARTO.",
-    he: "צילומים בקרדיט ליוצריהם. מפה © OpenStreetMap ו־CARTO."
+    en: "Photos credited to their authors. Maps © OpenStreetMap contributors.",
+    he: "הצילומים בקרדיט ליוצריהם. מפות © OpenStreetMap."
   },
   footer_open_repo: { en: "Open the repo", he: "לרפו ב־GitHub" },
   footer_lang_label: { en: "Language", he: "שפה" },
@@ -576,8 +576,8 @@ export const DICT = {
   drink_eyebrow: { en: "After dinner", he: "אחרי ארוחת הערב" },
   drink_title: { en: "A glass to close the day", he: "כוסית לסיום היום" },
   drink_kicker: {
-    en: "Adults only — sake, highballs & more",
-    he: "למבוגרים בלבד — סאקה, היבולים ועוד"
+    en: "Adults only, sake, highballs & more",
+    he: "למבוגרים בלבד, סאקה, היבולים ועוד"
   },
   drink_pairing_label: { en: "Why tonight", he: "למה הערב" },
   drink_serving_label: { en: "Serving", he: "הגשה" },
@@ -592,8 +592,8 @@ export const DICT = {
   /* ---------- Activity flags (rendered as small badges) ---------- */
   optional_label: { en: "Optional", he: "לבחירה" },
   optional_aria: {
-    en: "Optional — skip if you're tired",
-    he: "לבחירה — אפשר לדלג אם עייפים"
+    en: "Optional, skip if you're tired",
+    he: "לבחירה, אפשר לדלג אם עייפים"
   },
 
   /* ---------- Install / Add to Home Screen ---------- */
@@ -607,8 +607,8 @@ export const DICT = {
     he: "התקינו את הטיול כאפליקציה"
   },
   install_subtitle_ios: {
-    en: "Open like a real app — no app store, works offline-friendly",
-    he: "נפתחת כמו אפליקציה רגילה — בלי חנות, עובדת גם ללא חיבור רשת"
+    en: "Open like a real app, no app store, works offline-friendly",
+    he: "נפתחת כמו אפליקציה רגילה, בלי חנות, עובדת גם ללא חיבור רשת"
   },
   install_subtitle_android: {
     en: "One tap from your home screen, full-screen, no browser bar",
@@ -701,7 +701,7 @@ export const DICT = {
     he: "שאלה {n} מתוך {total}"
   },
   quiz_correct: { en: "Correct!", he: "נכון!" },
-  quiz_wrong: { en: "Not quite — the answer was:", he: "לא בדיוק — התשובה היא:" },
+  quiz_wrong: { en: "Not quite, the answer was:", he: "לא בדיוק, התשובה היא:" },
   quiz_score: {
     en: "You scored {score} of {total}",
     he: "הניקוד: {score} מתוך {total}"
@@ -712,8 +712,8 @@ export const DICT = {
   },
   quiz_score_great: { en: "Molto bene!", he: "מולטו בנה!" },
   quiz_score_ok: {
-    en: "Not bad — try again to beat it.",
-    he: "לא רע — נסו שוב כדי לשפר."
+    en: "Not bad, try again to beat it.",
+    he: "לא רע, נסו שוב כדי לשפר."
   },
   quiz_score_low: {
     en: "Allora, that's a tough one. Another round?",
@@ -731,8 +731,8 @@ export const DICT = {
     he: "ייפתח כשההרפתקה של היום תתחיל."
   },
   quiz_voice_unavailable: {
-    en: "Quizzo's voice isn't available right now — read the question and tap your answer.",
-    he: "הקול של קוויצו לא זמין כרגע — קראו את השאלה ובחרו תשובה."
+    en: "Quizzo's voice isn't available right now, read the question and tap your answer.",
+    he: "הקול של קוויצו לא זמין כרגע, קראו את השאלה ובחרו תשובה."
   },
   quiz_aria_option: { en: "Answer option {n}", he: "תשובה אפשרית {n}" },
   quiz_error: {
@@ -754,11 +754,11 @@ export const DICT = {
     he: "שאלות בלי סוף, דורש אינטרנט"
   },
   quiz_offline_pack_unavailable: {
-    en: "Offline pack isn't ready yet — switch to Live (with wifi) to play, then offline mode will work next time.",
-    he: "החבילה לא זמינה עדיין — עברו ל\"בשידור חי\" עם אינטרנט, ובפעם הבאה גם המצב ללא רשת יעבוד."
+    en: "Offline pack isn't ready yet, switch to Live (with wifi) to play, then offline mode will work next time.",
+    he: "החבילה לא זמינה עדיין, עברו ל\"בשידור חי\" עם אינטרנט, ובפעם הבאה גם המצב ללא רשת יעבוד."
   },
   quiz_offline_preparing: {
-    en: "Preparing your offline pack — hang on…",
+    en: "Preparing your offline pack, hang on…",
     he: "מכינים את החבילה לשמירה במכשיר…"
   },
 
@@ -780,8 +780,8 @@ export const DICT = {
     he: "ייפתח ב{date}"
   },
   quiz_locked_hint_preview: {
-    en: "Days 1 and 2 are unlocked early so you can try the quiz before the trip — the rest open on the morning of each day.",
-    he: "ימים 1 ו-2 פתוחים מראש כדי שתוכלו להתנסות לפני הטיול — השאר נפתחים בבוקר היום עצמו."
+    en: "Days 1 and 2 are unlocked early so you can try the quiz before the trip, the rest open on the morning of each day.",
+    he: "ימים 1 ו-2 פתוחים מראש כדי שתוכלו להתנסות לפני הטיול, השאר נפתחים בבוקר היום עצמו."
   },
 
   /* ---------- Mute toggle ---------- */
@@ -790,8 +790,8 @@ export const DICT = {
 
   /* ---------- Fallback banner (Gemini failed in offline mode) ---------- */
   quiz_fallback_banner: {
-    en: "Quizzo's chef is on a break — these are the basic questions for now.",
-    he: "השף של קוויצו ביציאה קצרה — בינתיים אלו השאלות הבסיסיות."
+    en: "Quizzo's chef is on a break, these are the basic questions for now.",
+    he: "השף של קוויצו ביציאה קצרה, בינתיים אלו השאלות הבסיסיות."
   },
 
   /* ---------- TripStrip ---------- */

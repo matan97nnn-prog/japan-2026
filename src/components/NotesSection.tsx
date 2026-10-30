@@ -20,8 +20,8 @@ const NOTES: Note[] = [
   {
     title: { en: "Open decisions", he: "החלטות פתוחות" },
     lines: [
-      { en: "Return flight: 17 or 18.11 — not set yet.", he: "טיסת חזור: 17 או 18.11 — עוד לא נקבע." },
-      { en: "Hotels: all set through Kanazawa. Kyoto (Honyado Nono) and the last Tokyo nights (Dai-ichi Hotel Tokyo) are 'for now'.", he: "מלונות: הכל סגור עד קנאזאווה. קיוטו (Honyado Nono) והלילות האחרונים בטוקיו (Dai-ichi Hotel Tokyo) — כרגע." },
+      { en: "Return flight: 17 or 18.11, not set yet.", he: "טיסת חזור: 17 או 18.11, עוד לא נקבע." },
+      { en: "Hotels: all set through Kanazawa. Kyoto (Honyado Nono) and the last Tokyo nights (Dai-ichi Hotel Tokyo) are 'for now'.", he: "מלונות: הכל סגור עד קנאזאווה. קיוטו (Honyado Nono) והלילות האחרונים בטוקיו (Dai-ichi Hotel Tokyo), כרגע." },
       { en: "Larnaca hotel name for 30.10.", he: "שם המלון בלרנקה ל-30.10." }
     ]
   },
@@ -31,7 +31,7 @@ const NOTES: Note[] = [
       { en: "Five nights, built around neighbourhoods rather than sights: one area per half-day, long stays, few trains.", he: "חמישה לילות, בנויים סביב שכונות ולא אטרקציות: אזור אחד לכל חצי יום, שהייה ארוכה, מעט רכבות." },
       { en: "2.11 the old downtown: Tsukiji, Nezu, Yanaka, Ueno.", he: "2.11 טוקיו הישנה: צוקיג'י, נדזו, יאנאקה, אואנו." },
       { en: "3.11 the west side: Meiji Jingu, Omotesando, Daikanyama–Nakameguro, Shibuya at dusk.", he: "3.11 הצד המערבי: מקדש מייג'י, אומוטסנדו, דאיקאניאמה–נאקאמגורו, שיבויה בשקיעה." },
-      { en: "15.11 Asakusa at night, when it's lit and calm. 16.11 Edo garden, Kagurazaka, Nihonbashi — or Kamakura / Nikko.", he: "15.11 אסקוסה בלילה, מוארת ושקטה. 16.11 גן אדו, קגורזקה, ניהונבאשי — או קמאקורה / ניקו." },
+      { en: "15.11 Asakusa at night, when it's lit and calm. 16.11 Edo garden, Kagurazaka, Nihonbashi, or Kamakura / Nikko.", he: "15.11 אסקוסה בלילה, מוארת ושקטה. 16.11 גן אדו, קגורזקה, ניהונבאשי, או קמאקורה / ניקו." },
       { en: "Skipped on purpose: Takeshita Street, Robot Restaurant-type shows, queue-for-a-photo spots.", he: "דילגנו בכוונה: רחוב טקשיטה, מופעי תיירים, מקומות שעומדים בתור בשביל תמונה." }
     ]
   },
@@ -40,7 +40,7 @@ const NOTES: Note[] = [
     day: 8,
     when: { en: "6.11", he: "6.11" },
     lines: [
-      { en: "Sunrise over Fuji at Oishi Park — coffee, family photo, first toast.", he: "זריחה מול הפוג'י בפארק אואישי — קפה, תמונה משפחתית, לחיים ראשון." },
+      { en: "Sunrise over Fuji at Oishi Park, coffee, family photo, first toast.", he: "זריחה מול הפוג'י בפארק אואישי, קפה, תמונה משפחתית, לחיים ראשון." },
       { en: "Itchiku Kubota museum, then the quiet western lakes (Motosu = the ¥1,000-note view).", he: "מוזיאון איצ'יקו קובוטה, ואז האגמים השקטים במערב (מוטוסו = הנוף שעל שטר 1,000 ין)." },
       { en: "Matsumoto Castle in the afternoon.", he: "טירת מטסומוטו אחר הצהריים." },
       { en: "Kaiseki dinner: Hikariya Higashi (private tatami rooms) or Hikariya Nishi. Book and say it's a 60th.", he: "ארוחת קאיסקי: Hikariya Higashi (חדרי טאטאמי פרטיים) או Hikariya Nishi. להזמין ולציין שזה יום הולדת 60." },
@@ -48,7 +48,7 @@ const NOTES: Note[] = [
     ]
   },
   {
-    title: { en: "Kamakura — by train from Tokyo", he: "קמאקורה — ברכבת מטוקיו" },
+    title: { en: "Kamakura: by train from Tokyo", he: "קמאקורה: ברכבת מטוקיו" },
     day: 18,
     when: { en: "Option for the free day", he: "אופציה ליום החופשי" },
     lines: [
@@ -56,7 +56,7 @@ const NOTES: Note[] = [
       { en: "How: JR Yokosuka line from Tokyo Station, ~1 h, ~¥950, no change. Then the little Enoden train to Hase.", he: "איך: קו JR יוקוסוקה מתחנת טוקיו, כשעה, כ-950 ין, בלי החלפה. משם רכבת האנודן הקטנה להאסה." },
       { en: "What's there: the 13 m bronze Great Buddha, Hasedera on the hillside, Tsurugaoka Hachimangu, Hokokuji's bamboo grove.", he: "מה יש: הבודהה הגדול מברונזה (13 מ'), מקדש האסדרה על הגבעה, צורוגאוקה האצ'ימנגו, חורשת הבמבוק של הוקוקוג'י." },
       { en: "Walk: Daibutsu hiking trail, Kita-Kamakura → Great Buddha, ~2.5 km, 1 h.", he: "הליכה: שביל דאיבוטסו, מקיטה-קמאקורה לבודהה הגדול, כ-2.5 ק\"מ, שעה." },
-      { en: "Honest note: leaves there turn late Nov — mostly green on our dates.", he: "בכנות: השלכת שם מגיעה בסוף נובמבר — בתאריכים שלנו עוד ירוק ברובו." }
+      { en: "Honest note: leaves there turn late Nov, mostly green on our dates.", he: "בכנות: השלכת שם מגיעה בסוף נובמבר, בתאריכים שלנו עוד ירוק ברובו." }
     ]
   },
   {
@@ -74,12 +74,12 @@ const NOTES: Note[] = [
   {
     title: { en: "Kyoto at night & the bamboo", he: "קיוטו בלילה והבמבוק" },
     lines: [
-      { en: "Kyoto, our way: Fushimi Inari at 7:00, Tofuku-ji's maple bridge, the quiet Saga temples (Jojakko-ji, Gio-ji), the back lanes of Higashiyama — and fewer of the packed spots.", he: "קיוטו בדרך שלנו: פושימי אינרי ב-7:00, גשר המייפל של טופוקו-ג'י, המקדשים השקטים של סאגה (ג'וג'אקו-ג'י, גיו-ג'י), הסמטאות של היגאשיאמה — ופחות מהמקומות הצפופים." },
-      { en: "Nijo Castle at night — 'NAKED' light art, 18:00–22:00 → 14.11.", he: "מצודת ניג'ו בלילה — מופע אור NAKED, ‏18:00–22:00 ← 14.11." },
+      { en: "Kyoto, our way: Fushimi Inari at 7:00, Tofuku-ji's maple bridge, the quiet Saga temples (Jojakko-ji, Gio-ji), the back lanes of Higashiyama, and fewer of the packed spots.", he: "קיוטו בדרך שלנו: פושימי אינרי ב-7:00, גשר המייפל של טופוקו-ג'י, המקדשים השקטים של סאגה (ג'וג'אקו-ג'י, גיו-ג'י), הסמטאות של היגאשיאמה, ופחות מהמקומות הצפופים." },
+      { en: "Nijo Castle at night, 'NAKED' light art, 18:00–22:00 → 14.11.", he: "מצודת ניג'ו בלילה, מופע אור NAKED, ‏18:00–22:00 ← 14.11." },
       { en: "Bamboo forest (Arashiyama) at 07:30, before the crowds → 14.11.", he: "יער הבמבוק (אראשיאמה) ב-07:30, לפני ההמונים ← 14.11." },
-      { en: "'The temple with the bamboo': Kodai-ji — small bamboo grove, lit at night → 12.11 evening.", he: "\"המקדש עם הבמבוק\": קודאי-ג'י — חורשת במבוק קטנה, מואר בלילה ← 12.11 בערב." },
-      { en: "The Silver Pavilion (Ginkaku-ji) is elsewhere in town — optional on 15.11 morning.", he: "מקדש הכסף (Ginkaku-ji) נמצא בצד אחר של העיר — אופציה בבוקר 15.11." },
-      { en: "Golden Pavilion (Kinkaku-ji) — dropped, as you asked.", he: "מקדש הזהב (Kinkaku-ji) — ירד, כמו שביקשתם." }
+      { en: "'The temple with the bamboo': Kodai-ji, small bamboo grove, lit at night → 12.11 evening.", he: "\"המקדש עם הבמבוק\": קודאי-ג'י, חורשת במבוק קטנה, מואר בלילה ← 12.11 בערב." },
+      { en: "The Silver Pavilion (Ginkaku-ji) is elsewhere in town, optional on 15.11 morning.", he: "מקדש הכסף (Ginkaku-ji) נמצא בצד אחר של העיר, אופציה בבוקר 15.11." },
+      { en: "Golden Pavilion (Kinkaku-ji), dropped, as you asked.", he: "מקדש הזהב (Kinkaku-ji), ירד, כמו שביקשתם." }
     ]
   },
   {
@@ -87,18 +87,18 @@ const NOTES: Note[] = [
     day: 9,
     when: { en: "7.11", he: "7.11" },
     lines: [
-      { en: "Alpine valley between Matsumoto and Takayama; no private cars — park at Hirayu, bus up.", he: "עמק אלפיני בין מטסומוטו לטקאיאמה; אין רכבים פרטיים — חונים בהירויו ועולים באוטובוס." },
+      { en: "Alpine valley between Matsumoto and Takayama; no private cars, park at Hirayu, bus up.", he: "עמק אלפיני בין מטסומוטו לטקאיאמה; אין רכבים פרטיים, חונים בהירויו ועולים באוטובוס." },
       { en: "Walk: Taisho Pond → Kappa Bridge → Myojin, flat, 2–3 h. Larch gold, snowy peaks.", he: "הליכה: בריכת טאישו ← גשר קאפה ← מיוג'ין, מישורי, 2–3 שעות. ארזים מוזהבים ופסגות מושלגות." },
       { en: "Then an onsen at Hirayu no Mori before Takayama.", he: "אחר כך אונסן בהירויו נו מורי לפני טקאיאמה." }
     ]
   },
   {
-    title: { en: "Nikko — only if we feel like it", he: "ניקו — רק אם יתחשק" },
+    title: { en: "Nikko: only if we feel like it", he: "ניקו: רק אם יתחשק" },
     day: 18,
     when: { en: "Option for the free day", he: "אופציה ליום החופשי" },
     lines: [
       { en: "Shinkyo bridge → Toshogu → 30 min walk to Kanmangafuchi's row of ~70 jizo statues by the gorge.", he: "גשר שינקיו ← טושוגו ← 30 דק' הליכה לשורת כ-70 פסלי הג'יזו בקניון קנמנגאפוצ'י." },
-      { en: "Skip Lake Chuzenji / Kegon Falls — leaves up there are gone by mid-November.", he: "לוותר על אגם צ'וזנג'י ומפל קגון — השלכת שם נגמרת עד אמצע נובמבר." },
+      { en: "Skip Lake Chuzenji / Kegon Falls, leaves up there are gone by mid-November.", he: "לוותר על אגם צ'וזנג'י ומפל קגון, השלכת שם נגמרת עד אמצע נובמבר." },
       { en: "Tobu train from Asakusa, ~2 h each way.", he: "רכבת טובו מאסקוסה, כשעתיים לכל כיוון." }
     ],
     link: { label: { en: "Kanmangafuchi on Google Maps", he: "קנמנגאפוצ'י בגוגל מפות" }, url: "https://maps.app.goo.gl/8BQKnqDwAxP1eoV49" }
@@ -106,28 +106,28 @@ const NOTES: Note[] = [
   {
     title: { en: "Festivals & events on our dates", he: "פסטיבלים ואירועים בתאריכים שלנו" },
     lines: [
-      { en: "3.11 Tokyo — Meiji Jingu yabusame (horseback archery), Culture Day.", he: "3.11 טוקיו — יבוסאמה (קשתות על סוסים) במקדש מייג'י, יום התרבות." },
-      { en: "7–8.11 Takayama — Hie Shrine maple festival (dates unconfirmed).", he: "7–8.11 טקאיאמה — פסטיבל השלכת במקדש היה (התאריכים לא מאומתים)." },
-      { en: "12.11 Kyoto — Kodai-ji autumn illumination.", he: "12.11 קיוטו — תאורת הסתיו בקודאי-ג'י." },
-      { en: "14.11 Kyoto — Nijo Castle night event.", he: "14.11 קיוטו — אירוע הלילה במצודת ניג'ו." },
-      { en: "15.11 Kyoto — Hyakumanben handicraft market (15th of each month), 08:00.", he: "15.11 קיוטו — שוק המלאכה של היאקומנבן (ב-15 לכל חודש), מ-08:00." },
+      { en: "3.11 Tokyo, Meiji Jingu yabusame (horseback archery), Culture Day.", he: "3.11 טוקיו, יבוסאמה (קשתות על סוסים) במקדש מייג'י, יום התרבות." },
+      { en: "7–8.11 Takayama, Hie Shrine maple festival (dates unconfirmed).", he: "7–8.11 טקאיאמה, פסטיבל השלכת במקדש היה (התאריכים לא מאומתים)." },
+      { en: "12.11 Kyoto, Kodai-ji autumn illumination.", he: "12.11 קיוטו, תאורת הסתיו בקודאי-ג'י." },
+      { en: "14.11 Kyoto, Nijo Castle night event.", he: "14.11 קיוטו, אירוע הלילה במצודת ניג'ו." },
+      { en: "15.11 Kyoto, Hyakumanben handicraft market (15th of each month), 08:00.", he: "15.11 קיוטו, שוק המלאכה של היאקומנבן (ב-15 לכל חודש), מ-08:00." },
       { en: "Just missed: Hakone samurai procession (3.11), Kawaguchiko leaves festival (from 7.11), Kenrokuen light-up (not 9–10.11), Kiyomizu night viewing (from 21.11).", he: "מפספסים בקטנה: תהלוכת הסמוראים בהאקונה (3.11), פסטיבל השלכת בקאוואגוצ'יקו (מ-7.11), התאורה בקנרוקואן (לא ב-9–10.11), הביקור הלילי בקיומיזו (מ-21.11)." }
     ]
   },
   {
     title: { en: "Sake breweries", he: "מבשלות סאקה" },
     lines: [
-      { en: "5.11 Ide, Kawaguchiko — tour 15:00, ¥500. Book a day ahead.", he: "5.11 Ide, קאוואגוצ'יקו — סיור ב-15:00, ‏500 ין. להזמין יום קודם." },
-      { en: "8.11 Takayama old town — Harada, Funasaka, Hirase; walk-in tastings.", he: "8.11 העיר העתיקה בטקאיאמה — Harada, ‏Funasaka, ‏Hirase; טעימות בלי הזמנה." },
-      { en: "9.11 Fukumitsuya, Kanazawa — tour 15:00, ¥3,300 (optional, book).", he: "9.11 Fukumitsuya, קנאזאווה — סיור ב-15:00, ‏3,300 ין (אופציונלי, להזמין)." },
-      { en: "12.11 Gekkeikan Okura museum, Fushimi (Kyoto) — ¥600.", he: "12.11 מוזיאון גקקייקן אוקורה, פושימי (קיוטו) — 600 ין." }
+      { en: "5.11 Ide, Kawaguchiko, tour 15:00, ¥500. Book a day ahead.", he: "5.11 Ide, קאוואגוצ'יקו, סיור ב-15:00, ‏500 ין. להזמין יום קודם." },
+      { en: "8.11 Takayama old town, Harada, Funasaka, Hirase; walk-in tastings.", he: "8.11 העיר העתיקה בטקאיאמה, Harada, ‏Funasaka, ‏Hirase; טעימות בלי הזמנה." },
+      { en: "9.11 Fukumitsuya, Kanazawa, tour 15:00, ¥3,300 (optional, book).", he: "9.11 Fukumitsuya, קנאזאווה, סיור ב-15:00, ‏3,300 ין (אופציונלי, להזמין)." },
+      { en: "12.11 Gekkeikan Okura museum, Fushimi (Kyoto), ¥600.", he: "12.11 מוזיאון גקקייקן אוקורה, פושימי (קיוטו), 600 ין." }
     ]
   },
   {
     title: { en: "Taiko drums & sumo", he: "תיפוף יפני וסומו" },
     lines: [
-      { en: "Taiko: DRUM TAO theatre at Kyoto Station, nightly 19:00 & 21:00, from ¥10,000 — option on 11.11.", he: "טייקו: תיאטרון DRUM TAO בתחנת קיוטו, כל ערב 19:00 ו-21:00, מ-10,000 ין — אופציה ל-11.11." },
-      { en: "Sumo: the November tournament is in Fukuoka (8–22.11) — not on our route, and Tokyo's stables are there too.", he: "סומו: טורניר נובמבר בפוקואוקה (8–22.11) — לא במסלול שלנו, וגם האורוות של טוקיו נמצאות שם." },
+      { en: "Taiko: DRUM TAO theatre at Kyoto Station, nightly 19:00 & 21:00, from ¥10,000, option on 11.11.", he: "טייקו: תיאטרון DRUM TAO בתחנת קיוטו, כל ערב 19:00 ו-21:00, מ-10,000 ין, אופציה ל-11.11." },
+      { en: "Sumo: the November tournament is in Fukuoka (8–22.11), not on our route, and Tokyo's stables are there too.", he: "סומו: טורניר נובמבר בפוקואוקה (8–22.11), לא במסלול שלנו, וגם האורוות של טוקיו נמצאות שם." },
       { en: "Instead: the free Sumo Museum in Ryogoku (weekdays, 2.11), or a sumo show-dinner in Asakusa (free day).", he: "במקום: מוזיאון הסומו בריוגוקו, בחינם (ימי חול, 2.11), או מופע סומו עם ארוחה באסקוסה (ביום החופשי)." }
     ]
   },
@@ -135,8 +135,8 @@ const NOTES: Note[] = [
     title: { en: "Onsen", he: "אונסנים" },
     lines: [
       { en: "4.11 Hakone Yutowa (our hotel). Day option: Tenzan Tohji-kyo, private baths too.", he: "4.11 Hakone Yutowa (המלון שלנו). אופציה יומית: Tenzan Tohji-kyo, גם עם אמבטים פרטיים." },
-      { en: "5–6.11 Fuji Yurari — baths facing Fuji.", he: "5–6.11 Fuji Yurari — אמבטים מול הפוג'י." },
-      { en: "7.11 Hirayu no Mori — 16 outdoor baths after Kamikochi.", he: "7.11 Hirayu no Mori — ‏16 אמבטים בחוץ אחרי קמיקוצ'י." }
+      { en: "5–6.11 Fuji Yurari, baths facing Fuji.", he: "5–6.11 Fuji Yurari, אמבטים מול הפוג'י." },
+      { en: "7.11 Hirayu no Mori, 16 outdoor baths after Kamikochi.", he: "7.11 Hirayu no Mori, ‏16 אמבטים בחוץ אחרי קמיקוצ'י." }
     ]
   },
   {
@@ -147,11 +147,11 @@ const NOTES: Note[] = [
     ]
   },
   {
-    title: { en: "Autumn leaves — where it's best on our dates", he: "שלכת — איפה הכי יפה בתאריכים שלנו" },
+    title: { en: "Autumn leaves: where it's best on our dates", he: "שלכת: איפה הכי יפה בתאריכים שלנו" },
     lines: [
       { en: "Peak: Kamikochi (7.11), Takayama (7–8.11), Kurama–Kibune (13.11).", he: "בשיא: קמיקוצ'י (7.11), טקאיאמה (7–8.11), קוראמה–קיבונה (13.11)." },
       { en: "Good: Hakone at altitude (4.11), Kenrokuen early colour (10.11), Shirakawa-go tail end (9.11).", he: "טוב: האקונה בגובה (4.11), קנרוקואן בתחילת הצבע (10.11), שירקאווה-גו בסוף העונה (9.11)." },
-      { en: "Early: central Kyoto and Tokyo turn late Nov — we'll see the start.", he: "מוקדם: מרכז קיוטו וטוקיו משנים צבע בסוף נובמבר — נראה את ההתחלה." }
+      { en: "Early: central Kyoto and Tokyo turn late Nov, we'll see the start.", he: "מוקדם: מרכז קיוטו וטוקיו משנים צבע בסוף נובמבר, נראה את ההתחלה." }
     ]
   }
 ];

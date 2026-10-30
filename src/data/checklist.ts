@@ -14,7 +14,7 @@ export const bookingChecklist: ChecklistItem[] = [
   },
   {
     id: "book-flights",
-    text: "Emirates flights — booking refs HG8ZCN and I5JSFN",
+    text: "Emirates flights: booking refs HG8ZCN and I5JSFN",
     detail: "EK110 Larnaca → Dubai 31.10 16:25; EK318 Dubai → Narita 1.11 02:55 → 17:20. Check that bags go through to Narita and that all four names match the passports.",
     done: true
   },
@@ -26,12 +26,12 @@ export const bookingChecklist: ChecklistItem[] = [
   {
     id: "idp-driving-license",
     text: "International Driving Permit (IDP) for whoever drives",
-    detail: "Carried with the original Israeli licence and passport. Without it — no car in Odawara on 4.11.",
+    detail: "Carried with the original Israeli licence and passport. Without it, no car in Odawara on 4.11.",
     urgent: true
   },
   {
     id: "rental-car-confirmed",
-    text: "Rental car — Toyota Rent a Car #99910376400",
+    text: "Rental car: Toyota Rent a Car #99910376400",
     detail: "Noah Hybrid, under RONEN STEIN. Pick-up Odawara Sta. Shinkansen Exit, 4.11 10:00 (tel 0465-32-0100). Return Kanazawa Station East Exit by 9.11 20:00. NOC insurance + ETC card included.",
     done: true
   },
@@ -43,7 +43,7 @@ export const bookingChecklist: ChecklistItem[] = [
   },
   {
     id: "evening-tour",
-    text: "Tokyo evening tour 2.11 20:00 — booking 9022",
+    text: "Tokyo evening tour 2.11 20:00: booking 9022",
     detail: "Hebrew Tour Guide Japan, meet at Gap Store Shinjuku Flagship. WhatsApp +81 80-4373-7268.",
     done: true
   },
@@ -55,7 +55,7 @@ export const bookingChecklist: ChecklistItem[] = [
   {
     id: "book-shibuya-sky",
     text: "Shibuya Sky sunset tickets (3.11)",
-    detail: "Holiday + sunset slot sells out — book online."
+    detail: "Holiday + sunset slot sells out, book online."
   },
   {
     id: "book-ide-sake",
@@ -65,7 +65,7 @@ export const bookingChecklist: ChecklistItem[] = [
   {
     id: "book-birthday-dinner",
     text: "Dad's 60th birthday dinner in Matsumoto (6.11)",
-    detail: "Hikariya Higashi or Hikariya Nishi — kaiseki. Mention the birthday when booking.",
+    detail: "Hikariya Higashi or Hikariya Nishi, kaiseki. Mention the birthday when booking.",
     urgent: true
   },
   {
@@ -90,17 +90,17 @@ export const bookingChecklist: ChecklistItem[] = [
   },
   {
     id: "jr-pass",
-    text: "JR Pass — decide if it pays off",
+    text: "JR Pass: decide if it pays off",
     detail: "Long JR legs: Tokyo → Odawara, Kanazawa → Kyoto, Kyoto → Tokyo. Compare against single tickets before buying."
   },
   {
     id: "esim",
-    text: "Japan eSIM or pocket wifi — all four phones",
+    text: "Japan eSIM or pocket wifi: all four phones",
     detail: "Activate before landing."
   },
   {
     id: "ic-card-setup",
-    text: "Suica/Pasmo — one per person",
+    text: "Suica/Pasmo: one per person",
     detail: "Trains, buses and konbini for the whole trip; the phone-wallet version works too."
   },
   {
@@ -119,17 +119,17 @@ export const packingChecklist: ChecklistItem[] = [
   {
     id: "idp-and-license",
     text: "IDP + original Israeli driving license + passport",
-    detail: "All three, physically, for the driver — needed to collect the rental car in Odawara on Nov 4. Keep them together, easy to reach, not in a checked bag.",
+    detail: "All three, physically, for the driver, needed to collect the rental car in Odawara on Nov 4. Keep them together, easy to reach, not in a checked bag.",
     urgent: true
   },
   {
     id: "layers",
     text: "Layered clothing for a wide temperature range",
-    detail: "Tokyo and Kyoto are mild in November (roughly 10–18°C), but Nikko, Hakone, the Fuji lakes and especially Matsumoto/Kamikochi/Takayama run noticeably colder — pack for near-freezing mountain mornings."
+    detail: "Tokyo and Kyoto are mild in November (roughly 10–18°C), but Nikko, Hakone, the Fuji lakes and especially Matsumoto/Kamikochi/Takayama run noticeably colder, pack for near-freezing mountain mornings."
   },
   {
     id: "comfortable-shoes",
-    text: "Very comfortable walking shoes — for everyone",
+    text: "Very comfortable walking shoes: for everyone",
     detail: "This trip is 15,000+ steps most days, plus the Kamikochi riverside trail and Matsumoto Castle's steep original stairs. Break new shoes in before you leave."
   },
   {
@@ -145,7 +145,7 @@ export const packingChecklist: ChecklistItem[] = [
   {
     id: "power-adapter",
     text: "Japan uses Type A plugs, 100V",
-    detail: "Same plug shape as the US — bring a Type A adapter if traveling from Israel or elsewhere with a different plug."
+    detail: "Same plug shape as the US, bring a Type A adapter if traveling from Israel or elsewhere with a different plug."
   },
   {
     id: "cash-pouch",
@@ -160,12 +160,12 @@ export const packingChecklist: ChecklistItem[] = [
   {
     id: "small-daypack",
     text: "A small daypack per person",
-    detail: "For the long touring days — water, snacks, a layer, the day's tickets."
+    detail: "For the long touring days, water, snacks, a layer, the day's tickets."
   },
   {
     id: "first-aid",
     text: "Mini first-aid kit",
-    detail: "Plasters, antiseptic, pain relievers, any regular medication — pharmacies are plentiful but not always English-friendly, especially outside the big cities."
+    detail: "Plasters, antiseptic, pain relievers, any regular medication, pharmacies are plentiful but not always English-friendly, especially outside the big cities."
   },
   {
     id: "reusable-bottle",
@@ -175,6 +175,6 @@ export const packingChecklist: ChecklistItem[] = [
   {
     id: "modest-onsen-cover",
     text: "Waterproof tattoo covers, if needed",
-    detail: "A practical workaround for some onsens with a tattoo policy — check with each onsen first, as policy varies."
+    detail: "A practical workaround for some onsens with a tattoo policy, check with each onsen first, as policy varies."
   }
 ];

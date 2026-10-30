@@ -31,7 +31,7 @@ export default function PlanOverview({ id = "trip" }: { id?: string }) {
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <h2 className="text-[28px] sm:text-4xl text-ink-900">{he ? "תוכנית הטיול" : "The plan"}</h2>
         <p className="mt-1 text-[15px] text-ink-700/75">
-          {he ? "יום אחרי יום — לוחצים על יום לתוכנית המלאה" : "Day by day — tap a day for the full plan"}
+          {he ? "יום אחרי יום, לוחצים על יום לתוכנית המלאה" : "Day by day, tap a day for the full plan"}
         </p>
         <ol className="mt-5 space-y-2.5">
           {itinerary.map((raw) => {

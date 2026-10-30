@@ -36,7 +36,7 @@ const BOOKINGS: Booking[] = [
   },
   {
     Icon: Car,
-    title: { en: "Toyota Rent a Car — Noah Hybrid", he: "Toyota Rent a Car — נואה היברידית" },
+    title: { en: "Toyota Rent a Car: Noah Hybrid", he: "Toyota Rent a Car: נואה היברידית" },
     when: { en: "Pick up 4.11 10:00 Odawara · return 9.11 by 20:00 Kanazawa", he: "איסוף 4.11 10:00 אודווארה · החזרה 9.11 עד 20:00 קנאזאווה" },
     codes: ["99910376400"],
     lines: [{ en: "Booked under RONEN STEIN", he: "על שם RONEN STEIN" }],

@@ -156,7 +156,7 @@ export default function RouteWeather() {
                       </div>
                       <div className="mt-1 flex items-center gap-1 text-[11.5px] text-olive-700">
                         <Umbrella size={12} />
-                        {w.rainHours ? <span dir="ltr">{w.rainHours}</span> : he ? `${w.rainMax}% — יבש` : `${w.rainMax}% — dry`}
+                        {w.rainHours ? <span dir="ltr">{w.rainHours}</span> : he ? `${w.rainMax}%, יבש` : `${w.rainMax}%, dry`}
                       </div>
                     </>
                   ) : (

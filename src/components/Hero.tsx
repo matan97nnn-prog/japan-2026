@@ -396,7 +396,7 @@ export default function Hero() {
           <div className="font-serif tracking-[0.16em] text-xs sm:text-sm uppercase whitespace-nowrap">
             {t("brand")}
           </div>
-          <div className="h-px flex-1 max-w-16 sm:max-w-32 bg-cream-50/40" />
+          <div className="flex-1" />
           <AnimatePresence mode="wait">
             <motion.a
               key={photo.src}
@@ -413,11 +413,6 @@ export default function Hero() {
             >
               <div className="font-serif italic text-[11px] sm:text-xs text-cream-50/90 leading-tight truncate">
                 {photo.place}
-                {photo.dayNumber && (
-                  <span className="not-italic font-sans font-medium uppercase tracking-[0.18em] text-[9px] sm:text-[10px] text-cream-50/95 ms-2 px-1.5 py-0.5 rounded-full bg-cream-50/15 ring-1 ring-cream-50/25 align-middle">
-                    {t("hero_photo_day", { n: photo.dayNumber })}
-                  </span>
-                )}
               </div>
               <div className="hidden sm:block text-[9px] uppercase tracking-[0.22em] text-cream-50/60 mt-0.5">
                 {photo.credit}

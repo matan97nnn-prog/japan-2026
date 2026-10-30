@@ -10,8 +10,8 @@ export const dishes: Dish[] = [
     region: "japan",
     category: "pasta",
     description:
-      "Wheat noodles in a rich broth — shoyu, miso, tonkotsu or shio depending on the shop. Tokyo has thousands of tiny ramen counters; look for a queue as the best sign.",
-    tryIt: "Any counter with a line outside — that's the tell",
+      "Wheat noodles in a rich broth, shoyu, miso, tonkotsu or shio depending on the shop. Tokyo has thousands of tiny ramen counters; look for a queue as the best sign.",
+    tryIt: "Any counter with a line outside, that's the tell",
     image: "./images/food-ramen.jpg",
     imageCredit: {
       author: "Quercus acuta",
@@ -42,7 +42,7 @@ export const dishes: Dish[] = [
     region: "japan",
     category: "main",
     description:
-      "Lightly battered, deep-fried seafood and vegetables — done right, the batter is nearly translucent and never greasy. Asakusa is famous for its old-school tempura specialists.",
+      "Lightly battered, deep-fried seafood and vegetables, done right, the batter is nearly translucent and never greasy. Asakusa is famous for its old-school tempura specialists.",
     tryIt: "Tempura Daikokuya (Asakusa)",
     image: "./images/food-tempura.jpg",
     imageCredit: {
@@ -58,7 +58,7 @@ export const dishes: Dish[] = [
     region: "japan",
     category: "starter",
     description:
-      "Skewered, grilled chicken — different cuts each on their own skewer, seasoned with tare sauce or plain salt. The classic order at any of Omoide Yokocho's tiny alley counters.",
+      "Skewered, grilled chicken, different cuts each on their own skewer, seasoned with tare sauce or plain salt. The classic order at any of Omoide Yokocho's tiny alley counters.",
     tryIt: "Omoide Yokocho (Shinjuku)",
     image: "./images/food-yakitori.jpg",
     imageCredit: {
@@ -90,7 +90,7 @@ export const dishes: Dish[] = [
     region: "north",
     category: "starter",
     description:
-      "The delicate skin that forms on simmering soy milk, skimmed off and served fresh or dried — Nikko's signature local specialty, sold near the Toshogu approach.",
+      "The delicate skin that forms on simmering soy milk, skimmed off and served fresh or dried, Nikko's signature local specialty, sold near the Toshogu approach.",
     tryIt: "Restaurants near Toshogu Shrine, Nikko",
     image: "./images/food-yuba.jpg",
     imageCredit: {
@@ -106,7 +106,7 @@ export const dishes: Dish[] = [
     region: "north",
     category: "main",
     description:
-      "Thick, flat, hand-cut wheat noodles simmered in a miso broth with pumpkin and root vegetables — the Fuji Five Lakes region's signature dish, warming after a day of lake-hopping.",
+      "Thick, flat, hand-cut wheat noodles simmered in a miso broth with pumpkin and root vegetables, the Fuji Five Lakes region's signature dish, warming after a day of lake-hopping.",
     tryIt: "Kawaguchiko / Fujiyoshida area",
     image: "./images/food-houtou.jpg",
     imageCredit: {
@@ -122,7 +122,7 @@ export const dishes: Dish[] = [
     region: "north",
     category: "main",
     description:
-      "Buckwheat noodles grown and made in the Nagano highlands — Matsumoto is proud of its soba, and Nakamachi Street's old kura warehouse buildings hold several well-regarded restaurants for it.",
+      "Buckwheat noodles grown and made in the Nagano highlands, Matsumoto is proud of its soba, and Nakamachi Street's old kura warehouse buildings hold several well-regarded restaurants for it.",
     tryIt: "Nakamachi Street, Matsumoto",
     image: "./images/food-soba.jpg"
   },
@@ -133,7 +133,7 @@ export const dishes: Dish[] = [
     region: "north",
     category: "main",
     description:
-      "Richly marbled, locally raised beef from the Hida region around Takayama — grilled tableside on a hoba leaf, as skewers at the morning market, or as part of a ryokan's kaiseki course.",
+      "Richly marbled, locally raised beef from the Hida region around Takayama, grilled tableside on a hoba leaf, as skewers at the morning market, or as part of a ryokan's kaiseki course.",
     tryIt: "Takayama",
     image: "./images/food-hidabeef.jpg",
     imageCredit: {
@@ -165,7 +165,7 @@ export const dishes: Dish[] = [
     region: "south",
     category: "main",
     description:
-      "Intensely marbled Japanese beef, available at Kyoto's better yakiniku (grilled tableside) restaurants and teppanyaki counters — a treat-yourself dinner on one of the trip's four Kyoto nights.",
+      "Intensely marbled Japanese beef, available at Kyoto's better yakiniku (grilled tableside) restaurants and teppanyaki counters, a treat-yourself dinner on one of the trip's four Kyoto nights.",
     tryIt: "Yakiniku restaurants in Kyoto",
     image: "./images/food-wagyu.jpg",
     imageCredit: {
@@ -181,7 +181,7 @@ export const dishes: Dish[] = [
     region: "south",
     category: "dessert",
     description:
-      "Kyoto is Japan's matcha capital — powdered green tea served whisked in a bowl, or worked into soft-serve, parfaits and traditional wagashi sweets shaped to match the season.",
+      "Kyoto is Japan's matcha capital, powdered green tea served whisked in a bowl, or worked into soft-serve, parfaits and traditional wagashi sweets shaped to match the season.",
     tryIt: "Nishiki Market and the Higashiyama teahouses (Kyoto)",
     image: "./images/food-matcha.jpg",
     imageCredit: {
@@ -213,7 +213,7 @@ export const dishes: Dish[] = [
     region: "japan",
     category: "snack",
     description:
-      "Elaborate boxed meals sold specifically for train journeys, often region-specific — a Shinkansen ride isn't complete without picking one up on the platform before boarding.",
+      "Elaborate boxed meals sold specifically for train journeys, often region-specific, a Shinkansen ride isn't complete without picking one up on the platform before boarding.",
     tryIt: "Any Shinkansen station platform kiosk",
     image: "./images/food-ekiben.jpg",
     imageCredit: {
