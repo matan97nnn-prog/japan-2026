@@ -7,6 +7,7 @@ import PlanOverview from "./components/PlanOverview";
 import TodayCard from "./components/TodayCard";
 import YenConverter from "./components/YenConverter";
 import { HotelsStrip, MapsLists, HomeTiles } from "./components/HomeExtras";
+import Phrasebook from "./components/Phrasebook";
 import NotesSection from "./components/NotesSection";
 import MapView from "./components/MapView";
 import SavedPlacesSection from "./components/SavedPlacesSection";
@@ -48,6 +49,8 @@ function PageBody({ page, registerFocus }: { page: Page; registerFocus: (fn: (id
       return <AttractionsGrid />;
     case "stays":
       return <StaysSection />;
+    case "phrases":
+      return <Phrasebook />;
     case "info":
       return (
         <>

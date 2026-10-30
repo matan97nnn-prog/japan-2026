@@ -58,6 +58,7 @@ import PoiImage from "./PoiImage";
 import PhotoCredit from "./PhotoCredit";
 import MiniMap from "./MiniMap";
 import DayExtras from "./DayExtras";
+import DayAlerts from "./DayAlerts";
 import NearbySaved from "./NearbySaved";
 import { TaxiButton } from "./TaxiCard";
 import { PLACE_JA, taxiTarget } from "../data/japanese";
@@ -601,6 +602,8 @@ function ChapterDetailContent({ day }: { day: Day }) {
           {italianWords.length > 0 && (
             <ItalianWordCarousel dayNumber={day.dayNumber} words={italianWords} />
           )}
+
+          <DayAlerts dayNumber={day.dayNumber} />
 
           <DayAgenda day={localDay} raw={day} />
 

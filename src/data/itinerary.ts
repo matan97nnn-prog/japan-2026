@@ -152,9 +152,9 @@ export const itinerary: Day[] = [
       },
       {
         time: "14:00",
-        title: "Ueno Park & Tokyo National Museum",
+        title: "Ueno Park",
         place: "Ueno Park · Tokyo National Museum",
-        description: "Optional. A stroll past the ponds and temples; the museum if you want an hour of samurai armour and screens.",
+        description: "Optional. A stroll past the ponds and temples. The National Museum is closed on Mondays.",
         optional: true,
         attractionId: "ueno-park",
         rideToNext: {

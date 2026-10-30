@@ -1,4 +1,4 @@
-import { BedDouble, ChevronLeft, ChevronRight, Compass, ExternalLink, Info, Map, MapPinned, Utensils } from "lucide-react";
+import { BedDouble, ChevronLeft, ChevronRight, Compass, ExternalLink, Info, Map, MapPinned, MessageCircle, Utensils } from "lucide-react";
 import { stays } from "../data/stays";
 import { useLocalizePoi } from "../data/i18n";
 import { useLang } from "../lib/i18n";
@@ -105,6 +105,7 @@ const TILES: { page: Page; Icon: typeof Map; he: [string, string]; en: [string, 
   { page: "food", Icon: Utensils, he: ["אוכל", "מה לאכול ואיפה"], en: ["Food", "What to eat, and where"] },
   { page: "places", Icon: Compass, he: ["מקומות", "המקומות שנבקר בהם"], en: ["Places", "Where we're going"] },
   { page: "stays", Icon: BedDouble, he: ["מלונות", "הזמנות, חדרים, דירוגים"], en: ["Hotels", "Bookings, rooms, ratings"] },
+  { page: "phrases", Icon: MessageCircle, he: ["שיחון", "משפטים ביפנית עם שמע"], en: ["Phrases", "Japanese, read aloud"] },
   { page: "info", Icon: Info, he: ["טיפים ומידע", "הערות, רשימות, חירום"], en: ["Tips & info", "Notes, lists, emergency"] }
 ];
 
@@ -114,7 +115,7 @@ export function HomeTiles() {
   const Arrow = he ? ChevronLeft : ChevronRight;
   return (
     <section className="py-6 pb-10">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 sm:grid-cols-5 gap-2.5">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 sm:grid-cols-3 gap-2.5">
         {TILES.map(({ page, Icon, he: h, en }) => {
           const [title, sub] = he ? h : en;
           return (
