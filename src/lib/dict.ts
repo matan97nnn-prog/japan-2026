@@ -158,6 +158,20 @@ export const DICT = {
     en: "Every stay, attraction, restaurant, convenience store and station — color-coded by category. The dashed line is our actual journey: Tokyo to Hakone, on through the Fuji lakes, Matsumoto, the Japanese Alps, Shirakawa-go and Kanazawa, then Kyoto, and back to Tokyo.",
     he: "כל מקום לינה, אטרקציה, מסעדה, מינימרקט ותחנה — בקוד צבעים לפי קטגוריה. הקו המקווקו הוא המסלול שלנו: מטוקיו להקונה, משם לאגמי פוג'י, מטסומוטו, האלפים היפניים, שירקאוו-גו וקנזאווה, אחר כך קיוטו, ובחזרה לטוקיו."
   },
+  saved_eyebrow: { en: "Saved places", he: "מקומות שמורים" },
+  saved_title: { en: "Our Google Maps lists, merged", he: "רשימות הגוגל מפות שלנו, מאוחדות" },
+  saved_intro: {
+    en: "Three Google Maps lists friends and family shared, merged into one map with duplicates removed. Tap a place for photos and reviews on Google Maps.",
+    he: "שלוש רשימות גוגל מפות ששיתפו איתנו, מאוחדות למפה אחת בלי כפילויות. הקישו על מקום כדי לראות תמונות וביקורות בגוגל מפות."
+  },
+  saved_open_list: { en: "Open list", he: "פתחו את הרשימה" },
+  saved_search: { en: "Search places or notes…", he: "חיפוש מקום או הערה…" },
+  saved_all: { en: "All", he: "הכל" },
+  saved_count: { en: "{n} places", he: "{n} מקומות" },
+  saved_more: { en: "Show more", he: "הצג עוד" },
+  saved_open_place: { en: "Photos & reviews", he: "תמונות וביקורות" },
+  saved_map_toggle: { en: "Map", he: "מפה" },
+  saved_list_toggle: { en: "List", he: "רשימה" },
   map_route_on: { en: "Route on", he: "מסלול מוצג" },
   map_route_off: { en: "Route off", he: "מסלול מוסתר" },
   map_spokes_on: { en: "Day trips on", he: "טיולי יום מוצגים" },

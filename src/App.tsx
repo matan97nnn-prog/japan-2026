@@ -9,6 +9,7 @@ import FamilyUpdatesSection from "./components/FamilyUpdatesSection";
 // <BookingsSection /> below (and its <SectionOrnament />) once ready.
 // import BookingsSection from "./components/BookingsSection";
 import MapView from "./components/MapView";
+import SavedPlacesSection from "./components/SavedPlacesSection";
 import AttractionsGrid from "./components/AttractionsGrid";
 import StaysSection from "./components/StaysSection";
 import ServicesSection from "./components/ServicesSection";
@@ -62,6 +63,9 @@ export default function App() {
 
       <SectionOrnament />
       <MapView registerFocus={registerFocus} />
+
+      <SectionOrnament />
+      <SavedPlacesSection />
 
       <SectionOrnament />
       <AttractionsGrid />
