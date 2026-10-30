@@ -590,7 +590,8 @@ export const DICT = {
   drink_type_other: { en: "Drink", he: "משקה" },
 
   /* ---------- Activity flags (rendered as small badges) ---------- */
-  optional_label: { en: "Optional", he: "לבחירה" },
+  optional_label: { en: "Can skip", he: "אפשר לוותר" },
+  must_label: { en: "Must", he: "חובה" },
   optional_aria: {
     en: "Optional, skip if you're tired",
     he: "לבחירה, אפשר לדלג אם עייפים"

@@ -7,6 +7,7 @@ import PlanOverview from "./components/PlanOverview";
 import TodayCard from "./components/TodayCard";
 import YenConverter from "./components/YenConverter";
 import { HotelsStrip, MapsLists, HomeTiles } from "./components/HomeExtras";
+import TransitSection from "./components/TransitSection";
 import Phrasebook from "./components/Phrasebook";
 import NotesSection from "./components/NotesSection";
 import MapView from "./components/MapView";
@@ -31,6 +32,8 @@ function PageBody({ page, registerFocus }: { page: Page; registerFocus: (fn: (id
   switch (page) {
     case "plan":
       return <PlanOverview />;
+    case "transit":
+      return <TransitSection />;
     case "map":
       return (
         <>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Home, CalendarDays, Map, Utensils, MoreHorizontal, Download, Compass, BedDouble, Info, MessageCircle } from "lucide-react";
+import { Home, CalendarDays, Map, Utensils, MoreHorizontal, Download, Compass, BedDouble, Info, MessageCircle, TrainFront } from "lucide-react";
 import { useT } from "../lib/dict";
 import { useLang } from "../lib/i18n";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -12,11 +12,12 @@ const TABS: { id: Page | "home" | "more"; Icon: typeof Home }[] = [
   { id: "home", Icon: Home },
   { id: "plan", Icon: CalendarDays },
   { id: "map", Icon: Map },
-  { id: "food", Icon: Utensils },
+  { id: "transit", Icon: TrainFront },
   { id: "more", Icon: MoreHorizontal }
 ];
 
 const MORE_LINKS: { id: Page; Icon: typeof Home }[] = [
+  { id: "food", Icon: Utensils },
   { id: "places", Icon: Compass },
   { id: "stays", Icon: BedDouble },
   { id: "phrases", Icon: MessageCircle },
@@ -51,7 +52,7 @@ export default function MobileBottomNav() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="w-10 h-1 bg-cream-300 rounded-full mx-auto mb-4" />
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-3 gap-2">
               {MORE_LINKS.map(({ id, Icon }) => (
                 <button
                   key={id}

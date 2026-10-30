@@ -1,4 +1,4 @@
-import { BedDouble, ChevronLeft, ChevronRight, Compass, ExternalLink, Info, Map, MapPinned, MessageCircle, Utensils } from "lucide-react";
+import { BedDouble, ChevronLeft, ChevronRight, Compass, ExternalLink, Info, Map, MapPinned, MessageCircle, TrainFront, Utensils } from "lucide-react";
 import { stays } from "../data/stays";
 import { useLocalizePoi } from "../data/i18n";
 import { useLang } from "../lib/i18n";
@@ -101,6 +101,7 @@ export function MapsLists() {
 }
 
 const TILES: { page: Page; Icon: typeof Map; he: [string, string]; en: [string, string] }[] = [
+  { page: "transit", Icon: TrainFront, he: ["תחבורה", "מטרו, קווים, מפות"], en: ["Transport", "Metro, lines, maps"] },
   { page: "map", Icon: Map, he: ["מפות", "מפת הטיול וכל ההמלצות"], en: ["Maps", "Trip map and every pin"] },
   { page: "food", Icon: Utensils, he: ["אוכל", "מה לאכול ואיפה"], en: ["Food", "What to eat, and where"] },
   { page: "places", Icon: Compass, he: ["מקומות", "המקומות שנבקר בהם"], en: ["Places", "Where we're going"] },

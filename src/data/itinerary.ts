@@ -125,7 +125,7 @@ export const itinerary: Day[] = [
         attractionId: "tsukiji-outer-market",
         rideToNext: {
           duration: "≈ 30 min",
-          note: "Hibiya line Tsukiji → Naka-Okachimachi, Chiyoda line → Nezu. Taxi ≈ 20 min, ¥2,500.",
+          note: "Hibiya line Tsukiji → Hibiya, Chiyoda line → Nezu. Taxi ≈ 20 min, ¥2,500.",
           dir: { from: "Tsukiji Outer Market", to: "Nezu Shrine", mode: "transit" }
         }
       },
@@ -159,7 +159,7 @@ export const itinerary: Day[] = [
         attractionId: "ueno-park",
         rideToNext: {
           duration: "20 min",
-          note: "Ginza line Ueno → Ginza, 5 min walk. Rest at the hotel before the evening.",
+          note: "Hibiya line Ueno → Tsukiji, no change, 2 min walk. Rest at the hotel before the evening.",
           dir: { from: "Ueno Station", to: "Hotel Keihan Tsukiji Ginza Grande", mode: "transit" }
         }
       },
@@ -864,7 +864,7 @@ export const itinerary: Day[] = [
         description: "7 min walk from Kyoto Station. Tatami floors, hot-spring baths, free late-night ramen.",
         rideToNext: {
           duration: "≈ 15 min",
-          note: "Walk to Kyoto Station, subway Karasuma line → Shijo, 5 min walk",
+          note: "Keihan Shichijo → Gion-Shijo (2 stops), then 10 min walk across the river",
           dir: { from: "Onyado Nono Kyoto Shichijo", to: "Nishiki Market", mode: "transit" }
         }
       },

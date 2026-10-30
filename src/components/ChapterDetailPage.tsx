@@ -59,6 +59,8 @@ import PhotoCredit from "./PhotoCredit";
 import MiniMap from "./MiniMap";
 import DayExtras from "./DayExtras";
 import DayAlerts from "./DayAlerts";
+import LegSteps from "./LegSteps";
+import DayEasy from "./DayEasy";
 import NearbySaved from "./NearbySaved";
 import { TaxiButton } from "./TaxiCard";
 import { PLACE_JA, taxiTarget } from "../data/japanese";
@@ -605,6 +607,8 @@ function ChapterDetailContent({ day }: { day: Day }) {
 
           <DayAlerts dayNumber={day.dayNumber} />
 
+          <DayEasy dayNumber={day.dayNumber} />
+
           <DayAgenda day={localDay} raw={day} />
 
           {/* Activities */}
@@ -619,6 +623,7 @@ function ChapterDetailContent({ day }: { day: Day }) {
                       duration={localDay.rideToFirst.duration}
                       note={localDay.rideToFirst.note}
                       dir={localDay.rideToFirst.dir}
+                      guideKey={`${day.dayNumber}:first`}
                     />
                   )}
                   <ActivityRow
@@ -637,6 +642,7 @@ function ChapterDetailContent({ day }: { day: Day }) {
                       note={a.rideToNext.note}
                       departAt={a.rideToNext.departAt}
                       dir={a.rideToNext.dir}
+                      guideKey={`${day.dayNumber}:${i}`}
                     />
                   )}
                 </Fragment>
@@ -646,6 +652,7 @@ function ChapterDetailContent({ day }: { day: Day }) {
                   duration={localDay.returnTo.duration}
                   note={localDay.returnTo.note}
                   dir={localDay.returnTo.dir}
+                  guideKey={`${day.dayNumber}:return`}
                 />
               )}
             </ol>
@@ -926,9 +933,14 @@ function ActivityRow({
                 <Clock size={12} /> {activity.time}
               </span>
             )}
+            {!optional && activity.attractionId && (
+              <span className="inline-flex items-center rounded-full bg-terracotta-600 text-cream-50 px-2.5 py-0.5 text-[12px] font-bold">
+                {t("must_label")}
+              </span>
+            )}
             {optional && (
               <span
-                className="inline-flex items-center rounded-full bg-olive-500/12 text-olive-700 px-2.5 py-0.5 text-[12px] font-semibold"
+                className="inline-flex items-center rounded-full bg-amber-100 text-amber-800 ring-1 ring-amber-300 px-2.5 py-0.5 text-[12px] font-bold"
                 title={t("optional_aria")}
               >
                 {t("optional_label")}
@@ -1081,12 +1093,14 @@ function RideConnector({
   duration,
   note,
   departAt,
-  dir
+  dir,
+  guideKey
 }: {
   duration?: string;
   note?: string;
   departAt?: string;
   dir?: Directions;
+  guideKey?: string;
 }) {
   const t = useT();
   const ModeIcon = dir?.mode === "transit" ? TrainFront : dir?.mode === "walking" ? Footprints : Car;
@@ -1118,6 +1132,7 @@ function RideConnector({
             <Navigation size={12} /> {t("directions_link")}
           </a>
         )}
+        {guideKey && <LegSteps guideKey={guideKey} />}
       </div>
     </li>
   );

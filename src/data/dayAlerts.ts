@@ -48,8 +48,8 @@ export const dayAlerts: Record<number, DayAlerts> = {
   9: {
     closed: [
       {
-        en: "Saturday in Kamikochi: queues for the shuttle. The last bus down to Hirayu leaves around 17:00 in November; check the board when you arrive.",
-        he: "שבת בקמיקוצ'י: יש תורים לאוטובוס. האוטובוס האחרון חזרה להיראיו יוצא בסביבות 17:00 בנובמבר; לבדוק את הלוח בתחנה כשמגיעים."
+        en: "Saturday in Kamikochi: queues for the shuttle. The last bus down to Hirayu leaves around 17:00–17:30 in November; check the board when you arrive.",
+        he: "שבת בקמיקוצ'י: יש תורים לאוטובוס. האוטובוס האחרון חזרה להיראיו יוצא בסביבות 17:00–17:30 בנובמבר; לבדוק את הלוח בתחנה כשמגיעים."
       }
     ]
   },
