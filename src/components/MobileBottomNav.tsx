@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Home, CalendarDays, Map, Utensils, MoreHorizontal, Download, Compass, BedDouble, Info, MessageCircle, TrainFront } from "lucide-react";
+import { Home, CalendarDays, Map, Utensils, MoreHorizontal, Download, Compass, BedDouble, Info, MessageCircle, TrainFront, Bath } from "lucide-react";
 import { useT } from "../lib/dict";
 import { useLang } from "../lib/i18n";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -20,6 +20,7 @@ const MORE_LINKS: { id: Page; Icon: typeof Home }[] = [
   { id: "food", Icon: Utensils },
   { id: "places", Icon: Compass },
   { id: "stays", Icon: BedDouble },
+  { id: "onsen", Icon: Bath },
   { id: "phrases", Icon: MessageCircle },
   { id: "info", Icon: Info }
 ];

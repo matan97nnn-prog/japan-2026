@@ -8,6 +8,7 @@ export const NAV_LABEL: Record<Page | "home" | "more", { en: string; he: string 
   food: { en: "Food", he: "אוכל" },
   places: { en: "Places", he: "מקומות" },
   stays: { en: "Hotels", he: "מלונות" },
+  onsen: { en: "Onsen", he: "אונסן" },
   phrases: { en: "Phrases", he: "שיחון" },
   info: { en: "Tips & info", he: "טיפים ומידע" },
   more: { en: "More", he: "עוד" }

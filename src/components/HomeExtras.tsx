@@ -1,4 +1,4 @@
-import { BedDouble, ChevronLeft, ChevronRight, Compass, ExternalLink, Info, Map, MapPinned, MessageCircle, TrainFront, Utensils } from "lucide-react";
+import { BedDouble, ChevronLeft, ChevronRight, Compass, ExternalLink, Info, Map, MapPinned, MessageCircle, TrainFront, Utensils, Bath } from "lucide-react";
 import { stays } from "../data/stays";
 import { useLocalizePoi } from "../data/i18n";
 import { useLang } from "../lib/i18n";
@@ -74,7 +74,7 @@ export function MapsLists() {
           <div className="text-[14px] text-cream-50/75">
             {he ? "כל ההמלצות, מסעדות, בתי קפה ואטרקציות, עם ביקורות" : "Every recommendation, restaurants, cafés, sights, with reviews"}
           </div>
-          <div className="mt-3 grid gap-2 sm:grid-cols-3">
+          <div className="mt-3 grid gap-2 sm:grid-cols-4">
             {LISTS.map((l) => (
               <a
                 key={l.url}
@@ -106,6 +106,7 @@ const TILES: { page: Page; Icon: typeof Map; he: [string, string]; en: [string, 
   { page: "food", Icon: Utensils, he: ["אוכל", "מה לאכול ואיפה"], en: ["Food", "What to eat, and where"] },
   { page: "places", Icon: Compass, he: ["מקומות", "המקומות שנבקר בהם"], en: ["Places", "Where we're going"] },
   { page: "stays", Icon: BedDouble, he: ["מלונות", "הזמנות, חדרים, דירוגים"], en: ["Hotels", "Bookings, rooms, ratings"] },
+  { page: "onsen", Icon: Bath, he: ["אונסן", "תרבות, כללים, איפה לטבול"], en: ["Onsen", "Culture, rules, where to soak"] },
   { page: "phrases", Icon: MessageCircle, he: ["שיחון", "משפטים ביפנית עם שמע"], en: ["Phrases", "Japanese, read aloud"] },
   { page: "info", Icon: Info, he: ["טיפים ומידע", "הערות, רשימות, חירום"], en: ["Tips & info", "Notes, lists, emergency"] }
 ];

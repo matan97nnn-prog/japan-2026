@@ -3,7 +3,7 @@ import { itinerary } from "../data/itinerary";
 
 const MAX_DAY = itinerary.length;
 
-export const PAGES = ["plan", "transit", "map", "food", "places", "stays", "phrases", "info"] as const;
+export const PAGES = ["plan", "transit", "map", "food", "places", "stays", "onsen", "phrases", "info"] as const;
 export type Page = (typeof PAGES)[number];
 
 export type Route =
