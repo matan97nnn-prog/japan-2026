@@ -1,5 +1,6 @@
 import { useEffect, useImperativeHandle, useMemo, useRef, useState, forwardRef } from "react";
 import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from "react-leaflet";
+import { TILE_URL, TILE_ATTRIBUTION, TILE_MAX_ZOOM } from "../lib/tiles";
 import L from "leaflet";
 import { Home, Star, Utensils, ShoppingCart, Fuel, Plane, ExternalLink, Maximize2, Route, Sparkles, Wine, Locate } from "lucide-react";
 import { attractions } from "../data/attractions";
@@ -533,12 +534,7 @@ export default function MapView({ registerFocus }: Props) {
               nicely with the trip's palette. Free for low-traffic personal
               use, no API key required (Stadia's Stamen Watercolor blocks
               non-localhost without an account, which is why we moved off it). */}
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-            url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
-            subdomains="abcd"
-            maxZoom={20}
-          />
+          <TileLayer attribution={TILE_ATTRIBUTION} url={TILE_URL} maxZoom={TILE_MAX_ZOOM} />
           <MapController pois={allPOIs} markersRef={markersRef} ref={flyRef} />
 
           {/* Day-trip spokes — soft lines from each base to its region's

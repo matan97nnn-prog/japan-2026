@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import { TILE_URL, TILE_ATTRIBUTION, TILE_MAX_ZOOM } from "../lib/tiles";
 import L from "leaflet";
 import type { POI } from "../data/types";
 import { useT } from "../lib/dict";
@@ -85,11 +86,7 @@ export default function MiniMap({ pois }: { pois: POI[] }) {
         scrollWheelZoom={false}
         className="h-72 sm:h-96 w-full"
       >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-          url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
-          subdomains="abcd"
-        />
+        <TileLayer attribution={TILE_ATTRIBUTION} url={TILE_URL} maxZoom={TILE_MAX_ZOOM} />
         <FitBounds pois={pois} />
 
         {pois.map((poi, i) => {

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { MapContainer, TileLayer, CircleMarker, Popup, useMap } from "react-leaflet";
+import { TILE_URL, TILE_ATTRIBUTION, TILE_MAX_ZOOM } from "../lib/tiles";
 import { ExternalLink, Search } from "lucide-react";
 import Section from "./Section";
 import { savedPlaces, type SavedPlaceRow } from "../data/savedPlaces";
@@ -116,12 +117,7 @@ export default function SavedPlacesSection() {
       {view === "map" ? (
         <div className="mt-4 h-[460px] rounded-2xl overflow-hidden border border-ink-900/10" dir="ltr">
           <MapContainer center={[36.2, 137.5]} zoom={6} className="h-full w-full" preferCanvas>
-            <TileLayer
-              attribution="&copy; OpenStreetMap contributors &copy; CARTO"
-              url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
-              subdomains="abcd"
-              maxZoom={20}
-            />
+            <TileLayer attribution={TILE_ATTRIBUTION} url={TILE_URL} maxZoom={TILE_MAX_ZOOM} />
             <FixSize />
             {rows.map((r, i) => (
               <CircleMarker
