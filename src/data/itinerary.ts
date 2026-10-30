@@ -1047,7 +1047,8 @@ export const itinerary: Day[] = [
     ],
     alternatives: [
       "Stay in Kibune until dusk if the lanterns are lit (usually from early November)",
-      "Kurama Onsen — an outdoor bath near the station, before the hike"
+      "Kurama Onsen — an outdoor bath near the station, before the hike",
+      "Rainy-day swap: Uji — Byodo-in temple (the one on the ¥10 coin), old teahouses on the river, real matcha. JR from Kyoto Station, ~20 min"
     ],
     culture: {
       title: "Tengu and the mountain monks",
@@ -1216,7 +1217,10 @@ export const itinerary: Day[] = [
       "Nanzen-ji aqueduct: the brick arches in a row, shot down the tunnel",
       "Senso-ji at night: the five-storey pagoda lit gold, from the side courtyard with the incense smoke in front"
     ],
-    alternatives: ["Tokyo Skytree for the city at night — 20 min walk from Senso-ji"],
+    alternatives: [
+      "Tokyo Skytree for the city at night — 20 min walk from Senso-ji",
+      "Morning instead: Uji (instead of Hyakumanben) — Byodo-in and a matcha tasting, JR ~20 min from Kyoto Station, close to the hotel and the Shinkansen"
+    ],
     culture: {
       title: "The Shinkansen and Japanese time",
       body: "The bullet train's average delay is under a minute a year. Platform lines mark exactly where each car stops, and cleaning crews turn a train around in seven minutes — then bow to the passengers. Punctuality here is a form of respect for other people's time."
@@ -1296,7 +1300,8 @@ export const itinerary: Day[] = [
     alternatives: [
       "Sumo show-dinner in Asakusa — former wrestlers, a demonstration and chanko hotpot (book)",
       "Kiyosumi Shirakawa — a stroll garden and Tokyo's best coffee roasters",
-      "Golden Gai, Shinjuku — tiny bars of six seats each"
+      "Golden Gai, Shinjuku — tiny bars of six seats each",
+      "Rainy-day option: teamLab Planets (Toyosu) or Borderless (Azabudai Hills) — walk-through digital art, ~2 h. Book timed tickets ahead"
     ],
     culture: {
       title: "Depachika — the art of the gift",

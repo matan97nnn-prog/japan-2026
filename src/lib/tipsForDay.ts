@@ -8,11 +8,11 @@ import type { Tip } from "../data/types";
 const TIP_IDS_PER_DAY: Record<number, string[]> = {
   3: ["cash-still-needed"],
   5: ["nov3-holiday-crowds"],
-  6: ["car-pickup-documents", "driving-on-the-left", "takkyubin-shipping-plan"],
+  6: ["shinkansen-big-luggage", "car-pickup-documents", "driving-on-the-left", "takkyubin-shipping-plan"],
   9: ["kamikochi-no-private-cars", "onsen-tattoos"],
   11: ["car-return-kanazawa"],
   13: ["jr-pass-nozomi", "reserve-seats-foliage-season"],
-  17: ["jr-pass-nozomi"]
+  17: ["jr-pass-nozomi", "shinkansen-big-luggage"]
 };
 
 export function tipsForDay(dayNumber: number): Tip[] {

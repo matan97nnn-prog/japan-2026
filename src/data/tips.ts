@@ -2,6 +2,13 @@ import type { Tip } from "./types";
 
 export const tips: Tip[] = [
   {
+    id: "shinkansen-big-luggage",
+    title: "Shinkansen: big suitcases need a reserved seat",
+    body:
+      "On the Tokyo–Kyoto line (our 4.11 Tokyo → Odawara and 15.11 Kyoto → Tokyo legs), a suitcase whose length + width + height is over 160 cm needs a seat booked with an oversized-baggage area — otherwise a ¥1,000 fee and a scramble on board. Easiest: send the big cases by Takkyubin and ride with day bags; if not, tick the oversized-baggage option when reserving.",
+    severity: "warning"
+  },
+  {
     id: "car-pickup-documents",
     title: "Car pickup, Odawara — 3 documents, no exceptions",
     body:
