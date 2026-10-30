@@ -187,7 +187,7 @@ const ROUTE_SEGMENTS: RouteSegment[] = [
       [36.2400, 137.9715], // Matsumoto
       [36.2517, 137.6417], // Kamikochi
       [36.2475, 137.5636], // Hirayu
-      [36.1408, 137.2514], // Takayama
+      [36.139, 137.2465], // Takayama
       [36.2578, 136.9066], // Shirakawa-go
       [36.5775, 136.6485], // Kanazawa
       [34.9858, 135.7588] // Kyoto
@@ -200,7 +200,7 @@ const ROUTE_SEGMENTS: RouteSegment[] = [
     color: "#5C7244", // cypress — matches Restaurants
     coords: [
       [34.9858, 135.7588], // Kyoto
-      [35.7107, 139.7960], // Tokyo (Asakusa)
+      [35.6668, 139.757], // Tokyo (Shimbashi)
       AIRPORT_POI.coords
     ]
   }

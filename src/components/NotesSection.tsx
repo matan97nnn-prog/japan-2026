@@ -21,8 +21,18 @@ const NOTES: Note[] = [
     title: { en: "Open decisions", he: "החלטות פתוחות" },
     lines: [
       { en: "Return flight: 17 or 18.11 — not set yet.", he: "טיסת חזור: 17 או 18.11 — עוד לא נקבע." },
-      { en: "Hotels: Kanazawa (SOKI / the square), Kyoto (Richmond / GLANZ KEI), Tokyo at the end (The Gate booked 15–17).", he: "מלונות: קנאזאווה (SOKI / the square), קיוטו (Richmond / GLANZ KEI), טוקיו בסוף (The Gate מוזמן ל-15–17)." },
+      { en: "Hotels: all set through Kanazawa. Kyoto (Honyado Nono) and the last Tokyo nights (Dai-ichi Hotel Tokyo) are 'for now'.", he: "מלונות: הכל סגור עד קנאזאווה. קיוטו (Honyado Nono) והלילות האחרונים בטוקיו (Dai-ichi Hotel Tokyo) — כרגע." },
       { en: "Larnaca hotel name for 30.10.", he: "שם המלון בלרנקה ל-30.10." }
+    ]
+  },
+  {
+    title: { en: "Tokyo, our way", he: "טוקיו, בדרך שלנו" },
+    lines: [
+      { en: "Five nights, built around neighbourhoods rather than sights: one area per half-day, long stays, few trains.", he: "חמישה לילות, בנויים סביב שכונות ולא אטרקציות: אזור אחד לכל חצי יום, שהייה ארוכה, מעט רכבות." },
+      { en: "2.11 the old downtown: Tsukiji, Nezu, Yanaka, Ueno.", he: "2.11 טוקיו הישנה: צוקיג'י, נדזו, יאנאקה, אואנו." },
+      { en: "3.11 the west side: Meiji Jingu, Omotesando, Daikanyama–Nakameguro, Shibuya at dusk.", he: "3.11 הצד המערבי: מקדש מייג'י, אומוטסנדו, דאיקאניאמה–נאקאמגורו, שיבויה בשקיעה." },
+      { en: "15.11 Asakusa at night, when it's lit and calm. 16.11 Edo garden, Kagurazaka, Nihonbashi — or Kamakura / Nikko.", he: "15.11 אסקוסה בלילה, מוארת ושקטה. 16.11 גן אדו, קגורזקה, ניהונבאשי — או קמאקורה / ניקו." },
+      { en: "Skipped on purpose: Takeshita Street, Robot Restaurant-type shows, queue-for-a-photo spots.", he: "דילגנו בכוונה: רחוב טקשיטה, מופעי תיירים, מקומות שעומדים בתור בשביל תמונה." }
     ]
   },
   {
@@ -64,6 +74,7 @@ const NOTES: Note[] = [
   {
     title: { en: "Kyoto at night & the bamboo", he: "קיוטו בלילה והבמבוק" },
     lines: [
+      { en: "Kyoto, our way: Fushimi Inari at 7:00, Tofuku-ji's maple bridge, the quiet Saga temples (Jojakko-ji, Gio-ji), the back lanes of Higashiyama — and fewer of the packed spots.", he: "קיוטו בדרך שלנו: פושימי אינרי ב-7:00, גשר המייפל של טופוקו-ג'י, המקדשים השקטים של סאגה (ג'וג'אקו-ג'י, גיו-ג'י), הסמטאות של היגאשיאמה — ופחות מהמקומות הצפופים." },
       { en: "Nijo Castle at night — 'NAKED' light art, 18:00–22:00 → 14.11.", he: "מצודת ניג'ו בלילה — מופע אור NAKED, ‏18:00–22:00 ← 14.11." },
       { en: "Bamboo forest (Arashiyama) at 07:30, before the crowds → 14.11.", he: "יער הבמבוק (אראשיאמה) ב-07:30, לפני ההמונים ← 14.11." },
       { en: "'The temple with the bamboo': Kodai-ji — small bamboo grove, lit at night → 12.11 evening.", he: "\"המקדש עם הבמבוק\": קודאי-ג'י — חורשת במבוק קטנה, מואר בלילה ← 12.11 בערב." },

@@ -101,7 +101,12 @@ export function localizeDay(d: Day, lang: "en" | "he"): Day {
     gear: localizedGear,
     dayTips: he.dayTips,
     italianWords: localizedItalianWords,
-    drinkOfTheDay: localizedDrink
+    drinkOfTheDay: localizedDrink,
+    culture: he.culture,
+    photoTips: he.photoTips,
+    alternatives: he.alternatives,
+    rideToFirst: d.rideToFirst && he.rideToFirst ? { ...d.rideToFirst, ...stripUndefined(he.rideToFirst) } : d.rideToFirst,
+    returnTo: d.returnTo && he.returnTo ? { ...d.returnTo, ...stripUndefined(he.returnTo) } : d.returnTo
   });
   if (!he.activities) return baseMerged;
   const activities = d.activities.map((a, i) => {

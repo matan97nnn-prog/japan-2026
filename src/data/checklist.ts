@@ -9,9 +9,8 @@ export const bookingChecklist: ChecklistItem[] = [
   },
   {
     id: "decide-hotels",
-    text: "Decide the open hotels: Kanazawa, Kyoto, end of Tokyo",
-    detail: "Kanazawa: SOKI vs the square hotel. Kyoto: Richmond Premier Shijo vs GLANZ KEI. Tokyo 15.11+: The Gate Kaminarimon (booked 15–17) or another. Cancel duplicates only after checking the cancellation terms.",
-    urgent: true
+    text: "Kyoto (Honyado Nono) and the last Tokyo hotel (Dai-ichi) are 'for now'",
+    detail: "Confirm or replace once the return date is set. Cancel duplicate bookings only after checking the cancellation terms."
   },
   {
     id: "book-flights",
@@ -38,8 +37,8 @@ export const bookingChecklist: ChecklistItem[] = [
   },
   {
     id: "hotels-booked",
-    text: "Booked: Keihan Ginza (1–4) · Hakone Yutowa (4–5) · Kawaguchiko Villa (5–6) · Matsumoto Kagetsu (6–7) · fav Hida Takayama (7–9)",
-    detail: "Keihan Tsukiji Ginza Grande booking 1788608896. Confirm every room has two real beds for four adults.",
+    text: "Hotels booked: Keihan Ginza (1–4) · Hakone Yutowa (4–5) · Kawaguchiko Villa (5–6) · Matsumoto Kagetsu (6–7) · Takayama Green Hotel (7–9) · Hotel Forza Kanazawa (9–11)",
+    detail: "2 rooms everywhere except the Kawaguchiko villa (one villa for 4). Keihan booked on Agoda, #1788608896. Hakone: 2 × Condominium A, 49 m² each.",
     done: true
   },
   {
@@ -51,7 +50,7 @@ export const bookingChecklist: ChecklistItem[] = [
   {
     id: "takkyubin-plan",
     text: "Plan the Takkyubin luggage shipments",
-    detail: "(1) Keihan Ginza → fav Hida Takayama, sent 4.11 morning. (2) Takayama/Kanazawa → the Kyoto hotel, once chosen. (3) Kyoto → the final Tokyo hotel. Front desks arrange it.",
+    detail: "(1) Keihan Ginza → Takayama Green Hotel, sent 4.11 morning. (2) Takayama Green Hotel or Hotel Forza Kanazawa → Onyado Nono Kyoto Shichijo. (3) Nono Kyoto → Dai-ichi Hotel Tokyo, sent 13–14.11. Front desks arrange it.",
   },
   {
     id: "book-shibuya-sky",

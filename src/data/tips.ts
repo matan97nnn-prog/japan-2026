@@ -33,7 +33,7 @@ export const tips: Tip[] = [
     id: "takkyubin-shipping-plan",
     title: "Takkyubin: send the big suitcases ahead",
     body:
-      "Suitcases go door to door so we travel light: (1) Keihan Ginza → fav Hida Takayama, sent the morning of 4.11 (arrives in 2–3 days); (2) from Takayama or Kanazawa → the Kyoto hotel, once chosen; (3) Kyoto → the last Tokyo hotel. Keep medicine, chargers, documents and a change of clothes with you.",
+      "Suitcases go door to door so we travel light: (1) Keihan Ginza → Takayama Green Hotel, sent the morning of 4.11 (arrives in 2–3 days); (2) from Takayama or Kanazawa → Onyado Nono Kyoto; (3) Nono Kyoto → Dai-ichi Hotel Tokyo. Keep medicine, chargers, documents and a change of clothes with you.",
     severity: "info"
   },
   {

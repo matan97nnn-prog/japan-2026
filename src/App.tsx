@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import TripStats from "./components/TripStats";
 import ItinerarySection from "./components/ItinerarySection";
 import QuickBookings from "./components/QuickBookings";
+import RouteWeather from "./components/RouteWeather";
 import NotesSection from "./components/NotesSection";
 // Tickets & Logistics is disabled until real bookings are encrypted in —
 // see src/data/bookings.enc.ts and scripts/encrypt-bookings.mjs. Re-add
@@ -23,7 +24,6 @@ import MobileBottomNav from "./components/MobileBottomNav";
 import SectionOrnament from "./components/SectionOrnament";
 import ChapterDetailPage from "./components/ChapterDetailPage";
 import InstallPrompt from "./components/InstallPrompt";
-import Gemininio from "./components/Gemininio";
 import { MapFocusContext } from "./lib/mapContext";
 import { useHashRoute } from "./lib/route";
 
@@ -46,7 +46,6 @@ export default function App() {
         {/* The Add-to-Home-Screen coachmark lives at the app root so it
             shows regardless of which page the user landed on. */}
         <InstallPrompt />
-        <Gemininio />
       </>
     );
   }
@@ -56,6 +55,7 @@ export default function App() {
       <Navbar />
       <Hero />
       <QuickBookings />
+      <RouteWeather />
 
       {/* The Plan — the magazine's main feature, leads everything else */}
       <ItinerarySection />
@@ -105,9 +105,6 @@ export default function App() {
 
       <MobileBottomNav />
       <InstallPrompt />
-      {/* Gemininio occupies the floating-action slot that used to
-          host the "scroll to map" FAB — same position, more useful. */}
-      <Gemininio />
     </MapFocusContext.Provider>
   );
 }

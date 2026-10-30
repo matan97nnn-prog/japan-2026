@@ -109,6 +109,10 @@ export interface Stay extends POI {
   checkOut: string;
   nights: number;
   bookingLink?: string;
+  /** What we booked: rooms, room type, who booked it. */
+  rooms?: string;
+  /** Booking.com guest score out of 10. */
+  rating?: number;
   highlights: string[];
   warnings?: string[];
   /** Optional extra photos shown in the stay-card carousel.
@@ -133,6 +137,9 @@ export interface Directions {
 export interface DayActivity {
   time?: string;
   title: string;
+  /** The place name in English (shown under the Hebrew title so we can
+   *  match signs, maps and taxi drivers). */
+  place?: string;
   description: string;
   attractionId?: string;
   tag?: AttractionTag;
@@ -219,6 +226,15 @@ export interface Day {
   departureTime?: string;
   /** The first drive of the day from the base to the first activity. */
   rideToFirst?: { duration: string; note?: string; dir?: Directions };
+  /** The last leg of the day: back to that night's hotel. */
+  returnTo?: { duration: string; note?: string; dir?: Directions };
+  /** End-of-day card: a short note on Japanese life and values, tied to
+   *  the places we saw today. */
+  culture?: { title: string; body: string };
+  /** Photography spots and angles for the day (Dad's list). */
+  photoTips?: string[];
+  /** Extra options for the day — events, shows, alternatives. */
+  alternatives?: string[];
   region: Region;
   title: string;
   subtitle?: string;

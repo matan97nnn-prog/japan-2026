@@ -60,7 +60,9 @@ function FitBounds({ pois }: { pois: POI[] }) {
       return;
     }
     const bounds = L.latLngBounds(pois.map(p => p.coords));
-    map.fitBounds(bounds, { padding: [40, 40], maxZoom: 11 });
+    map.fitBounds(bounds, { padding: [40, 40], maxZoom: 13 });
+    const t = setTimeout(() => { map.invalidateSize(); map.fitBounds(bounds, { padding: [40, 40], maxZoom: 13 }); }, 200);
+    return () => clearTimeout(t);
   }, [pois, map]);
   return null;
 }

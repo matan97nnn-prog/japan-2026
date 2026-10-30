@@ -7,8 +7,8 @@ export const checklistHE: Record<string, Partial<Pick<ChecklistItem, "text" | "d
     detail: "כל הסוף תלוי בזה: המלון האחרון בטוקיו, היום החופשי וההגעה לשדה."
   },
   "decide-hotels": {
-    text: "להחליט על המלונות הפתוחים: קנאזאווה, קיוטו, טוקיו בסוף",
-    detail: "קנאזאווה: SOKI או the square hotel. קיוטו: Richmond Premier Shijo או GLANZ KEI. טוקיו מ-15.11: The Gate Kaminarimon (מוזמן ל-15–17) או אחר. לבטל כפילויות רק אחרי בדיקת תנאי הביטול."
+    text: "קיוטו (Honyado Nono) והמלון האחרון בטוקיו (Dai-ichi) — כרגע",
+    detail: "לאשר או להחליף כשתאריך החזרה ייקבע. לבטל כפילויות רק אחרי בדיקת תנאי הביטול."
   },
   "book-flights": {
     text: "טיסות Emirates — קודי הזמנה HG8ZCN ו-I5JSFN",
@@ -27,8 +27,8 @@ export const checklistHE: Record<string, Partial<Pick<ChecklistItem, "text" | "d
     detail: "Noah Hybrid על שם RONEN STEIN. איסוף בתחנת אודווארה, יציאת שינקנסן, 4.11 בשעה 10:00 (טלפון 0465-32-0100). החזרה בתחנת קנאזאווה, יציאה מזרחית, עד 9.11 בשעה 20:00. ביטוח NOC וכרטיס ETC כלולים."
   },
   "hotels-booked": {
-    text: "מוזמן: Keihan גינזה (1–4) · Hakone Yutowa (4–5) · וילה בקאוואגוצ'יקו (5–6) · Matsumoto Kagetsu (6–7) · fav Hida Takayama (7–9)",
-    detail: "Keihan Tsukiji Ginza Grande — הזמנה 1788608896. לוודא שבכל חדר שתי מיטות אמיתיות לארבעה מבוגרים."
+    text: "מלונות מוזמנים: Keihan גינזה (1–4) · Hakone Yutowa (4–5) · וילה בקאוואגוצ'יקו (5–6) · Matsumoto Kagetsu (6–7) · Takayama Green Hotel (7–9) · Hotel Forza Kanazawa (9–11)",
+    detail: "2 חדרים בכל מקום חוץ מהווילה בקאוואגוצ'יקו (וילה אחת לארבעה). Keihan הוזמן באגודה, 1788608896. האקונה: 2 יחידות Condominium A, ‏49 מ\"ר כל אחת."
   },
   "evening-tour": {
     text: "סיור ערב בטוקיו 2.11 בשעה 20:00 — הזמנה 9022",
@@ -36,7 +36,7 @@ export const checklistHE: Record<string, Partial<Pick<ChecklistItem, "text" | "d
   },
   "takkyubin-plan": {
     text: "לתכנן את משלוחי המזוודות (טאקיובין)",
-    detail: "(1) Keihan גינזה ← fav Hida Takayama, נשלח בבוקר 4.11. (2) טקאיאמה/קנאזאווה ← המלון בקיוטו, כשייבחר. (3) קיוטו ← המלון האחרון בטוקיו. הקבלה במלון מסדרת."
+    detail: "(1) Keihan גינזה ← Takayama Green Hotel, נשלח בבוקר 4.11. (2) Takayama Green Hotel או Hotel Forza Kanazawa ← Onyado Nono בקיוטו. (3) Nono קיוטו ← Dai-ichi Hotel Tokyo, נשלח ב-13–14.11. הקבלה במלון מסדרת."
   },
   "book-shibuya-sky": {
     text: "כרטיסים ל-Shibuya Sky בשקיעה (3.11)",

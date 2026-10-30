@@ -1,6 +1,8 @@
 import { Plane, BedDouble, Car, Users, ExternalLink, Phone, Copy, Check } from "lucide-react";
 import { useState } from "react";
 import { useLang } from "../lib/i18n";
+import { LISTS } from "./SavedPlacesSection";
+import { MapPinned } from "lucide-react";
 
 /* The "need it right now" strip at the top of the page: booking codes,
  * surname, and the one button everybody looks for at the airport. */
@@ -85,6 +87,32 @@ export default function QuickBookings() {
   return (
     <section id="bookings-quick" className="relative py-8 sm:py-12 scroll-mt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="rounded-2xl bg-ink-900 text-cream-50 p-4 sm:p-5 mb-6">
+          <div className="flex items-center gap-2 font-medium">
+            <MapPinned size={18} className="text-gold-400" />
+            {lang === "he" ? "המפות שלנו בגוגל — כל ההמלצות: מסעדות, בתי קפה, אטרקציות" : "Our Google Maps lists — every recommendation"}
+          </div>
+          <div className="mt-3 grid gap-2 sm:grid-cols-3">
+            {LISTS.map((l) => (
+              <a
+                key={l.url}
+                href={l.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between gap-2 rounded-xl bg-cream-50 text-ink-900 px-4 py-3 font-medium"
+              >
+                <span className="flex items-center gap-2">
+                  <span className="h-3 w-3 rounded-full" style={{ background: l.color }} />
+                  {l.name}
+                </span>
+                <ExternalLink size={15} className="text-terracotta-600" />
+              </a>
+            ))}
+          </div>
+          <a href="#saved-places" className="mt-3 inline-block text-sm text-gold-400 underline underline-offset-4">
+            {lang === "he" ? "כל 686 המקומות מאוחדים במפה אחת באתר ←" : "All 686 places merged into one map on this site →"}
+          </a>
+        </div>
         <div className="section-eyebrow">{lang === "he" ? "הזמנות וקודים" : "Bookings & codes"}</div>
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
           {BOOKINGS.map((b) => (

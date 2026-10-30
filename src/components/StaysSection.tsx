@@ -164,6 +164,16 @@ export default function StaysSection() {
               <div className="mt-1 text-sm text-terracotta-600 font-medium">
                 {localizeShortDate(s.checkIn, lang)} → {localizeShortDate(s.checkOut, lang)}
               </div>
+              {(s.rooms || s.rating) && (
+                <div className="mt-2 flex flex-wrap items-center gap-2 text-sm">
+                  {s.rating && (
+                    <span className="inline-flex items-center rounded-md bg-[#003580] text-white px-2 py-0.5 text-xs font-semibold" dir="ltr">
+                      Booking {s.rating.toFixed(1)}
+                    </span>
+                  )}
+                  {s.rooms && <span className="text-ink-800 font-medium">{s.rooms}</span>}
+                </div>
+              )}
               {s.address && (
                 <div className="mt-1 text-xs text-ink-700/70 flex items-center gap-1">
                   <MapPin size={11} /> {s.address}

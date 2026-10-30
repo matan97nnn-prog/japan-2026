@@ -774,6 +774,8 @@ export const attractions: POI[] = [
     shortDescription: "Tokyo's great forest shrine",
     description:
       "Shinto shrine to Emperor Meiji, set in a 70-hectare forest planted by volunteers a century ago. Huge wooden torii, barrels of sake donated by brewers, and a calm that's hard to believe next to Harajuku. On 3 November the autumn festival ends with yabusame — mounted archery.",
+    image: "./images/meiji-jingu.jpg",
+    imageCredit: { author: "Harajuku (English Wikipedia)", license: "Public domain", source: "https://commons.wikimedia.org/wiki/File:Meiji-jingu_torii.JPG" },
     address: "1-1 Yoyogikamizonocho, Shibuya, Tokyo",
     coords: [35.6764, 139.6993],
     tags: ["culture", "nature"],
@@ -789,6 +791,8 @@ export const attractions: POI[] = [
     description:
       "Hillside temple founded in 778, famous for its huge wooden veranda built without a single nail, jutting out over a valley of maples. The Otowa spring below gives the temple its name, 'pure water'.",
     website: "https://www.kiyomizudera.or.jp/en/",
+    image: "./images/kiyomizu-dera.jpg",
+    imageCredit: { author: "柳田亮", license: "CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Kiyomizutera(Kyomizu_no_Butai)_-_panoramio.jpg" },
     address: "1-294 Kiyomizu, Higashiyama, Kyoto",
     coords: [34.9949, 135.785],
     tags: ["culture", "view"],
@@ -804,6 +808,8 @@ export const attractions: POI[] = [
     description:
       "Built in 1606 by the widow of Toyotomi Hideyoshi. Raked gravel, a pond garden, gold-lacquer interiors and a short bamboo grove path. In autumn the gardens and bamboo are lit after dark — one of Kyoto's best night visits.",
     website: "https://www.kodaiji.com/e/",
+    image: "./images/kodai-ji.jpg",
+    imageCredit: { author: "663highland", license: "CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:170923_Kodaiji_Kyoto_Japan09n.jpg" },
     address: "526 Shimogawaracho, Higashiyama, Kyoto",
     coords: [35.0007, 135.781],
     tags: ["culture", "nature"],
@@ -818,6 +824,8 @@ export const attractions: POI[] = [
     shortDescription: "4 km forest trail between two mountain villages",
     description:
       "Classic half-day walk north of Kyoto. From Kurama station up past Yuki Shrine's 800-year-old cedar to the mountain temple Kurama-dera, over the ridge on the Kinone-michi path of exposed cedar roots, then down stone steps to Kibune — a riverside village and Kifune Shrine with its lantern-lined stairway.",
+    image: "./images/kurama-kibune.jpg",
+    imageCredit: { author: "KENPEI", license: "CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Kurama-dera_sanmon.jpg" },
     address: "Kurama, Sakyo Ward, Kyoto",
     coords: [35.1167, 135.7708],
     tags: ["nature", "culture", "village"],
@@ -838,6 +846,8 @@ export const attractions: POI[] = [
     description:
       "Built in 1603 for the first Tokugawa shogun. The Ninomaru Palace has 'nightingale floors' that chirp underfoot to warn of intruders. In autumn 2026 the 'NAKED meets Nijo Castle' event projects light art on the Karamon gate and palace after dark.",
     website: "https://nijo-jocastle.city.kyoto.lg.jp/?lang=en",
+    image: "./images/nijo-castle.jpg",
+    imageCredit: { author: "Wikimedia Commons", license: "Public domain", source: "https://commons.wikimedia.org/wiki/File:NinomaruPalace.jpg" },
     address: "541 Nijojocho, Nakagyo Ward, Kyoto",
     coords: [35.0142, 135.7481],
     tags: ["culture"],

@@ -1,17 +1,28 @@
-import { useMemo, useState } from "react";
-import { MapContainer, TileLayer, CircleMarker, Popup } from "react-leaflet";
+import { useEffect, useMemo, useState } from "react";
+import { MapContainer, TileLayer, CircleMarker, Popup, useMap } from "react-leaflet";
 import { ExternalLink, Search } from "lucide-react";
 import Section from "./Section";
 import { savedPlaces, type SavedPlaceRow } from "../data/savedPlaces";
 import { useT } from "../lib/dict";
 
-const LISTS = [
+export const LISTS = [
   { name: "ירח דבש יפן · עומר", url: "https://maps.app.goo.gl/XVFfru7Sekwbui296?g_st=iw", color: "#A23E2A" },
   { name: "יפן עמר ונועה · omer", url: "https://maps.app.goo.gl/sJXXzLJ39NRSLQzQ9?g_st=iw", color: "#5C7244" },
   { name: "יפן · Yoav Barnea", url: "https://maps.app.goo.gl/hF8PJigjAbJrMB1T9?g_st=iw", color: "#587A8E" }
 ];
 
 const PAGE = 40;
+
+// The map mounts when the user flips to it; make Leaflet re-measure once the
+// container has its real size, otherwise only a couple of tiles load.
+function FixSize() {
+  const map = useMap();
+  useEffect(() => {
+    const t = setTimeout(() => map.invalidateSize(), 150);
+    return () => clearTimeout(t);
+  }, [map]);
+  return null;
+}
 
 const placeUrl = (r: SavedPlaceRow) =>
   r[5]
@@ -111,6 +122,7 @@ export default function SavedPlacesSection() {
               subdomains="abcd"
               maxZoom={20}
             />
+            <FixSize />
             {rows.map((r, i) => (
               <CircleMarker
                 key={i}

@@ -48,8 +48,7 @@ import type {
   Tip
 } from "../data/types";
 import NavigateLinks from "./NavigateLinks";
-import Quiz from "./Quiz";
-import { getTripState, isQuizUnlocked } from "../lib/tripState";
+import { getTripState } from "../lib/tripState";
 import { activityIcon } from "../lib/activityIcon";
 import { tipsForDay } from "../lib/tipsForDay";
 import { navigateChapter, navigateHome, rememberChapter } from "../lib/route";
@@ -59,7 +58,7 @@ import { useLocalizeDay, useLocalizePoi, useLocalizeService, useLocalizeTip } fr
 import PoiImage from "./PoiImage";
 import PhotoCredit from "./PhotoCredit";
 import MiniMap from "./MiniMap";
-import ListenButton from "./ListenButton";
+import DayExtras from "./DayExtras";
 import ItalianWordCarousel from "./ItalianWordCarousel";
 import { useCarouselSwipe } from "../lib/useCarouselSwipe";
 
@@ -102,16 +101,8 @@ const REGION_KEY: Record<string, DictKey> = {
  *  This lets the data stay terse — most days get the right behavior
  *  for free — while still allowing per-activity overrides where the
  *  heuristic doesn't match the curator's intent. */
-function isActivityOptional(activity: DayActivity, index: number, day: Day): boolean {
-  if (activity.optional !== undefined) return activity.optional;
-  if (!activity.attractionId) return false;
-  const attractionCount = day.activities.filter(a => a.attractionId).length;
-  if (attractionCount <= 2) return false;
-  // Position of THIS activity among attractionId-bearing siblings (1-indexed).
-  const attractionPosition = day.activities
-    .slice(0, index + 1)
-    .filter(a => a.attractionId).length;
-  return attractionPosition > 2;
+function isActivityOptional(activity: DayActivity, _index: number, _day: Day): boolean {
+  return activity.optional === true;
 }
 
 interface ResolvedLead {
@@ -642,7 +633,7 @@ function ChapterDetailContent({ day }: { day: Day }) {
             <ol className="space-y-5 sm:space-y-8">
               {localDay.activities.map((a, i, arr) => (
                 <Fragment key={i}>
-                  {i === 0 && localDay.rideToFirst && localDay.departureTime && (
+                  {i === 0 && localDay.rideToFirst && (
                     <RideConnector 
                       departAt={localDay.departureTime}
                       duration={localDay.rideToFirst.duration}
@@ -669,6 +660,13 @@ function ChapterDetailContent({ day }: { day: Day }) {
                   )}
                 </Fragment>
               ))}
+              {localDay.returnTo && (
+                <RideConnector
+                  duration={localDay.returnTo.duration}
+                  note={localDay.returnTo.note}
+                  dir={localDay.returnTo.dir}
+                />
+              )}
             </ol>
 
             {localDay.driveNotes && (
@@ -823,23 +821,7 @@ function ChapterDetailContent({ day }: { day: Day }) {
             </section>
           )}
 
-          {/* Quiz with Quizzo — kid-friendly recap (or pre-trip
-              preview) of the day. Mounted on every chapter, sandwiched
-              between "Good to know" and the adults-only drink callout
-              so the closing pair reads as Kids → Parents.
-              `isQuizUnlocked` lets the first N days (preview) and any
-              chapter whose date has arrived play; the rest render a
-              "Unlocks on …" notice card so the kid sees the slot but
-              can't burn API quota previewing tomorrow's surprises.
-              Key on (day, lang) so flipping the language wipes the
-              in-progress round + cached voice backend cleanly via a
-              full remount. */}
-          <Quiz
-            key={`${day.dayNumber}-${lang}`}
-            day={day.dayNumber}
-            locked={!isQuizUnlocked(day.dayNumber, day.date)}
-            unlockDate={day.date}
-          />
+          <DayExtras day={localDay} />
 
           {/* Drink of the day — closing flourish, the literal end of the
               chapter (after all the practical info). Adults-only nightcap
@@ -1000,6 +982,11 @@ function ActivityRow({
         >
           {activity.title}
         </h4>
+        {activity.place && (
+          <div className="mt-0.5 text-[12px] sm:text-[13px] text-ink-700/55 tracking-wide" dir="ltr" style={{ textAlign: "start" }}>
+            {activity.place}
+          </div>
+        )}
         {activity.description && (
           <p className="mt-1.5 sm:mt-2 text-[14px] sm:text-[15.5px] text-ink-700/85 leading-relaxed">
             {activity.description}
@@ -1072,9 +1059,6 @@ function ActivityRow({
                   {/* Italian-accented narration of the description.
                       Audio is pre-generated as a static asset, so no
                       runtime API key or call is needed. */}
-                  <div className="mt-3">
-                    <ListenButton attractionId={att.id} />
-                  </div>
                   {(att.openingNote || att.bookingNote) && (
                     <div className="mt-3 text-xs text-terracotta-700 bg-terracotta-500/10 border border-terracotta-500/25 rounded-lg px-3 py-2 leading-snug">
                       {att.openingNote || att.bookingNote}
@@ -1211,6 +1195,9 @@ function RestaurantsForDay({ restaurants }: { restaurants: Service[] }) {
               <div className="font-serif text-[15px] sm:text-[16px] text-ink-900 leading-tight">
                 {r.name}
               </div>
+              {getService(r.id) && getService(r.id)!.name !== r.name && (
+                <div className="text-[12px] text-ink-700/55" dir="ltr" style={{ textAlign: "start" }}>{getService(r.id)!.name}</div>
+              )}
               {r.shortDescription && (
                 <div className="mt-0.5 text-[12.5px] sm:text-[13.5px] text-ink-700/85 leading-snug">
                   {r.shortDescription}
