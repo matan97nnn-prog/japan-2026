@@ -43,9 +43,17 @@
    Cormorant on the Latin side, without the "Word 2003 default" baggage
    of older system serifs (David, Times, Arial). */
 html[dir="rtl"] {
-  --font-sans: "Rubik", "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Frank Ruhl Libre", "Cormorant Garamond", "Georgia", ui-serif, serif;
+  /* One Hebrew family for everything: Heebo reads cleanly on phones at
+     body sizes and looks confident in bold for headings. */
+  --font-sans: "Heebo", "Rubik", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Heebo", "Rubik", ui-sans-serif, system-ui, sans-serif;
 }
+/* Hebrew has no true italic — the slanted serif looked broken. */
+html[dir="rtl"] .italic { font-style: normal; }
+html[dir="rtl"] h1, html[dir="rtl"] h2, html[dir="rtl"] h3 { font-weight: 800; letter-spacing: -0.015em; }
+html[dir="rtl"] h4, html[dir="rtl"] h5 { font-weight: 700; }
+html[dir="rtl"] body { font-size: 16px; line-height: 1.65; }
+html[dir="rtl"] .uppercase { letter-spacing: 0.04em !important; }
 
 /* Always-Latin serif. Use this on numerals and any glyphs that should
    keep their Cormorant Garamond rendering even when the page is in
@@ -144,7 +152,7 @@ h1, h2, h3, h4 {
   }
 
   .section-eyebrow {
-    @apply uppercase tracking-[0.25em] text-xs font-medium text-terracotta-600 mb-3;
+    @apply uppercase tracking-[0.2em] text-[13px] font-bold text-terracotta-600 mb-3;
   }
 
   .underline-terracotta::after {

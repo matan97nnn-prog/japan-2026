@@ -125,14 +125,9 @@ export default function RouteWeather() {
   const rows = STOPS.filter((s) => s.date >= today || today < STOPS[0].date);
 
   return (
-    <section id="weather" className="relative py-8 sm:py-12 scroll-mt-20">
+    <section id="weather" className="relative pt-8 pb-2 sm:pt-12 scroll-mt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="section-eyebrow">{he ? "מזג אוויר לאורך המסלול" : "Weather along the route"}</div>
-        <p className="mt-2 text-[13px] text-ink-700/70">
-          {he
-            ? "לפי המקום שבו נהיה בכל יום. ימים רחוקים יתמלאו כשהתחזית תגיע אליהם (עד כ-16 יום קדימה). שעות גשם = סיכוי של 50% ומעלה."
-            : "By where we'll be each day. Far-off days fill in as the forecast reaches them (~16 days out). Rain hours = 50%+ chance."}
-        </p>
+        <h2 className="text-[26px] sm:text-3xl text-ink-900">{he ? "מזג אוויר לאורך המסלול" : "Weather along the route"}</h2>
         <div className="mt-4 overflow-x-auto -mx-4 px-4">
           <div className="flex gap-2.5 pb-2" style={{ minWidth: "max-content" }}>
             {rows.map((s) => {

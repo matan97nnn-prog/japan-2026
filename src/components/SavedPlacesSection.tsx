@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, CircleMarker, Popup, useMap } from "react-leaf
 import { TILE_URL, TILE_ATTRIBUTION, TILE_MAX_ZOOM } from "../lib/tiles";
 import { ExternalLink, Search } from "lucide-react";
 import Section from "./Section";
+import GoogleReviewsLink from "./GoogleReviewsLink";
 import { savedPlaces, type SavedPlaceRow } from "../data/savedPlaces";
 import { useT } from "../lib/dict";
 
@@ -129,9 +130,7 @@ export default function SavedPlacesSection() {
                 <Popup>
                   <strong>{r[0]}</strong>
                   {r[1] && <div style={{ marginTop: 4 }}>{r[1]}</div>}
-                  <a href={placeUrl(r)} target="_blank" rel="noopener noreferrer">
-                    {t("saved_open_place")} ↗
-                  </a>
+                  <div><GoogleReviewsLink href={placeUrl(r)} /></div>
                 </Popup>
               </CircleMarker>
             ))}

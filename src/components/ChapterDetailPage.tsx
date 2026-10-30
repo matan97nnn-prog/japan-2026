@@ -1,4 +1,4 @@
-import { Fragment, createElement, useEffect, useMemo, useState } from "react";
+import { Fragment, useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowLeft,
@@ -49,9 +49,8 @@ import type {
 } from "../data/types";
 import NavigateLinks from "./NavigateLinks";
 import { getTripState } from "../lib/tripState";
-import { activityIcon } from "../lib/activityIcon";
 import { tipsForDay } from "../lib/tipsForDay";
-import { navigateChapter, navigateHome, rememberChapter } from "../lib/route";
+import { navigateChapter, navigatePage, rememberChapter } from "../lib/route";
 import { useT, localizeShortDate, localizeWeekday, type DictKey } from "../lib/dict";
 import { useLang } from "../lib/i18n";
 import { useLocalizeDay, useLocalizePoi, useLocalizeService, useLocalizeTip } from "../data/i18n";
@@ -59,25 +58,10 @@ import PoiImage from "./PoiImage";
 import PhotoCredit from "./PhotoCredit";
 import MiniMap from "./MiniMap";
 import DayExtras from "./DayExtras";
+import { DayChips, DayAgenda } from "./DayNav";
 import ItalianWordCarousel from "./ItalianWordCarousel";
 import { useCarouselSwipe } from "../lib/useCarouselSwipe";
 
-const ROMAN = [
-  "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
-  "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX"
-];
-
-const TAG_KEY: Record<string, DictKey> = {
-  water: "tag_water",
-  extreme: "tag_extreme",
-  nature: "tag_nature",
-  culture: "tag_culture",
-  family: "tag_family",
-  food: "tag_food",
-  view: "tag_view",
-  cave: "tag_cave",
-  village: "tag_village"
-};
 
 const REGION_KEY: Record<string, DictKey> = {
   north: "region_north_long",
@@ -336,7 +320,7 @@ export default function ChapterDetailPage({ dayNumber }: { dayNumber: number }) 
           <div className="font-serif text-2xl text-ink-900">{lang === "he" ? "פרק לא נמצא" : "Chapter not found"}</div>
           <button
             type="button"
-            onClick={() => navigateHome({ scrollToTrip: true })}
+            onClick={() => navigatePage("plan")}
             className="mt-4 inline-flex items-center gap-2 text-terracotta-600 hover:text-terracotta-700"
           >
             {isRTL ? <ArrowRight size={16} /> : <ArrowLeft size={16} />} {t("back_to_plan")}
@@ -428,13 +412,6 @@ function ChapterDetailContent({ day }: { day: Day }) {
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  const accent =
-    day.region === "south"
-      ? "text-gold-400"
-      : day.region === "transit"
-      ? "text-terracotta-300"
-      : "text-olive-300";
-
   const prevDay = day.dayNumber > 1 ? itinerary[day.dayNumber - 2] : null;
   const nextDay =
     day.dayNumber < itinerary.length ? itinerary[day.dayNumber] : null;
@@ -461,25 +438,23 @@ function ChapterDetailContent({ day }: { day: Day }) {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-3">
           <button
             type="button"
-            onClick={() => navigateHome({ scrollToTrip: true })}
+            onClick={() => navigatePage("plan")}
             className="inline-flex items-center gap-2 text-ink-800 hover:text-terracotta-600 transition-colors min-h-11 -ms-2 px-2 rounded-full"
           >
             {isRTL ? <ArrowRight size={18} /> : <ArrowLeft size={18} />}
             <span className="text-sm font-medium">{t("back_to_plan")}</span>
           </button>
-          <div className="hidden sm:block text-[11px] uppercase tracking-[0.22em] text-ink-700/55 font-medium">
-            {t("plan_chapter_x_of_y", {
-              x: String(day.dayNumber).padStart(2, "0"),
-              y: String(itinerary.length).padStart(2, "0")
-            })}
+          <div className="text-[14px] font-bold text-ink-900">
+            {lang === "he" ? `יום ${day.dayNumber} מתוך ${itinerary.length}` : `Day ${day.dayNumber} of ${itinerary.length}`}
           </div>
         </div>
+        <DayChips current={day.dayNumber} />
       </div>
 
       <article>
         {/* Hero — crossfading carousel of every photo from the day */}
         <header
-          className="relative w-full aspect-[16/10] sm:aspect-[21/9] max-h-[70vh] overflow-hidden bg-ink-900"
+          className="relative w-full aspect-[4/3] sm:aspect-[21/9] max-h-[60vh] overflow-hidden bg-ink-900"
           style={heroSwipeTouchAction ? { touchAction: heroSwipeTouchAction } : undefined}
           {...heroSwipeHandlers}
         >
@@ -546,12 +521,8 @@ function ChapterDetailContent({ day }: { day: Day }) {
           <div className="absolute inset-x-0 bottom-0 px-4 sm:px-10 pb-6 sm:pb-12 text-cream-50">
             <div className="max-w-4xl mx-auto">
               <div className="flex items-baseline gap-3 sm:gap-4">
-                <div className="font-serif text-3xl sm:text-5xl leading-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)]">
-                  {ROMAN[day.dayNumber]}
-                </div>
-                <div className="hidden sm:block h-px w-16 bg-cream-50/40 mb-2" />
-                <div className={`text-[10px] sm:text-[11px] uppercase tracking-[0.28em] font-medium ${accent}`}>
-                  {t("plan_chapter_x_of_y", { x: String(day.dayNumber).padStart(2, "0"), y: String(itinerary.length).padStart(2, "0") })}
+                <div className="text-2xl sm:text-4xl font-extrabold leading-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)]">
+                  {lang === "he" ? `יום ${day.dayNumber}` : `Day ${day.dayNumber}`}
                 </div>
                 {isToday && (
                   <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-terracotta-500 text-cream-50 text-[9px] uppercase tracking-[0.22em] font-bold shadow-[0_4px_18px_rgba(196,90,61,0.5)]">
@@ -620,12 +591,14 @@ function ChapterDetailContent({ day }: { day: Day }) {
           </div>
         </header>
 
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-16 space-y-12 sm:space-y-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-16 space-y-8 sm:space-y-12">
           {/* Italian words (carousel) — three themed flashcards per day;
               audio is on the pronunciation chip; progress is remembered. */}
           {italianWords.length > 0 && (
             <ItalianWordCarousel dayNumber={day.dayNumber} words={italianWords} />
           )}
+
+          <DayAgenda day={localDay} />
 
           {/* Activities */}
           <section>
@@ -642,6 +615,7 @@ function ChapterDetailContent({ day }: { day: Day }) {
                     />
                   )}
                   <ActivityRow
+                    anchorId={`stop-${i}`}
                     activity={a}
                     index={i}
                     isToday={isToday}
@@ -845,7 +819,7 @@ function ChapterDetailContent({ day }: { day: Day }) {
                 </span>
                 <div className="min-w-0">
                   <div className="text-[9px] sm:text-[10px] uppercase tracking-[0.22em] text-ink-700/55 font-medium">
-                    {t("previous")} · {ROMAN[prevDay.dayNumber]}
+                    {t("previous")} · {lang === "he" ? `יום ${prevDay.dayNumber}` : `Day ${prevDay.dayNumber}`}
                   </div>
                   <div className="mt-0.5 font-serif text-[14px] sm:text-base text-ink-900 leading-tight line-clamp-2">
                     {localPrevDay.title}
@@ -863,7 +837,7 @@ function ChapterDetailContent({ day }: { day: Day }) {
               >
                 <div className="min-w-0">
                   <div className="text-[9px] sm:text-[10px] uppercase tracking-[0.22em] text-ink-700/55 font-medium">
-                    {t("next")} · {ROMAN[nextDay.dayNumber]}
+                    {t("next")} · {lang === "he" ? `יום ${nextDay.dayNumber}` : `Day ${nextDay.dayNumber}`}
                   </div>
                   <div className="mt-0.5 font-serif text-[14px] sm:text-base text-ink-900 leading-tight line-clamp-2">
                     {localNextDay.title}
@@ -897,11 +871,13 @@ function SectionLabel({ eyebrow, title }: { eyebrow: string; title: string }) {
 }
 
 function ActivityRow({
+  anchorId,
   activity,
   index,
   isToday,
   optional
 }: {
+  anchorId?: string;
   activity: DayActivity;
   index: number;
   isToday: boolean;
@@ -914,105 +890,78 @@ function ActivityRow({
   const [open, setOpen] = useState(false);
   const hasMoreInfo = !!att;
 
-  /* Icon styling: optional always renders in the muted "not today" palette
-     so the badge in the eyebrow doesn't have to fight a saturated terracotta
-     circle. Today + optional is rare but handled cleanly this way. */
-  const iconClasses = optional
-    ? "bg-cream-50 text-terracotta-600/55 ring-1 ring-cream-300/60"
-    : isToday
-      ? "bg-terracotta-500 text-cream-50"
-      : "bg-cream-100 text-terracotta-600 ring-1 ring-cream-300/80";
 
   return (
-    <li
-      id={activity.attractionId ? `activity-${activity.attractionId}` : undefined}
-      className="grid grid-cols-[40px_1fr] sm:grid-cols-[64px_1fr] gap-3 sm:gap-6 scroll-mt-24"
-    >
-      {/* Icon column. The time used to live BELOW the icon (-bottom-4),
-          which floated it into the gap before the next row and read as if
-          it labeled the wrong activity. Time now lives in the eyebrow of
-          the content column, where it's unambiguously attached. */}
-      <div className="relative pt-0.5 sm:pt-1">
+    <li id={anchorId} className="grid grid-cols-[32px_1fr] sm:grid-cols-[44px_1fr] gap-2.5 sm:gap-4 scroll-mt-32">
+      {/* Number badge — matches the "today at a glance" list above. */}
+      <div className="pt-3">
         <div
-          className={`w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center ${iconClasses}`}
+          className={`w-8 h-8 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-[14px] sm:text-base font-bold ${
+            optional ? "bg-cream-200 text-ink-700" : isToday ? "bg-terracotta-500 text-cream-50" : "bg-terracotta-600 text-cream-50"
+          }`}
         >
-          {createElement(activityIcon(activity), {
-            size: 16,
-            className: "sm:w-5 sm:h-5",
-            strokeWidth: 1.7
-          })}
+          {index + 1}
         </div>
       </div>
 
-      <div className="min-w-0 pt-0.5 sm:pt-1">
-        <div className="flex items-baseline flex-wrap gap-x-2 gap-y-1">
-          <span className="text-[9px] uppercase tracking-[0.22em] text-ink-700/45 font-medium">
-            {String(index + 1).padStart(2, "0")}
-          </span>
-          {activity.time && (
-            <>
-              <span className="text-ink-700/30 text-[9px]" aria-hidden>·</span>
-              <span className="text-[10px] uppercase tracking-[0.22em] text-ink-800 font-semibold">
-                {activity.time}
-              </span>
-            </>
-          )}
-          {activity.tag && (
-            <>
-              <span className="text-ink-700/30 text-[9px]" aria-hidden>·</span>
-              <span className="text-[9px] uppercase tracking-[0.22em] text-terracotta-600/85 font-medium">
-                {t(TAG_KEY[activity.tag] ?? "tag_view")}
-              </span>
-            </>
-          )}
-          {optional && (
-            <span
-              className="ms-1 inline-flex items-center px-1.5 py-[2px] rounded-full bg-olive-500/12 text-olive-700 text-[8.5px] uppercase tracking-[0.22em] font-semibold"
-              title={t("optional_aria")}
-              aria-label={t("optional_aria")}
-            >
-              {t("optional_label")}
-            </span>
-          )}
-        </div>
-        <h4
-          className={`mt-1 font-serif text-[18px] sm:text-[24px] leading-snug ${
-            optional ? "text-ink-800/90" : "text-ink-900"
-          }`}
-        >
-          {activity.title}
-        </h4>
-        {activity.place && (
-          <div className="mt-0.5 text-[12px] sm:text-[13px] text-ink-700/55 tracking-wide" dir="ltr" style={{ textAlign: "start" }}>
-            {activity.place}
-          </div>
-        )}
-        {activity.description && (
-          <p className="mt-1.5 sm:mt-2 text-[14px] sm:text-[15.5px] text-ink-700/85 leading-relaxed">
-            {activity.description}
-          </p>
-        )}
-        {activity.link && (
-          <a
-            href={activity.link.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2 inline-flex items-center gap-1.5 text-[12px] font-medium text-terracotta-600 hover:text-terracotta-700"
-          >
-            <ExternalLink size={12} /> {activity.link.label}
-          </a>
-        )}
-
-        {hasMoreInfo && (
-          <button
-            onClick={() => setOpen(o => !o)}
-            className="mt-3 inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.18em] font-medium text-terracotta-600 hover:text-terracotta-700 transition-colors"
-            aria-expanded={open}
-          >
-            {open ? <X size={12} /> : <Plus size={12} />}
-            {open ? t("hide_details") : t("more_about_place")}
+      <div className={`min-w-0 rounded-2xl ring-1 overflow-hidden ${optional ? "bg-cream-50/60 ring-cream-300/50" : "bg-cream-50 ring-cream-300/80 shadow-sm"}`}>
+        {att?.image && (
+          <button type="button" onClick={() => setOpen(o => !o)} className="block w-full aspect-[16/7] bg-cream-200 overflow-hidden">
+            <img src={att.image} alt={att.name} loading="lazy" className="w-full h-full object-cover" />
           </button>
         )}
+        <div className="p-4 sm:p-5">
+          <div className="flex items-center flex-wrap gap-2">
+            {activity.time && (
+              <span className="inline-flex items-center gap-1 rounded-full bg-ink-900/[0.06] px-2.5 py-0.5 text-[13px] font-bold text-ink-800" dir="ltr">
+                <Clock size={12} /> {activity.time}
+              </span>
+            )}
+            {optional && (
+              <span
+                className="inline-flex items-center rounded-full bg-olive-500/12 text-olive-700 px-2.5 py-0.5 text-[12px] font-semibold"
+                title={t("optional_aria")}
+              >
+                {t("optional_label")}
+              </span>
+            )}
+          </div>
+          <h4 className={`mt-2 text-[19px] sm:text-[23px] font-bold leading-snug ${optional ? "text-ink-800/90" : "text-ink-900"}`}>
+            {activity.title}
+          </h4>
+          {activity.place && (
+            <div className="mt-0.5 text-[13px] text-ink-700/60" dir="ltr" style={{ textAlign: "start" }}>
+              {activity.place}
+            </div>
+          )}
+          {activity.description && (
+            <p className="mt-2 text-[15px] sm:text-[16px] text-ink-700/90 leading-relaxed">{activity.description}</p>
+          )}
+          {(activity.link || hasMoreInfo) && (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {hasMoreInfo && (
+                <button
+                  onClick={() => setOpen(o => !o)}
+                  className="inline-flex items-center gap-1.5 rounded-full bg-terracotta-600 text-cream-50 px-4 py-2 text-[13.5px] font-semibold"
+                  aria-expanded={open}
+                >
+                  {open ? <X size={14} /> : <Plus size={14} />}
+                  {open ? t("hide_details") : t("more_about_place")}
+                </button>
+              )}
+              {activity.link && (
+                <a
+                  href={activity.link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-terracotta-600/40 text-terracotta-700 px-4 py-2 text-[13.5px] font-semibold"
+                >
+                  <ExternalLink size={14} /> {activity.link.label}
+                </a>
+              )}
+            </div>
+          )}
+        </div>
 
         <AnimatePresence initial={false}>
           {open && att && (
@@ -1129,44 +1078,33 @@ function RideConnector({
   const t = useT();
   const ModeIcon = dir?.mode === "transit" ? TrainFront : dir?.mode === "walking" ? Footprints : Car;
   return (
-    <li
-      className="grid grid-cols-[40px_1fr] sm:grid-cols-[64px_1fr] gap-3 sm:gap-6 -mt-1 sm:-mt-2"
-      aria-hidden={false}
-    >
-      {/* Timeline rail with a small Car icon, mirroring the activity
-          column to the left. The dashed border continues the timeline. */}
+    <li className="grid grid-cols-[32px_1fr] sm:grid-cols-[44px_1fr] gap-2.5 sm:gap-4">
+      {/* Timeline rail with the travel-mode icon; the dashed line links
+          the stop above to the stop below. */}
       <div className="relative flex justify-center">
-        <span className="absolute inset-x-0 top-0 bottom-0 mx-auto w-px border-l border-dashed border-cream-300/90" />
-        <span className="relative z-10 mt-1 inline-flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-cream-100 ring-1 ring-cream-300/80 text-olive-700">
-          <ModeIcon size={11} strokeWidth={1.9} />
+        <span className="absolute inset-x-0 top-0 bottom-0 mx-auto w-px border-l-2 border-dashed border-olive-500/40" />
+        <span className="relative z-10 mt-2 inline-flex items-center justify-center w-8 h-8 rounded-full bg-olive-500/12 text-olive-700">
+          <ModeIcon size={15} strokeWidth={2} />
         </span>
       </div>
-      <div className="min-w-0 ps-1 pt-0.5">
-        <div className="inline-flex items-baseline flex-wrap gap-x-2 gap-y-0.5">
-          <span className="text-[10px] uppercase tracking-[0.22em] text-olive-700/85 font-medium">
-            {departAt ? `${t("depart_at")} ${departAt} ${duration ? "· " + t("ride_to_next") : ""}` : t("ride_to_next")}
+      <div className="min-w-0 rounded-xl bg-olive-500/[0.07] px-3.5 py-2.5">
+        <div className="flex items-center flex-wrap gap-x-2 gap-y-1">
+          <span className="text-[12.5px] font-bold text-olive-700">
+            {departAt ? `${t("depart_at")} ${departAt} · ${t("ride_to_next")}` : t("ride_to_next")}
           </span>
-          {dir && (
-            <a
-              href={googleMapsDirUrl(dir.from, dir.to, dir.mode)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-[11px] font-medium text-terracotta-600 hover:text-terracotta-700"
-            >
-              <Navigation size={11} /> {t("directions_link")}
-            </a>
-          )}
-          {duration && (
-            <span className="font-serif text-[14px] sm:text-[15px] text-ink-900">
-              {duration}
-            </span>
-          )}
-          {note && (
-            <span className="text-[12px] sm:text-[13px] text-ink-700/65 italic">
-              {duration ? "· " : ""}{note}
-            </span>
-          )}
+          {duration && <span className="text-[15px] font-bold text-ink-900">{duration}</span>}
         </div>
+        {note && <p className="mt-0.5 text-[13.5px] text-ink-700/80 leading-snug">{note}</p>}
+        {dir && (
+          <a
+            href={googleMapsDirUrl(dir.from, dir.to, dir.mode)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-1.5 inline-flex items-center gap-1.5 rounded-full bg-cream-50 ring-1 ring-terracotta-500/30 px-3 py-1 text-[12.5px] font-semibold text-terracotta-700"
+          >
+            <Navigation size={12} /> {t("directions_link")}
+          </a>
+        )}
       </div>
     </li>
   );

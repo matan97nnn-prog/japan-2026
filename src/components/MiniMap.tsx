@@ -5,6 +5,7 @@ import L from "leaflet";
 import type { POI } from "../data/types";
 import { useT } from "../lib/dict";
 import NavigateLinks from "./NavigateLinks";
+import GoogleReviewsLink from "./GoogleReviewsLink";
 
 const COLOR_BY_CATEGORY: Record<string, string> = {
   stay: "#C64B3C",
@@ -111,7 +112,8 @@ export default function MiniMap({ pois }: { pois: POI[] }) {
                     </p>
                   )}
                   <div className="mt-1.5">
-                    <NavigateLinks name={poi.name} coords={poi.coords} address={poi.address} size={11} />
+                    <div><GoogleReviewsLink name={poi.name} coords={poi.coords} address={poi.address} /></div>
+                    <div className="mt-1.5"><NavigateLinks name={poi.name} coords={poi.coords} address={poi.address} size={11} /></div>
                   </div>
                 </div>
               </Popup>

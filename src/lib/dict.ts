@@ -127,11 +127,11 @@ export const DICT = {
   today: { en: "Today", he: "היום" },
 
   /* ---------- Region / chapter labels ---------- */
-  region_north_long: { en: "Tokyo to Kanazawa", he: "מטוקיו לקנזאווה" },
-  region_south_long: { en: "Kyoto", he: "קיוטו" },
+  region_north_long: { en: "North part: Tokyo → Alps → Kanazawa", he: "החלק הצפוני: טוקיו ← האלפים ← קנאזאווה" },
+  region_south_long: { en: "Kyoto part", he: "החלק של קיוטו" },
   region_transit_long: { en: "Transit", he: "מעבר" },
-  region_north_short: { en: "North", he: "צפון" },
-  region_south_short: { en: "South", he: "דרום" },
+  region_north_short: { en: "Tokyo–Kanazawa", he: "טוקיו–קנאזאווה" },
+  region_south_short: { en: "Kyoto", he: "קיוטו" },
   region_transit_short: { en: "Transit", he: "מעבר" },
 
   /* Tag labels */
@@ -147,10 +147,7 @@ export const DICT = {
 
   /* ---------- Map section ---------- */
   map_eyebrow: { en: "The atlas", he: "האטלס" },
-  map_title: {
-    en: "The whole trip on one map",
-    he: "כל הטיול על מפה אחת"
-  },
+  map_title: { en: "The trip on one map", he: "הטיול על מפה אחת" },
   map_kicker: {
     en: "Tap a pin · trace the route · filter the rest",
     he: "הקישו על סיכה · עקבו אחר המסלול · סננו את השאר"
@@ -159,8 +156,8 @@ export const DICT = {
     en: "Every stay, attraction, restaurant, convenience store and station — color-coded by category. The dashed line is our actual journey: Tokyo to Hakone, on through the Fuji lakes, Matsumoto, the Japanese Alps, Shirakawa-go and Kanazawa, then Kyoto, and back to Tokyo.",
     he: "כל מקום לינה, אטרקציה, מסעדה, מינימרקט ותחנה — בקוד צבעים לפי קטגוריה. הקו המקווקו הוא המסלול שלנו: מטוקיו להקונה, משם לאגמי פוג'י, מטסומוטו, האלפים היפניים, שירקאוו-גו וקנזאווה, אחר כך קיוטו, ובחזרה לטוקיו."
   },
-  saved_eyebrow: { en: "Saved places", he: "מקומות שמורים" },
-  saved_title: { en: "Our Google Maps lists, merged", he: "רשימות הגוגל מפות שלנו, מאוחדות" },
+  saved_eyebrow: { en: "Google Maps", he: "גוגל מפות" },
+  saved_title: { en: "Every recommended place, with reviews", he: "כל המקומות המומלצים בגוגל מפות — עם ביקורות" },
   saved_intro: {
     en: "Three Google Maps lists friends and family shared, merged into one map with duplicates removed. Tap a place for photos and reviews on Google Maps.",
     he: "שלוש רשימות גוגל מפות ששיתפו איתנו, מאוחדות למפה אחת בלי כפילויות. הקישו על מקום כדי לראות תמונות וביקורות בגוגל מפות."
@@ -305,7 +302,7 @@ export const DICT = {
   },
   /* ---------- Stays section ---------- */
   stays_eyebrow: { en: "Where we sleep", he: "איפה נישן" },
-  stays_title: { en: "Eight bases, one journey", he: "שמונה בסיסים, מסע אחד" },
+  stays_title: { en: "Our hotels", he: "המלונות שלנו" },
   stays_kicker: {
     en: "Tokyo, Hakone and the Alps first, then Kanazawa and Kyoto",
     he: "טוקיו, הקונה והאלפים קודם, אחר כך קנזאווה וקיוטו"
@@ -331,7 +328,7 @@ export const DICT = {
 
   /* ---------- Attractions grid ---------- */
   attr_eyebrow: { en: "Where we'll go", he: "לאן נלך" },
-  attr_title: { en: "Places we'll fall for", he: "מקומות שנתאהב בהם" },
+  attr_title: { en: "Places you'll visit", he: "מקומות שתבקרו בהם" },
   attr_kicker: {
     en: "Sixteen stops — water, walls, cliffs, caves, and a few good meals",
     he: "שש־עשרה תחנות — מים, חומות, צוקים, מערות וכמה ארוחות טובות"
@@ -346,13 +343,13 @@ export const DICT = {
 
   /* ---------- Services section ---------- */
   services_eyebrow: { en: "Around you", he: "סביבכם" },
-  services_title: { en: "Eat, shop, refuel", he: "אוכל, קניות, תדלוק" },
+  services_title: { en: "Recommended restaurants & stops", he: "מסעדות ועצירות מומלצות" },
   services_kicker: {
     en: "Hand-picked spots near both bases — saves you the panic-Google",
     he: "מקומות שנבחרו בקפידה ליד שני הבסיסים — חוסכים חיפושי גוגל בלחץ"
   },
-  services_filter_north: { en: "North base", he: "בסיס צפוני" },
-  services_filter_south: { en: "South base", he: "בסיס דרומי" },
+  services_filter_north: { en: "Tokyo → Kanazawa", he: "טוקיו ← קנאזאווה" },
+  services_filter_south: { en: "Kyoto", he: "קיוטו" },
   services_filter_restaurant: { en: "Restaurants", he: "מסעדות" },
   services_filter_supermarket: { en: "Supermarkets", he: "סופרמרקטים" },
   services_filter_gas: { en: "Gas", he: "דלק" },
@@ -533,7 +530,7 @@ export const DICT = {
   },
   food_dishes_label: { en: "Signature dishes", he: "מנות דגל" },
   food_wineries_label: { en: "Sake & spirits to try", he: "סאקה ומשקאות לנסות" },
-  food_filter_north: { en: "Tokyo to Kanazawa", he: "מטוקיו לקנזאווה" },
+  food_filter_north: { en: "Tokyo → Kanazawa", he: "טוקיו ← קנאזאווה" },
   food_filter_south: { en: "Kyoto", he: "קיוטו" },
   food_filter_japan: { en: "Across Japan", he: "בכל יפן" },
   food_try_it: { en: "Try it at", he: "לטעום ב" },

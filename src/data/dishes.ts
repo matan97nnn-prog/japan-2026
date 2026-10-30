@@ -14,9 +14,9 @@ export const dishes: Dish[] = [
     tryIt: "Any counter with a line outside — that's the tell",
     image: "./images/food-ramen.jpg",
     imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Ramen"
+      author: "Quercus acuta",
+      license: "CC BY-SA 4.0",
+      source: "https://commons.wikimedia.org/wiki/File:Shoyu_Ramen%EF%BC%88Tokyo_Ramen%EF%BC%89_-_01.jpg"
     }
   },
   {
@@ -30,9 +30,9 @@ export const dishes: Dish[] = [
     tryIt: "Tsukiji Outer Market (Tokyo) · any conveyor-belt sushi chain",
     image: "./images/food-sushi.jpg",
     imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Sushi"
+      author: "chidorian from Japan",
+      license: "CC BY-SA 2.0",
+      source: "https://commons.wikimedia.org/wiki/File:Sushi_platter.jpg"
     }
   },
   {
@@ -46,9 +46,9 @@ export const dishes: Dish[] = [
     tryIt: "Tempura Daikokuya (Asakusa)",
     image: "./images/food-tempura.jpg",
     imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Tempura"
+      author: "Yaco*",
+      license: "CC BY 2.0",
+      source: "https://commons.wikimedia.org/wiki/File:Tempura_01.jpg"
     }
   },
   {
@@ -62,9 +62,9 @@ export const dishes: Dish[] = [
     tryIt: "Omoide Yokocho (Shinjuku)",
     image: "./images/food-yakitori.jpg",
     imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Yakitori"
+      author: "竹麦魚(Searobin)",
+      license: "CC BY-SA 3.0",
+      source: "https://commons.wikimedia.org/wiki/File:Cooking_yakitori.jpg"
     }
   },
   {
@@ -79,8 +79,8 @@ export const dishes: Dish[] = [
     image: "./images/food-kaiseki.jpg",
     imageCredit: {
       author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Kaiseki"
+      license: "CC BY-SA 3.0",
+      source: "https://commons.wikimedia.org/wiki/File:Jisaku_Kaiseki_Ryori_01.jpg"
     }
   },
   {
@@ -94,9 +94,9 @@ export const dishes: Dish[] = [
     tryIt: "Restaurants near Toshogu Shrine, Nikko",
     image: "./images/food-yuba.jpg",
     imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Yuba_(food)"
+      author: "Andrea Nguyen",
+      license: "CC BY 2.0",
+      source: "https://commons.wikimedia.org/wiki/File:Tofu_skin.png"
     }
   },
   {
@@ -108,7 +108,12 @@ export const dishes: Dish[] = [
     description:
       "Thick, flat, hand-cut wheat noodles simmered in a miso broth with pumpkin and root vegetables — the Fuji Five Lakes region's signature dish, warming after a day of lake-hopping.",
     tryIt: "Kawaguchiko / Fujiyoshida area",
-    image: "./images/food-houtou.jpg"
+    image: "./images/food-houtou.jpg",
+    imageCredit: {
+      author: "No machine-readable author provided. Jungle assumed (based on copyright claims).",
+      license: "CC BY-SA 3.0",
+      source: "https://commons.wikimedia.org/wiki/File:Houtou.jpg"
+    }
   },
   {
     id: "matsumoto-soba",
@@ -164,9 +169,9 @@ export const dishes: Dish[] = [
     tryIt: "Yakiniku restaurants in Kyoto",
     image: "./images/food-wagyu.jpg",
     imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Wagyu"
+      author: "Japanexperterna.se",
+      license: "CC BY-SA 3.0",
+      source: "https://commons.wikimedia.org/wiki/File:Tajimagyu2.jpg"
     }
   },
   {
@@ -180,9 +185,9 @@ export const dishes: Dish[] = [
     tryIt: "Nishiki Market and the Higashiyama teahouses (Kyoto)",
     image: "./images/food-matcha.jpg",
     imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Wagashi"
+      author: "Douglas Perkins",
+      license: "CC0",
+      source: "https://commons.wikimedia.org/wiki/File:Wagashi_closeup_14.jpg"
     }
   },
   {
@@ -196,9 +201,9 @@ export const dishes: Dish[] = [
     tryIt: "Any 7-Eleven, Lawson or FamilyMart",
     image: "./images/food-onigiri.jpg",
     imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Onigiri"
+      author: "脇山航",
+      license: "CC BY-SA 4.0",
+      source: "https://commons.wikimedia.org/wiki/File:%E5%B0%8F%E6%96%99%E7%90%86%E3%83%90%E3%83%AB%E3%81%95%E3%81%8F%E3%82%89_%E7%89%B9%E8%A3%BD%E3%81%8A%E3%81%AB%E3%81%8E%E3%82%8A.jpg"
     }
   },
   {
@@ -212,9 +217,9 @@ export const dishes: Dish[] = [
     tryIt: "Any Shinkansen station platform kiosk",
     image: "./images/food-ekiben.jpg",
     imageCredit: {
-      author: "Wikimedia Commons",
-      license: "CC BY-SA",
-      source: "https://en.wikipedia.org/wiki/Ekiben"
+      author: "Fozzibab at English Wikipedia",
+      license: "Public domain",
+      source: "https://commons.wikimedia.org/wiki/File:Japan_Pic_1_Bento.jpg"
     }
   }
 ];

@@ -3,9 +3,13 @@ import { itinerary } from "../data/itinerary";
 
 const MAX_DAY = itinerary.length;
 
+export const PAGES = ["plan", "map", "food", "places", "stays", "info"] as const;
+export type Page = (typeof PAGES)[number];
+
 export type Route =
   | { kind: "home" }
-  | { kind: "chapter"; day: number };
+  | { kind: "chapter"; day: number }
+  | { kind: "page"; page: Page };
 
 export function parseHash(hash: string): Route {
   const m = hash.match(/^#chapter\/(\d+)$/);
@@ -13,7 +17,20 @@ export function parseHash(hash: string): Route {
     const day = parseInt(m[1], 10);
     if (day >= 1 && day <= MAX_DAY) return { kind: "chapter", day };
   }
+  const p = hash.match(/^#\/(\w+)$/);
+  if (p && (PAGES as readonly string[]).includes(p[1])) return { kind: "page", page: p[1] as Page };
   return { kind: "home" };
+}
+
+/** Switch tab. Home clears the hash; every tab starts at the top. */
+export function navigatePage(page: Page | "home") {
+  if (page === "home") {
+    history.pushState(null, "", window.location.pathname + window.location.search);
+    window.dispatchEvent(new HashChangeEvent("hashchange"));
+  } else {
+    window.location.hash = `/${page}`;
+  }
+  window.scrollTo(0, 0);
 }
 
 export function useHashRoute(): Route {

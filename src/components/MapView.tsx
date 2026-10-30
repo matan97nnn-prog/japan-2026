@@ -10,6 +10,7 @@ import { wineries } from "../data/wineries";
 import type { POI, Category } from "../data/types";
 import Section from "./Section";
 import NavigateLinks from "./NavigateLinks";
+import GoogleReviewsLink from "./GoogleReviewsLink";
 import { useT, type DictKey } from "../lib/dict";
 import { useLang } from "../lib/i18n";
 import { useLocalizePoi, useLocalizeWinery } from "../data/i18n";
@@ -624,7 +625,8 @@ export default function MapView({ registerFocus }: Props) {
                         </p>
                       )}
                       <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1">
-                        <NavigateLinks name={poi.name} coords={poi.coords} address={poi.address} size={11} />
+                        <div><GoogleReviewsLink name={poi.name} coords={poi.coords} address={poi.address} /></div>
+                    <div className="mt-1.5"><NavigateLinks name={poi.name} coords={poi.coords} address={poi.address} size={11} /></div>
                         {poi.website && (
                           <a
                             href={poi.website}

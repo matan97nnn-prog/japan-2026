@@ -10,7 +10,6 @@ import { useLocalizeDay, useLocalizePoi } from "../data/i18n";
 import { getAttraction } from "../data/attractions";
 import type { Day, POI } from "../data/types";
 import LiveCountdown from "./LiveCountdown";
-import WeatherStrip from "./WeatherStrip";
 import { useCarouselSwipe } from "../lib/useCarouselSwipe";
 
 interface HeroPhoto {
@@ -340,7 +339,7 @@ export default function Hero() {
   return (
     <header
       id="hero"
-      className="relative min-h-[100svh] flex flex-col overflow-hidden text-cream-50 bg-ink-900"
+      className="relative min-h-[72svh] sm:min-h-[80svh] flex flex-col overflow-hidden text-cream-50 bg-ink-900"
       style={{
         paddingTop: "env(safe-area-inset-top)",
         ...(swipeTouchAction ? { touchAction: swipeTouchAction } : {})
@@ -452,11 +451,8 @@ export default function Hero() {
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.5 }}
-        className="relative z-10 max-w-6xl w-full mx-auto px-5 sm:px-8 pb-8 sm:pb-10 flex flex-col sm:flex-row items-center sm:items-end justify-center sm:justify-between gap-5 sm:gap-4"
+        className="relative z-10 max-w-6xl w-full mx-auto px-5 sm:px-8 pb-8 sm:pb-10 flex flex-col sm:flex-row items-center sm:items-end justify-center gap-5 sm:gap-4"
       >
-        <div className="hidden sm:block flex-1 max-w-md order-1">
-          <WeatherStrip variant="glass" />
-        </div>
 
         <button
           type="button"
@@ -469,11 +465,6 @@ export default function Hero() {
           <span className="font-serif italic text-sm sm:text-sm tracking-wide">{t("scroll_to_plan")}</span>
           <ChevronDown size={20} className="animate-bounce group-hover:animate-none drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]" />
         </button>
-
-        {/* Mobile-only weather, rendered below the scroll cue in the column */}
-        <div className="sm:hidden w-full order-2">
-          <WeatherStrip variant="glass" />
-        </div>
       </motion.div>
     </header>
   );
