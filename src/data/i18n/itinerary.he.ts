@@ -776,6 +776,11 @@ export const itineraryHE: Record<number, DayHE> = {
         rideToNext: { duration: "≈ שעתיים ו-40 דק'" }
       },
       {
+        title: "צ'ק-אין: Dai-ichi Hotel Tokyo",
+        description: "תחנת JR אחת מתחנת טוקיו לשימבאשי (או 10 דק' במונית). משאירים תיקים, מנוחה קצרה.",
+        rideToNext: { duration: "≈ 20 דק'", note: "קו גינזה שימבאשי ← אסקוסה, בלי החלפה" }
+      },
+      {
         title: "אסקוסה בלילה: סנסו-ג'י מואר",
         description: "חובה. אחרי החשכה המטיילים היומיים כבר הלכו: הפגודה והשער המוארים, הליכה ליד הנהר, וטמפורה לארוחת ערב."
       }

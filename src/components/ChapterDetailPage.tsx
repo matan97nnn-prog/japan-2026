@@ -58,6 +58,7 @@ import PoiImage from "./PoiImage";
 import PhotoCredit from "./PhotoCredit";
 import MiniMap from "./MiniMap";
 import DayExtras from "./DayExtras";
+import { morningStay, nightStay } from "../lib/dayRoute";
 import { DayChips, DayAgenda } from "./DayNav";
 import ItalianWordCarousel from "./ItalianWordCarousel";
 import { useCarouselSwipe } from "../lib/useCarouselSwipe";
@@ -598,7 +599,7 @@ function ChapterDetailContent({ day }: { day: Day }) {
             <ItalianWordCarousel dayNumber={day.dayNumber} words={italianWords} />
           )}
 
-          <DayAgenda day={localDay} />
+          <DayAgenda day={localDay} raw={day} />
 
           {/* Activities */}
           <section>
@@ -684,7 +685,7 @@ function ChapterDetailContent({ day }: { day: Day }) {
           {dayPois.length > 0 && (
             <section>
               <SectionLabel eyebrow={t("on_the_map")} title={t("the_days_stops")} />
-              <MiniMap pois={dayPois} />
+              <MiniMap pois={dayPois} start={morningStay(day.date)} end={nightStay(day.date)} />
             </section>
           )}
 

@@ -507,7 +507,7 @@ export const itinerary: Day[] = [
         rideToNext: {
           duration: "≈ 2 h 15",
           note: "Chuo Expressway; a stop at a service area for lunch",
-          dir: { from: "Lake Motosu", to: "Matsumoto Hotel Kagetsu", mode: "driving" }
+          dir: { from: "Nakanokura Pass Observatory, Lake Motosu", to: "Matsumoto Hotel Kagetsu", mode: "driving" }
         }
       },
       {
@@ -566,7 +566,11 @@ export const itinerary: Day[] = [
         title: "Park at Hirayu (Akandana), shuttle bus up",
         place: "Akandana Parking → Kamikochi Bus Terminal",
         description: "≈ 25 min bus. Saturday is busy, aim for the early buses.",
-        rideToNext: { duration: "≈ 25 min", note: "Shuttle bus" }
+        rideToNext: {
+          duration: "≈ 25 min",
+          note: "Shuttle bus",
+          dir: { from: "Akandana Parking Hirayu", to: "Taisho Pond Kamikochi", mode: "transit" }
+        }
       },
       {
         time: "09:30",
@@ -576,7 +580,8 @@ export const itinerary: Day[] = [
         attractionId: "kamikochi",
         rideToNext: {
           duration: "≈ 25 min",
-          note: "Bus back to Hirayu (last bus ≈ 17:30)"
+          note: "Bus back to Hirayu (last bus ≈ 17:30)",
+          dir: { from: "Kamikochi Bus Terminal", to: "Hirayu no Mori", mode: "transit" }
         }
       },
       {
@@ -1201,6 +1206,17 @@ export const itinerary: Day[] = [
         rideToNext: {
           duration: "≈ 2 h 40",
           dir: { from: "Kyoto Station", to: "Tokyo Station", mode: "transit" }
+        }
+      },
+      {
+        time: "16:30",
+        title: "Check in: Dai-ichi Hotel Tokyo",
+        place: "Dai-ichi Hotel Tokyo, Shimbashi",
+        description: "One JR stop from Tokyo Station to Shimbashi (or a 10-min taxi). Drop bags, short rest.",
+        rideToNext: {
+          duration: "≈ 20 min",
+          note: "Ginza line Shimbashi → Asakusa, no change",
+          dir: { from: "Dai-ichi Hotel Tokyo", to: "Senso-ji", mode: "transit" }
         }
       },
       {

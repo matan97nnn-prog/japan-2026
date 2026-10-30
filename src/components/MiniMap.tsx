@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from "react-leaflet";
 import { TILE_URL, TILE_ATTRIBUTION, TILE_MAX_ZOOM } from "../lib/tiles";
 import L from "leaflet";
 import type { POI } from "../data/types";
@@ -42,7 +42,7 @@ function makePinIcon(color: string, n: number, isHero = false): L.DivIcon {
         ">
           <div style="transform:rotate(45deg);color:#FBF7EC;font-weight:700;font-size:${
             isHero ? 14 : 12
-          }px;line-height:1;">${n}</div>
+          }px;line-height:1;">${n === 0 ? "&#8962;" : n}</div>
         </div>
       </div>
     `,
@@ -69,8 +69,12 @@ function FitBounds({ pois }: { pois: POI[] }) {
   return null;
 }
 
-export default function MiniMap({ pois }: { pois: POI[] }) {
+/** Day map: numbered stops, the morning and night hotels, and a dashed line
+ *  in visiting order so the shape of the day is obvious at a glance. */
+export default function MiniMap({ pois, start, end }: { pois: POI[]; start?: POI; end?: POI }) {
   const t = useT();
+  const path: [number, number][] = [start, ...pois, end].filter((p): p is POI => !!p).map(p => p.coords);
+  const hotels = [start, end].filter((p, i, a): p is POI => !!p && a.findIndex(x => x?.id === p.id) === i);
   if (pois.length === 0) {
     return (
       <div className="h-64 sm:h-80 rounded-2xl bg-cream-100 ring-1 ring-cream-300/70 flex items-center justify-center text-ink-700/55 text-sm font-serif italic">
@@ -88,7 +92,17 @@ export default function MiniMap({ pois }: { pois: POI[] }) {
         className="h-72 sm:h-96 w-full"
       >
         <TileLayer attribution={TILE_ATTRIBUTION} url={TILE_URL} maxZoom={TILE_MAX_ZOOM} />
-        <FitBounds pois={pois} />
+        <FitBounds pois={[...pois, ...hotels]} />
+        {path.length > 1 && (
+          <Polyline positions={path} pathOptions={{ color: "#A23E2A", weight: 3, opacity: 0.75, dashArray: "6 8" }} />
+        )}
+        {hotels.map(h => (
+          <Marker key={"hotel-" + h.id} position={h.coords} icon={makePinIcon("#181613", 0, true)}>
+            <Popup>
+              <div className="font-sans text-sm font-semibold">{h.name}</div>
+            </Popup>
+          </Marker>
+        ))}
 
         {pois.map((poi, i) => {
           const color = COLOR_BY_CATEGORY[poi.category] ?? "#C64B3C";
