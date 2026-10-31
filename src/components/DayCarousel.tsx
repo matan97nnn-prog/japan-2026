@@ -4,7 +4,7 @@ import { itinerary } from "../data/itinerary";
 import { useLocalizeDay } from "../data/i18n";
 import { useLang } from "../lib/i18n";
 import { localizeShortDate, localizeWeekday } from "../lib/dict";
-import { navigateChapter, navigatePage } from "../lib/route";
+import { navigateChapter } from "../lib/route";
 import { currentDay } from "../lib/currentDay";
 import { dayImage } from "./PlanOverview";
 
@@ -151,11 +151,6 @@ export default function DayCarousel() {
             );
           })}
         </div>
-      </div>
-      <div className="max-w-3xl mx-auto px-4 sm:px-6">
-        <button onClick={() => navigatePage("plan")} className="mt-1 text-[13px] font-semibold text-terracotta-600">
-          {he ? "כל הימים ברשימה" : "All days as a list"}
-        </button>
       </div>
     </section>
   );

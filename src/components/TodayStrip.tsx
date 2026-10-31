@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AlertTriangle, BedDouble, Info, Map, MessageCircle, Navigation, TrainFront, ChevronLeft, ChevronRight } from "lucide-react";
+import { AlertTriangle, Bath, BedDouble, Compass, Info, MessageCircle, Navigation, Siren, TrainFront, Utensils, ChevronLeft, ChevronRight } from "lucide-react";
 import { dayAlerts } from "../data/dayAlerts";
 import { STAY_JA } from "../data/japanese";
 import { useLang } from "../lib/i18n";
@@ -83,45 +83,58 @@ function TonightHotelCard({ stay, ja, he }: { stay: NonNullable<ReturnType<typeo
   );
 }
 
-const yenIcon = <span className="text-[17px] font-bold leading-none">¥</span>;
+const yenIcon = <span className="text-[19px] font-bold leading-none">¥</span>;
 
-export default function TodayStrip() {
+/* One clear "go to" widget under the plan strip: everything that isn't
+ * already in the bottom tab bar (Home, Plan, Maps, Transport). */
+export function HomeShortcuts() {
   const { lang } = useLang();
   const he = lang === "he";
-  const { day } = currentDay();
-
-  const shortcuts: { label: string; icon: React.ReactNode; onClick: () => void }[] = [
-    { label: he ? "שיחון" : "Phrases", icon: <MessageCircle size={19} />, onClick: () => navigatePage("phrases") },
+  const items: { label: string; icon: React.ReactNode; onClick: () => void }[] = [
+    { label: he ? "שיחון" : "Phrases", icon: <MessageCircle size={20} />, onClick: () => navigatePage("phrases") },
     { label: he ? "ין ↔ ₪" : "¥ ↔ ₪", icon: yenIcon, onClick: () => scrollToId("yen") },
-    { label: he ? "תחבורה" : "Transit", icon: <TrainFront size={19} />, onClick: () => navigatePage("transit") },
-    { label: he ? "מפה" : "Map", icon: <Map size={19} />, onClick: () => navigatePage("map") },
+    { label: he ? "אוכל" : "Food", icon: <Utensils size={20} />, onClick: () => navigatePage("food") },
+    { label: he ? "מקומות" : "Places", icon: <Compass size={20} />, onClick: () => navigatePage("places") },
+    { label: he ? "מלונות" : "Hotels", icon: <BedDouble size={20} />, onClick: () => navigatePage("stays") },
+    { label: he ? "אונסן" : "Onsen", icon: <Bath size={20} />, onClick: () => navigatePage("onsen") },
+    { label: he ? "טיפים" : "Tips", icon: <Info size={20} />, onClick: () => navigatePage("info") },
     {
       label: he ? "חירום" : "Emergency",
-      icon: <Info size={19} />,
+      icon: <Siren size={20} />,
       onClick: () => {
         navigatePage("info");
         setTimeout(() => scrollToId("emergency"), 120);
       }
     }
   ];
-
   return (
-    <section className="pt-3">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 space-y-2.5">
-        <TodayAlert dayNumber={day.dayNumber} />
-        <TonightHotel date={day.date} />
-        <div className="grid grid-cols-5 gap-2">
-          {shortcuts.map((s) => (
+    <section className="pt-4">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-4 gap-2">
+          {items.map((s) => (
             <button
               key={s.label}
               onClick={s.onClick}
               className="flex flex-col items-center gap-1 rounded-2xl bg-cream-50 border border-ink-900/10 py-2.5 text-terracotta-600 active:scale-[0.97] transition"
             >
-              <span className="h-5 flex items-center">{s.icon}</span>
-              <span className="text-[11.5px] font-semibold text-ink-900">{s.label}</span>
+              <span className="h-6 flex items-center">{s.icon}</span>
+              <span className="text-[12px] font-semibold text-ink-900">{s.label}</span>
             </button>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
+
+/* Today's heads-up and tonight's hotel. */
+export default function TodayStrip() {
+  const { day } = currentDay();
+  return (
+    <section className="pt-2.5">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 space-y-2.5">
+        <TodayAlert dayNumber={day.dayNumber} />
+        <TonightHotel date={day.date} />
       </div>
     </section>
   );

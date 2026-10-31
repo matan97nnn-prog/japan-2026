@@ -92,7 +92,7 @@ export function UpdatesTeaser() {
   const fresh = updates.filter((u) => isNew(u, seen)).length;
   const Arrow = he ? ChevronLeft : ChevronRight;
   return (
-    <section className="pt-5">
+    <section className="pt-2.5">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <button
           onClick={() => navigatePage("updates")}

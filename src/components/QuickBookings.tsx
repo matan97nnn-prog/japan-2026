@@ -77,7 +77,7 @@ function CodeChip({ code }: { code: string }) {
 export default function QuickBookings() {
   const { lang } = useLang();
   return (
-    <section id="bookings-quick" className="relative py-5 sm:py-8 scroll-mt-20">
+    <section id="bookings-quick" className="relative pt-7 sm:pt-10 scroll-mt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <h2 className="text-[22px] sm:text-3xl text-ink-900">{lang === "he" ? "הזמנות וקודים" : "Bookings & codes"}</h2>
         <div className="mt-3 grid gap-2.5 sm:grid-cols-2">

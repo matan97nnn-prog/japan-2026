@@ -458,13 +458,14 @@ export const DICT = {
   emergency_eyebrow: { en: "When things go sideways", he: "כשמשהו משתבש" },
   emergency_title: { en: "Emergency & medical", he: "חירום ורפואה" },
   emergency_kicker: {
-    en: "One number to remember: 112",
-    he: "מספר אחד לזכור: 112"
+    en: "In Japan: 119 for ambulance and fire, 110 for police",
+    he: "ביפן: 119 לאמבולנס וכיבוי אש, 110 למשטרה"
   },
-  emergency_call_112: { en: "Call 112", he: "חייגו 112" },
-  emergency_112_lead: {
-    en: "Single emergency number across the EU, works from any phone, English available",
-    he: "מספר חירום אחיד בכל האיחוד האירופי, עובד מכל טלפון, נותן שירות גם באנגלית"
+  emergency_119_label: { en: "Ambulance & fire", he: "אמבולנס וכיבוי אש" },
+  emergency_110_label: { en: "Police", he: "משטרה" },
+  emergency_japan_lead: {
+    en: "Free from any phone. Say \"English please\" and speak slowly.",
+    he: "חינם מכל טלפון. אומרים \"English please\" ומדברים לאט."
   },
 
   /* ---------- Weather ---------- */

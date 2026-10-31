@@ -5,7 +5,7 @@ import { useLang } from "../lib/i18n";
 import { useT } from "../lib/dict";
 import { currentDay } from "../lib/currentDay";
 import { getAttraction } from "../data/attractions";
-import { STOPS, icon, loadNow, load } from "./RouteWeather";
+import { STOPS, icon, loadNow, load } from "../lib/routeWeather";
 import { scrollToId } from "../lib/nav";
 
 /* Home header: photo of today's places, "Japan 2026", who's travelling,

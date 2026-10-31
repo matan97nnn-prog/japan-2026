@@ -15,7 +15,7 @@ export function HotelsStrip() {
   const localize = useLocalizePoi();
   const he = lang === "he";
   return (
-    <section className="py-5 sm:py-8">
+    <section className="pt-7 sm:pt-10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-end justify-between">
           <h2 className="text-[22px] sm:text-3xl text-ink-900">{he ? "איפה ישנים" : "Where we sleep"}</h2>
@@ -64,7 +64,7 @@ export function MapsLists() {
   const { lang } = useLang();
   const he = lang === "he";
   return (
-    <section className="py-4">
+    <section className="pt-7 sm:pt-10 pb-8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="rounded-2xl bg-ink-900 text-cream-50 p-4 sm:p-5">
           <div className="flex items-center gap-2 text-lg font-bold">

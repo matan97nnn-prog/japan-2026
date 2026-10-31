@@ -57,7 +57,7 @@ export default function YenConverter() {
   }, [rate]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <section id="yen" className="py-4 scroll-mt-20">
+    <section id="yen" className="pt-7 sm:pt-10 scroll-mt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="rounded-2xl bg-cream-50 border border-ink-900/10 shadow-sm p-4">
           <div className="text-[16px] font-bold text-ink-900">{he ? "מחשבון ין ↔ שקל" : "Yen ↔ shekel"}</div>
