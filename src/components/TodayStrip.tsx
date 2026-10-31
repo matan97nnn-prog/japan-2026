@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AlertTriangle, Bath, BedDouble, Compass, Info, MessageCircle, Navigation, Siren, TrainFront, Utensils, ChevronLeft, ChevronRight } from "lucide-react";
+import { AlertTriangle, Bath, Map, BedDouble, Compass, Info, MessageCircle, Navigation, Siren, TrainFront, Utensils, ChevronLeft, ChevronRight } from "lucide-react";
 import { dayAlerts } from "../data/dayAlerts";
 import { STAY_JA } from "../data/japanese";
 import { useLang } from "../lib/i18n";
@@ -85,12 +85,15 @@ function TonightHotelCard({ stay, ja, he }: { stay: NonNullable<ReturnType<typeo
 
 const yenIcon = <span className="text-[19px] font-bold leading-none">¥</span>;
 
-/* One clear "go to" widget under the plan strip: everything that isn't
- * already in the bottom tab bar (Home, Plan, Maps, Transport). */
+/* The home "go to" widget: every section of the site in one place. The
+ * bottom tab bar repeats the few you need from anywhere (plan, maps,
+ * transport); that overlap is on purpose. */
 export function HomeShortcuts() {
   const { lang } = useLang();
   const he = lang === "he";
   const items: { label: string; icon: React.ReactNode; onClick: () => void }[] = [
+    { label: he ? "תחבורה" : "Transport", icon: <TrainFront size={20} />, onClick: () => navigatePage("transit") },
+    { label: he ? "מפות" : "Maps", icon: <Map size={20} />, onClick: () => navigatePage("map") },
     { label: he ? "שיחון" : "Phrases", icon: <MessageCircle size={20} />, onClick: () => navigatePage("phrases") },
     { label: he ? "ין ↔ ₪" : "¥ ↔ ₪", icon: yenIcon, onClick: () => scrollToId("yen") },
     { label: he ? "אוכל" : "Food", icon: <Utensils size={20} />, onClick: () => navigatePage("food") },
@@ -110,7 +113,7 @@ export function HomeShortcuts() {
   return (
     <section className="pt-4">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-5 gap-1.5">
           {items.map((s) => (
             <button
               key={s.label}
@@ -118,7 +121,7 @@ export function HomeShortcuts() {
               className="flex flex-col items-center gap-1 rounded-2xl bg-cream-50 border border-ink-900/10 py-2.5 text-terracotta-600 active:scale-[0.97] transition"
             >
               <span className="h-6 flex items-center">{s.icon}</span>
-              <span className="text-[12px] font-semibold text-ink-900">{s.label}</span>
+              <span className="text-[11.5px] font-semibold text-ink-900 whitespace-nowrap">{s.label}</span>
             </button>
           ))}
         </div>
