@@ -1,0 +1,40 @@
+[
+  {
+    "id": "2026-10-31-1",
+    "date": "2026-10-31",
+    "type": "alert",
+    "he": "tax free משתנה מ-1.11: משלמים מחיר מלא ומקבלים את ה-10% בחזרה בשדה התעופה ביציאה מיפן. לשמור קבלות ומוצרים, לקחת דרכון לכל קנייה. קוסמטיקה ומזון שנארזו בשקית אטומה לא פותחים ביפן.",
+    "en": "Tax-free changes on 1.11: pay full price and get the 10% back at the airport when leaving Japan. Keep receipts and goods, carry your passport. Don't open sealed cosmetics or food in Japan."
+  },
+  {
+    "id": "2026-10-31-2",
+    "date": "2026-10-31",
+    "type": "alert",
+    "day": 6,
+    "he": "השכרת רכב: לאחרונה היו בעיות עם רישיון בינלאומי ישראלי ב-Nippon Rent-a-Car (אנחנו בטויוטה). כל נהג מביא רישיון בינלאומי מנייר + הרישיון הישראלי, שניהם בתוקף.",
+    "en": "Car rental: recent problems with Israeli international licences at Nippon Rent-a-Car (we're with Toyota). Every driver brings the paper international licence plus the Israeli one, both valid."
+  },
+  {
+    "id": "2026-10-31-3",
+    "date": "2026-10-31",
+    "type": "tip",
+    "day": 14,
+    "he": "השלכת בקיוטו מאחרת בשנים האחרונות (שיא בתחילת דצמבר). באמצע נובמבר קיוטו תהיה חלקית צבעונית; השיא שלנו בהאקונה, פוג'י, מצומוטו וטקיאמה. קיומיזו-דרה נפתח ב-06:30 ושקט מאוד לפני 08:00.",
+    "en": "Kyoto's foliage has peaked late recently (early December). Mid-November Kyoto will be partly coloured; our peak is Hakone, Fuji, Matsumoto, Takayama. Kiyomizu-dera opens 06:30 and is quiet before 08:00."
+  },
+  {
+    "id": "2026-10-31-4",
+    "date": "2026-10-31",
+    "type": "tip",
+    "he": "שילוח מזוודות: לשלוח 24 שעות לפני ההגעה למלון הבא ו-48 שעות לפני השדה, עד 11:00. חלק מהמקומות (שילוח, טעינת Suica, מסעדות קטנות) מקבלים רק מזומן.",
+    "en": "Luggage forwarding: send 24 h before the next hotel and 48 h before the airport, by 11:00. Some places (forwarding, Suica top-up, small restaurants) are cash only."
+  },
+  {
+    "id": "2026-10-31-5",
+    "date": "2026-10-31",
+    "type": "tip",
+    "day": 9,
+    "he": "קמיקוצ'י: האוטובוס בין היראיו לעמק לא צריך הזמנה, יוצא כל חצי שעה. יש לוקרים ליד הטרמינל.",
+    "en": "Kamikochi: the Hirayu ↔ valley bus needs no booking, every 30 min. Lockers by the terminal."
+  }
+]

@@ -9,6 +9,7 @@ import YenConverter from "./components/YenConverter";
 import { HotelsStrip, MapsLists, HomeTiles } from "./components/HomeExtras";
 import TransitSection from "./components/TransitSection";
 import OnsenSection from "./components/OnsenSection";
+import UpdatesSection, { UpdatesTeaser } from "./components/UpdatesSection";
 import Phrasebook from "./components/Phrasebook";
 import NotesSection from "./components/NotesSection";
 import MapView from "./components/MapView";
@@ -55,6 +56,8 @@ function PageBody({ page, registerFocus }: { page: Page; registerFocus: (fn: (id
       return <StaysSection />;
     case "onsen":
       return <OnsenSection />;
+    case "updates":
+      return <UpdatesSection />;
     case "phrases":
       return <Phrasebook />;
     case "info":
@@ -120,6 +123,7 @@ export default function App() {
         <>
           <Hero />
           <TodayCard />
+          <UpdatesTeaser />
           <RouteWeather />
           <PlanOverview />
           <QuickBookings />

@@ -10,6 +10,7 @@ export const NAV_LABEL: Record<Page | "home" | "more", { en: string; he: string 
   stays: { en: "Hotels", he: "מלונות" },
   onsen: { en: "Onsen", he: "אונסן" },
   phrases: { en: "Phrases", he: "שיחון" },
+  updates: { en: "Updates", he: "עדכונים" },
   info: { en: "Tips & info", he: "טיפים ומידע" },
   more: { en: "More", he: "עוד" }
 };

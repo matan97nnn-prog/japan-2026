@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { useT } from "../lib/dict";
 import { useLang } from "../lib/i18n";
 import LanguageSwitcher from "./LanguageSwitcher";
+import UpdatesBell from "./UpdatesBell";
 import { PAGES, navigatePage, useHashRoute, type Page } from "../lib/route";
 import { NAV_LABEL } from "../lib/navLabels";
 
-const links: (Page | "home")[] = ["home", ...PAGES];
+const links: (Page | "home")[] = ["home", ...PAGES.filter((p) => p !== "updates")];
 
 export default function Navbar() {
   const t = useT();
@@ -68,6 +69,7 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-2">
+          <UpdatesBell onDark={!scrolled} />
           <LanguageSwitcher onDark={!scrolled} />
         </div>
       </div>
