@@ -12,11 +12,11 @@ const TABS: { id: Page | "home" | "more"; Icon: typeof Home }[] = [
   { id: "home", Icon: Home },
   { id: "plan", Icon: CalendarDays },
   { id: "map", Icon: Map },
-  { id: "transit", Icon: TrainFront },
   { id: "more", Icon: MoreHorizontal }
 ];
 
 const MORE_LINKS: { id: Page; Icon: typeof Home }[] = [
+  { id: "transit", Icon: TrainFront },
   { id: "food", Icon: Utensils },
   { id: "places", Icon: Compass },
   { id: "stays", Icon: BedDouble },
@@ -88,7 +88,7 @@ export default function MobileBottomNav() {
         className="fixed bottom-0 inset-x-0 z-[8001] md:hidden bg-cream-50/95 backdrop-blur-md border-t border-cream-300/70 shadow-[0_-4px_24px_rgba(42,31,26,0.08)]"
         style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
       >
-        <ul className="grid grid-cols-5 h-16">
+        <ul className="grid grid-cols-4 h-16">
           {TABS.map(({ id, Icon }) => {
             const isActive = active === id;
             return (
