@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AlertTriangle, Bath, Map, BedDouble, Compass, Info, MessageCircle, Navigation, Siren, TrainFront, Utensils, ChevronLeft, ChevronRight } from "lucide-react";
+import { AlertTriangle, Bath, Star, Ticket, BedDouble, Compass, Info, MessageCircle, Navigation, Siren, TrainFront, Utensils, ChevronLeft, ChevronRight } from "lucide-react";
 import { dayAlerts } from "../data/dayAlerts";
 import { STAY_JA } from "../data/japanese";
 import { useLang } from "../lib/i18n";
@@ -85,17 +85,16 @@ function TonightHotelCard({ stay, ja, he }: { stay: NonNullable<ReturnType<typeo
 
 const yenIcon = <span className="text-[19px] font-bold leading-none">¥</span>;
 
-/* The home "go to" widget: every section of the site in one place. The
- * bottom tab bar repeats the few you need from anywhere (plan, maps,
- * transport); that overlap is on purpose. */
+/* The home "go to" widget: every section that isn't already in the
+ * bottom tab bar (Home, Plan, Maps). */
 export function HomeShortcuts() {
   const { lang } = useLang();
   const he = lang === "he";
   const items: { label: string; icon: React.ReactNode; onClick: () => void }[] = [
     { label: he ? "תחבורה" : "Transport", icon: <TrainFront size={20} />, onClick: () => navigatePage("transit") },
-    { label: he ? "מפות" : "Maps", icon: <Map size={20} />, onClick: () => navigatePage("map") },
     { label: he ? "שיחון" : "Phrases", icon: <MessageCircle size={20} />, onClick: () => navigatePage("phrases") },
     { label: he ? "ין ↔ ₪" : "¥ ↔ ₪", icon: yenIcon, onClick: () => scrollToId("yen") },
+    { label: he ? "הזמנות" : "Bookings", icon: <Ticket size={20} />, onClick: () => scrollToId("bookings-quick") },
     { label: he ? "אוכל" : "Food", icon: <Utensils size={20} />, onClick: () => navigatePage("food") },
     { label: he ? "מקומות" : "Places", icon: <Compass size={20} />, onClick: () => navigatePage("places") },
     { label: he ? "מלונות" : "Hotels", icon: <BedDouble size={20} />, onClick: () => navigatePage("stays") },
@@ -130,13 +129,36 @@ export function HomeShortcuts() {
   );
 }
 
-/* Today's heads-up and tonight's hotel. */
+/* From 18:00 on a trip day: a nudge to rate the day. */
+function RateNudge() {
+  const { lang } = useLang();
+  const he = lang === "he";
+  const { day, isToday } = currentDay();
+  if (!isToday || new Date().getHours() < 18) return null;
+  return (
+    <button
+      onClick={() => {
+        navigateChapter(day.dayNumber);
+        setTimeout(() => scrollToId("rate"), 300);
+      }}
+      className="w-full flex items-center gap-2.5 rounded-2xl bg-cream-50 border border-ink-900/10 shadow-sm px-3.5 py-3 text-start"
+    >
+      <Star size={18} className="shrink-0 fill-gold-400 text-gold-500" />
+      <span className="flex-1 text-[14.5px] font-semibold text-ink-900">
+        {he ? `איך היה היום? דרגו את יום ${day.dayNumber}` : `How was today? Rate day ${day.dayNumber}`}
+      </span>
+    </button>
+  );
+}
+
+/* Today's heads-up, the evening rating nudge and tonight's hotel. */
 export default function TodayStrip() {
   const { day } = currentDay();
   return (
     <section className="pt-2.5">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 space-y-2.5">
         <TodayAlert dayNumber={day.dayNumber} />
+        <RateNudge />
         <TonightHotel date={day.date} />
       </div>
     </section>

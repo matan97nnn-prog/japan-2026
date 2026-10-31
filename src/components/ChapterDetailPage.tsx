@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useMemo, useState } from "react";
+import DayRating from "./DayRating";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowLeft,
@@ -812,6 +813,8 @@ function ChapterDetailContent({ day }: { day: Day }) {
           )}
 
           <DayExtras day={localDay} />
+
+          <DayRating raw={day} local={localDay} />
 
           {/* Drink of the day — closing flourish, the literal end of the
               chapter (after all the practical info). Adults-only nightcap
