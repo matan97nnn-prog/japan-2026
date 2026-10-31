@@ -10,7 +10,7 @@ import { useLang } from "../lib/i18n";
 type L = { en: string; he: string };
 interface Stop { date: string; place: L; lat: number; lon: number }
 
-const STOPS: Stop[] = [
+export const STOPS: Stop[] = [
   { date: "2026-10-30", place: { en: "Larnaca", he: "לרנקה" }, lat: 34.92, lon: 33.63 },
   { date: "2026-10-31", place: { en: "Larnaca", he: "לרנקה" }, lat: 34.92, lon: 33.63 },
   { date: "2026-11-01", place: { en: "Tokyo", he: "טוקיו" }, lat: 35.67, lon: 139.77 },
@@ -45,7 +45,7 @@ interface DayWx {
 const CACHE_KEY = "japan-route-weather-v1";
 const TTL = 60 * 60 * 1000;
 
-function icon(code: number) {
+export function icon(code: number) {
   if (code === 0) return <Sun size={18} className="text-gold-500" />;
   if (code <= 2) return <CloudSun size={18} className="text-gold-500" />;
   if (code <= 48) return <Cloud size={18} className="text-ink-700/60" />;
@@ -69,7 +69,7 @@ function rainWindows(times: string[], probs: number[], date: string): string {
   return ranges.join(", ");
 }
 
-async function load(): Promise<Record<string, DayWx>> {
+export async function load(): Promise<Record<string, DayWx>> {
   try {
     const c = JSON.parse(localStorage.getItem(CACHE_KEY) || "null");
     if (c && Date.now() - c.at < TTL) return c.data;
@@ -111,6 +111,37 @@ async function load(): Promise<Record<string, DayWx>> {
   return out;
 }
 
+/** Right-now temperature at a spot, cached 20 minutes (and kept for offline). */
+export async function loadNow(lat: number, lon: number): Promise<{ temp: number; code: number } | null> {
+  const key = `japan-wx-now-${lat},${lon}`;
+  let stale: { temp: number; code: number } | null = null;
+  try {
+    const c = JSON.parse(localStorage.getItem(key) || "null");
+    if (c) {
+      stale = c.data;
+      if (Date.now() - c.at < 20 * 60 * 1000) return c.data;
+    }
+  } catch {
+    /* ignore */
+  }
+  try {
+    const r = await fetch(
+      `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code&timezone=auto`
+    );
+    if (!r.ok) return stale;
+    const j = await r.json();
+    const data = { temp: Math.round(j.current.temperature_2m), code: j.current.weather_code };
+    try {
+      localStorage.setItem(key, JSON.stringify({ at: Date.now(), data }));
+    } catch {
+      /* ignore */
+    }
+    return data;
+  } catch {
+    return stale;
+  }
+}
+
 export default function RouteWeather() {
   const { lang } = useLang();
   const he = lang === "he";
@@ -125,10 +156,10 @@ export default function RouteWeather() {
   const rows = STOPS.filter((s) => s.date >= today || today < STOPS[0].date);
 
   return (
-    <section id="weather" className="relative pt-8 pb-2 sm:pt-12 scroll-mt-20">
+    <section id="weather" className="relative pt-5 pb-1 sm:pt-8 scroll-mt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <h2 className="text-[26px] sm:text-3xl text-ink-900">{he ? "מזג אוויר לאורך המסלול" : "Weather along the route"}</h2>
-        <div className="mt-4 overflow-x-auto -mx-4 px-4">
+        <h2 className="text-[22px] sm:text-3xl text-ink-900">{he ? "מזג אוויר לאורך המסלול" : "Weather along the route"}</h2>
+        <div className="mt-3 overflow-x-auto -mx-4 px-4">
           <div className="flex gap-2.5 pb-2" style={{ minWidth: "max-content" }}>
             {rows.map((s) => {
               const w = wx?.[s.date];

@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useRef } from "react";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
+import HomeHero from "./components/HomeHero";
+import DayCarousel from "./components/DayCarousel";
+import TodayStrip from "./components/TodayStrip";
 import QuickBookings from "./components/QuickBookings";
 import RouteWeather from "./components/RouteWeather";
 import PlanOverview from "./components/PlanOverview";
-import TodayCard from "./components/TodayCard";
 import YenConverter from "./components/YenConverter";
 import { HotelsStrip, MapsLists, HomeTiles } from "./components/HomeExtras";
 import TransitSection from "./components/TransitSection";
@@ -121,14 +122,14 @@ export default function App() {
       <Navbar />
       {route.kind === "home" ? (
         <>
-          <Hero />
-          <TodayCard />
+          <HomeHero />
+          <DayCarousel />
+          <TodayStrip />
           <UpdatesTeaser />
-          <RouteWeather />
-          <PlanOverview />
           <QuickBookings />
-          <YenConverter />
+          <RouteWeather />
           <HotelsStrip />
+          <YenConverter />
           <MapsLists />
           <HomeTiles />
         </>
