@@ -57,11 +57,14 @@ export default function YenConverter() {
   }, [rate]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <section id="yen" className="pt-7 sm:pt-10 scroll-mt-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="rounded-2xl bg-cream-50 border border-ink-900/10 shadow-sm p-4">
-          <div className="text-[16px] font-bold text-ink-900">{he ? "מחשבון ין ↔ שקל" : "Yen ↔ shekel"}</div>
-          <div className="mt-3 flex items-center gap-2" dir="ltr">
+    <section id="yen" className="pt-2.5 scroll-mt-20">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6">
+        <div className="rounded-2xl bg-cream-50 border border-ink-900/10 shadow-sm px-3.5 py-3">
+          <div className="flex items-baseline justify-between gap-2">
+            <span className="text-[14.5px] font-bold text-ink-900">{he ? "ין ↔ שקל" : "Yen ↔ shekel"}</span>
+            <span className="text-[12px] text-ink-700/55" dir="ltr">¥1,000 ≈ ₪{(1000 * rate).toFixed(1)}</span>
+          </div>
+          <div className="mt-2 flex items-center gap-2" dir="ltr">
             <label className="flex-1 flex items-center rounded-xl border border-ink-900/15 bg-white px-3">
               <span className="text-ink-700/60 font-bold">¥</span>
               <input
@@ -72,7 +75,7 @@ export default function YenConverter() {
                   const y = parseFloat(e.target.value);
                   setIls(isNaN(y) ? "" : (y * rate).toFixed(y * rate < 10 ? 1 : 0));
                 }}
-                className="w-full py-2.5 px-2 text-lg font-semibold outline-none bg-transparent"
+                className="w-full py-2 px-2 text-[17px] font-semibold outline-none bg-transparent"
               />
             </label>
             <ArrowLeftRight size={18} className="text-ink-700/40 shrink-0" />
@@ -86,12 +89,9 @@ export default function YenConverter() {
                   const s = parseFloat(e.target.value);
                   setYen(isNaN(s) ? "" : Math.round(s / rate).toString());
                 }}
-                className="w-full py-2.5 px-2 text-lg font-semibold outline-none bg-transparent"
+                className="w-full py-2 px-2 text-[17px] font-semibold outline-none bg-transparent"
               />
             </label>
-          </div>
-          <div className="mt-2 text-[12px] text-ink-700/55" dir="ltr" style={{ textAlign: he ? "right" : "left" }}>
-            ¥1,000 ≈ ₪{(1000 * rate).toFixed(1)}
           </div>
         </div>
       </div>

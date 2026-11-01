@@ -7,10 +7,9 @@ import QuickBookings from "./components/QuickBookings";
 import RouteWeather from "./components/RouteWeather";
 import PlanOverview from "./components/PlanOverview";
 import YenConverter from "./components/YenConverter";
-import { HotelsStrip, MapsLists } from "./components/HomeExtras";
 import TransitSection from "./components/TransitSection";
 import OnsenSection from "./components/OnsenSection";
-import UpdatesSection, { UpdatesTeaser } from "./components/UpdatesSection";
+import UpdatesSection from "./components/UpdatesSection";
 import Phrasebook from "./components/Phrasebook";
 import NotesSection from "./components/NotesSection";
 import MapView from "./components/MapView";
@@ -126,12 +125,10 @@ export default function App() {
           <DayCarousel />
           <HomeShortcuts />
           <TodayStrip />
-          <UpdatesTeaser />
+          <YenConverter />
           <QuickBookings />
           <RouteWeather />
-          <HotelsStrip />
-          <YenConverter />
-          <MapsLists />
+          <div className="h-8" />
         </>
       ) : (
         <main className="pt-16 sm:pt-20">

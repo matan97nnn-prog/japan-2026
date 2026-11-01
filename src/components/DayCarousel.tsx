@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, MapPin } from "lucide-react";
+import { BedDouble, ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 import { itinerary } from "../data/itinerary";
 import { useLocalizeDay } from "../data/i18n";
 import { useLang } from "../lib/i18n";
 import { localizeShortDate, localizeWeekday } from "../lib/dict";
 import { navigateChapter } from "../lib/route";
-import { currentDay } from "../lib/currentDay";
+import { currentDay, stayForNight } from "../lib/currentDay";
 import { dayImage } from "./PlanOverview";
 
 /* The plan as a swipeable strip of day cards. Opens centred on today;
@@ -141,11 +141,21 @@ export default function DayCarousel() {
                 </div>
                 <div className="px-3 py-2.5">
                   <div className="text-[16px] font-bold text-ink-900 leading-snug line-clamp-2 min-h-[2.6em]">{d.title}</div>
-                  {d.base && (
-                    <div className="mt-1 flex items-center gap-1 text-[12.5px] text-ink-700/70">
-                      <MapPin size={12} /> <span className="truncate">{d.base}</span>
-                    </div>
-                  )}
+                  {(() => {
+                    const stay = stayForNight(raw.date);
+                    if (stay)
+                      return (
+                        <div className="mt-1 flex items-center gap-1.5 text-[12.5px] text-ink-700/75">
+                          <BedDouble size={13} className="shrink-0 text-terracotta-600" />
+                          <span className="truncate" dir="ltr">{stay.name}</span>
+                        </div>
+                      );
+                    return d.base ? (
+                      <div className="mt-1 flex items-center gap-1 text-[12.5px] text-ink-700/70">
+                        <MapPin size={12} /> <span className="truncate">{d.base}</span>
+                      </div>
+                    ) : null;
+                  })()}
                 </div>
               </button>
             );
