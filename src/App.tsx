@@ -33,7 +33,12 @@ import { navigatePage, useHashRoute, type Page } from "./lib/route";
 function PageBody({ page, registerFocus }: { page: Page; registerFocus: (fn: (id: string) => void) => void }) {
   switch (page) {
     case "plan":
-      return <PlanOverview />;
+      return (
+        <>
+          <RouteWeather />
+          <PlanOverview />
+        </>
+      );
     case "transit":
       return <TransitSection />;
     case "map":
@@ -127,8 +132,6 @@ export default function App() {
           <TodayStrip />
           <YenConverter />
           <QuickBookings />
-          <RouteWeather />
-          <div className="h-8" />
         </>
       ) : (
         <main className="pt-16 sm:pt-20">

@@ -7,6 +7,7 @@ import { localizeShortDate, localizeWeekday } from "../lib/dict";
 import { navigateChapter } from "../lib/route";
 import { currentDay, stayForNight } from "../lib/currentDay";
 import { dayImage } from "./PlanOverview";
+import { icon as wxIcon, load as loadWeather, type DayWx } from "../lib/routeWeather";
 
 /* The plan as a swipeable strip of day cards. Opens centred on today;
  * arrows step a day back or forward; tapping a card opens that day. */
@@ -19,6 +20,10 @@ export default function DayCarousel() {
   const scroller = useRef<HTMLDivElement>(null);
   const cards = useRef<(HTMLButtonElement | null)[]>([]);
   const [active, setActive] = useState(today.dayNumber);
+  const [wx, setWx] = useState<Record<string, DayWx>>({});
+  useEffect(() => {
+    loadWeather().then(setWx).catch(() => {});
+  }, []);
 
   const scrollToDay = (n: number, smooth = true) => {
     const box = scroller.current;
@@ -133,6 +138,14 @@ export default function DayCarousel() {
                       {localizeShortDate(raw.date, lang)}
                     </span>
                   </div>
+                  {wx[raw.date] && (
+                    <span className="absolute top-2 end-2 inline-flex items-center gap-1 rounded-full bg-cream-50/90 backdrop-blur px-2 py-0.5 text-[12.5px] font-bold text-ink-900">
+                      <span className="[&_svg]:w-[15px] [&_svg]:h-[15px]">{wxIcon(wx[raw.date].code)}</span>
+                      <span dir="ltr">
+                        {wx[raw.date].tMax}°<span className="text-ink-700/55 font-semibold">/{wx[raw.date].tMin}°</span>
+                      </span>
+                    </span>
+                  )}
                   {isNow && (
                     <span className="absolute top-2 start-2 rounded-full bg-terracotta-500 text-cream-50 px-2.5 py-0.5 text-[12px] font-bold">
                       {he ? "היום" : "Today"}

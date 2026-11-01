@@ -6,7 +6,7 @@ import { useT } from "../lib/dict";
 import { currentDay } from "../lib/currentDay";
 import { getAttraction } from "../data/attractions";
 import { STOPS, icon, loadNow, load } from "../lib/routeWeather";
-import { scrollToId } from "../lib/nav";
+import { navigatePage } from "../lib/route";
 
 /* Home header: photo of today's places, "Japan 2026", who's travelling,
  * and the weather where we are right now (by the plan, not GPS). Tapping
@@ -66,7 +66,7 @@ export default function HomeHero() {
   return (
     <header
       id="hero"
-      className="relative h-[46svh] min-h-[320px] max-h-[460px] overflow-hidden bg-ink-900 text-cream-50"
+      className="relative h-[36svh] min-h-[260px] max-h-[380px] overflow-hidden bg-ink-900 text-cream-50"
       style={{ paddingTop: "env(safe-area-inset-top)" }}
     >
       <AnimatePresence mode="sync">
@@ -82,7 +82,7 @@ export default function HomeHero() {
       </AnimatePresence>
       <div className="absolute inset-0 bg-gradient-to-b from-ink-900/50 via-ink-900/10 to-ink-900/80" />
 
-      <div className="relative z-10 h-full max-w-3xl mx-auto px-5 flex flex-col justify-end pb-6">
+      <div className="relative z-10 h-full max-w-3xl mx-auto px-5 flex flex-col justify-end pb-5">
         <h1 className="!text-cream-50 font-extrabold leading-none text-[52px] sm:text-7xl tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]">
           {he ? "יפן 2026" : "Japan 2026"}
         </h1>
@@ -92,8 +92,8 @@ export default function HomeHero() {
 
         <button
           type="button"
-          onClick={() => scrollToId("weather")}
-          className="mt-4 self-start inline-flex items-center gap-2.5 rounded-full bg-cream-50/15 backdrop-blur-md ring-1 ring-cream-50/30 ps-3 pe-4 py-2 text-[14px]"
+          onClick={() => navigatePage("plan")}
+          className="mt-3 self-start inline-flex items-center gap-2.5 rounded-full bg-cream-50/15 backdrop-blur-md ring-1 ring-cream-50/30 ps-3 pe-4 py-2 text-[14px]"
           aria-label={he ? "מזג האוויר לאורך המסלול" : "Weather along the route"}
         >
           <span className="inline-flex items-center gap-1 text-cream-50/90">
