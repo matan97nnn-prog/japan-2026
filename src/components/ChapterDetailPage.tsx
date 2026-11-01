@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useMemo, useState } from "react";
+import { dayImage } from "./PlanOverview";
 import DayRating from "./DayRating";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -824,50 +825,35 @@ function ChapterDetailContent({ day }: { day: Day }) {
           )}
         </div>
 
-        {/* Prev / Next chapter nav */}
-        <nav className="border-t border-cream-300/60 bg-cream-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-10 grid grid-cols-2 gap-3 sm:gap-6">
-            {prevDay && localPrevDay ? (
-              <button
-                type="button"
-                onClick={() => navigateChapter(prevDay.dayNumber)}
-                className="group flex items-center gap-3 sm:gap-4 text-start p-3 sm:p-5 rounded-2xl ring-1 ring-cream-300/70 hover:ring-terracotta-500/60 hover:bg-cream-100/60 transition-all"
-              >
-                <span className="shrink-0 w-10 h-10 rounded-full bg-cream-100 text-ink-800 flex items-center justify-center group-hover:bg-terracotta-500 group-hover:text-cream-50 transition-colors">
-                  {isRTL ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
-                </span>
-                <div className="min-w-0">
-                  <div className="text-[9px] sm:text-[10px] uppercase tracking-[0.22em] text-ink-700/55 font-medium">
-                    {t("previous")} · {lang === "he" ? `יום ${prevDay.dayNumber}` : `Day ${prevDay.dayNumber}`}
+        {/* Prev / Next day: photo cards */}
+        <nav className="bg-cream-50 border-t border-cream-300/60">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 grid grid-cols-2 gap-3">
+            {[
+              { d: prevDay, local: localPrevDay, label: lang === "he" ? "יום קודם" : "Previous day", Icon: isRTL ? ChevronRight : ChevronLeft, end: false },
+              { d: nextDay, local: localNextDay, label: lang === "he" ? "יום הבא" : "Next day", Icon: isRTL ? ChevronLeft : ChevronRight, end: true }
+            ].map(({ d, local, label, Icon, end }) =>
+              d && local ? (
+                <button
+                  key={label}
+                  type="button"
+                  onClick={() => navigateChapter(d.dayNumber)}
+                  className="relative h-32 rounded-2xl overflow-hidden text-start shadow-sm active:scale-[0.98] transition bg-ink-900"
+                >
+                  {dayImage(d) && <img src={dayImage(d)} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-80" />}
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink-900/90 via-ink-900/35 to-ink-900/10" />
+                  <div className={`absolute top-2.5 ${end ? "end-2.5" : "start-2.5"} w-8 h-8 rounded-full bg-cream-50/90 text-ink-900 flex items-center justify-center`}>
+                    <Icon size={17} />
                   </div>
-                  <div className="mt-0.5 font-serif text-[14px] sm:text-base text-ink-900 leading-tight line-clamp-2">
-                    {localPrevDay.title}
+                  <div className="absolute inset-x-0 bottom-0 p-3 text-cream-50">
+                    <div className="text-[11.5px] font-semibold opacity-85">
+                      {label} · {lang === "he" ? `יום ${d.dayNumber}` : `Day ${d.dayNumber}`}
+                    </div>
+                    <div className="mt-0.5 text-[14.5px] font-bold leading-snug line-clamp-2">{local.title}</div>
                   </div>
-                </div>
-              </button>
-            ) : (
-              <div />
-            )}
-            {nextDay && localNextDay ? (
-              <button
-                type="button"
-                onClick={() => navigateChapter(nextDay.dayNumber)}
-                className="group flex items-center gap-3 sm:gap-4 text-end p-3 sm:p-5 rounded-2xl ring-1 ring-cream-300/70 hover:ring-terracotta-500/60 hover:bg-cream-100/60 transition-all justify-end"
-              >
-                <div className="min-w-0">
-                  <div className="text-[9px] sm:text-[10px] uppercase tracking-[0.22em] text-ink-700/55 font-medium">
-                    {t("next")} · {lang === "he" ? `יום ${nextDay.dayNumber}` : `Day ${nextDay.dayNumber}`}
-                  </div>
-                  <div className="mt-0.5 font-serif text-[14px] sm:text-base text-ink-900 leading-tight line-clamp-2">
-                    {localNextDay.title}
-                  </div>
-                </div>
-                <span className="shrink-0 w-10 h-10 rounded-full bg-cream-100 text-ink-800 flex items-center justify-center group-hover:bg-terracotta-500 group-hover:text-cream-50 transition-colors">
-                  {isRTL ? <ChevronLeft size={18} /> : <ChevronRight size={18} />}
-                </span>
-              </button>
-            ) : (
-              <div />
+                </button>
+              ) : (
+                <div key={label} />
+              )
             )}
           </div>
         </nav>
@@ -1124,7 +1110,8 @@ function RideConnector({
           </span>
           {duration && <span className="text-[15px] font-bold text-ink-900">{duration}</span>}
         </div>
-        {note && <p className="mt-0.5 text-[13.5px] text-ink-700/80 leading-snug">{note}</p>}
+        {note && !guideKey && <p className="mt-0.5 text-[13.5px] text-ink-700/80 leading-snug">{note}</p>}
+        {guideKey && <LegSteps guideKey={guideKey} />}
         {dir && (
           <a
             href={googleMapsDirUrl(dir.from, dir.to, dir.mode)}
@@ -1135,7 +1122,6 @@ function RideConnector({
             <Navigation size={12} /> {t("directions_link")}
           </a>
         )}
-        {guideKey && <LegSteps guideKey={guideKey} />}
       </div>
     </li>
   );

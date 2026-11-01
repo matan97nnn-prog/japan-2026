@@ -18,7 +18,12 @@ export default function DayEasy({ dayNumber }: { dayNumber: number }) {
       <div className="flex items-center gap-3 flex-wrap">
         <div className="flex items-center gap-1.5 text-[15px] font-bold text-ink-900">
           <Footprints size={17} className="text-terracotta-600" />
-          {he ? `כ-${e.km} ק"מ · כ-${steps(e.km).toLocaleString()} צעדים` : `≈ ${e.km} km · ≈ ${steps(e.km).toLocaleString()} steps`}
+          <span>
+            <span className="block text-[11.5px] font-semibold text-ink-700/60 leading-none mb-0.5">
+              {he ? "הליכה משוערת" : "Estimated walking"}
+            </span>
+            {he ? `כ-${e.km} ק"מ · כ-${steps(e.km).toLocaleString()} צעדים` : `≈ ${e.km} km · ≈ ${steps(e.km).toLocaleString()} steps`}
+          </span>
         </div>
         <div className="flex items-center gap-1" aria-label={label}>
           {[1, 2, 3].map((n) => (

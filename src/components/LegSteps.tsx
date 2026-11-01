@@ -41,7 +41,9 @@ function StepRow({ s, he }: { s: Step; he: boolean }) {
           </div>
           <div className="mt-0.5 text-ink-700/85">
             {he ? "על השלט ברציף: לכיוון " : "Platform sign: toward "}
-            <b dir="ltr">{s.toward}</b> <span lang="ja">{s.towardJa}</span>
+            <span dir="ltr" className="inline-block font-bold text-ink-900">
+              {s.toward} <span lang="ja" className="font-semibold">{s.towardJa}</span>
+            </span>
           </div>
           {meta && <div className="text-[12.5px] text-ink-700/65">{meta}</div>}
           {s.note && <div className="mt-1 text-[13px] text-amber-800">{he ? s.note.he : s.note.en}</div>}
@@ -62,10 +64,25 @@ export default function LegSteps({ guideKey }: { guideKey: string }) {
   const { lang } = useLang();
   const he = lang === "he";
   const g = legGuides[guideKey];
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   if (!g) return null;
+  const lines = g.steps.filter((s): s is Extract<Step, { k: "ride" }> => s.k === "ride").map((s) => s.line);
+  const hasTaxi = g.steps.some((s) => s.k === "taxi");
+  const hasBus = g.steps.some((s) => s.k === "bus");
   return (
     <div className="mt-2">
+      {(lines.length > 0 || hasTaxi || hasBus) && (
+        <div className="mb-2 flex flex-wrap items-center gap-1.5">
+          {lines.map((id, i) => (
+            <span key={i} className="inline-flex items-center gap-1.5">
+              {i > 0 && <span className="text-ink-700/40 text-[13px]">{he ? "←" : "→"}</span>}
+              <LineBadge id={id} size="sm" />
+            </span>
+          ))}
+          {hasBus && <Bus size={18} className="text-olive-700" />}
+          {hasTaxi && !lines.length && <CarTaxiFront size={18} className="text-olive-700" />}
+        </div>
+      )}
       <div className="flex gap-1.5 text-[13.5px] font-semibold text-ink-900 leading-snug">
         <Star size={14} className="mt-0.5 shrink-0 text-terracotta-600" />
         <span>
@@ -76,10 +93,10 @@ export default function LegSteps({ guideKey }: { guideKey: string }) {
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="mt-1.5 inline-flex items-center gap-1 rounded-full bg-olive-700 text-cream-50 px-3 py-1 text-[12.5px] font-bold"
+        className="mt-1.5 inline-flex items-center gap-1 text-[12.5px] font-bold text-olive-700"
       >
         <ChevronDown size={14} className={open ? "rotate-180 transition" : "transition"} />
-        {open ? (he ? "סגור" : "Close") : he ? "איך מגיעים בדיוק" : "Exact directions"}
+        {open ? (he ? "הסתר שלבים" : "Hide steps") : he ? "שלב אחרי שלב" : "Step by step"}
       </button>
       {open && (
         <div className="mt-2 space-y-2">

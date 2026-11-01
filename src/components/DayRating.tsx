@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Check, CloudOff, Star } from "lucide-react";
+import { Check, ChevronDown, CloudOff, Star } from "lucide-react";
 import { useLang } from "../lib/i18n";
 import { FAMILY, TAGS, allRatings, getWho, pendingCount, ratingId, saveRating, setWho, RATINGS_ENDPOINT } from "../lib/ratings";
 import type { Day } from "../data/types";
@@ -30,7 +30,8 @@ function Stars({ value, onChange, size = 26 }: { value: number; onChange: (n: nu
 export default function DayRating({ raw, local }: { raw: Day; local: Day }) {
   const { lang } = useLang();
   const he = lang === "he";
-  const [who, setWhoState] = useState(getWho);
+  const [who, setWhoState] = useState(() => getWho() || "family");
+  const [showStops, setShowStops] = useState(false);
   const [, bump] = useState(0);
   const [openTags, setOpenTags] = useState<string | null>(null);
   // The note box follows who's rating and which day (reset during render, not in an effect).
@@ -75,27 +76,28 @@ export default function DayRating({ raw, local }: { raw: Day; local: Day }) {
   };
 
   const pending = pendingCount();
+  const ratedStops = stops.filter((s) => (get(s.key)?.stars ?? 0) > 0).length;
   const dayStars = get(DAY_KEY)?.stars ?? 0;
 
   return (
     <section id="rate" className="rounded-2xl bg-cream-50 ring-1 ring-cream-300/70 p-4 sm:p-5 scroll-mt-24">
-      <h3 className="text-xl font-bold text-ink-900">{he ? "איך היה היום?" : "How was today?"}</h3>
-      <p className="mt-0.5 text-[13.5px] text-ink-700/75">
-        {he ? "כוכבים לכל מקום, בלחיצה. עוזר לנו לזכור, ולבנות טיולים טובים יותר." : "Stars for each stop, one tap each."}
-      </p>
+      <div className="flex items-center gap-2">
+        <h3 className="flex-1 text-xl font-bold text-ink-900">{he ? "איך היה היום?" : "How was today?"}</h3>
+        <Stars value={dayStars} onChange={(n) => rate(DAY_KEY, { stars: n })} size={28} />
+      </div>
 
-      {/* Who's rating */}
-      <div className="mt-3 flex flex-wrap items-center gap-1.5">
-        <span className="text-[13px] font-semibold text-ink-700/80 me-1">{he ? "מי מדרג?" : "Who's rating?"}</span>
-        {FAMILY.map((f) => (
+      {/* Who's rating: just for fun, defaults to "all of us" */}
+      <div className="mt-2.5 flex flex-wrap items-center gap-1.5">
+        <span className="text-[12.5px] text-ink-700/65 me-0.5">{he ? "מי מדרג?" : "Who?"}</span>
+        {[{ id: "family", he: "כולנו", en: "All of us" }, ...FAMILY].map((f) => (
           <button
             key={f.id}
             onClick={() => {
               setWho(f.id);
               setWhoState(f.id);
             }}
-            className={`rounded-full px-3 py-1 text-[13px] font-semibold ${
-              who === f.id ? "bg-terracotta-600 text-cream-50" : "bg-cream-100 text-ink-900"
+            className={`rounded-full px-2.5 py-0.5 text-[12.5px] font-semibold ${
+              who === f.id ? "bg-terracotta-600 text-cream-50" : "bg-cream-100 text-ink-800"
             }`}
           >
             {f[lang]}
@@ -103,77 +105,86 @@ export default function DayRating({ raw, local }: { raw: Day; local: Day }) {
         ))}
       </div>
 
-      {who && (
-        <>
-          <ul className="mt-4 divide-y divide-cream-300/60">
-            {stops.map((s) => {
-              const r = get(s.key);
-              return (
-                <li key={s.key} className="py-2.5">
-                  <div className="flex items-center gap-2">
-                    <span className="flex-1 min-w-0 text-[14.5px] font-semibold text-ink-900 leading-snug">{s.title}</span>
-                    <Stars value={r?.stars ?? 0} onChange={(n) => rate(s.key, { stars: n })} size={22} />
-                  </div>
-                  {r?.stars ? (
-                    openTags === s.key ? (
-                      <div className="mt-2 flex flex-wrap gap-1.5">
-                        {TAGS.map((t) => {
-                          const on = r.tags.includes(t.id);
-                          return (
-                            <button
-                              key={t.id}
-                              onClick={() => toggleTag(s.key, t.id)}
-                              className={`rounded-full px-2.5 py-0.5 text-[12.5px] font-medium ring-1 ${
-                                on ? "bg-olive-600 text-cream-50 ring-olive-600" : "bg-white text-ink-800 ring-ink-900/15"
-                              }`}
-                            >
-                              {t[lang]}
-                            </button>
-                          );
-                        })}
-                      </div>
-                    ) : (
-                      <button onClick={() => setOpenTags(s.key)} className="mt-1 text-[12.5px] font-semibold text-terracotta-600">
-                        {r.tags.length
-                          ? TAGS.filter((t) => r.tags.includes(t.id)).map((t) => t[lang]).join(" · ")
-                          : he
-                          ? "+ תגיות"
-                          : "+ tags"}
-                      </button>
-                    )
-                  ) : null}
-                </li>
-              );
-            })}
-          </ul>
+      <textarea
+        value={note}
+        onChange={(e) => setNote(e.target.value)}
+        onBlur={() => note !== (get(DAY_KEY)?.note ?? "") && rate(DAY_KEY, { note })}
+        rows={1}
+        placeholder={he ? "משהו לזכור מהיום? (לא חובה)" : "Anything to remember? (optional)"}
+        className="mt-3 w-full rounded-lg border border-ink-900/15 bg-white px-3 py-2 text-[14px]"
+      />
 
-          <div className="mt-3 rounded-xl bg-cream-100 p-3">
-            <div className="flex items-center gap-2">
-              <span className="flex-1 text-[15px] font-bold text-ink-900">{he ? "היום כולו" : "The whole day"}</span>
-              <Stars value={dayStars} onChange={(n) => rate(DAY_KEY, { stars: n })} />
-            </div>
-            <textarea
-              value={note}
-              onChange={(e) => setNote(e.target.value)}
-              onBlur={() => note !== (get(DAY_KEY)?.note ?? "") && rate(DAY_KEY, { note })}
-              rows={2}
-              placeholder={he ? "משהו לזכור מהיום? (לא חובה)" : "Anything to remember? (optional)"}
-              className="mt-2 w-full rounded-lg border border-ink-900/15 bg-white px-3 py-2 text-[14px]"
-            />
-          </div>
+      {/* Stops: optional */}
+      <button
+        type="button"
+        onClick={() => setShowStops((v) => !v)}
+        className="mt-3 w-full flex items-center justify-between rounded-xl bg-cream-100 px-3.5 py-2.5 text-[14px] font-semibold text-ink-900"
+      >
+        <span>
+          {he ? "לדרג גם מקומות" : "Rate the places too"}
+          <span className="ms-1.5 text-[12.5px] font-normal text-ink-700/60">
+            {ratedStops ? (he ? `(${ratedStops} מתוך ${stops.length})` : `(${ratedStops} of ${stops.length})`) : he ? "(לא חובה)" : "(optional)"}
+          </span>
+        </span>
+        <ChevronDown size={17} className={`text-ink-700/50 transition-transform ${showStops ? "rotate-180" : ""}`} />
+      </button>
 
-          <div className="mt-2 flex items-center gap-1.5 text-[12.5px] text-ink-700/70">
-            {pending > 0 && RATINGS_ENDPOINT ? (
-              <>
-                <CloudOff size={13} /> {he ? `נשמר בטלפון, יישלח כשתהיה קליטה (${pending})` : `Saved on the phone, will send when online (${pending})`}
-              </>
-            ) : (
-              <>
-                <Check size={13} /> {he ? "נשמר" : "Saved"}
-              </>
-            )}
-          </div>
-        </>
+      {showStops && (
+        <ul className="mt-1 divide-y divide-cream-300/60">
+          {stops.map((s) => {
+            const r = get(s.key);
+            return (
+              <li key={s.key} className="py-2.5">
+                <div className="flex items-center gap-2">
+                  <span className="flex-1 min-w-0 text-[14.5px] font-semibold text-ink-900 leading-snug">{s.title}</span>
+                  <Stars value={r?.stars ?? 0} onChange={(n) => rate(s.key, { stars: n })} size={21} />
+                </div>
+                {r?.stars ? (
+                  openTags === s.key ? (
+                    <div className="mt-2 flex flex-wrap gap-1.5">
+                      {TAGS.map((t) => {
+                        const on = r.tags.includes(t.id);
+                        return (
+                          <button
+                            key={t.id}
+                            onClick={() => toggleTag(s.key, t.id)}
+                            className={`rounded-full px-2.5 py-0.5 text-[12.5px] font-medium ring-1 ${
+                              on ? "bg-olive-600 text-cream-50 ring-olive-600" : "bg-white text-ink-800 ring-ink-900/15"
+                            }`}
+                          >
+                            {t[lang]}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  ) : (
+                    <button onClick={() => setOpenTags(s.key)} className="mt-1 text-[12.5px] font-semibold text-terracotta-600">
+                      {r.tags.length
+                        ? TAGS.filter((t) => r.tags.includes(t.id)).map((t) => t[lang]).join(" · ")
+                        : he
+                        ? "+ תגיות"
+                        : "+ tags"}
+                    </button>
+                  )
+                ) : null}
+              </li>
+            );
+          })}
+        </ul>
+      )}
+
+      {(dayStars > 0 || ratedStops > 0) && (
+        <div className="mt-2 flex items-center gap-1.5 text-[12.5px] text-ink-700/70">
+          {pending > 0 && RATINGS_ENDPOINT ? (
+            <>
+              <CloudOff size={13} /> {he ? `נשמר בטלפון, יישלח כשתהיה קליטה (${pending})` : `Saved on the phone, will send when online (${pending})`}
+            </>
+          ) : (
+            <>
+              <Check size={13} /> {he ? "נשמר" : "Saved"}
+            </>
+          )}
+        </div>
       )}
     </section>
   );

@@ -5,7 +5,7 @@ import { useLang } from "../lib/i18n";
 
 /* "Show the driver": the destination in large Japanese, full screen, with
  * the polite request underneath. Taxi drivers in Japan rarely read English. */
-export function TaxiButton({ name, address, compact }: { name: string; address?: string; compact?: boolean }) {
+export function TaxiButton({ name, address, compact, iconOnly }: { name: string; address?: string; compact?: boolean; iconOnly?: boolean }) {
   const { lang } = useLang();
   const [open, setOpen] = useState(false);
   return (
@@ -13,12 +13,13 @@ export function TaxiButton({ name, address, compact }: { name: string; address?:
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className={`inline-flex items-center gap-1.5 rounded-full border border-ink-900/20 bg-cream-50 text-ink-900 font-semibold ${
-          compact ? "px-2.5 py-1 text-[12px]" : "px-4 py-2 text-[13.5px]"
+        aria-label={lang === "he" ? "להראות לנהג" : "Show the driver"}
+        className={`inline-flex items-center justify-center gap-1.5 rounded-full border border-ink-900/20 bg-cream-50 text-ink-900 font-semibold ${
+          iconOnly ? "w-8 h-8" : compact ? "px-2.5 py-1 text-[12px]" : "px-4 py-2 text-[13.5px]"
         }`}
       >
-        <CarTaxiFront size={compact ? 13 : 15} />
-        {lang === "he" ? "להראות לנהג" : "Show the driver"}
+        <CarTaxiFront size={iconOnly ? 15 : compact ? 13 : 15} />
+        {!iconOnly && (lang === "he" ? "להראות לנהג" : "Show the driver")}
       </button>
       {open &&
         createPortal(

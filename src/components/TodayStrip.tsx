@@ -43,16 +43,16 @@ export function HomeShortcuts() {
   const { lang } = useLang();
   const he = lang === "he";
   const items: { label: string; icon: React.ReactNode; onClick: () => void }[] = [
-    { label: he ? "תחבורה" : "Transport", icon: <TrainFront size={20} />, onClick: () => navigatePage("transit") },
-    { label: he ? "שיחון" : "Phrases", icon: <MessageCircle size={20} />, onClick: () => navigatePage("phrases") },
-    { label: he ? "אוכל" : "Food", icon: <Utensils size={20} />, onClick: () => navigatePage("food") },
-    { label: he ? "מקומות" : "Places", icon: <Compass size={20} />, onClick: () => navigatePage("places") },
-    { label: he ? "מלונות" : "Hotels", icon: <BedDouble size={20} />, onClick: () => navigatePage("stays") },
-    { label: he ? "אונסן" : "Onsen", icon: <Bath size={20} />, onClick: () => navigatePage("onsen") },
-    { label: he ? "טיפים" : "Tips", icon: <Info size={20} />, onClick: () => navigatePage("info") },
+    { label: he ? "תחבורה" : "Transport", icon: <TrainFront size={22} />, onClick: () => navigatePage("transit") },
+    { label: he ? "שיחון" : "Phrases", icon: <MessageCircle size={22} />, onClick: () => navigatePage("phrases") },
+    { label: he ? "אוכל" : "Food", icon: <Utensils size={22} />, onClick: () => navigatePage("food") },
+    { label: he ? "מקומות" : "Places", icon: <Compass size={22} />, onClick: () => navigatePage("places") },
+    { label: he ? "מלונות" : "Hotels", icon: <BedDouble size={22} />, onClick: () => navigatePage("stays") },
+    { label: he ? "אונסן" : "Onsen", icon: <Bath size={22} />, onClick: () => navigatePage("onsen") },
+    { label: he ? "טיפים" : "Tips", icon: <Info size={22} />, onClick: () => navigatePage("info") },
     {
       label: he ? "חירום" : "Emergency",
-      icon: <Siren size={20} />,
+      icon: <Siren size={22} />,
       onClick: () => {
         navigatePage("info");
         setTimeout(() => scrollToId("emergency"), 120);
@@ -67,10 +67,10 @@ export function HomeShortcuts() {
             <button
               key={s.label}
               onClick={s.onClick}
-              className="flex flex-col items-center gap-1 rounded-2xl bg-cream-50 border border-ink-900/10 py-2.5 text-terracotta-600 active:scale-[0.97] transition"
+              className="flex flex-col items-center gap-1.5 rounded-2xl bg-cream-100 active:bg-cream-300 py-3.5 text-terracotta-600 transition"
             >
               <span className="h-6 flex items-center">{s.icon}</span>
-              <span className="text-[11.5px] font-semibold text-ink-900 whitespace-nowrap">{s.label}</span>
+              <span className="text-[13px] font-semibold text-ink-900 whitespace-nowrap">{s.label}</span>
             </button>
           ))}
         </div>
