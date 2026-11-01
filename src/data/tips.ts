@@ -105,5 +105,26 @@ export const tips: Tip[] = [
     body:
       "Early-to-mid November is busy. Reserve the Kanazawa → Kyoto and Kyoto → Tokyo trains a few days ahead, with luggage space.",
     severity: "warning"
+  },
+  {
+    id: "don-quijote-coupon",
+    title: "Don Quijote: buy a little early, use the coupon at the end",
+    body:
+      "On the first visit buy something small and ask for the coupon; it gives almost 10% more off a big purchase later, on top of tax-free. Save the big shopping for the last days in Tokyo.",
+    severity: "info"
+  },
+  {
+    id: "tired-feet",
+    title: "20,000 steps a day, and no benches",
+    body:
+      "Japanese streets have almost no benches (and no bins: keep a small bag for rubbish). Foot gel sheets from any pharmacy (Kyusoku Jikan, ~¥500) work overnight, and a 45-minute foot or body massage is around ¥5,500.",
+    severity: "info"
+  },
+  {
+    id: "cash-and-screenshots",
+    title: "Cash, and directions before going underground",
+    body:
+      "Many small places take cash only, so keep some yen on you. Deep stations often have no signal: open the directions before going down (this site works offline). A small gift (omiyage) from home for people who help you along the way goes a long way.",
+    severity: "info"
   }
 ];

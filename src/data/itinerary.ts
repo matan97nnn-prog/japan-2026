@@ -366,7 +366,10 @@ export const itinerary: Day[] = [
     },
     dayTips: [
       "Drive on the left, take it slow out of the rental lot",
-      "Don't try the whole Hakone loop on car day"
+      "Don't try the whole Hakone loop on car day",
+      "Open-Air Museum: there's a hot-spring foot bath with a view, bring a small towel",
+      "Owakudani: try the black ice cream too, not just the black eggs",
+      "With the car, the Hakone Free Pass is often not worth it: compare it at the counter with single ropeway and pirate-ship tickets"
     ],
     photoTips: [
       "Open-Air Museum: climb the Symphonic Sculpture tower and shoot straight up at the stained glass",
@@ -838,6 +841,7 @@ export const itinerary: Day[] = [
     weekday: "Wednesday",
     region: "south",
     base: "Kyoto",
+    dayTips: ["Free sunset from the Kyoto Station rooftop (Skyway / Happy Terrace), a few minutes from the hotel. The long open-air escalators down are part of the fun"],
     title: "Kanazawa → Kyoto",
     subtitle: "By train, then a first evening in Gion",
     rideToFirst: {
@@ -899,7 +903,8 @@ export const itinerary: Day[] = [
     ],
     alternatives: [
       "DRUM TAO taiko show at Kyoto Station, daily 19:00 & 21:00, ~50 min, from ¥10,000",
-      "Gion Corner, a short sampler of tea ceremony, koto and maiko dance (18:00/19:00)"
+      "Gion Corner, a short sampler of tea ceremony, koto and maiko dance (18:00/19:00)",
+      "Tea ceremony with kimono dressing and photos in the garden: Maikoya in Gion, book a few days ahead"
     ],
     culture: {
       title: "Geiko and maiko",
@@ -1252,6 +1257,7 @@ export const itinerary: Day[] = [
     weekday: "Monday",
     region: "north",
     base: "Tokyo",
+    dayTips: ["If you go to teamLab Planets, carry on to Odaiba on the driverless Yurikamome (from Shin-Toyosu): sit in the front car for the view over the bay and the bridges"],
     title: "Tokyo: gardens, Kagurazaka, Nihonbashi",
     subtitle: "Or a day trip: Kamakura or Nikko",
     rideToFirst: {
