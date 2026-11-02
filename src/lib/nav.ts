@@ -104,3 +104,10 @@ export function scrollToId(id: string): void {
   const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
 }
+
+/** Google Maps directions from wherever the phone is now (no origin: Maps
+ *  uses "Your location"). */
+export function googleMapsFromHereUrl(to: string, mode: "transit" | "driving" | "walking"): string {
+  const q = encodeURIComponent(/japan/i.test(to) ? to : `${to}, Japan`);
+  return `https://www.google.com/maps/dir/?api=1&destination=${q}&travelmode=${mode}`;
+}

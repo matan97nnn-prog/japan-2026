@@ -1,105 +1,48 @@
-import { Play, Pause, Loader2 } from "lucide-react";
-import { useT } from "../lib/dict";
+import { useEffect, useState } from "react";
+import { Headphones, Square } from "lucide-react";
 import { useLang } from "../lib/i18n";
-import { resolveAudioUrl, resolveAttractionListenUrls } from "../lib/audioUrl";
-import { usePageAudio } from "../lib/usePageAudio";
 
-type Variant = "default" | "compact";
-
-interface Props {
-  /** Attraction id — maps to public/audio/attractions/<id>.mp3 */
-  attractionId?: string;
-  /** Path under public/audio/ without .mp3, e.g. `italian-words/day-01-0` */
-  audioAssetPath?: string;
-  /** Label used for the tooltip + a11y; falls back to the dict copy. */
-  label?: string;
-  variant?: Variant;
-}
-
-export default function ListenButton({
-  attractionId,
-  audioAssetPath,
-  label,
-  variant = "default"
-}: Props) {
-  const t = useT();
+/* Reads a text aloud with the phone's own voice (Hebrew or English, by the
+ * site language). Works offline on most phones; the iPhone's Hebrew voice
+ * is the clearest. */
+export default function ListenButton({ text }: { text: string }) {
   const { lang } = useLang();
+  const [playing, setPlaying] = useState(false);
+  const supported = typeof window !== "undefined" && "speechSynthesis" in window;
 
-  let primary: string | null = null;
-  let fallback: string | null = null;
-  if (audioAssetPath) {
-    primary = resolveAudioUrl({ audioAssetPath });
-  } else if (attractionId) {
-    const r = resolveAttractionListenUrls(attractionId, lang);
-    primary = r.primary;
-    fallback = r.fallback;
-  }
+  useEffect(() => () => {
+    if (supported) speechSynthesis.cancel();
+  }, [supported]);
 
-  const { state, toggle } = usePageAudio(
-    primary,
-    fallback ? { fallbackUrl: fallback } : undefined
-  );
+  if (!supported) return null;
 
-  if (!primary) {
-    return null;
-  }
-
-  const aria =
-    label ?? (state === "playing" ? t("listen_pause") : t("listen_play"));
-
-  if (variant === "compact") {
-    return (
-      <button
-        type="button"
-        onClick={toggle}
-        aria-label={aria}
-        title={aria}
-        className={`inline-flex items-center justify-center w-7 h-7 rounded-full transition-colors ${
-          state === "playing"
-            ? "bg-terracotta-500 text-cream-50"
-            : "bg-cream-200 text-ink-700 hover:bg-terracotta-500 hover:text-cream-50"
-        }`}
-      >
-        {state === "loading" ? (
-          <Loader2 size={13} className="animate-spin" />
-        ) : state === "playing" ? (
-          <Pause size={13} strokeWidth={2.2} />
-        ) : (
-          <Play size={13} strokeWidth={2.2} />
-        )}
-      </button>
-    );
-  }
+  const toggle = () => {
+    if (playing) {
+      speechSynthesis.cancel();
+      setPlaying(false);
+      return;
+    }
+    speechSynthesis.cancel();
+    const code = lang === "he" ? "he" : "en";
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = lang === "he" ? "he-IL" : "en-US";
+    const voice = speechSynthesis.getVoices().find((v) => v.lang.toLowerCase().startsWith(code));
+    if (voice) u.voice = voice;
+    u.rate = 0.95;
+    u.onend = () => setPlaying(false);
+    u.onerror = () => setPlaying(false);
+    speechSynthesis.speak(u);
+    setPlaying(true);
+  };
 
   return (
     <button
       type="button"
       onClick={toggle}
-      aria-label={aria}
-      title={aria}
-      className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] uppercase tracking-[0.16em] font-medium transition-colors ${
-        state === "playing"
-          ? "bg-terracotta-500 text-cream-50"
-          : state === "error"
-            ? "bg-cream-200 text-ink-700/60"
-            : "bg-cream-200 text-ink-800 hover:bg-terracotta-500 hover:text-cream-50"
-      }`}
-      disabled={state === "error"}
+      className="inline-flex items-center gap-1.5 rounded-full bg-olive-700 text-cream-50 px-4 py-2 text-[13.5px] font-semibold"
     >
-      {state === "loading" ? (
-        <Loader2 size={13} className="animate-spin" />
-      ) : state === "playing" ? (
-        <Pause size={13} strokeWidth={2.2} />
-      ) : (
-        <Play size={13} strokeWidth={2.2} />
-      )}
-      <span>
-        {state === "playing"
-          ? t("listen_pause")
-          : state === "error"
-            ? t("listen_unavailable")
-            : t("listen_play")}
-      </span>
+      {playing ? <Square size={13} /> : <Headphones size={15} />}
+      {playing ? (lang === "he" ? "עצור" : "Stop") : lang === "he" ? "האזנה" : "Listen"}
     </button>
   );
 }

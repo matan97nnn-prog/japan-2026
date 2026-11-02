@@ -29,9 +29,12 @@ import {
   Clock,
   TrainFront,
   Footprints,
-  Navigation
+  Navigation,
+  LocateFixed
 } from "lucide-react";
-import { googleMapsDirUrl } from "../lib/nav";
+import { googleMapsDirUrl, googleMapsFromHereUrl } from "../lib/nav";
+import { PLACE_STORY } from "../data/placeStories";
+import ListenButton from "./ListenButton";
 import { itinerary } from "../data/itinerary";
 import { getAttraction } from "../data/attractions";
 import { getService } from "../data/services";
@@ -626,6 +629,8 @@ function ChapterDetailContent({ day }: { day: Day }) {
                       note={localDay.rideToFirst.note}
                       dir={localDay.rideToFirst.dir}
                       guideKey={`${day.dayNumber}:first`}
+                      fromLabel={morningStay(day.date)?.name ?? localDay.rideToFirst.dir?.from}
+                      toLabel={a.title}
                     />
                   )}
                   <ActivityRow
@@ -645,6 +650,8 @@ function ChapterDetailContent({ day }: { day: Day }) {
                       departAt={a.rideToNext.departAt}
                       dir={a.rideToNext.dir}
                       guideKey={`${day.dayNumber}:${i}`}
+                      fromLabel={day.activities[i].time === "Option" ? a.rideToNext.dir?.from : a.title}
+                      toLabel={day.activities[i].time === "Option" ? a.rideToNext.dir?.to : arr[i + 1].title}
                     />
                   )}
                 </Fragment>
@@ -655,6 +662,8 @@ function ChapterDetailContent({ day }: { day: Day }) {
                   note={localDay.returnTo.note}
                   dir={localDay.returnTo.dir}
                   guideKey={`${day.dayNumber}:return`}
+                  fromLabel={localDay.activities[localDay.activities.length - 1]?.title}
+                  toLabel={nightStay(day.date)?.name ?? localDay.returnTo.dir?.to}
                 />
               )}
             </ol>
@@ -892,8 +901,11 @@ function ActivityRow({
   const localizePoi = useLocalizePoi();
   const rawAtt = activity.attractionId ? getAttraction(activity.attractionId) : undefined;
   const att = rawAtt ? localizePoi(rawAtt) : undefined;
+  const { lang } = useLang();
   const [open, setOpen] = useState(false);
-  const hasMoreInfo = !!att;
+  const story = activity.place ? PLACE_STORY[activity.place] : undefined;
+  const storyText = story ? (lang === "he" ? story.he : story.en) : undefined;
+  const hasMoreInfo = !!att || !!storyText;
 
 
   return (
@@ -978,6 +990,23 @@ function ActivityRow({
         </div>
 
         <AnimatePresence initial={false}>
+          {open && !att && storyText && (
+            <motion.div
+              key="story"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="overflow-hidden"
+            >
+              <div className="mx-4 mb-4 sm:mx-5 rounded-2xl bg-cream-100/80 ring-1 ring-cream-300/70 p-4">
+                <p className="text-[15px] leading-relaxed text-ink-800">{storyText}</p>
+                <div className="mt-3">
+                  <ListenButton text={`${activity.title}. ${storyText}`} />
+                </div>
+              </div>
+            </motion.div>
+          )}
           {open && att && (
             <motion.div
               key="details"
@@ -1016,9 +1045,13 @@ function ActivityRow({
                   <h5 className="mt-1 font-serif text-lg text-ink-900 leading-tight">
                     {att.name}
                   </h5>
-                  <p className="mt-2 text-[13.5px] sm:text-[14.5px] text-ink-700/85 leading-relaxed">
+                  <p className="mt-2 text-[14.5px] sm:text-[15px] text-ink-700/90 leading-relaxed">
                     {att.description}
                   </p>
+                  {storyText && <p className="mt-2 text-[14.5px] sm:text-[15px] text-ink-700/90 leading-relaxed">{storyText}</p>}
+                  <div className="mt-3">
+                    <ListenButton text={[att.name, att.description, storyText, ...(att.tips ?? [])].filter(Boolean).join(". ")} />
+                  </div>
                   {/* Italian-accented narration of the description.
                       Audio is pre-generated as a static asset, so no
                       runtime API key or call is needed. */}
@@ -1083,15 +1116,21 @@ function RideConnector({
   note,
   departAt,
   dir,
-  guideKey
+  guideKey,
+  fromLabel,
+  toLabel
 }: {
   duration?: string;
   note?: string;
   departAt?: string;
   dir?: Directions;
   guideKey?: string;
+  fromLabel?: string;
+  toLabel?: string;
 }) {
   const t = useT();
+  const { lang } = useLang();
+  const he = lang === "he";
   const ModeIcon = dir?.mode === "transit" ? TrainFront : dir?.mode === "walking" ? Footprints : Car;
   return (
     <li className="grid grid-cols-[32px_1fr] sm:grid-cols-[44px_1fr] gap-2.5 sm:gap-4">
@@ -1104,6 +1143,21 @@ function RideConnector({
         </span>
       </div>
       <div className="min-w-0 rounded-xl bg-olive-500/[0.07] px-3.5 py-2.5">
+        {toLabel && (
+          <div className="mb-1.5 text-[13.5px] leading-snug text-ink-800">
+            {fromLabel && (
+              <span className="text-ink-700/70">
+                {he ? "אחרי " : "After "}
+                <span className="font-semibold">{fromLabel}</span>
+                {he ? " · " : " · "}
+              </span>
+            )}
+            <span className="font-bold text-ink-900">
+              {he ? "ממשיכים אל " : "Next: "}
+              {toLabel}
+            </span>
+          </div>
+        )}
         <div className="flex items-center flex-wrap gap-x-2 gap-y-1">
           <span className="text-[12.5px] font-bold text-olive-700">
             {departAt ? `${t("depart_at")} ${departAt} · ${t("ride_to_next")}` : t("ride_to_next")}
@@ -1113,14 +1167,24 @@ function RideConnector({
         {note && !guideKey && <p className="mt-0.5 text-[13.5px] text-ink-700/80 leading-snug">{note}</p>}
         {guideKey && <LegSteps guideKey={guideKey} />}
         {dir && (
-          <a
-            href={googleMapsDirUrl(dir.from, dir.to, dir.mode)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-1.5 inline-flex items-center gap-1.5 rounded-full bg-cream-50 ring-1 ring-terracotta-500/30 px-3 py-1 text-[12.5px] font-semibold text-terracotta-700"
-          >
-            <Navigation size={12} /> {t("directions_link")}
-          </a>
+          <div className="mt-1.5 flex flex-wrap gap-2">
+            <a
+              href={googleMapsFromHereUrl(dir.to, dir.mode)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full bg-terracotta-600 text-cream-50 px-3 py-1 text-[12.5px] font-semibold"
+            >
+              <LocateFixed size={12} /> {he ? "ניווט מהמיקום שלי" : "From my location"}
+            </a>
+            <a
+              href={googleMapsDirUrl(dir.from, dir.to, dir.mode)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full bg-cream-50 ring-1 ring-terracotta-500/30 px-3 py-1 text-[12.5px] font-semibold text-terracotta-700"
+            >
+              <Navigation size={12} /> {t("directions_link")}
+            </a>
+          </div>
         )}
       </div>
     </li>

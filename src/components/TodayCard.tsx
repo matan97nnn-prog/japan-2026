@@ -3,7 +3,7 @@ import { itinerary } from "../data/itinerary";
 import { useLocalizeDay } from "../data/i18n";
 import { useLang } from "../lib/i18n";
 import { navigateChapter } from "../lib/route";
-import { googleMapsDirUrl } from "../lib/nav";
+import { googleMapsFromHereUrl } from "../lib/nav";
 import type { Directions } from "../data/types";
 
 /* During the trip, the home page opens on today: the day's title, what's on
@@ -82,7 +82,7 @@ export default function TodayCard() {
           <div className="mt-4 flex flex-wrap gap-2">
             {leg && (
               <a
-                href={googleMapsDirUrl(leg.from, leg.to, leg.mode)}
+                href={googleMapsFromHereUrl(leg.to, leg.mode)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 rounded-full bg-cream-50 text-terracotta-700 px-4 py-2 text-[14px] font-bold"
