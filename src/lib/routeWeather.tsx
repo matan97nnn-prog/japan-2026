@@ -24,7 +24,8 @@ export const STOPS: Stop[] = [
   { date: "2026-11-14", place: { en: "Kyoto", he: "קיוטו" }, lat: 35.0, lon: 135.77 },
   { date: "2026-11-15", place: { en: "Tokyo", he: "טוקיו" }, lat: 35.7, lon: 139.79 },
   { date: "2026-11-16", place: { en: "Tokyo", he: "טוקיו" }, lat: 35.7, lon: 139.79 },
-  { date: "2026-11-17", place: { en: "Tokyo", he: "טוקיו" }, lat: 35.7, lon: 139.79 }
+  { date: "2026-11-17", place: { en: "Mt Takao", he: "הר טקאו" }, lat: 35.63, lon: 139.24 },
+  { date: "2026-11-18", place: { en: "Tokyo", he: "טוקיו" }, lat: 35.7, lon: 139.79 }
 ];
 
 export interface DayWx {

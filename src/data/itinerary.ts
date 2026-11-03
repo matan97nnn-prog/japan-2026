@@ -1353,26 +1353,186 @@ export const itinerary: Day[] = [
     dayNumber: 19,
     date: "2026-11-17",
     weekday: "Tuesday",
-    region: "transit",
+    region: "north",
     base: "Tokyo",
-    title: "Last day / flight home",
-    subtitle: "Return flight to Dubai: date and time not set yet",
+    title: "Mount Takao: autumn on Tokyo's own mountain",
+    subtitle: "Cable car up, maples, a mountain temple, Shimokitazawa in the evening",
+    dayTips: [
+      "Tuesday is the quiet day on Takao, weekends are packed",
+      "Tonight's hotel isn't booked yet: once it is, the first and last legs will start and end there",
+      "Pasmo/Suica works on the Keio line and the cable car"
+    ],
+    rideToFirst: {
+      duration: "≈ 55 min",
+      note: "Keio line from Shinjuku to Takaosanguchi (the last stop), semi-special express ≈ 50 min, ≈ ¥500, then 3 min walk to the cable car",
+      dir: { from: "Shinjuku Station", to: "Takaosanguchi Station", mode: "transit" }
+    },
     activities: [
       {
-        time: "TBD",
-        title: "Flight home via Dubai",
-        description: "The return date (17 or 18.11) is still open. Once set: airport, terminal and how to get there will go here."
+        time: "09:30",
+        title: "Cable car up Mount Takao",
+        place: "Takao-san Cable Car (Kiyotaki station)",
+        description: "Must. Japan's steepest cable car, 6 minutes up through the maples (peak colour mid–late November). ≈ ¥500 one way.",
+        rideToNext: {
+          duration: "20 min walk",
+          note: "Trail 1, paved and gentle, past the monkey park and the 'octopus' cedar",
+          dir: { from: "Takaosan Station", to: "Yakuo-in", mode: "walking" }
+        }
       },
       {
-        time: "If time",
-        title: "A last morning in Tokyo",
-        description: "Hama-rikyu garden by the bay (near Ginza) with tea in the pond house, or last omiyage shopping.",
+        time: "10:30",
+        title: "Yakuo-in: the mountain temple",
+        place: "Yakuo-in (Takaosan Yakuoin Yukiji)",
+        description: "Must. A 1,200-year-old temple of mountain ascetics, with fierce tengu statues guarding the steps. The one temple of the day.",
+        rideToNext: {
+          duration: "20 min walk",
+          note: "Stone steps up to the summit; skip this bit if legs are tired",
+          dir: { from: "Yakuo-in", to: "Mount Takao summit", mode: "walking" }
+        }
+      },
+      {
+        time: "11:30",
+        title: "The summit view & tororo soba",
+        place: "Mount Takao summit",
+        description: "Optional. On a clear day Fuji shows to the west. Lunch: tororo soba (soba with grated mountain yam), the local dish, at the summit or back near the cable car.",
+        optional: true,
+        rideToNext: {
+          duration: "≈ 45 min",
+          note: "Walk back down to Takaosan Station and ride the cable car or the open chairlift down",
+          dir: { from: "Mount Takao summit", to: "Takaosanguchi Station", mode: "walking" }
+        }
+      },
+      {
+        time: "14:00",
+        title: "Gokurakuyu onsen at the foot of the mountain",
+        place: "Keio Takaosan Onsen Gokurakuyu",
+        description: "Optional. A day onsen right next to Takaosanguchi station: soak the legs before the train back. About ¥1,100, towels for rent.",
+        optional: true,
+        rideToNext: {
+          duration: "≈ 55 min",
+          note: "Keio line to Meidaimae (≈ 45 min), change to the Keio Inokashira line, 2 stops to Shimokitazawa",
+          dir: { from: "Takaosanguchi Station", to: "Shimokitazawa Station", mode: "transit" }
+        }
+      },
+      {
+        time: "17:00",
+        title: "Shimokitazawa: vintage, coffee, dinner",
+        place: "Shimokitazawa",
+        description: "Low-rise lanes of vintage shops, record stores, small cafés and izakaya, Tokyo's young, easy side. Dinner here, then a short ride back to the hotel."
+      }
+    ],
+    photoTips: [
+      "From the cable car: sit at the bottom end facing up, the slope of maples fills the frame",
+      "Yakuo-in: the tengu statues against the red temple, shoot low and up",
+      "Summit: a long lens for Fuji floating over the ridges"
+    ],
+    alternatives: [
+      "Instead: Kamakura (see the options on day 18) or Yokohama: Chinatown, Sankeien garden and its maples, the Cup Noodles Museum",
+      "Rikugien garden lit up after dark (autumn illumination usually starts mid–late November, check dates)",
+      "Sumo morning practice in Ryogoku, through a guided tour (no Tokyo tournament in November)"
+    ],
+    culture: {
+      title: "Tengu of Takao",
+      body: "Mount Takao has been a sacred mountain for over a thousand years. Its guardians are tengu: the red, long-nosed daitengu and the crow-beaked karasu tengu, mountain spirits believed to protect the faithful and punish the proud. You'll find them as statues on the temple steps and on the local sweets."
+    }
+  },
+  {
+    dayNumber: 20,
+    date: "2026-11-18",
+    weekday: "Wednesday",
+    region: "north",
+    base: "Tokyo",
+    title: "A slow last day, then Haneda",
+    subtitle: "Palace gardens, tea on the bay, last omiyage, the night flight",
+    dayTips: [
+      "Ask the hotel for a late check-out, or leave the bags at the desk until the evening",
+      "Emirates at Haneda flies from Terminal 3; be there by 21:30 for the 00:05 flight",
+      "Spend the last yen: Haneda T3 has a full Edo-style food and shopping street"
+    ],
+    activities: [
+      {
+        time: "09:30",
+        title: "Imperial Palace East Gardens",
+        place: "Imperial Palace East Gardens",
+        description: "Must. The old Edo Castle grounds: massive stone walls, the keep foundation, maples and a quiet lawn. Free, open on Wednesdays (closed Mon & Fri). 1.5 h.",
+        rideToNext: {
+          duration: "≈ 20 min",
+          note: "Taxi, or walk to Otemachi and the Toei Oedo line to Shiodome, 10 min walk",
+          dir: { from: "Imperial Palace East Gardens", to: "Hamarikyu Gardens", mode: "transit" }
+        }
+      },
+      {
+        time: "11:30",
+        title: "Hama-rikyu: matcha in the pond house",
+        place: "Hamarikyu Gardens",
+        description: "Must. A shogun's duck-hunting garden on Tokyo Bay, skyscrapers behind the pines. Matcha and a sweet in the Nakajima teahouse over the water. ≈ ¥300 + ¥1,000 tea.",
+        rideToNext: {
+          duration: "15 min walk",
+          dir: { from: "Hamarikyu Gardens", to: "Ginza", mode: "walking" }
+        }
+      },
+      {
+        time: "13:30",
+        title: "Last lunch & omiyage in Ginza",
+        place: "Ginza",
+        description: "Lunch, then the gifts: depachika sweets in the department-store basements, Itoya for paper and pens. Then back to the hotel for the bags and a rest."
+      },
+      {
+        time: "Option",
+        title: "Instead: teamLab Planets and the Yurikamome to Odaiba",
+        place: "teamLab Planets",
+        description: "Walk-through digital art (barefoot, in water), ≈ 2 h, book a timed ticket. Then the driverless Yurikamome from Shin-Toyosu to Odaiba, front car for the bay view.",
         optional: true
       }
     ],
+    returnTo: {
+      duration: "≈ 30 min",
+      note: "From the hotel: taxi ≈ 25 min (≈ ¥7,000, easiest with four and the bags), or the Tokyo Monorail from Hamamatsucho (≈ 15 min) or Keikyu from Shinagawa (≈ 15 min) to Haneda Terminal 3",
+      dir: { from: "Hamamatsucho Station", to: "Haneda Airport Terminal 3", mode: "transit" }
+    },
     culture: {
       title: "Otsukaresama deshita",
       body: "Japanese has a phrase for the end of a long effort: otsukaresama deshita, 'you've worked hard'. Colleagues say it at the end of the day, friends after a trip. To the four of us: otsukaresama."
     }
+  },
+  {
+    dayNumber: 21,
+    date: "2026-11-19",
+    weekday: "Thursday",
+    region: "transit",
+    base: "Dubai · Athens",
+    title: "Home: Tokyo → Dubai → Athens → Tel Aviv",
+    subtitle: "EK313 at 00:05, landing in Tel Aviv at 18:10",
+    dayTips: [
+      "At check-in in Haneda: ask that bags are tagged all the way to Tel Aviv (TLV) and that you get all three boarding passes",
+      "Athens is a 1 h 05 min connection: if Emirates lands late, go straight to the transfer desk",
+      "Booking refs as on the way out: HG8ZCN and I5JSFN"
+    ],
+    activities: [
+      {
+        time: "00:05",
+        title: "Emirates EK313 Haneda → Dubai",
+        place: "Haneda Airport Terminal 3",
+        description: "Overnight flight, lands in Dubai early morning (≈ 06:55 local). Sleep as much as you can."
+      },
+      {
+        time: "06:55",
+        title: "Layover in Dubai (4 h 35 min)",
+        place: "Dubai International Airport",
+        description: "Breakfast, a shower in a lounge if you like, stretch the legs. Check the gate for Athens early."
+      },
+      {
+        time: "11:30",
+        title: "Emirates Dubai → Athens (lands 15:05)",
+        place: "Athens International Airport",
+        description: "Short connection in Athens: follow the 'Flight connections' signs."
+      },
+      {
+        time: "16:10",
+        title: "Aegean A3 926 Athens → Tel Aviv (lands 18:10)",
+        place: "Ben Gurion Airport",
+        description: "Home. Otsukaresama deshita."
+      }
+    ]
   }
 ];

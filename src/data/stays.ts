@@ -199,7 +199,7 @@ export const stays: Stay[] = [
     checkIn: "2026-11-15",
     checkOut: "2026-11-17",
     nights: 2,
-    rooms: "For now, return date still open",
+    rooms: "Booked until 17.11; the night of 17.11 is still open",
     rating: 9,
     bookingLink: "https://www.booking.com/hotel/jp/daiichi-tokyo.html",
     website: "https://www.hankyu-hotel.com/hotel/dh/dhtokyo",

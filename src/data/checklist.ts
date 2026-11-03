@@ -3,8 +3,8 @@ import type { ChecklistItem } from "./types";
 export const bookingChecklist: ChecklistItem[] = [
   {
     id: "decide-return",
-    text: "Decide the return flight date (17 or 18.11)",
-    detail: "Everything at the end depends on it: the last Tokyo hotel, the free day, the airport transfer.",
+    text: "Book the last Tokyo hotel: night of 17.11 (and a late check-out or bag storage on 18.11)",
+    detail: "The return is set: EK313 from Haneda T3 at 00:05 on 19.11. Dai-ichi is booked until 17.11; the night of the 17th is still open. Near Hamamatsucho or Shinagawa makes the airport easy.",
     urgent: true
   },
   {
@@ -15,7 +15,7 @@ export const bookingChecklist: ChecklistItem[] = [
   {
     id: "book-flights",
     text: "Emirates flights: booking refs HG8ZCN and I5JSFN",
-    detail: "EK110 Larnaca → Dubai 31.10 16:25; EK318 Dubai → Narita 1.11 02:55 → 17:20. Check that bags go through to Narita and that all four names match the passports.",
+    detail: "Out: EK110 Larnaca → Dubai 31.10 16:25; EK318 Dubai → Narita 1.11 02:55 → 17:20. Back (same refs): EK313 Haneda → Dubai 19.11 00:05; Emirates Dubai → Athens 11:30 → 15:05; Aegean A3 926 Athens → Tel Aviv 16:10 → 18:10. Check the Athens connection (1 h 05) is on one booking with bags through to TLV.",
     done: true
   },
   {

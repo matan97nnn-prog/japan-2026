@@ -30,8 +30,8 @@ export const DICT = {
   hero_after_lead: { en: "That autumn in Japan", he: "אותו סתיו ביפן" },
   hero_after_title: { en: "Okaeri: welcome back", he: "ברוכים השבים" },
   hero_after_sub: {
-    en: "1, 17 November 2026 · the family edition",
-    he: "1—17 בנובמבר 2026 · מהדורת המשפחה"
+    en: "1–19 November 2026 · the family edition",
+    he: "1–19 בנובמבר 2026 · מהדורת המשפחה"
   },
   hero_close_almost: {
     en: "Itterasshai, almost there",

@@ -22,7 +22,7 @@ import { formatRecentChatBlock, type ChatTurn } from "./chatHistory";
 
 const TRIP_FACTS = {
   startDate: "2026-10-30",
-  endDate: "2026-11-17",
+  endDate: "2026-11-19",
   travellers: "The Stein family: Eti, Ronen, Matan and Amit",
   cars: "A rental car (Toyota Noah Hybrid) from Odawara (Nov 4) to Kanazawa (returned Nov 9, by 20:00) covers Hakone through the Alps; everything before and after that is trains and on foot",
   bases: [
