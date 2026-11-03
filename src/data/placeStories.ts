@@ -3,6 +3,10 @@
  * read or listened to on the spot. Keyed by the activity's `place`. */
 
 export const PLACE_STORY: Record<string, { he: string; en: string }> = {
+  "Ryoan-ji · Kinkaku-ji": {
+    he: "בריואנג'י יש חמישה-עשר סלעים על חצץ מגורף, ומכל נקודה על המרפסת רואים רק ארבעה-עשר מהם. אומרים שאת האחרון רואה רק מי שהגיע להארה. אף אחד לא יודע בוודאות מי תכנן את הגן או מה הוא מסמל, וזה בדיוק העניין: לשבת על המרפסת ולהסתכל. קינקאקו-ג'י, ביתן הזהב, היה וילת הפרישה של השוגון אשיקגה יושימיצו במאה ה-14. שתי הקומות העליונות מצופות עלי זהב והוא משתקף בבריכה. הביתן שרואים היום נבנה מחדש ב-1955, אחרי שנזיר צעיר שרף את המקור ב-1950. הסיפור הזה הפך לרומן המפורסם של יוקיו מישימה.",
+    en: "Ryoan-ji has fifteen rocks on raked gravel, and from any spot on the veranda you see only fourteen; legend says only the enlightened see the last one. No one knows for sure who designed it or what it means, which is the point: sit on the veranda and look. Kinkaku-ji, the Golden Pavilion, was the shogun Ashikaga Yoshimitsu's retirement villa in the 14th century; its top two floors are covered in gold leaf and mirrored in the pond. The pavilion you see was rebuilt in 1955, after a young monk burned the original in 1950, a story Yukio Mishima turned into a famous novel."
+  },
   "Finikoudes · Larnaca Medieval Fort": {
     he: "פיניקודס פירושו \"עצי הדקל הקטנים\", וזו הטיילת המרכזית של לרנקה. בקצה הדרומי שלה עומד המבצר, שנבנה מחדש בידי העות'מאנים במאה ה-17 על שרידי ביצור מימי הביניים. מהגג שלו יש תצפית יפה על הים ועל המסגד הסמוך.",
     en: "Finikoudes means 'little palm trees': Larnaca's seafront promenade. At its southern end stands the fort, rebuilt by the Ottomans in the 17th century on medieval foundations. The roof has a lovely view of the sea and the nearby mosque."

@@ -941,7 +941,8 @@ export const itinerary: Day[] = [
         time: "09:30",
         title: "Tofuku-ji: the Tsutenkyo bridge",
         place: "Tofuku-ji · Tsutenkyo Bridge",
-        description: "Must in autumn. A wooden bridge over a valley of 2,000 maples (turning mid–late Nov), and a modern Zen rock garden. 1 h.",
+        description: "Optional, the day's second temple: skip it if Fushimi Inari was enough. A wooden bridge over a valley of 2,000 maples (turning mid–late Nov), and a modern Zen rock garden. 1 h.",
+        optional: true,
         rideToNext: {
           duration: "≈ 15 min",
           note: "Taxi (≈ ¥1,500), or Keihan to Kiyomizu-Gojo + 15 min walk",
@@ -1109,7 +1110,8 @@ export const itinerary: Day[] = [
         time: "10:30",
         title: "Jojakko-ji & Gio-ji: the quiet temples of Saga",
         place: "Jojakko-ji · Gio-ji",
-        description: "Must for autumn. Hillside temples carpeted in moss and maples, far from the crowds. Then lunch: yudofu (tofu hotpot), the Arashiyama dish.",
+        optional: true,
+        description: "Optional: pick one, not both (Gio-ji is the smaller, mossier one). Hillside temples carpeted in moss and maples, far from the crowds. Then lunch: yudofu (tofu hotpot), the Arashiyama dish.",
         rideToNext: {
           duration: "20 min walk",
           dir: { from: "Gio-ji", to: "Togetsukyo Bridge", mode: "walking" }
@@ -1132,6 +1134,17 @@ export const itinerary: Day[] = [
         place: "Nijo Castle (Nijo-jo)",
         description: "Must. Light art projected on the Karamon gate and Ninomaru Palace, 18:00–22:00. ¥2,400 on Saturday, book online.",
         attractionId: "nijo-castle"
+      },
+      {
+        time: "Option",
+        title: "Instead of the Saga temples: Ryoan-ji & Kinkaku-ji",
+        place: "Ryoan-ji · Kinkaku-ji",
+        description: "After Okochi Sanso, taxi ≈ 20 min (≈ ¥2,500) to Ryoan-ji's rock garden, then 20 min walk to the Golden Pavilion. Both open 08:00/09:00–17:00, about ¥500 each. Very crowded in maple season: go straight there, Kinkaku-ji last. From Kinkaku-ji, taxi ≈ 20 min to the hotel to rest before Nijo.",
+        optional: true,
+        rideToNext: {
+          duration: "≈ 20 min",
+          dir: { from: "Okochi Sanso Villa", to: "Ryoan-ji", mode: "driving" }
+        }
       }
     ],
     returnTo: {
@@ -1148,7 +1161,7 @@ export const itinerary: Day[] = [
     alternatives: [
       "Saga-Toriimoto preserved street and Adashino Nenbutsu-ji, 8,000 stone Buddhas",
       "Hozugawa river boat from Kameoka down to Arashiyama (2 h, through the gorge)",
-      "Kinkaku-ji (Golden Pavilion), left out by choice"
+      "Kinkaku-ji (Golden Pavilion) & Ryoan-ji, see the option at the end of the plan"
     ],
     culture: {
       title: "Wabi-sabi in a moss garden",
