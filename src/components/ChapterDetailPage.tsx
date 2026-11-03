@@ -30,7 +30,9 @@ import {
   TrainFront,
   Footprints,
   Navigation,
-  LocateFixed
+  LocateFixed,
+  ChevronDown,
+  Luggage
 } from "lucide-react";
 import { googleMapsDirUrl, googleMapsFromHereUrl } from "../lib/nav";
 import { PLACE_STORY } from "../data/placeStories";
@@ -64,7 +66,7 @@ import PhotoCredit from "./PhotoCredit";
 import MiniMap from "./MiniMap";
 import DayExtras from "./DayExtras";
 import DayAlerts from "./DayAlerts";
-import LegSteps from "./LegSteps";
+import LegSteps, { LineBadge, legLines } from "./LegSteps";
 import DayEasy from "./DayEasy";
 import NearbySaved from "./NearbySaved";
 import { TaxiButton } from "./TaxiCard";
@@ -631,6 +633,7 @@ function ChapterDetailContent({ day }: { day: Day }) {
                       guideKey={`${day.dayNumber}:first`}
                       fromLabel={morningStay(day.date)?.name ?? localDay.rideToFirst.dir?.from}
                       toLabel={a.title}
+                      checkOut={!!morningStay(day.date) && morningStay(day.date) !== nightStay(day.date)}
                     />
                   )}
                   <ActivityRow
@@ -664,6 +667,7 @@ function ChapterDetailContent({ day }: { day: Day }) {
                   guideKey={`${day.dayNumber}:return`}
                   fromLabel={localDay.activities[localDay.activities.length - 1]?.title}
                   toLabel={nightStay(day.date)?.name ?? localDay.returnTo.dir?.to}
+                  checkIn={!!nightStay(day.date) && morningStay(day.date) !== nightStay(day.date)}
                 />
               )}
             </ol>
@@ -1118,7 +1122,9 @@ function RideConnector({
   dir,
   guideKey,
   fromLabel,
-  toLabel
+  toLabel,
+  checkOut,
+  checkIn
 }: {
   duration?: string;
   note?: string;
@@ -1127,63 +1133,101 @@ function RideConnector({
   guideKey?: string;
   fromLabel?: string;
   toLabel?: string;
+  /** First leg of a moving day: we leave this hotel for good. */
+  checkOut?: boolean;
+  /** Last leg into a new hotel. */
+  checkIn?: boolean;
 }) {
   const t = useT();
   const { lang } = useLang();
   const he = lang === "he";
+  const [open, setOpen] = useState(false);
   const ModeIcon = dir?.mode === "transit" ? TrainFront : dir?.mode === "walking" ? Footprints : Car;
+  const modeWord =
+    dir?.mode === "walking" ? (he ? "הליכה" : "Walk") : dir?.mode === "transit" ? (he ? "רכבת" : "Train") : he ? "נסיעה" : "Ride";
+  const lines = guideKey ? legLines(guideKey) : [];
+  const hasDetails = !!(guideKey || note || dir);
+  // Hebrew "from" prefix: joined to a Hebrew name, hyphenated before a Latin one.
+  const mi = (name: string) => (/^[A-Za-z0-9]/.test(name) ? `מ-${name}` : `מ${name}`);
   return (
     <li className="grid grid-cols-[32px_1fr] sm:grid-cols-[44px_1fr] gap-2.5 sm:gap-4">
       {/* Timeline rail with the travel-mode icon; the dashed line links
           the stop above to the stop below. */}
       <div className="relative flex justify-center">
         <span className="absolute inset-x-0 top-0 bottom-0 mx-auto w-px border-l-2 border-dashed border-olive-500/40" />
-        <span className="relative z-10 mt-2 inline-flex items-center justify-center w-8 h-8 rounded-full bg-olive-500/12 text-olive-700">
+        <span className="relative z-10 mt-1.5 inline-flex items-center justify-center w-8 h-8 rounded-full bg-olive-500/12 text-olive-700">
           <ModeIcon size={15} strokeWidth={2} />
         </span>
       </div>
-      <div className="min-w-0 rounded-xl bg-olive-500/[0.07] px-3.5 py-2.5">
-        {toLabel && (
-          <div className="mb-1.5 text-[13.5px] leading-snug text-ink-800">
-            {fromLabel && (
-              <span className="text-ink-700/70">
-                {he ? "אחרי " : "After "}
-                <span className="font-semibold">{fromLabel}</span>
-                {he ? " · " : " · "}
-              </span>
-            )}
-            <span className="font-bold text-ink-900">
-              {he ? "ממשיכים אל " : "Next: "}
-              {toLabel}
-            </span>
+      <div className="min-w-0 py-1">
+        {checkOut && fromLabel && (
+          <div className="mb-1 inline-flex items-center gap-1.5 rounded-full bg-amber-100 text-amber-900 px-2.5 py-0.5 text-[12.5px] font-semibold">
+            <Luggage size={13} /> {he ? `צ'ק־אאוט מ-${fromLabel}` : `Check out of ${fromLabel}`}
           </div>
         )}
-        <div className="flex items-center flex-wrap gap-x-2 gap-y-1">
-          <span className="text-[12.5px] font-bold text-olive-700">
-            {departAt ? `${t("depart_at")} ${departAt} · ${t("ride_to_next")}` : t("ride_to_next")}
+        {/* One calm line: how, how long, where to. Tap for the details. */}
+        <button
+          type="button"
+          onClick={() => hasDetails && setOpen((v) => !v)}
+          className="w-full flex items-center gap-2 text-start rounded-xl bg-olive-500/[0.07] px-3 py-2"
+        >
+          <span className="min-w-0 flex-1 text-[14px] leading-snug text-ink-800">
+            {departAt && <span className="text-olive-700 font-semibold">{departAt} · </span>}
+            <span className="font-semibold">{modeWord}</span>
+            {duration && <span> {duration}</span>}
+            {toLabel && (
+              <>
+                <span className="text-ink-700/60">{he ? " אל " : " to "}</span>
+                <span className="font-bold text-ink-900">
+                  {checkIn ? (he ? `צ'ק־אין ב-${toLabel}` : `check-in at ${toLabel}`) : toLabel}
+                </span>
+              </>
+            )}
+            {lines.length > 0 && (
+              <span className="ms-1.5 inline-flex gap-1 align-middle">
+                {lines.map((id, i) => (
+                  <LineBadge key={i} id={id} size="sm" />
+                ))}
+              </span>
+            )}
           </span>
-          {duration && <span className="text-[15px] font-bold text-ink-900">{duration}</span>}
-        </div>
-        {note && !guideKey && <p className="mt-0.5 text-[13.5px] text-ink-700/80 leading-snug">{note}</p>}
-        {guideKey && <LegSteps guideKey={guideKey} />}
-        {dir && (
-          <div className="mt-1.5 flex flex-wrap gap-2">
-            <a
-              href={googleMapsFromHereUrl(dir.to, dir.mode)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full bg-terracotta-600 text-cream-50 px-3 py-1 text-[12.5px] font-semibold"
-            >
-              <LocateFixed size={12} /> {he ? "ניווט מהמיקום שלי" : "From my location"}
-            </a>
-            <a
-              href={googleMapsDirUrl(dir.from, dir.to, dir.mode)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full bg-cream-50 ring-1 ring-terracotta-500/30 px-3 py-1 text-[12.5px] font-semibold text-terracotta-700"
-            >
-              <Navigation size={12} /> {t("directions_link")}
-            </a>
+          {hasDetails && (
+            <span className="shrink-0 inline-flex items-center gap-0.5 text-[12px] font-bold text-olive-700">
+              {open ? (he ? "סגור" : "Close") : he ? "איך מגיעים" : "How"}
+              <ChevronDown size={14} className={open ? "rotate-180 transition" : "transition"} />
+            </span>
+          )}
+        </button>
+        {open && (
+          <div className="mt-1.5 rounded-xl bg-olive-500/[0.05] px-3 py-2.5">
+            {fromLabel && (
+              <div className="text-[12.5px] text-ink-700/70">
+                {he ? "יוצאים " : "From "}
+                <span className="font-semibold text-ink-800">{he ? mi(fromLabel) : fromLabel}</span>
+              </div>
+            )}
+            {note && !guideKey && <p className="mt-1 text-[13.5px] text-ink-700/85 leading-snug">{note}</p>}
+            {guideKey && <LegSteps guideKey={guideKey} embedded />}
+            {dir && (
+              <div className="mt-2.5 flex flex-wrap gap-2">
+                <a
+                  href={googleMapsFromHereUrl(dir.to, dir.mode)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-terracotta-600 text-cream-50 px-3 py-1.5 text-[12.5px] font-semibold"
+                >
+                  <LocateFixed size={12} /> {he ? "ניווט מהמיקום שלי" : "From my location"}
+                </a>
+                <a
+                  href={googleMapsDirUrl(dir.from, dir.to, dir.mode)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-cream-50 ring-1 ring-terracotta-500/30 px-3 py-1.5 text-[12.5px] font-semibold text-terracotta-700"
+                >
+                  <Navigation size={12} /> {fromLabel ? (he ? `${mi(fromLabel)} בגוגל מפות` : `From ${fromLabel}`) : t("directions_link")}
+                </a>
+              </div>
+            )}
           </div>
         )}
       </div>

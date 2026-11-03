@@ -60,13 +60,22 @@ function StepRow({ s, he }: { s: Step; he: boolean }) {
   );
 }
 
-export default function LegSteps({ guideKey }: { guideKey: string }) {
+/** The train lines a leg rides, in order, for a compact badge summary. */
+export function legLines(guideKey: string): string[] {
+  const g = legGuides[guideKey];
+  return g ? g.steps.filter((s): s is Extract<Step, { k: "ride" }> => s.k === "ride").map((s) => s.line) : [];
+}
+
+/* `embedded`: shown inside an already-opened "how to get there" panel, so
+ * no badge row and no second show/hide toggle. */
+export default function LegSteps({ guideKey, embedded }: { guideKey: string; embedded?: boolean }) {
   const { lang } = useLang();
   const he = lang === "he";
   const g = legGuides[guideKey];
-  const [open, setOpen] = useState(true);
+  const [toggled, setOpen] = useState(true);
+  const open = embedded || toggled;
   if (!g) return null;
-  const lines = g.steps.filter((s): s is Extract<Step, { k: "ride" }> => s.k === "ride").map((s) => s.line);
+  const lines = embedded ? [] : legLines(guideKey);
   const hasTaxi = g.steps.some((s) => s.k === "taxi");
   const hasBus = g.steps.some((s) => s.k === "bus");
   return (
@@ -90,14 +99,14 @@ export default function LegSteps({ guideKey }: { guideKey: string }) {
           {he ? g.best.he : g.best.en}
         </span>
       </div>
-      <button
+      {!embedded && <button
         type="button"
         onClick={() => setOpen((v) => !v)}
         className="mt-1.5 inline-flex items-center gap-1 text-[12.5px] font-bold text-olive-700"
       >
         <ChevronDown size={14} className={open ? "rotate-180 transition" : "transition"} />
         {open ? (he ? "הסתר שלבים" : "Hide steps") : he ? "שלב אחרי שלב" : "Step by step"}
-      </button>
+      </button>}
       {open && (
         <div className="mt-2 space-y-2">
           <ol className="space-y-1.5">

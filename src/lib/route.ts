@@ -80,3 +80,44 @@ export function getRememberedChapter(): number | null {
     return null;
   }
 }
+
+/* Opening the installed app should land on today, not on whatever day was
+ * left open last time (phones restore the last screen). On a cold start of
+ * the home-screen app, and when coming back after a long break, any day
+ * page that isn't today goes back to home, which is centred on today.
+ * Shared links in a normal browser tab still open the day they point to. */
+const LONG_BREAK_MS = 30 * 60 * 1000;
+
+function isInstalledApp(): boolean {
+  return (
+    window.matchMedia?.("(display-mode: standalone)").matches ||
+    (navigator as Navigator & { standalone?: boolean }).standalone === true
+  );
+}
+
+function leaveStaleDay() {
+  const r = parseHash(window.location.hash);
+  if (r.kind !== "chapter") return;
+  const d = new Date();
+  const iso = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  if (itinerary[r.day - 1]?.date === iso) return;
+  history.replaceState(null, "", window.location.pathname + window.location.search);
+}
+
+export function bootstrapFreshStart() {
+  if (typeof window === "undefined" || !isInstalledApp()) return;
+  leaveStaleDay();
+  let hiddenAt = 0;
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") {
+      hiddenAt = Date.now();
+    } else if (hiddenAt && Date.now() - hiddenAt > LONG_BREAK_MS) {
+      const before = window.location.hash;
+      leaveStaleDay();
+      if (window.location.hash !== before) {
+        window.dispatchEvent(new HashChangeEvent("hashchange"));
+        window.scrollTo(0, 0);
+      }
+    }
+  });
+}
