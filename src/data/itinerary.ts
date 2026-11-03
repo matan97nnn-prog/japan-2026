@@ -1043,6 +1043,18 @@ export const itinerary: Day[] = [
         place: "Shimogamo Shrine · Tadasu no Mori",
         description: "Optional. An ancient forest path to one of Kyoto's oldest shrines, 10 min from Demachiyanagi. Quiet at dusk.",
         optional: true
+      },
+      {
+        time: "Option",
+        title: "Instead: a day in Osaka",
+        place: "Osaka Castle · Kuromon Market · Dotonbori",
+        description: "Kyoto's loud, funny neighbour, a good swap if it rains on the hike. JR special rapid Kyoto → Osaka ≈ 30 min. Osaka Castle park in the morning, Kuromon Market for street food at lunch (takoyaki, wagyu skewers), Shinsaibashi's covered shopping street, and Dotonbori at dusk: the neon, the Glico runner, okonomiyaki for dinner. Back on the Keihan line from Yodoyabashi straight to Shichijo, next to the hotel (≈ 50 min).",
+        optional: true,
+        rideToNext: {
+          duration: "≈ 45 min",
+          note: "7 min walk to Kyoto Station, JR special rapid to Osaka (≈ 30 min), Osaka Loop line to Osakajokoen",
+          dir: { from: "Kyoto Station", to: "Osaka Castle", mode: "transit" }
+        }
       }
     ],
     returnTo: {
