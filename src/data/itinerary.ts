@@ -392,30 +392,55 @@ export const itinerary: Day[] = [
     weekday: "Thursday",
     region: "north",
     base: "Kawaguchiko",
-    title: "Hakone → Fuji Five Lakes",
-    subtitle: "The pagoda view, spring ponds, a family sake brewery",
+    title: "Hakone in the morning, Fuji Five Lakes after lunch",
+    subtitle: "Catching up on rained-out Hakone, then spring ponds and a sake brewery",
     rideToFirst: {
-      duration: "≈ 1 h 15",
-      note: "Via Gotemba. Gotemba Premium Outlets is on the way if anyone wants it, it costs ~2 h.",
-      dir: { from: "Hakone Yutowa", to: "Chureito Pagoda", mode: "driving" }
+      duration: "≈ 5 min",
+      note: "Check out by 08:45 with the bags in the car (check-out is 10:00), the museum has its own car park",
+      dir: { from: "Hakone Yutowa", to: "Hakone Open-Air Museum", mode: "driving" }
     },
     activities: [
       {
-        time: "09:30",
-        title: "Chureito Pagoda",
-        place: "Chureito Pagoda (Arakurayama Sengen Park)",
-        description: "Must if Fuji is out, morning is when it's clearest. ~400 steps up to the five-storey pagoda with Fuji behind.",
-        attractionId: "chureito-pagoda",
+        time: "09:00",
+        title: "Hakone Open-Air Museum",
+        place: "Hakone Open-Air Museum (Chōkoku-no-Mori)",
+        description: "Must, the one we missed in yesterday's rain. Sculpture on mountain lawns, the stained-glass tower (shoot straight up from inside), the Picasso pavilion and a hot-spring footbath (bring a small towel). If it's still drizzling, start indoors at the Picasso pavilion. 1.5 h.",
+        attractionId: "hakone-open-air-museum",
         rideToNext: {
           duration: "≈ 20 min",
-          dir: { from: "Chureito Pagoda", to: "Oshino Hakkai", mode: "driving" }
+          dir: { from: "Hakone Open-Air Museum", to: "Owakudani", mode: "driving" }
         }
       },
       {
-        time: "11:30",
-        title: "Oshino Hakkai & lunch",
+        time: "10:45",
+        title: "Owakudani",
+        place: "Owakudani",
+        description: "Steam vents, black eggs (each adds seven years, they say) and black ice cream. After heavy rain or on high-gas days the road and car park can close: check in the morning, and if it's shut go straight on to the lake. No Fuji view today, that's for Friday. 45 min.",
+        optional: true,
+        attractionId: "hakone-owakudani",
+        rideToNext: {
+          duration: "≈ 25 min",
+          dir: { from: "Owakudani", to: "Hakone Shrine", mode: "driving" }
+        }
+      },
+      {
+        time: "12:00",
+        title: "Lake Ashi & Hakone Shrine, lunch",
+        place: "Hakone Shrine · Lake Ashi",
+        description: "The cedar-lined steps and the red torii standing in the lake, even better in mist. The photo queue at the torii is long: shoot it from the side, from the lakeside path. Lunch in Moto-Hakone by the shrine.",
+        attractionId: "hakone-lake-ashi",
+        rideToNext: {
+          duration: "≈ 1 h",
+          note: "Over the hills via Lake Yamanaka",
+          dir: { from: "Hakone Shrine", to: "Oshino Hakkai", mode: "driving" }
+        }
+      },
+      {
+        time: "14:15",
+        title: "Oshino Hakkai",
         place: "Oshino Hakkai",
-        description: "Eight spring ponds fed by Fuji snowmelt, in a thatched village. Lunch there, soba or houtou.",
+        description: "On the way. Eight spring ponds fed by Fuji snowmelt, in a thatched village; the water is glass-clear even under cloud. 40 min.",
+        optional: true,
         attractionId: "oshino-hakkai",
         rideToNext: {
           duration: "≈ 20 min",
@@ -426,28 +451,18 @@ export const itinerary: Day[] = [
         time: "15:00",
         title: "Ide Sake Brewery: tour & tasting",
         place: "Ide Sake Brewery (Ide Shuzo), Kawaguchiko",
-        description: "A 20-generation family brewery using Fuji water. ¥500 incl. tasting; book by 16:00 the day before. Buy a bottle for tomorrow's birthday.",
-        rideToNext: {
-          duration: "≈ 10 min",
-          dir: { from: "Ide Sake Brewery Kawaguchiko", to: "Lake Kawaguchi north shore", mode: "driving" }
-        }
-      },
-      {
-        time: "16:00",
-        title: "Lake Kawaguchi north shore at sunset",
-        place: "Kawaguchiko north shore · Momiji Corridor",
-        description: "Optional. The maple corridor (partly red) and Fuji across the water at sunset, ≈ 16:40.",
-        optional: true
+        description: "A 20-generation family brewery using Fuji water. The tour needs booking by 16:00 the day before; without one, the shop still does tastings. Buy a bottle for tomorrow's birthday. If your tour is at another time, swap it with Oshino Hakkai."
       }
     ],
     returnTo: {
       duration: "≈ 10 min",
-      note: "Kawaguchiko Urban Resort Villa, one night",
-      dir: { from: "Lake Kawaguchi north shore", to: "Kawaguchiko Urban Resort Villa", mode: "driving" }
+      note: "Kawaguchiko Urban Resort Villa, one night. Quiet evening, early night: tomorrow's alarm is 05:30 for the birthday sunrise",
+      dir: { from: "Ide Sake Brewery Kawaguchiko", to: "Kawaguchiko Urban Resort Villa", mode: "driving" }
     },
     dayTips: [
-      "Fuji hides behind clouds by midday, if it's clear when you wake up, go to the views first",
-      "The Kawaguchiko Autumn Leaves Festival opens 7.11, after we leave"
+      "Today Fuji stays in low cloud at the lakes, so Chureito Pagoda moves to tomorrow morning, which looks completely clear",
+      "Too tired: drop Owakudani first, then Oshino Hakkai",
+      "Kawaguchiko's autumn leaves festival opens on 7.11, after we leave"
     ],
     photoTips: [
       "Chureito: the classic frame is from the upper deck behind the pagoda; a 24–35 mm fits pagoda + Fuji",
@@ -486,8 +501,20 @@ export const itinerary: Day[] = [
         description: "Must, the birthday morning. Coffee, a family photo with Fuji, the first toast. Back to the villa for breakfast.",
         attractionId: "oishi-park",
         rideToNext: {
-          duration: "≈ 5 min",
-          dir: { from: "Oishi Park", to: "Itchiku Kubota Art Museum", mode: "driving" }
+          duration: "≈ 20 min",
+          note: "Breakfast at the villa first, then over to Fujiyoshida",
+          dir: { from: "Oishi Park", to: "Chureito Pagoda", mode: "driving" }
+        }
+      },
+      {
+        time: "08:00",
+        title: "Chureito Pagoda",
+        place: "Chureito Pagoda (Arakurayama Sengen Park)",
+        description: "Must, moved from yesterday's clouds to the clearest morning of the week. ≈ 400 steps up to the five-storey pagoda with Fuji behind. 1 h.",
+        attractionId: "chureito-pagoda",
+        rideToNext: {
+          duration: "≈ 20 min",
+          dir: { from: "Chureito Pagoda", to: "Itchiku Kubota Art Museum", mode: "driving" }
         }
       },
       {

@@ -35,9 +35,8 @@ export const dayEasy: Record<number, DayEasy> = {
   },
   7: {
     km: 6,
-    climb: b("Chureito: ≈ 400 steps up to the pagoda", "צ'ורייטו: כ-400 מדרגות עד הפגודה"),
-    skip: [b("The sake brewery tour: just the shop", "הסיור במבשלת הסאקה: רק החנות"), b("Oshino Hakkai", "אושינו האקאי")],
-    keep: b("Chureito early, sunset on the lake", "צ'ורייטו מוקדם, שקיעה באגם")
+    skip: [b("Owakudani", "אוואקודאני"), b("Oshino Hakkai", "אושינו האקאי"), b("The sake brewery tour: just the shop", "הסיור במבשלת הסאקה: רק החנות")],
+    keep: b("The Open-Air Museum, Hakone Shrine, an early night", "המוזיאון הפתוח, מקדש האקונה, לילה מוקדם")
   },
   8: {
     km: 6,

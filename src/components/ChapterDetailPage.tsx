@@ -1174,7 +1174,7 @@ function RideConnector({
           <span className="min-w-0 flex-1 text-[14px] leading-snug text-ink-800">
             {departAt && <span className="text-olive-700 font-semibold">{departAt} · </span>}
             <span className="font-semibold">{modeWord}</span>
-            {duration && <span> {duration}</span>}
+            {duration && <span> {duration.replace(/\s*(הליכה|walk)\s*/i, " ").trim()}</span>}
             {toLabel && (
               <>
                 <span className="text-ink-700/60">{he ? " אל " : " to "}</span>
