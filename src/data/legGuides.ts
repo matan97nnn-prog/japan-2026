@@ -143,7 +143,7 @@ export const legGuides: Record<string, LegGuide> = {
       ticket("Buy tickets at the JR Central machines (English button) or the ticket office: Tokyo → Odawara. You get two tickets per person; put both into the gate together.", "קונים כרטיסים במכונות של JR Central (כפתור English) או בקופה: Tokyo → Odawara. כל אחד מקבל שני כרטיסים; מכניסים את שניהם יחד לשער."),
       walk("Follow the blue 東海道新幹線 Tokaido Shinkansen signs to platforms 14–19.", "הולכים לפי השלטים הכחולים 東海道新幹線 Tokaido Shinkansen לרציפים 14–19."),
       { k: "ride", line: "shinkansen", from: "Tokyo", to: "Odawara", toward: "Shin-Osaka", towardJa: "新大阪", min: 35, note: b("Check the board says 小田原 Odawara among the stops. Nozomi does NOT stop there. Non-reserved cars: 1–3.", "לבדוק שבלוח מופיע 小田原 Odawara בין העצירות. Nozomi לא עוצר שם. קרונות לא שמורים: 1–3.") },
-      exit("Odawara: east exit for Toyota Rent a Car (a few minutes' walk).", "באודווארה: יציאה מזרחית ל-Toyota Rent a Car (כמה דקות הליכה).")
+      exit("Odawara: WEST exit (西口, the Shinkansen side). Turn left, walk ~50 m along the Shinkansen tracks, then left: Toyota Rent a Car is under the tracks, 1 min.", "באודווארה: יציאה מערבית (西口, הצד של השינקנסן). פונים שמאלה, כ-50 מטר לאורך פסי השינקנסן ושוב שמאלה: Toyota Rent a Car מתחת לגשר הרכבת, דקה הליכה.")
     ]
   },
 
