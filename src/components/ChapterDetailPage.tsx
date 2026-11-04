@@ -66,6 +66,7 @@ import PhotoCredit from "./PhotoCredit";
 import MiniMap from "./MiniMap";
 import DayExtras from "./DayExtras";
 import DayAlerts from "./DayAlerts";
+import { BirthdayBanner } from "./Birthday";
 import LegSteps, { LineBadge, legLines } from "./LegSteps";
 import DayEasy from "./DayEasy";
 import NearbySaved from "./NearbySaved";
@@ -612,6 +613,7 @@ function ChapterDetailContent({ day }: { day: Day }) {
             <ItalianWordCarousel dayNumber={day.dayNumber} words={italianWords} />
           )}
 
+          {day.dayNumber === 8 && <BirthdayBanner />}
           <DayAlerts dayNumber={day.dayNumber} />
 
           <DayEasy dayNumber={day.dayNumber} />

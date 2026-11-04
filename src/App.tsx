@@ -25,6 +25,7 @@ import Footer from "./components/Footer";
 import MobileBottomNav from "./components/MobileBottomNav";
 import ChapterDetailPage from "./components/ChapterDetailPage";
 import InstallPrompt from "./components/InstallPrompt";
+import Birthday, { BirthdayBanner } from "./components/Birthday";
 import { MapFocusContext } from "./lib/mapContext";
 import { navigatePage, useHashRoute, type Page } from "./lib/route";
 
@@ -117,6 +118,7 @@ export default function App() {
       <>
         <ChapterDetailPage dayNumber={route.day} />
         <InstallPrompt />
+        <Birthday />
       </>
     );
   }
@@ -127,6 +129,7 @@ export default function App() {
       {route.kind === "home" ? (
         <>
           <HomeHero />
+          <BirthdayBanner />
           <DayCarousel />
           <HomeShortcuts />
           <TodayStrip />
@@ -146,6 +149,7 @@ export default function App() {
 
       <MobileBottomNav />
       <InstallPrompt />
+      <Birthday />
     </MapFocusContext.Provider>
   );
 }
