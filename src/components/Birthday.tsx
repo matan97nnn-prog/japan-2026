@@ -11,15 +11,15 @@ import { navigateChapter } from "../lib/route";
 const BIRTHDAY = "2026-11-06";
 const DAY_NUMBER = 8;
 const SEEN_KEY = "japan:bday-seen";
-/* Drop his photo at public/images/bday-ronen.jpg; until then a red "60" disc. */
-const PHOTO = "./images/bday-ronen.jpg";
+const PHOTO = "./images/bday-ronen.webp";
 
 const GREETING = [
-  "רונן, אבא, בעל, חבר.",
-  "ביפן קוראים ליום הולדת 60 קאנרקי: מעגל שלם של חיים נסגר, ומתחיל מעגל חדש. לכן חוגגים אותו באדום, כמו לידה מחדש.",
-  "אנחנו חוגגים אותו איתך מול הפוג'י, באמצע הטיול הכי גדול שעשינו יחד, וזה בדיוק המקום. כי אתה זה שתמיד דוחף לצאת, לראות, לטעום, ללכת עוד קצת.",
-  "תודה על הסבלנות, על הצחוק, על הדרך שבה אתה דואג לכולנו בלי לעשות מזה עניין.",
-  "שהמעגל החדש יהיה מלא בבריאות, בשקט, בהרבה טיולים, ובנו לידך.",
+  "רונן, אבא, סבא, בעל, חבר.",
+  "ביפן קוראים ליום הולדת 60 קאנרקי: מעגל שלם נסגר ומתחיל מעגל חדש, ולכן חוגגים אותו באדום.",
+  "אתה סבא מסור, שתמיד יש לו זמן, סבלנות וחיבוק גדול לנכדים.",
+  "סקיפר מלידה: יודע לקרוא את הרוח, לנווט ולהוביל את כולנו בביטחון, בים וביבשה.",
+  "שתמשיך לטייל בעולם כמו שרק אתה יודע, לגלות, לטעום ולהתלהב כמו בפעם הראשונה.",
+  "ושתישאר בדיוק כמו שאתה.",
   "אוהבים אותך,",
   "אתי, מתן ועמית"
 ];
@@ -34,7 +34,7 @@ function isPreview(): boolean {
 }
 
 /* Held back until the family approves the draft: flip to true to go live. */
-const LIVE = false;
+const LIVE = true;
 
 export function useBirthday(): boolean {
   return isPreview() || (LIVE && tokyoDate() === BIRTHDAY);
@@ -138,20 +138,43 @@ function Fireworks() {
 function Photo() {
   const [ok, setOk] = useState(true);
   return (
-    <div className="relative mx-auto w-36 h-36 rounded-full ring-4 ring-amber-300 shadow-2xl overflow-hidden bg-gradient-to-br from-red-600 to-red-900">
-      {ok ? (
-        <img src={PHOTO} alt="" className="w-full h-full object-cover" onError={() => setOk(false)} />
-      ) : (
-        <div className="w-full h-full flex items-center justify-center font-latin-serif text-6xl font-bold text-amber-200">60</div>
-      )}
+    <div className="relative mx-auto w-60 h-72 bday-pop">
+      {/* Rotating golden rays and a pulsing glow behind the photo. */}
+      <div className="absolute -inset-16 rounded-full bday-rays" aria-hidden />
+      <div className="absolute -inset-3 rounded-[2rem] bg-amber-300/40 blur-xl bday-glow" aria-hidden />
+      <div className="relative w-full h-full rounded-[1.75rem] p-1.5 bg-gradient-to-br from-amber-200 via-amber-400 to-amber-600 shadow-2xl rotate-[-2deg]">
+        <div className="w-full h-full rounded-[1.4rem] overflow-hidden bg-gradient-to-br from-red-600 to-red-900">
+          {ok ? (
+            <img src={PHOTO} alt="רונן" className="w-full h-full object-cover" style={{ objectPosition: "50% 22%" }} onError={() => setOk(false)} />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center font-latin-serif text-6xl font-bold text-amber-200">60</div>
+          )}
+        </div>
+      </div>
+      <span className="absolute -top-3 -right-3 text-3xl bday-twinkle" aria-hidden>✨</span>
+      <span className="absolute -bottom-2 -left-4 text-3xl bday-twinkle" style={{ animationDelay: "0.7s" }} aria-hidden>🎉</span>
+      <span className="absolute top-1/2 -left-6 text-2xl bday-twinkle" style={{ animationDelay: "1.3s" }} aria-hidden>⭐</span>
     </div>
   );
 }
 
+const BDAY_CSS = `
+@keyframes bday-spin { to { transform: rotate(360deg); } }
+@keyframes bday-pulse { 0%,100% { opacity: .45; transform: scale(1); } 50% { opacity: .9; transform: scale(1.06); } }
+@keyframes bday-pop { 0% { opacity: 0; transform: scale(.6) rotate(-8deg); } 70% { transform: scale(1.05) rotate(1deg); } 100% { opacity: 1; transform: scale(1) rotate(0); } }
+@keyframes bday-twinkle { 0%,100% { opacity: .3; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.2); } }
+.bday-rays { background: repeating-conic-gradient(from 0deg, rgba(255,209,102,.28) 0deg 10deg, transparent 10deg 24deg); -webkit-mask: radial-gradient(circle, #000 30%, transparent 70%); mask: radial-gradient(circle, #000 30%, transparent 70%); animation: bday-spin 28s linear infinite; }
+.bday-glow { animation: bday-pulse 2.6s ease-in-out infinite; }
+.bday-pop { animation: bday-pop .9s cubic-bezier(.2,.9,.3,1.2) both; }
+.bday-twinkle { animation: bday-twinkle 1.8s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .bday-rays, .bday-glow, .bday-pop, .bday-twinkle { animation: none; } }
+`;
+
 function Surprise({ onClose }: { onClose: () => void }) {
   const [step, setStep] = useState<"hello" | "letter">("hello");
   return (
-    <div dir="rtl" className="fixed inset-0 z-[100] overflow-y-auto bg-gradient-to-b from-[#3a0a0a] via-[#7a1010] to-[#2a0505] text-cream-50">
+    <div dir="rtl" className="fixed inset-0 z-[9000] overflow-y-auto bg-gradient-to-b from-[#3a0a0a] via-[#7a1010] to-[#2a0505] text-cream-50">
+      <style>{BDAY_CSS}</style>
       <Fireworks />
       <button
         onClick={onClose}
@@ -162,14 +185,14 @@ function Surprise({ onClose }: { onClose: () => void }) {
       </button>
       <div className="relative min-h-full max-w-md mx-auto px-6 py-14 flex flex-col items-center text-center">
         <div className="text-[13px] tracking-[0.3em] text-amber-200/90">還暦 · KANREKI</div>
-        <div className="mt-6">
+        <div className="mt-14 mb-4">
           <Photo />
         </div>
-        <h1 className="mt-6 text-[40px] leading-tight font-extrabold text-white drop-shadow">
+        <h1 className="mt-8 text-[40px] leading-tight font-extrabold text-white drop-shadow">
           מזל טוב, רונן!
         </h1>
         <div className="mt-1 font-latin-serif text-[72px] leading-none font-bold text-amber-300 drop-shadow">60</div>
-        <p className="mt-3 text-[16px] text-cream-50/85">6 בנובמבר 2026 · מול הר פוג'י</p>
+        <p className="mt-3 text-[16px]" style={{ color: "rgba(255,255,255,.85)" }}>6 בנובמבר 2026 · מול הר פוג'י</p>
 
         {step === "hello" ? (
           <button
@@ -186,7 +209,7 @@ function Surprise({ onClose }: { onClose: () => void }) {
                 className={`text-[16.5px] leading-relaxed ${i > 0 ? "mt-3" : "font-bold text-[18px]"} ${
                   i >= GREETING.length - 2 ? "font-semibold text-red-800" : ""
                 }`}
-                style={{ color: i >= GREETING.length - 2 ? undefined : "var(--color-ink-900)" }}
+                style={{ color: i >= GREETING.length - 2 ? "#991b1b" : "var(--color-ink-900)" }}
               >
                 {line}
               </p>
