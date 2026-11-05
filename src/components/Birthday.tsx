@@ -33,8 +33,11 @@ function isPreview(): boolean {
   return typeof window !== "undefined" && new URLSearchParams(window.location.search).get("bday") === "preview";
 }
 
+/* Held back until the family approves the draft: flip to true to go live. */
+const LIVE = false;
+
 export function useBirthday(): boolean {
-  return isPreview() || tokyoDate() === BIRTHDAY;
+  return isPreview() || (LIVE && tokyoDate() === BIRTHDAY);
 }
 
 /* ---------- Fireworks ---------- */
