@@ -12,6 +12,8 @@ const BIRTHDAY = "2026-11-06";
 const DAY_NUMBER = 8;
 const SEEN_KEY = "japan:bday-seen";
 const PHOTO = "./images/bday-ronen.webp";
+/* Greetings from the grandchildren, in the order they were filmed. Remove after the trip. */
+const VIDEOS = Array.from({ length: 8 }, (_, i) => `./videos/bday/v${i + 1}.mp4`);
 
 const GREETING = [
   "רונן, אבא, סבא, בעל, חבר.",
@@ -170,8 +172,48 @@ const BDAY_CSS = `
 @media (prefers-reduced-motion: reduce) { .bday-rays, .bday-glow, .bday-pop, .bday-twinkle { animation: none; } }
 `;
 
+function GrandkidVideos() {
+  const [i, setI] = useState(0);
+  const ref = useRef<HTMLVideoElement>(null);
+  const go = (n: number) => {
+    setI(n);
+    requestAnimationFrame(() => ref.current?.play().catch(() => {}));
+  };
+  return (
+    <div className="mt-6 rounded-2xl bg-black overflow-hidden">
+      <video
+        key={i}
+        ref={ref}
+        src={VIDEOS[i]}
+        controls
+        playsInline
+        autoPlay
+        preload="metadata"
+        className="w-full max-h-[70vh] bg-black"
+        onEnded={() => i < VIDEOS.length - 1 && go(i + 1)}
+      />
+      <div className="flex items-center justify-between px-3 py-2 text-white">
+        <button onClick={() => i > 0 && go(i - 1)} disabled={i === 0} className="px-3 py-1 text-[14px] font-bold disabled:opacity-30">
+          → הקודם
+        </button>
+        <span dir="ltr" className="text-[13px] text-white/80">
+          {i + 1} / {VIDEOS.length}
+        </span>
+        <button
+          onClick={() => i < VIDEOS.length - 1 && go(i + 1)}
+          disabled={i === VIDEOS.length - 1}
+          className="px-3 py-1 text-[14px] font-bold disabled:opacity-30"
+        >
+          הבא ←
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function Surprise({ onClose }: { onClose: () => void }) {
   const [step, setStep] = useState<"hello" | "letter">("hello");
+  const [videos, setVideos] = useState(false);
   return (
     <div dir="rtl" className="fixed inset-0 z-[9000] overflow-y-auto bg-gradient-to-b from-[#3a0a0a] via-[#7a1010] to-[#2a0505] text-cream-50">
       <style>{BDAY_CSS}</style>
@@ -214,12 +256,22 @@ function Surprise({ onClose }: { onClose: () => void }) {
                 {line}
               </p>
             ))}
+            {videos ? (
+              <GrandkidVideos />
+            ) : (
+              <button
+                onClick={() => setVideos(true)}
+                className="mt-6 w-full rounded-full bg-amber-300 text-red-900 py-3.5 text-[16px] font-extrabold shadow-md"
+              >
+                🎬 ברכות מהנכדים
+              </button>
+            )}
             <button
               onClick={() => {
                 onClose();
                 navigateChapter(DAY_NUMBER);
               }}
-              className="mt-6 w-full rounded-full bg-red-700 text-white py-3 text-[15px] font-bold"
+              className="mt-3 w-full rounded-full bg-red-700 text-white py-3 text-[15px] font-bold"
             >
               לתוכנית של היום שלך
             </button>
