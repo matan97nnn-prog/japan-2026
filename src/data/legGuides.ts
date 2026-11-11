@@ -185,17 +185,27 @@ export const legGuides: Record<string, LegGuide> = {
     best: b("Taxi, 10 min, ≈ ¥1,500.", "מונית, 10 דק', בערך ¥1,500."),
     steps: [taxi("Taxis wait on the main road below Higashi Chaya (Hashiba-cho).", "מוניות מחכות בכביש הראשי מתחת להיגאשי צ'איה (Hashiba-cho).")]
   },
-  /* ---------- Day 13: first evening ---------- */
-  "13:first": {
-    best: b("Keihan line 2 stops to Gion-Shijo, then 5 min walk to Shirakawa. 15 min.", "קו Keihan שתי תחנות ל-Gion-Shijo, ואז 5 דק' הליכה לשירקאווה. 15 דק'."),
+  /* ---------- Day 14: Kyoto city & Gion ---------- */
+  "14:first": {
+    best: b("Subway, one change at Karasuma Oike, 20 min. Or a taxi, ≈ 15 min, ≈ ¥2,000.", "רכבת תחתית, החלפה אחת ב-Karasuma Oike, 20 דק'. או מונית, כ-15 דק', בערך ¥2,000."),
     steps: [
-      walk("Hotel → Keihan Shichijo station, 7 min east (toward the river).", "מהמלון לתחנת Keihan Shichijo, 7 דק' מזרחה (לכיוון הנהר)."),
-      { k: "ride", line: "keihan", from: "Shichijo KH37", to: "Gion-Shijo KH39", toward: "Demachiyanagi", towardJa: "出町柳", stops: 2, min: 4, note: b("Any train going north stops there.", "כל רכבת צפונה עוצרת שם.") },
-      exit("Exit toward 祇園 Gion / 四条通 Shijo-dori, walk east, then left (north) into the lanes to Shirakawa and the Tatsumi bridge, 5 min.", "יוצאים לכיוון 祇園 Gion / 四条通 Shijo-dori, הולכים מזרחה ופונים שמאלה (צפונה) לסמטאות עד שירקאווה וגשר טאטסומי, 5 דק'.")
+      walk("Hotel → Kyoto Station, 7 min, then follow the green K subway signs.", "מהמלון לתחנת קיוטו, 7 דק', ואז לפי השלטים הירוקים עם K של הרכבת התחתית."),
+      { k: "ride", line: "karasuma", from: "Kyoto K11", to: "Karasuma Oike K08", toward: "Kokusaikaikan", towardJa: "国際会館", stops: 3, min: 6 },
+      change("At Karasuma Oike follow the orange T signs to the Tozai line, one floor down.", "ב-Karasuma Oike הולכים לפי השלטים הכתומים עם T לקו Tozai, קומה אחת למטה."),
+      { k: "ride", line: "tozai-kyoto", from: "Karasuma Oike T13", to: "Nijojo-mae T14", toward: "Uzumasa Tenjingawa", towardJa: "太秦天神川", stops: 1, min: 2 },
+      exit("Exit toward 二条城 Nijo Castle, the main gate is across the road.", "יוצאים לכיוון 二条城 Nijo Castle, השער הראשי ממול.")
+    ],
+    alt: b("Taxi from the hotel ≈ 15 min, ≈ ¥2,000.", "מונית מהמלון כ-15 דק', בערך ¥2,000.")
+  },
+  "14:0": {
+    best: b("Subway one stop to Karasuma Oike, then 12 min walk. Or a taxi, ≈ 10 min.", "רכבת תחתית תחנה אחת ל-Karasuma Oike, ואז 12 דק' הליכה. או מונית, כ-10 דק'."),
+    steps: [
+      { k: "ride", line: "tozai-kyoto", from: "Nijojo-mae T14", to: "Karasuma Oike T13", toward: "Rokujizo", towardJa: "六地蔵", stops: 1, min: 2 },
+      walk("Walk south down 烏丸通 Karasuma-dori and left along 錦小路 Nishiki-koji: the market starts at Takakura, ≈ 12 min.", "הולכים דרומה ב-烏丸通 Karasuma-dori ושמאלה ב-錦小路 Nishiki-koji: השוק מתחיל ב-Takakura, כ-12 דק'.")
     ],
     alt: TAXI_KYOTO_SHORT
   },
-  "13:return": {
+  "14:return": {
     best: b("Keihan Gion-Shijo → Shichijo, 2 stops, then 7 min walk. Or a taxi.", "קו Keihan מ-Gion-Shijo ל-Shichijo, שתי תחנות, ואז 7 דק' הליכה. או מונית."),
     steps: [
       walk("From Pontocho walk to the east end of Shijo bridge, Gion-Shijo station is underneath.", "מפונטוצ'ו הולכים לצד המזרחי של גשר Shijo; תחנת Gion-Shijo מתחתיו."),
@@ -205,8 +215,8 @@ export const legGuides: Record<string, LegGuide> = {
     alt: TAXI_KYOTO_SHORT
   },
 
-  /* ---------- Day 14: Arashiyama by train and river ---------- */
-  "14:first": {
+  /* ---------- Day 15: Arashiyama by train and river ---------- */
+  "15:first": {
     best: b("JR Sagano line from Kyoto Station, 15 min. The Torokko station is right next to JR Saga-Arashiyama.", "קו JR Sagano מתחנת קיוטו, 15 דק'. תחנת הטורוקו צמודה ל-JR Saga-Arashiyama."),
     steps: [
       walk("Hotel → Kyoto Station, 7 min. Follow 嵯峨野線 Sagano Line signs to platforms 31–33, at the far west end of the station (≈ 5 min inside).", "מהמלון לתחנת קיוטו, 7 דק'. לפי השלטים 嵯峨野線 Sagano Line לרציפים 31–33, בקצה המערבי של התחנה (כ-5 דק' בפנים)."),
@@ -215,7 +225,7 @@ export const legGuides: Record<string, LegGuide> = {
     ],
     alt: b("Taxi from the hotel ≈ 30 min, ≈ ¥4,000.", "מונית מהמלון כ-30 דק', בערך ¥4,000.")
   },
-  "14:0": {
+  "15:0": {
     best: b("From Torokko Kameoka, a bus or taxi to the boat dock, ≈ 15 min. Staff point the way.", "מ-Torokko Kameoka, אוטובוס או מונית לרציף הסירות, כ-15 דק'. הצוות מכוון."),
     steps: [
       bus("Bus from in front of Torokko Kameoka station to 保津川下り乗船場 (the boat dock), ≈ 15 min. Pay when you get off; have coins.", "אוטובוס מול תחנת Torokko Kameoka ל-保津川下り乗船場 (רציף הסירות), כ-15 דק'. משלמים ביציאה; כדאי שיהיו מטבעות."),
@@ -223,7 +233,7 @@ export const legGuides: Record<string, LegGuide> = {
       ticket("Boat tickets at the dock counter. Boats leave about every hour; the ride ends in Arashiyama, by Togetsukyo.", "כרטיסים לסירה בקופה ברציף. הסירות יוצאות בערך כל שעה; השיט מסתיים בארשיאמה, ליד טוגצוקיו.")
     ]
   },
-  "14:return": {
+  "15:return": {
     best: b("JR from Saga-Arashiyama back to Kyoto, 15 min.", "JR מ-Saga-Arashiyama חזרה לקיוטו, 15 דק'."),
     steps: [
       walk("From the bamboo grove walk 10 min east to JR Saga-Arashiyama station.", "מיער הבמבוק 10 דק' הליכה מזרחה לתחנת JR Saga-Arashiyama."),
@@ -232,8 +242,8 @@ export const legGuides: Record<string, LegGuide> = {
     ]
   },
 
-  /* ---------- Day 15: Fushimi Inari & Nara ---------- */
-  "15:first": {
+  /* ---------- Day 16: Fushimi Inari & Kurama → Kibune ---------- */
+  "16:first": {
     best: b("JR Nara line, 2 stops; Inari station is right at the shrine gate.", "קו JR Nara, שתי תחנות; תחנת Inari נמצאת ממש מול שער המקדש."),
     steps: [
       walk("Hotel → Kyoto Station, 7 min. Follow 奈良線 Nara Line signs to platforms 8–10.", "מהמלון לתחנת קיוטו, 7 דק'. לפי השלטים 奈良線 Nara Line לרציפים 8–10."),
@@ -242,39 +252,22 @@ export const legGuides: Record<string, LegGuide> = {
     ],
     alt: b("Taxi ≈ 10 min, ≈ ¥1,500.", "מונית כ-10 דק', בערך ¥1,500.")
   },
-  "15:0": {
-    best: b("JR Nara line toward Nara, ≈ 1 h with one change to the rapid train. Google Maps shows the exact trains.", "קו JR Nara לכיוון נארה, כשעה עם החלפה אחת לרכבת המהירה. גוגל מפות מראה את הרכבות המדויקות."),
+  "16:0": {
+    best: b("Keihan from Fushimi-Inari straight to Demachiyanagi, then the Eizan train to Kurama. ≈ 55 min.", "Keihan מ-Fushimi-Inari ישר ל-Demachiyanagi, ואז רכבת אייזן לקוראמה. כ-55 דק'."),
     steps: [
-      { k: "ride", line: "jr-kyoto", from: "Inari", to: "Uji", toward: "Nara / Uji", towardJa: "奈良・宇治", min: 15, note: b("Local train (普通).", "רכבת מקומית (普通).") },
-      change("At Uji cross to the みやこ路快速 Miyakoji Rapid toward 奈良 Nara (same or opposite side of the platform).", "באוג'י עוברים ל-みやこ路快速 Miyakoji Rapid לכיוון 奈良 Nara (באותו רציף או ממול)."),
-      { k: "ride", line: "jr-kyoto", from: "Uji", to: "Nara", toward: "Nara", towardJa: "奈良", min: 30 },
-      walk("JR Nara → Nara Park: 20 min east along 三条通 Sanjo-dori, or the city loop bus (≈ 5 min). The deer start where the park starts.", "מ-JR Nara לפארק נארה: 20 דק' מזרחה לאורך 三条通 Sanjo-dori, או האוטובוס העירוני (כ-5 דק'). האיילים מתחילים איפה שהפארק מתחיל.")
+      walk("From the shrine gate walk 5 min down the shopping street to Keihan 伏見稲荷 Fushimi-Inari station.", "משער המקדש 5 דק' הליכה ברחוב הקניות לתחנת Keihan 伏見稲荷 Fushimi-Inari."),
+      { k: "ride", line: "keihan", from: "Fushimi-Inari KH34", to: "Demachiyanagi KH42", toward: "Demachiyanagi", towardJa: "出町柳", min: 20, note: b("Northbound trains end at Demachiyanagi.", "רכבות צפונה מסתיימות ב-Demachiyanagi.") },
+      change("At Demachiyanagi follow 叡山電車 Eizan Railway signs up to street level: the Eizan station is right next door (2 min).", "ב-Demachiyanagi הולכים לפי השלטים 叡山電車 Eizan Railway עד גובה הרחוב: תחנת אייזן ממש בצמוד (2 דק')."),
+      { k: "ride", line: "eizan", from: "Demachiyanagi", to: "Kurama", toward: "Kurama", towardJa: "鞍馬", min: 30, note: b("Take a train marked 鞍馬 Kurama. Trains to 八瀬比叡山口 Yase-Hieizanguchi go the other way at Takaragaike!", "לעלות על רכבת שכתוב עליה 鞍馬 Kurama. רכבות ל-八瀬比叡山口 Yase-Hieizanguchi מתפצלות לכיוון אחר ב-Takaragaike!") }
     ],
-    alt: b("Tired after Inari? Back to Kyoto Station and Kintetsu to Nara (≈ 45 min): Kintetsu Nara station is 5 min from the park.", "עייפים אחרי אינרי? חזרה לתחנת קיוטו ו-Kintetsu לנארה (כ-45 דק'): תחנת Kintetsu Nara נמצאת 5 דק' מהפארק.")
-  },
-  "15:return": {
-    best: b("Kintetsu from Kintetsu Nara straight to Kyoto Station, no change. Express ≈ 45 min, no extra fee.", "Kintetsu מ-Kintetsu Nara ישר לתחנת קיוטו, בלי החלפה. Express כ-45 דק', בלי תוספת."),
-    steps: [
-      walk("From Naramachi or the park, walk to 近鉄奈良 Kintetsu Nara station (under the Gyoki statue fountain).", "מנאראמאצ'י או מהפארק הולכים לתחנת 近鉄奈良 Kintetsu Nara (מתחת למזרקה עם פסל גיוקי)."),
-      { k: "ride", line: "kintetsu", from: "Kintetsu Nara", to: "Kintetsu Kyoto", toward: "Kyoto", towardJa: "京都", min: 45, note: b("Take an Express (急行) to 京都 Kyoto. The Limited Express (特急) is 35 min but needs a seat ticket (≈ ¥520 extra).", "לעלות על Express (急行) ל-京都 Kyoto. ה-Limited Express (特急) לוקח 35 דק' אבל צריך כרטיס מושב (בערך ¥520 תוספת).") },
-      walk("Kintetsu Kyoto is inside Kyoto Station. Hotel 7 min.", "Kintetsu Kyoto נמצאת בתוך תחנת קיוטו. 7 דק' למלון.")
-    ]
-  },
-
-  /* ---------- Day 16: Nishiki, tea ceremony, Ninenzaka ---------- */
-  "16:first": {
-    best: b("Subway Karasuma line 2 stops to Shijo, then 5 min walk east to Nishiki.", "רכבת תחתית קו Karasuma שתי תחנות ל-Shijo, ואז 5 דק' הליכה מזרחה לנישיקי."),
-    steps: [
-      walk("Hotel → Kyoto Station, 7 min, then follow the green K subway signs.", "מהמלון לתחנת קיוטו, 7 דק', ואז לפי השלטים הירוקים עם K של הרכבת התחתית."),
-      { k: "ride", line: "karasuma", from: "Kyoto K11", to: "Shijo K09", toward: "Kokusaikaikan", towardJa: "国際会館", stops: 2, min: 4 },
-      exit("Follow 錦市場 Nishiki Market signs; walk east along Shijo-dori, then left into Nishiki, ≈ 5 min.", "לפי השלטים 錦市場 Nishiki Market; הולכים מזרחה לאורך Shijo-dori ושמאלה לנישיקי, כ-5 דק'.")
-    ],
-    alt: TAXI_KYOTO_SHORT
+    alt: b("Skipped Inari? From the hotel: Keihan Shichijo → Demachiyanagi (12 min), then Eizan.", "דילגתם על אינרי? מהמלון: Keihan מ-Shichijo ל-Demachiyanagi (12 דק'), ואז אייזן.")
   },
   "16:return": {
-    best: b("Taxi from Gion, ≈ 10 min, ≈ ¥1,200. Or Keihan Gion-Shijo → Shichijo.", "מונית מגיון, כ-10 דק', בערך ¥1,200. או Keihan מ-Gion-Shijo ל-Shichijo."),
+    best: b("Bus 33 down to Kibuneguchi, Eizan to Demachiyanagi, Keihan to Shichijo. ≈ 1 h.", "אוטובוס 33 ל-Kibuneguchi, אייזן ל-Demachiyanagi, Keihan ל-Shichijo. כשעה."),
     steps: [
-      { k: "ride", line: "keihan", from: "Gion-Shijo KH39", to: "Shichijo KH37", toward: "Yodoyabashi / Osaka", towardJa: "淀屋橋・大阪", stops: 2, min: 4 },
+      bus("Kyoto Bus 33 from the Kibune stop (below the shrine) to Kibuneguchi station, ≈ 5 min. Pay when you get off.", "Kyoto Bus 33 מתחנת Kibune (מתחת למקדש) לתחנת Kibuneguchi, כ-5 דק'. משלמים ביציאה."),
+      { k: "ride", line: "eizan", from: "Kibuneguchi", to: "Demachiyanagi", toward: "Demachiyanagi", towardJa: "出町柳", min: 27 },
+      { k: "ride", line: "keihan", from: "Demachiyanagi KH42", to: "Shichijo KH37", toward: "Yodoyabashi / Osaka", towardJa: "淀屋橋・大阪", stops: 5, min: 12 },
       walk("Exit toward 七条通 Shichijo-dori, walk 7 min west to the hotel.", "יוצאים לכיוון 七条通 Shichijo-dori, 7 דק' הליכה מערבה למלון.")
     ]
   },

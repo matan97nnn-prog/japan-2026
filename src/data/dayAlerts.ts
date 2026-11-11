@@ -77,13 +77,19 @@ export const dayAlerts: Record<number, DayAlerts> = {
       }
     ]
   },
-  13: {
+  14: {
+    closed: [
+      {
+        en: "Gion: no photos in the private lanes off Hanamikoji (signs warn of a fine), and never stop a geiko or maiko for a picture.",
+        he: "גיון: אסור לצלם בסמטאות הפרטיות שליד Hanamikoji (יש שלטים על קנס), ולעולם לא לעצור גייקו או מאיקו בשביל תמונה."
+      }
+    ],
     lastTrain: {
-      en: "Pontocho → hotel: Keihan line Gion-Shijo → Shichijo, 2 stops, last train around 23:30. A taxi is about ¥1,500, cheaper than four tickets late at night anyway.",
-      he: "מפונטוצ'ו למלון: קו Keihan מ-Gion-Shijo ל-Shichijo, 2 תחנות, רכבת אחרונה בסביבות 23:30. מונית עולה בערך ¥1,500, לארבעה כמעט כמו כרטיסים."
+      en: "Pontocho → hotel: Keihan Gion-Shijo → Shichijo, 2 stops, last train around 23:30. A taxi is about ¥1,500.",
+      he: "מפונטוצ'ו למלון: Keihan מ-Gion-Shijo ל-Shichijo, 2 תחנות, רכבת אחרונה בסביבות 23:30. מונית בערך ¥1,500."
     }
   },
-  14: {
+  15: {
     closed: [
       {
         en: "Sagano Romantic Train: seats sell out in autumn, buy them first thing at Torokko Saga station. Sold out? Go straight to the boat: JR to Kameoka, 10 min walk to the dock.",
@@ -95,25 +101,13 @@ export const dayAlerts: Record<number, DayAlerts> = {
       }
     ]
   },
-  15: {
-    closed: [
-      {
-        en: "Nara deer: they nip and head-butt when they see crackers. Hold the senbei up high, feed fast, then show empty hands. Todai-ji closes around 17:00.",
-        he: "האיילים בנארה: נושכים קלות ודוחפים כשהם רואים קרקרים. מחזיקים את הסנבי גבוה, מאכילים מהר, ואז מראים ידיים ריקות. טודאי-ג'י נסגר בסביבות 17:00."
-      }
-    ]
-  },
   16: {
     closed: [
       {
-        en: "Saturday: Nishiki Market and Ninenzaka are packed after 11:00. Start at Nishiki by 10:00, and book the tea ceremony slot in the morning.",
-        he: "שבת: שוק נישיקי ונינזקה עמוסים אחרי 11:00. מתחילים בנישיקי עד 10:00, ומזמינים את טקס התה בבוקר."
+        en: "Saturday: Kurama and Kibune fill up by noon and the small Eizan train gets crowded. Be on it before 10:00, and check with the hotel that it runs all the way to Kurama.",
+        he: "שבת: קוראמה וקיבונה מתמלאות עד הצהריים והרכבת הקטנה של אייזן נדחסת. להיות עליה לפני 10:00, ולוודא עם המלון שהיא נוסעת עד קוראמה."
       }
-    ],
-    lastTrain: {
-      en: "Gion → hotel: Keihan Gion-Shijo → Shichijo, last train around 23:30, or a taxi ≈ ¥1,500.",
-      he: "מגיון למלון: Keihan מ-Gion-Shijo ל-Shichijo, רכבת אחרונה בסביבות 23:30, או מונית בערך ¥1,500."
-    }
+    ]
   },
   17: {
     closed: [
