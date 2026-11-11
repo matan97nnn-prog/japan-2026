@@ -65,26 +65,26 @@ export const dayEasy: Record<number, DayEasy> = {
     keep: b("Omicho breakfast, Kenrokuen, Higashi Chaya", "ארוחת בוקר באומיצ'ו, קנרוקואן, היגאשי צ'איה")
   },
   13: {
-    km: 7,
-    skip: [b("Nishiki Market (half closed on Wednesdays anyway)", "שוק נישיקי (ממילא חצי סגור ביום רביעי)")],
-    keep: b("Gion Shirakawa at dusk and dinner in Pontocho", "גיון שיראקאווה בשקיעה וארוחת ערב בפונטוצ'ו")
+    km: 4,
+    skip: [],
+    keep: b("Gion Shirakawa by lantern light and dinner in Pontocho", "גיון שירקאווה באור הפנסים וארוחת ערב בפונטוצ'ו")
   },
   14: {
-    km: 13,
-    climb: b("Fushimi Inari: hundreds of steps up the mountain", "פושימי אינרי: מאות מדרגות במעלה ההר"),
-    skip: [b("The top of Inari: turn back at the Yotsutsuji viewpoint (≈ 45 min up)", "הפסגה של אינרי: חוזרים מתצפית יוצוצוג'י (כ-45 דק' עלייה)"), b("Tofuku-ji", "טופוקו-ג'י"), b("Kiyomizu-dera", "קיומיזו-דרה")],
-    keep: b("Fushimi Inari early, Higashiyama lanes, rest, Kodai-ji lit up (by taxi)", "פושימי אינרי מוקדם, הסמטאות בהיגאשיאמה, מנוחה, קודאי-ג'י מואר (במונית)")
+    km: 7,
+    climb: b("Monkey Park: 20 min uphill path", "פארק הקופים: 20 דק' עלייה"),
+    skip: [b("Iwatayama Monkey Park", "פארק הקופים איוואטיאמה"), b("Okochi Sanso (keep the bamboo grove)", "אוקוצ'י סאנסו (משאירים את יער הבמבוק)")],
+    keep: b("The open train up, the boat down, the bamboo grove", "הרכבת הפתוחה למעלה, הסירה למטה, יער הבמבוק")
   },
   15: {
-    km: 9,
-    climb: b("Kurama → Kibune: stairs up to Kurama-dera, then a root-covered trail over the hill", "קוראמה ← קיבונה: מדרגות עד קוראמה-דרה, ואז שביל שורשים מעל הגבעה"),
-    skip: [b("Shimogamo Shrine", "מקדש שימוגאמו"), b("The hike itself: take the train to Kibuneguchi and the bus up to Kibune, skip Kurama", "המסלול עצמו: רכבת ל-Kibuneguchi ואוטובוס לקיבונה, בלי קוראמה")],
-    keep: b("Kibune village, lunch by the river, Kifune Shrine's lantern steps", "הכפר קיבונה, צהריים ליד הנהר, מדרגות הפנסים של מקדש קיפונה")
+    km: 13,
+    climb: b("Fushimi Inari: hundreds of steps up the mountain", "פושימי אינרי: מאות מדרגות במעלה ההר"),
+    skip: [b("Inari: just the first torii tunnels (≈ 15 min), not up to the viewpoint", "אינרי: רק מנהרות הטוריי הראשונות (כ-15 דק'), לא עד התצפית"), b("Todai-ji", "טודאי-ג'י"), b("Naramachi", "נאראמאצ'י")],
+    keep: b("Fushimi Inari early, the deer of Nara and lunch", "פושימי אינרי מוקדם, האיילים של נארה וצהריים")
   },
   16: {
-    km: 11,
-    skip: [b("Tenryu-ji & Togetsukyo", "טנריו-ג'י וגשר טוגצוקיו"), b("Gio-ji (keep Jojakko-ji)", "גיו-ג'י (משאירים את ג'וג'אקו-ג'י)")],
-    keep: b("Bamboo grove at 07:30, Okochi Sanso, rest, Nijo Castle at night", "יער הבמבוק ב-07:30, אוקוצ'י סאנסו, מנוחה, טירת ניג'ו בלילה")
+    km: 8,
+    skip: [b("Ninenzaka & Sannenzaka (a taxi from the tea ceremony to dinner)", "נינזקה וסאנזקה (מונית מטקס התה לארוחת הערב)")],
+    keep: b("Nishiki Market, the tea ceremony in kimono, the last dinner in Gion", "שוק נישיקי, טקס התה בקימונו, ארוחת הערב האחרונה בגיון")
   },
   17: {
     km: 8,

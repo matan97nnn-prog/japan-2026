@@ -78,12 +78,6 @@ export const dayAlerts: Record<number, DayAlerts> = {
     ]
   },
   13: {
-    closed: [
-      {
-        en: "Wednesday: many Nishiki Market stalls are closed. If it looks empty, move Nishiki to tomorrow's rest hour and do Teramachi today.",
-        he: "יום רביעי: הרבה דוכנים בשוק נישיקי סגורים. אם הוא נראה ריק, להעביר את נישיקי לשעת המנוחה של מחר ולעשות היום את טרמאצ'י."
-      }
-    ],
     lastTrain: {
       en: "Pontocho → hotel: Keihan line Gion-Shijo → Shichijo, 2 stops, last train around 23:30. A taxi is about ¥1,500, cheaper than four tickets late at night anyway.",
       he: "מפונטוצ'ו למלון: קו Keihan מ-Gion-Shijo ל-Shichijo, 2 תחנות, רכבת אחרונה בסביבות 23:30. מונית עולה בערך ¥1,500, לארבעה כמעט כמו כרטיסים."
@@ -92,25 +86,33 @@ export const dayAlerts: Record<number, DayAlerts> = {
   14: {
     closed: [
       {
-        en: "Tofuku-ji in foliage season: a separate ticket for the Tsutenkyo bridge and a one-way route. Kodai-ji illumination: last entry around 21:30.",
-        he: "טופוקו-ג'י בעונת השלכת: כרטיס נפרד לגשר צוטנקיו ומסלול בכיוון אחד. התאורה בקודאי-ג'י: כניסה אחרונה בסביבות 21:30."
+        en: "Sagano Romantic Train: seats sell out in autumn, buy them first thing at Torokko Saga station. Sold out? Go straight to the boat: JR to Kameoka, 10 min walk to the dock.",
+        he: "רכבת Sagano Romantic: בסתיו המקומות נגמרים, לקנות ראשון דבר בתחנת Torokko Saga. נגמר? הולכים ישר לסירה: JR לקמאוקה, 10 דק' הליכה לרציף."
+      },
+      {
+        en: "The river boat doesn't sail in high water or heavy rain. If it's cancelled: the train both ways, or the rainy-day option (Uji).",
+        he: "הסירה לא יוצאת כשהנהר גבוה או בגשם חזק. אם בוטל: רכבת הלוך וחזור, או האפשרות ליום גשום (אוג'י)."
       }
-    ],
-    lastTrain: {
-      en: "From Kodai-ji: a taxi to the hotel takes about 10 min and costs about ¥1,500. Kyoto buses thin out after 21:00.",
-      he: "מקודאי-ג'י: מונית למלון כ-10 דק', בערך ¥1,500. האוטובוסים בקיוטו מתדלדלים אחרי 21:00."
-    }
+    ]
+  },
+  15: {
+    closed: [
+      {
+        en: "Nara deer: they nip and head-butt when they see crackers. Hold the senbei up high, feed fast, then show empty hands. Todai-ji closes around 17:00.",
+        he: "האיילים בנארה: נושכים קלות ודוחפים כשהם רואים קרקרים. מחזיקים את הסנבי גבוה, מאכילים מהר, ואז מראים ידיים ריקות. טודאי-ג'י נסגר בסביבות 17:00."
+      }
+    ]
   },
   16: {
     closed: [
       {
-        en: "Saturday at the foliage peak: Arashiyama is packed after 09:00. That's why we start at 07:30.",
-        he: "שבת בשיא השלכת: ארשיאמה מתמלאת אחרי 09:00. בגלל זה מתחילים ב-07:30."
+        en: "Saturday: Nishiki Market and Ninenzaka are packed after 11:00. Start at Nishiki by 10:00, and book the tea ceremony slot in the morning.",
+        he: "שבת: שוק נישיקי ונינזקה עמוסים אחרי 11:00. מתחילים בנישיקי עד 10:00, ומזמינים את טקס התה בבוקר."
       }
     ],
     lastTrain: {
-      en: "From Nijo Castle: Tozai line → Karasuma-Oike → Karasuma line to Kyoto Station, last trains around 23:30. A taxi is about ¥2,000.",
-      he: "מטירת ניג'ו: קו Tozai ל-Karasuma-Oike ומשם קו Karasuma לתחנת קיוטו, רכבות אחרונות בסביבות 23:30. מונית בערך ¥2,000."
+      en: "Gion → hotel: Keihan Gion-Shijo → Shichijo, last train around 23:30, or a taxi ≈ ¥1,500.",
+      he: "מגיון למלון: Keihan מ-Gion-Shijo ל-Shichijo, רכבת אחרונה בסביבות 23:30, או מונית בערך ¥1,500."
     }
   },
   17: {

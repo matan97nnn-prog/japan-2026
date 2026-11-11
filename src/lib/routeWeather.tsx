@@ -20,7 +20,7 @@ export const STOPS: Stop[] = [
   { date: "2026-11-10", place: { en: "Kanazawa", he: "קנאזאווה" }, lat: 36.56, lon: 136.66 },
   { date: "2026-11-11", place: { en: "Kyoto", he: "קיוטו" }, lat: 35.0, lon: 135.77 },
   { date: "2026-11-12", place: { en: "Kyoto", he: "קיוטו" }, lat: 35.0, lon: 135.77 },
-  { date: "2026-11-13", place: { en: "Kurama", he: "קוראמה" }, lat: 35.12, lon: 135.77 },
+  { date: "2026-11-13", place: { en: "Nara", he: "נארה" }, lat: 34.68, lon: 135.83 },
   { date: "2026-11-14", place: { en: "Kyoto", he: "קיוטו" }, lat: 35.0, lon: 135.77 },
   { date: "2026-11-15", place: { en: "Tokyo", he: "טוקיו" }, lat: 35.7, lon: 139.79 },
   { date: "2026-11-16", place: { en: "Tokyo", he: "טוקיו" }, lat: 35.7, lon: 139.79 },

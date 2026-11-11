@@ -868,70 +868,45 @@ export const itinerary: Day[] = [
     weekday: "Wednesday",
     region: "south",
     base: "Kyoto",
-    dayTips: ["Free sunset from the Kyoto Station rooftop (Skyway / Happy Terrace), a few minutes from the hotel. The long open-air escalators down are part of the fun"],
-    title: "Kanazawa → Kyoto",
-    subtitle: "By train, then a first evening in Gion",
+    title: "Kyoto: first evening",
+    subtitle: "Settle in, then Gion's lanterns and dinner in Pontocho",
     rideToFirst: {
-      duration: "≈ 10 min",
-      note: "Bus or taxi to Kanazawa Station",
-      dir: { from: "Hotel Forza Kanazawa", to: "Kanazawa Station", mode: "transit" }
+      duration: "≈ 15 min",
+      note: "Keihan Shichijo → Gion-Shijo (2 stops), then 5 min walk",
+      dir: {
+        from: "Onyado Nono Kyoto Shichijo",
+        to: "Shirakawa Minami-dori, Gion",
+        mode: "transit"
+      }
     },
     activities: [
       {
-        time: "10:00",
-        title: "Train Kanazawa → Kyoto",
-        place: "Kanazawa → Tsuruga → Kyoto",
-        description: "Hokuriku Shinkansen to Tsuruga, change to the Thunderbird to Kyoto. ≈ 2 h 15. Reserve seats.",
-        rideToNext: {
-          duration: "≈ 2 h 15",
-          note: "One change at Tsuruga (same building, ~10 min)",
-          dir: { from: "Kanazawa Station", to: "Kyoto Station", mode: "transit" }
-        }
-      },
-      {
-        time: "12:30",
-        title: "Drop bags: Onyado Nono Kyoto Shichijo (4 nights)",
-        place: "Onyado Nono Kyoto Shichijo",
-        description: "7 min walk from Kyoto Station. Tatami floors, hot-spring baths, free late-night ramen.",
-        rideToNext: {
-          duration: "≈ 15 min",
-          note: "Keihan Shichijo → Gion-Shijo (2 stops), then 10 min walk across the river",
-          dir: { from: "Onyado Nono Kyoto Shichijo", to: "Nishiki Market", mode: "transit" }
-        }
-      },
-      {
-        time: "14:30",
-        title: "Nishiki Market & Teramachi",
-        place: "Nishiki Market · Teramachi arcade",
-        description: "Kyoto's 400-year-old food street: pickles, tofu, knives. Some stalls close on Wednesdays.",
-        attractionId: "nishiki-market",
-        rideToNext: {
-          duration: "15 min walk",
-          note: "Across the Kamo river",
-          dir: { from: "Nishiki Market", to: "Shirakawa Minami-dori, Gion", mode: "walking" }
-        }
-      },
-      {
-        time: "17:00",
-        title: "Gion Shirakawa at dusk & Pontocho for dinner",
+        time: "18:00",
+        title: "Gion Shirakawa by lantern light & dinner in Pontocho",
         place: "Gion Shirakawa · Tatsumi Bridge · Pontocho",
-        description: "Must. The canal lane of willows and teahouses as the lanterns come on, then dinner in the narrow Pontocho alley above the river.",
+        description: "The canal lane of willows and teahouses once the lanterns are on, then dinner in Pontocho's narrow alley above the river. No temples, just the old city at night.",
         attractionId: "gion-district"
       }
     ],
     returnTo: {
       duration: "≈ 15 min",
-      note: "Taxi (≈ ¥1,200), or Keihan Gion-Shijo → Shichijo + 8 min walk",
-      dir: { from: "Pontocho", to: "Onyado Nono Kyoto Shichijo", mode: "walking" }
+      note: "Taxi (≈ ¥1,200), or Keihan Gion-Shijo → Shichijo + 7 min walk",
+      dir: {
+        from: "Pontocho",
+        to: "Onyado Nono Kyoto Shichijo",
+        mode: "walking"
+      }
     },
+    dayTips: [
+      "Tired after the train? Stay close: the Kyoto Station rooftop (free) and Kyoto Ramen Koji on the 10th floor, 7 min from the hotel"
+    ],
     photoTips: [
-      "Tatsumi Bridge in Gion Shirakawa: the stone bridge, willows and lit teahouses at blue hour, no flash, steady on the railing",
-      "Pontocho: the long narrow lane of hanging lanterns, shot straight down its length"
+      "Tatsumi Bridge in Gion Shirakawa: the stone bridge, willows and lit teahouses, no flash, steady on the railing",
+      "Pontocho: the narrow lane of hanging lanterns, shot straight down its length"
     ],
     alternatives: [
-      "DRUM TAO taiko show at Kyoto Station, daily 19:00 & 21:00, ~50 min, from ¥10,000",
       "Gion Corner, a short sampler of tea ceremony, koto and maiko dance (18:00/19:00)",
-      "Tea ceremony with kimono dressing and photos in the garden: Maikoya in Gion, book a few days ahead"
+      "DRUM TAO taiko show at Kyoto Station, 19:00, ~50 min, from ¥10,000"
     ],
     culture: {
       title: "Geiko and maiko",
@@ -944,82 +919,100 @@ export const itinerary: Day[] = [
     weekday: "Thursday",
     region: "south",
     base: "Kyoto",
-    title: "Fushimi Inari, Tofuku-ji & Higashiyama",
-    subtitle: "Torii at dawn, a temple of maples, the old lanes, Kodai-ji by night",
+    title: "Arashiyama by train and river",
+    subtitle: "An open-air train up the gorge, a boat ride down, monkeys and bamboo",
+    departureTime: "08:30",
     rideToFirst: {
-      duration: "≈ 15 min",
-      note: "7 min walk to Kyoto Station, JR Nara line → Inari (5 min). Taxi ≈ 10 min.",
-      dir: { from: "Onyado Nono Kyoto Shichijo", to: "Fushimi Inari Taisha", mode: "transit" }
+      duration: "≈ 30 min",
+      note: "Walk 7 min to Kyoto Station, JR Sagano line to Saga-Arashiyama (15 min)",
+      dir: {
+        from: "Onyado Nono Kyoto Shichijo",
+        to: "Saga-Arashiyama Station",
+        mode: "transit"
+      }
     },
     activities: [
       {
-        time: "07:00",
-        title: "Fushimi Inari: early, and higher",
-        place: "Fushimi Inari Taisha · Yotsutsuji viewpoint",
-        description: "Must. The torii tunnels empty before 8. Walk up to the Yotsutsuji crossroads (~45 min), the crowds thin after the first gates. 2 h.",
-        attractionId: "fushimi-inari",
-        rideToNext: {
-          duration: "20 min walk",
-          note: "Or Keihan 1 stop to Tofukuji",
-          dir: { from: "Fushimi Inari Taisha", to: "Tofuku-ji", mode: "walking" }
-        }
-      },
-      {
         time: "09:30",
-        title: "Tofuku-ji: the Tsutenkyo bridge",
-        place: "Tofuku-ji · Tsutenkyo Bridge",
-        description: "Optional, the day's second temple: skip it if Fushimi Inari was enough. A wooden bridge over a valley of 2,000 maples (turning mid–late Nov), and a modern Zen rock garden. 1 h.",
-        optional: true,
+        title: "Sagano Romantic Train to Kameoka",
+        place: "Torokko Saga Station → Torokko Kameoka",
+        description: "A slow open-sided train along the Hozu gorge, 25 min, about ¥880. Leaves roughly every hour; the 'Rich' car has no windows at all. Seats sell out in autumn, so buy them first thing at Torokko Saga station (next to JR Saga-Arashiyama).",
         rideToNext: {
           duration: "≈ 15 min",
-          note: "Taxi (≈ ¥1,500), or Keihan to Kiyomizu-Gojo + 15 min walk",
-          dir: { from: "Tofuku-ji", to: "Hokan-ji (Yasaka Pagoda)", mode: "driving" }
+          note: "Bus or taxi from Torokko Kameoka to the boat dock",
+          dir: {
+            from: "Torokko Kameoka Station",
+            to: "Hozugawa Kudari boat dock, Kameoka",
+            mode: "driving"
+          }
         }
       },
       {
-        time: "11:30",
-        title: "Higashiyama's old lanes & lunch",
-        place: "Yasaka Pagoda · Ninenzaka · Ishibe-koji",
-        description: "Must. Stone lanes below the five-storey pagoda. Take the quiet Ishibe-koji alley; lunch in a machiya. Kiyomizu-dera is optional, beautiful, but packed midday.",
+        time: "10:30",
+        title: "Hozugawa river boat back to Arashiyama",
+        place: "Hozugawa Kudari (Hozu river boat ride)",
+        description: "Two hours down the river in a wooden boat steered by three boatmen with poles: rapids, rocks, autumn colours on both banks, and you land right in Arashiyama. About ¥6,000 per adult, tickets at the dock. It stops in high water or heavy rain."
+      },
+      {
+        time: "12:45",
+        title: "Lunch by the Togetsukyo bridge",
+        place: "Togetsukyo · Arashiyama main street",
+        description: "Yudofu, soba or street snacks on the main street. Matcha soft-serve is the local dessert.",
         rideToNext: {
-          duration: "10 min walk",
-          dir: { from: "Ishibe-koji", to: "Kodai-ji", mode: "walking" }
+          duration: "5 min walk",
+          note: "Across the bridge to the park entrance",
+          dir: {
+            from: "Togetsukyo",
+            to: "Iwatayama Monkey Park",
+            mode: "walking"
+          }
         }
       },
       {
         time: "14:00",
-        title: "Rest: café or back to the hotel",
-        description: "A slow afternoon before the evening. Maruyama Park and Chion-in's giant gate are next door."
+        title: "Iwatayama Monkey Park",
+        place: "Arashiyama Monkey Park Iwatayama",
+        description: "A 20 min uphill path to a hilltop where about 100 wild macaques roam free, with all of Kyoto below. You feed them from inside a hut, they stay outside. About ¥800, closes around 16:00.",
+        optional: true,
+        rideToNext: {
+          duration: "20 min walk",
+          note: "Back over the bridge and north along the main street",
+          dir: {
+            from: "Iwatayama Monkey Park",
+            to: "Arashiyama Bamboo Grove",
+            mode: "walking"
+          }
+        }
       },
       {
-        time: "17:00",
-        title: "Kodai-ji night illumination & bamboo grove",
-        place: "Kodai-ji",
-        description: "Must. Lit gardens, a mirror-pond and the bamboo path. ¥800, last entry 21:30. Dinner in Gion after.",
-        attractionId: "kodai-ji"
+        time: "15:30",
+        title: "Bamboo grove & Okochi Sanso garden",
+        place: "Arashiyama Bamboo Grove · Okochi Sanso",
+        description: "The bamboo path in the late afternoon light, and at its end the garden of an old film star's villa, with matcha and a sweet included in the ticket (about ¥1,000).",
+        attractionId: "arashiyama-bamboo"
       }
     ],
     returnTo: {
-      duration: "≈ 15 min",
-      note: "Taxi (≈ ¥1,500), or walk to Gion-Shijo and Keihan to Shichijo",
-      dir: { from: "Kodai-ji", to: "Onyado Nono Kyoto Shichijo", mode: "walking" }
+      duration: "≈ 30 min",
+      note: "Walk 10 min to JR Saga-Arashiyama, 15 min train to Kyoto, 7 min walk",
+      dir: {
+        from: "Arashiyama Bamboo Grove",
+        to: "Onyado Nono Kyoto Shichijo",
+        mode: "transit"
+      }
     },
+    dayTips: [
+      "The boat and the train together make a big loop: train up, boat down. If the train is sold out, go straight to the boat: JR to Kameoka, then 10 min walk to the dock",
+      "Evening is free: the hotel's hot-spring bath, and dinner near Kyoto Station"
+    ],
     photoTips: [
-      "Fushimi Inari: at the Yotsutsuji viewpoint, Kyoto below at morning; in the tunnels, shoot uphill so the gates' black inscriptions don't show",
-      "Tofuku-ji: the classic view is FROM Tsutenkyo onto the maple valley; the view OF the bridge is from the Gaunkyo bridge downstream",
-      "Yasaka Pagoda: from the top of Yasaka-dori looking down the lane, go by 11 before it fills",
-      "Kodai-ji at night: the reflection pond, tripods aren't allowed, so lean on a post and use night mode"
+      "On the boat, sit on the side away from the sun and shoot the boatmen against the gorge",
+      "Bamboo grove: shoot straight up for the canopy, or low along the path when it empties out"
     ],
     alternatives: [
-      "Kiyomizu-dera, the wooden stage over the maples (crowded midday; better around 16:00)",
-      "Gekkeikan Okura Sake Museum in Fushimi, 15 min south of Fushimi Inari, ¥600",
-      "Chion-in and Shoren-in, huge gate, quiet garden (Shoren-in has its own autumn light-up)",
-      "Yasui Konpira-gu, a small Gion shrine with a stone you crawl through to cut bad ties and tie good ones, 5 min from Kodai-ji"
-    ],
-    culture: {
-      title: "Shinto and Buddhism, side by side",
-      body: "Fushimi Inari is a Shinto shrine, torii gates, foxes as messengers of Inari, god of rice and business; each gate is a gift from a company. Tofuku-ji and Kodai-ji are Buddhist Zen temples, gardens of rock and moss for contemplation. Most Japanese visit both: 'born Shinto, die Buddhist', as the saying goes."
-    }
+      "Rainy day: Uji, matcha and old teahouses on the river, JR 20 min from Kyoto Station",
+      "Instead of the monkeys: a rickshaw ride around Arashiyama, about 30 min"
+    ]
   },
   {
     dayNumber: 15,
@@ -1027,86 +1020,82 @@ export const itinerary: Day[] = [
     weekday: "Friday",
     region: "south",
     base: "Kyoto",
-    title: "Kurama → Kibune hike",
-    subtitle: "Mountain temple, cedar roots, a village on the river",
+    title: "Fushimi Inari & the deer of Nara",
+    subtitle: "A forest walk through the torii gates, then bowing deer and a giant Buddha",
+    departureTime: "07:00",
     rideToFirst: {
-      duration: "≈ 25 min",
-      note: "8 min walk to Keihan Shichijo, Keihan line → Demachiyanagi (end of line)",
-      dir: { from: "Onyado Nono Kyoto Shichijo", to: "Demachiyanagi Station", mode: "transit" }
+      duration: "≈ 15 min",
+      note: "7 min walk to Kyoto Station, JR Nara line local → Inari (5 min)",
+      dir: {
+        from: "Onyado Nono Kyoto Shichijo",
+        to: "Fushimi Inari Taisha",
+        mode: "transit"
+      }
     },
     activities: [
       {
-        time: "09:30",
-        title: "Eizan train to Kurama",
-        place: "Demachiyanagi → Kurama (Eizan Railway)",
-        description: "≈ 30 min. Sit on the right going up for the forest views. The tengu statue greets you at Kurama.",
+        time: "07:30",
+        title: "Fushimi Inari: the torii tunnel up the mountain",
+        place: "Fushimi Inari Taisha · Yotsutsuji viewpoint",
+        description: "Less a temple visit, more a forest walk: thousands of orange gates up the hillside. Early it's quiet. Go up to the Yotsutsuji viewpoint (about 45 min) and turn back there.",
+        attractionId: "fushimi-inari",
         rideToNext: {
-          duration: "≈ 30 min",
-          dir: { from: "Demachiyanagi Station", to: "Kurama Station", mode: "transit" }
+          duration: "≈ 1 h",
+          note: "JR Nara line: local to Uji, then the Miyakoji Rapid to Nara",
+          dir: {
+            from: "Inari Station",
+            to: "Nara Park",
+            mode: "transit"
+          }
         }
       },
       {
-        time: "10:15",
-        title: "Kurama-dera → the root path → down to Kibune",
-        place: "Kurama-dera · Kinone-michi · Okuno-in Maoden",
-        description: "Must. ≈ 4 km, 2–3 h with stops. Past the 800-year cedar, up to the temple's mountain terrace, over the ridge on exposed cedar roots, then stone steps down to Kibune. Entry ¥500, cash.",
-        attractionId: "kurama-kibune",
-        rideToNext: { duration: "—", note: "The trail ends at the Kibune river" }
+        time: "10:30",
+        title: "Nara Park: the bowing deer",
+        place: "Nara Park",
+        description: "About 1,200 tame deer wander the park and bow for shika senbei crackers (about ¥200 a pack). Funny, a bit pushy, the highlight for everyone."
       },
       {
-        time: "13:00",
-        title: "Lunch in Kibune & Kifune Shrine",
-        place: "Kibune · Kifune Shrine",
-        description: "Must. Lunch by the river, then the stone stairway lined with red lanterns. Maples at their best around now.",
-        rideToNext: {
-          duration: "20 min walk + 30 min train",
-          note: "Walk (or bus) to Kibuneguchi station, Eizan train back to Demachiyanagi",
-          dir: { from: "Kifune Shrine", to: "Demachiyanagi Station", mode: "transit" }
-        }
+        time: "12:00",
+        title: "Lunch & the mochi-pounding show",
+        place: "Nakatanidou · Higashimuki shopping street",
+        description: "Nakatanidou pounds rice cakes at high speed with a shout, a few times a day; then lunch in the covered Higashimuki street."
       },
       {
-        time: "16:00",
-        title: "Shimogamo Shrine & the Tadasu-no-Mori forest",
-        place: "Shimogamo Shrine · Tadasu no Mori",
-        description: "Optional. An ancient forest path to one of Kyoto's oldest shrines, 10 min from Demachiyanagi. Quiet at dusk.",
+        time: "13:30",
+        title: "Todai-ji: the giant Buddha",
+        place: "Todai-ji (Daibutsuden)",
+        description: "The one temple of the day, and it's worth it: a 15 m bronze Buddha inside one of the largest wooden buildings in the world. About ¥800. Deer at the gate, too.",
         optional: true
       },
       {
-        time: "Option",
-        title: "Instead: a day in Osaka",
-        place: "Osaka Castle · Kuromon Market · Dotonbori",
-        description: "Kyoto's loud, funny neighbour, a good swap if it rains on the hike. JR special rapid Kyoto → Osaka ≈ 30 min. Osaka Castle park in the morning, Kuromon Market for street food at lunch (takoyaki, wagyu skewers), Shinsaibashi's covered shopping street, and Dotonbori at dusk: the neon, the Glico runner, okonomiyaki for dinner. Back on the Keihan line from Yodoyabashi straight to Shichijo, next to the hotel (≈ 50 min).",
-        optional: true,
-        rideToNext: {
-          duration: "≈ 45 min",
-          note: "7 min walk to Kyoto Station, JR special rapid to Osaka (≈ 30 min), Osaka Loop line to Osakajokoen",
-          dir: { from: "Kyoto Station", to: "Osaka Castle", mode: "transit" }
-        }
+        time: "15:00",
+        title: "Naramachi: the old merchant lanes",
+        place: "Naramachi",
+        description: "Low wooden houses, small cafés and craft shops, 15 min south. Coffee and a rest before the train.",
+        optional: true
       }
     ],
     returnTo: {
-      duration: "≈ 25 min",
-      note: "Keihan line Demachiyanagi → Shichijo, 8 min walk",
-      dir: { from: "Demachiyanagi Station", to: "Onyado Nono Kyoto Shichijo", mode: "transit" }
+      duration: "≈ 50 min",
+      note: "Kintetsu Nara → Kintetsu Kyoto (express, no change), then 7 min walk",
+      dir: {
+        from: "Kintetsu Nara Station",
+        to: "Onyado Nono Kyoto Shichijo",
+        mode: "transit"
+      }
     },
-    dayTips: [
-      "Kurama-dera's small cable car was out of service in September, plan to walk up (it's gentle)",
-      "Shoes with grip; roots and steps are slippery after rain",
-      "If it rains hard: swap for Ohara (Sanzen-in, Hosen-in), gardens, less mud"
-    ],
     photoTips: [
-      "Kinone-michi: the roots look best in flat, cloudy light, shoot low, close to the ground",
-      "Kifune Shrine: the red lantern stairway, from the bottom step looking up; if the lanterns are lit at dusk, even better",
-      "On the Eizan train, the 'maple tunnel' between Ichihara and Ninose, the train slows down for it"
+      "Fushimi Inari: shoot uphill in the tunnels so the black inscriptions don't show",
+      "Nara: get low to the deer's eye level, with the park behind them"
     ],
     alternatives: [
-      "Stay in Kibune until dusk if the lanterns are lit (usually from early November)",
-      "Kurama Onsen, an outdoor bath near the station, before the hike",
-      "Rainy-day swap: Uji, Byodo-in temple (the one on the ¥10 coin), old teahouses on the river, real matcha. JR from Kyoto Station, ~20 min"
+      "Skip Nara, stay in Kyoto: Fushimi sake district (Gekkeikan Okura Museum, tastings), 15 min south of Inari",
+      "Rainy day: Kyoto Railway Museum, 20 min walk from the hotel, real steam engines and a ride"
     ],
     culture: {
-      title: "Tengu and the mountain monks",
-      body: "Kurama is the legendary home of Sojobo, king of the tengu, long-nosed mountain spirits who taught swordsmanship to the young samurai Minamoto no Yoshitsune. Kibune's shrine is dedicated to the god of water; for centuries people came here to pray for rain, or for it to stop."
+      title: "Shinto and Buddhism, side by side",
+      body: "Fushimi Inari is a Shinto shrine, torii gates, foxes as messengers of Inari, god of rice and business; each gate is a gift from a company. Tofuku-ji and Kodai-ji are Buddhist Zen temples, gardens of rock and moss for contemplation. Most Japanese visit both: 'born Shinto, die Buddhist', as the saying goes."
     }
   },
   {
@@ -1115,97 +1104,86 @@ export const itinerary: Day[] = [
     weekday: "Saturday",
     region: "south",
     base: "Kyoto",
-    title: "Arashiyama & Nijo Castle at night",
-    subtitle: "Bamboo at dawn, the quiet temples of Saga, a castle in light",
+    title: "Food, a kimono and the old lanes",
+    subtitle: "Nishiki Market, a hands-on tea ceremony, Ninenzaka, a last dinner in Gion",
+    departureTime: "09:30",
     rideToFirst: {
-      duration: "≈ 30 min",
-      note: "7 min walk to Kyoto Station, JR Sagano line → Saga-Arashiyama (15 min), 10 min walk",
-      dir: { from: "Onyado Nono Kyoto Shichijo", to: "Arashiyama Bamboo Grove", mode: "transit" }
+      duration: "≈ 20 min",
+      note: "Subway Karasuma line Kyoto → Shijo (2 stops), then 5 min walk",
+      dir: {
+        from: "Onyado Nono Kyoto Shichijo",
+        to: "Nishiki Market",
+        mode: "transit"
+      }
     },
     activities: [
       {
-        time: "07:30",
-        title: "Arashiyama bamboo grove",
-        place: "Arashiyama Bamboo Grove (Sagano)",
-        description: "Must, before 8:30 it's almost empty. Walk it slowly, up to Okochi Sanso.",
-        attractionId: "arashiyama-bamboo",
+        time: "10:00",
+        title: "Nishiki Market: eat your way down the street",
+        place: "Nishiki Market · Teramachi arcade",
+        description: "400 years of Kyoto's kitchen in one narrow covered street: grilled seafood on sticks, tamagoyaki, soy doughnuts, pickles. Small bites, many stalls. Busy after 11:00 on a Saturday.",
+        attractionId: "nishiki-market",
         rideToNext: {
-          duration: "5 min walk",
-          dir: { from: "Arashiyama Bamboo Grove", to: "Okochi Sanso Villa", mode: "walking" }
+          duration: "≈ 15 min",
+          note: "Walk east across the river into Gion",
+          dir: {
+            from: "Nishiki Market",
+            to: "Maikoya Gion",
+            mode: "walking"
+          }
         }
       },
       {
-        time: "09:00",
-        title: "Okochi Sanso garden",
-        place: "Okochi Sanso",
-        description: "Must. A film star's hillside garden with views over Kyoto; matcha and a sweet included. 1 h.",
+        time: "12:30",
+        title: "Tea ceremony in kimono",
+        place: "Maikoya (Gion)",
+        description: "Get dressed in kimono, then a tea master shows you how matcha is made and served, and you make your own. Photos in the garden after. About 1.5 h. Book a slot online in the morning.",
+        link: {
+          label: "Maikoya on Google Maps",
+          url: "https://www.google.com/maps/search/?api=1&query=Maikoya+Gion+Kyoto"
+        },
         rideToNext: {
-          duration: "15 min walk",
-          note: "North through the Saga lanes",
-          dir: { from: "Okochi Sanso Villa", to: "Jojakko-ji", mode: "walking" }
+          duration: "≈ 15 min walk",
+          note: "Through Gion along Hanamikoji to Yasaka",
+          dir: {
+            from: "Maikoya Gion",
+            to: "Ninenzaka, Kyoto",
+            mode: "walking"
+          }
         }
       },
       {
-        time: "10:30",
-        title: "Jojakko-ji & Gio-ji: the quiet temples of Saga",
-        place: "Jojakko-ji · Gio-ji",
-        optional: true,
-        description: "Optional: pick one, not both (Gio-ji is the smaller, mossier one). Hillside temples carpeted in moss and maples, far from the crowds. Then lunch: yudofu (tofu hotpot), the Arashiyama dish.",
-        rideToNext: {
-          duration: "20 min walk",
-          dir: { from: "Gio-ji", to: "Togetsukyo Bridge", mode: "walking" }
-        }
-      },
-      {
-        time: "13:30",
-        title: "Tenryu-ji garden & Togetsukyo bridge",
-        place: "Tenryu-ji · Togetsukyo",
-        description: "Optional. Zen garden against the hills, then the bridge. Back to the hotel to rest.",
-        optional: true,
-        rideToNext: {
-          duration: "≈ 30 min",
-          dir: { from: "Togetsukyo Bridge", to: "Onyado Nono Kyoto Shichijo", mode: "transit" }
-        }
+        time: "15:00",
+        title: "Ninenzaka & Sannenzaka: the old shopping lanes",
+        place: "Ninenzaka · Sannenzaka · Yasaka Pagoda",
+        description: "Stone-stepped lanes of wooden shops: pottery, sweets, pickles, a Starbucks in a tatami house. The pagoda is the view, from the street, no ticket needed."
       },
       {
         time: "18:00",
-        title: "Nijo Castle: 'NAKED' night event",
-        place: "Nijo Castle (Nijo-jo)",
-        description: "Must. Light art projected on the Karamon gate and Ninomaru Palace, 18:00–22:00. ¥2,400 on Saturday, book online.",
-        attractionId: "nijo-castle"
-      },
-      {
-        time: "Option",
-        title: "Instead of the Saga temples: Ryoan-ji & Kinkaku-ji",
-        place: "Ryoan-ji · Kinkaku-ji",
-        description: "After Okochi Sanso, taxi ≈ 20 min (≈ ¥2,500) to Ryoan-ji's rock garden, then 20 min walk to the Golden Pavilion. Both open 08:00/09:00–17:00, about ¥500 each. Very crowded in maple season: go straight there, Kinkaku-ji last. From Kinkaku-ji, taxi ≈ 20 min to the hotel to rest before Nijo.",
-        optional: true,
-        rideToNext: {
-          duration: "≈ 20 min",
-          dir: { from: "Okochi Sanso Villa", to: "Ryoan-ji", mode: "driving" }
-        }
+        title: "Last dinner in Kyoto",
+        place: "Gion · Pontocho",
+        description: "Kyoto's farewell: yakitori or kushikatsu in Pontocho, or a kaiseki set in Gion. Then the lanterns one last time.",
+        attractionId: "gion-district"
       }
     ],
     returnTo: {
       duration: "≈ 15 min",
-      note: "Tozai subway Nijojo-mae → Karasuma-Oike, Karasuma line → Kyoto, 7 min walk. Taxi ≈ 15 min.",
-      dir: { from: "Nijo Castle", to: "Onyado Nono Kyoto Shichijo", mode: "transit" }
+      note: "Taxi (≈ ¥1,200), or Keihan Gion-Shijo → Shichijo + 7 min walk",
+      dir: {
+        from: "Gion",
+        to: "Onyado Nono Kyoto Shichijo",
+        mode: "transit"
+      }
     },
     photoTips: [
-      "Bamboo grove: shoot straight up for the canopy, or along the path with someone walking far ahead for scale",
-      "Okochi Sanso: the tea-house view toward Kyoto and Mt Hiei",
-      "Gio-ji: kneel by the moss garden, sunlight filtering through maples, a macro of the moss works beautifully",
-      "Nijo at night: the projections change constantly, video mode for a few seconds, then pick stills"
+      "Ninenzaka: the steps with the pagoda behind, from the top of Sannenzaka, early or at dusk",
+      "Kimono photos: in the garden with soft light, not in the street sun"
     ],
     alternatives: [
-      "Saga-Toriimoto preserved street and Adashino Nenbutsu-ji, 8,000 stone Buddhas",
-      "Hozugawa river boat from Kameoka down to Arashiyama (2 h, through the gorge)",
-      "Kinkaku-ji (Golden Pavilion) & Ryoan-ji, see the option at the end of the plan"
-    ],
-    culture: {
-      title: "Wabi-sabi in a moss garden",
-      body: "Gio-ji's moss garden is a lesson in wabi-sabi, beauty in what's simple, imperfect and passing: a fallen maple leaf on moss, a worn stone step. It's why Japanese gardens look 'unfinished' on purpose, and why the autumn leaves matter so much: they're beautiful because they don't last."
-    }
+      "Instead of the tea ceremony: a wagashi (Japanese sweets) making class or a cooking class",
+      "Nijo Castle 'NAKED' night light event (if you already have tickets), 18:00",
+      "Toei Kyoto Studio Park: samurai and ninja film sets, shows, fun for adults too"
+    ]
   },
   {
     dayNumber: 17,
