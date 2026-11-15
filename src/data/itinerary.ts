@@ -1207,97 +1207,79 @@ export const itinerary: Day[] = [
     dayNumber: 17,
     date: "2026-11-15",
     weekday: "Sunday",
-    region: "transit",
+    region: "north",
     base: "Tokyo",
-    title: "Kyoto → Tokyo",
-    subtitle: "A craft market and the Philosopher's Path, then Asakusa at night",
+    title: "Kyoto → Tokyo, Shinjuku at night",
+    subtitle: "The Shinkansen, a new hotel, Tokyo from the 45th floor and the yakitori alleys",
     rideToFirst: {
-      duration: "≈ 25 min",
-      note: "Taxi (≈ ¥2,500), or bus 206 from Kyoto Station to Hyakumanben",
-      dir: { from: "Onyado Nono Kyoto Shichijo", to: "Chion-ji Hyakumanben", mode: "driving" }
+      duration: "7 min walk",
+      note: "Hotel → Kyoto Station",
+      dir: {
+        from: "Onyado Nono Kyoto Shichijo",
+        to: "Kyoto Station",
+        mode: "walking"
+      }
     },
     activities: [
       {
-        time: "08:00",
-        title: "Hyakumanben handicraft market",
-        place: "Chion-ji (Hyakumanben)",
-        description: "Held on the 15th of every month: ~450 stalls of pottery, textiles, wood. 1 h.",
-        rideToNext: {
-          duration: "20 min walk",
-          dir: { from: "Chion-ji Hyakumanben", to: "Ginkaku-ji", mode: "walking" }
-        }
-      },
-      {
-        time: "09:15",
-        title: "Ginkaku-ji & the Philosopher's Path",
-        place: "Ginkaku-ji (Silver Pavilion) · Philosopher's Path",
-        description: "Optional but lovely. The Silver Pavilion's sand garden, then the canal path south under the maples (2 km).",
-        optional: true,
-        attractionId: "ginkaku-ji",
-        rideToNext: {
-          duration: "≈ 30 min walk",
-          dir: { from: "Ginkaku-ji", to: "Nanzen-ji", mode: "walking" }
-        }
-      },
-      {
         time: "11:00",
-        title: "Nanzen-ji & the aqueduct",
-        place: "Nanzen-ji · Suirokaku",
-        description: "Optional. The brick aqueduct running through a Zen temple. Then back to the hotel for bags.",
-        optional: true,
-        rideToNext: {
-          duration: "≈ 15 min",
-          note: "Taxi to the hotel for the bags (≈ 20 min), then 7 min walk to Kyoto Station",
-          dir: { from: "Nanzen-ji", to: "Kyoto Station", mode: "driving" }
-        }
-      },
-      {
-        time: "13:30",
         title: "Shinkansen Kyoto → Tokyo",
         place: "Kyoto Station → Tokyo Station",
-        description: "Hikari (covered by a JR Pass; Nozomi isn't). Reserve seats with luggage space. Ekiben for lunch.",
+        description: "About 2 h 15. Mt Fuji appears on the right-hand side (seat E) about 40 min before Tokyo if the sky is clear. Ekiben for lunch.",
         rideToNext: {
-          duration: "≈ 2 h 40",
-          dir: { from: "Kyoto Station", to: "Tokyo Station", mode: "transit" }
+          duration: "≈ 15 min",
+          note: "Taxi from the Marunouchi side with the bags, ≈ ¥1,800",
+          dir: {
+            from: "Tokyo Station",
+            to: "Hotel Monterey Hanzomon",
+            mode: "driving"
+          }
         }
       },
       {
-        time: "16:30",
-        title: "Check in: Dai-ichi Hotel Tokyo",
-        place: "Dai-ichi Hotel Tokyo, Shimbashi",
-        description: "One JR stop from Tokyo Station to Shimbashi (or a 10-min taxi). Drop bags, short rest.",
+        time: "15:30",
+        title: "Check in: Hotel Monterey Hanzomon",
+        place: "Hotel Monterey Hanzomon",
+        description: "Right on exit 5 of Hanzomon station. The Hanzomon line runs straight to Omotesando and Shibuya; the Yurakucho line (Kojimachi, 7 min) straight to Ginza and Toyosu.",
         rideToNext: {
           duration: "≈ 20 min",
-          note: "Ginza line Shimbashi → Asakusa, no change",
-          dir: { from: "Dai-ichi Hotel Tokyo", to: "Senso-ji", mode: "transit" }
+          note: "Walk 12 min to JR Yotsuya, Chuo line 2 stops to Shinjuku. Taxi ≈ 15 min",
+          dir: {
+            from: "Hotel Monterey Hanzomon",
+            to: "Tokyo Metropolitan Government Building",
+            mode: "transit"
+          }
         }
       },
       {
-        time: "18:00",
-        title: "Asakusa at night: Senso-ji lit up",
-        place: "Senso-ji · Nakamise · Sumida River",
-        description: "Must. After dark the day-trippers are gone: the lit pagoda and gate, a walk by the river, tempura for dinner.",
-        attractionId: "senso-ji"
+        time: "17:00",
+        title: "Tokyo from the 45th floor, free",
+        place: "Tokyo Metropolitan Government Building",
+        description: "The city hall's free observatory: the whole city in lights, Fuji's outline at sunset on a clear day. After dark, a light show is projected onto the building's facade, a few times each evening."
+      },
+      {
+        time: "19:00",
+        title: "Omoide Yokocho, Golden Gai & neon Shinjuku",
+        place: "Omoide Yokocho · Golden Gai · Kabukicho",
+        description: "Yakitori in the smoky 'Memory Lane' alleys by the station, then the tiny bars of Golden Gai, the Godzilla head over Kabukicho and the giant 3D cat billboard at the east exit."
       }
     ],
     returnTo: {
-      duration: "≈ 20 min",
-      note: "Ginza line Asakusa → Shimbashi, 3 min walk to Dai-ichi Hotel Tokyo (2 nights). Taxi ≈ 25 min.",
-      dir: { from: "Senso-ji", to: "Dai-ichi Hotel Tokyo", mode: "transit" }
+      duration: "≈ 25 min",
+      note: "JR Chuo line Shinjuku → Yotsuya (2 stops) + 12 min walk, or a taxi ≈ ¥2,000",
+      dir: {
+        from: "Shinjuku Station",
+        to: "Hotel Monterey Hanzomon",
+        mode: "transit"
+      }
     },
     photoTips: [
-      "Philosopher's Path: the canal with stone bridges and maples, shoot along the water",
-      "Nanzen-ji aqueduct: the brick arches in a row, shot down the tunnel",
-      "Senso-ji at night: the five-storey pagoda lit gold, from the side courtyard with the incense smoke in front"
+      "From the 45th floor: arrive before sunset and stay for the blue hour",
+      "Omoide Yokocho: shoot down the alley from one end, lanterns and smoke"
     ],
     alternatives: [
-      "Tokyo Skytree for the city at night, 20 min walk from Senso-ji",
-      "Morning instead: Uji (instead of Hyakumanben), Byodo-in and a matcha tasting, JR ~20 min from Kyoto Station, close to the hotel and the Shinkansen"
-    ],
-    culture: {
-      title: "The Shinkansen and Japanese time",
-      body: "The bullet train's average delay is under a minute a year. Platform lines mark exactly where each car stops, and cleaning crews turn a train around in seven minutes, then bow to the passengers. Punctuality here is a form of respect for other people's time."
-    }
+      "Tired after the train? Dinner around the hotel and an early night: Kojimachi has small izakayas"
+    ]
   },
   {
     dayNumber: 18,
@@ -1305,84 +1287,104 @@ export const itinerary: Day[] = [
     weekday: "Monday",
     region: "north",
     base: "Tokyo",
-    dayTips: ["If you go to teamLab Planets, carry on to Odaiba on the driverless Yurikamome (from Shin-Toyosu): sit in the front car for the view over the bay and the bridges"],
-    title: "Tokyo: gardens, Kagurazaka, Nihonbashi",
-    subtitle: "Or a day trip: Kamakura or Nikko",
+    title: "Harajuku, Omotesando, Daikanyama & Shibuya from above",
+    subtitle: "Wander the fashion streets properly, a quiet neighbourhood, sunset over the city",
+    departureTime: "10:00",
     rideToFirst: {
-      duration: "≈ 25 min",
-      note: "Mita line Uchisaiwaicho → Suidobashi, 8 min walk. Taxi ≈ 20 min.",
-      dir: { from: "Dai-ichi Hotel Tokyo", to: "Koishikawa Korakuen", mode: "transit" }
+      duration: "≈ 20 min",
+      note: "Hanzomon line Hanzomon → Omotesando (3 stops, no change), then 10 min walk up the avenue",
+      dir: {
+        from: "Hotel Monterey Hanzomon",
+        to: "Takeshita Street, Harajuku",
+        mode: "transit"
+      }
     },
     activities: [
       {
-        time: "09:00",
-        title: "Koishikawa Korakuen garden",
-        place: "Koishikawa Korakuen",
-        description: "Must for this day. A 17th-century Edo garden of ponds and maples (colour from mid-November). 1.5 h. (The Imperial East Gardens are closed on Mondays.)",
+        time: "10:30",
+        title: "Harajuku: Takeshita Street",
+        place: "Takeshita Street",
+        description: "Crepes, candy-coloured fashion and tiny shops. Before 11:00 it's still walkable.",
         rideToNext: {
-          duration: "15 min walk",
-          dir: { from: "Koishikawa Korakuen", to: "Kagurazaka", mode: "walking" }
+          duration: "5 min walk",
+          note: "Across Meiji-dori into Cat Street",
+          dir: {
+            from: "Takeshita Street",
+            to: "Cat Street, Harajuku",
+            mode: "walking"
+          }
         }
       },
       {
-        time: "11:30",
-        title: "Kagurazaka: stone alleys & lunch",
-        place: "Kagurazaka · Hyogo-yokocho",
-        description: "Must. The old geisha quarter: cobbled lanes, a small shrine, and a mix of French and Japanese restaurants for lunch.",
+        time: "11:15",
+        title: "Cat Street & Omotesando",
+        place: "Cat Street · Omotesando avenue · Omotesando Hills",
+        description: "The back street of boutiques, sneaker and vintage shops, then the tree-lined avenue of architect-designed flagships. Go up to the roof terrace of Tokyu Plaza (Harakado) for the view."
+      },
+      {
+        time: "13:00",
+        title: "Lunch in Omotesando",
+        place: "Omotesando · Aoyama",
+        description: "Gyukatsu, tonkatsu (Maisen, in an old bathhouse) or a café in the Aoyama back streets.",
         rideToNext: {
-          duration: "≈ 20 min",
-          note: "Tozai line Kagurazaka → Nihombashi",
-          dir: { from: "Kagurazaka Station", to: "Nihonbashi Mitsukoshi", mode: "transit" }
+          duration: "≈ 15 min",
+          note: "Taxi ≈ 10 min, or walk to Shibuya and the Tokyu Toyoko line 1 stop to Daikanyama",
+          dir: {
+            from: "Omotesando",
+            to: "Daikanyama T-Site",
+            mode: "driving"
+          }
         }
       },
       {
         time: "14:30",
-        title: "Nihonbashi & Ginza: depachika and craft shops",
-        place: "Nihonbashi Mitsukoshi · Ginza Itoya · Ginza Six rooftop",
-        description: "The basement food halls (depachika), Itoya's stationery floors, the Ginza Six rooftop garden at dusk.",
+        title: "Daikanyama & Nakameguro",
+        place: "Daikanyama T-Site · Meguro River",
+        description: "Tokyo at its most relaxed: the beautiful T-Site bookstore, small design shops, then 10 min downhill to the Meguro River in Nakameguro, cafés along the canal (and the huge Starbucks Reserve Roastery).",
         rideToNext: {
-          duration: "≈ 10 min walk",
-          note: "Ginza → Shimbashi, back to Dai-ichi Hotel Tokyo",
-          dir: { from: "Ginza Six", to: "Dai-ichi Hotel Tokyo", mode: "walking" }
+          duration: "≈ 15 min",
+          note: "Tokyu Toyoko line Nakameguro → Shibuya (2 stops), or a taxi",
+          dir: {
+            from: "Nakameguro Station",
+            to: "Shibuya Sky",
+            mode: "transit"
+          }
         }
       },
       {
-        time: "Option",
-        title: "Instead: Kamakura day trip",
-        place: "Kamakura",
-        description: "Great Buddha, Hasedera, the Daibutsu hiking trail (2.5 km). JR Yokosuka line from Tokyo Station, ~1 h, no change. See Notes.",
-        optional: true,
-        rideToNext: {
-          duration: "≈ 1 h",
-          dir: { from: "Tokyo Station", to: "Kamakura Station", mode: "transit" }
+        time: "16:00",
+        title: "Shibuya Sky at sunset",
+        place: "Shibuya Sky (Shibuya Scramble Square)",
+        description: "An open-air rooftop 230 m up, right above the crossing you already walked: sunset, then the city lighting up. Book a timed ticket online; sunset slots sell out.",
+        link: {
+          label: "Shibuya Sky tickets",
+          url: "https://www.shibuya-scramble-square.com/sky/"
         }
       },
       {
-        time: "Option",
-        title: "Instead: Nikko day trip",
-        place: "Nikko",
-        description: "Shinkyo bridge, Toshogu, the Kanmangafuchi jizo path. Tobu from Asakusa, ~2 h each way. See Notes.",
-        optional: true,
-        attractionId: "nikko-toshogu"
+        time: "18:00",
+        title: "Dinner in Shibuya",
+        place: "Shibuya Yokocho · Miyashita Park",
+        description: "Shibuya Yokocho under Miyashita Park: a lively hall of small regional-food counters from all over Japan."
       }
     ],
+    returnTo: {
+      duration: "≈ 15 min",
+      note: "Hanzomon line Shibuya → Hanzomon, 4 stops, no change. The hotel is on exit 5",
+      dir: {
+        from: "Shibuya Station",
+        to: "Hotel Monterey Hanzomon",
+        mode: "transit"
+      }
+    },
     photoTips: [
-      "Koishikawa Korakuen: the full-moon bridge (Engetsukyo), its reflection completes the circle on still water",
-      "Kagurazaka: the narrow stone lanes at Hyogo-yokocho, low angle along the cobbles",
-      "Ginza at dusk: from the Ginza Six rooftop as the lights come on"
+      "Shibuya Sky: the crossing straight down from the corner of the roof",
+      "Nakameguro: the canal from one of the small bridges"
     ],
     alternatives: [
-      "Sumo show-dinner in Asakusa, former wrestlers, a demonstration and chanko hotpot (book)",
-      "Kiyosumi Shirakawa, a stroll garden and Tokyo's best coffee roasters",
-      "Golden Gai, Shinjuku, tiny bars of six seats each",
-      "Rainy-day option: teamLab Planets (Toyosu) or Borderless (Azabudai Hills), walk-through digital art, ~2 h. Book timed tickets ahead",
-      "Fukagawa Fudodo, a fire ceremony (goma) with drums and chanting, several times a day, free",
-      "Mitsukoshi Ginza at 10:00: the opening, with staff bowing to the first customers, then the food hall"
-    ],
-    culture: {
-      title: "Depachika: the art of the gift",
-      body: "Gift-giving (omiyage) is a ritual in Japan: after a trip you bring back local sweets for colleagues and family, beautifully wrapped. Department-store food halls exist largely for this, perfect fruit in boxes, seasonal wagashi shaped like maple leaves. The wrapping matters as much as what's inside."
-    }
+      "Instead of Daikanyama: Shimokitazawa, vintage shops and coffee, 10 min from Shibuya on the Keio Inokashira line",
+      "Rainy day: Shibuya's department stores and the Tokyu Plaza roof is covered"
+    ]
   },
   {
     dayNumber: 19,
@@ -1390,86 +1392,98 @@ export const itinerary: Day[] = [
     weekday: "Tuesday",
     region: "north",
     base: "Tokyo",
-    title: "Mount Takao: autumn on Tokyo's own mountain",
-    subtitle: "Cable car up, maples, a mountain temple, Shimokitazawa in the evening",
-    dayTips: [
-      "Tuesday is the quiet day on Takao, weekends are packed",
-      "Tonight's hotel isn't booked yet: once it is, the first and last legs will start and end there",
-      "Pasmo/Suica works on the Keio line and the cable car"
-    ],
+    title: "Tokyo Bay: teamLab, Toyosu & Odaiba",
+    subtitle: "Digital art in water, sushi at the market, a driverless train over the bay, dinner under the tracks",
+    departureTime: "09:15",
     rideToFirst: {
-      duration: "≈ 55 min",
-      note: "Keio line from Shinjuku to Takaosanguchi (the last stop), semi-special express ≈ 50 min, ≈ ¥500, then 3 min walk to the cable car",
-      dir: { from: "Shinjuku Station", to: "Takaosanguchi Station", mode: "transit" }
+      duration: "≈ 35 min",
+      note: "7 min walk to Kojimachi, Yurakucho line straight to Toyosu (no change), then 10 min walk",
+      dir: {
+        from: "Hotel Monterey Hanzomon",
+        to: "teamLab Planets TOKYO",
+        mode: "transit"
+      }
     },
     activities: [
       {
-        time: "09:30",
-        title: "Cable car up Mount Takao",
-        place: "Takao-san Cable Car (Kiyotaki station)",
-        description: "Must. Japan's steepest cable car, 6 minutes up through the maples (peak colour mid–late November). ≈ ¥500 one way.",
+        time: "10:00",
+        title: "teamLab Planets",
+        place: "teamLab Planets TOKYO (Toyosu)",
+        description: "Walk-through digital art, barefoot: rooms of light, a floating flower garden, water up to your knees (shorts or roll-up trousers). About 1.5–2 h. Book a timed ticket online.",
+        link: {
+          label: "teamLab Planets tickets",
+          url: "https://www.teamlab.art/e/planets/"
+        },
         rideToNext: {
-          duration: "20 min walk",
-          note: "Trail 1, paved and gentle, past the monkey park and the 'octopus' cedar",
-          dir: { from: "Takaosan Station", to: "Yakuo-in", mode: "walking" }
+          duration: "≈ 10 min",
+          note: "Yurikamome Shin-Toyosu → Shijo-mae (1 stop)",
+          dir: {
+            from: "teamLab Planets TOKYO",
+            to: "Toyosu Senkyaku Banrai",
+            mode: "transit"
+          }
         }
       },
       {
-        time: "10:30",
-        title: "Yakuo-in: the mountain temple",
-        place: "Yakuo-in (Takaosan Yakuoin Yukiji)",
-        description: "Must. A 1,200-year-old temple of mountain ascetics, with fierce tengu statues guarding the steps. The one temple of the day.",
+        time: "12:00",
+        title: "Lunch at Toyosu: Senkyaku Banrai",
+        place: "Toyosu Senkyaku Banrai",
+        description: "An Edo-style food street next to the new fish market: sushi and seafood bowls straight from the market, and a rooftop foot bath with a bay view.",
         rideToNext: {
-          duration: "20 min walk",
-          note: "Stone steps up to the summit; skip this bit if legs are tired",
-          dir: { from: "Yakuo-in", to: "Mount Takao summit", mode: "walking" }
+          duration: "≈ 20 min",
+          note: "Yurikamome Shijo-mae → Daiba, sit in the front car",
+          dir: {
+            from: "Toyosu Senkyaku Banrai",
+            to: "DiverCity Tokyo Plaza",
+            mode: "transit"
+          }
         }
       },
       {
-        time: "11:30",
-        title: "The summit view & tororo soba",
-        place: "Mount Takao summit",
-        description: "Optional. On a clear day Fuji shows to the west. Lunch: tororo soba (soba with grated mountain yam), the local dish, at the summit or back near the cable car.",
-        optional: true,
+        time: "13:30",
+        title: "The Yurikamome & Odaiba",
+        place: "Odaiba · Unicorn Gundam (DiverCity) · Odaiba Seaside Park",
+        description: "The driverless train winds over the bay: sit in the very front car. In Odaiba: the life-size Unicorn Gundam outside DiverCity, then the seaside park with the Rainbow Bridge in front of you."
+      },
+      {
+        time: "16:30",
+        title: "Sunset by the Rainbow Bridge",
+        place: "Odaiba Seaside Park · Odaiba Marine Park",
+        description: "The bridge and the skyline lighting up across the water. A coffee in Aqua City's terrace if it's chilly.",
         rideToNext: {
-          duration: "≈ 45 min",
-          note: "Walk back down to Takaosan Station and ride the cable car or the open chairlift down",
-          dir: { from: "Mount Takao summit", to: "Takaosanguchi Station", mode: "walking" }
+          duration: "≈ 25 min",
+          note: "Yurikamome Odaiba-kaihinkoen → Shimbashi, 10 min walk",
+          dir: {
+            from: "Odaiba-kaihinkoen Station",
+            to: "Yurakucho Gado-shita",
+            mode: "transit"
+          }
         }
       },
       {
-        time: "14:00",
-        title: "Gokurakuyu onsen at the foot of the mountain",
-        place: "Keio Takaosan Onsen Gokurakuyu",
-        description: "Optional. A day onsen right next to Takaosanguchi station: soak the legs before the train back. About ¥1,100, towels for rent.",
-        optional: true,
-        rideToNext: {
-          duration: "≈ 55 min",
-          note: "Keio line to Meidaimae (≈ 45 min), change to the Keio Inokashira line, 2 stops to Shimokitazawa",
-          dir: { from: "Takaosanguchi Station", to: "Shimokitazawa Station", mode: "transit" }
-        }
-      },
-      {
-        time: "17:00",
-        title: "Shimokitazawa: vintage, coffee, dinner",
-        place: "Shimokitazawa",
-        description: "Low-rise lanes of vintage shops, record stores, small cafés and izakaya, Tokyo's young, easy side. Dinner here, then a short ride back to the hotel."
+        time: "18:30",
+        title: "Dinner under the tracks in Yurakucho",
+        place: "Yurakucho Gado-shita",
+        description: "Small izakayas tucked into the brick arches under the JR tracks: yakitori, beer, the trains rumbling overhead. Old Tokyo at its friendliest."
       }
     ],
+    returnTo: {
+      duration: "≈ 20 min",
+      note: "Yurakucho line Yurakucho → Kojimachi (4 stops) + 7 min walk",
+      dir: {
+        from: "Yurakucho Station",
+        to: "Hotel Monterey Hanzomon",
+        mode: "transit"
+      }
+    },
     photoTips: [
-      "From the cable car: sit at the bottom end facing up, the slope of maples fills the frame",
-      "Yakuo-in: the tengu statues against the red temple, shoot low and up",
-      "Summit: a long lens for Fuji floating over the ridges"
+      "teamLab: the mirror rooms are best with dark clothes",
+      "Rainbow Bridge from Odaiba beach at blue hour, with the Statue of Liberty replica in front"
     ],
     alternatives: [
-      "Instead: Kamakura (see the options on day 18) or Yokohama: Chinatown, Sankeien garden and its maples, the Cup Noodles Museum",
-      "Rikugien garden lit up after dark (autumn illumination usually starts mid–late November, check dates)",
-      "Sumo morning practice in Ryogoku, through a guided tour (no Tokyo tournament in November)"
-    ],
-    culture: {
-      title: "Tengu of Takao",
-      body: "Mount Takao has been a sacred mountain for over a thousand years. Its guardians are tengu: the red, long-nosed daitengu and the crow-beaked karasu tengu, mountain spirits believed to protect the faithful and punish the proud. You'll find them as statues on the temple steps and on the local sweets."
-    }
+      "Instead of Odaiba: Tokyo Skytree and Asakusa's back streets (without the temple), then a Sumida river boat",
+      "Rainy day: teamLab, then Toyosu, then the shopping malls of Odaiba are all indoors"
+    ]
   },
   {
     dayNumber: 20,
@@ -1477,53 +1491,91 @@ export const itinerary: Day[] = [
     weekday: "Wednesday",
     region: "north",
     base: "Tokyo",
-    title: "A slow last day, then Haneda",
-    subtitle: "Palace gardens, tea on the bay, last omiyage, the night flight",
+    title: "Akihabara, Ueno's market, last gifts, then Haneda",
+    subtitle: "Retro games and gadgets, street food under the tracks, Japanese knives, the night flight",
+    departureTime: "09:30",
     dayTips: [
-      "Ask the hotel for a late check-out, or leave the bags at the desk until the evening",
-      "Emirates at Haneda flies from Terminal 3; be there by 21:30 for the 00:05 flight",
-      "Spend the last yen: Haneda T3 has a full Edo-style food and shopping street"
+      "Check out in the morning and leave the bags at the desk until the evening",
+      "Emirates at Haneda flies from Terminal 3: be there by 21:30 for the 00:05 flight",
+      "Spend the last yen: Haneda T3 has an Edo-style food and shopping street"
     ],
+    rideToFirst: {
+      duration: "≈ 25 min",
+      note: "Hanzomon line → Mitsukoshimae (4 stops), Ginza line → Suehirocho (2 stops). Taxi ≈ 15 min",
+      dir: {
+        from: "Hotel Monterey Hanzomon",
+        to: "Akihabara Station",
+        mode: "transit"
+      }
+    },
     activities: [
       {
-        time: "09:30",
-        title: "Imperial Palace East Gardens",
-        place: "Imperial Palace East Gardens",
-        description: "Must. The old Edo Castle grounds: massive stone walls, the keep foundation, maples and a quiet lawn. Free, open on Wednesdays (closed Mon & Fri). 1.5 h.",
+        time: "10:00",
+        title: "Akihabara: electric town",
+        place: "Akihabara Electric Town · Super Potato · Gachapon Kaikan",
+        description: "Floors of retro video games, walls of capsule-toy machines, anime and figures, Yodobashi's giant electronics store. Fun even if you're not a gamer.",
         rideToNext: {
-          duration: "≈ 20 min",
-          note: "Taxi, or walk to Otemachi and the Toei Oedo line to Shiodome, 10 min walk",
-          dir: { from: "Imperial Palace East Gardens", to: "Hamarikyu Gardens", mode: "transit" }
+          duration: "15 min walk",
+          note: "South along the tracks to Okachimachi, or JR Yamanote 1 stop",
+          dir: {
+            from: "Akihabara",
+            to: "Ameyoko, Ueno",
+            mode: "walking"
+          }
         }
       },
       {
-        time: "11:30",
-        title: "Hama-rikyu: matcha in the pond house",
-        place: "Hamarikyu Gardens",
-        description: "Must. A shogun's duck-hunting garden on Tokyo Bay, skyscrapers behind the pines. Matcha and a sweet in the Nakajima teahouse over the water. ≈ ¥300 + ¥1,000 tea.",
+        time: "12:00",
+        title: "Ameyoko: the market street under the tracks",
+        place: "Ameya-Yokocho (Ueno)",
+        description: "The old post-war market: fruit on sticks, seafood, kebab stands, cheap sneakers, shouting stall-keepers. Lunch from the stalls.",
         rideToNext: {
-          duration: "15 min walk",
-          dir: { from: "Hamarikyu Gardens", to: "Ginza", mode: "walking" }
+          duration: "≈ 20 min",
+          note: "Taxi ≈ 10 min, or Ginza line Ueno → Tawaramachi (2 stops) + 5 min",
+          dir: {
+            from: "Ameyoko, Ueno",
+            to: "Kappabashi Dougu Street",
+            mode: "driving"
+          }
         }
       },
       {
         time: "13:30",
-        title: "Last lunch & omiyage in Ginza",
-        place: "Ginza",
-        description: "Lunch, then the gifts: depachika sweets in the department-store basements, Itoya for paper and pens. Then back to the hotel for the bags and a rest."
+        title: "Kappabashi: the kitchen street",
+        place: "Kappabashi Dougu Street",
+        description: "A whole street of chefs' supplies: Japanese knives (engraving while you wait), ceramics, the plastic food samples from restaurant windows. The best last gifts."
       },
       {
-        time: "Option",
-        title: "Instead: teamLab Planets and the Yurikamome to Odaiba",
-        place: "teamLab Planets",
-        description: "Walk-through digital art (barefoot, in water), ≈ 2 h, book a timed ticket. Then the driverless Yurikamome from Shin-Toyosu to Odaiba, front car for the bay view.",
-        optional: true
+        time: "15:30",
+        title: "Last shopping in Ginza",
+        place: "Ginza · Uniqlo Ginza · Itoya · Don Quijote",
+        description: "The 12-floor Uniqlo, Itoya for paper and pens, department-store food halls for sweets, Don Quijote (use the coupon).",
+        optional: true,
+        rideToNext: {
+          duration: "≈ 15 min",
+          note: "Yurakucho line Ginza-itchome → Kojimachi + 7 min walk, or a taxi",
+          dir: {
+            from: "Ginza",
+            to: "Hotel Monterey Hanzomon",
+            mode: "transit"
+          }
+        }
+      },
+      {
+        time: "18:30",
+        title: "Bags, a light dinner, and off to the airport",
+        place: "Hotel Monterey Hanzomon",
+        description: "Collect the bags, a last meal near the hotel, leave by 20:30."
       }
     ],
     returnTo: {
-      duration: "≈ 30 min",
-      note: "From the hotel: taxi ≈ 25 min (≈ ¥7,000, easiest with four and the bags), or the Tokyo Monorail from Hamamatsucho (≈ 15 min) or Keikyu from Shinagawa (≈ 15 min) to Haneda Terminal 3",
-      dir: { from: "Hamamatsucho Station", to: "Haneda Airport Terminal 3", mode: "transit" }
+      duration: "≈ 40 min",
+      note: "Taxi from the hotel to Haneda Terminal 3, ≈ 35–45 min, ≈ ¥8,000–9,000: easiest with four and the bags. By train: via Shinagawa and Keikyu, ≈ 50 min",
+      dir: {
+        from: "Hotel Monterey Hanzomon",
+        to: "Haneda Airport Terminal 3",
+        mode: "driving"
+      }
     },
     culture: {
       title: "Otsukaresama deshita",

@@ -273,66 +273,8 @@ export const legGuides: Record<string, LegGuide> = {
   },
 
   /* ---------- Day 17 ---------- */
-  "17:first": {
-    best: b("Keihan to Demachiyanagi, then 12 min walk east along Imadegawa-dori.", "קו Keihan ל-Demachiyanagi, ואז 12 דק' הליכה מזרחה לאורך Imadegawa-dori."),
-    steps: [
-      walk("Hotel → Keihan Shichijo, 7 min.", "מהמלון ל-Keihan Shichijo, 7 דק'."),
-      { k: "ride", line: "keihan", from: "Shichijo KH37", to: "Demachiyanagi KH42", toward: "Demachiyanagi", towardJa: "出町柳", stops: 5, min: 12 },
-      walk("Exit to 今出川通 Imadegawa-dori, walk east to the Hyakumanben crossing; Chion-ji is on the right.", "יוצאים לרחוב 今出川通 Imadegawa-dori והולכים מזרחה עד צומת Hyakumanben; מקדש צ'יון-ג'י מימין.")
-    ],
-    alt: b("Taxi ≈ 25 min, ≈ ¥2,500.", "מונית כ-25 דק', בערך ¥2,500.")
-  },
-  "17:2": {
-    best: b("Taxi to the hotel for the bags (≈ 20 min, ≈ ¥2,500), then 7 min walk to Kyoto Station.", "מונית למלון לאסוף מזוודות (כ-20 דק', בערך ¥2,500), ואז 7 דק' הליכה לתחנת קיוטו."),
-    steps: [taxi("Taxis wait on the road below Nanzen-ji's main gate. Ask for 御宿野乃 京都七条 Onyado Nono Kyoto Shichijo.", "מוניות מחכות בכביש מתחת לשער הראשי של ננזן-ג'י. לבקש 御宿野乃 京都七条 Onyado Nono Kyoto Shichijo.")]
-  },
-  "17:3": {
-    best: b("Tokaido Shinkansen Nozomi to Tokyo, ≈ 2 h 15.", "שינקנסן Tokaido מסוג Nozomi לטוקיו, כ-2 שעות ורבע."),
-    steps: [
-      ticket("Buy at the JR Central machines: Kyoto → Tokyo, reserved, seats D–E in two rows. E is the Mt Fuji side (≈ 1 h 30 after Kyoto).", "קונים במכונות של JR Central: Kyoto → Tokyo, שמור, מושבים D–E בשתי שורות. E הוא הצד של הר פוג'י (בערך שעה וחצי אחרי קיוטו)."),
-      tip("Big suitcases (length + width + height over 160 cm) need a seat booked with the oversized-luggage area.", "מזוודות גדולות (אורך + רוחב + גובה מעל 160 ס\"מ) מחייבות הזמנת מושב עם אזור מזוודות גדולות."),
-      { k: "ride", line: "shinkansen", from: "Kyoto", to: "Tokyo", toward: "Tokyo", towardJa: "東京", min: 135, note: b("Platforms 11–14. Car numbers are painted on the platform floor; stand there.", "רציפים 11–14. מספרי הקרונות מסומנים על רצפת הרציף; עומדים שם.") },
-      { k: "ride", line: "yamanote", from: "Tokyo JY01", to: "Shimbashi JY03", toward: "Shinagawa", towardJa: "品川", stops: 2, min: 4, note: b("Yamanote or Keihin-Tohoku line, both go. The hotel is connected underground to Shimbashi.", "קו Yamanote או Keihin-Tohoku, שניהם מתאימים. המלון מחובר בשביל תת-קרקעי לשימבאשי.") }
-    ],
-    alt: b("With bags: taxi from Tokyo Station to the Dai-ichi Hotel ≈ 10 min, ≈ ¥1,500.", "עם מזוודות: מונית מתחנת טוקיו למלון Dai-ichi כ-10 דק', בערך ¥1,500.")
-  },
-  "17:4": {
-    best: b("Ginza line, no change, to the end: Asakusa. 20 min.", "קו Ginza בלי החלפה עד הסוף: אסקוסה. 20 דק'."),
-    steps: [
-      walk("From the hotel take the underground passage to Shimbashi station, then the orange G signs.", "מהמלון בשביל התת-קרקעי לתחנת שימבאשי, ואז לפי השלטים הכתומים עם G."),
-      { k: "ride", line: "ginza", from: "Shimbashi G08", to: "Asakusa G19", toward: "Asakusa", towardJa: "浅草", stops: 11, min: 19 },
-      exit("Exit 1: Kaminarimon gate is 1 min away.", "יציאה 1: שער קמינרימון במרחק דקה.")
-    ]
-  },
-  "17:return": {
-    best: b("Ginza line back to Shimbashi, no change.", "קו Ginza חזרה לשימבאשי, בלי החלפה."),
-    steps: [{ k: "ride", line: "ginza", from: "Asakusa G19", to: "Shimbashi G08", toward: "Shibuya", towardJa: "渋谷", stops: 11, min: 19, note: b("Asakusa is the first station, every train goes your way.", "אסקוסה היא התחנה הראשונה, כל רכבת נוסעת בכיוון שלנו.") }]
-  },
 
   /* ---------- Day 18 ---------- */
-  "18:first": {
-    best: b("Toei Mita line from Uchisaiwaicho, no change, 4 stops. 25 min door to door.", "קו Toei Mita מ-Uchisaiwaicho, בלי החלפה, 4 תחנות. 25 דק' מדלת לדלת."),
-    steps: [
-      walk("Hotel → Uchisaiwaicho station, 4 min (blue I signs).", "מהמלון לתחנת Uchisaiwaicho, 4 דק' (שלטים כחולים עם I)."),
-      { k: "ride", line: "mita", from: "Uchisaiwaicho I07", to: "Suidobashi I11", toward: "Nishi-takashimadaira", towardJa: "西高島平", stops: 4, min: 8 },
-      exit("Follow the 小石川後楽園 Koishikawa Korakuen signs, ≈ 8 min walk to the west gate.", "לפי השלטים 小石川後楽園 Koishikawa Korakuen, כ-8 דק' הליכה לשער המערבי.")
-    ],
-    alt: b("Taxi ≈ 20 min, ≈ ¥2,500.", "מונית כ-20 דק', בערך ¥2,500.")
-  },
-  "18:1": {
-    best: b("Tozai line, no change, 5 stops.", "קו Tozai בלי החלפה, 5 תחנות."),
-    steps: [
-      { k: "ride", line: "tozai-tokyo", from: "Kagurazaka T05", to: "Nihombashi T10", toward: "Nishi-funabashi", towardJa: "西船橋", stops: 5, min: 10 },
-      exit("Follow the signs for 日本橋三越 Nihombashi Mitsukoshi, ≈ 5 min underground.", "לפי השלטים 日本橋三越 Nihombashi Mitsukoshi, כ-5 דק' מתחת לאדמה.")
-    ]
-  },
-  "18:3": {
-    best: b("JR Yokosuka line straight from Shimbashi, next to the hotel. No change, ≈ 55 min.", "קו JR Yokosuka ישר משימבאשי, ליד המלון. בלי החלפה, כ-55 דק'."),
-    steps: [
-      walk("At JR Shimbashi follow the blue 横須賀線 Yokosuka Line signs (underground platforms).", "ב-JR Shimbashi הולכים לפי השלטים הכחולים 横須賀線 Yokosuka Line (רציפים תת-קרקעיים)."),
-      { k: "ride", line: "yokosuka", from: "Shimbashi", to: "Kamakura", toward: "Zushi / Kurihama", towardJa: "逗子・久里浜", min: 55 }
-    ]
-  }
 };
 
 /** Lines that only appear in leg guides (not on the transit page's line list). */

@@ -110,22 +110,32 @@ export const dayAlerts: Record<number, DayAlerts> = {
     ]
   },
   17: {
-    closed: [
-      {
-        en: "The Hyakumanben market only happens on the 15th of the month, so today is the day. Senso-ji's main hall closes at 17:00 and Nakamise shops around 19:00, but the grounds stay open and lit.",
-        he: "השוק בהיאקומנבן מתקיים רק ב-15 בחודש, כלומר היום. האולם הראשי בסנסו-ג'י נסגר ב-17:00 והחנויות בנקמיסה בסביבות 19:00, אבל המתחם פתוח ומואר."
-      }
-    ],
     lastTrain: {
-      en: "Asakusa → Shimbashi on the Ginza line (orange), last train around 00:00.",
-      he: "מאסקוסה לשימבאשי בקו Ginza (כתום), רכבת אחרונה בסביבות 00:00."
+      en: "Shinjuku → hotel: JR Chuo line to Yotsuya, last trains around 00:30, then 12 min walk. A taxi is about ¥2,000.",
+      he: "משינג'וקו למלון: JR קו Chuo ל-Yotsuya, רכבות אחרונות בסביבות 00:30, ואז 12 דק' הליכה. מונית בערך ¥2,000."
     }
   },
   18: {
     closed: [
       {
-        en: "Monday: most Tokyo museums are closed. Today's plan doesn't depend on any of them.",
-        he: "יום שני: רוב המוזיאונים בטוקיו סגורים. התוכנית של היום לא תלויה באף אחד מהם."
+        en: "Shibuya Sky: book a timed ticket online today, sunset slots (around 16:00) sell out. Monday: most museums are closed, today's plan doesn't need any.",
+        he: "Shibuya Sky: להזמין היום כרטיס עם שעה באתר, השעות של השקיעה (בסביבות 16:00) נגמרות. יום שני: רוב המוזיאונים סגורים, התוכנית של היום לא צריכה אף אחד."
+      }
+    ]
+  },
+  19: {
+    closed: [
+      {
+        en: "teamLab Planets: timed tickets, book online. You walk barefoot in knee-deep water, so wear shorts or trousers that roll up.",
+        he: "teamLab Planets: כרטיסים עם שעה, להזמין באתר. הולכים יחפים במים עד הברכיים, אז מכנסיים קצרים או כאלה שמתקפלים."
+      }
+    ]
+  },
+  20: {
+    closed: [
+      {
+        en: "Flight EK313 from Haneda Terminal 3 at 00:05 (just after midnight, the night of the 18th). Leave the hotel by 20:30, check-in closes about an hour before.",
+        he: "טיסה EK313 מטרמינל 3 בהנדה ב-00:05 (מיד אחרי חצות, בלילה של ה-18). לצאת מהמלון עד 20:30, הצ'ק-אין נסגר כשעה לפני."
       }
     ]
   }

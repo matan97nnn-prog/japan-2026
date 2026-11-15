@@ -32,7 +32,7 @@ const BOOKINGS: Booking[] = [
       { en: "Surname: STEIN", he: "שם משפחה: STEIN" },
       { en: "EK110 · 31.10 16:25 → Dubai 19:25", he: "EK110 · 31.10 16:25 ← דובאי 19:25" },
       { en: "EK318 · 1.11 02:55 → Narita 17:20", he: "EK318 · 1.11 02:55 ← נריטה 17:20" },
-      { en: "Return flight: not set yet", he: "טיסת חזור: עוד לא נקבעה" }
+      { en: "Return: EK313 · 19.11 00:05 Haneda T3 (be there by 21:30 on the 18th)", he: "חזור: EK313 · 19.11 00:05 הנדה טרמינל 3 (להגיע עד 21:30 ב-18)" }
     ],
     action: {
       label: { en: "Emirates online check-in", he: "צ'ק-אין אונליין ב-Emirates" },

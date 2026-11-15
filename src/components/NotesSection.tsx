@@ -21,7 +21,7 @@ const NOTES: Note[] = [
     title: { en: "Open decisions", he: "החלטות פתוחות" },
     lines: [
       { en: "Return flight: 17 or 18.11, not set yet.", he: "טיסת חזור: 17 או 18.11, עוד לא נקבע." },
-      { en: "Hotels: all set through Kanazawa. Kyoto (Honyado Nono) and the last Tokyo nights (Dai-ichi Hotel Tokyo) are 'for now'.", he: "מלונות: הכל סגור עד קנאזאווה. קיוטו (Honyado Nono) והלילות האחרונים בטוקיו (Dai-ichi Hotel Tokyo), כרגע." },
+      { en: "Hotels: Kyoto 11–15.11 at Onyado Nono, the last Tokyo nights 15–18.11 at Hotel Monterey Hanzomon.", he: "מלונות: קיוטו 11–15.11 ב-Onyado Nono, הלילות האחרונים בטוקיו 15–18.11 ב-Hotel Monterey Hanzomon." },
       { en: "Larnaca hotel name for 30.10.", he: "שם המלון בלרנקה ל-30.10." }
     ]
   },

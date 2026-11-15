@@ -185,28 +185,22 @@ export const stays: Stay[] = [
   },
   {
     id: "stay-tokyo-end",
-    name: "Dai-ichi Hotel Tokyo",
+    name: "Hotel Monterey Hanzomon",
     category: "stay",
     region: "north",
-    shortDescription: "15–17.11 · 2 nights (for now)",
+    shortDescription: "15–18.11 · 3 nights",
     description:
-      "Classic hotel in Shimbashi, 2 min underground to Shimbashi station (JR, Ginza line), 5 min walk to Ginza.",
-    image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/579367246.jpg?k=c03a8b65ba17ebe95eccd490505b925adaa461ef9ad2ef0c8b6455b6737f21e1&o=",
-    gallery: ["https://cf.bstatic.com/xdata/images/hotel/max500/579372582.jpg?k=43cbd5c8da082a20541f00415a63a8380603484f4fb41f098d901941f9fe93f9&o="],
-    imageCredit: { author: "Booking.com", license: "Hotel photo", source: "https://www.booking.com/hotel/jp/daiichi-tokyo.html" },
-    address: "1-2-6 Shimbashi, Minato City, Tokyo",
-    coords: [35.6668, 139.757],
+      "Quiet business district by the Imperial Palace moat, right on exit 5 of Hanzomon station. The Hanzomon line runs straight to Omotesando and Shibuya; Kojimachi station (Yurakucho line, 7 min walk) straight to Ginza and Toyosu.",
+    address: "23-1 Ichibancho, Chiyoda City, Tokyo",
+    coords: [35.6857, 139.7417],
     checkIn: "2026-11-15",
-    checkOut: "2026-11-17",
-    nights: 2,
-    rooms: "Booked until 17.11; the night of 17.11 is still open",
-    rating: 9,
-    bookingLink: "https://www.booking.com/hotel/jp/daiichi-tokyo.html",
-    website: "https://www.hankyu-hotel.com/hotel/dh/dhtokyo",
+    checkOut: "2026-11-18",
+    nights: 3,
+    rooms: "3 nights; on the 18th, leave the bags at the desk until the evening flight",
     highlights: [
-      "Ginza line straight to Asakusa (20 min)",
-      "World buffet restaurant and a French patisserie in the hotel",
-      "Check-in 15:00 · check-out 12:00"
+      "Hanzomon station exit 5, 1 min",
+      "Hanzomon line: Omotesando 3 stops, Shibuya 4 stops, no change",
+      "Kojimachi (Yurakucho line), 7 min: Ginza, Toyosu"
     ]
   }
 ];

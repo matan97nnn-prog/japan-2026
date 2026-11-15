@@ -91,5 +91,5 @@ export const STAY_JA: Record<string, { name: string; address: string }> = {
   "stay-takayama": { name: "飛騨高山温泉 高山グリーンホテル", address: "岐阜県高山市西之一色町2-180" },
   "stay-kanazawa": { name: "ホテルフォルツァ金沢", address: "石川県金沢市安江町2-10" },
   "stay-kyoto": { name: "御宿 野乃 京都七条", address: "京都府京都市下京区材木町491" },
-  "stay-tokyo-end": { name: "第一ホテル東京", address: "東京都港区新橋1-2-6" }
+  "stay-tokyo-end": { name: "ホテルモントレ半蔵門", address: "東京都千代田区一番町23-1" }
 };

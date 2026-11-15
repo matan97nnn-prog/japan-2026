@@ -87,15 +87,25 @@ export const dayEasy: Record<number, DayEasy> = {
     keep: b("Kibune: lunch by the river and the lantern steps", "קיבונה: צהריים ליד הנהר ומדרגות הפנסים")
   },
   17: {
-    km: 8,
-    skip: [b("Nanzen-ji", "ננזן-ג'י"), b("The Philosopher's Path: Ginkaku-ji only, then a taxi", "שביל הפילוסוף: רק גינקאקו-ג'י ואז מונית")],
-    keep: b("Hyakumanben market (only on the 15th), the train to Tokyo, Asakusa at night", "השוק בהיאקומנבן (רק ב-15 לחודש), הרכבת לטוקיו, אסקוסה בלילה")
+    km: 6,
+    skip: [b("Golden Gai: dinner in Omoide Yokocho and back", "גולדן גאי: ארוחת ערב באומוידה יוקוצ'ו וחזרה")],
+    keep: b("The train, check-in, the free 45th-floor view", "הרכבת, הצ'ק-אין, התצפית החינמית מקומה 45")
   },
   18: {
+    km: 11,
+    skip: [b("Daikanyama & Nakameguro: from Omotesando straight to Shibuya", "דאיקאניאמה ונאקאמגורו: מאומוטסנדו ישר לשיבויה")],
+    keep: b("Takeshita, Cat Street, Omotesando, Shibuya Sky at sunset", "טקשיטה, Cat Street, אומוטסנדו, Shibuya Sky בשקיעה")
+  },
+  19: {
     km: 9,
-    skip: [b("Kagurazaka", "קאגורזאקה"), b("Koishikawa Korakuen: start late, straight to Nihonbashi", "קויישיקאווה קוראקואן: מתחילים מאוחר וישר לניהונבאשי")],
-    keep: b("Depachika food halls in Nihonbashi and Ginza, near the hotel", "אולמות האוכל (דפאצ'יקה) בניהונבאשי ובגינזה, ליד המלון")
-  }
+    skip: [b("Odaiba Seaside Park: the Yurikamome ride and the Gundam only", "פארק החוף באודייבה: רק הנסיעה ב-Yurikamome והגנדאם")],
+    keep: b("teamLab, lunch at Toyosu, the Yurikamome, dinner under the tracks", "teamLab, צהריים בטויוסו, ה-Yurikamome, ארוחת ערב מתחת לפסים")
+  },
+  20: {
+    km: 9,
+    skip: [b("Ginza: go back to the hotel after Kappabashi and rest", "גינזה: חוזרים למלון אחרי קאפאבאשי ונחים")],
+    keep: b("Akihabara, Ameyoko, Kappabashi, then the airport", "אקיהבארה, אמיוקו, קאפאבאשי, ואז השדה")
+  },
 };
 
 export const steps = (km: number) => Math.round((km * 1300) / 500) * 500;
